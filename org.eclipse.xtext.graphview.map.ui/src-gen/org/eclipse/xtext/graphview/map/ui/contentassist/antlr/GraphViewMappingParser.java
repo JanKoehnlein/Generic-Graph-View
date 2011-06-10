@@ -37,7 +37,6 @@ public class GraphViewMappingParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
-					put(grammarAccess.getAbstractMappingAccess().getAlternatives(), "rule__AbstractMapping__Alternatives");
 					put(grammarAccess.getAbstractExpressionMappingAccess().getAlternatives(), "rule__AbstractExpressionMapping__Alternatives");
 					put(grammarAccess.getXAssignmentAccess().getAlternatives(), "rule__XAssignment__Alternatives");
 					put(grammarAccess.getOpEqualityAccess().getAlternatives(), "rule__OpEquality__Alternatives");
@@ -71,6 +70,8 @@ public class GraphViewMappingParser extends AbstractContentAssistParser {
 					put(grammarAccess.getQualifiedNameWithWildcardAccess().getGroup_1(), "rule__QualifiedNameWithWildcard__Group_1__0");
 					put(grammarAccess.getNodeMappingAccess().getGroup(), "rule__NodeMapping__Group__0");
 					put(grammarAccess.getLabelMappingAccess().getGroup(), "rule__LabelMapping__Group__0");
+					put(grammarAccess.getEdgeMappingAccess().getGroup(), "rule__EdgeMapping__Group__0");
+					put(grammarAccess.getEdgeEndMappingAccess().getGroup(), "rule__EdgeEndMapping__Group__0");
 					put(grammarAccess.getXAssignmentAccess().getGroup_0(), "rule__XAssignment__Group_0__0");
 					put(grammarAccess.getXAssignmentAccess().getGroup_1(), "rule__XAssignment__Group_1__0");
 					put(grammarAccess.getXAssignmentAccess().getGroup_1_1(), "rule__XAssignment__Group_1_1__0");
@@ -196,10 +197,17 @@ public class GraphViewMappingParser extends AbstractContentAssistParser {
 					put(grammarAccess.getNodeMappingAccess().getNameAssignment_1(), "rule__NodeMapping__NameAssignment_1");
 					put(grammarAccess.getNodeMappingAccess().getMultiAssignment_3(), "rule__NodeMapping__MultiAssignment_3");
 					put(grammarAccess.getNodeMappingAccess().getExpressionAssignment_4(), "rule__NodeMapping__ExpressionAssignment_4");
-					put(grammarAccess.getNodeMappingAccess().getContentsAssignment_6(), "rule__NodeMapping__ContentsAssignment_6");
+					put(grammarAccess.getNodeMappingAccess().getMappingsAssignment_6(), "rule__NodeMapping__MappingsAssignment_6");
 					put(grammarAccess.getLabelMappingAccess().getNameAssignment_1(), "rule__LabelMapping__NameAssignment_1");
 					put(grammarAccess.getLabelMappingAccess().getMultiAssignment_3(), "rule__LabelMapping__MultiAssignment_3");
 					put(grammarAccess.getLabelMappingAccess().getExpressionAssignment_4(), "rule__LabelMapping__ExpressionAssignment_4");
+					put(grammarAccess.getEdgeMappingAccess().getNameAssignment_1(), "rule__EdgeMapping__NameAssignment_1");
+					put(grammarAccess.getEdgeMappingAccess().getMultiAssignment_3(), "rule__EdgeMapping__MultiAssignment_3");
+					put(grammarAccess.getEdgeMappingAccess().getExpressionAssignment_4(), "rule__EdgeMapping__ExpressionAssignment_4");
+					put(grammarAccess.getEdgeMappingAccess().getSourceMappingAssignment_6(), "rule__EdgeMapping__SourceMappingAssignment_6");
+					put(grammarAccess.getEdgeMappingAccess().getTargetMappingAssignment_8(), "rule__EdgeMapping__TargetMappingAssignment_8");
+					put(grammarAccess.getEdgeEndMappingAccess().getMappingAssignment_0(), "rule__EdgeEndMapping__MappingAssignment_0");
+					put(grammarAccess.getEdgeEndMappingAccess().getExpressionAssignment_2(), "rule__EdgeEndMapping__ExpressionAssignment_2");
 					put(grammarAccess.getXAssignmentAccess().getFeatureAssignment_0_1(), "rule__XAssignment__FeatureAssignment_0_1");
 					put(grammarAccess.getXAssignmentAccess().getValueAssignment_0_3(), "rule__XAssignment__ValueAssignment_0_3");
 					put(grammarAccess.getXAssignmentAccess().getFeatureAssignment_1_1_0_0_1(), "rule__XAssignment__FeatureAssignment_1_1_0_0_1");

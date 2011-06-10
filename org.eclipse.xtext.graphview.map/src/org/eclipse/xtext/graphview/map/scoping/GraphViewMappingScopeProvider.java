@@ -7,32 +7,63 @@ import java.util.Collections;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.xtext.common.types.JvmIdentifiableElement;
+import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
+import org.eclipse.xtext.common.types.JvmTypeReference;
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractExpressionMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping;
+import org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingFactory;
+import org.eclipse.xtext.graphview.map.graphViewMapping.IterableUnpacker;
 import org.eclipse.xtext.resource.EObjectDescription;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.impl.SimpleScope;
 import org.eclipse.xtext.xbase.scoping.XbaseScopeProvider;
+import org.eclipse.xtext.xbase.typing.ITypeProvider;
+
+import com.google.inject.Inject;
 
 /**
  * This class contains custom scoping description.
  * 
- * see : http://www.eclipse.org/Xtext/documentation/latest/xtext.html#scoping
- * on how and when to use it 
- *
+ * see : http://www.eclipse.org/Xtext/documentation/latest/xtext.html#scoping on
+ * how and when to use it
+ * 
  */
 @SuppressWarnings("restriction")
 public class GraphViewMappingScopeProvider extends XbaseScopeProvider {
 
+	@Inject
+	private ITypeProvider typeProvider;
+
 	@Override
 	protected IScope createLocalVarScope(EObject context, EReference reference,
 			IScope parentScope, boolean includeCurrentBlock, int idx) {
-		if(context instanceof DiagramMapping) {
-			return new SimpleScope(parentScope, Collections.singleton(EObjectDescription.create(XbaseScopeProvider.THIS, context)));
-		} else if(context instanceof AbstractExpressionMapping) {
+		if (context instanceof DiagramMapping) {
+			return new SimpleScope(parentScope,
+					Collections.singleton(EObjectDescription.create(
+							XbaseScopeProvider.THIS, context)));
+		} else if (context instanceof AbstractExpressionMapping) {
 			EObject parent = context.eContainer();
-			if(parent != null)
-				return new SimpleScope(parentScope, Collections.singleton(EObjectDescription.create(XbaseScopeProvider.THIS, parent)));				
+			JvmTypeReference type = typeProvider
+					.getTypeForIdentifiable((JvmIdentifiableElement) parent);
+			if (type != null) {
+				if (parent instanceof AbstractExpressionMapping
+						&& ((AbstractExpressionMapping) parent).isMulti()
+						&& type instanceof JvmParameterizedTypeReference
+						&& !((JvmParameterizedTypeReference) type)
+								.getArguments().isEmpty()) {
+					IterableUnpacker iterableUnpacker = GraphViewMappingFactory.eINSTANCE
+							.createIterableUnpacker();
+					iterableUnpacker
+							.setMapping((AbstractExpressionMapping) parent);
+					return new SimpleScope(parentScope,
+							Collections.singleton(EObjectDescription.create(
+									XbaseScopeProvider.THIS, iterableUnpacker)));
+				}
+				return new SimpleScope(parentScope,
+						Collections.singleton(EObjectDescription.create(
+								XbaseScopeProvider.THIS, parent)));
+			}
 		}
 		return super.createLocalVarScope(context, reference, parentScope,
 				includeCurrentBlock, idx);

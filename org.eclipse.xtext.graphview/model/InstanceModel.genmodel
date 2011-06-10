@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.xtext.graphview/emf-gen"
+    editDirectory="" editorDirectory="" modelPluginID="org.eclipse.xtext.graphview"
+    modelName="InstanceModel" testsDirectory="" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false" usedGenPackages="../../org.eclipse.xtext.graphview.map/src/org/eclipse/xtext/graphview/map/GraphViewMapping.genmodel#//graphViewMapping platform:/plugin/org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types platform:/plugin/org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase">
+  <foreignModel>InstanceModel.ecore</foreignModel>
+  <genPackages prefix="Instancemodel" basePackage="org.eclipse.xtext.graphview" disposableProviderFactory="true"
+      ecorePackage="InstanceModel.ecore#/">
+    <genClasses ecoreClass="InstanceModel.ecore#//AbstractInstance">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference InstanceModel.ecore#//AbstractInstance/parent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InstanceModel.ecore#//AbstractInstance/children"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute InstanceModel.ecore#//AbstractInstance/semanticElement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InstanceModel.ecore#//AbstractInstance/mapping"/>
+    </genClasses>
+    <genClasses ecoreClass="InstanceModel.ecore#//DiagramInstance">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference InstanceModel.ecore#//DiagramInstance/edges"/>
+    </genClasses>
+    <genClasses ecoreClass="InstanceModel.ecore#//NodeInstance"/>
+    <genClasses ecoreClass="InstanceModel.ecore#//LabelInstance"/>
+    <genClasses ecoreClass="InstanceModel.ecore#//EdgeInstance">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InstanceModel.ecore#//EdgeInstance/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference InstanceModel.ecore#//EdgeInstance/target"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

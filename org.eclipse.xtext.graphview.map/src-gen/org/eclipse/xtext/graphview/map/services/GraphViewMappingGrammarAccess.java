@@ -122,37 +122,18 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 		public Keyword getAsteriskKeyword_1_1() { return cAsteriskKeyword_1_1; }
 	}
 
-	public class AbstractMappingElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AbstractMapping");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cAbstractExpressionMappingParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cDiagramMappingParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		
-		//AbstractMapping returns jvmTypes::JvmIdentifiableElement:
-		//	AbstractExpressionMapping | DiagramMapping;
-		public ParserRule getRule() { return rule; }
-
-		//AbstractExpressionMapping | DiagramMapping
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//AbstractExpressionMapping
-		public RuleCall getAbstractExpressionMappingParserRuleCall_0() { return cAbstractExpressionMappingParserRuleCall_0; }
-
-		//DiagramMapping
-		public RuleCall getDiagramMappingParserRuleCall_1() { return cDiagramMappingParserRuleCall_1; }
-	}
-
 	public class AbstractExpressionMappingElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AbstractExpressionMapping");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cNodeMappingParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cLabelMappingParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cEdgeMappingParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//AbstractExpressionMapping:
-		//	NodeMapping | LabelMapping;
+		//	NodeMapping | LabelMapping | EdgeMapping;
 		public ParserRule getRule() { return rule; }
 
-		//NodeMapping | LabelMapping
+		//NodeMapping | LabelMapping | EdgeMapping
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//NodeMapping
@@ -160,6 +141,9 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 
 		//LabelMapping
 		public RuleCall getLabelMappingParserRuleCall_1() { return cLabelMappingParserRuleCall_1; }
+
+		//EdgeMapping
+		public RuleCall getEdgeMappingParserRuleCall_2() { return cEdgeMappingParserRuleCall_2; }
 	}
 
 	public class NodeMappingElements extends AbstractParserRuleElementFinder {
@@ -174,15 +158,15 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 		private final Assignment cExpressionAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cExpressionXExpressionParserRuleCall_4_0 = (RuleCall)cExpressionAssignment_4.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cContentsAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cContentsAbstractExpressionMappingParserRuleCall_6_0 = (RuleCall)cContentsAssignment_6.eContents().get(0);
+		private final Assignment cMappingsAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cMappingsAbstractExpressionMappingParserRuleCall_6_0 = (RuleCall)cMappingsAssignment_6.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//NodeMapping:
-		//	"node" name=ID "for" multi?="each"? expression=XExpression "{" contents+=AbstractExpressionMapping* "}";
+		//	"node" name=ID "for" multi?="each"? expression=XExpression "{" mappings+=AbstractExpressionMapping* "}";
 		public ParserRule getRule() { return rule; }
 
-		//"node" name=ID "for" multi?="each"? expression=XExpression "{" contents+=AbstractExpressionMapping* "}"
+		//"node" name=ID "for" multi?="each"? expression=XExpression "{" mappings+=AbstractExpressionMapping* "}"
 		public Group getGroup() { return cGroup; }
 
 		//"node"
@@ -212,11 +196,11 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
 
-		//contents+=AbstractExpressionMapping*
-		public Assignment getContentsAssignment_6() { return cContentsAssignment_6; }
+		//mappings+=AbstractExpressionMapping*
+		public Assignment getMappingsAssignment_6() { return cMappingsAssignment_6; }
 
 		//AbstractExpressionMapping
-		public RuleCall getContentsAbstractExpressionMappingParserRuleCall_6_0() { return cContentsAbstractExpressionMappingParserRuleCall_6_0; }
+		public RuleCall getMappingsAbstractExpressionMappingParserRuleCall_6_0() { return cMappingsAbstractExpressionMappingParserRuleCall_6_0; }
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
@@ -265,15 +249,130 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 		//XExpression
 		public RuleCall getExpressionXExpressionParserRuleCall_4_0() { return cExpressionXExpressionParserRuleCall_4_0; }
 	}
+
+	public class EdgeMappingElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EdgeMapping");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cEdgeKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cForKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cMultiAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final Keyword cMultiEachKeyword_3_0 = (Keyword)cMultiAssignment_3.eContents().get(0);
+		private final Assignment cExpressionAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cExpressionXExpressionParserRuleCall_4_0 = (RuleCall)cExpressionAssignment_4.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cSourceMappingAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cSourceMappingEdgeEndMappingParserRuleCall_6_0 = (RuleCall)cSourceMappingAssignment_6.eContents().get(0);
+		private final Keyword cHyphenMinusGreaterThanSignKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cTargetMappingAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cTargetMappingEdgeEndMappingParserRuleCall_8_0 = (RuleCall)cTargetMappingAssignment_8.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		
+		//EdgeMapping:
+		//	"edge" name=ID "for" multi?="each"? expression=XExpression "{" sourceMapping=EdgeEndMapping? "->"
+		//	targetMapping=EdgeEndMapping "}";
+		public ParserRule getRule() { return rule; }
+
+		//"edge" name=ID "for" multi?="each"? expression=XExpression "{" sourceMapping=EdgeEndMapping? "->"
+		//targetMapping=EdgeEndMapping "}"
+		public Group getGroup() { return cGroup; }
+
+		//"edge"
+		public Keyword getEdgeKeyword_0() { return cEdgeKeyword_0; }
+
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+
+		//"for"
+		public Keyword getForKeyword_2() { return cForKeyword_2; }
+
+		//multi?="each"?
+		public Assignment getMultiAssignment_3() { return cMultiAssignment_3; }
+
+		//"each"
+		public Keyword getMultiEachKeyword_3_0() { return cMultiEachKeyword_3_0; }
+
+		//expression=XExpression
+		public Assignment getExpressionAssignment_4() { return cExpressionAssignment_4; }
+
+		//XExpression
+		public RuleCall getExpressionXExpressionParserRuleCall_4_0() { return cExpressionXExpressionParserRuleCall_4_0; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
+
+		//sourceMapping=EdgeEndMapping?
+		public Assignment getSourceMappingAssignment_6() { return cSourceMappingAssignment_6; }
+
+		//EdgeEndMapping
+		public RuleCall getSourceMappingEdgeEndMappingParserRuleCall_6_0() { return cSourceMappingEdgeEndMappingParserRuleCall_6_0; }
+
+		//"->"
+		public Keyword getHyphenMinusGreaterThanSignKeyword_7() { return cHyphenMinusGreaterThanSignKeyword_7; }
+
+		//targetMapping=EdgeEndMapping
+		public Assignment getTargetMappingAssignment_8() { return cTargetMappingAssignment_8; }
+
+		//EdgeEndMapping
+		public RuleCall getTargetMappingEdgeEndMappingParserRuleCall_8_0() { return cTargetMappingEdgeEndMappingParserRuleCall_8_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
+	}
+
+	public class EdgeEndMappingElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EdgeEndMapping");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cMappingAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final CrossReference cMappingNodeMappingCrossReference_0_0 = (CrossReference)cMappingAssignment_0.eContents().get(0);
+		private final RuleCall cMappingNodeMappingIDTerminalRuleCall_0_0_1 = (RuleCall)cMappingNodeMappingCrossReference_0_0.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cExpressionAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cExpressionXExpressionParserRuleCall_2_0 = (RuleCall)cExpressionAssignment_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//EdgeEndMapping:
+		//	mapping=[NodeMapping] "(" expression=XExpression ")";
+		public ParserRule getRule() { return rule; }
+
+		//mapping=[NodeMapping] "(" expression=XExpression ")"
+		public Group getGroup() { return cGroup; }
+
+		//mapping=[NodeMapping]
+		public Assignment getMappingAssignment_0() { return cMappingAssignment_0; }
+
+		//[NodeMapping]
+		public CrossReference getMappingNodeMappingCrossReference_0_0() { return cMappingNodeMappingCrossReference_0_0; }
+
+		//ID
+		public RuleCall getMappingNodeMappingIDTerminalRuleCall_0_0_1() { return cMappingNodeMappingIDTerminalRuleCall_0_0_1; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+
+		//expression=XExpression
+		public Assignment getExpressionAssignment_2() { return cExpressionAssignment_2; }
+
+		//XExpression
+		public RuleCall getExpressionXExpressionParserRuleCall_2_0() { return cExpressionXExpressionParserRuleCall_2_0; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+	}
 	
 	
 	private DiagramMappingElements pDiagramMapping;
 	private ImportElements pImport;
 	private QualifiedNameWithWildcardElements pQualifiedNameWithWildcard;
-	private AbstractMappingElements pAbstractMapping;
 	private AbstractExpressionMappingElements pAbstractExpressionMapping;
 	private NodeMappingElements pNodeMapping;
 	private LabelMappingElements pLabelMapping;
+	private EdgeMappingElements pEdgeMapping;
+	private EdgeEndMappingElements pEdgeEndMapping;
 	
 	private final GrammarProvider grammarProvider;
 
@@ -326,18 +425,8 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 		return getQualifiedNameWithWildcardAccess().getRule();
 	}
 
-	//AbstractMapping returns jvmTypes::JvmIdentifiableElement:
-	//	AbstractExpressionMapping | DiagramMapping;
-	public AbstractMappingElements getAbstractMappingAccess() {
-		return (pAbstractMapping != null) ? pAbstractMapping : (pAbstractMapping = new AbstractMappingElements());
-	}
-	
-	public ParserRule getAbstractMappingRule() {
-		return getAbstractMappingAccess().getRule();
-	}
-
 	//AbstractExpressionMapping:
-	//	NodeMapping | LabelMapping;
+	//	NodeMapping | LabelMapping | EdgeMapping;
 	public AbstractExpressionMappingElements getAbstractExpressionMappingAccess() {
 		return (pAbstractExpressionMapping != null) ? pAbstractExpressionMapping : (pAbstractExpressionMapping = new AbstractExpressionMappingElements());
 	}
@@ -347,7 +436,7 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 	}
 
 	//NodeMapping:
-	//	"node" name=ID "for" multi?="each"? expression=XExpression "{" contents+=AbstractExpressionMapping* "}";
+	//	"node" name=ID "for" multi?="each"? expression=XExpression "{" mappings+=AbstractExpressionMapping* "}";
 	public NodeMappingElements getNodeMappingAccess() {
 		return (pNodeMapping != null) ? pNodeMapping : (pNodeMapping = new NodeMappingElements());
 	}
@@ -364,6 +453,27 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 	
 	public ParserRule getLabelMappingRule() {
 		return getLabelMappingAccess().getRule();
+	}
+
+	//EdgeMapping:
+	//	"edge" name=ID "for" multi?="each"? expression=XExpression "{" sourceMapping=EdgeEndMapping? "->"
+	//	targetMapping=EdgeEndMapping "}";
+	public EdgeMappingElements getEdgeMappingAccess() {
+		return (pEdgeMapping != null) ? pEdgeMapping : (pEdgeMapping = new EdgeMappingElements());
+	}
+	
+	public ParserRule getEdgeMappingRule() {
+		return getEdgeMappingAccess().getRule();
+	}
+
+	//EdgeEndMapping:
+	//	mapping=[NodeMapping] "(" expression=XExpression ")";
+	public EdgeEndMappingElements getEdgeEndMappingAccess() {
+		return (pEdgeEndMapping != null) ? pEdgeEndMapping : (pEdgeEndMapping = new EdgeEndMappingElements());
+	}
+	
+	public ParserRule getEdgeEndMappingRule() {
+		return getEdgeEndMappingAccess().getRule();
 	}
 
 	//XExpression:

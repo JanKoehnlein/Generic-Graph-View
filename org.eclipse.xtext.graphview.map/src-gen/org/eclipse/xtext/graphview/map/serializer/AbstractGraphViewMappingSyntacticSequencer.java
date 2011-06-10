@@ -17,28 +17,30 @@ public class AbstractGraphViewMappingSyntacticSequencer extends AbstractSyntacti
 
 	protected GraphViewMappingGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_XBlockExpression_SemicolonKeyword_2_1_q;
-	protected AbstractElementAlias match_XBlockExpression_XParenthesizedExpression_LeftParenthesisKeyword_0_a_LeftCurlyBracketKeyword_1_RightCurlyBracketKeyword_3_RightParenthesisKeyword_2_p;
 	protected AbstractElementAlias match_XBlockExpression_XParenthesizedExpression_LeftParenthesisKeyword_0_p_LeftCurlyBracketKeyword_1_RightCurlyBracketKeyword_3_RightParenthesisKeyword_2_p;
 	protected AbstractElementAlias match_XBlockExpression_XParenthesizedExpression_SemicolonKeyword_2_1_q_RightCurlyBracketKeyword_3_RightParenthesisKeyword_2_p;
 	protected AbstractElementAlias match_XBooleanLiteral_XParenthesizedExpression_LeftParenthesisKeyword_0_a_FalseKeyword_1_0_RightParenthesisKeyword_2_p;
 	protected AbstractElementAlias match_XBooleanLiteral_XParenthesizedExpression_LeftParenthesisKeyword_0_p_FalseKeyword_1_0_RightParenthesisKeyword_2_p;
+	protected AbstractElementAlias match_XNullLiteral_XParenthesizedExpression_LeftParenthesisKeyword_0_a_NullKeyword_1_RightParenthesisKeyword_2_p;
 	protected AbstractElementAlias match_XNullLiteral_XParenthesizedExpression_LeftParenthesisKeyword_0_p_NullKeyword_1_RightParenthesisKeyword_2_p;
 	protected AbstractElementAlias match_XParenthesizedExpression_LeftParenthesisKeyword_0_a;
 	protected AbstractElementAlias match_XParenthesizedExpression_LeftParenthesisKeyword_0_p;
+	protected AbstractElementAlias match_XParenthesizedExpression_XReturnExpression_LeftParenthesisKeyword_0_a_ReturnKeyword_1_RightParenthesisKeyword_2_p;
 	protected AbstractElementAlias match_XParenthesizedExpression_XReturnExpression_LeftParenthesisKeyword_0_p_ReturnKeyword_1_RightParenthesisKeyword_2_p;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (GraphViewMappingGrammarAccess) access;
 		match_XBlockExpression_SemicolonKeyword_2_1_q = new TokenAlias(true, false, grammarAccess.getXBlockExpressionAccess().getSemicolonKeyword_2_1());
-		match_XBlockExpression_XParenthesizedExpression_LeftParenthesisKeyword_0_a_LeftCurlyBracketKeyword_1_RightCurlyBracketKeyword_3_RightParenthesisKeyword_2_p = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getXParenthesizedExpressionAccess().getLeftParenthesisKeyword_0()), new TokenAlias(false, false, grammarAccess.getXBlockExpressionAccess().getLeftCurlyBracketKeyword_1()), new TokenAlias(false, false, grammarAccess.getXBlockExpressionAccess().getRightCurlyBracketKeyword_3()), new TokenAlias(false, true, grammarAccess.getXParenthesizedExpressionAccess().getRightParenthesisKeyword_2()));
 		match_XBlockExpression_XParenthesizedExpression_LeftParenthesisKeyword_0_p_LeftCurlyBracketKeyword_1_RightCurlyBracketKeyword_3_RightParenthesisKeyword_2_p = new GroupAlias(false, false, new TokenAlias(false, true, grammarAccess.getXParenthesizedExpressionAccess().getLeftParenthesisKeyword_0()), new TokenAlias(false, false, grammarAccess.getXBlockExpressionAccess().getLeftCurlyBracketKeyword_1()), new TokenAlias(false, false, grammarAccess.getXBlockExpressionAccess().getRightCurlyBracketKeyword_3()), new TokenAlias(false, true, grammarAccess.getXParenthesizedExpressionAccess().getRightParenthesisKeyword_2()));
 		match_XBlockExpression_XParenthesizedExpression_SemicolonKeyword_2_1_q_RightCurlyBracketKeyword_3_RightParenthesisKeyword_2_p = new GroupAlias(false, false, new TokenAlias(true, false, grammarAccess.getXBlockExpressionAccess().getSemicolonKeyword_2_1()), new TokenAlias(false, false, grammarAccess.getXBlockExpressionAccess().getRightCurlyBracketKeyword_3()), new TokenAlias(false, true, grammarAccess.getXParenthesizedExpressionAccess().getRightParenthesisKeyword_2()));
 		match_XBooleanLiteral_XParenthesizedExpression_LeftParenthesisKeyword_0_a_FalseKeyword_1_0_RightParenthesisKeyword_2_p = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getXParenthesizedExpressionAccess().getLeftParenthesisKeyword_0()), new TokenAlias(false, false, grammarAccess.getXBooleanLiteralAccess().getFalseKeyword_1_0()), new TokenAlias(false, true, grammarAccess.getXParenthesizedExpressionAccess().getRightParenthesisKeyword_2()));
 		match_XBooleanLiteral_XParenthesizedExpression_LeftParenthesisKeyword_0_p_FalseKeyword_1_0_RightParenthesisKeyword_2_p = new GroupAlias(false, false, new TokenAlias(false, true, grammarAccess.getXParenthesizedExpressionAccess().getLeftParenthesisKeyword_0()), new TokenAlias(false, false, grammarAccess.getXBooleanLiteralAccess().getFalseKeyword_1_0()), new TokenAlias(false, true, grammarAccess.getXParenthesizedExpressionAccess().getRightParenthesisKeyword_2()));
+		match_XNullLiteral_XParenthesizedExpression_LeftParenthesisKeyword_0_a_NullKeyword_1_RightParenthesisKeyword_2_p = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getXParenthesizedExpressionAccess().getLeftParenthesisKeyword_0()), new TokenAlias(false, false, grammarAccess.getXNullLiteralAccess().getNullKeyword_1()), new TokenAlias(false, true, grammarAccess.getXParenthesizedExpressionAccess().getRightParenthesisKeyword_2()));
 		match_XNullLiteral_XParenthesizedExpression_LeftParenthesisKeyword_0_p_NullKeyword_1_RightParenthesisKeyword_2_p = new GroupAlias(false, false, new TokenAlias(false, true, grammarAccess.getXParenthesizedExpressionAccess().getLeftParenthesisKeyword_0()), new TokenAlias(false, false, grammarAccess.getXNullLiteralAccess().getNullKeyword_1()), new TokenAlias(false, true, grammarAccess.getXParenthesizedExpressionAccess().getRightParenthesisKeyword_2()));
 		match_XParenthesizedExpression_LeftParenthesisKeyword_0_a = new TokenAlias(true, true, grammarAccess.getXParenthesizedExpressionAccess().getLeftParenthesisKeyword_0());
 		match_XParenthesizedExpression_LeftParenthesisKeyword_0_p = new TokenAlias(false, true, grammarAccess.getXParenthesizedExpressionAccess().getLeftParenthesisKeyword_0());
+		match_XParenthesizedExpression_XReturnExpression_LeftParenthesisKeyword_0_a_ReturnKeyword_1_RightParenthesisKeyword_2_p = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getXParenthesizedExpressionAccess().getLeftParenthesisKeyword_0()), new TokenAlias(false, false, grammarAccess.getXReturnExpressionAccess().getReturnKeyword_1()), new TokenAlias(false, true, grammarAccess.getXParenthesizedExpressionAccess().getRightParenthesisKeyword_2()));
 		match_XParenthesizedExpression_XReturnExpression_LeftParenthesisKeyword_0_p_ReturnKeyword_1_RightParenthesisKeyword_2_p = new GroupAlias(false, false, new TokenAlias(false, true, grammarAccess.getXParenthesizedExpressionAccess().getLeftParenthesisKeyword_0()), new TokenAlias(false, false, grammarAccess.getXReturnExpressionAccess().getReturnKeyword_1()), new TokenAlias(false, true, grammarAccess.getXParenthesizedExpressionAccess().getRightParenthesisKeyword_2()));
 	}
 	
@@ -61,8 +63,6 @@ public class AbstractGraphViewMappingSyntacticSequencer extends AbstractSyntacti
 			return;
 		if(match_XBlockExpression_SemicolonKeyword_2_1_q.equals(transition.getAmbiguousSyntax()))
 			emit_XBlockExpression_SemicolonKeyword_2_1_q(semanticObject, transition, fromNode, toNode);
-		else if(match_XBlockExpression_XParenthesizedExpression_LeftParenthesisKeyword_0_a_LeftCurlyBracketKeyword_1_RightCurlyBracketKeyword_3_RightParenthesisKeyword_2_p.equals(transition.getAmbiguousSyntax()))
-			emit_XBlockExpression_XParenthesizedExpression_LeftParenthesisKeyword_0_a_LeftCurlyBracketKeyword_1_RightCurlyBracketKeyword_3_RightParenthesisKeyword_2_p(semanticObject, transition, fromNode, toNode);
 		else if(match_XBlockExpression_XParenthesizedExpression_LeftParenthesisKeyword_0_p_LeftCurlyBracketKeyword_1_RightCurlyBracketKeyword_3_RightParenthesisKeyword_2_p.equals(transition.getAmbiguousSyntax()))
 			emit_XBlockExpression_XParenthesizedExpression_LeftParenthesisKeyword_0_p_LeftCurlyBracketKeyword_1_RightCurlyBracketKeyword_3_RightParenthesisKeyword_2_p(semanticObject, transition, fromNode, toNode);
 		else if(match_XBlockExpression_XParenthesizedExpression_SemicolonKeyword_2_1_q_RightCurlyBracketKeyword_3_RightParenthesisKeyword_2_p.equals(transition.getAmbiguousSyntax()))
@@ -71,12 +71,16 @@ public class AbstractGraphViewMappingSyntacticSequencer extends AbstractSyntacti
 			emit_XBooleanLiteral_XParenthesizedExpression_LeftParenthesisKeyword_0_a_FalseKeyword_1_0_RightParenthesisKeyword_2_p(semanticObject, transition, fromNode, toNode);
 		else if(match_XBooleanLiteral_XParenthesizedExpression_LeftParenthesisKeyword_0_p_FalseKeyword_1_0_RightParenthesisKeyword_2_p.equals(transition.getAmbiguousSyntax()))
 			emit_XBooleanLiteral_XParenthesizedExpression_LeftParenthesisKeyword_0_p_FalseKeyword_1_0_RightParenthesisKeyword_2_p(semanticObject, transition, fromNode, toNode);
+		else if(match_XNullLiteral_XParenthesizedExpression_LeftParenthesisKeyword_0_a_NullKeyword_1_RightParenthesisKeyword_2_p.equals(transition.getAmbiguousSyntax()))
+			emit_XNullLiteral_XParenthesizedExpression_LeftParenthesisKeyword_0_a_NullKeyword_1_RightParenthesisKeyword_2_p(semanticObject, transition, fromNode, toNode);
 		else if(match_XNullLiteral_XParenthesizedExpression_LeftParenthesisKeyword_0_p_NullKeyword_1_RightParenthesisKeyword_2_p.equals(transition.getAmbiguousSyntax()))
 			emit_XNullLiteral_XParenthesizedExpression_LeftParenthesisKeyword_0_p_NullKeyword_1_RightParenthesisKeyword_2_p(semanticObject, transition, fromNode, toNode);
 		else if(match_XParenthesizedExpression_LeftParenthesisKeyword_0_a.equals(transition.getAmbiguousSyntax()))
 			emit_XParenthesizedExpression_LeftParenthesisKeyword_0_a(semanticObject, transition, fromNode, toNode);
 		else if(match_XParenthesizedExpression_LeftParenthesisKeyword_0_p.equals(transition.getAmbiguousSyntax()))
 			emit_XParenthesizedExpression_LeftParenthesisKeyword_0_p(semanticObject, transition, fromNode, toNode);
+		else if(match_XParenthesizedExpression_XReturnExpression_LeftParenthesisKeyword_0_a_ReturnKeyword_1_RightParenthesisKeyword_2_p.equals(transition.getAmbiguousSyntax()))
+			emit_XParenthesizedExpression_XReturnExpression_LeftParenthesisKeyword_0_a_ReturnKeyword_1_RightParenthesisKeyword_2_p(semanticObject, transition, fromNode, toNode);
 		else if(match_XParenthesizedExpression_XReturnExpression_LeftParenthesisKeyword_0_p_ReturnKeyword_1_RightParenthesisKeyword_2_p.equals(transition.getAmbiguousSyntax()))
 			emit_XParenthesizedExpression_XReturnExpression_LeftParenthesisKeyword_0_p_ReturnKeyword_1_RightParenthesisKeyword_2_p(semanticObject, transition, fromNode, toNode);
 		else acceptNodes(transition, fromNode, toNode);
@@ -87,14 +91,6 @@ public class AbstractGraphViewMappingSyntacticSequencer extends AbstractSyntacti
 	 *     ';'?
 	 */
 	protected void emit_XBlockExpression_SemicolonKeyword_2_1_q(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
-		acceptNodes(transition, fromNode, toNode);
-	}
-	
-	/**
-	 * Syntax:
-	 *     '('* '{' '}' ')'+
-	 */
-	protected void emit_XBlockExpression_XParenthesizedExpression_LeftParenthesisKeyword_0_a_LeftCurlyBracketKeyword_1_RightCurlyBracketKeyword_3_RightParenthesisKeyword_2_p(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
 		acceptNodes(transition, fromNode, toNode);
 	}
 	
@@ -132,6 +128,14 @@ public class AbstractGraphViewMappingSyntacticSequencer extends AbstractSyntacti
 	
 	/**
 	 * Syntax:
+	 *     '('* 'null' ')'+
+	 */
+	protected void emit_XNullLiteral_XParenthesizedExpression_LeftParenthesisKeyword_0_a_NullKeyword_1_RightParenthesisKeyword_2_p(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
 	 *     '('+ 'null' ')'+
 	 */
 	protected void emit_XNullLiteral_XParenthesizedExpression_LeftParenthesisKeyword_0_p_NullKeyword_1_RightParenthesisKeyword_2_p(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
@@ -151,6 +155,14 @@ public class AbstractGraphViewMappingSyntacticSequencer extends AbstractSyntacti
 	 *     '('+
 	 */
 	protected void emit_XParenthesizedExpression_LeftParenthesisKeyword_0_p(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     '('* 'return' ')'+
+	 */
+	protected void emit_XParenthesizedExpression_XReturnExpression_LeftParenthesisKeyword_0_a_ReturnKeyword_1_RightParenthesisKeyword_2_p(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
 		acceptNodes(transition, fromNode, toNode);
 	}
 	

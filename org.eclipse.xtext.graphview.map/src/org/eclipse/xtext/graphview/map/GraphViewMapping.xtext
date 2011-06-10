@@ -1,6 +1,6 @@
 grammar org.eclipse.xtext.graphview.map.GraphViewMapping with org.eclipse.xtext.xbase.Xbase
 
-generate graphViewMapping "http://www.eclipse.org/xtext/graphview/map/GraphViewMapping"
+import "platform:/resource/org.eclipse.xtext.graphview.map/src/org/eclipse/xtext/graphview/map/GraphViewMapping.ecore"
 import "http://www.eclipse.org/xtext/xbase/Xbase" as xbase
 import "http://www.eclipse.org/xtext/common/JavaVMTypes" as jvmTypes
 import "http://www.eclipse.org/emf/2002/Ecore"
@@ -16,17 +16,22 @@ Import:
 QualifiedNameWithWildcard:
 	QualifiedName ('.' '*')?;
 
-AbstractMapping returns jvmTypes::JvmIdentifiableElement:
-	AbstractExpressionMapping | DiagramMapping;
-	
 AbstractExpressionMapping:
-	NodeMapping | LabelMapping;
+	NodeMapping | LabelMapping | EdgeMapping;
 	
 NodeMapping:
 	'node' name=ID 'for' (multi?='each')? expression=XExpression '{'
-		contents+=AbstractExpressionMapping*
+		mappings+=AbstractExpressionMapping*
 	'}';
 
 LabelMapping:
 	'label' name=ID 'for' (multi?='each')? expression=XExpression;
+
+EdgeMapping:
+	'edge' name=ID 'for' (multi?='each')? expression=XExpression '{'
+		(sourceMapping=EdgeEndMapping)? '->' targetMapping=EdgeEndMapping
+	'}';
 	
+EdgeEndMapping:
+	mapping=[NodeMapping] '(' expression=XExpression ')';
+

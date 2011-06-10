@@ -11,6 +11,8 @@ import org.eclipse.xtext.common.types.JvmUpperBound;
 import org.eclipse.xtext.common.types.JvmWildcardTypeReference;
 import org.eclipse.xtext.common.types.TypesPackage;
 import org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping;
+import org.eclipse.xtext.graphview.map.graphViewMapping.EdgeEndMapping;
+import org.eclipse.xtext.graphview.map.graphViewMapping.EdgeMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage;
 import org.eclipse.xtext.graphview.map.graphViewMapping.Import;
 import org.eclipse.xtext.graphview.map.graphViewMapping.LabelMapping;
@@ -92,9 +94,21 @@ public class AbstractGraphViewMappingSemanticSequencer extends AbstractSemanticS
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == GraphViewMappingPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case GraphViewMappingPackage.DIAGRAM_MAPPING:
-				if(context == grammarAccess.getDiagramMappingRule() ||
-				   context == grammarAccess.getAbstractMappingRule()) {
+				if(context == grammarAccess.getDiagramMappingRule()) {
 					sequence_DiagramMapping_DiagramMapping(context, (DiagramMapping) semanticObject); 
+					return; 
+				}
+				else break;
+			case GraphViewMappingPackage.EDGE_END_MAPPING:
+				if(context == grammarAccess.getEdgeEndMappingRule()) {
+					sequence_EdgeEndMapping_EdgeEndMapping(context, (EdgeEndMapping) semanticObject); 
+					return; 
+				}
+				else break;
+			case GraphViewMappingPackage.EDGE_MAPPING:
+				if(context == grammarAccess.getAbstractExpressionMappingRule() ||
+				   context == grammarAccess.getEdgeMappingRule()) {
+					sequence_EdgeMapping_EdgeMapping(context, (EdgeMapping) semanticObject); 
 					return; 
 				}
 				else break;
@@ -105,16 +119,14 @@ public class AbstractGraphViewMappingSemanticSequencer extends AbstractSemanticS
 				}
 				else break;
 			case GraphViewMappingPackage.LABEL_MAPPING:
-				if(context == grammarAccess.getAbstractMappingRule() ||
-				   context == grammarAccess.getAbstractExpressionMappingRule() ||
+				if(context == grammarAccess.getAbstractExpressionMappingRule() ||
 				   context == grammarAccess.getLabelMappingRule()) {
 					sequence_LabelMapping_LabelMapping(context, (LabelMapping) semanticObject); 
 					return; 
 				}
 				else break;
 			case GraphViewMappingPackage.NODE_MAPPING:
-				if(context == grammarAccess.getAbstractMappingRule() ||
-				   context == grammarAccess.getAbstractExpressionMappingRule() ||
+				if(context == grammarAccess.getAbstractExpressionMappingRule() ||
 				   context == grammarAccess.getNodeMappingRule()) {
 					sequence_NodeMapping_NodeMapping(context, (NodeMapping) semanticObject); 
 					return; 
@@ -149,12 +161,12 @@ public class AbstractGraphViewMappingSemanticSequencer extends AbstractSemanticS
 				}
 				else break;
 			case TypesPackage.JVM_UPPER_BOUND:
-				if(context == grammarAccess.getJvmUpperBoundRule()) {
-					sequence_JvmUpperBound_JvmUpperBound(context, (JvmUpperBound) semanticObject); 
+				if(context == grammarAccess.getJvmUpperBoundAndedRule()) {
+					sequence_JvmUpperBoundAnded_JvmUpperBound(context, (JvmUpperBound) semanticObject); 
 					return; 
 				}
-				else if(context == grammarAccess.getJvmUpperBoundAndedRule()) {
-					sequence_JvmUpperBoundAnded_JvmUpperBound(context, (JvmUpperBound) semanticObject); 
+				else if(context == grammarAccess.getJvmUpperBoundRule()) {
+					sequence_JvmUpperBound_JvmUpperBound(context, (JvmUpperBound) semanticObject); 
 					return; 
 				}
 				else break;
@@ -968,12 +980,41 @@ public class AbstractGraphViewMappingSemanticSequencer extends AbstractSemanticS
 	 *     (imports+=Import* name=QualifiedName typeGuard=JvmTypeReference mappings+=AbstractExpressionMapping*)
 	 *
 	 * Features:
-	 *    imports[0, *]
-	 *    name[1, 1]
-	 *    typeGuard[1, 1]
 	 *    mappings[0, *]
+	 *    name[1, 1]
+	 *    imports[0, *]
+	 *    typeGuard[1, 1]
 	 */
 	protected void sequence_DiagramMapping_DiagramMapping(EObject context, DiagramMapping semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (mapping=[NodeMapping|ID] expression=XExpression)
+	 *
+	 * Features:
+	 *    expression[1, 1]
+	 *    mapping[1, 1]
+	 */
+	protected void sequence_EdgeEndMapping_EdgeEndMapping(EObject context, EdgeEndMapping semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID multi?='each'? expression=XExpression sourceMapping=EdgeEndMapping? targetMapping=EdgeEndMapping)
+	 *
+	 * Features:
+	 *    name[1, 1]
+	 *    multi[0, 1]
+	 *    expression[1, 1]
+	 *    sourceMapping[0, 1]
+	 *    targetMapping[1, 1]
+	 */
+	protected void sequence_EdgeMapping_EdgeMapping(EObject context, EdgeMapping semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1100,13 +1141,13 @@ public class AbstractGraphViewMappingSemanticSequencer extends AbstractSemanticS
 	
 	/**
 	 * Constraint:
-	 *     (name=ID multi?='each'? expression=XExpression contents+=AbstractExpressionMapping*)
+	 *     (name=ID multi?='each'? expression=XExpression mappings+=AbstractExpressionMapping*)
 	 *
 	 * Features:
+	 *    mappings[0, *]
 	 *    name[1, 1]
 	 *    multi[0, 1]
 	 *    expression[1, 1]
-	 *    contents[0, *]
 	 */
 	protected void sequence_NodeMapping_NodeMapping(EObject context, NodeMapping semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

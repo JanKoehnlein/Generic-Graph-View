@@ -2,16 +2,15 @@ package org.eclipse.xtext.graphview.editpart;
 
 import java.util.List;
 
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.editparts.AbstractGraphicalEditPart;
-import org.eclipse.xtext.graphview.model.InstanceModel;
+import org.eclipse.xtext.graphview.instancemodel.AbstractInstance;
 
 public abstract class AbstractMappingEditPart extends AbstractGraphicalEditPart {
 
 	@Override
 	public void setModel(Object model) {
-		if (!(model instanceof InstanceModel))
-			throw new RuntimeException("Model must be an InstanceMapping");
+		if (!(model instanceof AbstractInstance))
+			throw new RuntimeException("Model must be an AbstractInstance");
 		super.setModel(model);
 	}
 
@@ -19,12 +18,8 @@ public abstract class AbstractMappingEditPart extends AbstractGraphicalEditPart 
 		return getInstanceModel().getSemanticElement();
 	}
 
-	protected EObject getMapping() {
-		return getInstanceModel().getMappingElement();
-	}
-
-	private InstanceModel getInstanceModel() {
-		return (InstanceModel) getModel();
+	private AbstractInstance getInstanceModel() {
+		return (AbstractInstance) getModel();
 	}
 
 	@Override

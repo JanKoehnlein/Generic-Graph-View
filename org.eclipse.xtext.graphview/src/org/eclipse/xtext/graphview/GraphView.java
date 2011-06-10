@@ -10,9 +10,10 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.part.ViewPart;
 import org.eclipse.xtext.graphview.editpart.GraphViewEditPartFactory;
+import org.eclipse.xtext.graphview.instancemodel.DiagramInstance;
 import org.eclipse.xtext.graphview.model.IGraphViewDefinitionProvider;
 import org.eclipse.xtext.graphview.model.IGraphViewDefinitionProvider.Listener;
-import org.eclipse.xtext.graphview.model.IInstanceModel;
+import org.eclipse.xtext.graphview.model.ModelInstantiator;
 
 import com.google.inject.Inject;
 
@@ -25,7 +26,7 @@ public class GraphView extends ViewPart {
 	private IGraphViewDefinitionProvider graphViewDefinitionProvider;
 
 	@Inject
-	IInstanceModel.Factory instanceModelFactory;
+	private ModelInstantiator modelInstantiator;
 
 	private DefaultEditDomain editDomain;
 
@@ -62,7 +63,7 @@ public class GraphView extends ViewPart {
 	}
 
 	protected void setViewerContents() {
-		IInstanceModel instanceModel = instanceModelFactory.create(
+		DiagramInstance instanceModel = modelInstantiator.createInstance(
 				graphViewDefinitionProvider.getDiagramMapping(),
 				currentContents);
 		graphicalViewer.setContents(instanceModel);
