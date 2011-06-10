@@ -6,7 +6,7 @@ import org.eclipse.gef.EditPartFactory;
 import org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.LabelMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.NodeMapping;
-import org.eclipse.xtext.graphview.model.InstanceMapping;
+import org.eclipse.xtext.graphview.model.InstanceModel;
 
 import com.google.inject.Inject;
 import com.google.inject.Provider;
@@ -25,9 +25,9 @@ public class GraphViewEditPartFactory implements EditPartFactory {
 	@Override
 	public EditPart createEditPart(EditPart parent, Object model) {
 		EditPart editPart = null;
-		if (model instanceof InstanceMapping) {
-			InstanceMapping instanceMapping = (InstanceMapping) model;
-			EObject mapping = instanceMapping.getMapping();
+		if (model instanceof InstanceModel) {
+			InstanceModel instanceMapping = (InstanceModel) model;
+			EObject mapping = instanceMapping.getMappingElement();
 			if (mapping instanceof DiagramMapping) {
 				editPart = diagramEditPartProvider.get();
 			} else if (mapping instanceof NodeMapping) {

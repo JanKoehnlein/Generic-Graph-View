@@ -12,7 +12,7 @@ import org.eclipse.ui.part.ViewPart;
 import org.eclipse.xtext.graphview.editpart.GraphViewEditPartFactory;
 import org.eclipse.xtext.graphview.model.IGraphViewDefinitionProvider;
 import org.eclipse.xtext.graphview.model.IGraphViewDefinitionProvider.Listener;
-import org.eclipse.xtext.graphview.model.InstanceMapping;
+import org.eclipse.xtext.graphview.model.IInstanceModel;
 
 import com.google.inject.Inject;
 
@@ -23,12 +23,15 @@ public class GraphView extends ViewPart {
 
 	@Inject
 	private IGraphViewDefinitionProvider graphViewDefinitionProvider;
-	
+
+	@Inject
+	IInstanceModel.Factory instanceModelFactory;
+
 	private DefaultEditDomain editDomain;
 
 	private GraphicalViewer graphicalViewer;
-	
-	private Object currentContents = EcorePackage.eINSTANCE;//Lists.newArrayList(new Object(), new Object(), new Object());
+
+	private Object currentContents = EcorePackage.eINSTANCE;
 
 	@Override
 	public void createPartControl(Composite parent) {
@@ -41,7 +44,7 @@ public class GraphView extends ViewPart {
 				getDisplay().asyncExec(new Runnable() {
 					@Override
 					public void run() {
-						setViewerContents();						
+						setViewerContents();
 					}
 				});
 			}
@@ -57,12 +60,14 @@ public class GraphView extends ViewPart {
 				ColorConstants.listBackground);
 		return graphicalViewer;
 	}
-	
+
 	protected void setViewerContents() {
-		InstanceMapping viewerContents = new InstanceMapping(graphViewDefinitionProvider.getDiagramMapping(), currentContents);
-		graphicalViewer.setContents(viewerContents);
+		IInstanceModel instanceModel = instanceModelFactory.create(
+				graphViewDefinitionProvider.getDiagramMapping(),
+				currentContents);
+		graphicalViewer.setContents(instanceModel);
 	}
-	
+
 	protected DefaultEditDomain getEditDomain() {
 		return this.editDomain;
 	}
@@ -88,5 +93,5 @@ public class GraphView extends ViewPart {
 	protected Display getDisplay() {
 		return getSite().getWorkbenchWindow().getShell().getDisplay();
 	}
-	
+
 }
