@@ -1,0 +1,28 @@
+grammar org.eclipse.xtext.graphview.style.GraphViewStyle with org.eclipse.xtext.xbase.Xbase
+
+generate graphViewStyle "http://www.xtext.org/graphview/style/GraphViewStyle"
+import "http://www.eclipse.org/xtext/xbase/Xbase" as xbase
+import "http://www.eclipse.org/xtext/common/JavaVMTypes" as jvmTypes
+//import "platform:/resource/org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/GraphViewMapping.ecore"
+import "http://www.eclipse.org/emf/2002/Ecore"
+
+StyleSheet:
+	'stylesheet' name=QualifiedName
+	imports+=Import*
+	styles+=Style*;
+	
+Import:
+	'import' importedNamespace=QualifiedNameWithWildcard;
+
+QualifiedNameWithWildcard:
+	QualifiedName ('.' '*')?;
+	 
+Style:
+	name=ID // should become a crossref to a Mapping ID
+	javaClass=JvmTypeReference
+	'{' 
+		settings+=Setting*
+	'}';
+	
+Setting returns xbase::XAssignment:
+	feature=[jvmTypes::JvmIdentifiableElement|QualifiedName] ':' value=XExpression;

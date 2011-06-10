@@ -1,0 +1,32 @@
+grammar org.eclipse.xtext.graphview.map.GraphViewMapping with org.eclipse.xtext.xbase.Xbase
+
+generate graphViewMapping "http://www.eclipse.org/xtext/graphview/map/GraphViewMapping"
+import "http://www.eclipse.org/xtext/xbase/Xbase" as xbase
+import "http://www.eclipse.org/xtext/common/JavaVMTypes" as jvmTypes
+import "http://www.eclipse.org/emf/2002/Ecore"
+
+DiagramMapping:
+	imports+=Import*
+	'diagram' name=QualifiedName 'type' typeGuard=JvmTypeReference 
+	mappings+=AbstractExpressionMapping*;
+
+Import:
+	'import' importedNamespace=QualifiedNameWithWildcard;
+
+QualifiedNameWithWildcard:
+	QualifiedName ('.' '*')?;
+
+AbstractMapping returns jvmTypes::JvmIdentifiableElement:
+	AbstractExpressionMapping | DiagramMapping;
+	
+AbstractExpressionMapping:
+	NodeMapping | LabelMapping;
+	
+NodeMapping:
+	'node' name=ID 'for' (multi?='each')? expression=XExpression '{'
+		contents+=AbstractExpressionMapping*
+	'}';
+
+LabelMapping:
+	'label' name=ID 'for' (multi?='each')? expression=XExpression;
+	

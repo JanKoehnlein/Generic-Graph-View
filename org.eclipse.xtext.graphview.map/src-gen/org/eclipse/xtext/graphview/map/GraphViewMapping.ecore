@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="graphViewMapping"
+    nsURI="http://www.eclipse.org/xtext/graphview/map/GraphViewMapping" nsPrefix="graphViewMapping">
+  <eClassifiers xsi:type="ecore:EClass" name="DiagramMapping" eSuperTypes="platform:/resource/org.eclipse.xtext.common.types/model/JavaVMTypes.ecore#//JvmIdentifiableElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
+        eType="ecore:EClass platform:/resource/org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/GraphViewMapping.ecore#//Import"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="typeGuard" eType="ecore:EClass platform:/resource/org.eclipse.xtext.common.types/model/JavaVMTypes.ecore#//JvmParameterizedTypeReference"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mappings" upperBound="-1"
+        eType="ecore:EClass platform:/resource/org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/GraphViewMapping.ecore#//AbstractExpressionMapping"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Import">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="importedNamespace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractExpressionMapping" eSuperTypes="platform:/resource/org.eclipse.xtext.common.types/model/JavaVMTypes.ecore#//JvmIdentifiableElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="multi" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="ecore:EClass platform:/resource/org.eclipse.xtext.xbase/model/Xbase.ecore#//XExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NodeMapping" eSuperTypes="platform:/resource/org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/GraphViewMapping.ecore#//AbstractExpressionMapping">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contents" upperBound="-1"
+        eType="ecore:EClass platform:/resource/org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/GraphViewMapping.ecore#//AbstractExpressionMapping"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LabelMapping" eSuperTypes="platform:/resource/org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/GraphViewMapping.ecore#//AbstractExpressionMapping"/>
+</ecore:EPackage>

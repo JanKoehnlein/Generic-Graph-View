@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="graphViewStyle"
+    nsURI="http://www.xtext.org/graphview/style/GraphViewStyle" nsPrefix="graphViewStyle">
+  <eClassifiers xsi:type="ecore:EClass" name="StyleSheet">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
+        eType="ecore:EClass platform:/resource/org.eclipse.xtext.graphview.style/src-gen/org/eclipse/xtext/graphview/style/GraphViewStyle.ecore#//Import"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="styles" upperBound="-1"
+        eType="ecore:EClass platform:/resource/org.eclipse.xtext.graphview.style/src-gen/org/eclipse/xtext/graphview/style/GraphViewStyle.ecore#//Style"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Import">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="importedNamespace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Style">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="javaClass" eType="ecore:EClass platform:/resource/org.eclipse.xtext.common.types/model/JavaVMTypes.ecore#//JvmParameterizedTypeReference"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="settings" upperBound="-1"
+        eType="ecore:EClass platform:/resource/org.eclipse.xtext.xbase/model/Xbase.ecore#//XAssignment"
+        containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

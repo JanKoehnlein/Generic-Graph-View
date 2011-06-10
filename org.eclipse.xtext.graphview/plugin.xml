@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            category="org.eclipse.xtext.viewCategory"
+            class="org.eclipse.xtext.graphview.GraphViewExecutableExtensionFactory:org.eclipse.xtext.graphview.GraphView"
+            id="org.eclipse.xtext.graphview.view"
+            name="Generic Graph View"
+            restorable="true">
+      </view>
+   </extension>
+
+</plugin>
