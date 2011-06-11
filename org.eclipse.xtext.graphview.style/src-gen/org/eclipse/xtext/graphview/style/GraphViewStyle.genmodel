@@ -10,8 +10,8 @@
   <genPackages prefix="GraphViewStyle" basePackage="org.eclipse.xtext.graphview.style"
       disposableProviderFactory="true" ecorePackage="platform:/resource/org.eclipse.xtext.graphview.style/src-gen/org/eclipse/xtext/graphview/style/GraphViewStyle.ecore#/">
     <genClasses ecoreClass="platform:/resource/org.eclipse.xtext.graphview.style/src-gen/org/eclipse/xtext/graphview/style/GraphViewStyle.ecore#//StyleSheet">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.eclipse.xtext.graphview.style/src-gen/org/eclipse/xtext/graphview/style/GraphViewStyle.ecore#//StyleSheet/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/org.eclipse.xtext.graphview.style/src-gen/org/eclipse/xtext/graphview/style/GraphViewStyle.ecore#//StyleSheet/imports"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.eclipse.xtext.graphview.style/src-gen/org/eclipse/xtext/graphview/style/GraphViewStyle.ecore#//StyleSheet/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/org.eclipse.xtext.graphview.style/src-gen/org/eclipse/xtext/graphview/style/GraphViewStyle.ecore#//StyleSheet/styles"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/org.eclipse.xtext.graphview.style/src-gen/org/eclipse/xtext/graphview/style/GraphViewStyle.ecore#//Import">

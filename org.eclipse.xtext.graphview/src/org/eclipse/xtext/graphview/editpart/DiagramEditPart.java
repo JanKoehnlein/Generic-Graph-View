@@ -1,10 +1,9 @@
 package org.eclipse.xtext.graphview.editpart;
 
-import org.eclipse.draw2d.FreeformLayer;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.xtext.graphview.editpolicy.DiagramLayoutEditPolicy;
-import org.eclipse.xtext.graphview.figure.DiagramLayout;
+import org.eclipse.xtext.graphview.shape.DiagramShape;
 
 public class DiagramEditPart extends AbstractMappingEditPart {
 
@@ -14,10 +13,8 @@ public class DiagramEditPart extends AbstractMappingEditPart {
 	}
 
 	@Override
-	protected IFigure createFigure() {
-		FreeformLayer freeformLayer = new FreeformLayer();
-		freeformLayer.setLayoutManager(new DiagramLayout());
-		return freeformLayer;
+	public IFigure createDefaultFigure() {
+		return new DiagramShape();
 	}
 
 }

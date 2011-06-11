@@ -70,22 +70,22 @@ public interface GraphViewStylePackage extends EPackage
   int STYLE_SHEET = 0;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STYLE_SHEET__NAME = 0;
-
-  /**
    * The feature id for the '<em><b>Imports</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STYLE_SHEET__IMPORTS = 1;
+  int STYLE_SHEET__IMPORTS = 0;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STYLE_SHEET__NAME = 1;
 
   /**
    * The feature id for the '<em><b>Styles</b></em>' containment reference list.
@@ -191,17 +191,6 @@ public interface GraphViewStylePackage extends EPackage
   EClass getStyleSheet();
 
   /**
-   * Returns the meta object for the attribute '{@link org.eclipse.xtext.graphview.style.graphViewStyle.StyleSheet#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.eclipse.xtext.graphview.style.graphViewStyle.StyleSheet#getName()
-   * @see #getStyleSheet()
-   * @generated
-   */
-  EAttribute getStyleSheet_Name();
-
-  /**
    * Returns the meta object for the containment reference list '{@link org.eclipse.xtext.graphview.style.graphViewStyle.StyleSheet#getImports <em>Imports</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -211,6 +200,17 @@ public interface GraphViewStylePackage extends EPackage
    * @generated
    */
   EReference getStyleSheet_Imports();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.eclipse.xtext.graphview.style.graphViewStyle.StyleSheet#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.eclipse.xtext.graphview.style.graphViewStyle.StyleSheet#getName()
+   * @see #getStyleSheet()
+   * @generated
+   */
+  EAttribute getStyleSheet_Name();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.eclipse.xtext.graphview.style.graphViewStyle.StyleSheet#getStyles <em>Styles</em>}'.
@@ -321,20 +321,20 @@ public interface GraphViewStylePackage extends EPackage
     EClass STYLE_SHEET = eINSTANCE.getStyleSheet();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute STYLE_SHEET__NAME = eINSTANCE.getStyleSheet_Name();
-
-    /**
      * The meta object literal for the '<em><b>Imports</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference STYLE_SHEET__IMPORTS = eINSTANCE.getStyleSheet_Imports();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STYLE_SHEET__NAME = eINSTANCE.getStyleSheet_Name();
 
     /**
      * The meta object literal for the '<em><b>Styles</b></em>' containment reference list feature.

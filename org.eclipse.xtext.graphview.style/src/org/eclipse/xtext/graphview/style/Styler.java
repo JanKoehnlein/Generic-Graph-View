@@ -1,10 +1,8 @@
 package org.eclipse.xtext.graphview.style;
 
 import org.apache.log4j.Logger;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
 import org.eclipse.xtext.graphview.style.graphViewStyle.Style;
-import org.eclipse.xtext.graphview.style.graphViewStyle.StyleSheet;
 import org.eclipse.xtext.util.CancelIndicator;
 import org.eclipse.xtext.util.Strings;
 import org.eclipse.xtext.xbase.XAssignment;
@@ -12,8 +10,6 @@ import org.eclipse.xtext.xbase.interpreter.IEvaluationContext;
 import org.eclipse.xtext.xbase.interpreter.impl.XbaseInterpreter;
 import org.eclipse.xtext.xbase.scoping.XbaseScopeProvider;
 
-import com.google.common.base.Predicate;
-import com.google.common.collect.Iterables;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 
@@ -28,22 +24,12 @@ public class Styler implements IStyler {
 	@Inject
 	private Provider<IEvaluationContext> contextProvider;
 
-	protected StyleSheet styleSheet;
-	
-	public void setStyleSheet(StyleSheet styleSheet) {
-		if(styleSheet != null) {
-			Resource resource = styleSheet.eResource();
-			if(resource==null || resource.getErrors().isEmpty()) { 
-				this.styleSheet = styleSheet;
-				return;
-			}
-		}
-		throw new IllegalArgumentException("Invalid stylesheet");
+	public void setClassLoader(ClassLoader classLoader) {
+		xbaseInterpreter.setClassLoader(classLoader);
 	}
-
-	public boolean style(Object o, String styleName) {
+	
+	public boolean style(Object o, Style style) {
 		try {
-			Style style = findStyle(styleName);
 			JvmParameterizedTypeReference javaClass = style.getJavaClass();
 			String styleClassName = javaClass.getIdentifier();
 			if (Strings.equal(styleClassName, o.getClass().getCanonicalName())) {
@@ -58,15 +44,6 @@ public class Styler implements IStyler {
 			LOG.error("Error styling " + Strings.notNull(o), e);
 		}
 		return false;
-	}
-
-	protected Style findStyle(final String styleName) {
-		return Iterables.find(styleSheet.getStyles(), new Predicate<Style>() {
-			@Override
-			public boolean apply(Style style) {
-				return Strings.equal(styleName, style.getName());
-			}
-		});
 	}
 
 }

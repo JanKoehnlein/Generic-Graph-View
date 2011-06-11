@@ -4,10 +4,10 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="graphViewStyle"
     nsURI="http://www.xtext.org/graphview/style/GraphViewStyle" nsPrefix="graphViewStyle">
   <eClassifiers xsi:type="ecore:EClass" name="StyleSheet">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
         eType="ecore:EClass platform:/resource/org.eclipse.xtext.graphview.style/src-gen/org/eclipse/xtext/graphview/style/GraphViewStyle.ecore#//Import"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="styles" upperBound="-1"
         eType="ecore:EClass platform:/resource/org.eclipse.xtext.graphview.style/src-gen/org/eclipse/xtext/graphview/style/GraphViewStyle.ecore#//Style"
         containment="true"/>

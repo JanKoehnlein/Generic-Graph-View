@@ -1,5 +1,6 @@
 package org.eclipse.xtext.graphview.model;
 
+import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.core.resources.IFile;
@@ -8,6 +9,7 @@ import org.eclipse.core.resources.IResourceChangeEvent;
 import org.eclipse.core.resources.IResourceChangeListener;
 import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.runtime.ListenerList;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.xtext.common.types.access.IJvmTypeProvider;
@@ -58,20 +60,15 @@ public class DefaultGraphViewDefinitionProvider implements
 	}
 
 	protected void loadModels() {
-		diagramMapping = (DiagramMapping) load(resourceDescriptions
-				.getExportedObjectsByType(
-						GraphViewMappingPackage.Literals.DIAGRAM_MAPPING).iterator()
-				.next());
-		styleSheet = (StyleSheet) load(resourceDescriptions
-				.getExportedObjectsByType(
-						GraphViewStylePackage.Literals.STYLE_SHEET).iterator()
-				.next());
+		diagramMapping = (DiagramMapping) load(GraphViewMappingPackage.Literals.DIAGRAM_MAPPING);
+		styleSheet = (StyleSheet) load(GraphViewStylePackage.Literals.STYLE_SHEET);
 		if (resourceChangeListener == null) {
 			resourceChangeListener = new IResourceChangeListener() {
 				@Override
 				public void resourceChanged(IResourceChangeEvent event) {
-					for(IFile modelFile: modelFiles) {
-						if (event.getDelta().findMember(modelFile.getFullPath()) != null) {
+					for (IFile modelFile : modelFiles) {
+						if (event.getDelta()
+								.findMember(modelFile.getFullPath()) != null) {
 							loadModels();
 							fireModelChanged();
 							return;
@@ -111,6 +108,12 @@ public class DefaultGraphViewDefinitionProvider implements
 	@Override
 	public void removeModelChangedListener(Listener listener) {
 		listeners.remove(listener);
+	}
+
+	protected EObject load(EClass eClass) {
+		Iterator<IEObjectDescription> descriptions = resourceDescriptions
+				.getExportedObjectsByType(eClass).iterator();
+		return (descriptions.hasNext()) ? load(descriptions.next()) : null;
 	}
 
 	protected EObject load(IEObjectDescription eObjectDescription) {

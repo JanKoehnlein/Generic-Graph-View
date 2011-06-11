@@ -1,13 +1,13 @@
-package org.eclipse.xtext.graphview.figure;
+package org.eclipse.xtext.graphview.shape;
 
 import org.eclipse.draw2d.MarginBorder;
-import org.eclipse.draw2d.RectangleFigure;
+import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.ToolbarLayout;
+import org.eclipse.xtext.graphview.layout.ILayoutNode;
 
-public class RectangleNode extends RectangleFigure implements INodeFigure {
+public class RoundedRectangleShape extends RoundedRectangle implements ILayoutNode {
 
-	public RectangleNode() {
-		// some reasonable defaults
+	public RoundedRectangleShape() {
 		setSize(200,100);
 		ToolbarLayout layout = new ToolbarLayout(false);
 		layout.setSpacing(5);
@@ -15,5 +15,4 @@ public class RectangleNode extends RectangleFigure implements INodeFigure {
 		setLayoutManager(layout);
 		setBorder(new MarginBorder(5, 5, 5, 5));
 	}
-	
 }

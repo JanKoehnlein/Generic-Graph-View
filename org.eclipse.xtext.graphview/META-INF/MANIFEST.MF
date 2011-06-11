@@ -9,12 +9,26 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.xtext.graphview.map;bundle-version="1.0.0",
  org.eclipse.xtext.graphview.style;bundle-version="1.0.0",
  org.eclipse.xtext.xtext.ui.graph;bundle-version="2.0.0",
- org.eclipse.gef;bundle-version="3.7.0",
+ org.eclipse.gef;bundle-version="3.7.0";visibility:=reexport,
  org.eclipse.xtext.ui;bundle-version="2.0.0",
  org.eclipse.xtext.ui.shared;bundle-version="2.0.0",
  org.eclipse.xtext.common.types;bundle-version="2.0.0",
  org.eclipse.xtext.common.types.ui;bundle-version="2.0.0",
  org.eclipse.xtext.xbase;bundle-version="2.0.0",
- org.eclipse.xtext.graphview.map.ui;bundle-version="1.0.0"
+ org.eclipse.xtext.graphview.map.ui;bundle-version="1.0.0",
+ org.eclipse.xtext.graphview.style.ui;bundle-version="1.0.0",
+ gef-layout;bundle-version="1.0.0",
+ org.eclipse.zest.layouts;bundle-version="1.1.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.eclipse.xtext.graphview,
+ org.eclipse.xtext.graphview.editpart,
+ org.eclipse.xtext.graphview.editpolicy,
+ org.eclipse.xtext.graphview.instancemodel,
+ org.eclipse.xtext.graphview.instancemodel.impl,
+ org.eclipse.xtext.graphview.instancemodel.util,
+ org.eclipse.xtext.graphview.instancemodel.validation,
+ org.eclipse.xtext.graphview.layout,
+ org.eclipse.xtext.graphview.model,
+ org.eclipse.xtext.graphview.shape,
+ org.eclipse.xtext.graphview.style

@@ -33,8 +33,8 @@ import org.eclipse.xtext.graphview.style.graphViewStyle.StyleSheet;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.xtext.graphview.style.graphViewStyle.impl.StyleSheetImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.xtext.graphview.style.graphViewStyle.impl.StyleSheetImpl#getImports <em>Imports</em>}</li>
+ *   <li>{@link org.eclipse.xtext.graphview.style.graphViewStyle.impl.StyleSheetImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.xtext.graphview.style.graphViewStyle.impl.StyleSheetImpl#getStyles <em>Styles</em>}</li>
  * </ul>
  * </p>
@@ -43,6 +43,16 @@ import org.eclipse.xtext.graphview.style.graphViewStyle.StyleSheet;
  */
 public class StyleSheetImpl extends MinimalEObjectImpl.Container implements StyleSheet
 {
+  /**
+   * The cached value of the '{@link #getImports() <em>Imports</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getImports()
+   * @generated
+   * @ordered
+   */
+  protected EList<Import> imports;
+
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -62,16 +72,6 @@ public class StyleSheetImpl extends MinimalEObjectImpl.Container implements Styl
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getImports() <em>Imports</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getImports()
-   * @generated
-   * @ordered
-   */
-  protected EList<Import> imports;
 
   /**
    * The cached value of the '{@link #getStyles() <em>Styles</em>}' containment reference list.
@@ -109,6 +109,20 @@ public class StyleSheetImpl extends MinimalEObjectImpl.Container implements Styl
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Import> getImports()
+  {
+    if (imports == null)
+    {
+      imports = new EObjectContainmentEList<Import>(Import.class, this, GraphViewStylePackage.STYLE_SHEET__IMPORTS);
+    }
+    return imports;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getName()
   {
     return name;
@@ -125,20 +139,6 @@ public class StyleSheetImpl extends MinimalEObjectImpl.Container implements Styl
     name = newName;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, GraphViewStylePackage.STYLE_SHEET__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<Import> getImports()
-  {
-    if (imports == null)
-    {
-      imports = new EObjectContainmentEList<Import>(Import.class, this, GraphViewStylePackage.STYLE_SHEET__IMPORTS);
-    }
-    return imports;
   }
 
   /**
@@ -183,10 +183,10 @@ public class StyleSheetImpl extends MinimalEObjectImpl.Container implements Styl
   {
     switch (featureID)
     {
-      case GraphViewStylePackage.STYLE_SHEET__NAME:
-        return getName();
       case GraphViewStylePackage.STYLE_SHEET__IMPORTS:
         return getImports();
+      case GraphViewStylePackage.STYLE_SHEET__NAME:
+        return getName();
       case GraphViewStylePackage.STYLE_SHEET__STYLES:
         return getStyles();
     }
@@ -204,12 +204,12 @@ public class StyleSheetImpl extends MinimalEObjectImpl.Container implements Styl
   {
     switch (featureID)
     {
-      case GraphViewStylePackage.STYLE_SHEET__NAME:
-        setName((String)newValue);
-        return;
       case GraphViewStylePackage.STYLE_SHEET__IMPORTS:
         getImports().clear();
         getImports().addAll((Collection<? extends Import>)newValue);
+        return;
+      case GraphViewStylePackage.STYLE_SHEET__NAME:
+        setName((String)newValue);
         return;
       case GraphViewStylePackage.STYLE_SHEET__STYLES:
         getStyles().clear();
@@ -229,11 +229,11 @@ public class StyleSheetImpl extends MinimalEObjectImpl.Container implements Styl
   {
     switch (featureID)
     {
-      case GraphViewStylePackage.STYLE_SHEET__NAME:
-        setName(NAME_EDEFAULT);
-        return;
       case GraphViewStylePackage.STYLE_SHEET__IMPORTS:
         getImports().clear();
+        return;
+      case GraphViewStylePackage.STYLE_SHEET__NAME:
+        setName(NAME_EDEFAULT);
         return;
       case GraphViewStylePackage.STYLE_SHEET__STYLES:
         getStyles().clear();
@@ -252,10 +252,10 @@ public class StyleSheetImpl extends MinimalEObjectImpl.Container implements Styl
   {
     switch (featureID)
     {
-      case GraphViewStylePackage.STYLE_SHEET__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case GraphViewStylePackage.STYLE_SHEET__IMPORTS:
         return imports != null && !imports.isEmpty();
+      case GraphViewStylePackage.STYLE_SHEET__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case GraphViewStylePackage.STYLE_SHEET__STYLES:
         return styles != null && !styles.isEmpty();
     }

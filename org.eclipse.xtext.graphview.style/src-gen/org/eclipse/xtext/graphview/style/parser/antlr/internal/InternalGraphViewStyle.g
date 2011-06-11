@@ -77,47 +77,47 @@ ruleStyleSheet returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='stylesheet' 
-    {
-    	newLeafNode(otherlv_0, grammarAccess.getStyleSheetAccess().getStylesheetKeyword_0());
-    }
-(
+((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getStyleSheetAccess().getNameQualifiedNameParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getStyleSheetAccess().getImportsImportParserRuleCall_0_0()); 
 	    }
-		lv_name_1_0=ruleQualifiedName		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getStyleSheetRule());
-	        }
-       		set(
-       			$current, 
-       			"name",
-        		lv_name_1_0, 
-        		"QualifiedName");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getStyleSheetAccess().getImportsImportParserRuleCall_2_0()); 
-	    }
-		lv_imports_2_0=ruleImport		{
+		lv_imports_0_0=ruleImport		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getStyleSheetRule());
 	        }
        		add(
        			$current, 
        			"imports",
-        		lv_imports_2_0, 
+        		lv_imports_0_0, 
         		"Import");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)*(
+)*	otherlv_1='stylesheet' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getStyleSheetAccess().getStylesheetKeyword_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getStyleSheetAccess().getNameQualifiedNameParserRuleCall_2_0()); 
+	    }
+		lv_name_2_0=ruleQualifiedName		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getStyleSheetRule());
+	        }
+       		set(
+       			$current, 
+       			"name",
+        		lv_name_2_0, 
+        		"QualifiedName");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(
 (
 		{ 
 	        newCompositeNode(grammarAccess.getStyleSheetAccess().getStylesStyleParserRuleCall_3_0()); 
@@ -243,67 +243,75 @@ ruleStyle returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((
+(	otherlv_0='style' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getStyleAccess().getStyleKeyword_0());
+    }
 (
-		lv_name_0_0=RULE_ID
-		{
-			newLeafNode(lv_name_0_0, grammarAccess.getStyleAccess().getNameIDTerminalRuleCall_0_0()); 
-		}
-		{
+(
+		{ 
+	        newCompositeNode(grammarAccess.getStyleAccess().getNameQualifiedNameParserRuleCall_1_0()); 
+	    }
+		lv_name_1_0=ruleQualifiedName		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getStyleRule());
+	            $current = createModelElementForParent(grammarAccess.getStyleRule());
 	        }
-       		setWithLastConsumed(
+       		set(
        			$current, 
        			"name",
-        		lv_name_0_0, 
-        		"ID");
+        		lv_name_1_0, 
+        		"QualifiedName");
+	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)(
+)	otherlv_2='as' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getStyleAccess().getAsKeyword_2());
+    }
+(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getStyleAccess().getJavaClassJvmTypeReferenceParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getStyleAccess().getJavaClassJvmTypeReferenceParserRuleCall_3_0()); 
 	    }
-		lv_javaClass_1_0=ruleJvmTypeReference		{
+		lv_javaClass_3_0=ruleJvmTypeReference		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getStyleRule());
 	        }
        		set(
        			$current, 
        			"javaClass",
-        		lv_javaClass_1_0, 
+        		lv_javaClass_3_0, 
         		"JvmTypeReference");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_2='{' 
+)	otherlv_4='{' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getStyleAccess().getLeftCurlyBracketKeyword_2());
+    	newLeafNode(otherlv_4, grammarAccess.getStyleAccess().getLeftCurlyBracketKeyword_4());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getStyleAccess().getSettingsSettingParserRuleCall_3_0()); 
+	        newCompositeNode(grammarAccess.getStyleAccess().getSettingsSettingParserRuleCall_5_0()); 
 	    }
-		lv_settings_3_0=ruleSetting		{
+		lv_settings_5_0=ruleSetting		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getStyleRule());
 	        }
        		add(
        			$current, 
        			"settings",
-        		lv_settings_3_0, 
+        		lv_settings_5_0, 
         		"Setting");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)*	otherlv_4='}' 
+)*	otherlv_6='}' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getStyleAccess().getRightCurlyBracketKeyword_4());
+    	newLeafNode(otherlv_6, grammarAccess.getStyleAccess().getRightCurlyBracketKeyword_6());
     }
 )
 ;

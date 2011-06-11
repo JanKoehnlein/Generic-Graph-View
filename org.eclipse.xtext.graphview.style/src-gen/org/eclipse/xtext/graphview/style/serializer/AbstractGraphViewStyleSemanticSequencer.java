@@ -156,7 +156,11 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 			}
 		else if(semanticObject.eClass().getEPackage() == XbasePackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case XbasePackage.XASSIGNMENT:
-				if(context == grammarAccess.getXExpressionRule() ||
+				if(context == grammarAccess.getSettingRule()) {
+					sequence_Setting_XAssignment(context, (XAssignment) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getXExpressionRule() ||
 				   context == grammarAccess.getXAssignmentRule() ||
 				   context == grammarAccess.getXAssignmentAccess().getXBinaryOperationLeftOperandAction_1_1_0_0_0() ||
 				   context == grammarAccess.getXOrExpressionRule() ||
@@ -184,10 +188,6 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 				   context == grammarAccess.getXParenthesizedExpressionRule() ||
 				   context == grammarAccess.getXExpressionInsideBlockRule()) {
 					sequence_XAssignment_XAssignment(context, (XAssignment) semanticObject); 
-					return; 
-				}
-				else if(context == grammarAccess.getSettingRule()) {
-					sequence_Setting_XAssignment(context, (XAssignment) semanticObject); 
 					return; 
 				}
 				else break;
@@ -1076,11 +1076,11 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	
 	/**
 	 * Constraint:
-	 *     (name=QualifiedName imports+=Import* styles+=Style*)
+	 *     (imports+=Import* name=QualifiedName styles+=Style*)
 	 *
 	 * Features:
-	 *    name[1, 1]
 	 *    imports[0, *]
+	 *    name[1, 1]
 	 *    styles[0, *]
 	 */
 	protected void sequence_StyleSheet_StyleSheet(EObject context, StyleSheet semanticObject) {
@@ -1090,7 +1090,7 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	
 	/**
 	 * Constraint:
-	 *     (name=ID javaClass=JvmTypeReference settings+=Setting*)
+	 *     (name=QualifiedName javaClass=JvmTypeReference settings+=Setting*)
 	 *
 	 * Features:
 	 *    name[1, 1]

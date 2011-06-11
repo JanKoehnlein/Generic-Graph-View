@@ -2,30 +2,35 @@ package org.eclipse.xtext.graphview.editpart;
 
 import java.util.List;
 
+import org.eclipse.draw2d.IFigure;
 import org.eclipse.gef.editparts.AbstractGraphicalEditPart;
-import org.eclipse.xtext.graphview.instancemodel.AbstractInstance;
 
-public abstract class AbstractMappingEditPart extends AbstractGraphicalEditPart {
+import com.google.inject.Inject;
+
+public abstract class AbstractMappingEditPart extends AbstractGraphicalEditPart
+		implements IInstanceModelEditPart {
+
+	@Inject
+	protected InstanceModelEditPartHelper helper;
 
 	@Override
 	public void setModel(Object model) {
-		if (!(model instanceof AbstractInstance))
-			throw new RuntimeException("Model must be an AbstractInstance");
 		super.setModel(model);
-	}
-
-	protected Object getSemanticElement() {
-		return getInstanceModel().getSemanticElement();
-	}
-
-	private AbstractInstance getInstanceModel() {
-		return (AbstractInstance) getModel();
+		helper.initialize(this);
 	}
 
 	@Override
 	protected List<?> getModelChildren() {
-		return getInstanceModel().getChildren();
+		return helper.getInstanceModel().getChildren();
 	}
 
-	
+	@Override
+	protected IFigure createFigure() {
+		return helper.createFigure();
+	}
+
+	@Override
+	protected void refreshVisuals() {
+		helper.style(getFigure());
+	}
 }

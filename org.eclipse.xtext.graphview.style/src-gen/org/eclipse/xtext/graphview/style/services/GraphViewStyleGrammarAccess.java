@@ -21,35 +21,35 @@ public class GraphViewStyleGrammarAccess extends AbstractGrammarElementFinder {
 	public class StyleSheetElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "StyleSheet");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cStylesheetKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameQualifiedNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Assignment cImportsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cImportsImportParserRuleCall_2_0 = (RuleCall)cImportsAssignment_2.eContents().get(0);
+		private final Assignment cImportsAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cImportsImportParserRuleCall_0_0 = (RuleCall)cImportsAssignment_0.eContents().get(0);
+		private final Keyword cStylesheetKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameQualifiedNameParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Assignment cStylesAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cStylesStyleParserRuleCall_3_0 = (RuleCall)cStylesAssignment_3.eContents().get(0);
 		
 		//StyleSheet:
-		//	"stylesheet" name=QualifiedName imports+=Import* styles+=Style*;
+		//	imports+=Import* "stylesheet" name=QualifiedName styles+=Style*;
 		public ParserRule getRule() { return rule; }
 
-		//"stylesheet" name=QualifiedName imports+=Import* styles+=Style*
+		//imports+=Import* "stylesheet" name=QualifiedName styles+=Style*
 		public Group getGroup() { return cGroup; }
 
-		//"stylesheet"
-		public Keyword getStylesheetKeyword_0() { return cStylesheetKeyword_0; }
-
-		//name=QualifiedName
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-
-		//QualifiedName
-		public RuleCall getNameQualifiedNameParserRuleCall_1_0() { return cNameQualifiedNameParserRuleCall_1_0; }
-
 		//imports+=Import*
-		public Assignment getImportsAssignment_2() { return cImportsAssignment_2; }
+		public Assignment getImportsAssignment_0() { return cImportsAssignment_0; }
 
 		//Import
-		public RuleCall getImportsImportParserRuleCall_2_0() { return cImportsImportParserRuleCall_2_0; }
+		public RuleCall getImportsImportParserRuleCall_0_0() { return cImportsImportParserRuleCall_0_0; }
+
+		//"stylesheet"
+		public Keyword getStylesheetKeyword_1() { return cStylesheetKeyword_1; }
+
+		//name=QualifiedName
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+
+		//QualifiedName
+		public RuleCall getNameQualifiedNameParserRuleCall_2_0() { return cNameQualifiedNameParserRuleCall_2_0; }
 
 		//styles+=Style*
 		public Assignment getStylesAssignment_3() { return cStylesAssignment_3; }
@@ -113,49 +113,57 @@ public class GraphViewStyleGrammarAccess extends AbstractGrammarElementFinder {
 	public class StyleElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Style");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
-		private final Assignment cJavaClassAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cJavaClassJvmTypeReferenceParserRuleCall_1_0 = (RuleCall)cJavaClassAssignment_1.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cSettingsAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cSettingsSettingParserRuleCall_3_0 = (RuleCall)cSettingsAssignment_3.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cStyleKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameQualifiedNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cAsKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cJavaClassAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cJavaClassJvmTypeReferenceParserRuleCall_3_0 = (RuleCall)cJavaClassAssignment_3.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cSettingsAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cSettingsSettingParserRuleCall_5_0 = (RuleCall)cSettingsAssignment_5.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//Style:
-		//	name= // should become a crossref to a Mapping ID
-		//	ID javaClass=JvmTypeReference "{" settings+=Setting* "}";
+		//	"style" name= // should become a crossref to a Mapping ID
+		//	QualifiedName "as" javaClass=JvmTypeReference "{" settings+=Setting* "}";
 		public ParserRule getRule() { return rule; }
 
-		//name= // should become a crossref to a Mapping ID
-		//ID javaClass=JvmTypeReference "{" settings+=Setting* "}"
+		//"style" name= // should become a crossref to a Mapping ID
+		//QualifiedName "as" javaClass=JvmTypeReference "{" settings+=Setting* "}"
 		public Group getGroup() { return cGroup; }
 
+		//"style"
+		public Keyword getStyleKeyword_0() { return cStyleKeyword_0; }
+
 		//name= // should become a crossref to a Mapping ID
-		//ID
-		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+		//QualifiedName
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
 		//// should become a crossref to a Mapping ID
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
+		//QualifiedName
+		public RuleCall getNameQualifiedNameParserRuleCall_1_0() { return cNameQualifiedNameParserRuleCall_1_0; }
+
+		//"as"
+		public Keyword getAsKeyword_2() { return cAsKeyword_2; }
 
 		//javaClass=JvmTypeReference
-		public Assignment getJavaClassAssignment_1() { return cJavaClassAssignment_1; }
+		public Assignment getJavaClassAssignment_3() { return cJavaClassAssignment_3; }
 
 		//JvmTypeReference
-		public RuleCall getJavaClassJvmTypeReferenceParserRuleCall_1_0() { return cJavaClassJvmTypeReferenceParserRuleCall_1_0; }
+		public RuleCall getJavaClassJvmTypeReferenceParserRuleCall_3_0() { return cJavaClassJvmTypeReferenceParserRuleCall_3_0; }
 
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
 
 		//settings+=Setting*
-		public Assignment getSettingsAssignment_3() { return cSettingsAssignment_3; }
+		public Assignment getSettingsAssignment_5() { return cSettingsAssignment_5; }
 
 		//Setting
-		public RuleCall getSettingsSettingParserRuleCall_3_0() { return cSettingsSettingParserRuleCall_3_0; }
+		public RuleCall getSettingsSettingParserRuleCall_5_0() { return cSettingsSettingParserRuleCall_5_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 
 	public class SettingElements extends AbstractParserRuleElementFinder {
@@ -223,7 +231,7 @@ public class GraphViewStyleGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//StyleSheet:
-	//	"stylesheet" name=QualifiedName imports+=Import* styles+=Style*;
+	//	imports+=Import* "stylesheet" name=QualifiedName styles+=Style*;
 	public StyleSheetElements getStyleSheetAccess() {
 		return (pStyleSheet != null) ? pStyleSheet : (pStyleSheet = new StyleSheetElements());
 	}
@@ -253,8 +261,8 @@ public class GraphViewStyleGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Style:
-	//	name= // should become a crossref to a Mapping ID
-	//	ID javaClass=JvmTypeReference "{" settings+=Setting* "}";
+	//	"style" name= // should become a crossref to a Mapping ID
+	//	QualifiedName "as" javaClass=JvmTypeReference "{" settings+=Setting* "}";
 	public StyleElements getStyleAccess() {
 		return (pStyle != null) ? pStyle : (pStyle = new StyleElements());
 	}

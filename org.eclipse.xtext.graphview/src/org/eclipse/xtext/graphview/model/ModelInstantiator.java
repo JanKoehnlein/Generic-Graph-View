@@ -6,7 +6,7 @@ import org.eclipse.xtext.graphview.instancemodel.DiagramInstance;
 import org.eclipse.xtext.graphview.instancemodel.EdgeInstance;
 import org.eclipse.xtext.graphview.instancemodel.InstancemodelFactory;
 import org.eclipse.xtext.graphview.instancemodel.NodeInstance;
-import org.eclipse.xtext.graphview.map.InstanceMapper;
+import org.eclipse.xtext.graphview.map.IInstanceMapper;
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractExpressionMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping;
@@ -21,8 +21,13 @@ import com.google.inject.Inject;
 
 public class ModelInstantiator {
 
+	private IInstanceMapper instanceMapper;
+
 	@Inject
-	private InstanceMapper instanceMapper;
+	public void setInstanceMapper(IInstanceMapper instanceMapper) {
+		this.instanceMapper = instanceMapper;
+		instanceMapper.setClassLoader(getClass().getClassLoader());
+	}
 
 	public DiagramInstance createInstance(DiagramMapping mapping,
 			Object semanticElement) {

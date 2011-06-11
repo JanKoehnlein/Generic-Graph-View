@@ -1,7 +1,7 @@
 package org.eclipse.xtext.graphview.editpart;
 
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.xtext.graphview.figure.LabelNode;
+import org.eclipse.xtext.graphview.shape.LabelShape;
 
 public class LabelEditPart extends AbstractMappingEditPart {
 
@@ -9,16 +9,15 @@ public class LabelEditPart extends AbstractMappingEditPart {
 	protected void createEditPolicies() {
 	}
 
-	@Override
-	protected IFigure createFigure() {
-		return new LabelNode();
+	public IFigure createDefaultFigure() {
+		return new LabelShape();
 	}
 
 	@Override
 	protected void refreshVisuals() {
-		if (getSemanticElement() != null) {
-			System.out.println(getSemanticElement().toString());
-			((LabelNode) getFigure()).setText(getSemanticElement().toString());
+		if (helper.getSemanticElement() != null) {
+			((LabelShape) getFigure()).setText(helper.getSemanticElement().toString());
 		}
+		super.refreshVisuals();
 	}
 }

@@ -92,7 +92,7 @@ public class GraphView extends ViewPart {
 	}
 
 	protected Display getDisplay() {
-		return getSite().getWorkbenchWindow().getShell().getDisplay();
+		return Display.getDefault();
 	}
 
 }

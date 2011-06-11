@@ -7,8 +7,8 @@ import "http://www.eclipse.org/xtext/common/JavaVMTypes" as jvmTypes
 import "http://www.eclipse.org/emf/2002/Ecore"
 
 StyleSheet:
-	'stylesheet' name=QualifiedName
 	imports+=Import*
+	'stylesheet' name=QualifiedName
 	styles+=Style*;
 	
 Import:
@@ -18,10 +18,10 @@ QualifiedNameWithWildcard:
 	QualifiedName ('.' '*')?;
 	 
 Style:
-	name=ID // should become a crossref to a Mapping ID
-	javaClass=JvmTypeReference
-	'{' 
-		settings+=Setting*
+	'style' name=QualifiedName // should become a crossref to a Mapping ID
+	'as' javaClass=JvmTypeReference
+	'{'
+		settings+=Setting* 
 	'}';
 	
 Setting returns xbase::XAssignment:

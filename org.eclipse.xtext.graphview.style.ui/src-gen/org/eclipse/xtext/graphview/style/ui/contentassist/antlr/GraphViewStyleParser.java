@@ -186,13 +186,13 @@ public class GraphViewStyleParser extends AbstractContentAssistParser {
 					put(grammarAccess.getJvmLowerBoundAccess().getGroup(), "rule__JvmLowerBound__Group__0");
 					put(grammarAccess.getJvmTypeParameterAccess().getGroup(), "rule__JvmTypeParameter__Group__0");
 					put(grammarAccess.getJvmTypeParameterAccess().getGroup_1_0(), "rule__JvmTypeParameter__Group_1_0__0");
-					put(grammarAccess.getStyleSheetAccess().getNameAssignment_1(), "rule__StyleSheet__NameAssignment_1");
-					put(grammarAccess.getStyleSheetAccess().getImportsAssignment_2(), "rule__StyleSheet__ImportsAssignment_2");
+					put(grammarAccess.getStyleSheetAccess().getImportsAssignment_0(), "rule__StyleSheet__ImportsAssignment_0");
+					put(grammarAccess.getStyleSheetAccess().getNameAssignment_2(), "rule__StyleSheet__NameAssignment_2");
 					put(grammarAccess.getStyleSheetAccess().getStylesAssignment_3(), "rule__StyleSheet__StylesAssignment_3");
 					put(grammarAccess.getImportAccess().getImportedNamespaceAssignment_1(), "rule__Import__ImportedNamespaceAssignment_1");
-					put(grammarAccess.getStyleAccess().getNameAssignment_0(), "rule__Style__NameAssignment_0");
-					put(grammarAccess.getStyleAccess().getJavaClassAssignment_1(), "rule__Style__JavaClassAssignment_1");
-					put(grammarAccess.getStyleAccess().getSettingsAssignment_3(), "rule__Style__SettingsAssignment_3");
+					put(grammarAccess.getStyleAccess().getNameAssignment_1(), "rule__Style__NameAssignment_1");
+					put(grammarAccess.getStyleAccess().getJavaClassAssignment_3(), "rule__Style__JavaClassAssignment_3");
+					put(grammarAccess.getStyleAccess().getSettingsAssignment_5(), "rule__Style__SettingsAssignment_5");
 					put(grammarAccess.getSettingAccess().getFeatureAssignment_0(), "rule__Setting__FeatureAssignment_0");
 					put(grammarAccess.getSettingAccess().getValueAssignment_2(), "rule__Setting__ValueAssignment_2");
 					put(grammarAccess.getXAssignmentAccess().getFeatureAssignment_0_1(), "rule__XAssignment__FeatureAssignment_0_1");

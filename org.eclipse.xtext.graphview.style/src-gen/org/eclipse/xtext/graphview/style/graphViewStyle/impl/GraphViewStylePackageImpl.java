@@ -132,9 +132,9 @@ public class GraphViewStylePackageImpl extends EPackageImpl implements GraphView
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getStyleSheet_Name()
+  public EReference getStyleSheet_Imports()
   {
-    return (EAttribute)styleSheetEClass.getEStructuralFeatures().get(0);
+    return (EReference)styleSheetEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -142,9 +142,9 @@ public class GraphViewStylePackageImpl extends EPackageImpl implements GraphView
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getStyleSheet_Imports()
+  public EAttribute getStyleSheet_Name()
   {
-    return (EReference)styleSheetEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)styleSheetEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -248,8 +248,8 @@ public class GraphViewStylePackageImpl extends EPackageImpl implements GraphView
 
     // Create classes and their features
     styleSheetEClass = createEClass(STYLE_SHEET);
-    createEAttribute(styleSheetEClass, STYLE_SHEET__NAME);
     createEReference(styleSheetEClass, STYLE_SHEET__IMPORTS);
+    createEAttribute(styleSheetEClass, STYLE_SHEET__NAME);
     createEReference(styleSheetEClass, STYLE_SHEET__STYLES);
 
     importEClass = createEClass(IMPORT);
@@ -297,8 +297,8 @@ public class GraphViewStylePackageImpl extends EPackageImpl implements GraphView
 
     // Initialize classes and features; add operations and parameters
     initEClass(styleSheetEClass, StyleSheet.class, "StyleSheet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getStyleSheet_Name(), ecorePackage.getEString(), "name", null, 0, 1, StyleSheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStyleSheet_Imports(), this.getImport(), null, "imports", null, 0, -1, StyleSheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getStyleSheet_Name(), ecorePackage.getEString(), "name", null, 0, 1, StyleSheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStyleSheet_Styles(), this.getStyle(), null, "styles", null, 0, -1, StyleSheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

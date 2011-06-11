@@ -15,7 +15,7 @@ import com.google.inject.Inject;
 import com.google.inject.Provider;
 
 @SuppressWarnings("restriction")
-public class InstanceMapper {
+public class InstanceMapper implements IInstanceMapper {
 
 	private static final Logger LOG = Logger.getLogger(InstanceMapper.class);
 
@@ -25,6 +25,18 @@ public class InstanceMapper {
 	@Inject
 	private Provider<IEvaluationContext> contextProvider;
 
+	/* (non-Javadoc)
+	 * @see org.eclipse.xtext.graphview.map.IInstanceMapper#setClassLoader(java.lang.ClassLoader)
+	 */
+	@Override
+	public void setClassLoader(ClassLoader classLoader) {
+		xbaseInterpreter.setClassLoader(classLoader);
+	}
+	
+	/* (non-Javadoc)
+	 * @see org.eclipse.xtext.graphview.map.IInstanceMapper#map(org.eclipse.xtext.graphview.map.graphViewMapping.AbstractExpressionMapping, java.lang.Object)
+	 */
+	@Override
 	public Object map(AbstractExpressionMapping mapping, Object thisElement) {
 		Object value = evaluate(mapping.getExpression(), thisElement);
 		if (mapping.isMulti()) {
@@ -37,7 +49,7 @@ public class InstanceMapper {
 		return value;
 	}
 
-	public Object evaluate(XExpression expression, Object thisElement) {
+	protected Object evaluate(XExpression expression, Object thisElement) {
 		IEvaluationContext evaluationContext = contextProvider.get();
 		evaluationContext.newValue(XbaseScopeProvider.THIS, thisElement);
 		IEvaluationResult result = xbaseInterpreter.evaluate(expression,

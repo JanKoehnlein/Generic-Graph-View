@@ -3,8 +3,8 @@ package org.eclipse.xtext.graphview.editpart;
 import java.util.List;
 
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.xtext.graphview.figure.RectangleNode;
 import org.eclipse.xtext.graphview.instancemodel.NodeInstance;
+import org.eclipse.xtext.graphview.shape.RectangleShape;
 
 public class NodeEditPart extends AbstractMappingEditPart {
 
@@ -13,8 +13,8 @@ public class NodeEditPart extends AbstractMappingEditPart {
 	}
 
 	@Override
-	protected IFigure createFigure() {
-		return new RectangleNode();
+	public IFigure createDefaultFigure() {
+		return new RectangleShape();			
 	}
 
 	@SuppressWarnings("rawtypes")

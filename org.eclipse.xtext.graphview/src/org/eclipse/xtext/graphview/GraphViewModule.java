@@ -2,8 +2,10 @@ package org.eclipse.xtext.graphview;
 
 import org.eclipse.xtext.common.types.access.IJvmTypeProvider;
 import org.eclipse.xtext.common.types.access.jdt.JdtTypeProviderFactory;
-import org.eclipse.xtext.graphview.map.InstanceMapper;
+import org.eclipse.xtext.graphview.map.IInstanceMapper;
 import org.eclipse.xtext.graphview.map.ui.internal.GraphViewMappingActivator;
+import org.eclipse.xtext.graphview.style.IStyler;
+import org.eclipse.xtext.graphview.style.ui.internal.GraphViewStyleActivator;
 import org.eclipse.xtext.resource.IResourceDescriptions;
 import org.eclipse.xtext.ui.resource.IResourceSetProvider;
 import org.eclipse.xtext.ui.resource.XtextResourceSetProvider;
@@ -17,14 +19,29 @@ public class GraphViewModule extends AbstractModule {
 
 	@Override
 	protected void configure() {
-		bind(IResourceDescriptions.class).toProvider(Access.getIResourceDescriptions());
+		bind(IResourceDescriptions.class).toProvider(
+				Access.getIResourceDescriptions());
 		bind(IJvmTypeProvider.Factory.class).to(JdtTypeProviderFactory.class);
 		bind(IResourceSetProvider.class).to(XtextResourceSetProvider.class);
-		
-		bind(InstanceMapper.class).toProvider(new Provider<InstanceMapper>() {
+
+		bind(IInstanceMapper.class).toProvider(new Provider<IInstanceMapper>() {
 			@Override
-			public InstanceMapper get() {
-				return GraphViewMappingActivator.getInstance().getInjector("org.eclipse.xtext.graphview.map.GraphViewMapping").getInstance(InstanceMapper.class);
+			public IInstanceMapper get() {
+				return GraphViewMappingActivator
+						.getInstance()
+						.getInjector(
+								"org.eclipse.xtext.graphview.map.GraphViewMapping")
+						.getInstance(IInstanceMapper.class);
+			}
+		});
+		bind(IStyler.class).toProvider(new Provider<IStyler>() {
+			@Override
+			public IStyler get() {
+				return GraphViewStyleActivator
+						.getInstance()
+						.getInjector(
+								"org.eclipse.xtext.graphview.style.GraphViewStyle")
+						.getInstance(IStyler.class);
 			}
 		});
 	}
