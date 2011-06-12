@@ -14,6 +14,7 @@ import org.eclipse.xtext.graphview.style.graphViewStyle.GraphViewStylePackage;
 import org.eclipse.xtext.graphview.style.graphViewStyle.Import;
 import org.eclipse.xtext.graphview.style.graphViewStyle.Style;
 import org.eclipse.xtext.graphview.style.graphViewStyle.StyleSheet;
+import org.eclipse.xtext.graphview.style.graphViewStyle.XColorLiteral;
 import org.eclipse.xtext.graphview.style.services.GraphViewStyleGrammarAccess;
 import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
@@ -108,6 +109,40 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 					return; 
 				}
 				else break;
+			case GraphViewStylePackage.XCOLOR_LITERAL:
+				if(context == grammarAccess.getXLiteralRule() ||
+				   context == grammarAccess.getXColorLiteralRule() ||
+				   context == grammarAccess.getXExpressionRule() ||
+				   context == grammarAccess.getXAssignmentRule() ||
+				   context == grammarAccess.getXAssignmentAccess().getXBinaryOperationLeftOperandAction_1_1_0_0_0() ||
+				   context == grammarAccess.getXOrExpressionRule() ||
+				   context == grammarAccess.getXOrExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXAndExpressionRule() ||
+				   context == grammarAccess.getXAndExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXEqualityExpressionRule() ||
+				   context == grammarAccess.getXEqualityExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXRelationalExpressionRule() ||
+				   context == grammarAccess.getXRelationalExpressionAccess().getXInstanceOfExpressionExpressionAction_1_0_0_0_0() ||
+				   context == grammarAccess.getXRelationalExpressionAccess().getXBinaryOperationLeftOperandAction_1_1_0_0_0() ||
+				   context == grammarAccess.getXOtherOperatorExpressionRule() ||
+				   context == grammarAccess.getXOtherOperatorExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXAdditiveExpressionRule() ||
+				   context == grammarAccess.getXAdditiveExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXMultiplicativeExpressionRule() ||
+				   context == grammarAccess.getXMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXUnaryOperationRule() ||
+				   context == grammarAccess.getXCastedExpressionRule() ||
+				   context == grammarAccess.getXCastedExpressionAccess().getXCastedExpressionTargetAction_1_0_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallRule() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXAssignmentAssignableAction_1_0_0_0_0() ||
+				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_1_0_0_0() ||
+				   context == grammarAccess.getXPrimaryExpressionRule() ||
+				   context == grammarAccess.getXParenthesizedExpressionRule() ||
+				   context == grammarAccess.getXExpressionInsideBlockRule()) {
+					sequence_XColorLiteral_XColorLiteral(context, (XColorLiteral) semanticObject); 
+					return; 
+				}
+				else break;
 			}
 		else if(semanticObject.eClass().getEPackage() == TypesPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case TypesPackage.JVM_FORMAL_PARAMETER:
@@ -156,11 +191,7 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 			}
 		else if(semanticObject.eClass().getEPackage() == XbasePackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case XbasePackage.XASSIGNMENT:
-				if(context == grammarAccess.getSettingRule()) {
-					sequence_Setting_XAssignment(context, (XAssignment) semanticObject); 
-					return; 
-				}
-				else if(context == grammarAccess.getXExpressionRule() ||
+				if(context == grammarAccess.getXExpressionRule() ||
 				   context == grammarAccess.getXAssignmentRule() ||
 				   context == grammarAccess.getXAssignmentAccess().getXBinaryOperationLeftOperandAction_1_1_0_0_0() ||
 				   context == grammarAccess.getXOrExpressionRule() ||
@@ -257,7 +288,8 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 				}
 				else break;
 			case XbasePackage.XBOOLEAN_LITERAL:
-				if(context == grammarAccess.getXExpressionRule() ||
+				if(context == grammarAccess.getXLiteralRule() ||
+				   context == grammarAccess.getXExpressionRule() ||
 				   context == grammarAccess.getXAssignmentRule() ||
 				   context == grammarAccess.getXAssignmentAccess().getXBinaryOperationLeftOperandAction_1_1_0_0_0() ||
 				   context == grammarAccess.getXOrExpressionRule() ||
@@ -282,7 +314,6 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 				   context == grammarAccess.getXMemberFeatureCallAccess().getXAssignmentAssignableAction_1_0_0_0_0() ||
 				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_1_0_0_0() ||
 				   context == grammarAccess.getXPrimaryExpressionRule() ||
-				   context == grammarAccess.getXLiteralRule() ||
 				   context == grammarAccess.getXParenthesizedExpressionRule() ||
 				   context == grammarAccess.getXExpressionInsideBlockRule() ||
 				   context == grammarAccess.getXBooleanLiteralRule()) {
@@ -335,11 +366,8 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 				}
 				else break;
 			case XbasePackage.XCLOSURE:
-				if(context == grammarAccess.getXShortClosureRule()) {
-					sequence_XShortClosure_XClosure(context, (XClosure) semanticObject); 
-					return; 
-				}
-				else if(context == grammarAccess.getXExpressionRule() ||
+				if(context == grammarAccess.getXLiteralRule() ||
+				   context == grammarAccess.getXExpressionRule() ||
 				   context == grammarAccess.getXAssignmentRule() ||
 				   context == grammarAccess.getXAssignmentAccess().getXBinaryOperationLeftOperandAction_1_1_0_0_0() ||
 				   context == grammarAccess.getXOrExpressionRule() ||
@@ -364,11 +392,14 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 				   context == grammarAccess.getXMemberFeatureCallAccess().getXAssignmentAssignableAction_1_0_0_0_0() ||
 				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_1_0_0_0() ||
 				   context == grammarAccess.getXPrimaryExpressionRule() ||
-				   context == grammarAccess.getXLiteralRule() ||
 				   context == grammarAccess.getXClosureRule() ||
 				   context == grammarAccess.getXParenthesizedExpressionRule() ||
 				   context == grammarAccess.getXExpressionInsideBlockRule()) {
 					sequence_XClosure_XClosure(context, (XClosure) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getXShortClosureRule()) {
+					sequence_XShortClosure_XClosure(context, (XClosure) semanticObject); 
 					return; 
 				}
 				else break;
@@ -570,7 +601,8 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 				}
 				else break;
 			case XbasePackage.XINT_LITERAL:
-				if(context == grammarAccess.getXExpressionRule() ||
+				if(context == grammarAccess.getXLiteralRule() ||
+				   context == grammarAccess.getXExpressionRule() ||
 				   context == grammarAccess.getXAssignmentRule() ||
 				   context == grammarAccess.getXAssignmentAccess().getXBinaryOperationLeftOperandAction_1_1_0_0_0() ||
 				   context == grammarAccess.getXOrExpressionRule() ||
@@ -595,7 +627,6 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 				   context == grammarAccess.getXMemberFeatureCallAccess().getXAssignmentAssignableAction_1_0_0_0_0() ||
 				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_1_0_0_0() ||
 				   context == grammarAccess.getXPrimaryExpressionRule() ||
-				   context == grammarAccess.getXLiteralRule() ||
 				   context == grammarAccess.getXParenthesizedExpressionRule() ||
 				   context == grammarAccess.getXExpressionInsideBlockRule() ||
 				   context == grammarAccess.getXIntLiteralRule()) {
@@ -636,7 +667,8 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 				}
 				else break;
 			case XbasePackage.XNULL_LITERAL:
-				if(context == grammarAccess.getXExpressionRule() ||
+				if(context == grammarAccess.getXLiteralRule() ||
+				   context == grammarAccess.getXExpressionRule() ||
 				   context == grammarAccess.getXAssignmentRule() ||
 				   context == grammarAccess.getXAssignmentAccess().getXBinaryOperationLeftOperandAction_1_1_0_0_0() ||
 				   context == grammarAccess.getXOrExpressionRule() ||
@@ -661,11 +693,10 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 				   context == grammarAccess.getXMemberFeatureCallAccess().getXAssignmentAssignableAction_1_0_0_0_0() ||
 				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_1_0_0_0() ||
 				   context == grammarAccess.getXPrimaryExpressionRule() ||
-				   context == grammarAccess.getXLiteralRule() ||
 				   context == grammarAccess.getXParenthesizedExpressionRule() ||
 				   context == grammarAccess.getXExpressionInsideBlockRule() ||
 				   context == grammarAccess.getXNullLiteralRule()) {
-					sequence_XExpression_XNullLiteral(context, (XNullLiteral) semanticObject); 
+					sequence_XLiteral_XNullLiteral(context, (XNullLiteral) semanticObject); 
 					return; 
 				}
 				else break;
@@ -703,7 +734,8 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 				}
 				else break;
 			case XbasePackage.XSTRING_LITERAL:
-				if(context == grammarAccess.getXExpressionRule() ||
+				if(context == grammarAccess.getXLiteralRule() ||
+				   context == grammarAccess.getXExpressionRule() ||
 				   context == grammarAccess.getXAssignmentRule() ||
 				   context == grammarAccess.getXAssignmentAccess().getXBinaryOperationLeftOperandAction_1_1_0_0_0() ||
 				   context == grammarAccess.getXOrExpressionRule() ||
@@ -728,7 +760,6 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 				   context == grammarAccess.getXMemberFeatureCallAccess().getXAssignmentAssignableAction_1_0_0_0_0() ||
 				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_1_0_0_0() ||
 				   context == grammarAccess.getXPrimaryExpressionRule() ||
-				   context == grammarAccess.getXLiteralRule() ||
 				   context == grammarAccess.getXParenthesizedExpressionRule() ||
 				   context == grammarAccess.getXExpressionInsideBlockRule() ||
 				   context == grammarAccess.getXStringLiteralRule()) {
@@ -836,7 +867,8 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 				}
 				else break;
 			case XbasePackage.XTYPE_LITERAL:
-				if(context == grammarAccess.getXExpressionRule() ||
+				if(context == grammarAccess.getXLiteralRule() ||
+				   context == grammarAccess.getXExpressionRule() ||
 				   context == grammarAccess.getXAssignmentRule() ||
 				   context == grammarAccess.getXAssignmentAccess().getXBinaryOperationLeftOperandAction_1_1_0_0_0() ||
 				   context == grammarAccess.getXOrExpressionRule() ||
@@ -861,7 +893,6 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 				   context == grammarAccess.getXMemberFeatureCallAccess().getXAssignmentAssignableAction_1_0_0_0_0() ||
 				   context == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_1_0_0_0() ||
 				   context == grammarAccess.getXPrimaryExpressionRule() ||
-				   context == grammarAccess.getXLiteralRule() ||
 				   context == grammarAccess.getXParenthesizedExpressionRule() ||
 				   context == grammarAccess.getXExpressionInsideBlockRule() ||
 				   context == grammarAccess.getXTypeLiteralRule()) {
@@ -1063,19 +1094,6 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	
 	/**
 	 * Constraint:
-	 *     (feature=[JvmIdentifiableElement|QualifiedName] value=XExpression)
-	 *
-	 * Features:
-	 *    feature[1, 1]
-	 *    value[1, 1]
-	 */
-	protected void sequence_Setting_XAssignment(EObject context, XAssignment semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     (imports+=Import* name=QualifiedName styles+=Style*)
 	 *
 	 * Features:
@@ -1090,12 +1108,12 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	
 	/**
 	 * Constraint:
-	 *     (name=QualifiedName javaClass=JvmTypeReference settings+=Setting*)
+	 *     (names+=QualifiedName names+=QualifiedName* javaClass=JvmTypeReference? expression=XBlockExpression?)
 	 *
 	 * Features:
-	 *    name[1, 1]
-	 *    javaClass[1, 1]
-	 *    settings[0, *]
+	 *    names[1, *]
+	 *    javaClass[0, 1]
+	 *    expression[0, 1]
 	 */
 	protected void sequence_Style_Style(EObject context, Style semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1227,6 +1245,25 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	
 	/**
 	 * Constraint:
+	 *     color=Color
+	 *
+	 * Features:
+	 *    color[1, 1]
+	 */
+	protected void sequence_XColorLiteral_XColorLiteral(EObject context, XColorLiteral semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, GraphViewStylePackage.Literals.XCOLOR_LITERAL__COLOR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GraphViewStylePackage.Literals.XCOLOR_LITERAL__COLOR));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getXColorLiteralAccess().getColorColorTerminalRuleCall_0(), semanticObject.getColor());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (
 	 *         constructor=[JvmConstructor|QualifiedName] 
 	 *         (typeArguments+=JvmArgumentTypeReference typeArguments+=JvmArgumentTypeReference*)? 
@@ -1253,17 +1290,6 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	 */
 	protected void sequence_XDoWhileExpression_XDoWhileExpression(EObject context, XDoWhileExpression semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     {XNullLiteral}
-	 *
-	 * Features:
-	 */
-	protected void sequence_XExpression_XNullLiteral(EObject context, XNullLiteral semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -1343,6 +1369,17 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	 */
 	protected void sequence_XIntLiteral_XIntLiteral(EObject context, XIntLiteral semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     {XNullLiteral}
+	 *
+	 * Features:
+	 */
+	protected void sequence_XLiteral_XNullLiteral(EObject context, XNullLiteral semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

@@ -19,19 +19,24 @@ Require-Bundle: org.eclipse.xtext;bundle-version="2.0.0";visibility:=reexport,
  org.antlr.runtime,
  org.eclipse.xtext.common.types,
  org.eclipse.xtext.xtend2.lib,
- org.eclipse.xtext.graphview.map;bundle-version="1.0.0",
- org.eclipse.draw2d;bundle-version="3.7.0"
+ org.eclipse.xtext.graphview.map;bundle-version="1.0.0"
 Import-Package: org.apache.log4j,
  org.apache.commons.logging,
  org.eclipse.xtext.xbase.lib,
  org.eclipse.xtext.xtend2.lib
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.eclipse.xtext.graphview.style,
+ org.eclipse.xtext.graphview.style.formatting,
+ org.eclipse.xtext.graphview.style.generator,
  org.eclipse.xtext.graphview.style.graphViewStyle,
  org.eclipse.xtext.graphview.style.graphViewStyle.impl,
  org.eclipse.xtext.graphview.style.graphViewStyle.util,
+ org.eclipse.xtext.graphview.style.interpreter,
  org.eclipse.xtext.graphview.style.parser.antlr,
  org.eclipse.xtext.graphview.style.parser.antlr.internal,
+ org.eclipse.xtext.graphview.style.scoping,
  org.eclipse.xtext.graphview.style.serializer,
  org.eclipse.xtext.graphview.style.services,
+ org.eclipse.xtext.graphview.style.type,
  org.eclipse.xtext.graphview.style.validation
+

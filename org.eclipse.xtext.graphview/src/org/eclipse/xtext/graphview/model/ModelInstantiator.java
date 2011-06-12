@@ -1,5 +1,7 @@
 package org.eclipse.xtext.graphview.model;
 
+import java.util.Iterator;
+
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.xtext.graphview.instancemodel.AbstractInstance;
 import org.eclipse.xtext.graphview.instancemodel.DiagramInstance;
@@ -35,7 +37,9 @@ public class ModelInstantiator {
 				.create();
 		DiagramInstance diagramInstance = (DiagramInstance) internalCreateInstance(
 				mapping, semanticElement, semantic2instance, null);
-		for (EdgeInstance edgeInstance : diagramInstance.getEdges()) {
+		for (Iterator<EdgeInstance> i=diagramInstance.getEdges().iterator();
+				i.hasNext();) {
+			EdgeInstance edgeInstance = i.next(); 
 			EdgeMapping edgeMapping = (EdgeMapping) edgeInstance.getMapping();
 			if (edgeInstance.getSource() == null) {
 				Object semanticSource = instanceMapper.map(
@@ -62,7 +66,8 @@ public class ModelInstantiator {
 				}
 			}
 			if (edgeInstance.getTarget() == null) {
-				EcoreUtil.remove(edgeInstance);
+				edgeInstance.setSource(null);
+				i.remove();
 			}
 		}
 		return diagramInstance;

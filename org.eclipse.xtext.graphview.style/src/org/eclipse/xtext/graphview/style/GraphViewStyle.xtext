@@ -18,11 +18,26 @@ QualifiedNameWithWildcard:
 	QualifiedName ('.' '*')?;
 	 
 Style:
-	'style' name=QualifiedName // should become a crossref to a Mapping ID
-	'as' javaClass=JvmTypeReference
-	'{'
-		settings+=Setting* 
-	'}';
-	
-Setting returns xbase::XAssignment:
-	feature=[jvmTypes::JvmIdentifiableElement|QualifiedName] ':' value=XExpression;
+	'style' names+=QualifiedName (',' names+=QualifiedName)* // should become a crossref to a Mapping ID
+	('as' javaClass=JvmTypeReference)?
+	expression=XBlockExpression?;
+
+XLiteral returns xbase::XExpression:
+	XClosure |
+	XBooleanLiteral |
+	XIntLiteral |
+	XNullLiteral |
+	XStringLiteral |
+	XTypeLiteral |
+	XColorLiteral;
+
+XColorLiteral:
+	color=Color;
+
+terminal Color:
+	'#' ('0'..'9'|'a'..'f'|'A'..'F')
+	('0'..'9'|'a'..'f'|'A'..'F')
+	('0'..'9'|'a'..'f'|'A'..'F')
+	('0'..'9'|'a'..'f'|'A'..'F')
+	('0'..'9'|'a'..'f'|'A'..'F')
+	('0'..'9'|'a'..'f'|'A'..'F');

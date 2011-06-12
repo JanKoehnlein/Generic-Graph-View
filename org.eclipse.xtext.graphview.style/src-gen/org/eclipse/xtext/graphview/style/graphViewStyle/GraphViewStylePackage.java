@@ -10,6 +10,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
+import org.eclipse.xtext.xbase.XbasePackage;
+
 /**
  * <!-- begin-user-doc -->
  * The <b>Package</b> for the model.
@@ -144,13 +146,13 @@ public interface GraphViewStylePackage extends EPackage
   int STYLE = 2;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Names</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STYLE__NAME = 0;
+  int STYLE__NAMES = 0;
 
   /**
    * The feature id for the '<em><b>Java Class</b></em>' containment reference.
@@ -162,13 +164,13 @@ public interface GraphViewStylePackage extends EPackage
   int STYLE__JAVA_CLASS = 1;
 
   /**
-   * The feature id for the '<em><b>Settings</b></em>' containment reference list.
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STYLE__SETTINGS = 2;
+  int STYLE__EXPRESSION = 2;
 
   /**
    * The number of structural features of the '<em>Style</em>' class.
@@ -178,6 +180,34 @@ public interface GraphViewStylePackage extends EPackage
    * @ordered
    */
   int STYLE_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.eclipse.xtext.graphview.style.graphViewStyle.impl.XColorLiteralImpl <em>XColor Literal</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.eclipse.xtext.graphview.style.graphViewStyle.impl.XColorLiteralImpl
+   * @see org.eclipse.xtext.graphview.style.graphViewStyle.impl.GraphViewStylePackageImpl#getXColorLiteral()
+   * @generated
+   */
+  int XCOLOR_LITERAL = 3;
+
+  /**
+   * The feature id for the '<em><b>Color</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int XCOLOR_LITERAL__COLOR = XbasePackage.XEXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>XColor Literal</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int XCOLOR_LITERAL_FEATURE_COUNT = XbasePackage.XEXPRESSION_FEATURE_COUNT + 1;
 
 
   /**
@@ -255,15 +285,15 @@ public interface GraphViewStylePackage extends EPackage
   EClass getStyle();
 
   /**
-   * Returns the meta object for the attribute '{@link org.eclipse.xtext.graphview.style.graphViewStyle.Style#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute list '{@link org.eclipse.xtext.graphview.style.graphViewStyle.Style#getNames <em>Names</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.eclipse.xtext.graphview.style.graphViewStyle.Style#getName()
+   * @return the meta object for the attribute list '<em>Names</em>'.
+   * @see org.eclipse.xtext.graphview.style.graphViewStyle.Style#getNames()
    * @see #getStyle()
    * @generated
    */
-  EAttribute getStyle_Name();
+  EAttribute getStyle_Names();
 
   /**
    * Returns the meta object for the containment reference '{@link org.eclipse.xtext.graphview.style.graphViewStyle.Style#getJavaClass <em>Java Class</em>}'.
@@ -277,15 +307,36 @@ public interface GraphViewStylePackage extends EPackage
   EReference getStyle_JavaClass();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.eclipse.xtext.graphview.style.graphViewStyle.Style#getSettings <em>Settings</em>}'.
+   * Returns the meta object for the containment reference '{@link org.eclipse.xtext.graphview.style.graphViewStyle.Style#getExpression <em>Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Settings</em>'.
-   * @see org.eclipse.xtext.graphview.style.graphViewStyle.Style#getSettings()
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see org.eclipse.xtext.graphview.style.graphViewStyle.Style#getExpression()
    * @see #getStyle()
    * @generated
    */
-  EReference getStyle_Settings();
+  EReference getStyle_Expression();
+
+  /**
+   * Returns the meta object for class '{@link org.eclipse.xtext.graphview.style.graphViewStyle.XColorLiteral <em>XColor Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>XColor Literal</em>'.
+   * @see org.eclipse.xtext.graphview.style.graphViewStyle.XColorLiteral
+   * @generated
+   */
+  EClass getXColorLiteral();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.eclipse.xtext.graphview.style.graphViewStyle.XColorLiteral#getColor <em>Color</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Color</em>'.
+   * @see org.eclipse.xtext.graphview.style.graphViewStyle.XColorLiteral#getColor()
+   * @see #getXColorLiteral()
+   * @generated
+   */
+  EAttribute getXColorLiteral_Color();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -373,12 +424,12 @@ public interface GraphViewStylePackage extends EPackage
     EClass STYLE = eINSTANCE.getStyle();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Names</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute STYLE__NAME = eINSTANCE.getStyle_Name();
+    EAttribute STYLE__NAMES = eINSTANCE.getStyle_Names();
 
     /**
      * The meta object literal for the '<em><b>Java Class</b></em>' containment reference feature.
@@ -389,12 +440,30 @@ public interface GraphViewStylePackage extends EPackage
     EReference STYLE__JAVA_CLASS = eINSTANCE.getStyle_JavaClass();
 
     /**
-     * The meta object literal for the '<em><b>Settings</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference STYLE__SETTINGS = eINSTANCE.getStyle_Settings();
+    EReference STYLE__EXPRESSION = eINSTANCE.getStyle_Expression();
+
+    /**
+     * The meta object literal for the '{@link org.eclipse.xtext.graphview.style.graphViewStyle.impl.XColorLiteralImpl <em>XColor Literal</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.eclipse.xtext.graphview.style.graphViewStyle.impl.XColorLiteralImpl
+     * @see org.eclipse.xtext.graphview.style.graphViewStyle.impl.GraphViewStylePackageImpl#getXColorLiteral()
+     * @generated
+     */
+    EClass XCOLOR_LITERAL = eINSTANCE.getXColorLiteral();
+
+    /**
+     * The meta object literal for the '<em><b>Color</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute XCOLOR_LITERAL__COLOR = eINSTANCE.getXColorLiteral_Color();
 
   }
 

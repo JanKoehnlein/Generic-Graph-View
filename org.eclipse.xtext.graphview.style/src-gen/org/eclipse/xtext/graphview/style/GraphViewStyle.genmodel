@@ -18,9 +18,12 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.eclipse.xtext.graphview.style/src-gen/org/eclipse/xtext/graphview/style/GraphViewStyle.ecore#//Import/importedNamespace"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/org.eclipse.xtext.graphview.style/src-gen/org/eclipse/xtext/graphview/style/GraphViewStyle.ecore#//Style">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.eclipse.xtext.graphview.style/src-gen/org/eclipse/xtext/graphview/style/GraphViewStyle.ecore#//Style/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.eclipse.xtext.graphview.style/src-gen/org/eclipse/xtext/graphview/style/GraphViewStyle.ecore#//Style/names"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/org.eclipse.xtext.graphview.style/src-gen/org/eclipse/xtext/graphview/style/GraphViewStyle.ecore#//Style/javaClass"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/org.eclipse.xtext.graphview.style/src-gen/org/eclipse/xtext/graphview/style/GraphViewStyle.ecore#//Style/settings"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/org.eclipse.xtext.graphview.style/src-gen/org/eclipse/xtext/graphview/style/GraphViewStyle.ecore#//Style/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/org.eclipse.xtext.graphview.style/src-gen/org/eclipse/xtext/graphview/style/GraphViewStyle.ecore#//XColorLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/org.eclipse.xtext.graphview.style/src-gen/org/eclipse/xtext/graphview/style/GraphViewStyle.ecore#//XColorLiteral/color"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

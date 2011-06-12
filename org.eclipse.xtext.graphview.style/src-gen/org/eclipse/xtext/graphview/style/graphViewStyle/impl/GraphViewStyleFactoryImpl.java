@@ -70,6 +70,7 @@ public class GraphViewStyleFactoryImpl extends EFactoryImpl implements GraphView
       case GraphViewStylePackage.STYLE_SHEET: return createStyleSheet();
       case GraphViewStylePackage.IMPORT: return createImport();
       case GraphViewStylePackage.STYLE: return createStyle();
+      case GraphViewStylePackage.XCOLOR_LITERAL: return createXColorLiteral();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -106,6 +107,17 @@ public class GraphViewStyleFactoryImpl extends EFactoryImpl implements GraphView
   {
     StyleImpl style = new StyleImpl();
     return style;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public XColorLiteral createXColorLiteral()
+  {
+    XColorLiteralImpl xColorLiteral = new XColorLiteralImpl();
+    return xColorLiteral;
   }
 
   /**

@@ -53,6 +53,15 @@ public interface GraphViewStyleFactory extends EFactory
   Style createStyle();
 
   /**
+   * Returns a new object of class '<em>XColor Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>XColor Literal</em>'.
+   * @generated
+   */
+  XColorLiteral createXColorLiteral();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

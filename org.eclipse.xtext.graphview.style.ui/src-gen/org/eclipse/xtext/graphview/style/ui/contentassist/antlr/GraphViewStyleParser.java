@@ -37,6 +37,7 @@ public class GraphViewStyleParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
+					put(grammarAccess.getXLiteralAccess().getAlternatives(), "rule__XLiteral__Alternatives");
 					put(grammarAccess.getXAssignmentAccess().getAlternatives(), "rule__XAssignment__Alternatives");
 					put(grammarAccess.getOpEqualityAccess().getAlternatives(), "rule__OpEquality__Alternatives");
 					put(grammarAccess.getXRelationalExpressionAccess().getAlternatives_1(), "rule__XRelationalExpression__Alternatives_1");
@@ -50,7 +51,6 @@ public class GraphViewStyleParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXMemberFeatureCallAccess().getAlternatives_1_1_0_0_1(), "rule__XMemberFeatureCall__Alternatives_1_1_0_0_1");
 					put(grammarAccess.getXMemberFeatureCallAccess().getAlternatives_1_1_3_1(), "rule__XMemberFeatureCall__Alternatives_1_1_3_1");
 					put(grammarAccess.getXPrimaryExpressionAccess().getAlternatives(), "rule__XPrimaryExpression__Alternatives");
-					put(grammarAccess.getXLiteralAccess().getAlternatives(), "rule__XLiteral__Alternatives");
 					put(grammarAccess.getXExpressionInsideBlockAccess().getAlternatives(), "rule__XExpressionInsideBlock__Alternatives");
 					put(grammarAccess.getXVariableDeclarationAccess().getAlternatives_1(), "rule__XVariableDeclaration__Alternatives_1");
 					put(grammarAccess.getXVariableDeclarationAccess().getAlternatives_2(), "rule__XVariableDeclaration__Alternatives_2");
@@ -68,7 +68,8 @@ public class GraphViewStyleParser extends AbstractContentAssistParser {
 					put(grammarAccess.getQualifiedNameWithWildcardAccess().getGroup(), "rule__QualifiedNameWithWildcard__Group__0");
 					put(grammarAccess.getQualifiedNameWithWildcardAccess().getGroup_1(), "rule__QualifiedNameWithWildcard__Group_1__0");
 					put(grammarAccess.getStyleAccess().getGroup(), "rule__Style__Group__0");
-					put(grammarAccess.getSettingAccess().getGroup(), "rule__Setting__Group__0");
+					put(grammarAccess.getStyleAccess().getGroup_2(), "rule__Style__Group_2__0");
+					put(grammarAccess.getStyleAccess().getGroup_3(), "rule__Style__Group_3__0");
 					put(grammarAccess.getXAssignmentAccess().getGroup_0(), "rule__XAssignment__Group_0__0");
 					put(grammarAccess.getXAssignmentAccess().getGroup_1(), "rule__XAssignment__Group_1__0");
 					put(grammarAccess.getXAssignmentAccess().getGroup_1_1(), "rule__XAssignment__Group_1_1__0");
@@ -190,11 +191,11 @@ public class GraphViewStyleParser extends AbstractContentAssistParser {
 					put(grammarAccess.getStyleSheetAccess().getNameAssignment_2(), "rule__StyleSheet__NameAssignment_2");
 					put(grammarAccess.getStyleSheetAccess().getStylesAssignment_3(), "rule__StyleSheet__StylesAssignment_3");
 					put(grammarAccess.getImportAccess().getImportedNamespaceAssignment_1(), "rule__Import__ImportedNamespaceAssignment_1");
-					put(grammarAccess.getStyleAccess().getNameAssignment_1(), "rule__Style__NameAssignment_1");
-					put(grammarAccess.getStyleAccess().getJavaClassAssignment_3(), "rule__Style__JavaClassAssignment_3");
-					put(grammarAccess.getStyleAccess().getSettingsAssignment_5(), "rule__Style__SettingsAssignment_5");
-					put(grammarAccess.getSettingAccess().getFeatureAssignment_0(), "rule__Setting__FeatureAssignment_0");
-					put(grammarAccess.getSettingAccess().getValueAssignment_2(), "rule__Setting__ValueAssignment_2");
+					put(grammarAccess.getStyleAccess().getNamesAssignment_1(), "rule__Style__NamesAssignment_1");
+					put(grammarAccess.getStyleAccess().getNamesAssignment_2_1(), "rule__Style__NamesAssignment_2_1");
+					put(grammarAccess.getStyleAccess().getJavaClassAssignment_3_1(), "rule__Style__JavaClassAssignment_3_1");
+					put(grammarAccess.getStyleAccess().getExpressionAssignment_4(), "rule__Style__ExpressionAssignment_4");
+					put(grammarAccess.getXColorLiteralAccess().getColorAssignment(), "rule__XColorLiteral__ColorAssignment");
 					put(grammarAccess.getXAssignmentAccess().getFeatureAssignment_0_1(), "rule__XAssignment__FeatureAssignment_0_1");
 					put(grammarAccess.getXAssignmentAccess().getValueAssignment_0_3(), "rule__XAssignment__ValueAssignment_0_3");
 					put(grammarAccess.getXAssignmentAccess().getFeatureAssignment_1_1_0_0_1(), "rule__XAssignment__FeatureAssignment_1_1_0_0_1");

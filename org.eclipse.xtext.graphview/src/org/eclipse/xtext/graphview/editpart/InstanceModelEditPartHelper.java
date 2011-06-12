@@ -1,5 +1,7 @@
 package org.eclipse.xtext.graphview.editpart;
 
+import java.util.Collection;
+
 import org.apache.log4j.Logger;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
@@ -39,8 +41,8 @@ public class InstanceModelEditPartHelper {
 		return instanceModel;
 	}
 
-	public Style getStyle() {
-		return styleProvider.getStyle(getMapping());
+	public Collection<Style> getStyles() {
+		return styleProvider.getStyles(getMapping());
 	}
 
 	private static final Logger LOG = Logger
@@ -48,9 +50,11 @@ public class InstanceModelEditPartHelper {
 
 	protected IFigure createFigure() {
 		IFigure figure = null;
-		Style style = getStyle();
-		if(style != null) 
-			figure = createShape(style);
+		for(Style style : getStyles()) {
+			if(style.getJavaClass() != null) {
+				figure = createShape(style);
+			}
+		}
 		return (figure == null) ? host.createDefaultFigure() : figure;
 	}
 
@@ -73,7 +77,8 @@ public class InstanceModelEditPartHelper {
 	}
 	
 	public void style(IFigure figure) {
-		styleProvider.style(figure, getStyle());
+		for(Style style: getStyles())
+			styleProvider.style(figure, style);
 	}
 
 }

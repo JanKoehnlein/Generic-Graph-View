@@ -19,6 +19,7 @@ import org.eclipse.xtext.graphview.style.graphViewStyle.GraphViewStylePackage;
 import org.eclipse.xtext.graphview.style.graphViewStyle.Import;
 import org.eclipse.xtext.graphview.style.graphViewStyle.Style;
 import org.eclipse.xtext.graphview.style.graphViewStyle.StyleSheet;
+import org.eclipse.xtext.graphview.style.graphViewStyle.XColorLiteral;
 
 import org.eclipse.xtext.xbase.XbasePackage;
 
@@ -50,6 +51,13 @@ public class GraphViewStylePackageImpl extends EPackageImpl implements GraphView
    * @generated
    */
   private EClass styleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass xColorLiteralEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -192,7 +200,7 @@ public class GraphViewStylePackageImpl extends EPackageImpl implements GraphView
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getStyle_Name()
+  public EAttribute getStyle_Names()
   {
     return (EAttribute)styleEClass.getEStructuralFeatures().get(0);
   }
@@ -212,9 +220,29 @@ public class GraphViewStylePackageImpl extends EPackageImpl implements GraphView
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getStyle_Settings()
+  public EReference getStyle_Expression()
   {
     return (EReference)styleEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getXColorLiteral()
+  {
+    return xColorLiteralEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getXColorLiteral_Color()
+  {
+    return (EAttribute)xColorLiteralEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -256,9 +284,12 @@ public class GraphViewStylePackageImpl extends EPackageImpl implements GraphView
     createEAttribute(importEClass, IMPORT__IMPORTED_NAMESPACE);
 
     styleEClass = createEClass(STYLE);
-    createEAttribute(styleEClass, STYLE__NAME);
+    createEAttribute(styleEClass, STYLE__NAMES);
     createEReference(styleEClass, STYLE__JAVA_CLASS);
-    createEReference(styleEClass, STYLE__SETTINGS);
+    createEReference(styleEClass, STYLE__EXPRESSION);
+
+    xColorLiteralEClass = createEClass(XCOLOR_LITERAL);
+    createEAttribute(xColorLiteralEClass, XCOLOR_LITERAL__COLOR);
   }
 
   /**
@@ -294,6 +325,7 @@ public class GraphViewStylePackageImpl extends EPackageImpl implements GraphView
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    xColorLiteralEClass.getESuperTypes().add(theXbasePackage.getXExpression());
 
     // Initialize classes and features; add operations and parameters
     initEClass(styleSheetEClass, StyleSheet.class, "StyleSheet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -305,9 +337,12 @@ public class GraphViewStylePackageImpl extends EPackageImpl implements GraphView
     initEAttribute(getImport_ImportedNamespace(), ecorePackage.getEString(), "importedNamespace", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(styleEClass, Style.class, "Style", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getStyle_Name(), ecorePackage.getEString(), "name", null, 0, 1, Style.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getStyle_Names(), ecorePackage.getEString(), "names", null, 0, -1, Style.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStyle_JavaClass(), theTypesPackage.getJvmParameterizedTypeReference(), null, "javaClass", null, 0, 1, Style.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getStyle_Settings(), theXbasePackage.getXAssignment(), null, "settings", null, 0, -1, Style.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStyle_Expression(), theXbasePackage.getXExpression(), null, "expression", null, 0, 1, Style.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(xColorLiteralEClass, XColorLiteral.class, "XColorLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getXColorLiteral_Color(), ecorePackage.getEString(), "color", null, 0, 1, XColorLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

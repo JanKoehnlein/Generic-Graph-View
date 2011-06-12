@@ -3,7 +3,7 @@ import org.eclipse.emf.ecore.*
 diagram EPackageDiagram type EPackage
 
 node EClassNode for each EClassifiers.filter(typeof (EClass)) {  
-	label EClassName for name 
+	label EClassName for name
 	node AttributeCompartment for EAttributes {
 		label EAttributeLabel for each map(a|a.name + ": " + a.EType.name)		
 	}
@@ -15,9 +15,9 @@ node EClassNode for each EClassifiers.filter(typeof (EClass)) {
 	}  
 	edge EReferenceEdge for each EReferences {
 		-> EClassNode(EType)   
-	}   
+	}
 } 
-	
+
 node EDataTypeNode for each this.EClassifiers.filter(typeof (EDataType)) {
 	label EDataTypeName for name
 }

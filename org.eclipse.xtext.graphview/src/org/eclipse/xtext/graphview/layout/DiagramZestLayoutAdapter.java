@@ -16,6 +16,7 @@ import org.eclipse.zest.layouts.LayoutStyles;
 import org.eclipse.zest.layouts.algorithms.CompositeLayoutAlgorithm;
 import org.eclipse.zest.layouts.algorithms.GridLayoutAlgorithm;
 import org.eclipse.zest.layouts.algorithms.HorizontalShift;
+import org.eclipse.zest.layouts.algorithms.RadialLayoutAlgorithm;
 import org.eclipse.zest.layouts.exampleStructures.SimpleNode;
 import org.eclipse.zest.layouts.exampleStructures.SimpleRelationship;
 
@@ -29,8 +30,8 @@ public class DiagramZestLayoutAdapter extends AbstractDiagramLayout {
 
 	public void layout(IFigure container) {
 		LayoutAlgorithm layoutAlgorithm = new CompositeLayoutAlgorithm(new LayoutAlgorithm[] {
-				new GridLayoutAlgorithm(LayoutStyles.NO_LAYOUT_NODE_RESIZING)
-				, new HorizontalShift(LayoutStyles.NONE)
+				new RadialLayoutAlgorithm(LayoutStyles.NONE)
+				//, new HorizontalShift(LayoutStyles.NONE)
 		});
 		Map<ILayoutNode, LayoutEntity> childrenToNodes = Maps.newHashMap();
 		Map<Connection, LayoutRelationship> connectionToEdges = Maps
@@ -42,7 +43,6 @@ public class DiagramZestLayoutAdapter extends AbstractDiagramLayout {
 				SimpleNode graphNode = new SimpleNode(childFigure, 0, 0,
 						childPreferredSize.width, childPreferredSize.height);
 				childrenToNodes.put(childFigure, graphNode);
-				// layoutAlgorithm.addEntity(graphNode);
 			}
 		}
 		Layer connectionLayer = getConnectionLayer(container);
@@ -57,7 +57,6 @@ public class DiagramZestLayoutAdapter extends AbstractDiagramLayout {
 					SimpleRelationship edge = new SimpleRelationship(
 							sourceNode, targetNode, false);
 					connectionToEdges.put(connection, edge);
-					// layoutAlgorithm.addRelationship(edge);
 				}
 			}
 		}
@@ -65,7 +64,7 @@ public class DiagramZestLayoutAdapter extends AbstractDiagramLayout {
 			layoutAlgorithm.applyLayout(Iterables.toArray(
 					childrenToNodes.values(), LayoutEntity.class), Iterables
 					.toArray(connectionToEdges.values(),
-							LayoutRelationship.class), 0, 0, 1000, 1000, false,
+							LayoutRelationship.class), 0, 0, 2000, 2000, false,
 					false);
 			for (Map.Entry<ILayoutNode, LayoutEntity> entry : childrenToNodes
 					.entrySet()) {
@@ -75,15 +74,11 @@ public class DiagramZestLayoutAdapter extends AbstractDiagramLayout {
 						(int) node.getYInLayout(), (int) node.getWidthInLayout(),
 						(int) node.getHeightInLayout()));
 			}
-			// for (Map.Entry<Connection, LayoutRelationship> entry :
-			// connectionToEdges.entrySet()) {
-			// Connection connection = entry.getKey();
-			// List<Bendpoint> bendpoints = Lists.newArrayList();
-			// for (int i = 0; i < points.size(); ++i) {
-			// bendpoints.add(new AbsoluteBendpoint(points.getPoint(i)));
-			// }
-			// connection.setRoutingConstraint(bendpoints);
-			// }
+//			for (Map.Entry<Connection, LayoutRelationship> entry : connectionToEdges
+//					.entrySet()) {
+//				Connection connection = entry.getKey();
+//				LayoutRelationship layoutRelationship = entry.getValue();
+//			}
 		} catch (InvalidLayoutConfiguration e) {
 			LOG.error("Error in layout config", e);
 		}

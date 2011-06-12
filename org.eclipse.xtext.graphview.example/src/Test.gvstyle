@@ -1,34 +1,29 @@
 import org.eclipse.xtext.graphview.shape.*
 import org.eclipse.draw2d.* 
 
-stylesheet MySteleSheet 
+stylesheet MyStyleSheet 
  
-style EPackageDiagram as DiagramShape {  
-	font : Resources::font("Helvetica", 11, 0)	
-	foregroundColor : Resources::color("#444444") 
+style EPackageDiagram as DiagramShape {
+	font("Helvetica", 11, 0)
+	foreground(#444444)
 }
 
 style EClassNode as RoundedRectangleShape {
-	lineWidth : 2
-	backgroundColor : Resources::color("#ffeeff")
+	lineWidth = 2
+	background(#ffeeee)
 }
 
-style EClassName as LabelShape {
-	font : Resources::font("Helvetica", 11, 1)
-	border : new MarginBorder(5,5,5,5)
-}
-
-style EDataTypeName as LabelShape {
-	font : Resources::font("Helvetica", 11, 1)
-	border : new MarginBorder(5,5,5,5)
+style EClassName, EDataTypeName as LabelShape {
+	font("Helvetica", 11, 1)
+	border = new MarginBorder(5,5,5,5) 
 }
 
 style EDataTypeNode as RectangleShape { 
-	backgroundColor : Resources::color("#ffffee")
-	lineWidth : 2
+	background(#ffffee)
+	lineWidth = 2
 } 
 
 style EReferenceEdge as ConnectionShape {
-	lineWidth: 2
-	foregroundColor : Resources::color("#888888") 
+	lineWidth = 2
+	foreground(#888888) 
 }

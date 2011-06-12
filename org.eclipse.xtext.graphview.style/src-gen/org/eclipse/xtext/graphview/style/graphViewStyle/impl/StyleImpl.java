@@ -18,15 +18,14 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
 
 import org.eclipse.xtext.graphview.style.graphViewStyle.GraphViewStylePackage;
 import org.eclipse.xtext.graphview.style.graphViewStyle.Style;
 
-import org.eclipse.xtext.xbase.XAssignment;
+import org.eclipse.xtext.xbase.XExpression;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,9 +34,9 @@ import org.eclipse.xtext.xbase.XAssignment;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.xtext.graphview.style.graphViewStyle.impl.StyleImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.eclipse.xtext.graphview.style.graphViewStyle.impl.StyleImpl#getNames <em>Names</em>}</li>
  *   <li>{@link org.eclipse.xtext.graphview.style.graphViewStyle.impl.StyleImpl#getJavaClass <em>Java Class</em>}</li>
- *   <li>{@link org.eclipse.xtext.graphview.style.graphViewStyle.impl.StyleImpl#getSettings <em>Settings</em>}</li>
+ *   <li>{@link org.eclipse.xtext.graphview.style.graphViewStyle.impl.StyleImpl#getExpression <em>Expression</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,24 +45,14 @@ import org.eclipse.xtext.xbase.XAssignment;
 public class StyleImpl extends MinimalEObjectImpl.Container implements Style
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getNames() <em>Names</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getNames()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
+  protected EList<String> names;
 
   /**
    * The cached value of the '{@link #getJavaClass() <em>Java Class</em>}' containment reference.
@@ -76,14 +65,14 @@ public class StyleImpl extends MinimalEObjectImpl.Container implements Style
   protected JvmParameterizedTypeReference javaClass;
 
   /**
-   * The cached value of the '{@link #getSettings() <em>Settings</em>}' containment reference list.
+   * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSettings()
+   * @see #getExpression()
    * @generated
    * @ordered
    */
-  protected EList<XAssignment> settings;
+  protected XExpression expression;
 
   /**
    * <!-- begin-user-doc -->
@@ -111,22 +100,13 @@ public class StyleImpl extends MinimalEObjectImpl.Container implements Style
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
+  public EList<String> getNames()
   {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GraphViewStylePackage.STYLE__NAME, oldName, name));
+    if (names == null)
+    {
+      names = new EDataTypeEList<String>(String.class, this, GraphViewStylePackage.STYLE__NAMES);
+    }
+    return names;
   }
 
   /**
@@ -182,13 +162,47 @@ public class StyleImpl extends MinimalEObjectImpl.Container implements Style
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<XAssignment> getSettings()
+  public XExpression getExpression()
   {
-    if (settings == null)
+    return expression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetExpression(XExpression newExpression, NotificationChain msgs)
+  {
+    XExpression oldExpression = expression;
+    expression = newExpression;
+    if (eNotificationRequired())
     {
-      settings = new EObjectContainmentEList<XAssignment>(XAssignment.class, this, GraphViewStylePackage.STYLE__SETTINGS);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GraphViewStylePackage.STYLE__EXPRESSION, oldExpression, newExpression);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return settings;
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setExpression(XExpression newExpression)
+  {
+    if (newExpression != expression)
+    {
+      NotificationChain msgs = null;
+      if (expression != null)
+        msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GraphViewStylePackage.STYLE__EXPRESSION, null, msgs);
+      if (newExpression != null)
+        msgs = ((InternalEObject)newExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GraphViewStylePackage.STYLE__EXPRESSION, null, msgs);
+      msgs = basicSetExpression(newExpression, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, GraphViewStylePackage.STYLE__EXPRESSION, newExpression, newExpression));
   }
 
   /**
@@ -203,8 +217,8 @@ public class StyleImpl extends MinimalEObjectImpl.Container implements Style
     {
       case GraphViewStylePackage.STYLE__JAVA_CLASS:
         return basicSetJavaClass(null, msgs);
-      case GraphViewStylePackage.STYLE__SETTINGS:
-        return ((InternalEList<?>)getSettings()).basicRemove(otherEnd, msgs);
+      case GraphViewStylePackage.STYLE__EXPRESSION:
+        return basicSetExpression(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -219,12 +233,12 @@ public class StyleImpl extends MinimalEObjectImpl.Container implements Style
   {
     switch (featureID)
     {
-      case GraphViewStylePackage.STYLE__NAME:
-        return getName();
+      case GraphViewStylePackage.STYLE__NAMES:
+        return getNames();
       case GraphViewStylePackage.STYLE__JAVA_CLASS:
         return getJavaClass();
-      case GraphViewStylePackage.STYLE__SETTINGS:
-        return getSettings();
+      case GraphViewStylePackage.STYLE__EXPRESSION:
+        return getExpression();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -240,15 +254,15 @@ public class StyleImpl extends MinimalEObjectImpl.Container implements Style
   {
     switch (featureID)
     {
-      case GraphViewStylePackage.STYLE__NAME:
-        setName((String)newValue);
+      case GraphViewStylePackage.STYLE__NAMES:
+        getNames().clear();
+        getNames().addAll((Collection<? extends String>)newValue);
         return;
       case GraphViewStylePackage.STYLE__JAVA_CLASS:
         setJavaClass((JvmParameterizedTypeReference)newValue);
         return;
-      case GraphViewStylePackage.STYLE__SETTINGS:
-        getSettings().clear();
-        getSettings().addAll((Collection<? extends XAssignment>)newValue);
+      case GraphViewStylePackage.STYLE__EXPRESSION:
+        setExpression((XExpression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -264,14 +278,14 @@ public class StyleImpl extends MinimalEObjectImpl.Container implements Style
   {
     switch (featureID)
     {
-      case GraphViewStylePackage.STYLE__NAME:
-        setName(NAME_EDEFAULT);
+      case GraphViewStylePackage.STYLE__NAMES:
+        getNames().clear();
         return;
       case GraphViewStylePackage.STYLE__JAVA_CLASS:
         setJavaClass((JvmParameterizedTypeReference)null);
         return;
-      case GraphViewStylePackage.STYLE__SETTINGS:
-        getSettings().clear();
+      case GraphViewStylePackage.STYLE__EXPRESSION:
+        setExpression((XExpression)null);
         return;
     }
     super.eUnset(featureID);
@@ -287,12 +301,12 @@ public class StyleImpl extends MinimalEObjectImpl.Container implements Style
   {
     switch (featureID)
     {
-      case GraphViewStylePackage.STYLE__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case GraphViewStylePackage.STYLE__NAMES:
+        return names != null && !names.isEmpty();
       case GraphViewStylePackage.STYLE__JAVA_CLASS:
         return javaClass != null;
-      case GraphViewStylePackage.STYLE__SETTINGS:
-        return settings != null && !settings.isEmpty();
+      case GraphViewStylePackage.STYLE__EXPRESSION:
+        return expression != null;
     }
     return super.eIsSet(featureID);
   }
@@ -308,8 +322,8 @@ public class StyleImpl extends MinimalEObjectImpl.Container implements Style
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
+    result.append(" (names: ");
+    result.append(names);
     result.append(')');
     return result.toString();
   }

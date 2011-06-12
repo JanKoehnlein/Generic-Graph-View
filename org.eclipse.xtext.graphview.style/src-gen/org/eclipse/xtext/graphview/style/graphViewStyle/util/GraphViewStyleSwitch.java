@@ -12,6 +12,8 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.xtext.graphview.style.graphViewStyle.*;
 
+import org.eclipse.xtext.xbase.XExpression;
+
 /**
  * <!-- begin-user-doc -->
  * The <b>Switch</b> for the model's inheritance hierarchy.
@@ -116,6 +118,14 @@ public class GraphViewStyleSwitch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case GraphViewStylePackage.XCOLOR_LITERAL:
+      {
+        XColorLiteral xColorLiteral = (XColorLiteral)theEObject;
+        T result = caseXColorLiteral(xColorLiteral);
+        if (result == null) result = caseXExpression(xColorLiteral);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -164,6 +174,38 @@ public class GraphViewStyleSwitch<T>
    * @generated
    */
   public T caseStyle(Style object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>XColor Literal</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>XColor Literal</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseXColorLiteral(XColorLiteral object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>XExpression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>XExpression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseXExpression(XExpression object)
   {
     return null;
   }

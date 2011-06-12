@@ -1,12 +1,13 @@
 package org.eclipse.xtext.graphview.style;
 
-import java.util.Map;
+import java.util.Collection;
 
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping;
 import org.eclipse.xtext.graphview.model.IGraphViewDefinitionProvider;
 import org.eclipse.xtext.graphview.style.graphViewStyle.Style;
 
-import com.google.common.collect.Maps;
+import com.google.common.collect.HashMultimap;
+import com.google.common.collect.Multimap;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 
@@ -17,14 +18,14 @@ public class StyleProvider {
 
 	private IGraphViewDefinitionProvider graphViewDefinitionProvider;
 
-	private Map<String, Style> name2style = Maps.newHashMap();
+	private Multimap<String, Style> name2style = HashMultimap.create();
 
 	@Inject
 	public void setStyler(IStyler styler) {
 		this.styler = styler;
 		styler.setClassLoader(getClass().getClassLoader());
 	}
-	
+
 	@Inject
 	public void setGraphViewDefinitionProvider(
 			final IGraphViewDefinitionProvider graphViewDefinitionProvider) {
@@ -39,19 +40,20 @@ public class StyleProvider {
 		name2style = loadStyles(graphViewDefinitionProvider);
 	}
 
-	protected Map<String, Style> loadStyles(
+	protected Multimap<String, Style> loadStyles(
 			IGraphViewDefinitionProvider graphViewDefinitionProvider) {
-		Map<String, Style> name2style = Maps.newHashMap();
+		Multimap<String, Style> name2style = HashMultimap.create();
 		if (graphViewDefinitionProvider.getStyleSheet() != null) {
 			for (Style style : graphViewDefinitionProvider.getStyleSheet()
 					.getStyles()) {
-				name2style.put(style.getName(), style);
+				for (String name : style.getNames())
+					name2style.put(name, style);
 			}
 		}
 		return name2style;
 	}
 
-	public Style getStyle(AbstractMapping mapping) {
+	public Collection<Style> getStyles(AbstractMapping mapping) {
 		return name2style.get(mapping.getName());
 	}
 
