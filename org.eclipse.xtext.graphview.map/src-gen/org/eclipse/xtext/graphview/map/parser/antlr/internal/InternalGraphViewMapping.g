@@ -139,25 +139,33 @@ ruleDiagramMapping returns [EObject current=null]
 	    }
 
 )
-)(
+)	otherlv_5='{' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getDiagramMappingAccess().getLeftCurlyBracketKeyword_5());
+    }
+(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getDiagramMappingAccess().getMappingsAbstractExpressionMappingParserRuleCall_5_0()); 
+	        newCompositeNode(grammarAccess.getDiagramMappingAccess().getMappingsAbstractExpressionMappingParserRuleCall_6_0()); 
 	    }
-		lv_mappings_5_0=ruleAbstractExpressionMapping		{
+		lv_mappings_6_0=ruleAbstractExpressionMapping		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getDiagramMappingRule());
 	        }
        		add(
        			$current, 
        			"mappings",
-        		lv_mappings_5_0, 
+        		lv_mappings_6_0, 
         		"AbstractExpressionMapping");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)*)
+)*	otherlv_7='}' 
+    {
+    	newLeafNode(otherlv_7, grammarAccess.getDiagramMappingAccess().getRightCurlyBracketKeyword_7());
+    }
+)
 ;
 
 

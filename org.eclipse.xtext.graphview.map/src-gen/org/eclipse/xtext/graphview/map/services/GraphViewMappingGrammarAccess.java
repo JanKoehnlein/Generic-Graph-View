@@ -29,14 +29,18 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 		private final Keyword cTypeKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cTypeGuardAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cTypeGuardJvmTypeReferenceParserRuleCall_4_0 = (RuleCall)cTypeGuardAssignment_4.eContents().get(0);
-		private final Assignment cMappingsAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cMappingsAbstractExpressionMappingParserRuleCall_5_0 = (RuleCall)cMappingsAssignment_5.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cMappingsAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cMappingsAbstractExpressionMappingParserRuleCall_6_0 = (RuleCall)cMappingsAssignment_6.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//DiagramMapping:
-		//	imports+=Import* "diagram" name=QualifiedName "type" typeGuard=JvmTypeReference mappings+=AbstractExpressionMapping*;
+		//	imports+=Import* "diagram" name=QualifiedName "type" typeGuard=JvmTypeReference "{"
+		//	mappings+=AbstractExpressionMapping* "}";
 		public ParserRule getRule() { return rule; }
 
-		//imports+=Import* "diagram" name=QualifiedName "type" typeGuard=JvmTypeReference mappings+=AbstractExpressionMapping*
+		//imports+=Import* "diagram" name=QualifiedName "type" typeGuard=JvmTypeReference "{" mappings+=AbstractExpressionMapping*
+		//"}"
 		public Group getGroup() { return cGroup; }
 
 		//imports+=Import*
@@ -63,11 +67,17 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 		//JvmTypeReference
 		public RuleCall getTypeGuardJvmTypeReferenceParserRuleCall_4_0() { return cTypeGuardJvmTypeReferenceParserRuleCall_4_0; }
 
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
+
 		//mappings+=AbstractExpressionMapping*
-		public Assignment getMappingsAssignment_5() { return cMappingsAssignment_5; }
+		public Assignment getMappingsAssignment_6() { return cMappingsAssignment_6; }
 
 		//AbstractExpressionMapping
-		public RuleCall getMappingsAbstractExpressionMappingParserRuleCall_5_0() { return cMappingsAbstractExpressionMappingParserRuleCall_5_0; }
+		public RuleCall getMappingsAbstractExpressionMappingParserRuleCall_6_0() { return cMappingsAbstractExpressionMappingParserRuleCall_6_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 
 	public class ImportElements extends AbstractParserRuleElementFinder {
@@ -396,7 +406,8 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 
 	
 	//DiagramMapping:
-	//	imports+=Import* "diagram" name=QualifiedName "type" typeGuard=JvmTypeReference mappings+=AbstractExpressionMapping*;
+	//	imports+=Import* "diagram" name=QualifiedName "type" typeGuard=JvmTypeReference "{"
+	//	mappings+=AbstractExpressionMapping* "}";
 	public DiagramMappingElements getDiagramMappingAccess() {
 		return (pDiagramMapping != null) ? pDiagramMapping : (pDiagramMapping = new DiagramMappingElements());
 	}

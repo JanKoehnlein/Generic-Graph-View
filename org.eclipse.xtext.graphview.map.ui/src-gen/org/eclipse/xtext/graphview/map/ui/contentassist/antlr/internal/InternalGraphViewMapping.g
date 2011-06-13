@@ -2884,6 +2884,7 @@ rule__DiagramMapping__Group__5
     }
 :
 	rule__DiagramMapping__Group__5__Impl
+	rule__DiagramMapping__Group__6
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -2895,15 +2896,80 @@ rule__DiagramMapping__Group__5__Impl
     }
 :
 (
-{ before(grammarAccess.getDiagramMappingAccess().getMappingsAssignment_5()); }
-(rule__DiagramMapping__MappingsAssignment_5)*
-{ after(grammarAccess.getDiagramMappingAccess().getMappingsAssignment_5()); }
+{ before(grammarAccess.getDiagramMappingAccess().getLeftCurlyBracketKeyword_5()); }
+
+	'{' 
+
+{ after(grammarAccess.getDiagramMappingAccess().getLeftCurlyBracketKeyword_5()); }
 )
 
 ;
 finally {
 	restoreStackSize(stackSize);
 }
+
+
+rule__DiagramMapping__Group__6
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__DiagramMapping__Group__6__Impl
+	rule__DiagramMapping__Group__7
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__DiagramMapping__Group__6__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getDiagramMappingAccess().getMappingsAssignment_6()); }
+(rule__DiagramMapping__MappingsAssignment_6)*
+{ after(grammarAccess.getDiagramMappingAccess().getMappingsAssignment_6()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__DiagramMapping__Group__7
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__DiagramMapping__Group__7__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__DiagramMapping__Group__7__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getDiagramMappingAccess().getRightCurlyBracketKeyword_7()); }
+
+	'}' 
+
+{ after(grammarAccess.getDiagramMappingAccess().getRightCurlyBracketKeyword_7()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+
 
 
 
@@ -13255,14 +13321,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__DiagramMapping__MappingsAssignment_5
+rule__DiagramMapping__MappingsAssignment_6
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getDiagramMappingAccess().getMappingsAbstractExpressionMappingParserRuleCall_5_0()); }
-	ruleAbstractExpressionMapping{ after(grammarAccess.getDiagramMappingAccess().getMappingsAbstractExpressionMappingParserRuleCall_5_0()); }
+{ before(grammarAccess.getDiagramMappingAccess().getMappingsAbstractExpressionMappingParserRuleCall_6_0()); }
+	ruleAbstractExpressionMapping{ after(grammarAccess.getDiagramMappingAccess().getMappingsAbstractExpressionMappingParserRuleCall_6_0()); }
 )
 
 ;

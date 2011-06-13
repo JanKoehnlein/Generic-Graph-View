@@ -192,7 +192,7 @@ public class GraphViewMappingParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDiagramMappingAccess().getImportsAssignment_0(), "rule__DiagramMapping__ImportsAssignment_0");
 					put(grammarAccess.getDiagramMappingAccess().getNameAssignment_2(), "rule__DiagramMapping__NameAssignment_2");
 					put(grammarAccess.getDiagramMappingAccess().getTypeGuardAssignment_4(), "rule__DiagramMapping__TypeGuardAssignment_4");
-					put(grammarAccess.getDiagramMappingAccess().getMappingsAssignment_5(), "rule__DiagramMapping__MappingsAssignment_5");
+					put(grammarAccess.getDiagramMappingAccess().getMappingsAssignment_6(), "rule__DiagramMapping__MappingsAssignment_6");
 					put(grammarAccess.getImportAccess().getImportedNamespaceAssignment_1(), "rule__Import__ImportedNamespaceAssignment_1");
 					put(grammarAccess.getNodeMappingAccess().getNameAssignment_1(), "rule__NodeMapping__NameAssignment_1");
 					put(grammarAccess.getNodeMappingAccess().getMultiAssignment_3(), "rule__NodeMapping__MultiAssignment_3");

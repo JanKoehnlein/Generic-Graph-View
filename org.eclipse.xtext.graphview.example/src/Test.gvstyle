@@ -1,21 +1,32 @@
 import org.eclipse.xtext.graphview.shape.*
 import org.eclipse.draw2d.* 
-import EPackageDiagram.*
+import PackageDiagram.*
+
 stylesheet MyStyleSheet 
  
-style EPackageDiagram as DiagramShape {
+style PackageDiagram as DiagramShape {
 	font("Helvetica", 11, 0)
-	foreground(#444444)
+	foreground(#333333)
 }
 
 style ClassNode as RoundedRectangleShape {
 	lineWidth = 2
-	background(#ffeeee)
+	background(#ffeedd)
 }
 
 style ClassNode.Name, DataTypeNode.Name as LabelShape {
 	font("Helvetica", 11, 1)
 	border = new MarginBorder(5,5,5,5) 
+}
+
+style ClassNode.Attributes, ClassNode.Operations as RectangleShape {
+	foreground(#dddddd)
+	background(#ffffff)
+	lineWidth = 0
+}
+
+style ClassNode.Attributes.Label, ClassNode.Operations.Label as LabelShape {
+	foreground(#333333)
 }
 
 style DataTypeNode as RectangleShape { 

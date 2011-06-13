@@ -7,8 +7,9 @@ import "http://www.eclipse.org/emf/2002/Ecore"
 
 DiagramMapping:
 	imports+=Import*
-	'diagram' name=QualifiedName 'type' typeGuard=JvmTypeReference 
-	mappings+=AbstractExpressionMapping*;
+	'diagram' name=QualifiedName 'type' typeGuard=JvmTypeReference '{'
+		mappings+=AbstractExpressionMapping*
+	'}';
 
 Import:
 	'import' importedNamespace=QualifiedNameWithWildcard;
