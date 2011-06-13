@@ -2,22 +2,22 @@ import org.eclipse.emf.ecore.*
 
 diagram EPackageDiagram type EPackage
 
-node EClassNode for each EClassifiers.filter(typeof (EClass)) {  
-	label EClassName for name
-	node AttributeCompartment for EAttributes {
-		label EAttributeLabel for each map(a|a.name + ": " + a.EType.name)		
+node ClassNode for each EClassifiers.filter(typeof (EClass)) {  
+	label Name for name
+	node Attributes for EAttributes {
+		label Label for each map(a|a.name + ": " + a.EType.name)		
 	}
-	node OperationCompartment for EOperations {
-		label EOperationLabel for each map(a|a.name + "(" 
+	node Operations for EOperations {
+		label Label for each map(a|a.name + "(" 
 				+ a.EParameters.map(p|p.EType.name).join(", ") 
 				+ "): " + a.EType.name
 		)		
 	}  
-	edge EReferenceEdge for each EReferences {
-		-> EClassNode(EType)   
+	edge ReferenceEdge for each EReferences {
+		-> ClassNode(EType)   
 	}
 } 
 
-node EDataTypeNode for each this.EClassifiers.filter(typeof (EDataType)) {
-	label EDataTypeName for name
+node DataTypeNode for each this.EClassifiers.filter(typeof (EDataType)) {
+	label Name for name
 }

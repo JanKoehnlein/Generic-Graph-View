@@ -18,7 +18,7 @@ public class StyleProvider {
 
 	private IGraphViewDefinitionProvider graphViewDefinitionProvider;
 
-	private Multimap<String, Style> name2style = HashMultimap.create();
+	private Multimap<AbstractMapping, Style> mapping2style = HashMultimap.create();
 
 	@Inject
 	public void setStyler(IStyler styler) {
@@ -34,27 +34,27 @@ public class StyleProvider {
 				.addModelChangedListener(new IGraphViewDefinitionProvider.Listener() {
 					@Override
 					public void graphViewDefinitionChanged() {
-						name2style = loadStyles(graphViewDefinitionProvider);
+						mapping2style = loadStyles(graphViewDefinitionProvider);
 					}
 				});
-		name2style = loadStyles(graphViewDefinitionProvider);
+		mapping2style = loadStyles(graphViewDefinitionProvider);
 	}
 
-	protected Multimap<String, Style> loadStyles(
+	protected Multimap<AbstractMapping, Style> loadStyles(
 			IGraphViewDefinitionProvider graphViewDefinitionProvider) {
-		Multimap<String, Style> name2style = HashMultimap.create();
+		Multimap<AbstractMapping, Style> mapping2style = HashMultimap.create();
 		if (graphViewDefinitionProvider.getStyleSheet() != null) {
 			for (Style style : graphViewDefinitionProvider.getStyleSheet()
 					.getStyles()) {
-				for (String name : style.getNames())
-					name2style.put(name, style);
+				for (AbstractMapping mapping: style.getMappings())
+					mapping2style.put(mapping, style);
 			}
 		}
-		return name2style;
+		return mapping2style;
 	}
 
 	public Collection<Style> getStyles(AbstractMapping mapping) {
-		return name2style.get(mapping.getName());
+		return mapping2style.get(mapping);
 	}
 
 	public void style(Object o, Style style) {

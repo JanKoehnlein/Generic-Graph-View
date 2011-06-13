@@ -146,13 +146,13 @@ public interface GraphViewStylePackage extends EPackage
   int STYLE = 2;
 
   /**
-   * The feature id for the '<em><b>Names</b></em>' attribute list.
+   * The feature id for the '<em><b>Mappings</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STYLE__NAMES = 0;
+  int STYLE__MAPPINGS = 0;
 
   /**
    * The feature id for the '<em><b>Java Class</b></em>' containment reference.
@@ -285,15 +285,15 @@ public interface GraphViewStylePackage extends EPackage
   EClass getStyle();
 
   /**
-   * Returns the meta object for the attribute list '{@link org.eclipse.xtext.graphview.style.graphViewStyle.Style#getNames <em>Names</em>}'.
+   * Returns the meta object for the reference list '{@link org.eclipse.xtext.graphview.style.graphViewStyle.Style#getMappings <em>Mappings</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Names</em>'.
-   * @see org.eclipse.xtext.graphview.style.graphViewStyle.Style#getNames()
+   * @return the meta object for the reference list '<em>Mappings</em>'.
+   * @see org.eclipse.xtext.graphview.style.graphViewStyle.Style#getMappings()
    * @see #getStyle()
    * @generated
    */
-  EAttribute getStyle_Names();
+  EReference getStyle_Mappings();
 
   /**
    * Returns the meta object for the containment reference '{@link org.eclipse.xtext.graphview.style.graphViewStyle.Style#getJavaClass <em>Java Class</em>}'.
@@ -424,12 +424,12 @@ public interface GraphViewStylePackage extends EPackage
     EClass STYLE = eINSTANCE.getStyle();
 
     /**
-     * The meta object literal for the '<em><b>Names</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Mappings</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute STYLE__NAMES = eINSTANCE.getStyle_Names();
+    EReference STYLE__MAPPINGS = eINSTANCE.getStyle_Mappings();
 
     /**
      * The meta object literal for the '<em><b>Java Class</b></em>' containment reference feature.

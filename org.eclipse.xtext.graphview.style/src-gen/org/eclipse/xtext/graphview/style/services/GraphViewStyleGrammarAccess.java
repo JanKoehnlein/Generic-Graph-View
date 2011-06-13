@@ -114,12 +114,14 @@ public class GraphViewStyleGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Style");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cStyleKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNamesAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNamesQualifiedNameParserRuleCall_1_0 = (RuleCall)cNamesAssignment_1.eContents().get(0);
+		private final Assignment cMappingsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cMappingsAbstractMappingCrossReference_1_0 = (CrossReference)cMappingsAssignment_1.eContents().get(0);
+		private final RuleCall cMappingsAbstractMappingQualifiedNameParserRuleCall_1_0_1 = (RuleCall)cMappingsAbstractMappingCrossReference_1_0.eContents().get(1);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cNamesAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cNamesQualifiedNameParserRuleCall_2_1_0 = (RuleCall)cNamesAssignment_2_1.eContents().get(0);
+		private final Assignment cMappingsAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final CrossReference cMappingsAbstractMappingCrossReference_2_1_0 = (CrossReference)cMappingsAssignment_2_1.eContents().get(0);
+		private final RuleCall cMappingsAbstractMappingQualifiedNameParserRuleCall_2_1_0_1 = (RuleCall)cMappingsAbstractMappingCrossReference_2_1_0.eContents().get(1);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Keyword cAsKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Assignment cJavaClassAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
@@ -128,34 +130,41 @@ public class GraphViewStyleGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cExpressionXBlockExpressionParserRuleCall_4_0 = (RuleCall)cExpressionAssignment_4.eContents().get(0);
 		
 		//Style:
-		//	"style" names+=QualifiedName ("," names+=QualifiedName)* // should become a crossref to a Mapping ID
+		//	"style" mappings+=[gvmapping::AbstractMapping|QualifiedName] (","
+		//	mappings+=[gvmapping::AbstractMapping|QualifiedName])* // should become a crossref to a Mapping ID
 		//	("as" javaClass=JvmTypeReference)? expression=XBlockExpression?;
 		public ParserRule getRule() { return rule; }
 
-		//"style" names+=QualifiedName ("," names+=QualifiedName)* // should become a crossref to a Mapping ID
+		//"style" mappings+=[gvmapping::AbstractMapping|QualifiedName] ("," mappings+=[gvmapping::AbstractMapping|QualifiedName])* // should become a crossref to a Mapping ID
 		//("as" javaClass=JvmTypeReference)? expression=XBlockExpression?
 		public Group getGroup() { return cGroup; }
 
 		//"style"
 		public Keyword getStyleKeyword_0() { return cStyleKeyword_0; }
 
-		//names+=QualifiedName
-		public Assignment getNamesAssignment_1() { return cNamesAssignment_1; }
+		//mappings+=[gvmapping::AbstractMapping|QualifiedName]
+		public Assignment getMappingsAssignment_1() { return cMappingsAssignment_1; }
+
+		//[gvmapping::AbstractMapping|QualifiedName]
+		public CrossReference getMappingsAbstractMappingCrossReference_1_0() { return cMappingsAbstractMappingCrossReference_1_0; }
 
 		//QualifiedName
-		public RuleCall getNamesQualifiedNameParserRuleCall_1_0() { return cNamesQualifiedNameParserRuleCall_1_0; }
+		public RuleCall getMappingsAbstractMappingQualifiedNameParserRuleCall_1_0_1() { return cMappingsAbstractMappingQualifiedNameParserRuleCall_1_0_1; }
 
-		//("," names+=QualifiedName)*
+		//("," mappings+=[gvmapping::AbstractMapping|QualifiedName])*
 		public Group getGroup_2() { return cGroup_2; }
 
 		//","
 		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
 
-		//names+=QualifiedName
-		public Assignment getNamesAssignment_2_1() { return cNamesAssignment_2_1; }
+		//mappings+=[gvmapping::AbstractMapping|QualifiedName]
+		public Assignment getMappingsAssignment_2_1() { return cMappingsAssignment_2_1; }
+
+		//[gvmapping::AbstractMapping|QualifiedName]
+		public CrossReference getMappingsAbstractMappingCrossReference_2_1_0() { return cMappingsAbstractMappingCrossReference_2_1_0; }
 
 		//QualifiedName
-		public RuleCall getNamesQualifiedNameParserRuleCall_2_1_0() { return cNamesQualifiedNameParserRuleCall_2_1_0; }
+		public RuleCall getMappingsAbstractMappingQualifiedNameParserRuleCall_2_1_0_1() { return cMappingsAbstractMappingQualifiedNameParserRuleCall_2_1_0_1; }
 
 		//("as" javaClass=JvmTypeReference)?
 		public Group getGroup_3() { return cGroup_3; }
@@ -293,7 +302,8 @@ public class GraphViewStyleGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Style:
-	//	"style" names+=QualifiedName ("," names+=QualifiedName)* // should become a crossref to a Mapping ID
+	//	"style" mappings+=[gvmapping::AbstractMapping|QualifiedName] (","
+	//	mappings+=[gvmapping::AbstractMapping|QualifiedName])* // should become a crossref to a Mapping ID
 	//	("as" javaClass=JvmTypeReference)? expression=XBlockExpression?;
 	public StyleElements getStyleAccess() {
 		return (pStyle != null) ? pStyle : (pStyle = new StyleElements());

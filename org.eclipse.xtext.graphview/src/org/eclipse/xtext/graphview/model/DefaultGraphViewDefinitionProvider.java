@@ -56,10 +56,15 @@ public class DefaultGraphViewDefinitionProvider implements
 
 	private ListenerList listeners = new ListenerList();
 
+	private IProject currentProject;
+	
+	private ResourceSet resourceSet;
+	
 	public DefaultGraphViewDefinitionProvider() {
 	}
 
 	protected void loadModels() {
+		currentProject = null;
 		diagramMapping = (DiagramMapping) load(GraphViewMappingPackage.Literals.DIAGRAM_MAPPING);
 		styleSheet = (StyleSheet) load(GraphViewStylePackage.Literals.STYLE_SHEET);
 		if (resourceChangeListener == null) {
@@ -119,11 +124,15 @@ public class DefaultGraphViewDefinitionProvider implements
 	protected EObject load(IEObjectDescription eObjectDescription) {
 		IProject project = projectUtil.getProject(eObjectDescription
 				.getEObjectURI());
+		if(currentProject == null) {
+			resourceSet = resourceSetProvider.get(project);
+			currentProject = project;
+		} else if(!currentProject.equals(project)) { 
+			throw new IllegalArgumentException("GraphView diagram definition files must reside in the same project");
+		}
 		modelFiles.add(projectUtil.findFileStorage(
 				eObjectDescription.getEObjectURI(), false));
-		ResourceSet resourceSet = resourceSetProvider.get(project);
 		typeProviderFactory.createTypeProvider(resourceSet);
 		return resourceSet.getEObject(eObjectDescription.getEObjectURI(), true);
 	}
-
 }

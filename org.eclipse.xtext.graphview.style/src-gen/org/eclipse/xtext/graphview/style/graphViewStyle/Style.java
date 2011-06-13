@@ -11,6 +11,8 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
 
+import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping;
+
 import org.eclipse.xtext.xbase.XExpression;
 
 /**
@@ -21,7 +23,7 @@ import org.eclipse.xtext.xbase.XExpression;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.xtext.graphview.style.graphViewStyle.Style#getNames <em>Names</em>}</li>
+ *   <li>{@link org.eclipse.xtext.graphview.style.graphViewStyle.Style#getMappings <em>Mappings</em>}</li>
  *   <li>{@link org.eclipse.xtext.graphview.style.graphViewStyle.Style#getJavaClass <em>Java Class</em>}</li>
  *   <li>{@link org.eclipse.xtext.graphview.style.graphViewStyle.Style#getExpression <em>Expression</em>}</li>
  * </ul>
@@ -34,20 +36,20 @@ import org.eclipse.xtext.xbase.XExpression;
 public interface Style extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Names</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Mappings</b></em>' reference list.
+   * The list contents are of type {@link org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Names</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Mappings</em>' reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Names</em>' attribute list.
-   * @see org.eclipse.xtext.graphview.style.graphViewStyle.GraphViewStylePackage#getStyle_Names()
-   * @model unique="false"
+   * @return the value of the '<em>Mappings</em>' reference list.
+   * @see org.eclipse.xtext.graphview.style.graphViewStyle.GraphViewStylePackage#getStyle_Mappings()
+   * @model
    * @generated
    */
-  EList<String> getNames();
+  EList<AbstractMapping> getMappings();
 
   /**
    * Returns the value of the '<em><b>Java Class</b></em>' containment reference.

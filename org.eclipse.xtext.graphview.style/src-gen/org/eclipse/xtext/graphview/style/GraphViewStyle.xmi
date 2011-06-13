@@ -10,6 +10,9 @@
     <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="jvmTypes">
       <ePackage href="http://www.eclipse.org/xtext/common/JavaVMTypes#/"/>
     </metamodelDeclarations>
+    <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="gvmapping">
+      <ePackage href="http://www.eclipse.org/xtext/graphview/map/GraphViewMapping#/"/>
+    </metamodelDeclarations>
     <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel">
       <ePackage href="http://www.eclipse.org/emf/2002/Ecore#/"/>
     </metamodelDeclarations>
@@ -42,7 +45,7 @@
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="QualifiedNameWithWildcard">
-      <type metamodel="/0/@metamodelDeclarations.3">
+      <type metamodel="/0/@metamodelDeclarations.4">
         <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </type>
       <alternatives xsi:type="xtext:Group">
@@ -59,13 +62,23 @@
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Keyword" value="style"/>
-        <elements xsi:type="xtext:Assignment" feature="names" operator="+=">
-          <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.50"/>
+        <elements xsi:type="xtext:Assignment" feature="mappings" operator="+=">
+          <terminal xsi:type="xtext:CrossReference">
+            <type metamodel="/0/@metamodelDeclarations.3">
+              <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/xtext/graphview/map/GraphViewMapping#//AbstractMapping"/>
+            </type>
+            <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.50"/>
+          </terminal>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="*">
           <elements xsi:type="xtext:Keyword" value=","/>
-          <elements xsi:type="xtext:Assignment" feature="names" operator="+=">
-            <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.50"/>
+          <elements xsi:type="xtext:Assignment" feature="mappings" operator="+=">
+            <terminal xsi:type="xtext:CrossReference">
+              <type metamodel="/0/@metamodelDeclarations.3">
+                <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/xtext/graphview/map/GraphViewMapping#//AbstractMapping"/>
+              </type>
+              <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.50"/>
+            </terminal>
           </elements>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="?">
@@ -102,7 +115,7 @@
       </alternatives>
     </rules>
     <rules xsi:type="xtext:TerminalRule" name="Color">
-      <type metamodel="/0/@metamodelDeclarations.3">
+      <type metamodel="/0/@metamodelDeclarations.4">
         <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </type>
       <alternatives xsi:type="xtext:Group">

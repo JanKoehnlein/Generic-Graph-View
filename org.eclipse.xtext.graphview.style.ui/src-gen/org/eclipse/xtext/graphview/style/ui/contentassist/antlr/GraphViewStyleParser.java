@@ -191,8 +191,8 @@ public class GraphViewStyleParser extends AbstractContentAssistParser {
 					put(grammarAccess.getStyleSheetAccess().getNameAssignment_2(), "rule__StyleSheet__NameAssignment_2");
 					put(grammarAccess.getStyleSheetAccess().getStylesAssignment_3(), "rule__StyleSheet__StylesAssignment_3");
 					put(grammarAccess.getImportAccess().getImportedNamespaceAssignment_1(), "rule__Import__ImportedNamespaceAssignment_1");
-					put(grammarAccess.getStyleAccess().getNamesAssignment_1(), "rule__Style__NamesAssignment_1");
-					put(grammarAccess.getStyleAccess().getNamesAssignment_2_1(), "rule__Style__NamesAssignment_2_1");
+					put(grammarAccess.getStyleAccess().getMappingsAssignment_1(), "rule__Style__MappingsAssignment_1");
+					put(grammarAccess.getStyleAccess().getMappingsAssignment_2_1(), "rule__Style__MappingsAssignment_2_1");
 					put(grammarAccess.getStyleAccess().getJavaClassAssignment_3_1(), "rule__Style__JavaClassAssignment_3_1");
 					put(grammarAccess.getStyleAccess().getExpressionAssignment_4(), "rule__Style__ExpressionAssignment_4");
 					put(grammarAccess.getXColorLiteralAccess().getColorAssignment(), "rule__XColorLiteral__ColorAssignment");

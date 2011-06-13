@@ -172,12 +172,12 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 				}
 				else break;
 			case TypesPackage.JVM_UPPER_BOUND:
-				if(context == grammarAccess.getJvmUpperBoundAndedRule()) {
-					sequence_JvmUpperBoundAnded_JvmUpperBound(context, (JvmUpperBound) semanticObject); 
+				if(context == grammarAccess.getJvmUpperBoundRule()) {
+					sequence_JvmUpperBound_JvmUpperBound(context, (JvmUpperBound) semanticObject); 
 					return; 
 				}
-				else if(context == grammarAccess.getJvmUpperBoundRule()) {
-					sequence_JvmUpperBound_JvmUpperBound(context, (JvmUpperBound) semanticObject); 
+				else if(context == grammarAccess.getJvmUpperBoundAndedRule()) {
+					sequence_JvmUpperBoundAnded_JvmUpperBound(context, (JvmUpperBound) semanticObject); 
 					return; 
 				}
 				else break;
@@ -1108,10 +1108,10 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	
 	/**
 	 * Constraint:
-	 *     (names+=QualifiedName names+=QualifiedName* javaClass=JvmTypeReference? expression=XBlockExpression?)
+	 *     (mappings+=[AbstractMapping|QualifiedName] mappings+=[AbstractMapping|QualifiedName]* javaClass=JvmTypeReference? expression=XBlockExpression?)
 	 *
 	 * Features:
-	 *    names[1, *]
+	 *    mappings[1, *]
 	 *    javaClass[0, 1]
 	 *    expression[0, 1]
 	 */

@@ -33,6 +33,8 @@ public class ModelInstantiator {
 
 	public DiagramInstance createInstance(DiagramMapping mapping,
 			Object semanticElement) {
+		if(mapping == null) 
+			return null;
 		Multimap<Object, NodeInstance> semantic2instance = HashMultimap
 				.create();
 		DiagramInstance diagramInstance = (DiagramInstance) internalCreateInstance(

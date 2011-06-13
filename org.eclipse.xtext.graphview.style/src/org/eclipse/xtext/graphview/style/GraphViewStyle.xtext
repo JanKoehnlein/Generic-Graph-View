@@ -3,7 +3,7 @@ grammar org.eclipse.xtext.graphview.style.GraphViewStyle with org.eclipse.xtext.
 generate graphViewStyle "http://www.xtext.org/graphview/style/GraphViewStyle"
 import "http://www.eclipse.org/xtext/xbase/Xbase" as xbase
 import "http://www.eclipse.org/xtext/common/JavaVMTypes" as jvmTypes
-//import "platform:/resource/org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/GraphViewMapping.ecore"
+import "platform:/resource/org.eclipse.xtext.graphview.map/src/org/eclipse/xtext/graphview/map/GraphViewMapping.ecore" as gvmapping
 import "http://www.eclipse.org/emf/2002/Ecore"
 
 StyleSheet:
@@ -18,7 +18,7 @@ QualifiedNameWithWildcard:
 	QualifiedName ('.' '*')?;
 	 
 Style:
-	'style' names+=QualifiedName (',' names+=QualifiedName)* // should become a crossref to a Mapping ID
+	'style' mappings+=[gvmapping::AbstractMapping|QualifiedName] (',' mappings+=[gvmapping::AbstractMapping|QualifiedName])* // should become a crossref to a Mapping ID
 	('as' javaClass=JvmTypeReference)?
 	expression=XBlockExpression?;
 

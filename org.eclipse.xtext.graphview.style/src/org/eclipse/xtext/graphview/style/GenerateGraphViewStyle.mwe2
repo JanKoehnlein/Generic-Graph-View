@@ -15,6 +15,7 @@ Workflow {
         platformUri = "${runtimeProject}/.."
         registerGenModelFile = "platform:/resource/org.eclipse.xtext.xbase/model/Xbase.genmodel"
         registerGenModelFile = "platform:/resource/org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel"
+        registerGenModelFile = "platform:/resource/org.eclipse.xtext.graphview.map/src/org/eclipse/xtext/graphview/map/GraphViewMapping.genmodel"
     }
 
     component = DirectoryCleaner {

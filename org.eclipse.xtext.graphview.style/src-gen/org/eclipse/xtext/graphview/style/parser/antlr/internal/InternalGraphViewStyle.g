@@ -249,18 +249,15 @@ ruleStyle returns [EObject current=null]
     }
 (
 (
-		{ 
-	        newCompositeNode(grammarAccess.getStyleAccess().getNamesQualifiedNameParserRuleCall_1_0()); 
-	    }
-		lv_names_1_0=ruleQualifiedName		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getStyleRule());
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getStyleRule());
 	        }
-       		add(
-       			$current, 
-       			"names",
-        		lv_names_1_0, 
-        		"QualifiedName");
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getStyleAccess().getMappingsAbstractMappingCrossReference_1_0()); 
+	    }
+		ruleQualifiedName		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -271,18 +268,15 @@ ruleStyle returns [EObject current=null]
     }
 (
 (
-		{ 
-	        newCompositeNode(grammarAccess.getStyleAccess().getNamesQualifiedNameParserRuleCall_2_1_0()); 
-	    }
-		lv_names_3_0=ruleQualifiedName		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getStyleRule());
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getStyleRule());
 	        }
-       		add(
-       			$current, 
-       			"names",
-        		lv_names_3_0, 
-        		"QualifiedName");
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getStyleAccess().getMappingsAbstractMappingCrossReference_2_1_0()); 
+	    }
+		ruleQualifiedName		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 

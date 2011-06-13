@@ -14,6 +14,8 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.eclipse.xtext.common.types.TypesPackage;
 
+import org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage;
+
 import org.eclipse.xtext.graphview.style.graphViewStyle.GraphViewStyleFactory;
 import org.eclipse.xtext.graphview.style.graphViewStyle.GraphViewStylePackage;
 import org.eclipse.xtext.graphview.style.graphViewStyle.Import;
@@ -108,7 +110,7 @@ public class GraphViewStylePackageImpl extends EPackageImpl implements GraphView
     isInited = true;
 
     // Initialize simple dependencies
-    XbasePackage.eINSTANCE.eClass();
+    GraphViewMappingPackage.eINSTANCE.eClass();
 
     // Create package meta-data objects
     theGraphViewStylePackage.createPackageContents();
@@ -200,9 +202,9 @@ public class GraphViewStylePackageImpl extends EPackageImpl implements GraphView
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getStyle_Names()
+  public EReference getStyle_Mappings()
   {
-    return (EAttribute)styleEClass.getEStructuralFeatures().get(0);
+    return (EReference)styleEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -284,7 +286,7 @@ public class GraphViewStylePackageImpl extends EPackageImpl implements GraphView
     createEAttribute(importEClass, IMPORT__IMPORTED_NAMESPACE);
 
     styleEClass = createEClass(STYLE);
-    createEAttribute(styleEClass, STYLE__NAMES);
+    createEReference(styleEClass, STYLE__MAPPINGS);
     createEReference(styleEClass, STYLE__JAVA_CLASS);
     createEReference(styleEClass, STYLE__EXPRESSION);
 
@@ -317,6 +319,7 @@ public class GraphViewStylePackageImpl extends EPackageImpl implements GraphView
     setNsURI(eNS_URI);
 
     // Obtain other dependent packages
+    GraphViewMappingPackage theGraphViewMappingPackage = (GraphViewMappingPackage)EPackage.Registry.INSTANCE.getEPackage(GraphViewMappingPackage.eNS_URI);
     TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
     XbasePackage theXbasePackage = (XbasePackage)EPackage.Registry.INSTANCE.getEPackage(XbasePackage.eNS_URI);
 
@@ -337,7 +340,7 @@ public class GraphViewStylePackageImpl extends EPackageImpl implements GraphView
     initEAttribute(getImport_ImportedNamespace(), ecorePackage.getEString(), "importedNamespace", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(styleEClass, Style.class, "Style", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getStyle_Names(), ecorePackage.getEString(), "names", null, 0, -1, Style.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStyle_Mappings(), theGraphViewMappingPackage.getAbstractMapping(), null, "mappings", null, 0, -1, Style.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStyle_JavaClass(), theTypesPackage.getJvmParameterizedTypeReference(), null, "javaClass", null, 0, 1, Style.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStyle_Expression(), theXbasePackage.getXExpression(), null, "expression", null, 0, 1, Style.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
