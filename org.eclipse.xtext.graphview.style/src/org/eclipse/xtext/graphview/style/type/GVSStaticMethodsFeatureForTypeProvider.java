@@ -22,9 +22,13 @@ public class GVSStaticMethodsFeatureForTypeProvider extends
 	private static final Map<String, String> extensionClasses = Maps
 			.newHashMap();
 
+	private static final List<String> literalClasses = Lists.newArrayList();
+
 	static {
 		extensionClasses.put("org.eclipse.draw2d.IFigure",
 				"org.eclipse.xtext.graphview.shape.FigureExtensions");
+		literalClasses.add("org.eclipse.xtext.graphview.shape.ColorLiterals");
+		literalClasses.add("org.eclipse.xtext.graphview.shape.FontLiterals");
 	}
 
 	@Inject
@@ -38,7 +42,9 @@ public class GVSStaticMethodsFeatureForTypeProvider extends
 			JvmTypeReference reference) {
 		Iterable<String> resultFromSuper = super
 				.getVisibleTypesContainingStaticMethods(reference);
-		if (reference != null && reference.getType() != null
+		if (reference == null) {
+			return Iterables.concat(resultFromSuper, literalClasses);
+		} else if (reference.getType() != null
 				&& !primitives.isPrimitive(reference)) {
 			List<String> typeNames = Lists.newArrayList(reference.getType()
 					.getIdentifier());

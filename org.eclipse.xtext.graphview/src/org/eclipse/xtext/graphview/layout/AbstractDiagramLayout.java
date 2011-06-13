@@ -11,7 +11,6 @@ import org.eclipse.draw2d.geometry.Rectangle;
 
 public abstract class AbstractDiagramLayout extends AbstractLayout {
 
-
 	protected Dimension calculatePreferredSize(IFigure container, int wHint,
 			int hHint) {
 		container.validate();
@@ -26,15 +25,18 @@ public abstract class AbstractDiagramLayout extends AbstractLayout {
 	}
 
 	protected Layer getConnectionLayer(IFigure container) {
-		if (container instanceof LayeredPane) {
-			Layer layer = ((LayeredPane) container)
-					.getLayer("Connection Layer");
-			if (layer != null)
-				return layer;
-		}
-		if (container != null)
-			return getConnectionLayer(container.getParent());
+		LayeredPane layeredPane = findParentOfType(container, LayeredPane.class);
+		if (layeredPane != null)
+			return layeredPane.getLayer("Connection Layer");
 		return null;
 	}
 
+	@SuppressWarnings("unchecked")
+	protected <T> T findParentOfType(IFigure figure, Class<T> type) {
+		if (type.isInstance(figure))
+			return (T) figure;
+		if (figure.getParent() != null)
+			return findParentOfType(figure.getParent(), type);
+		return null;
+	}
 }

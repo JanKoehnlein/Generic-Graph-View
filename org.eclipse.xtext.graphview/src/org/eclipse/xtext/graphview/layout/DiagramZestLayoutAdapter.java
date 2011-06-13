@@ -3,7 +3,10 @@ package org.eclipse.xtext.graphview.layout;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
+import org.eclipse.core.internal.runtime.FindSupport;
 import org.eclipse.draw2d.Connection;
+import org.eclipse.draw2d.FreeformLayer;
+import org.eclipse.draw2d.FreeformViewport;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Layer;
 import org.eclipse.draw2d.geometry.Dimension;
@@ -17,6 +20,7 @@ import org.eclipse.zest.layouts.algorithms.CompositeLayoutAlgorithm;
 import org.eclipse.zest.layouts.algorithms.GridLayoutAlgorithm;
 import org.eclipse.zest.layouts.algorithms.HorizontalShift;
 import org.eclipse.zest.layouts.algorithms.RadialLayoutAlgorithm;
+import org.eclipse.zest.layouts.algorithms.SpringLayoutAlgorithm;
 import org.eclipse.zest.layouts.exampleStructures.SimpleNode;
 import org.eclipse.zest.layouts.exampleStructures.SimpleRelationship;
 
@@ -30,8 +34,9 @@ public class DiagramZestLayoutAdapter extends AbstractDiagramLayout {
 
 	public void layout(IFigure container) {
 		LayoutAlgorithm layoutAlgorithm = new CompositeLayoutAlgorithm(new LayoutAlgorithm[] {
-				new RadialLayoutAlgorithm(LayoutStyles.NONE)
-				//, new HorizontalShift(LayoutStyles.NONE)
+				new GridLayoutAlgorithm(LayoutStyles.NONE)
+//				new SpringLayoutAslgorithm(LayoutStyles.NONE)
+//				, new HorizontalShift(LayoutStyles.NONE)
 		});
 		Map<ILayoutNode, LayoutEntity> childrenToNodes = Maps.newHashMap();
 		Map<Connection, LayoutRelationship> connectionToEdges = Maps
@@ -64,7 +69,7 @@ public class DiagramZestLayoutAdapter extends AbstractDiagramLayout {
 			layoutAlgorithm.applyLayout(Iterables.toArray(
 					childrenToNodes.values(), LayoutEntity.class), Iterables
 					.toArray(connectionToEdges.values(),
-							LayoutRelationship.class), 0, 0, 2000, 2000, false,
+							LayoutRelationship.class), 0, 0, 1024, 768, false,
 					false);
 			for (Map.Entry<ILayoutNode, LayoutEntity> entry : childrenToNodes
 					.entrySet()) {

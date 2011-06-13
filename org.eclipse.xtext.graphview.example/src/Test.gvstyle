@@ -5,36 +5,36 @@ import PackageDiagram.*
 stylesheet MyStyleSheet 
  
 style PackageDiagram as DiagramShape {
-	font("Helvetica", 11, 0)
-	foreground(#333333)
+	font = font("Helvetica", 11, 0)
+	foregroundColor = color(#333333)
 }
 
 style ClassNode as RoundedRectangleShape {
 	lineWidth = 2
-	background(#ffeedd)
+	backgroundColor = color(#ffeedd)
 }
 
-style ClassNode.Name, DataTypeNode.Name as LabelShape {
-	font("Helvetica", 11, 1)
+style ClassNode.Name as LabelShape {
+	font = font("Helvetica", 11, 1)
 	border = new MarginBorder(5,5,5,5) 
 }
 
 style ClassNode.Attributes, ClassNode.Operations as RectangleShape {
-	foreground(#dddddd)
-	background(#ffffff)
+	foregroundColor = color(#dddddd)
+	backgroundColor = color(#ffffff)
 	lineWidth = 0
 }
 
 style ClassNode.Attributes.Label, ClassNode.Operations.Label as LabelShape {
-	foreground(#333333)
+	foregroundColor = color(#333333)
 }
 
 style DataTypeNode as RectangleShape { 
-	background(#ffffee)
+	backgroundColor = color(#ffffee)
 	lineWidth = 2
 } 
 
 style ClassNode.ReferenceEdge as ConnectionShape {
 	lineWidth = 2
-	foreground(#888888) 
+	foregroundColor = color(#888888) 
 }

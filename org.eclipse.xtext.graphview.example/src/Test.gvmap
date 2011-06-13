@@ -8,7 +8,7 @@ diagram PackageDiagram type EPackage {
 		}
 		node Operations for EOperations {
 			label Label for each map(a|a.name + "(" 
-					+ a.EParameters.map(p|p.EType.name).join(", ") 
+					//+ a.EParameters.map(p|p.EType.name).join(", ") 
 					+ "): " + a.EType.name
 			)		
 		}  
@@ -16,8 +16,8 @@ diagram PackageDiagram type EPackage {
 			-> ClassNode(EType)   
 		}
 	} 
-	
-	node DataTypeNode for each this.EClassifiers.filter(typeof (EDataType)) {
-		label Name for name
-	}
+	 
+//	node DataTypeNode for each this.EClassifiers.filter(typeof (EDataType)) {
+//		label Name for name
+//	}
 }
