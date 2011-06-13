@@ -485,35 +485,6 @@ public interface GraphViewMappingPackage extends EPackage {
 
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.IterableUnpackerImpl <em>Iterable Unpacker</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.impl.IterableUnpackerImpl
-	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.impl.GraphViewMappingPackageImpl#getIterableUnpacker()
-	 * @generated
-	 */
-	int ITERABLE_UNPACKER = 8;
-
-	/**
-	 * The feature id for the '<em><b>Mapping</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ITERABLE_UNPACKER__MAPPING = TypesPackage.JVM_IDENTIFIABLE_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Iterable Unpacker</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ITERABLE_UNPACKER_FEATURE_COUNT = TypesPackage.JVM_IDENTIFIABLE_ELEMENT_FEATURE_COUNT + 1;
-
-
-	/**
 	 * Returns the meta object for class '{@link org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping <em>Abstract Mapping</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -704,27 +675,6 @@ public interface GraphViewMappingPackage extends EPackage {
 	EReference getEdgeEndMapping_Mapping();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.xtext.graphview.map.graphViewMapping.IterableUnpacker <em>Iterable Unpacker</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Iterable Unpacker</em>'.
-	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.IterableUnpacker
-	 * @generated
-	 */
-	EClass getIterableUnpacker();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.xtext.graphview.map.graphViewMapping.IterableUnpacker#getMapping <em>Mapping</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Mapping</em>'.
-	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.IterableUnpacker#getMapping()
-	 * @see #getIterableUnpacker()
-	 * @generated
-	 */
-	EReference getIterableUnpacker_Mapping();
-
-	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -905,24 +855,6 @@ public interface GraphViewMappingPackage extends EPackage {
 		 * @generated
 		 */
 		EReference EDGE_END_MAPPING__MAPPING = eINSTANCE.getEdgeEndMapping_Mapping();
-
-		/**
-		 * The meta object literal for the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.IterableUnpackerImpl <em>Iterable Unpacker</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.eclipse.xtext.graphview.map.graphViewMapping.impl.IterableUnpackerImpl
-		 * @see org.eclipse.xtext.graphview.map.graphViewMapping.impl.GraphViewMappingPackageImpl#getIterableUnpacker()
-		 * @generated
-		 */
-		EClass ITERABLE_UNPACKER = eINSTANCE.getIterableUnpacker();
-
-		/**
-		 * The meta object literal for the '<em><b>Mapping</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ITERABLE_UNPACKER__MAPPING = eINSTANCE.getIterableUnpacker_Mapping();
 
 	}
 

@@ -106,10 +106,6 @@ public class GraphViewMappingAdapterFactory extends AdapterFactoryImpl {
 				return createEdgeEndMappingAdapter();
 			}
 			@Override
-			public Adapter caseIterableUnpacker(IterableUnpacker object) {
-				return createIterableUnpackerAdapter();
-			}
-			@Override
 			public Adapter caseJvmIdentifiableElement(JvmIdentifiableElement object) {
 				return createJvmIdentifiableElementAdapter();
 			}
@@ -242,20 +238,6 @@ public class GraphViewMappingAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEdgeEndMappingAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.xtext.graphview.map.graphViewMapping.IterableUnpacker <em>Iterable Unpacker</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.IterableUnpacker
-	 * @generated
-	 */
-	public Adapter createIterableUnpackerAdapter() {
 		return null;
 	}
 

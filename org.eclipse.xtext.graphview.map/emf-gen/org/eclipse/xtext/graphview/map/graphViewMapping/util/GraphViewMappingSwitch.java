@@ -154,13 +154,6 @@ public class GraphViewMappingSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GraphViewMappingPackage.ITERABLE_UNPACKER: {
-				IterableUnpacker iterableUnpacker = (IterableUnpacker)theEObject;
-				T result = caseIterableUnpacker(iterableUnpacker);
-				if (result == null) result = caseJvmIdentifiableElement(iterableUnpacker);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -282,21 +275,6 @@ public class GraphViewMappingSwitch<T> {
 	 * @generated
 	 */
 	public T caseEdgeEndMapping(EdgeEndMapping object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Iterable Unpacker</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Iterable Unpacker</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseIterableUnpacker(IterableUnpacker object) {
 		return null;
 	}
 

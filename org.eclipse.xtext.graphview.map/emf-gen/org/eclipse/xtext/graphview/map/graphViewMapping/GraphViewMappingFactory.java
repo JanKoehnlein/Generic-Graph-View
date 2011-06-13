@@ -89,15 +89,6 @@ public interface GraphViewMappingFactory extends EFactory {
 	EdgeEndMapping createEdgeEndMapping();
 
 	/**
-	 * Returns a new object of class '<em>Iterable Unpacker</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Iterable Unpacker</em>'.
-	 * @generated
-	 */
-	IterableUnpacker createIterableUnpacker();
-
-	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

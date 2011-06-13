@@ -67,7 +67,6 @@ public class GraphViewMappingFactoryImpl extends EFactoryImpl implements GraphVi
 			case GraphViewMappingPackage.LABEL_MAPPING: return createLabelMapping();
 			case GraphViewMappingPackage.EDGE_MAPPING: return createEdgeMapping();
 			case GraphViewMappingPackage.EDGE_END_MAPPING: return createEdgeEndMapping();
-			case GraphViewMappingPackage.ITERABLE_UNPACKER: return createIterableUnpacker();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -141,16 +140,6 @@ public class GraphViewMappingFactoryImpl extends EFactoryImpl implements GraphVi
 	public EdgeEndMapping createEdgeEndMapping() {
 		EdgeEndMappingImpl edgeEndMapping = new EdgeEndMappingImpl();
 		return edgeEndMapping;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public IterableUnpacker createIterableUnpacker() {
-		IterableUnpackerImpl iterableUnpacker = new IterableUnpackerImpl();
-		return iterableUnpacker;
 	}
 
 	/**

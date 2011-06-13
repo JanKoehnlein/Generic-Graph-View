@@ -93,13 +93,6 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 	private EClass edgeEndMappingEClass = null;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass iterableUnpackerEClass = null;
-
-	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -330,24 +323,6 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getIterableUnpacker() {
-		return iterableUnpackerEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getIterableUnpacker_Mapping() {
-		return (EReference)iterableUnpackerEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public GraphViewMappingFactory getGraphViewMappingFactory() {
 		return (GraphViewMappingFactory)getEFactoryInstance();
 	}
@@ -396,9 +371,6 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 
 		edgeEndMappingEClass = createEClass(EDGE_END_MAPPING);
 		createEReference(edgeEndMappingEClass, EDGE_END_MAPPING__MAPPING);
-
-		iterableUnpackerEClass = createEClass(ITERABLE_UNPACKER);
-		createEReference(iterableUnpackerEClass, ITERABLE_UNPACKER__MAPPING);
 	}
 
 	/**
@@ -440,7 +412,6 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 		labelMappingEClass.getESuperTypes().add(this.getAbstractExpressionMapping());
 		edgeMappingEClass.getESuperTypes().add(this.getAbstractExpressionMapping());
 		edgeEndMappingEClass.getESuperTypes().add(this.getAbstractExpressionMapping());
-		iterableUnpackerEClass.getESuperTypes().add(theTypesPackage.getJvmIdentifiableElement());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(abstractMappingEClass, AbstractMapping.class, "AbstractMapping", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -468,9 +439,6 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 
 		initEClass(edgeEndMappingEClass, EdgeEndMapping.class, "EdgeEndMapping", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEdgeEndMapping_Mapping(), this.getNodeMapping(), null, "mapping", null, 0, 1, EdgeEndMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(iterableUnpackerEClass, IterableUnpacker.class, "IterableUnpacker", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getIterableUnpacker_Mapping(), this.getAbstractExpressionMapping(), null, "mapping", null, 0, 1, IterableUnpacker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

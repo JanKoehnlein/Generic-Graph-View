@@ -33,7 +33,4 @@
   <eClassifiers xsi:type="ecore:EClass" name="EdgeEndMapping" eSuperTypes="#//AbstractExpressionMapping">
     <eStructuralFeatures xsi:type="ecore:EReference" name="mapping" eType="#//NodeMapping"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="IterableUnpacker" eSuperTypes="../../../../../../../org.eclipse.xtext.common.types/model/JavaVMTypes.ecore#//JvmIdentifiableElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mapping" eType="#//AbstractExpressionMapping"/>
-  </eClassifiers>
 </ecore:EPackage>

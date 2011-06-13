@@ -4,7 +4,6 @@ import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
 import org.eclipse.xtext.common.types.JvmTypeReference;
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractExpressionMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping;
-import org.eclipse.xtext.graphview.map.graphViewMapping.IterableUnpacker;
 import org.eclipse.xtext.xbase.typing.XbaseTypeProvider;
 
 import com.google.inject.Singleton;
@@ -28,11 +27,14 @@ public class GraphViewMappingTypeProvider extends XbaseTypeProvider {
 
 	protected JvmTypeReference _typeForIdentifiable(
 			AbstractExpressionMapping mapping, boolean rawType) {
-		return _type(mapping);
-	}
-	
-	protected JvmTypeReference _typeForIdentifiable(
-			IterableUnpacker unpacker, boolean rawType) {
-		return ((JvmParameterizedTypeReference)_type(unpacker.getMapping())).getArguments().get(0);
+		JvmTypeReference type = _type(mapping);
+		if (mapping instanceof AbstractExpressionMapping
+				&& ((AbstractExpressionMapping) mapping).isMulti()
+				&& type instanceof JvmParameterizedTypeReference
+				&& !((JvmParameterizedTypeReference) type)
+						.getArguments().isEmpty()) {
+			return ((JvmParameterizedTypeReference) type).getArguments().get(0);
+		}
+		return type;
 	}
 }
