@@ -1,5 +1,8 @@
 package org.eclipse.xtext.graphview;
 
+import org.eclipse.ui.IWorkbench;
+import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.eclipse.xtext.common.types.access.IJvmTypeProvider;
 import org.eclipse.xtext.common.types.access.jdt.JdtTypeProviderFactory;
 import org.eclipse.xtext.graphview.map.IInstanceMapper;
@@ -44,6 +47,13 @@ public class GraphViewModule extends AbstractModule {
 						.getInstance(IStyler.class);
 			}
 		});
+		bind(IWorkbench.class).toProvider(new Provider<IWorkbench>() {
+			@Override
+			public IWorkbench get() {
+				return PlatformUI.getWorkbench();
+			}
+		});
+		bind(AbstractUIPlugin.class).toInstance(Activator.getDefault());
 	}
 
 }

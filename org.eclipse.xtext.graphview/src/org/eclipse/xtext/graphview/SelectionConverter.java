@@ -1,6 +1,5 @@
 package org.eclipse.xtext.graphview;
 
-import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IEditorPart;
@@ -20,7 +19,7 @@ public class SelectionConverter implements ISelectionListener {
 		if(part instanceof IEditorPart) {
 			if(!selection.isEmpty() && selection instanceof IStructuredSelection) {
 				Object firstElement = ((IStructuredSelection) selection).getFirstElement();
-				graphView.setViewerContents(firstElement);
+				graphView.setViewerContents(firstElement, false);
 			}
 		}
 	}

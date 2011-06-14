@@ -5,8 +5,9 @@ import org.eclipse.gef.DefaultEditDomain;
 import org.eclipse.gef.GraphicalViewer;
 import org.eclipse.gef.editparts.FreeformGraphicalRootEditPart;
 import org.eclipse.gef.ui.parts.ScrollingGraphicalViewer;
-import org.eclipse.jface.viewers.ISelectionChangedListener;
-import org.eclipse.jface.viewers.SelectionChangedEvent;
+import org.eclipse.jface.action.Action;
+import org.eclipse.jface.action.IToolBarManager;
+import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.part.ViewPart;
@@ -15,6 +16,7 @@ import org.eclipse.xtext.graphview.instancemodel.DiagramInstance;
 import org.eclipse.xtext.graphview.model.IGraphViewDefinitionProvider;
 import org.eclipse.xtext.graphview.model.IGraphViewDefinitionProvider.Listener;
 import org.eclipse.xtext.graphview.model.ModelInstantiator;
+import org.eclipse.xtext.ui.PluginImageHelper;
 
 import com.google.inject.Inject;
 
@@ -29,6 +31,9 @@ public class GraphView extends ViewPart {
 	@Inject
 	private ModelInstantiator modelInstantiator;
 
+	@Inject
+	private PluginImageHelper imageHelper;
+	
 	private DefaultEditDomain editDomain;
 
 	private GraphicalViewer graphicalViewer;
@@ -37,6 +42,22 @@ public class GraphView extends ViewPart {
 
 	private SelectionConverter selectionConverter;
 
+	protected class RefreshAction extends Action {
+		public RefreshAction() {
+			super();
+			setText("Redraw");
+			setToolTipText("Redraw this diagram");
+			setImageDescriptor(ImageDescriptor.createFromImage(imageHelper.getImage("elcl16/refresh_nav.gif")));
+			setDisabledImageDescriptor(ImageDescriptor.createFromImage(imageHelper.getImage("elcl16/refresh_nav.gif")));
+		}
+		
+		@Override
+		public void run() {
+			refresh();
+		}
+	}
+	
+	
 	@Override
 	public void createPartControl(Composite parent) {
 		graphicalViewer = createGraphicalViewer(parent);
@@ -47,7 +68,7 @@ public class GraphView extends ViewPart {
 				getDisplay().asyncExec(new Runnable() {
 					@Override
 					public void run() {
-						setViewerContents(currentContents);
+						setViewerContents(currentContents, false);
 					}
 				});
 			}
@@ -55,14 +76,8 @@ public class GraphView extends ViewPart {
 		selectionConverter = new SelectionConverter(this);
 		getSite().getWorkbenchWindow().getSelectionService()
 				.addPostSelectionListener(selectionConverter);
-	}
-
-	@Override
-	public void dispose() {
-		if (selectionConverter != null)
-			getSite().getWorkbenchWindow().getSelectionService()
-					.addPostSelectionListener(selectionConverter);
-		super.dispose();
+		IToolBarManager toolBarManager = getViewSite().getActionBars().getToolBarManager();
+		toolBarManager.add(new RefreshAction());
 	}
 
 	protected GraphicalViewer createGraphicalViewer(Composite parent) {
@@ -75,13 +90,34 @@ public class GraphView extends ViewPart {
 		return graphicalViewer;
 	}
 
-	public void setViewerContents(Object contents) {
-		if (contents != null && contents != currentContents) {
-			currentContents = contents;
-			DiagramInstance instanceModel = modelInstantiator.createInstance(
+	@Override
+	public void dispose() {
+		if (selectionConverter != null)
+			getSite().getWorkbenchWindow().getSelectionService()
+					.addPostSelectionListener(selectionConverter);
+		super.dispose();
+	}
+
+	public void refresh() {
+		Object contents = currentContents;
+		setViewerContents(null, true);
+		setViewerContents(contents, false);
+	}
+	
+	public void setViewerContents(Object contents, boolean force) {
+		if(contents == null) {
+			if(force) {
+				currentContents = null;
+				graphicalViewer.setContents(null);
+			}
+		} else {
+			if (force || contents != currentContents) {
+				currentContents = contents;
+				DiagramInstance instanceModel = modelInstantiator.createInstance(
 					graphViewDefinitionProvider.getDiagramMapping(),
 					currentContents);
-			graphicalViewer.setContents(instanceModel);
+				graphicalViewer.setContents(instanceModel);
+			}
 		}
 	}
 
@@ -98,18 +134,6 @@ public class GraphView extends ViewPart {
 	@Override
 	public void setFocus() {
 		getGraphicalViewer().getControl().setFocus();
-	}
-
-	protected void setGraphicalViewer(GraphicalViewer viewer) {
-		getEditDomain().addViewer(viewer);
-		viewer.addSelectionChangedListener(new ISelectionChangedListener() {
-			@Override
-			public void selectionChanged(SelectionChangedEvent event) {
-				int foo=42;				
-			}
-		});
-		getSite().setSelectionProvider(viewer);
-		this.graphicalViewer = viewer;
 	}
 
 	protected Display getDisplay() {

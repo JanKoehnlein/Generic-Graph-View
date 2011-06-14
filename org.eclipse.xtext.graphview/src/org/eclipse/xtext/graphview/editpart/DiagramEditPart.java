@@ -3,6 +3,7 @@ package org.eclipse.xtext.graphview.editpart;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.xtext.graphview.editpolicy.DiagramLayoutEditPolicy;
+import org.eclipse.xtext.graphview.layout.MyDiagramLayout;
 import org.eclipse.xtext.graphview.shape.DiagramShape;
 
 public class DiagramEditPart extends AbstractMappingEditPart {
@@ -17,4 +18,9 @@ public class DiagramEditPart extends AbstractMappingEditPart {
 		return new DiagramShape();
 	}
 
+	@Override
+	public void activate() {
+		super.activate();
+		new MyDiagramLayout().layout(getFigure());
+	}
 }
