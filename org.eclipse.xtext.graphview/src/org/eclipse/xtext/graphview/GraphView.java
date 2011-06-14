@@ -1,11 +1,12 @@
 package org.eclipse.xtext.graphview;
 
 import org.eclipse.draw2d.ColorConstants;
-import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.gef.DefaultEditDomain;
 import org.eclipse.gef.GraphicalViewer;
 import org.eclipse.gef.editparts.FreeformGraphicalRootEditPart;
 import org.eclipse.gef.ui.parts.ScrollingGraphicalViewer;
+import org.eclipse.jface.viewers.ISelectionChangedListener;
+import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.part.ViewPart;
@@ -32,24 +33,36 @@ public class GraphView extends ViewPart {
 
 	private GraphicalViewer graphicalViewer;
 
-	private Object currentContents = EcorePackage.eINSTANCE;
+	private Object currentContents;
+
+	private SelectionConverter selectionConverter;
 
 	@Override
 	public void createPartControl(Composite parent) {
-		setEditDomain(new DefaultEditDomain(null));
 		graphicalViewer = createGraphicalViewer(parent);
-		setViewerContents();
+		graphicalViewer.setEditDomain(getEditDomain());
 		graphViewDefinitionProvider.addModelChangedListener(new Listener() {
 			@Override
 			public void graphViewDefinitionChanged() {
 				getDisplay().asyncExec(new Runnable() {
 					@Override
 					public void run() {
-						setViewerContents();
+						setViewerContents(currentContents);
 					}
 				});
 			}
 		});
+		selectionConverter = new SelectionConverter(this);
+		getSite().getWorkbenchWindow().getSelectionService()
+				.addPostSelectionListener(selectionConverter);
+	}
+
+	@Override
+	public void dispose() {
+		if (selectionConverter != null)
+			getSite().getWorkbenchWindow().getSelectionService()
+					.addPostSelectionListener(selectionConverter);
+		super.dispose();
 	}
 
 	protected GraphicalViewer createGraphicalViewer(Composite parent) {
@@ -62,23 +75,24 @@ public class GraphView extends ViewPart {
 		return graphicalViewer;
 	}
 
-	protected void setViewerContents() {
-		DiagramInstance instanceModel = modelInstantiator.createInstance(
-				graphViewDefinitionProvider.getDiagramMapping(),
-				currentContents);
-		graphicalViewer.setContents(instanceModel);
+	public void setViewerContents(Object contents) {
+		if (contents != null && contents != currentContents) {
+			currentContents = contents;
+			DiagramInstance instanceModel = modelInstantiator.createInstance(
+					graphViewDefinitionProvider.getDiagramMapping(),
+					currentContents);
+			graphicalViewer.setContents(instanceModel);
+		}
 	}
 
 	protected DefaultEditDomain getEditDomain() {
+		if(editDomain == null)
+			editDomain = new DefaultEditDomain(null);
 		return this.editDomain;
 	}
 
 	protected GraphicalViewer getGraphicalViewer() {
 		return this.graphicalViewer;
-	}
-
-	protected void setEditDomain(DefaultEditDomain anEditDomain) {
-		this.editDomain = anEditDomain;
 	}
 
 	@Override
@@ -88,6 +102,13 @@ public class GraphView extends ViewPart {
 
 	protected void setGraphicalViewer(GraphicalViewer viewer) {
 		getEditDomain().addViewer(viewer);
+		viewer.addSelectionChangedListener(new ISelectionChangedListener() {
+			@Override
+			public void selectionChanged(SelectionChangedEvent event) {
+				int foo=42;				
+			}
+		});
+		getSite().setSelectionProvider(viewer);
 		this.graphicalViewer = viewer;
 	}
 

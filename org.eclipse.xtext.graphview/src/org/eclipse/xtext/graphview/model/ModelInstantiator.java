@@ -2,6 +2,8 @@ package org.eclipse.xtext.graphview.model;
 
 import java.util.Iterator;
 
+import org.apache.log4j.Logger;
+import org.eclipse.xtext.common.types.JvmTypeReference;
 import org.eclipse.xtext.graphview.instancemodel.AbstractInstance;
 import org.eclipse.xtext.graphview.instancemodel.DiagramInstance;
 import org.eclipse.xtext.graphview.instancemodel.EdgeInstance;
@@ -22,6 +24,8 @@ import com.google.inject.Inject;
 
 public class ModelInstantiator {
 
+	private static final Logger LOG = Logger.getLogger(ModelInstantiator.class);
+	
 	private IInstanceMapper instanceMapper;
 
 	@Inject
@@ -30,17 +34,27 @@ public class ModelInstantiator {
 		instanceMapper.setClassLoader(getClass().getClassLoader());
 	}
 
+	public boolean isType(JvmTypeReference type, Object object) {
+		try {
+			Class<?> typeGuard = getClass().getClassLoader().loadClass(type.getIdentifier());
+			return typeGuard.isInstance(object);
+		} catch (ClassNotFoundException e) {
+			LOG.error("Cannot resolve type guard for diagram", e);
+		}
+		return false;
+	}
+	
 	public DiagramInstance createInstance(DiagramMapping mapping,
 			Object semanticElement) {
-		if(mapping == null) 
+		if (mapping == null || !isType(mapping.getTypeGuard(), semanticElement))
 			return null;
 		Multimap<Object, NodeInstance> semantic2instance = HashMultimap
 				.create();
 		DiagramInstance diagramInstance = (DiagramInstance) internalCreateInstance(
 				mapping, semanticElement, semantic2instance, null);
-		for (Iterator<EdgeInstance> i=diagramInstance.getEdges().iterator();
-				i.hasNext();) {
-			EdgeInstance edgeInstance = i.next(); 
+		for (Iterator<EdgeInstance> i = diagramInstance.getEdges().iterator(); i
+				.hasNext();) {
+			EdgeInstance edgeInstance = i.next();
 			EdgeMapping edgeMapping = (EdgeMapping) edgeInstance.getMapping();
 			if (edgeInstance.getSource() == null) {
 				Object semanticSource = instanceMapper.map(
@@ -110,21 +124,23 @@ public class ModelInstantiator {
 			for (AbstractExpressionMapping childMapping : mapping.getMappings()) {
 				Object mapResult = instanceMapper.map(childMapping,
 						semanticElement);
-				if (((AbstractExpressionMapping) childMapping).isMulti()) {
-					for (Object semanticChild : (Iterable<?>) mapResult) {
+				if (mapResult != null) {
+					if (((AbstractExpressionMapping) childMapping).isMulti()) {
+						for (Object semanticChild : (Iterable<?>) mapResult) {
+							addAsChild(
+									instanceModel,
+									diagramInstance,
+									internalCreateInstance(childMapping,
+											semanticChild, semantic2instance,
+											diagramInstance));
+						}
+					} else {
 						addAsChild(
 								instanceModel,
 								diagramInstance,
-								internalCreateInstance(childMapping,
-										semanticChild, semantic2instance,
-										diagramInstance));
+								internalCreateInstance(childMapping, mapResult,
+										semantic2instance, diagramInstance));
 					}
-				} else if (mapResult != null) {
-					addAsChild(
-							instanceModel,
-							diagramInstance,
-							internalCreateInstance(childMapping, mapResult,
-									semantic2instance, diagramInstance));
 				}
 			}
 		}

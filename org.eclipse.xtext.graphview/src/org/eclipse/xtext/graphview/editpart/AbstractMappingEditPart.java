@@ -17,7 +17,7 @@ public abstract class AbstractMappingEditPart extends AbstractGraphicalEditPart
 
 	@Override
 	protected void createEditPolicies() {
-		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE, new ResizableEditPolicy());
+		//installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE, new ResizableEditPolicy());
 	}
 	@Override
 	public void setModel(Object model) {

@@ -19,8 +19,6 @@ public class GraphViewStyleInterpreter extends XbaseInterpreter {
 	
 	protected Object _featureCallJvmIdentifyableElement(JvmIdentifiableElement identifiable, XFeatureCall featureCall, Object receiver,
 			IEvaluationContext context, CancelIndicator indicator) {
-		if (receiver != null)
-			throw new IllegalStateException("feature was simple feature call but got receiver instead of null. Receiver: " + receiver);
 		Object value = context.getValue(QualifiedName.create(featureCall.getConcreteSyntaxFeatureName()));
 		if(value == null) { 
 			super._featureCallJvmIdentifyableElement(identifiable, featureCall, receiver, context, indicator);
