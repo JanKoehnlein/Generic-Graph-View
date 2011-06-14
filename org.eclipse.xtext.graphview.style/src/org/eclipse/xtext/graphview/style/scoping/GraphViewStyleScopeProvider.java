@@ -3,16 +3,29 @@
  */
 package org.eclipse.xtext.graphview.style.scoping;
 
-import java.util.Collections;
+import java.util.List;
 
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
+import org.eclipse.xtext.common.types.JvmType;
+import org.eclipse.xtext.common.types.JvmTypeReference;
+import org.eclipse.xtext.common.types.util.TypeConformanceComputer;
+import org.eclipse.xtext.common.types.util.TypeReferences;
+import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping;
 import org.eclipse.xtext.graphview.style.graphViewStyle.Style;
+import org.eclipse.xtext.naming.QualifiedName;
 import org.eclipse.xtext.resource.EObjectDescription;
+import org.eclipse.xtext.resource.IEObjectDescription;
+import org.eclipse.xtext.resource.IResourceServiceProvider;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.impl.SimpleScope;
 import org.eclipse.xtext.xbase.scoping.XbaseScopeProvider;
+import org.eclipse.xtext.xbase.typing.ITypeProvider;
+
+import com.google.inject.Inject;
+import com.google.inject.internal.Lists;
 
 /**
  * This class contains custom scoping description.
@@ -24,14 +37,48 @@ import org.eclipse.xtext.xbase.scoping.XbaseScopeProvider;
 @SuppressWarnings("restriction")
 public class GraphViewStyleScopeProvider extends XbaseScopeProvider {
 
+	public static final QualifiedName SEMANTIC_ELEMENT = QualifiedName.create("element");
+	
+	@Inject
+	private TypeReferences typeReferences;
+	
+	private ITypeProvider mappingTypeProvider;
+	
+	private TypeConformanceComputer mappingTypeConformanceComputer;
+
+	@Inject
+	protected void setMappingLanguageServices(IResourceServiceProvider.Registry registry) {
+		IResourceServiceProvider mappingResourceServiceProvider = registry.getResourceServiceProvider(URI.createURI("dummy.gvmap"));
+		mappingTypeProvider = mappingResourceServiceProvider.get(ITypeProvider.class);
+		mappingTypeConformanceComputer = mappingResourceServiceProvider.get(TypeConformanceComputer.class);
+	}
+
 	@Override
 	protected IScope createLocalVarScope(EObject context, EReference reference,
 			IScope parentScope, boolean includeCurrentBlock, int idx) {
 		if(context instanceof Style) {
+			List<IEObjectDescription> localVars = Lists.newArrayList();
 			JvmParameterizedTypeReference clazz = ((Style) context).getJavaClass();
 			if(clazz != null && clazz.getType() != null) {
-				return new SimpleScope(parentScope, Collections.singleton(EObjectDescription.create(XbaseScopeProvider.THIS, clazz.getType())));
+				localVars.add(EObjectDescription.create(XbaseScopeProvider.THIS, clazz.getType()));
+			} else {
+				JvmType figureType = typeReferences.findDeclaredType("org.eclipse.draw2d.IFigure", context);
+				localVars.add(EObjectDescription.create(XbaseScopeProvider.THIS, figureType));
 			}
+			List<JvmTypeReference> mappingTypes = Lists.newArrayList();
+			for(AbstractMapping mapping : ((Style) context).getMappings()) {
+				JvmTypeReference mappingType = mappingTypeProvider.getTypeForIdentifiable(mapping);
+				if(mappingType != null)
+					mappingTypes.add(mappingType);
+			}
+			if(!mappingTypes.isEmpty()) { 
+				JvmTypeReference commonSuperType = mappingTypeConformanceComputer.getCommonSuperType(mappingTypes);
+				if(commonSuperType != null && commonSuperType.getType() != null) {
+					localVars.add(EObjectDescription.create(SEMANTIC_ELEMENT, commonSuperType.getType()));
+				}
+			}	
+			if(!localVars.isEmpty()) 
+				return new SimpleScope(parentScope, localVars); 
 		}
 		return super.createLocalVarScope(context, reference, parentScope,
 				includeCurrentBlock, idx);

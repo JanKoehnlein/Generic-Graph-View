@@ -4,6 +4,8 @@
 package org.eclipse.xtext.graphview.style.ui;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.eclipse.xtext.graphview.style.ui.highlighting.GVSTokenToAttributeIdMapper;
+import org.eclipse.xtext.ui.editor.syntaxcoloring.AbstractAntlrTokenToAttributeIdMapper;
 
 /**
  * Use this class to register components to be used within the IDE.
@@ -11,5 +13,10 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 public class GraphViewStyleUiModule extends org.eclipse.xtext.graphview.style.ui.AbstractGraphViewStyleUiModule {
 	public GraphViewStyleUiModule(AbstractUIPlugin plugin) {
 		super(plugin);
+	}
+	
+	@Override
+	public Class<? extends AbstractAntlrTokenToAttributeIdMapper> bindAbstractAntlrTokenToAttributeIdMapper() {
+		return GVSTokenToAttributeIdMapper.class;
 	}
 }

@@ -3,10 +3,7 @@ package org.eclipse.xtext.graphview.layout;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
-import org.eclipse.core.internal.runtime.FindSupport;
 import org.eclipse.draw2d.Connection;
-import org.eclipse.draw2d.FreeformLayer;
-import org.eclipse.draw2d.FreeformViewport;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Layer;
 import org.eclipse.draw2d.geometry.Dimension;
@@ -18,9 +15,6 @@ import org.eclipse.zest.layouts.LayoutRelationship;
 import org.eclipse.zest.layouts.LayoutStyles;
 import org.eclipse.zest.layouts.algorithms.CompositeLayoutAlgorithm;
 import org.eclipse.zest.layouts.algorithms.GridLayoutAlgorithm;
-import org.eclipse.zest.layouts.algorithms.HorizontalShift;
-import org.eclipse.zest.layouts.algorithms.RadialLayoutAlgorithm;
-import org.eclipse.zest.layouts.algorithms.SpringLayoutAlgorithm;
 import org.eclipse.zest.layouts.exampleStructures.SimpleNode;
 import org.eclipse.zest.layouts.exampleStructures.SimpleRelationship;
 

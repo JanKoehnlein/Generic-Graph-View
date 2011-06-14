@@ -3,6 +3,7 @@ package org.eclipse.xtext.graphview.style;
 import org.apache.log4j.Logger;
 import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
 import org.eclipse.xtext.graphview.style.graphViewStyle.Style;
+import org.eclipse.xtext.graphview.style.scoping.GraphViewStyleScopeProvider;
 import org.eclipse.xtext.util.CancelIndicator;
 import org.eclipse.xtext.util.Strings;
 import org.eclipse.xtext.xbase.interpreter.IEvaluationContext;
@@ -27,21 +28,22 @@ public class Styler implements IStyler {
 		xbaseInterpreter.setClassLoader(classLoader);
 	}
 
-	public boolean style(Object o, Style style) {
+	public boolean style(Object figure, Object semanticElement, Style style) {
 		if(style.getExpression() == null) 
 			return true;
 		try {
 			JvmParameterizedTypeReference javaClass = style.getJavaClass();
 			String styleClassName = javaClass.getIdentifier();
-			if (Strings.equal(styleClassName, o.getClass().getCanonicalName())) {
+			if (Strings.equal(styleClassName, figure.getClass().getCanonicalName())) {
 				IEvaluationContext context = contextProvider.get();
-				context.newValue(XbaseScopeProvider.THIS, o);
+				context.newValue(XbaseScopeProvider.THIS, figure);
+				context.newValue(GraphViewStyleScopeProvider.SEMANTIC_ELEMENT, semanticElement);
 				xbaseInterpreter.evaluate(style.getExpression(), context,
 						CancelIndicator.NullImpl);
 				return true;
 			}
 		} catch (Exception e) {
-			LOG.error("Error styling " + Strings.notNull(o), e);
+			LOG.error("Error styling " + Strings.notNull(figure), e);
 		}
 		return false;
 	}

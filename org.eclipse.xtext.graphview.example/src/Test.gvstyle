@@ -14,9 +14,15 @@ style ClassNode as RoundedRectangleShape {
 	backgroundColor = color(#ffeedd)
 }
 
-style ClassNode.Name as LabelShape {
-	font = font("Helvetica", 11, 1)
+style DataTypeNode.Name as LabelShape {
+	font = font("Helvetica", 11, 1) 
 	border = new MarginBorder(5,5,5,5) 
+}
+
+style ClassNode.Name as LabelShape {
+	font = font("Helvetica", 11, 1 + (if (element.abstract) 2 else 0))
+	border = new MarginBorder(5,5,5,5)
+	text = element.name
 }
 
 style ClassNode.Attributes, ClassNode.Operations as RectangleShape {

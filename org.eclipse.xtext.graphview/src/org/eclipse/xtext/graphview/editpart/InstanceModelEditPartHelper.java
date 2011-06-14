@@ -78,7 +78,7 @@ public class InstanceModelEditPartHelper {
 	
 	public void style(IFigure figure) {
 		for(Style style: getStyles())
-			styleProvider.style(figure, style);
+			styleProvider.style(figure, getSemanticElement(), style);
 	}
 
 }

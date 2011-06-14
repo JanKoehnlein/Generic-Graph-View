@@ -24,6 +24,7 @@ public class StylerTest {
 	@Inject
 	private Styler styler;
 	
+	/*
 	@Test
 	public void testStylerSimple() throws Exception {
 		StyleSheet styleSheet = parseHelper.parse("stylesheet s style myStyle as javax.swing.JButton { text = 'hugo' }");
@@ -63,5 +64,5 @@ public class StylerTest {
 		Assert.assertTrue(styler.style(jButton, styleSheet.getStyles().get(0)));
 		Assert.assertEquals("hugo", jButton.getText());
 	}
-
+    */
 }

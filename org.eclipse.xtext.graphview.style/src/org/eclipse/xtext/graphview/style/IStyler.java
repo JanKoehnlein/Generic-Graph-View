@@ -7,7 +7,7 @@ import com.google.inject.ImplementedBy;
 @ImplementedBy(Styler.class)
 public interface IStyler {
 
-	boolean style(Object o, Style style);
+	boolean style(Object figure, Object semanticElement, Style style);
 
 	void setClassLoader(ClassLoader classLoader);
 

@@ -16,8 +16,6 @@ public class StyleProvider {
 
 	private IStyler styler;
 
-	private IGraphViewDefinitionProvider graphViewDefinitionProvider;
-
 	private Multimap<AbstractMapping, Style> mapping2style = HashMultimap.create();
 
 	@Inject
@@ -29,7 +27,6 @@ public class StyleProvider {
 	@Inject
 	public void setGraphViewDefinitionProvider(
 			final IGraphViewDefinitionProvider graphViewDefinitionProvider) {
-		this.graphViewDefinitionProvider = graphViewDefinitionProvider;
 		graphViewDefinitionProvider
 				.addModelChangedListener(new IGraphViewDefinitionProvider.Listener() {
 					@Override
@@ -57,7 +54,7 @@ public class StyleProvider {
 		return mapping2style.get(mapping);
 	}
 
-	public void style(Object o, Style style) {
-		styler.style(o, style);
+	public void style(Object figure, Object semanticElement, Style style) {
+		styler.style(figure, semanticElement, style);
 	}
 }

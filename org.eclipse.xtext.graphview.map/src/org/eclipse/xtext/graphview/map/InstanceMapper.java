@@ -25,17 +25,11 @@ public class InstanceMapper implements IInstanceMapper {
 	@Inject
 	private Provider<IEvaluationContext> contextProvider;
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.xtext.graphview.map.IInstanceMapper#setClassLoader(java.lang.ClassLoader)
-	 */
 	@Override
 	public void setClassLoader(ClassLoader classLoader) {
 		xbaseInterpreter.setClassLoader(classLoader);
 	}
 	
-	/* (non-Javadoc)
-	 * @see org.eclipse.xtext.graphview.map.IInstanceMapper#map(org.eclipse.xtext.graphview.map.graphViewMapping.AbstractExpressionMapping, java.lang.Object)
-	 */
 	@Override
 	public Object map(AbstractExpressionMapping mapping, Object thisElement) {
 		Object value = evaluate(mapping.getExpression(), thisElement);

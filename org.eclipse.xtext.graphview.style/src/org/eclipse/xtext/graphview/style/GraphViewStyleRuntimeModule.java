@@ -4,10 +4,8 @@
 package org.eclipse.xtext.graphview.style;
 
 import org.eclipse.xtext.graphview.style.interpreter.GraphViewStyleInterpreter;
-import org.eclipse.xtext.graphview.style.scoping.GraphViewStyleIdentifiableSimpleNameProvider;
 import org.eclipse.xtext.graphview.style.type.GVSStaticMethodsFeatureForTypeProvider;
 import org.eclipse.xtext.graphview.style.type.GraphViewStyleTypeProvider;
-import org.eclipse.xtext.xbase.featurecalls.IdentifiableSimpleNameProvider;
 import org.eclipse.xtext.xbase.interpreter.impl.XbaseInterpreter;
 import org.eclipse.xtext.xbase.scoping.featurecalls.StaticMethodsFeatureForTypeProvider;
 import org.eclipse.xtext.xbase.typing.ITypeProvider;
@@ -29,10 +27,5 @@ public class GraphViewStyleRuntimeModule extends org.eclipse.xtext.graphview.sty
 	
 	public Class<? extends XbaseInterpreter> bindXbaseInterpreter() {
 		return GraphViewStyleInterpreter.class;
-	}
-	
-	@Override
-	public Class<? extends IdentifiableSimpleNameProvider> bindIdentifiableSimpleNameProvider() {
-		return GraphViewStyleIdentifiableSimpleNameProvider.class;
 	}
 }

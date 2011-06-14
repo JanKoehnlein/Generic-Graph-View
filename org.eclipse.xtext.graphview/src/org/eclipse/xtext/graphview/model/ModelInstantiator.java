@@ -2,7 +2,6 @@ package org.eclipse.xtext.graphview.model;
 
 import java.util.Iterator;
 
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.xtext.graphview.instancemodel.AbstractInstance;
 import org.eclipse.xtext.graphview.instancemodel.DiagramInstance;
 import org.eclipse.xtext.graphview.instancemodel.EdgeInstance;
