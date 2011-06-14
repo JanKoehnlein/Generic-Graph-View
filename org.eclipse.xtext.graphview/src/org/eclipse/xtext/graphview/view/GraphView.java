@@ -1,13 +1,11 @@
-package org.eclipse.xtext.graphview;
+package org.eclipse.xtext.graphview.view;
 
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.gef.DefaultEditDomain;
 import org.eclipse.gef.GraphicalViewer;
 import org.eclipse.gef.editparts.FreeformGraphicalRootEditPart;
 import org.eclipse.gef.ui.parts.ScrollingGraphicalViewer;
-import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IToolBarManager;
-import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.part.ViewPart;
@@ -16,10 +14,11 @@ import org.eclipse.xtext.graphview.instancemodel.DiagramInstance;
 import org.eclipse.xtext.graphview.model.IGraphViewDefinitionProvider;
 import org.eclipse.xtext.graphview.model.IGraphViewDefinitionProvider.Listener;
 import org.eclipse.xtext.graphview.model.ModelInstantiator;
-import org.eclipse.xtext.ui.PluginImageHelper;
 
 import com.google.inject.Inject;
+import com.google.inject.Singleton;
 
+@Singleton
 public class GraphView extends ViewPart {
 
 	@Inject
@@ -32,7 +31,10 @@ public class GraphView extends ViewPart {
 	private ModelInstantiator modelInstantiator;
 
 	@Inject
-	private PluginImageHelper imageHelper;
+	private RefreshAction refreshAction;
+	
+	@Inject
+	private ExportToFileAction exportToFileAction;
 	
 	private DefaultEditDomain editDomain;
 
@@ -42,22 +44,6 @@ public class GraphView extends ViewPart {
 
 	private SelectionConverter selectionConverter;
 
-	protected class RefreshAction extends Action {
-		public RefreshAction() {
-			super();
-			setText("Redraw");
-			setToolTipText("Redraw this diagram");
-			setImageDescriptor(ImageDescriptor.createFromImage(imageHelper.getImage("elcl16/refresh_nav.gif")));
-			setDisabledImageDescriptor(ImageDescriptor.createFromImage(imageHelper.getImage("elcl16/refresh_nav.gif")));
-		}
-		
-		@Override
-		public void run() {
-			refresh();
-		}
-	}
-	
-	
 	@Override
 	public void createPartControl(Composite parent) {
 		graphicalViewer = createGraphicalViewer(parent);
@@ -77,7 +63,10 @@ public class GraphView extends ViewPart {
 		getSite().getWorkbenchWindow().getSelectionService()
 				.addPostSelectionListener(selectionConverter);
 		IToolBarManager toolBarManager = getViewSite().getActionBars().getToolBarManager();
-		toolBarManager.add(new RefreshAction());
+		toolBarManager.add(refreshAction);
+		toolBarManager.add(exportToFileAction);
+		refreshAction.setEnabled(false);
+		exportToFileAction.setEnabled(false);
 	}
 
 	protected GraphicalViewer createGraphicalViewer(Composite parent) {
@@ -95,6 +84,7 @@ public class GraphView extends ViewPart {
 		if (selectionConverter != null)
 			getSite().getWorkbenchWindow().getSelectionService()
 					.addPostSelectionListener(selectionConverter);
+		currentContents = null;
 		super.dispose();
 	}
 
@@ -112,13 +102,17 @@ public class GraphView extends ViewPart {
 			}
 		} else {
 			if (force || contents != currentContents) {
-				currentContents = contents;
 				DiagramInstance instanceModel = modelInstantiator.createInstance(
 					graphViewDefinitionProvider.getDiagramMapping(),
-					currentContents);
-				graphicalViewer.setContents(instanceModel);
+					contents);
+				if(instanceModel != null) {
+					currentContents = contents;
+					graphicalViewer.setContents(instanceModel);
+				}
 			}
 		}
+		exportToFileAction.setEnabled(currentContents != null);
+		refreshAction.setEnabled(currentContents != null);
 	}
 
 	protected DefaultEditDomain getEditDomain() {

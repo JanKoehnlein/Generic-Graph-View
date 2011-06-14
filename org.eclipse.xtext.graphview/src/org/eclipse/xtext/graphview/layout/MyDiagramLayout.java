@@ -40,9 +40,9 @@ public class MyDiagramLayout extends XYLayout {
 		int numRows = children.size() / numColumns
 				+ ((children.size() % numColumns != 0) ? 1 : 0);
 		int currentRowHeight = 0;
-		int currentY = 0;
+		int currentY = offset;
 		for (int row = 0; row < numRows; ++row) {
-			int currentX = 0;
+			int currentX = offset;
 			currentRowHeight = 0;
 			for (int index = row * numColumns; index < (row + 1) * numColumns
 					&& index < children.size(); ++index) {

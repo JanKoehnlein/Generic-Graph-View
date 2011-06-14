@@ -32,4 +32,5 @@ Export-Package: org.eclipse.xtext.graphview,
  org.eclipse.xtext.graphview.layout,
  org.eclipse.xtext.graphview.model,
  org.eclipse.xtext.graphview.shape,
- org.eclipse.xtext.graphview.style
+ org.eclipse.xtext.graphview.style,
+ org.eclipse.xtext.graphview.view

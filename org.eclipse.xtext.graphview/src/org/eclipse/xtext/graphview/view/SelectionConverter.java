@@ -1,10 +1,11 @@
-package org.eclipse.xtext.graphview;
+package org.eclipse.xtext.graphview.view;
 
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.ISelectionListener;
 import org.eclipse.ui.IWorkbenchPart;
+
 
 public class SelectionConverter implements ISelectionListener {
 

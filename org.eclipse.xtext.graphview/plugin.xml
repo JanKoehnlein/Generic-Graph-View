@@ -5,7 +5,7 @@
          point="org.eclipse.ui.views">
       <view
             category="org.eclipse.xtext.viewCategory"
-            class="org.eclipse.xtext.graphview.GraphViewExecutableExtensionFactory:org.eclipse.xtext.graphview.GraphView"
+            class="org.eclipse.xtext.graphview.GraphViewExecutableExtensionFactory:org.eclipse.xtext.graphview.view.GraphView"
             id="org.eclipse.xtext.graphview.view"
             name="Generic Graph View"
             restorable="true">
