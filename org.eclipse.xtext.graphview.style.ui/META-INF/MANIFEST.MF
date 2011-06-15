@@ -17,10 +17,18 @@ Require-Bundle: org.eclipse.xtext.graphview.style;visibility:=reexport,
  org.eclipse.xtext.xbase.ui,
  org.eclipse.xtext.ui.codetemplates.ui,
  org.eclipse.compare,
- org.eclipse.draw2d;bundle-version="3.7.0"
+ org.eclipse.draw2d;bundle-version="3.7.0",
+ org.eclipse.xtext.graphview.map;bundle-version="1.0.0"
 Import-Package: org.apache.log4j,
  org.apache.commons.logging
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Export-Package: org.eclipse.xtext.graphview.style.ui.contentassist.antlr,
- org.eclipse.xtext.graphview.style.ui.internal
+Export-Package: org.eclipse.xtext.graphview.style.ui,
+ org.eclipse.xtext.graphview.style.ui.contentassist,
+ org.eclipse.xtext.graphview.style.ui.contentassist.antlr,
+ org.eclipse.xtext.graphview.style.ui.contentassist.antlr.internal,
+ org.eclipse.xtext.graphview.style.ui.highlighting,
+ org.eclipse.xtext.graphview.style.ui.internal,
+ org.eclipse.xtext.graphview.style.ui.labeling,
+ org.eclipse.xtext.graphview.style.ui.outline,
+ org.eclipse.xtext.graphview.style.ui.quickfix
 Bundle-Activator: org.eclipse.xtext.graphview.style.ui.internal.GraphViewStyleActivator

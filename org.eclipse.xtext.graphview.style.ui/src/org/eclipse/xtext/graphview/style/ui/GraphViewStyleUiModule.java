@@ -4,8 +4,12 @@
 package org.eclipse.xtext.graphview.style.ui;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.eclipse.xtext.graphview.style.ui.highlighting.GVSHighlightingCalculator;
+import org.eclipse.xtext.graphview.style.ui.highlighting.GVSHighlightingConfiguration;
 import org.eclipse.xtext.graphview.style.ui.highlighting.GVSTokenToAttributeIdMapper;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.AbstractAntlrTokenToAttributeIdMapper;
+import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightingConfiguration;
+import org.eclipse.xtext.ui.editor.syntaxcoloring.ISemanticHighlightingCalculator;
 
 /**
  * Use this class to register components to be used within the IDE.
@@ -18,5 +22,14 @@ public class GraphViewStyleUiModule extends org.eclipse.xtext.graphview.style.ui
 	@Override
 	public Class<? extends AbstractAntlrTokenToAttributeIdMapper> bindAbstractAntlrTokenToAttributeIdMapper() {
 		return GVSTokenToAttributeIdMapper.class;
+	}
+	
+	@Override
+	public Class<? extends ISemanticHighlightingCalculator> bindISemanticHighlightingCalculator() {
+		return GVSHighlightingCalculator.class;
+	}
+	
+	public Class<? extends IHighlightingConfiguration> bindIHighlightingConfiguration() {
+		return GVSHighlightingConfiguration.class;
 	}
 }
