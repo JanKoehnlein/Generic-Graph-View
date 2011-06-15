@@ -20,7 +20,7 @@ style DataTypeNode.Name as LabelShape {
 }
 
 style ClassNode.Name as LabelShape {
-	font = font("Helvetica", 11, 1 + (if (element.abstract) 2 else 0))
+	font = font("Helvetica", 13, 1 + (if (element.abstract) 2 else 0))
 	border = new MarginBorder(5,5,5,5)
 	text = element.name
 }
