@@ -597,10 +597,10 @@ public class InternalGraphViewStyleLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:35:7: ( 'import' )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:35:9: 'import'
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:35:7: ( 'for' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:35:9: 'for'
             {
-            match("import"); 
+            match("for"); 
 
 
             }
@@ -618,10 +618,10 @@ public class InternalGraphViewStyleLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:36:7: ( 'style' )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:36:9: 'style'
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:36:7: ( 'import' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:36:9: 'import'
             {
-            match("style"); 
+            match("import"); 
 
 
             }
@@ -639,10 +639,11 @@ public class InternalGraphViewStyleLexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:37:7: ( ',' )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:37:9: ','
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:37:7: ( 'style' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:37:9: 'style'
             {
-            match(','); 
+            match("style"); 
+
 
             }
 
@@ -659,11 +660,10 @@ public class InternalGraphViewStyleLexer extends Lexer {
         try {
             int _type = T__39;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:38:7: ( 'as' )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:38:9: 'as'
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:38:7: ( ',' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:38:9: ','
             {
-            match("as"); 
-
+            match(','); 
 
             }
 
@@ -680,10 +680,10 @@ public class InternalGraphViewStyleLexer extends Lexer {
         try {
             int _type = T__40;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:39:7: ( 'instanceof' )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:39:9: 'instanceof'
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:39:7: ( 'as' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:39:9: 'as'
             {
-            match("instanceof"); 
+            match("as"); 
 
 
             }
@@ -701,10 +701,11 @@ public class InternalGraphViewStyleLexer extends Lexer {
         try {
             int _type = T__41;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:40:7: ( ')' )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:40:9: ')'
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:40:7: ( 'instanceof' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:40:9: 'instanceof'
             {
-            match(')'); 
+            match("instanceof"); 
+
 
             }
 
@@ -721,10 +722,10 @@ public class InternalGraphViewStyleLexer extends Lexer {
         try {
             int _type = T__42;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:41:7: ( '[' )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:41:9: '['
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:41:7: ( ')' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:41:9: ')'
             {
-            match('['); 
+            match(')'); 
 
             }
 
@@ -741,10 +742,10 @@ public class InternalGraphViewStyleLexer extends Lexer {
         try {
             int _type = T__43;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:42:7: ( '|' )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:42:9: '|'
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:42:7: ( '[' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:42:9: '['
             {
-            match('|'); 
+            match('['); 
 
             }
 
@@ -761,10 +762,10 @@ public class InternalGraphViewStyleLexer extends Lexer {
         try {
             int _type = T__44;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:43:7: ( ']' )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:43:9: ']'
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:43:7: ( '|' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:43:9: '|'
             {
-            match(']'); 
+            match('|'); 
 
             }
 
@@ -781,10 +782,10 @@ public class InternalGraphViewStyleLexer extends Lexer {
         try {
             int _type = T__45;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:44:7: ( '(' )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:44:9: '('
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:44:7: ( ']' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:44:9: ']'
             {
-            match('('); 
+            match(']'); 
 
             }
 
@@ -801,11 +802,10 @@ public class InternalGraphViewStyleLexer extends Lexer {
         try {
             int _type = T__46;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:45:7: ( 'if' )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:45:9: 'if'
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:45:7: ( '(' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:45:9: '('
             {
-            match("if"); 
-
+            match('('); 
 
             }
 
@@ -822,10 +822,10 @@ public class InternalGraphViewStyleLexer extends Lexer {
         try {
             int _type = T__47;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:46:7: ( 'else' )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:46:9: 'else'
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:46:7: ( 'if' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:46:9: 'if'
             {
-            match("else"); 
+            match("if"); 
 
 
             }
@@ -843,10 +843,10 @@ public class InternalGraphViewStyleLexer extends Lexer {
         try {
             int _type = T__48;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:47:7: ( 'switch' )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:47:9: 'switch'
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:47:7: ( 'else' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:47:9: 'else'
             {
-            match("switch"); 
+            match("else"); 
 
 
             }
@@ -864,10 +864,11 @@ public class InternalGraphViewStyleLexer extends Lexer {
         try {
             int _type = T__49;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:48:7: ( '{' )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:48:9: '{'
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:48:7: ( 'switch' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:48:9: 'switch'
             {
-            match('{'); 
+            match("switch"); 
+
 
             }
 
@@ -884,10 +885,10 @@ public class InternalGraphViewStyleLexer extends Lexer {
         try {
             int _type = T__50;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:49:7: ( '}' )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:49:9: '}'
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:49:7: ( '{' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:49:9: '{'
             {
-            match('}'); 
+            match('{'); 
 
             }
 
@@ -904,10 +905,10 @@ public class InternalGraphViewStyleLexer extends Lexer {
         try {
             int _type = T__51;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:50:7: ( ':' )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:50:9: ':'
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:50:7: ( '}' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:50:9: '}'
             {
-            match(':'); 
+            match('}'); 
 
             }
 
@@ -924,11 +925,10 @@ public class InternalGraphViewStyleLexer extends Lexer {
         try {
             int _type = T__52;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:51:7: ( 'default' )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:51:9: 'default'
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:51:7: ( ':' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:51:9: ':'
             {
-            match("default"); 
-
+            match(':'); 
 
             }
 
@@ -945,10 +945,10 @@ public class InternalGraphViewStyleLexer extends Lexer {
         try {
             int _type = T__53;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:52:7: ( 'case' )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:52:9: 'case'
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:52:7: ( 'default' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:52:9: 'default'
             {
-            match("case"); 
+            match("default"); 
 
 
             }
@@ -966,10 +966,10 @@ public class InternalGraphViewStyleLexer extends Lexer {
         try {
             int _type = T__54;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:53:7: ( 'for' )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:53:9: 'for'
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:53:7: ( 'case' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:53:9: 'case'
             {
-            match("for"); 
+            match("case"); 
 
 
             }
@@ -1404,8 +1404,8 @@ public class InternalGraphViewStyleLexer extends Lexer {
         try {
             int _type = RULE_COLOR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14249:12: ( '#' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14249:14: '#' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14332:12: ( '#' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14332:14: '#' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )
             {
             match('#'); 
             if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='F')||(input.LA(1)>='a' && input.LA(1)<='f') ) {
@@ -1478,10 +1478,10 @@ public class InternalGraphViewStyleLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14251:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14251:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14334:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14334:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14251:11: ( '^' )?
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14334:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1490,7 +1490,7 @@ public class InternalGraphViewStyleLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14251:11: '^'
+                    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14334:11: '^'
                     {
                     match('^'); 
 
@@ -1508,7 +1508,7 @@ public class InternalGraphViewStyleLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14251:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14334:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -1557,10 +1557,10 @@ public class InternalGraphViewStyleLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14253:10: ( ( '0' .. '9' )+ )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14253:12: ( '0' .. '9' )+
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14336:10: ( ( '0' .. '9' )+ )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14336:12: ( '0' .. '9' )+
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14253:12: ( '0' .. '9' )+
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14336:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -1574,7 +1574,7 @@ public class InternalGraphViewStyleLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14253:13: '0' .. '9'
+            	    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14336:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1606,10 +1606,10 @@ public class InternalGraphViewStyleLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14255:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14255:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14338:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14338:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14255:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14338:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -1627,10 +1627,10 @@ public class InternalGraphViewStyleLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14255:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14338:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14255:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14338:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -1646,7 +1646,7 @@ public class InternalGraphViewStyleLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14255:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14338:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -1662,7 +1662,7 @@ public class InternalGraphViewStyleLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14255:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14338:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1687,10 +1687,10 @@ public class InternalGraphViewStyleLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14255:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14338:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14255:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14338:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -1706,7 +1706,7 @@ public class InternalGraphViewStyleLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14255:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14338:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -1722,7 +1722,7 @@ public class InternalGraphViewStyleLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14255:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14338:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1765,12 +1765,12 @@ public class InternalGraphViewStyleLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14257:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14257:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14340:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14340:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14257:24: ( options {greedy=false; } : . )*
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14340:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -1795,7 +1795,7 @@ public class InternalGraphViewStyleLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14257:52: .
+            	    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14340:52: .
             	    {
             	    matchAny(); 
 
@@ -1825,12 +1825,12 @@ public class InternalGraphViewStyleLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14259:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14259:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14342:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14342:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14259:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14342:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -1843,7 +1843,7 @@ public class InternalGraphViewStyleLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14259:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14342:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1863,7 +1863,7 @@ public class InternalGraphViewStyleLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14259:40: ( ( '\\r' )? '\\n' )?
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14342:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1872,9 +1872,9 @@ public class InternalGraphViewStyleLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14259:41: ( '\\r' )? '\\n'
+                    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14342:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14259:41: ( '\\r' )?
+                    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14342:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -1883,7 +1883,7 @@ public class InternalGraphViewStyleLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14259:41: '\\r'
+                            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14342:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1915,10 +1915,10 @@ public class InternalGraphViewStyleLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14261:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14261:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14344:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14344:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14261:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14344:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1972,8 +1972,8 @@ public class InternalGraphViewStyleLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14263:16: ( . )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14263:18: .
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14346:16: ( . )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14346:18: .
             {
             matchAny(); 
 
@@ -2545,17 +2545,17 @@ public class InternalGraphViewStyleLexer extends Lexer {
         "\145\2\172\2\uffff\1\145\1\uffff\1\157\2\uffff\1\164\1\146\2\172"+
         "\2\uffff";
     static final String DFA12_acceptS =
-        "\14\uffff\1\22\4\uffff\1\33\1\uffff\1\36\1\37\1\41\1\42\1\uffff"+
-        "\1\46\1\47\4\uffff\1\56\6\uffff\1\101\1\102\2\uffff\1\106\1\107"+
-        "\1\5\1\70\1\1\1\2\1\15\1\3\1\40\1\4\1\73\1\6\1\23\1\7\1\11\1\10"+
+        "\14\uffff\1\22\4\uffff\1\34\1\uffff\1\37\1\40\1\42\1\43\1\uffff"+
+        "\1\47\1\50\4\uffff\1\56\6\uffff\1\101\1\102\2\uffff\1\106\1\107"+
+        "\1\5\1\70\1\1\1\2\1\15\1\3\1\41\1\4\1\73\1\6\1\23\1\7\1\11\1\10"+
         "\1\12\1\13\1\16\1\14\1\24\1\20\1\75\1\17\1\104\1\105\1\21\1\22\1"+
-        "\uffff\1\101\11\uffff\1\33\1\uffff\1\36\1\37\1\41\1\42\2\uffff\1"+
-        "\46\1\47\1\57\1\50\4\uffff\1\56\6\uffff\1\74\1\71\1\100\1\102\1"+
-        "\103\1\106\12\uffff\1\43\1\34\3\uffff\1\55\12\uffff\1\25\1\76\4"+
-        "\uffff\1\53\11\uffff\1\60\3\uffff\1\65\11\uffff\1\44\2\uffff\1\52"+
-        "\2\uffff\1\61\2\uffff\1\77\1\uffff\1\26\1\uffff\1\32\1\uffff\1\27"+
-        "\5\uffff\1\67\1\54\1\uffff\1\63\2\uffff\1\45\1\uffff\1\31\3\uffff"+
-        "\1\62\1\64\1\uffff\1\66\1\uffff\1\72\1\51\4\uffff\1\30\1\35";
+        "\uffff\1\101\11\uffff\1\34\1\uffff\1\37\1\40\1\42\1\43\2\uffff\1"+
+        "\47\1\50\1\57\1\51\4\uffff\1\56\6\uffff\1\74\1\71\1\100\1\102\1"+
+        "\103\1\106\12\uffff\1\44\1\35\3\uffff\1\55\12\uffff\1\25\1\76\4"+
+        "\uffff\1\31\11\uffff\1\60\3\uffff\1\65\11\uffff\1\45\2\uffff\1\53"+
+        "\2\uffff\1\61\2\uffff\1\77\1\uffff\1\26\1\uffff\1\33\1\uffff\1\27"+
+        "\5\uffff\1\67\1\54\1\uffff\1\63\2\uffff\1\46\1\uffff\1\32\3\uffff"+
+        "\1\62\1\64\1\uffff\1\66\1\uffff\1\72\1\52\4\uffff\1\30\1\36";
     static final String DFA12_specialS =
         "\1\0\46\uffff\1\2\1\1\u00aa\uffff}>";
     static final String[] DFA12_transitionS = {

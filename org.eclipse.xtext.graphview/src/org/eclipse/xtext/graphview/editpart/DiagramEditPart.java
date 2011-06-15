@@ -13,6 +13,9 @@ public class DiagramEditPart extends AbstractMappingEditPart {
 	@Inject
 	private DiagramLayoutEditPolicy diagramLayoutEditPolicy;
 	
+	@Inject
+	private MyDiagramLayout diagramLayout;
+	
 	@Override
 	protected void createEditPolicies() {
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, diagramLayoutEditPolicy);
@@ -26,6 +29,6 @@ public class DiagramEditPart extends AbstractMappingEditPart {
 	@Override
 	public void activate() {
 		super.activate();
-		new MyDiagramLayout().layout(getFigure());
+		diagramLayout.layout(getFigure());
 	}
 }

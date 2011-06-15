@@ -2,7 +2,9 @@ package org.eclipse.xtext.graphview.editpart;
 
 import java.util.List;
 
+import org.eclipse.draw2d.Connection;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.PolylineConnection;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.editparts.AbstractConnectionEditPart;

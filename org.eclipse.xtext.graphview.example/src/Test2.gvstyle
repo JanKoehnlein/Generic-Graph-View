@@ -1,0 +1,19 @@
+import org.eclipse.xtext.graphview.shape.*
+import org.eclipse.draw2d.*
+import PackageDiagram.*
+
+stylesheet OtherStyleSheet for PackageDiagram
+
+style ClassNode as RoundedRectangleShape {
+	backgroundColor = color(#ffeecc) 
+	lineWidth = 2
+} 
+
+style ClassNode.Attributes, ClassNode.Operations as RectangleShape {
+	outline = false
+}
+
+style ClassNode.Name as LabelShape {
+	text = element.name
+	font = font("Helvetica", 14, 1)
+}

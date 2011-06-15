@@ -2718,6 +2718,7 @@ rule__StyleSheet__Group__3
     }
 :
 	rule__StyleSheet__Group__3__Impl
+	rule__StyleSheet__Group__4
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -2729,15 +2730,78 @@ rule__StyleSheet__Group__3__Impl
     }
 :
 (
-{ before(grammarAccess.getStyleSheetAccess().getStylesAssignment_3()); }
-(rule__StyleSheet__StylesAssignment_3)*
-{ after(grammarAccess.getStyleSheetAccess().getStylesAssignment_3()); }
+{ before(grammarAccess.getStyleSheetAccess().getForKeyword_3()); }
+
+	'for' 
+
+{ after(grammarAccess.getStyleSheetAccess().getForKeyword_3()); }
 )
 
 ;
 finally {
 	restoreStackSize(stackSize);
 }
+
+
+rule__StyleSheet__Group__4
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__StyleSheet__Group__4__Impl
+	rule__StyleSheet__Group__5
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__StyleSheet__Group__4__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getStyleSheetAccess().getDiagramMappingAssignment_4()); }
+(rule__StyleSheet__DiagramMappingAssignment_4)
+{ after(grammarAccess.getStyleSheetAccess().getDiagramMappingAssignment_4()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__StyleSheet__Group__5
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__StyleSheet__Group__5__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__StyleSheet__Group__5__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getStyleSheetAccess().getStylesAssignment_5()); }
+(rule__StyleSheet__StylesAssignment_5)*
+{ after(grammarAccess.getStyleSheetAccess().getStylesAssignment_5()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+
 
 
 
@@ -12493,14 +12557,33 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__StyleSheet__StylesAssignment_3
+rule__StyleSheet__DiagramMappingAssignment_4
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getStyleSheetAccess().getStylesStyleParserRuleCall_3_0()); }
-	ruleStyle{ after(grammarAccess.getStyleSheetAccess().getStylesStyleParserRuleCall_3_0()); }
+{ before(grammarAccess.getStyleSheetAccess().getDiagramMappingDiagramMappingCrossReference_4_0()); }
+(
+{ before(grammarAccess.getStyleSheetAccess().getDiagramMappingDiagramMappingQualifiedNameParserRuleCall_4_0_1()); }
+	ruleQualifiedName{ after(grammarAccess.getStyleSheetAccess().getDiagramMappingDiagramMappingQualifiedNameParserRuleCall_4_0_1()); }
+)
+{ after(grammarAccess.getStyleSheetAccess().getDiagramMappingDiagramMappingCrossReference_4_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__StyleSheet__StylesAssignment_5
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getStyleSheetAccess().getStylesStyleParserRuleCall_5_0()); }
+	ruleStyle{ after(grammarAccess.getStyleSheetAccess().getStylesStyleParserRuleCall_5_0()); }
 )
 
 ;

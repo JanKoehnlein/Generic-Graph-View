@@ -117,19 +117,38 @@ ruleStyleSheet returns [EObject current=null]
 	    }
 
 )
+)	otherlv_3='for' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getStyleSheetAccess().getForKeyword_3());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getStyleSheetRule());
+	        }
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getStyleSheetAccess().getDiagramMappingDiagramMappingCrossReference_4_0()); 
+	    }
+		ruleQualifiedName		{ 
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getStyleSheetAccess().getStylesStyleParserRuleCall_3_0()); 
+	        newCompositeNode(grammarAccess.getStyleSheetAccess().getStylesStyleParserRuleCall_5_0()); 
 	    }
-		lv_styles_3_0=ruleStyle		{
+		lv_styles_5_0=ruleStyle		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getStyleSheetRule());
 	        }
        		add(
        			$current, 
        			"styles",
-        		lv_styles_3_0, 
+        		lv_styles_5_0, 
         		"Style");
 	        afterParserOrEnumRuleCall();
 	    }

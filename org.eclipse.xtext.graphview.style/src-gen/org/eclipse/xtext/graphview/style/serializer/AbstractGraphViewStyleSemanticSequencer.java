@@ -366,7 +366,11 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 				}
 				else break;
 			case XbasePackage.XCLOSURE:
-				if(context == grammarAccess.getXLiteralRule() ||
+				if(context == grammarAccess.getXShortClosureRule()) {
+					sequence_XShortClosure_XClosure(context, (XClosure) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getXLiteralRule() ||
 				   context == grammarAccess.getXExpressionRule() ||
 				   context == grammarAccess.getXAssignmentRule() ||
 				   context == grammarAccess.getXAssignmentAccess().getXBinaryOperationLeftOperandAction_1_1_0_0_0() ||
@@ -396,10 +400,6 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 				   context == grammarAccess.getXParenthesizedExpressionRule() ||
 				   context == grammarAccess.getXExpressionInsideBlockRule()) {
 					sequence_XClosure_XClosure(context, (XClosure) semanticObject); 
-					return; 
-				}
-				else if(context == grammarAccess.getXShortClosureRule()) {
-					sequence_XShortClosure_XClosure(context, (XClosure) semanticObject); 
 					return; 
 				}
 				else break;
@@ -1094,11 +1094,12 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	
 	/**
 	 * Constraint:
-	 *     (imports+=Import* name=QualifiedName styles+=Style*)
+	 *     (imports+=Import* name=QualifiedName diagramMapping=[DiagramMapping|QualifiedName] styles+=Style*)
 	 *
 	 * Features:
 	 *    imports[0, *]
 	 *    name[1, 1]
+	 *    diagramMapping[1, 1]
 	 *    styles[0, *]
 	 */
 	protected void sequence_StyleSheet_StyleSheet(EObject context, StyleSheet semanticObject) {

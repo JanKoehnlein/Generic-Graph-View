@@ -90,13 +90,22 @@ public interface GraphViewStylePackage extends EPackage
   int STYLE_SHEET__NAME = 1;
 
   /**
+   * The feature id for the '<em><b>Diagram Mapping</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STYLE_SHEET__DIAGRAM_MAPPING = 2;
+
+  /**
    * The feature id for the '<em><b>Styles</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STYLE_SHEET__STYLES = 2;
+  int STYLE_SHEET__STYLES = 3;
 
   /**
    * The number of structural features of the '<em>Style Sheet</em>' class.
@@ -105,7 +114,7 @@ public interface GraphViewStylePackage extends EPackage
    * @generated
    * @ordered
    */
-  int STYLE_SHEET_FEATURE_COUNT = 3;
+  int STYLE_SHEET_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link org.eclipse.xtext.graphview.style.graphViewStyle.impl.ImportImpl <em>Import</em>}' class.
@@ -241,6 +250,17 @@ public interface GraphViewStylePackage extends EPackage
    * @generated
    */
   EAttribute getStyleSheet_Name();
+
+  /**
+   * Returns the meta object for the reference '{@link org.eclipse.xtext.graphview.style.graphViewStyle.StyleSheet#getDiagramMapping <em>Diagram Mapping</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Diagram Mapping</em>'.
+   * @see org.eclipse.xtext.graphview.style.graphViewStyle.StyleSheet#getDiagramMapping()
+   * @see #getStyleSheet()
+   * @generated
+   */
+  EReference getStyleSheet_DiagramMapping();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.eclipse.xtext.graphview.style.graphViewStyle.StyleSheet#getStyles <em>Styles</em>}'.
@@ -386,6 +406,14 @@ public interface GraphViewStylePackage extends EPackage
      * @generated
      */
     EAttribute STYLE_SHEET__NAME = eINSTANCE.getStyleSheet_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Diagram Mapping</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STYLE_SHEET__DIAGRAM_MAPPING = eINSTANCE.getStyleSheet_DiagramMapping();
 
     /**
      * The meta object literal for the '<em><b>Styles</b></em>' containment reference list feature.

@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="X"
-    nsURI="c" nsPrefix="c">
-  <eClassifiers xsi:type="ecore:EClass" name="Y"/>
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="myPackage"
+    nsURI="http://www.xtext.org/graphview/example" nsPrefix="myPackage">
+  <eClassifiers xsi:type="ecore:EClass" name="MyClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="myAttribute" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MyOtherClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="otherAttribute" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="otherReference" eType="#//MyClass"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AThirdClass" eSuperTypes="#//MyClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="thirdAttribute" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
 </ecore:EPackage>

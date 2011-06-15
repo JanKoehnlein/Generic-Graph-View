@@ -162,9 +162,19 @@ public class GraphViewStylePackageImpl extends EPackageImpl implements GraphView
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getStyleSheet_Styles()
+  public EReference getStyleSheet_DiagramMapping()
   {
     return (EReference)styleSheetEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getStyleSheet_Styles()
+  {
+    return (EReference)styleSheetEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -280,6 +290,7 @@ public class GraphViewStylePackageImpl extends EPackageImpl implements GraphView
     styleSheetEClass = createEClass(STYLE_SHEET);
     createEReference(styleSheetEClass, STYLE_SHEET__IMPORTS);
     createEAttribute(styleSheetEClass, STYLE_SHEET__NAME);
+    createEReference(styleSheetEClass, STYLE_SHEET__DIAGRAM_MAPPING);
     createEReference(styleSheetEClass, STYLE_SHEET__STYLES);
 
     importEClass = createEClass(IMPORT);
@@ -334,6 +345,7 @@ public class GraphViewStylePackageImpl extends EPackageImpl implements GraphView
     initEClass(styleSheetEClass, StyleSheet.class, "StyleSheet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getStyleSheet_Imports(), this.getImport(), null, "imports", null, 0, -1, StyleSheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getStyleSheet_Name(), ecorePackage.getEString(), "name", null, 0, 1, StyleSheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStyleSheet_DiagramMapping(), theGraphViewMappingPackage.getDiagramMapping(), null, "diagramMapping", null, 0, 1, StyleSheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStyleSheet_Styles(), this.getStyle(), null, "styles", null, 0, -1, StyleSheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

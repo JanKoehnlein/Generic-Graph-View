@@ -8,7 +8,7 @@ import "http://www.eclipse.org/emf/2002/Ecore"
 
 StyleSheet:
 	imports+=Import*
-	'stylesheet' name=QualifiedName
+	'stylesheet' name=QualifiedName 'for' diagramMapping=[gvmapping::DiagramMapping|QualifiedName]
 	styles+=Style*;
 	
 Import:

@@ -28,6 +28,15 @@
         <elements xsi:type="xtext:Assignment" feature="name" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.50"/>
         </elements>
+        <elements xsi:type="xtext:Keyword" value="for"/>
+        <elements xsi:type="xtext:Assignment" feature="diagramMapping" operator="=">
+          <terminal xsi:type="xtext:CrossReference">
+            <type metamodel="/0/@metamodelDeclarations.3">
+              <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/xtext/graphview/map/GraphViewMapping#//DiagramMapping"/>
+            </type>
+            <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.50"/>
+          </terminal>
+        </elements>
         <elements xsi:type="xtext:Assignment" cardinality="*" feature="styles" operator="+=">
           <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.3"/>
         </elements>

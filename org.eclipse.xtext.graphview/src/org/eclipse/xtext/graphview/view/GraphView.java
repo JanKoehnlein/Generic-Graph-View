@@ -11,9 +11,10 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.part.ViewPart;
 import org.eclipse.xtext.graphview.editpart.GraphViewEditPartFactory;
 import org.eclipse.xtext.graphview.instancemodel.DiagramInstance;
-import org.eclipse.xtext.graphview.model.IGraphViewDefinitionProvider;
-import org.eclipse.xtext.graphview.model.IGraphViewDefinitionProvider.Listener;
 import org.eclipse.xtext.graphview.model.ModelInstantiator;
+import org.eclipse.xtext.graphview.view.config.IDiagramConfigurationProvider;
+import org.eclipse.xtext.graphview.view.config.SelectDiagramConfigurationAction;
+import org.eclipse.xtext.graphview.view.config.IDiagramConfigurationProvider.Listener;
 import org.eclipse.xtext.graphview.view.selection.ElementSelectionConverter;
 
 import com.google.inject.Inject;
@@ -26,7 +27,7 @@ public class GraphView extends ViewPart {
 	private GraphViewEditPartFactory editPartFactory;
 
 	@Inject
-	private IGraphViewDefinitionProvider graphViewDefinitionProvider;
+	private IDiagramConfigurationProvider diagramConfigurationProvider;
 
 	@Inject
 	private ModelInstantiator modelInstantiator;
@@ -38,6 +39,9 @@ public class GraphView extends ViewPart {
 	private ExportToFileAction exportToFileAction;
 	
 	@Inject
+	private SelectDiagramConfigurationAction selectDiagramConfigurationAction;
+	
+	@Inject
 	private ElementSelectionConverter selectionConverter;
 
 	private DefaultEditDomain editDomain;
@@ -46,27 +50,31 @@ public class GraphView extends ViewPart {
 
 	private Object currentContents;
 
+	private Listener configurationListener;
+
 
 	@Override
 	public void createPartControl(Composite parent) {
 		graphicalViewer = createGraphicalViewer(parent);
 		graphicalViewer.setEditDomain(getEditDomain());
-		graphViewDefinitionProvider.addModelChangedListener(new Listener() {
+		configurationListener = new Listener() {
 			@Override
 			public void graphViewDefinitionChanged() {
 				getDisplay().asyncExec(new Runnable() {
 					@Override
 					public void run() {
-						setViewerContents(currentContents, false);
+						refresh();
 					}
 				});
 			}
-		});
+		};
+		diagramConfigurationProvider.addConfigurationListener(configurationListener);
 		getSite().getWorkbenchWindow().getSelectionService()
 				.addPostSelectionListener(selectionConverter);
 		IToolBarManager toolBarManager = getViewSite().getActionBars().getToolBarManager();
 		toolBarManager.add(refreshAction);
 		toolBarManager.add(exportToFileAction);
+		toolBarManager.add(selectDiagramConfigurationAction);
 		refreshAction.setEnabled(false);
 		exportToFileAction.setEnabled(false);
 	}
@@ -86,6 +94,7 @@ public class GraphView extends ViewPart {
 		if (selectionConverter != null)
 			getSite().getWorkbenchWindow().getSelectionService()
 					.addPostSelectionListener(selectionConverter);
+		diagramConfigurationProvider.removeConfigurationListener(configurationListener);
 		currentContents = null;
 		super.dispose();
 	}
@@ -106,7 +115,7 @@ public class GraphView extends ViewPart {
 		} else {
 			if (force || contents != currentContents) {
 				DiagramInstance instanceModel = modelInstantiator.createInstance(
-					graphViewDefinitionProvider.getDiagramMapping(),
+					diagramConfigurationProvider.getDiagramMapping(),
 					contents);
 				if(instanceModel != null) {
 					currentContents = contents;

@@ -33,8 +33,7 @@ public class Styler implements IStyler {
 			return true;
 		try {
 			JvmParameterizedTypeReference javaClass = style.getJavaClass();
-			String styleClassName = javaClass.getIdentifier();
-			if (Strings.equal(styleClassName, figure.getClass().getCanonicalName())) {
+			if (javaClass == null || Strings.equal(javaClass.getIdentifier(), figure.getClass().getCanonicalName())) {
 				IEvaluationContext context = contextProvider.get();
 				context.newValue(XbaseScopeProvider.THIS, figure);
 				context.newValue(GraphViewStyleScopeProvider.SEMANTIC_ELEMENT, semanticElement);

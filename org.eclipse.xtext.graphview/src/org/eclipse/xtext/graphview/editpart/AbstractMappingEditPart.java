@@ -3,8 +3,10 @@ package org.eclipse.xtext.graphview.editpart;
 import java.util.List;
 
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.editparts.AbstractGraphicalEditPart;
+import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 
 import com.google.inject.Inject;
 
@@ -14,8 +16,12 @@ public abstract class AbstractMappingEditPart extends AbstractGraphicalEditPart
 	@Inject
 	protected InstanceModelEditPartHelper helper;
 
+	@Inject
+	protected NonResizableEditPolicy nonResizableEditPolicy;
+	
 	@Override
 	protected void createEditPolicies() {
+		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, nonResizableEditPolicy);
 	}
 
 	@Override

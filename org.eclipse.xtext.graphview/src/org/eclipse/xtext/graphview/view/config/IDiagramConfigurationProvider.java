@@ -1,12 +1,12 @@
-package org.eclipse.xtext.graphview.model;
+package org.eclipse.xtext.graphview.view.config;
 
 import org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping;
 import org.eclipse.xtext.graphview.style.graphViewStyle.StyleSheet;
 
 import com.google.inject.ImplementedBy;
 
-@ImplementedBy(DefaultGraphViewDefinitionProvider.class)
-public interface IGraphViewDefinitionProvider {
+@ImplementedBy(DefaultDiagramConfigurationProvider.class)
+public interface IDiagramConfigurationProvider {
 
 	interface Listener {
 		public void graphViewDefinitionChanged();
@@ -16,7 +16,7 @@ public interface IGraphViewDefinitionProvider {
 	
 	StyleSheet getStyleSheet();
 	
-	public void addModelChangedListener(Listener listener);
+	public void addConfigurationListener(Listener listener);
 	
-	public void removeModelChangedListener(Listener listener);
+	public void removeConfigurationListener(Listener listener);
 }

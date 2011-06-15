@@ -1,24 +1,23 @@
-package org.eclipse.xtext.graphview.model;
+package org.eclipse.xtext.graphview.view.config;
 
-import java.util.Iterator;
+import java.io.IOException;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResourceChangeEvent;
 import org.eclipse.core.resources.IResourceChangeListener;
 import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.runtime.ListenerList;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.xtext.common.types.access.IJvmTypeProvider;
 import org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping;
-import org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage;
-import org.eclipse.xtext.graphview.style.graphViewStyle.GraphViewStylePackage;
 import org.eclipse.xtext.graphview.style.graphViewStyle.StyleSheet;
 import org.eclipse.xtext.resource.IEObjectDescription;
-import org.eclipse.xtext.resource.IResourceDescriptions;
 import org.eclipse.xtext.ui.refactoring.impl.ProjectUtil;
 import org.eclipse.xtext.ui.resource.IResourceSetProvider;
 
@@ -28,11 +27,11 @@ import com.google.inject.Singleton;
 
 @SuppressWarnings("restriction")
 @Singleton
-public class DefaultGraphViewDefinitionProvider implements
-		IGraphViewDefinitionProvider {
+public class DefaultDiagramConfigurationProvider implements
+		IDiagramConfigurationProvider {
 
-	@Inject
-	private IResourceDescriptions resourceDescriptions;
+	private static final Logger LOG = Logger
+			.getLogger(DefaultDiagramConfigurationProvider.class);
 
 	@Inject
 	private IResourceSetProvider resourceSetProvider;
@@ -57,45 +56,55 @@ public class DefaultGraphViewDefinitionProvider implements
 	private ListenerList listeners = new ListenerList();
 
 	private IProject currentProject;
-	
+
 	private ResourceSet resourceSet;
-	
-	public DefaultGraphViewDefinitionProvider() {
+
+	public DefaultDiagramConfigurationProvider() {
 	}
 
-	protected void loadModels() {
+	protected void setModels(IEObjectDescription mappingModel,
+			IEObjectDescription styleSheetModel) {
 		currentProject = null;
-		diagramMapping = (DiagramMapping) load(GraphViewMappingPackage.Literals.DIAGRAM_MAPPING);
-		styleSheet = (StyleSheet) load(GraphViewStylePackage.Literals.STYLE_SHEET);
-		if (resourceChangeListener == null) {
-			resourceChangeListener = new IResourceChangeListener() {
-				@Override
-				public void resourceChanged(IResourceChangeEvent event) {
-					for (IFile modelFile : modelFiles) {
-						if (event.getDelta()
-								.findMember(modelFile.getFullPath()) != null) {
-							loadModels();
-							fireModelChanged();
-							return;
+		styleSheet = (StyleSheet) load(styleSheetModel);
+		EcoreUtil.resolveAll(styleSheet);
+		diagramMapping = (DiagramMapping) load(mappingModel);
+		if (resourceChangeListener != null) {
+			workspace.removeResourceChangeListener(resourceChangeListener);
+		}
+		resourceChangeListener = new IResourceChangeListener() {
+			@Override
+			public void resourceChanged(IResourceChangeEvent event) {
+				for (IFile modelFile : modelFiles) {
+					if (event.getDelta().findMember(modelFile.getFullPath()) != null) {
+						for (Resource resource : resourceSet.getResources()) {
+							try {
+								resource.unload();
+								resource.load(null);
+							} catch (IOException e) {
+								LOG.error("Error reloading resource ", e);
+							}
 						}
+						diagramMapping = (DiagramMapping) EcoreUtil.resolve(
+								diagramMapping, resourceSet);
+						styleSheet = (StyleSheet) EcoreUtil.resolve(styleSheet,
+								resourceSet);
+						fireModelChanged();
+						return;
 					}
 				}
-			};
-			workspace.addResourceChangeListener(resourceChangeListener);
-		}
+			}
+		};
+		workspace.addResourceChangeListener(resourceChangeListener);
+		fireModelChanged();
 	}
 
 	@Override
 	public DiagramMapping getDiagramMapping() {
-		if (diagramMapping == null)
-			loadModels();
 		return diagramMapping;
 	}
 
 	@Override
 	public StyleSheet getStyleSheet() {
-		if (styleSheet == null)
-			loadModels();
 		return styleSheet;
 	}
 
@@ -106,33 +115,28 @@ public class DefaultGraphViewDefinitionProvider implements
 	}
 
 	@Override
-	public void addModelChangedListener(Listener listener) {
+	public void addConfigurationListener(Listener listener) {
 		listeners.add(listener);
 	}
 
 	@Override
-	public void removeModelChangedListener(Listener listener) {
+	public void removeConfigurationListener(Listener listener) {
 		listeners.remove(listener);
-	}
-
-	protected EObject load(EClass eClass) {
-		Iterator<IEObjectDescription> descriptions = resourceDescriptions
-				.getExportedObjectsByType(eClass).iterator();
-		return (descriptions.hasNext()) ? load(descriptions.next()) : null;
 	}
 
 	protected EObject load(IEObjectDescription eObjectDescription) {
 		IProject project = projectUtil.getProject(eObjectDescription
 				.getEObjectURI());
-		if(currentProject == null) {
+		if (currentProject == null) {
 			resourceSet = resourceSetProvider.get(project);
 			currentProject = project;
-		} else if(!currentProject.equals(project)) { 
-			throw new IllegalArgumentException("GraphView diagram definition files must reside in the same project");
+			typeProviderFactory.createTypeProvider(resourceSet);
+		} else if (!currentProject.equals(project)) {
+			throw new IllegalArgumentException(
+					"GraphView diagram definition files must reside in the same project");
 		}
 		modelFiles.add(projectUtil.findFileStorage(
 				eObjectDescription.getEObjectURI(), false));
-		typeProviderFactory.createTypeProvider(resourceSet);
 		return resourceSet.getEObject(eObjectDescription.getEObjectURI(), true);
 	}
 }

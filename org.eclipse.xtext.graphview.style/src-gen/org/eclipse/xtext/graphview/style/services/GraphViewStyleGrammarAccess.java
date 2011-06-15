@@ -26,14 +26,20 @@ public class GraphViewStyleGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cStylesheetKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameQualifiedNameParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Assignment cStylesAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cStylesStyleParserRuleCall_3_0 = (RuleCall)cStylesAssignment_3.eContents().get(0);
+		private final Keyword cForKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cDiagramMappingAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final CrossReference cDiagramMappingDiagramMappingCrossReference_4_0 = (CrossReference)cDiagramMappingAssignment_4.eContents().get(0);
+		private final RuleCall cDiagramMappingDiagramMappingQualifiedNameParserRuleCall_4_0_1 = (RuleCall)cDiagramMappingDiagramMappingCrossReference_4_0.eContents().get(1);
+		private final Assignment cStylesAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cStylesStyleParserRuleCall_5_0 = (RuleCall)cStylesAssignment_5.eContents().get(0);
 		
 		//StyleSheet:
-		//	imports+=Import* "stylesheet" name=QualifiedName styles+=Style*;
+		//	imports+=Import* "stylesheet" name=QualifiedName "for" diagramMapping=[gvmapping::DiagramMapping|QualifiedName]
+		//	styles+=Style*;
 		public ParserRule getRule() { return rule; }
 
-		//imports+=Import* "stylesheet" name=QualifiedName styles+=Style*
+		//imports+=Import* "stylesheet" name=QualifiedName "for" diagramMapping=[gvmapping::DiagramMapping|QualifiedName]
+		//styles+=Style*
 		public Group getGroup() { return cGroup; }
 
 		//imports+=Import*
@@ -51,11 +57,23 @@ public class GraphViewStyleGrammarAccess extends AbstractGrammarElementFinder {
 		//QualifiedName
 		public RuleCall getNameQualifiedNameParserRuleCall_2_0() { return cNameQualifiedNameParserRuleCall_2_0; }
 
+		//"for"
+		public Keyword getForKeyword_3() { return cForKeyword_3; }
+
+		//diagramMapping=[gvmapping::DiagramMapping|QualifiedName]
+		public Assignment getDiagramMappingAssignment_4() { return cDiagramMappingAssignment_4; }
+
+		//[gvmapping::DiagramMapping|QualifiedName]
+		public CrossReference getDiagramMappingDiagramMappingCrossReference_4_0() { return cDiagramMappingDiagramMappingCrossReference_4_0; }
+
+		//QualifiedName
+		public RuleCall getDiagramMappingDiagramMappingQualifiedNameParserRuleCall_4_0_1() { return cDiagramMappingDiagramMappingQualifiedNameParserRuleCall_4_0_1; }
+
 		//styles+=Style*
-		public Assignment getStylesAssignment_3() { return cStylesAssignment_3; }
+		public Assignment getStylesAssignment_5() { return cStylesAssignment_5; }
 
 		//Style
-		public RuleCall getStylesStyleParserRuleCall_3_0() { return cStylesStyleParserRuleCall_3_0; }
+		public RuleCall getStylesStyleParserRuleCall_5_0() { return cStylesStyleParserRuleCall_5_0; }
 	}
 
 	public class ImportElements extends AbstractParserRuleElementFinder {
@@ -272,7 +290,8 @@ public class GraphViewStyleGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//StyleSheet:
-	//	imports+=Import* "stylesheet" name=QualifiedName styles+=Style*;
+	//	imports+=Import* "stylesheet" name=QualifiedName "for" diagramMapping=[gvmapping::DiagramMapping|QualifiedName]
+	//	styles+=Style*;
 	public StyleSheetElements getStyleSheetAccess() {
 		return (pStyleSheet != null) ? pStyleSheet : (pStyleSheet = new StyleSheetElements());
 	}

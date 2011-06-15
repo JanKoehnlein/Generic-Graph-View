@@ -1,8 +1,8 @@
 import org.eclipse.xtext.graphview.shape.*
-import org.eclipse.draw2d.* 
+import org.eclipse.draw2d.*  
 import PackageDiagram.*
 
-stylesheet MyStyleSheet 
+stylesheet PackageDiagram for PackageDiagram
  
 style PackageDiagram as DiagramShape {
 	font = font("Helvetica", 11, 0)
@@ -43,4 +43,14 @@ style DataTypeNode as RectangleShape {
 style ClassNode.ReferenceEdge as ConnectionShape {
 	lineWidth = 2
 	foregroundColor = color(#888888) 
+}
+
+style ClassNode.SuperclassEdge as ConnectionShape {
+	lineWidth = 2
+	foregroundColor = color(#888888)
+	var arrow = new PolygonDecoration()
+	arrow.setScale(10,10)
+	arrow.backgroundColor = color(#ffffff)
+	arrow.lineWidth = 2
+	targetDecoration = arrow 
 }

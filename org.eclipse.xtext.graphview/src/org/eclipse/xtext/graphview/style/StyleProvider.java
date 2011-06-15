@@ -3,8 +3,8 @@ package org.eclipse.xtext.graphview.style;
 import java.util.Collection;
 
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping;
-import org.eclipse.xtext.graphview.model.IGraphViewDefinitionProvider;
 import org.eclipse.xtext.graphview.style.graphViewStyle.Style;
+import org.eclipse.xtext.graphview.view.config.IDiagramConfigurationProvider;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
@@ -26,9 +26,9 @@ public class StyleProvider {
 
 	@Inject
 	public void setGraphViewDefinitionProvider(
-			final IGraphViewDefinitionProvider graphViewDefinitionProvider) {
+			final IDiagramConfigurationProvider graphViewDefinitionProvider) {
 		graphViewDefinitionProvider
-				.addModelChangedListener(new IGraphViewDefinitionProvider.Listener() {
+				.addConfigurationListener(new IDiagramConfigurationProvider.Listener() {
 					@Override
 					public void graphViewDefinitionChanged() {
 						mapping2style = loadStyles(graphViewDefinitionProvider);
@@ -38,7 +38,7 @@ public class StyleProvider {
 	}
 
 	protected Multimap<AbstractMapping, Style> loadStyles(
-			IGraphViewDefinitionProvider graphViewDefinitionProvider) {
+			IDiagramConfigurationProvider graphViewDefinitionProvider) {
 		Multimap<AbstractMapping, Style> mapping2style = HashMultimap.create();
 		if (graphViewDefinitionProvider.getStyleSheet() != null) {
 			for (Style style : graphViewDefinitionProvider.getStyleSheet()

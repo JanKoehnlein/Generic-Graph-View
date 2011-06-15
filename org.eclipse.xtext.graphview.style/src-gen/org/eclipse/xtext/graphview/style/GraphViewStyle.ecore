@@ -8,6 +8,7 @@
         eType="ecore:EClass platform:/resource/org.eclipse.xtext.graphview.style/src-gen/org/eclipse/xtext/graphview/style/GraphViewStyle.ecore#//Import"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="diagramMapping" eType="ecore:EClass platform:/resource/org.eclipse.xtext.graphview.map/src/org/eclipse/xtext/graphview/map/GraphViewMapping.ecore#//DiagramMapping"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="styles" upperBound="-1"
         eType="ecore:EClass platform:/resource/org.eclipse.xtext.graphview.style/src-gen/org/eclipse/xtext/graphview/style/GraphViewStyle.ecore#//Style"
         containment="true"/>
