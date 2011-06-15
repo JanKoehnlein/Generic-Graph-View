@@ -14,6 +14,7 @@ import org.eclipse.xtext.graphview.instancemodel.DiagramInstance;
 import org.eclipse.xtext.graphview.model.IGraphViewDefinitionProvider;
 import org.eclipse.xtext.graphview.model.IGraphViewDefinitionProvider.Listener;
 import org.eclipse.xtext.graphview.model.ModelInstantiator;
+import org.eclipse.xtext.graphview.view.selection.ElementSelectionConverter;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
@@ -36,13 +37,15 @@ public class GraphView extends ViewPart {
 	@Inject
 	private ExportToFileAction exportToFileAction;
 	
+	@Inject
+	private ElementSelectionConverter selectionConverter;
+
 	private DefaultEditDomain editDomain;
 
 	private GraphicalViewer graphicalViewer;
 
 	private Object currentContents;
 
-	private SelectionConverter selectionConverter;
 
 	@Override
 	public void createPartControl(Composite parent) {
@@ -59,7 +62,6 @@ public class GraphView extends ViewPart {
 				});
 			}
 		});
-		selectionConverter = new SelectionConverter(this);
 		getSite().getWorkbenchWindow().getSelectionService()
 				.addPostSelectionListener(selectionConverter);
 		IToolBarManager toolBarManager = getViewSite().getActionBars().getToolBarManager();
@@ -94,7 +96,8 @@ public class GraphView extends ViewPart {
 		setViewerContents(contents, false);
 	}
 	
-	public void setViewerContents(Object contents, boolean force) {
+	public boolean setViewerContents(Object contents, boolean force) {
+		boolean hasContent = false;
 		if(contents == null) {
 			if(force) {
 				currentContents = null;
@@ -108,11 +111,13 @@ public class GraphView extends ViewPart {
 				if(instanceModel != null) {
 					currentContents = contents;
 					graphicalViewer.setContents(instanceModel);
+					hasContent = true;
 				}
 			}
 		}
 		exportToFileAction.setEnabled(currentContents != null);
 		refreshAction.setEnabled(currentContents != null);
+		return hasContent;
 	}
 
 	protected DefaultEditDomain getEditDomain() {

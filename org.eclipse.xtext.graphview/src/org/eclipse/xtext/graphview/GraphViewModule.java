@@ -9,6 +9,8 @@ import org.eclipse.xtext.graphview.map.IInstanceMapper;
 import org.eclipse.xtext.graphview.map.ui.internal.GraphViewMappingActivator;
 import org.eclipse.xtext.graphview.style.IStyler;
 import org.eclipse.xtext.graphview.style.ui.internal.GraphViewStyleActivator;
+import org.eclipse.xtext.graphview.view.selection.EcoreEditorElementSelectionStrategy;
+import org.eclipse.xtext.graphview.view.selection.IElementSelectionStrategy;
 import org.eclipse.xtext.resource.IResourceDescriptions;
 import org.eclipse.xtext.ui.resource.IResourceSetProvider;
 import org.eclipse.xtext.ui.resource.XtextResourceSetProvider;
@@ -16,6 +18,7 @@ import org.eclipse.xtext.ui.shared.Access;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.Provider;
+import com.google.inject.name.Names;
 
 @SuppressWarnings("restriction")
 public class GraphViewModule extends AbstractModule {
@@ -54,6 +57,9 @@ public class GraphViewModule extends AbstractModule {
 			}
 		});
 		bind(AbstractUIPlugin.class).toInstance(Activator.getDefault());
+		bind(IElementSelectionStrategy.class).annotatedWith(
+				Names.named("Ecore")).to(
+				EcoreEditorElementSelectionStrategy.class);
 	}
 
 }

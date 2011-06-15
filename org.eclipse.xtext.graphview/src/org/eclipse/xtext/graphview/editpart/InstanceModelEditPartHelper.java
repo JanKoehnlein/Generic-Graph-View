@@ -4,11 +4,14 @@ import java.util.Collection;
 
 import org.apache.log4j.Logger;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.gef.Request;
+import org.eclipse.gef.RequestConstants;
 import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
 import org.eclipse.xtext.graphview.instancemodel.AbstractInstance;
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping;
 import org.eclipse.xtext.graphview.style.StyleProvider;
 import org.eclipse.xtext.graphview.style.graphViewStyle.Style;
+import org.eclipse.xtext.graphview.view.selection.ElementSelectionConverter;
 import org.eclipse.xtext.util.Strings;
 
 import com.google.inject.Inject;
@@ -17,6 +20,9 @@ public class InstanceModelEditPartHelper {
 
 	@Inject
 	private StyleProvider styleProvider;
+	
+	@Inject 
+	private ElementSelectionConverter selectionConverter;
 
 	private AbstractInstance instanceModel;
 
@@ -79,6 +85,11 @@ public class InstanceModelEditPartHelper {
 	public void style(IFigure figure) {
 		for(Style style: getStyles())
 			styleProvider.style(figure, getSemanticElement(), style);
+	}
+	
+	public void performRequest(Request request) {
+		if(RequestConstants.REQ_OPEN.equals(request.getType()))
+			selectionConverter.select(getSemanticElement());
 	}
 
 }

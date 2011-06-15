@@ -6,11 +6,16 @@ import org.eclipse.xtext.graphview.editpolicy.DiagramLayoutEditPolicy;
 import org.eclipse.xtext.graphview.layout.MyDiagramLayout;
 import org.eclipse.xtext.graphview.shape.DiagramShape;
 
+import com.google.inject.Inject;
+
 public class DiagramEditPart extends AbstractMappingEditPart {
 
+	@Inject
+	private DiagramLayoutEditPolicy diagramLayoutEditPolicy;
+	
 	@Override
 	protected void createEditPolicies() {
-		installEditPolicy(EditPolicy.LAYOUT_ROLE, new DiagramLayoutEditPolicy());
+		installEditPolicy(EditPolicy.LAYOUT_ROLE, diagramLayoutEditPolicy);
 	}
 
 	@Override
