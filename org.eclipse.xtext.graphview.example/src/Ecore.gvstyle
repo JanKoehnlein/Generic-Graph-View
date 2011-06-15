@@ -3,19 +3,9 @@ import org.eclipse.draw2d.*
 import PackageDiagram.*
 
 stylesheet PackageDiagram for PackageDiagram
- 
-style PackageDiagram as DiagramShape {
-	font = font("Helvetica", 11, 0)
-	foregroundColor = color(#333333)
-}
-
-style ClassNode as RoundedRectangleShape {
-	lineWidth = 2
-	backgroundColor = color(#ffeedd)
-}
 
 style DataTypeNode.Name as LabelShape {
-	font = font("Helvetica", 11, 1) 
+	font = font("Helvetica", 13, 1) 
 	border = new MarginBorder(5,5,5,5) 
 }
 
@@ -26,28 +16,11 @@ style ClassNode.Name as LabelShape {
 }
 
 style ClassNode.Attributes, ClassNode.Operations as RectangleShape {
-	foregroundColor = color(#dddddd)
+	outline = false
 	backgroundColor = color(#ffffff)
-	lineWidth = 0
-}
-
-style ClassNode.Attributes.Label, ClassNode.Operations.Label as LabelShape {
-	foregroundColor = color(#333333)
-}
-
-style DataTypeNode as RectangleShape { 
-	backgroundColor = color(#ffffee)
-	lineWidth = 2
-} 
-
-style ClassNode.ReferenceEdge as ConnectionShape {
-	lineWidth = 2
-	foregroundColor = color(#888888) 
 }
 
 style ClassNode.SuperclassEdge as ConnectionShape {
-	lineWidth = 2
-	foregroundColor = color(#888888)
 	var arrow = new PolygonDecoration()
 	arrow.setScale(10,10)
 	arrow.backgroundColor = color(#ffffff)

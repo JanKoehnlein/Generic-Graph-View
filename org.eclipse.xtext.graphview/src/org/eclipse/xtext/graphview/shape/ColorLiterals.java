@@ -16,4 +16,8 @@ public class ColorLiterals {
 		}
 		return JFaceResources.getColorRegistry().getColorDescriptor(symbolicName).createColor(Display.getDefault());
 	}
+	
+	public static Color color(int red, int green, int blue) {
+		return color(new ColorLiteral(red, green, blue));
+	}
 }

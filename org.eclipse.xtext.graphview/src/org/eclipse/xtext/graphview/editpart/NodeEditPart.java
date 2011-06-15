@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.xtext.graphview.instancemodel.NodeInstance;
-import org.eclipse.xtext.graphview.shape.RectangleShape;
+import org.eclipse.xtext.graphview.shape.RoundedRectangleShape;
 
 public class NodeEditPart extends AbstractMappingEditPart {
 
@@ -14,7 +14,7 @@ public class NodeEditPart extends AbstractMappingEditPart {
 
 	@Override
 	public IFigure createDefaultFigure() {
-		return new RectangleShape();			
+		return new RoundedRectangleShape();			
 	}
 
 	@SuppressWarnings("rawtypes")
