@@ -1,5 +1,6 @@
 package org.eclipse.xtext.graphview.map.types;
 
+import org.eclipse.xtext.common.types.JvmGenericArrayTypeReference;
 import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
 import org.eclipse.xtext.common.types.JvmTypeReference;
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractExpressionMapping;
@@ -29,11 +30,15 @@ public class GraphViewMappingTypeProvider extends XbaseTypeProvider {
 			AbstractExpressionMapping mapping, boolean rawType) {
 		JvmTypeReference type = _type(mapping);
 		if (mapping instanceof AbstractExpressionMapping
-				&& ((AbstractExpressionMapping) mapping).isMulti()
-				&& type instanceof JvmParameterizedTypeReference
-				&& !((JvmParameterizedTypeReference) type)
-						.getArguments().isEmpty()) {
-			return ((JvmParameterizedTypeReference) type).getArguments().get(0);
+				&& ((AbstractExpressionMapping) mapping).isMulti()) {
+			if (type instanceof JvmParameterizedTypeReference
+					&& !((JvmParameterizedTypeReference) type).getArguments()
+							.isEmpty()) {
+				return ((JvmParameterizedTypeReference) type).getArguments()
+						.get(0);
+			} else if (type instanceof JvmGenericArrayTypeReference) {
+				return ((JvmGenericArrayTypeReference) type).getComponentType();
+			}
 		}
 		return type;
 	}

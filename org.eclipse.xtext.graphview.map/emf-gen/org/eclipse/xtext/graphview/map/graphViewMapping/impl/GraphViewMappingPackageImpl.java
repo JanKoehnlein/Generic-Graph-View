@@ -23,7 +23,6 @@ import org.eclipse.xtext.graphview.map.graphViewMapping.EdgeMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingFactory;
 import org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage;
 import org.eclipse.xtext.graphview.map.graphViewMapping.Import;
-import org.eclipse.xtext.graphview.map.graphViewMapping.IterableUnpacker;
 import org.eclipse.xtext.graphview.map.graphViewMapping.LabelMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.NodeMapping;
 

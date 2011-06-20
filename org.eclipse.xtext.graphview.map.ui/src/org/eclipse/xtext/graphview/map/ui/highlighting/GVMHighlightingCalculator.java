@@ -17,7 +17,6 @@ public class GVMHighlightingCalculator implements
 	@Inject
 	private ILocationInFileProvider locationInFileProvider;
 
-	@Override
 	public void provideHighlightingFor(XtextResource resource,
 			IHighlightedPositionAcceptor acceptor) {
 		if (resource != null && !resource.getContents().isEmpty()) {

@@ -82,7 +82,12 @@ public class InstanceModelEditPartHelper {
 		return null;
 	}
 	
+	protected GraphViewEditDomain getEditDomain() {
+		return (GraphViewEditDomain) host.getViewer().getEditDomain();
+	}
+	
 	public void style(IFigure figure) {
+		styleProvider.setClassLoader(getEditDomain().getClassLoader());
 		for(Style style: getStyles())
 			styleProvider.style(figure, getSemanticElement(), style);
 	}

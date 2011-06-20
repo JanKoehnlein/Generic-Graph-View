@@ -3,10 +3,10 @@ package org.eclipse.xtext.graphview.view.selection;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IConfigurationElement;
+import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jface.viewers.ISelectionProvider;
-import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.ISelectionListener;
@@ -16,11 +16,9 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.xtext.graphview.view.GraphView;
 
 import com.google.common.collect.Lists;
-import com.google.inject.Binding;
 import com.google.inject.Inject;
 import com.google.inject.Injector;
 import com.google.inject.Singleton;
-import com.google.inject.TypeLiteral;
 
 @Singleton
 public class ElementSelectionConverter implements ISelectionListener {
@@ -33,6 +31,9 @@ public class ElementSelectionConverter implements ISelectionListener {
 
 	@Inject
 	private IWorkbench workbench;
+	
+	@Inject
+	private IExtensionRegistry extensionRegistry;
 
 	private IEditorInput editorInput;
 
@@ -42,35 +43,21 @@ public class ElementSelectionConverter implements ISelectionListener {
 
 	private ISelection mySelection = null;
 
-	private IElementSelectionStrategy defaultElementSelectionStrategy = new IElementSelectionStrategy() {
-
-		@Override
+	private IElementSelectionStrategy defaultElementSelectionStrategy = new StructuredElementSelectionStrategy() {
 		public boolean isStrategyFor(IEditorPart editor) {
 			return true;
-		}
-
-		@Override
-		public ISelection setSelection(IEditorPart editor, Object selectedElement) {
-			return new StructuredSelection(selectedElement);
-		}
-
-		@Override
-		public Object getSelectedElement(IEditorPart editor, ISelection selection) {
-			if (selection instanceof IStructuredSelection)
-				return ((IStructuredSelection) selection).getFirstElement();
-			else
-				return null;
 		}
 	};
 
 	@Inject
 	protected void initialize(Injector injector) {
 		contributions = Lists.newArrayList();
-		List<Binding<IElementSelectionStrategy>> bindings = injector
-				.findBindingsByType(TypeLiteral
-						.get(IElementSelectionStrategy.class));
-		for (Binding<IElementSelectionStrategy> binding : bindings) {
-			contributions.add(injector.getInstance(binding.getKey()));
+		for(IConfigurationElement configurationElement : extensionRegistry.getConfigurationElementsFor("org.eclipse.xtext.graphview.selectionStrategy")) {
+			try {
+				contributions.add((IElementSelectionStrategy) configurationElement.createExecutableExtension("class"));
+			} catch (CoreException e) {
+				LOG.error("Error instantiating selection strategy", e);
+			}
 		}
 		contributions.add(defaultElementSelectionStrategy);
 	}
@@ -94,14 +81,12 @@ public class ElementSelectionConverter implements ISelectionListener {
 				IEditorPart editor = (IEditorPart) part;
 				IElementSelectionStrategy elementSelectionStrategy = findElementSelectionStrategy((IEditorPart) editor);
 				Object semanticElement = elementSelectionStrategy
-						.getSelectedElement(editor, selection);
+						.editorSelectionChanged(editor, selection, graphView);
 				if (semanticElement != null) {
-					if (graphView.setViewerContents(semanticElement, false)) {
 						this.editorInput = ((IEditorPart) part)
 								.getEditorInput();
 						this.editorId = ((IEditorPart) part).getEditorSite()
 								.getId();
-					}
 				}
 			}
 		} catch (Exception e) {
@@ -120,12 +105,9 @@ public class ElementSelectionConverter implements ISelectionListener {
 				activePage.bringToTop(editor);
 				IElementSelectionStrategy elementSelectionStrategy = findElementSelectionStrategy((IEditorPart) editor);
 				ISelection selection = elementSelectionStrategy
-						.setSelection(editor, selectedElement);
+						.viewSelectionChanged(editor, selectedElement, graphView);
 				if (selection != null) {
-					ISelectionProvider selectionProvider = editor
-							.getEditorSite().getSelectionProvider();
 					mySelection = selection;
-					selectionProvider.setSelection(selection);
 				}
 			}
 		} catch (Exception e) {

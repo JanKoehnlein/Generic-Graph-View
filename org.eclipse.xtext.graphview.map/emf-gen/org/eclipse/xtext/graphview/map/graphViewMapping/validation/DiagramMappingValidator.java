@@ -10,7 +10,6 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
 
-import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractExpressionMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.Import;
 
 /**
@@ -23,7 +22,5 @@ public interface DiagramMappingValidator {
 	boolean validate();
 
 	boolean validateImports(EList<Import> value);
-	boolean validateName(String value);
 	boolean validateTypeGuard(JvmParameterizedTypeReference value);
-	boolean validateMappings(EList<AbstractExpressionMapping> value);
 }

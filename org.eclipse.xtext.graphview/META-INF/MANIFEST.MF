@@ -19,9 +19,10 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.xtext.graphview.style;bundle-version="1.0.0";visibility:=reexport,
  org.eclipse.xtext.graphview.style.ui;bundle-version="1.0.0",
  gef-layout;bundle-version="1.0.0",
- org.eclipse.zest.layouts;bundle-version="1.1.0"
+ org.eclipse.zest.layouts;bundle-version="1.1.0",
+ org.eclipse.ui.ide;bundle-version="3.7.0"
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.eclipse.xtext.graphview,
  org.eclipse.xtext.graphview.editpart,
  org.eclipse.xtext.graphview.editpolicy,
@@ -33,4 +34,6 @@ Export-Package: org.eclipse.xtext.graphview,
  org.eclipse.xtext.graphview.model,
  org.eclipse.xtext.graphview.shape,
  org.eclipse.xtext.graphview.style,
- org.eclipse.xtext.graphview.view
+ org.eclipse.xtext.graphview.view,
+ org.eclipse.xtext.graphview.view.config,
+ org.eclipse.xtext.graphview.view.selection

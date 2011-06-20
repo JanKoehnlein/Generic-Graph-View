@@ -8,7 +8,6 @@ package org.eclipse.xtext.graphview.map.graphViewMapping;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.xtext.common.types.JvmIdentifiableElement;
 import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
 
 /**

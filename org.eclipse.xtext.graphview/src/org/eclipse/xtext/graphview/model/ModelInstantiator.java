@@ -17,6 +17,7 @@ import org.eclipse.xtext.graphview.map.graphViewMapping.EdgeMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.LabelMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.NodeMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.util.GraphViewMappingSwitch;
+import org.eclipse.xtext.util.Strings;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
@@ -26,28 +27,25 @@ public class ModelInstantiator {
 
 	private static final Logger LOG = Logger.getLogger(ModelInstantiator.class);
 	
+	@Inject
 	private IInstanceMapper instanceMapper;
 
-	@Inject
-	public void setInstanceMapper(IInstanceMapper instanceMapper) {
-		this.instanceMapper = instanceMapper;
-		instanceMapper.setClassLoader(getClass().getClassLoader());
-	}
-
-	public boolean isType(JvmTypeReference type, Object object) {
+	protected boolean isType(JvmTypeReference type, Object object, ClassLoader classLoader) {
 		try {
-			Class<?> typeGuard = getClass().getClassLoader().loadClass(type.getIdentifier());
+			Class<?> typeGuard = classLoader.loadClass(type.getIdentifier());
 			return typeGuard.isInstance(object);
 		} catch (ClassNotFoundException e) {
-			LOG.error("Cannot resolve type guard for diagram", e);
+			LOG.error("Cannot resolve type guard for diagram type " + Strings.notNull(type));
 		}
 		return false;
 	}
 	
 	public DiagramInstance createInstance(DiagramMapping mapping,
-			Object semanticElement) {
-		if (mapping == null || !isType(mapping.getTypeGuard(), semanticElement))
+			Object semanticElement, ClassLoader classLoader) {
+		if (mapping == null || !isType(mapping.getTypeGuard(), semanticElement, classLoader)) {
 			return null;
+		}
+		instanceMapper.setClassLoader(classLoader);
 		Multimap<Object, NodeInstance> semantic2instance = HashMultimap
 				.create();
 		DiagramInstance diagramInstance = (DiagramInstance) internalCreateInstance(

@@ -6,8 +6,6 @@
  */
 package org.eclipse.xtext.graphview.map.graphViewMapping.validation;
 
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractExpressionMapping;
 import org.eclipse.xtext.xbase.XExpression;
 
 /**
@@ -19,9 +17,6 @@ import org.eclipse.xtext.xbase.XExpression;
 public interface AbstractExpressionMappingValidator {
 	boolean validate();
 
-	boolean validateName(String value);
 	boolean validateMulti(boolean value);
 	boolean validateExpression(XExpression value);
-
-	boolean validateContents(EList<AbstractExpressionMapping> value);
 }

@@ -8,8 +8,6 @@ package org.eclipse.xtext.graphview.map.graphViewMapping.validation;
 
 import org.eclipse.xtext.graphview.map.graphViewMapping.NodeMapping;
 
-import org.eclipse.xtext.xbase.XExpression;
-
 /**
  * A sample validator interface for {@link org.eclipse.xtext.graphview.map.graphViewMapping.EdgeEndMapping}.
  * This doesn't really do anything, and it's not a real EMF artifact.
@@ -20,5 +18,4 @@ public interface EdgeEndMappingValidator {
 	boolean validate();
 
 	boolean validateMapping(NodeMapping value);
-	boolean validateExpression(XExpression value);
 }

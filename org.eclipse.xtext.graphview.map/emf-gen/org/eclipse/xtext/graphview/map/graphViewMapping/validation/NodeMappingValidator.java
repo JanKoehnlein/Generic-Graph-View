@@ -6,9 +6,6 @@
  */
 package org.eclipse.xtext.graphview.map.graphViewMapping.validation;
 
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractExpressionMapping;
 
 /**
  * A sample validator interface for {@link org.eclipse.xtext.graphview.map.graphViewMapping.NodeMapping}.
@@ -19,5 +16,4 @@ import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractExpressionMappin
 public interface NodeMappingValidator {
 	boolean validate();
 
-	boolean validateContents(EList<AbstractExpressionMapping> value);
 }

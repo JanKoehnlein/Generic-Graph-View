@@ -6,9 +6,6 @@
  */
 package org.eclipse.xtext.graphview.map.graphViewMapping;
 
-import org.eclipse.emf.ecore.EObject;
-
-import org.eclipse.xtext.xbase.XExpression;
 
 /**
  * <!-- begin-user-doc -->

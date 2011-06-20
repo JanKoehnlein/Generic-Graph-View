@@ -1,15 +1,15 @@
-package org.eclipse.xtext.graphview.view.selection;
+package org.eclipse.xtext.graphview.providers;
 
 import java.util.Collections;
 
 import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IEditorPart;
+import org.eclipse.xtext.graphview.view.GraphView;
+import org.eclipse.xtext.graphview.view.selection.StructuredElementSelectionStrategy;
 import org.eclipse.xtext.util.PolymorphicDispatcher;
 import org.eclipse.xtext.util.Strings;
 
-public class EcoreEditorElementSelectionStrategy implements
-		IElementSelectionStrategy {
+public class EcoreEditorElementSelectionStrategy extends StructuredElementSelectionStrategy {
 
 	@Override
 	public boolean isStrategyFor(IEditorPart editor) {
@@ -18,14 +18,7 @@ public class EcoreEditorElementSelectionStrategy implements
 	}
 
 	@Override
-	public Object getSelectedElement(IEditorPart editor, ISelection selection) {
-		if (selection instanceof IStructuredSelection)
-			return ((IStructuredSelection) selection).getFirstElement();
-		return null;
-	}
-
-	@Override
-	public ISelection setSelection(IEditorPart editor, Object selectedElement) {
+	public ISelection viewSelectionChanged(IEditorPart editor, Object selectedElement, GraphView graphView) {
 		PolymorphicDispatcher.createForSingleTarget("setSelectionToViewer", editor).invoke(Collections.singleton(selectedElement));
 		return editor.getEditorSite().getSelectionProvider().getSelection();
 	}

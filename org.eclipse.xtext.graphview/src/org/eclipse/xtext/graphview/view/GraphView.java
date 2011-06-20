@@ -1,7 +1,6 @@
 package org.eclipse.xtext.graphview.view;
 
 import org.eclipse.draw2d.ColorConstants;
-import org.eclipse.gef.DefaultEditDomain;
 import org.eclipse.gef.GraphicalViewer;
 import org.eclipse.gef.editparts.FreeformGraphicalRootEditPart;
 import org.eclipse.gef.ui.parts.ScrollingGraphicalViewer;
@@ -9,12 +8,13 @@ import org.eclipse.jface.action.IToolBarManager;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.part.ViewPart;
+import org.eclipse.xtext.graphview.editpart.GraphViewEditDomain;
 import org.eclipse.xtext.graphview.editpart.GraphViewEditPartFactory;
 import org.eclipse.xtext.graphview.instancemodel.DiagramInstance;
 import org.eclipse.xtext.graphview.model.ModelInstantiator;
 import org.eclipse.xtext.graphview.view.config.IDiagramConfigurationProvider;
-import org.eclipse.xtext.graphview.view.config.SelectDiagramConfigurationAction;
 import org.eclipse.xtext.graphview.view.config.IDiagramConfigurationProvider.Listener;
+import org.eclipse.xtext.graphview.view.config.SelectDiagramConfigurationAction;
 import org.eclipse.xtext.graphview.view.selection.ElementSelectionConverter;
 
 import com.google.inject.Inject;
@@ -44,7 +44,8 @@ public class GraphView extends ViewPart {
 	@Inject
 	private ElementSelectionConverter selectionConverter;
 
-	private DefaultEditDomain editDomain;
+	@Inject
+	private GraphViewEditDomain editDomain;
 
 	private GraphicalViewer graphicalViewer;
 
@@ -56,7 +57,7 @@ public class GraphView extends ViewPart {
 	@Override
 	public void createPartControl(Composite parent) {
 		graphicalViewer = createGraphicalViewer(parent);
-		graphicalViewer.setEditDomain(getEditDomain());
+		graphicalViewer.setEditDomain(editDomain);
 		configurationListener = new Listener() {
 			@Override
 			public void graphViewDefinitionChanged() {
@@ -101,11 +102,11 @@ public class GraphView extends ViewPart {
 
 	public void refresh() {
 		Object contents = currentContents;
-		setViewerContents(null, true);
-		setViewerContents(contents, false);
+		setViewerContents(null, null, true);
+		setViewerContents(contents, editDomain.getClassLoader(), false);
 	}
 	
-	public boolean setViewerContents(Object contents, boolean force) {
+	public boolean setViewerContents(Object contents, ClassLoader classLoader, boolean force) {
 		boolean hasContent = false;
 		if(contents == null) {
 			if(force) {
@@ -116,9 +117,11 @@ public class GraphView extends ViewPart {
 			if (force || contents != currentContents) {
 				DiagramInstance instanceModel = modelInstantiator.createInstance(
 					diagramConfigurationProvider.getDiagramMapping(),
-					contents);
+					contents, 
+					classLoader);
 				if(instanceModel != null) {
 					currentContents = contents;
+					editDomain.setClassLoader(classLoader);
 					graphicalViewer.setContents(instanceModel);
 					hasContent = true;
 				}
@@ -127,12 +130,6 @@ public class GraphView extends ViewPart {
 		exportToFileAction.setEnabled(currentContents != null);
 		refreshAction.setEnabled(currentContents != null);
 		return hasContent;
-	}
-
-	protected DefaultEditDomain getEditDomain() {
-		if(editDomain == null)
-			editDomain = new DefaultEditDomain(null);
-		return this.editDomain;
 	}
 
 	protected GraphicalViewer getGraphicalViewer() {

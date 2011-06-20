@@ -24,19 +24,25 @@ public class Styler implements IStyler {
 	@Inject
 	private Provider<IEvaluationContext> contextProvider;
 
+	private ClassLoader classLoader;
+
 	public void setClassLoader(ClassLoader classLoader) {
-		xbaseInterpreter.setClassLoader(classLoader);
+		this.classLoader = classLoader;
 	}
 
 	public boolean style(Object figure, Object semanticElement, Style style) {
-		if(style.getExpression() == null) 
+		if (style.getExpression() == null)
 			return true;
 		try {
 			JvmParameterizedTypeReference javaClass = style.getJavaClass();
-			if (javaClass == null || Strings.equal(javaClass.getIdentifier(), figure.getClass().getCanonicalName())) {
+			if (javaClass == null
+					|| Strings.equal(javaClass.getIdentifier(), figure
+							.getClass().getCanonicalName())) {
+				xbaseInterpreter.setClassLoader(classLoader);
 				IEvaluationContext context = contextProvider.get();
 				context.newValue(XbaseScopeProvider.THIS, figure);
-				context.newValue(GraphViewStyleScopeProvider.SEMANTIC_ELEMENT, semanticElement);
+				context.newValue(GraphViewStyleScopeProvider.SEMANTIC_ELEMENT,
+						semanticElement);
 				xbaseInterpreter.evaluate(style.getExpression(), context,
 						CancelIndicator.NullImpl);
 				return true;

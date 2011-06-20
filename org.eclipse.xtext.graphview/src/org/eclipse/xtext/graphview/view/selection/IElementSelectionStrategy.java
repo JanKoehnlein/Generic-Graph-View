@@ -2,12 +2,13 @@ package org.eclipse.xtext.graphview.view.selection;
 
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.ui.IEditorPart;
+import org.eclipse.xtext.graphview.view.GraphView;
 
 public interface IElementSelectionStrategy {
 
 	boolean isStrategyFor(IEditorPart editor);
 	
-	Object getSelectedElement(IEditorPart editor, ISelection selection);
+	Object editorSelectionChanged(IEditorPart editor, ISelection selection, GraphView graphView);
 	
-	ISelection setSelection(IEditorPart editor, Object selectedElement);
+	ISelection viewSelectionChanged(IEditorPart editor, Object selectedElement, GraphView graphView);
 }

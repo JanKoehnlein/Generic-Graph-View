@@ -6,7 +6,6 @@
  */
 package org.eclipse.xtext.graphview.map.graphViewMapping;
 
-import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,5 +18,4 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface NodeMapping extends AbstractExpressionMapping {
-
 } // NodeMapping

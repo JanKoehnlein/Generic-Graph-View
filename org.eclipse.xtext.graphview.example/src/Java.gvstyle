@@ -1,0 +1,9 @@
+import JavaInheritanceDiagram.ClassNode.*
+import org.eclipse.xtext.graphview.shape.*
+
+stylesheet JavaInheritanceStyle for JavaInheritanceDiagram
+
+style ExtendsEdge, ImplementsEdge as ConnectionShape {
+	this.setTargetDecoration(null)
+	this.setSourceDecoration(new org.eclipse.draw2d.PolygonDecoration())   
+}

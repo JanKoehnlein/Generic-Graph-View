@@ -13,6 +13,7 @@ import org.eclipse.xtext.xbase.scoping.XbaseScopeProvider;
 
 import com.google.inject.Inject;
 import com.google.inject.Provider;
+import com.google.inject.internal.Lists;
 
 @SuppressWarnings("restriction")
 public class InstanceMapper implements IInstanceMapper {
@@ -25,17 +26,19 @@ public class InstanceMapper implements IInstanceMapper {
 	@Inject
 	private Provider<IEvaluationContext> contextProvider;
 
-	@Override
+	private ClassLoader classLoader;
+
 	public void setClassLoader(ClassLoader classLoader) {
-		xbaseInterpreter.setClassLoader(classLoader);
+		this.classLoader = classLoader;
 	}
 	
-	@Override
 	public Object map(AbstractExpressionMapping mapping, Object thisElement) {
 		Object value = evaluate(mapping.getExpression(), thisElement);
 		if (mapping.isMulti()) {
 			if (value == null) {
 				return Collections.EMPTY_LIST;
+			} else if(value.getClass().isArray()) {
+				return Lists.newArrayList((Object[])value);
 			} else if (!(value instanceof Iterable<?>)) {
 				return Collections.singletonList(value);
 			}
@@ -44,6 +47,7 @@ public class InstanceMapper implements IInstanceMapper {
 	}
 
 	protected Object evaluate(XExpression expression, Object thisElement) {
+		xbaseInterpreter.setClassLoader(classLoader);
 		IEvaluationContext evaluationContext = contextProvider.get();
 		evaluationContext.newValue(XbaseScopeProvider.THIS, thisElement);
 		IEvaluationResult result = xbaseInterpreter.evaluate(expression,

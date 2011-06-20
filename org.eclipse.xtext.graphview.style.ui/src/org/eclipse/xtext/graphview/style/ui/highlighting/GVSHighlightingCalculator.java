@@ -11,7 +11,6 @@ import org.eclipse.xtext.ui.editor.syntaxcoloring.ISemanticHighlightingCalculato
 public class GVSHighlightingCalculator implements
 		ISemanticHighlightingCalculator {
 
-	@Override
 	public void provideHighlightingFor(XtextResource resource,
 			IHighlightedPositionAcceptor acceptor) {
 		if (resource != null && resource.getParseResult() != null

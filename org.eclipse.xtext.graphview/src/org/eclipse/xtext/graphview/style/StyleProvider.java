@@ -14,16 +14,15 @@ import com.google.inject.Singleton;
 @Singleton
 public class StyleProvider {
 
+	@Inject
 	private IStyler styler;
-
+	
 	private Multimap<AbstractMapping, Style> mapping2style = HashMultimap.create();
 
-	@Inject
-	public void setStyler(IStyler styler) {
-		this.styler = styler;
-		styler.setClassLoader(getClass().getClassLoader());
+	public void setClassLoader(ClassLoader classLoader) {
+		styler.setClassLoader(classLoader);
 	}
-
+	
 	@Inject
 	public void setGraphViewDefinitionProvider(
 			final IDiagramConfigurationProvider graphViewDefinitionProvider) {
