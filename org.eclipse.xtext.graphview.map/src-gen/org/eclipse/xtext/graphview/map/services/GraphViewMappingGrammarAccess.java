@@ -283,11 +283,11 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 		
 		//EdgeMapping:
 		//	"edge" name=ID "for" multi?="each"? expression=XExpression "{" sourceMapping=EdgeEndMapping? "->"
-		//	targetMapping=EdgeEndMapping mappings+=LabelMapping* "}";
+		//	targetMapping=EdgeEndMapping? mappings+=LabelMapping* "}";
 		public ParserRule getRule() { return rule; }
 
 		//"edge" name=ID "for" multi?="each"? expression=XExpression "{" sourceMapping=EdgeEndMapping? "->"
-		//targetMapping=EdgeEndMapping mappings+=LabelMapping* "}"
+		//targetMapping=EdgeEndMapping? mappings+=LabelMapping* "}"
 		public Group getGroup() { return cGroup; }
 
 		//"edge"
@@ -326,7 +326,7 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 		//"->"
 		public Keyword getHyphenMinusGreaterThanSignKeyword_7() { return cHyphenMinusGreaterThanSignKeyword_7; }
 
-		//targetMapping=EdgeEndMapping
+		//targetMapping=EdgeEndMapping?
 		public Assignment getTargetMappingAssignment_8() { return cTargetMappingAssignment_8; }
 
 		//EdgeEndMapping
@@ -484,7 +484,7 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 
 	//EdgeMapping:
 	//	"edge" name=ID "for" multi?="each"? expression=XExpression "{" sourceMapping=EdgeEndMapping? "->"
-	//	targetMapping=EdgeEndMapping mappings+=LabelMapping* "}";
+	//	targetMapping=EdgeEndMapping? mappings+=LabelMapping* "}";
 	public EdgeMappingElements getEdgeMappingAccess() {
 		return (pEdgeMapping != null) ? pEdgeMapping : (pEdgeMapping = new EdgeMappingElements());
 	}

@@ -30,7 +30,6 @@ public class GraphViewModule extends AbstractModule {
 		bind(IResourceSetProvider.class).to(XtextResourceSetProvider.class);
 
 		bind(IInstanceMapper.class).toProvider(new Provider<IInstanceMapper>() {
-			@Override
 			public IInstanceMapper get() {
 				return GraphViewMappingActivator
 						.getInstance()
@@ -40,7 +39,6 @@ public class GraphViewModule extends AbstractModule {
 			}
 		});
 		bind(IStyler.class).toProvider(new Provider<IStyler>() {
-			@Override
 			public IStyler get() {
 				return GraphViewStyleActivator
 						.getInstance()
@@ -50,13 +48,11 @@ public class GraphViewModule extends AbstractModule {
 			}
 		});
 		bind(IWorkbench.class).toProvider(new Provider<IWorkbench>() {
-			@Override
 			public IWorkbench get() {
 				return PlatformUI.getWorkbench();
 			}
 		});
 		bind(IExtensionRegistry.class).toProvider(new Provider<IExtensionRegistry>() {
-			@Override
 			public IExtensionRegistry get() {
 				return Platform.getExtensionRegistry();
 			}

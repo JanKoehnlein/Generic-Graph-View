@@ -71,7 +71,6 @@ public class ElementSelectionConverter implements ISelectionListener {
 		return null;
 	}
 
-	@Override
 	public void selectionChanged(IWorkbenchPart part, ISelection selection) {
 		try {
 			if (selection == mySelection) {

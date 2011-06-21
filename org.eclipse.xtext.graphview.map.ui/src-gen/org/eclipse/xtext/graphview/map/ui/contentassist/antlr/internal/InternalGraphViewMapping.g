@@ -3845,7 +3845,7 @@ rule__EdgeMapping__Group__8__Impl
 :
 (
 { before(grammarAccess.getEdgeMappingAccess().getTargetMappingAssignment_8()); }
-(rule__EdgeMapping__TargetMappingAssignment_8)
+(rule__EdgeMapping__TargetMappingAssignment_8)?
 { after(grammarAccess.getEdgeMappingAccess().getTargetMappingAssignment_8()); }
 )
 

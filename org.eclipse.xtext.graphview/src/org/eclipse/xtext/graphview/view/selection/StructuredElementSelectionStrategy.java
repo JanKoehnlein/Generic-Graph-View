@@ -9,19 +9,16 @@ import org.eclipse.xtext.graphview.view.GraphView;
 public class StructuredElementSelectionStrategy implements
 		IElementSelectionStrategy {
 	
-	@Override
 	public boolean isStrategyFor(IEditorPart editor) {
 		return false;
 	}
 
-	@Override
 	public ISelection viewSelectionChanged(IEditorPart editor, Object selectedElement, GraphView graphView) {
 		StructuredSelection structuredSelection = new StructuredSelection(selectedElement);
 		editor.getEditorSite().getSelectionProvider().setSelection(structuredSelection);
 		return structuredSelection;
 	}
 
-	@Override
 	public Object editorSelectionChanged(IEditorPart editor, ISelection selection, GraphView graphView) {
 		if (selection instanceof IStructuredSelection) {
 			Object selectedElement = ((IStructuredSelection) selection).getFirstElement();

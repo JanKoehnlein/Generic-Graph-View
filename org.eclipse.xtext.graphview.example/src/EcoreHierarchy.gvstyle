@@ -1,0 +1,12 @@
+import org.eclipse.xtext.graphview.shape.*
+import org.eclipse.xtext.graphview.layout.*
+import org.eclipse.draw2d.* 
+  
+import EClassHierarchy.*
+
+stylesheet EClassHierarchy for EClassHierarchy
+
+style EClassNode.SuperType.SuperTypeLabel as LabelShape {
+	connectionAlignment = ConnectionLocator::TARGET
+	text='sub'
+}

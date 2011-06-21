@@ -72,7 +72,6 @@ public class DefaultDiagramConfigurationProvider implements
 			workspace.removeResourceChangeListener(resourceChangeListener);
 		}
 		resourceChangeListener = new IResourceChangeListener() {
-			@Override
 			public void resourceChanged(IResourceChangeEvent event) {
 				for (IFile modelFile : modelFiles) {
 					if (event.getDelta().findMember(modelFile.getFullPath()) != null) {
@@ -98,12 +97,10 @@ public class DefaultDiagramConfigurationProvider implements
 		fireModelChanged();
 	}
 
-	@Override
 	public DiagramMapping getDiagramMapping() {
 		return diagramMapping;
 	}
 
-	@Override
 	public StyleSheet getStyleSheet() {
 		return styleSheet;
 	}
@@ -114,12 +111,10 @@ public class DefaultDiagramConfigurationProvider implements
 		}
 	}
 
-	@Override
 	public void addConfigurationListener(Listener listener) {
 		listeners.add(listener);
 	}
 
-	@Override
 	public void removeConfigurationListener(Listener listener) {
 		listeners.remove(listener);
 	}

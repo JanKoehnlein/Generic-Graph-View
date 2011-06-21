@@ -21,18 +21,18 @@ AbstractExpressionMapping:
 	NodeMapping | LabelMapping | EdgeMapping;
 	
 NodeMapping:
-	'node' name=ID 'for' (multi?='each')? expression=XExpression '{'
+	'node' name=ID 'for' multi?='each'? expression=XExpression '{'
 		mappings+=AbstractExpressionMapping*
 	'}';
 
 LabelMapping:
-	'label' name=ID 'for' (multi?='each')? expression=XExpression;
+	'label' name=ID 'for' multi?='each'? expression=XExpression;
 
 EdgeMapping:
-	'edge' name=ID 'for' (multi?='each')? expression=XExpression '{'
-		(sourceMapping=EdgeEndMapping)? 
+	'edge' name=ID 'for' multi?='each'? expression=XExpression '{'
+		sourceMapping=EdgeEndMapping? 
 		'->' 
-		targetMapping=EdgeEndMapping 
+		targetMapping=EdgeEndMapping? 
 		mappings+=LabelMapping*
 	'}';
 	

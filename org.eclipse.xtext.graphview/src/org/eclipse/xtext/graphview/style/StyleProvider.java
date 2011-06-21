@@ -28,7 +28,6 @@ public class StyleProvider {
 			final IDiagramConfigurationProvider graphViewDefinitionProvider) {
 		graphViewDefinitionProvider
 				.addConfigurationListener(new IDiagramConfigurationProvider.Listener() {
-					@Override
 					public void graphViewDefinitionChanged() {
 						mapping2style = loadStyles(graphViewDefinitionProvider);
 					}

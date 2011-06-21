@@ -26,7 +26,6 @@ public class GraphViewEditPartFactory implements EditPartFactory {
 	@Inject
 	private Provider<EdgeEditPart> edgeEditPartProvider;
 
-	@Override
 	public EditPart createEditPart(EditPart parent, Object model) {
 		if (model instanceof AbstractInstance) {
 			EditPart editPart = new InstancemodelSwitch<EditPart>() {
