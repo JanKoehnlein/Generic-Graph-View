@@ -10,3 +10,8 @@ style EClassNode.SuperType.SuperTypeLabel as LabelShape {
 	connectionAlignment = ConnectionLocator::TARGET
 	text='sub'
 }
+
+style EClassNode.name {
+	font = font("Helvetica", 14, 1)
+	border = new MarginBorder(5,5,5,5)
+}

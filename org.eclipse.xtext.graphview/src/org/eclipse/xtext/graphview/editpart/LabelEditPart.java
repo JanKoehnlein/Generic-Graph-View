@@ -32,8 +32,7 @@ public class LabelEditPart extends AbstractMappingEditPart {
 		try {
 			Method method = semanticElement.getClass().getMethod("getName",
 					new Class<?>[0]);
-			if (method.isAccessible())
-				return method.invoke(semanticElement, new Object[0]).toString();
+			return method.invoke(semanticElement, new Object[0]).toString();
 		} catch (Exception e) {
 			// ignore
 		}
