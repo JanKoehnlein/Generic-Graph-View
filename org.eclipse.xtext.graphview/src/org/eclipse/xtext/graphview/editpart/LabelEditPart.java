@@ -7,6 +7,7 @@ public class LabelEditPart extends AbstractMappingEditPart {
 
 	@Override
 	protected void createEditPolicies() {
+		super.createEditPolicies();
 	}
 
 	public IFigure createDefaultFigure() {

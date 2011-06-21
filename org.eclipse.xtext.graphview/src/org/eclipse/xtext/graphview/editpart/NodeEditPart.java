@@ -10,9 +10,9 @@ public class NodeEditPart extends AbstractMappingEditPart {
 
 	@Override
 	protected void createEditPolicies() {
+		super.createEditPolicies();
 	}
 
-	@Override
 	public IFigure createDefaultFigure() {
 		return new RoundedRectangleShape();			
 	}

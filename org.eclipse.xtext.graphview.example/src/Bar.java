@@ -1,4 +1,4 @@
 
-public class Bar {
+public class Bar implements FooBar {
 
 }
