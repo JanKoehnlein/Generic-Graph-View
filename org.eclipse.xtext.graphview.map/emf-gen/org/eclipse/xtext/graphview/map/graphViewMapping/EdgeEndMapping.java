@@ -16,6 +16,7 @@ package org.eclipse.xtext.graphview.map.graphViewMapping;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.EdgeEndMapping#getMapping <em>Mapping</em>}</li>
+ *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.EdgeEndMapping#isCreate <em>Create</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,5 +50,31 @@ public interface EdgeEndMapping extends AbstractExpressionMapping {
 	 * @generated
 	 */
 	void setMapping(NodeMapping value);
+
+	/**
+	 * Returns the value of the '<em><b>Create</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Create</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Create</em>' attribute.
+	 * @see #setCreate(boolean)
+	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage#getEdgeEndMapping_Create()
+	 * @model
+	 * @generated
+	 */
+	boolean isCreate();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.EdgeEndMapping#isCreate <em>Create</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Create</em>' attribute.
+	 * @see #isCreate()
+	 * @generated
+	 */
+	void setCreate(boolean value);
 
 } // EdgeEndMapping

@@ -59,10 +59,8 @@ public class GraphView extends ViewPart {
 		graphicalViewer = createGraphicalViewer(parent);
 		graphicalViewer.setEditDomain(editDomain);
 		configurationListener = new Listener() {
-			@Override
 			public void graphViewDefinitionChanged() {
 				getDisplay().asyncExec(new Runnable() {
-					@Override
 					public void run() {
 						refresh();
 					}

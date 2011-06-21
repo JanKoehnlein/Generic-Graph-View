@@ -18,4 +18,6 @@ public interface EdgeEndMappingValidator {
 	boolean validate();
 
 	boolean validateMapping(NodeMapping value);
+
+	boolean validateCreate(boolean value);
 }

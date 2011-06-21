@@ -72,7 +72,6 @@ public class SelectDiagramConfigurationDialog extends Dialog {
 		styleCombo.setLayoutData(new GridData(GridData.GRAB_HORIZONTAL
 				| GridData.HORIZONTAL_ALIGN_FILL));
 		mappingCombo.addSelectionListener(new SelectionListener() {
-			@Override
 			public void widgetSelected(SelectionEvent e) {
 				int index = mappingCombo.getSelectionIndex();
 				IEObjectDescription selectedMapping = (index == -1) ? null
@@ -80,7 +79,6 @@ public class SelectDiagramConfigurationDialog extends Dialog {
 				populateStyleCombo(selectedMapping);
 			}
 
-			@Override
 			public void widgetDefaultSelected(SelectionEvent e) {
 			}
 		});
@@ -132,7 +130,6 @@ public class SelectDiagramConfigurationDialog extends Dialog {
 			return;
 		final List<IReferenceDescription> references = Lists.newArrayList();
 		IAcceptor<IReferenceDescription> referenceAcceptor = new IAcceptor<IReferenceDescription>() {
-			@Override
 			public void accept(IReferenceDescription reference) {
 				references.add(reference);
 			}
@@ -160,7 +157,6 @@ public class SelectDiagramConfigurationDialog extends Dialog {
 			Iterable<IEObjectDescription> iterable) {
 		List<IEObjectDescription> list = Lists.newArrayList(iterable);
 		Collections.sort(list, new Comparator<IEObjectDescription>() {
-			@Override
 			public int compare(IEObjectDescription o1, IEObjectDescription o2) {
 				return o1.getName().toString()
 						.compareTo(o2.getName().toString());

@@ -612,9 +612,27 @@ ruleEdgeMapping returns [EObject current=null]
 	    }
 
 )
-)	otherlv_9='}' 
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getEdgeMappingAccess().getMappingsLabelMappingParserRuleCall_9_0()); 
+	    }
+		lv_mappings_9_0=ruleLabelMapping		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getEdgeMappingRule());
+	        }
+       		add(
+       			$current, 
+       			"mappings",
+        		lv_mappings_9_0, 
+        		"LabelMapping");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)*	otherlv_10='}' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getEdgeMappingAccess().getRightCurlyBracketKeyword_9());
+    	newLeafNode(otherlv_10, grammarAccess.getEdgeMappingAccess().getRightCurlyBracketKeyword_10());
     }
 )
 ;
@@ -639,42 +657,57 @@ ruleEdgeEndMapping returns [EObject current=null]
     @after { leaveRule(); }:
 ((
 (
+		lv_create_0_0=	'create' 
+    {
+        newLeafNode(lv_create_0_0, grammarAccess.getEdgeEndMappingAccess().getCreateCreateKeyword_0_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getEdgeEndMappingRule());
+	        }
+       		setWithLastConsumed($current, "create", true, "create");
+	    }
+
+)
+)?(
+(
 		{
 			if ($current==null) {
 	            $current = createModelElement(grammarAccess.getEdgeEndMappingRule());
 	        }
         }
-	otherlv_0=RULE_ID
+	otherlv_1=RULE_ID
 	{
-		newLeafNode(otherlv_0, grammarAccess.getEdgeEndMappingAccess().getMappingNodeMappingCrossReference_0_0()); 
+		newLeafNode(otherlv_1, grammarAccess.getEdgeEndMappingAccess().getMappingNodeMappingCrossReference_1_0()); 
 	}
 
 )
-)	otherlv_1='(' 
+)	otherlv_2='(' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getEdgeEndMappingAccess().getLeftParenthesisKeyword_1());
+    	newLeafNode(otherlv_2, grammarAccess.getEdgeEndMappingAccess().getLeftParenthesisKeyword_2());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getEdgeEndMappingAccess().getExpressionXExpressionParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getEdgeEndMappingAccess().getExpressionXExpressionParserRuleCall_3_0()); 
 	    }
-		lv_expression_2_0=ruleXExpression		{
+		lv_expression_3_0=ruleXExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getEdgeEndMappingRule());
 	        }
        		set(
        			$current, 
        			"expression",
-        		lv_expression_2_0, 
+        		lv_expression_3_0, 
         		"XExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_3=')' 
+)	otherlv_4=')' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getEdgeEndMappingAccess().getRightParenthesisKeyword_3());
+    	newLeafNode(otherlv_4, grammarAccess.getEdgeEndMappingAccess().getRightParenthesisKeyword_4());
     }
 )
 ;

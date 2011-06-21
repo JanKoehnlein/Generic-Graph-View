@@ -134,6 +134,9 @@
         <elements xsi:type="xtext:Assignment" feature="targetMapping" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.7"/>
         </elements>
+        <elements xsi:type="xtext:Assignment" cardinality="*" feature="mappings" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.5"/>
+        </elements>
         <elements xsi:type="xtext:Keyword" value="}"/>
       </alternatives>
     </rules>
@@ -142,6 +145,9 @@
         <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/xtext/graphview/map/GraphViewMapping#//EdgeEndMapping"/>
       </type>
       <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" cardinality="?" feature="create" operator="?=">
+          <terminal xsi:type="xtext:Keyword" value="create"/>
+        </elements>
         <elements xsi:type="xtext:Assignment" feature="mapping" operator="=">
           <terminal xsi:type="xtext:CrossReference">
             <type metamodel="/0/@metamodelDeclarations.0">

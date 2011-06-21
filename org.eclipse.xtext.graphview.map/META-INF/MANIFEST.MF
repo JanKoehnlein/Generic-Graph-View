@@ -39,3 +39,4 @@ Export-Package: org.eclipse.xtext.graphview.map,
  org.eclipse.xtext.graphview.map.services,
  org.eclipse.xtext.graphview.map.types,
  org.eclipse.xtext.graphview.map.validation
+

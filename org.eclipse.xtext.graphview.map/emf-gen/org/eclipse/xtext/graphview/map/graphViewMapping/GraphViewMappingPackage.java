@@ -475,13 +475,22 @@ public interface GraphViewMappingPackage extends EPackage {
 	int EDGE_END_MAPPING__MAPPING = ABSTRACT_EXPRESSION_MAPPING_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Create</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDGE_END_MAPPING__CREATE = ABSTRACT_EXPRESSION_MAPPING_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Edge End Mapping</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EDGE_END_MAPPING_FEATURE_COUNT = ABSTRACT_EXPRESSION_MAPPING_FEATURE_COUNT + 1;
+	int EDGE_END_MAPPING_FEATURE_COUNT = ABSTRACT_EXPRESSION_MAPPING_FEATURE_COUNT + 2;
 
 
 	/**
@@ -675,6 +684,17 @@ public interface GraphViewMappingPackage extends EPackage {
 	EReference getEdgeEndMapping_Mapping();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.xtext.graphview.map.graphViewMapping.EdgeEndMapping#isCreate <em>Create</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Create</em>'.
+	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.EdgeEndMapping#isCreate()
+	 * @see #getEdgeEndMapping()
+	 * @generated
+	 */
+	EAttribute getEdgeEndMapping_Create();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -855,6 +875,14 @@ public interface GraphViewMappingPackage extends EPackage {
 		 * @generated
 		 */
 		EReference EDGE_END_MAPPING__MAPPING = eINSTANCE.getEdgeEndMapping_Mapping();
+
+		/**
+		 * The meta object literal for the '<em><b>Create</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EDGE_END_MAPPING__CREATE = eINSTANCE.getEdgeEndMapping_Create();
 
 	}
 

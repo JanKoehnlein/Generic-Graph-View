@@ -322,6 +322,15 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getEdgeEndMapping_Create() {
+		return (EAttribute)edgeEndMappingEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public GraphViewMappingFactory getGraphViewMappingFactory() {
 		return (GraphViewMappingFactory)getEFactoryInstance();
 	}
@@ -370,6 +379,7 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 
 		edgeEndMappingEClass = createEClass(EDGE_END_MAPPING);
 		createEReference(edgeEndMappingEClass, EDGE_END_MAPPING__MAPPING);
+		createEAttribute(edgeEndMappingEClass, EDGE_END_MAPPING__CREATE);
 	}
 
 	/**
@@ -438,6 +448,7 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 
 		initEClass(edgeEndMappingEClass, EdgeEndMapping.class, "EdgeEndMapping", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEdgeEndMapping_Mapping(), this.getNodeMapping(), null, "mapping", null, 0, 1, EdgeEndMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEdgeEndMapping_Create(), ecorePackage.getEBoolean(), "create", null, 0, 1, EdgeEndMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

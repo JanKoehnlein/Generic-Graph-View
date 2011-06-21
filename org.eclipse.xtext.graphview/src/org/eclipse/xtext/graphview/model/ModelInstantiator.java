@@ -13,6 +13,7 @@ import org.eclipse.xtext.graphview.map.IInstanceMapper;
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractExpressionMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping;
+import org.eclipse.xtext.graphview.map.graphViewMapping.EdgeEndMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.EdgeMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.LabelMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.NodeMapping;
@@ -26,23 +27,26 @@ import com.google.inject.Inject;
 public class ModelInstantiator {
 
 	private static final Logger LOG = Logger.getLogger(ModelInstantiator.class);
-	
+
 	@Inject
 	private IInstanceMapper instanceMapper;
 
-	protected boolean isType(JvmTypeReference type, Object object, ClassLoader classLoader) {
+	protected boolean isType(JvmTypeReference type, Object object,
+			ClassLoader classLoader) {
 		try {
 			Class<?> typeGuard = classLoader.loadClass(type.getIdentifier());
 			return typeGuard.isInstance(object);
 		} catch (ClassNotFoundException e) {
-			LOG.error("Cannot resolve type guard for diagram type " + Strings.notNull(type));
+			LOG.error("Cannot resolve type guard for diagram type "
+					+ Strings.notNull(type));
 		}
 		return false;
 	}
-	
+
 	public DiagramInstance createInstance(DiagramMapping mapping,
 			Object semanticElement, ClassLoader classLoader) {
-		if (mapping == null || !isType(mapping.getTypeGuard(), semanticElement, classLoader)) {
+		if (mapping == null
+				|| !isType(mapping.getTypeGuard(), semanticElement, classLoader)) {
 			return null;
 		}
 		instanceMapper.setClassLoader(classLoader);
@@ -55,28 +59,12 @@ public class ModelInstantiator {
 			EdgeInstance edgeInstance = i.next();
 			EdgeMapping edgeMapping = (EdgeMapping) edgeInstance.getMapping();
 			if (edgeInstance.getSource() == null) {
-				Object semanticSource = instanceMapper.map(
-						edgeMapping.getSourceMapping(),
-						edgeInstance.getSemanticElement());
-				for (NodeInstance instance : semantic2instance
-						.get(semanticSource)) {
-					if (instance.getMapping() == edgeMapping.getSourceMapping()
-							.getMapping()) {
-						edgeInstance.setSource(instance);
-					}
-				}
+				edgeInstance.setSource(findMappedInstance(semantic2instance,
+						edgeMapping.getSourceMapping(), edgeInstance));
 			}
 			if (edgeInstance.getSource() != null) {
-				Object semanticTarget = instanceMapper.map(
-						edgeMapping.getTargetMapping(),
-						edgeInstance.getSemanticElement());
-				for (NodeInstance instance : semantic2instance
-						.get(semanticTarget)) {
-					if (instance.getMapping() == edgeMapping.getTargetMapping()
-							.getMapping()) {
-						edgeInstance.setTarget(instance);
-					}
-				}
+				edgeInstance.setTarget(findMappedInstance(semantic2instance,
+						edgeMapping.getTargetMapping(), edgeInstance));
 			}
 			if (edgeInstance.getTarget() == null) {
 				edgeInstance.setSource(null);
@@ -84,6 +72,20 @@ public class ModelInstantiator {
 			}
 		}
 		return diagramInstance;
+	}
+
+	protected NodeInstance findMappedInstance(
+			Multimap<Object, NodeInstance> semantic2instance,
+			EdgeEndMapping edgeEndMapping, EdgeInstance edgeInstance) {
+		Object semanticElement = instanceMapper.map(
+				edgeEndMapping,
+				edgeInstance.getSemanticElement());
+		for (NodeInstance instance : semantic2instance.get(semanticElement)) {
+			if (instance.getMapping() == edgeEndMapping.getMapping()) {
+				return instance;
+			}
+		}
+		return null;
 	}
 
 	protected AbstractInstance internalCreateInstance(AbstractMapping mapping,

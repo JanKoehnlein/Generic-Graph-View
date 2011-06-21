@@ -25,6 +25,7 @@ import org.eclipse.xtext.graphview.map.graphViewMapping.NodeMapping;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.EdgeEndMappingImpl#getMapping <em>Mapping</em>}</li>
+ *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.EdgeEndMappingImpl#isCreate <em>Create</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,6 +41,25 @@ public class EdgeEndMappingImpl extends AbstractExpressionMappingImpl implements
 	 * @ordered
 	 */
 	protected NodeMapping mapping;
+
+	/**
+	 * The default value of the '{@link #isCreate() <em>Create</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCreate()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean CREATE_EDEFAULT = false;
+	/**
+	 * The cached value of the '{@link #isCreate() <em>Create</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCreate()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean create = CREATE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -103,12 +123,35 @@ public class EdgeEndMappingImpl extends AbstractExpressionMappingImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isCreate() {
+		return create;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCreate(boolean newCreate) {
+		boolean oldCreate = create;
+		create = newCreate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GraphViewMappingPackage.EDGE_END_MAPPING__CREATE, oldCreate, create));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case GraphViewMappingPackage.EDGE_END_MAPPING__MAPPING:
 				if (resolve) return getMapping();
 				return basicGetMapping();
+			case GraphViewMappingPackage.EDGE_END_MAPPING__CREATE:
+				return isCreate();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -123,6 +166,9 @@ public class EdgeEndMappingImpl extends AbstractExpressionMappingImpl implements
 		switch (featureID) {
 			case GraphViewMappingPackage.EDGE_END_MAPPING__MAPPING:
 				setMapping((NodeMapping)newValue);
+				return;
+			case GraphViewMappingPackage.EDGE_END_MAPPING__CREATE:
+				setCreate((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -139,6 +185,9 @@ public class EdgeEndMappingImpl extends AbstractExpressionMappingImpl implements
 			case GraphViewMappingPackage.EDGE_END_MAPPING__MAPPING:
 				setMapping((NodeMapping)null);
 				return;
+			case GraphViewMappingPackage.EDGE_END_MAPPING__CREATE:
+				setCreate(CREATE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -153,8 +202,26 @@ public class EdgeEndMappingImpl extends AbstractExpressionMappingImpl implements
 		switch (featureID) {
 			case GraphViewMappingPackage.EDGE_END_MAPPING__MAPPING:
 				return mapping != null;
+			case GraphViewMappingPackage.EDGE_END_MAPPING__CREATE:
+				return create != CREATE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (create: ");
+		result.append(create);
+		result.append(')');
+		return result.toString();
 	}
 
 } //EdgeEndMappingImpl

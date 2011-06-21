@@ -28,6 +28,10 @@ style ClassNode.Attributes , ClassNode.Operations  as RectangleShape {
 	backgroundColor = color(#ffffff)
 }
 
+style ClassNode.ReferenceEdge.EdgeLabel as LabelShape {
+	connectionAlignment = ConnectionLocator::TARGET
+}
+
 //style ClassNode.SuperclassEdge as ConnectionShape {
 //	var arrow = new PolygonDecoration()
 //	arrow.setScale(10,10)
