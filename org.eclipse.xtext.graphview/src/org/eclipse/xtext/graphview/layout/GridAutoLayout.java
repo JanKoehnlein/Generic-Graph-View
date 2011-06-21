@@ -12,10 +12,14 @@ import org.eclipse.draw2d.geometry.Rectangle;
 
 import com.google.common.collect.Lists;
 
-public class MyDiagramLayout extends XYLayout {
+public class GridAutoLayout extends XYLayout {
 
 	private int offset = 16;
 
+	public int getOffset() {
+		return offset;
+	}
+	
 	public void setOffset(int offset) {
 		this.offset = offset;
 	}
@@ -30,7 +34,6 @@ public class MyDiagramLayout extends XYLayout {
 					childSize.height));
 		}
 		Collections.sort(children, new Comparator<IFigure>() {
-			@Override
 			public int compare(IFigure arg0, IFigure arg1) {
 				return arg1.getBounds().height
 						- arg0.getBounds().height;
@@ -40,9 +43,9 @@ public class MyDiagramLayout extends XYLayout {
 		int numRows = children.size() / numColumns
 				+ ((children.size() % numColumns != 0) ? 1 : 0);
 		int currentRowHeight = 0;
-		int currentY = offset;
+		int currentY = getOffset();
 		for (int row = 0; row < numRows; ++row) {
-			int currentX = offset;
+			int currentX = getOffset();
 			currentRowHeight = 0;
 			for (int index = row * numColumns; index < (row + 1) * numColumns
 					&& index < children.size(); ++index) {
@@ -50,9 +53,9 @@ public class MyDiagramLayout extends XYLayout {
 				currentRowHeight = Math.max(currentRowHeight, child
 						.getPreferredSize().height);
 				child.setLocation(new Point(currentX, currentY));
-				currentX += child.getBounds().width + offset;
+				currentX += child.getBounds().width + getOffset();
 			}
-			currentY += currentRowHeight + offset;
+			currentY += currentRowHeight + getOffset();
 		}
 	}
 

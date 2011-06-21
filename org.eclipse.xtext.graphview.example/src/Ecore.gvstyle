@@ -1,13 +1,21 @@
 import org.eclipse.xtext.graphview.shape.*
-import org.eclipse.draw2d.*  
+import org.eclipse.xtext.graphview.layout.*  
+import org.eclipse.draw2d.*
 import PackageDiagram.*
 
 stylesheet PackageDiagram for PackageDiagram
 
-style DataTypeNode.Name as LabelShape {
-	font = font("Helvetica", 13, 1) 
-	border = new MarginBorder(5,5,5,5) 
+style PackageDiagram as DiagramShape {
+	val autoLayout = new SpringAutoLayout()
+	autoLayout.iterations = 500
+	autoLayout.blankToNodeAreaRatio = 4
+	autoLayoutManager = autoLayout  
 }
+
+//style DataTypeNode.Name as LabelShape {
+//	font = font("Helvetica", 13, 1) 
+//	border = new MarginBorder(5,5,5,5) 
+//}
 
 style ClassNode.Name as LabelShape {
 	font = font("Helvetica", 13, 1 + (if (element.abstract) 2 else 0))
@@ -15,15 +23,15 @@ style ClassNode.Name as LabelShape {
 	text = element.name
 }
 
-style ClassNode.Attributes, ClassNode.Operations as RectangleShape {
+style ClassNode.Attributes , ClassNode.Operations  as RectangleShape {
 	outline = false
 	backgroundColor = color(#ffffff)
 }
 
-style ClassNode.SuperclassEdge as ConnectionShape {
-	var arrow = new PolygonDecoration()
-	arrow.setScale(10,10)
-	arrow.backgroundColor = color(#ffffff)
-	arrow.lineWidth = 2
-	targetDecoration = arrow 
-}
+//style ClassNode.SuperclassEdge as ConnectionShape {
+//	var arrow = new PolygonDecoration()
+//	arrow.setScale(10,10)
+//	arrow.backgroundColor = color(#ffffff)
+//	arrow.lineWidth = 2
+//	targetDecoration = arrow 
+//}

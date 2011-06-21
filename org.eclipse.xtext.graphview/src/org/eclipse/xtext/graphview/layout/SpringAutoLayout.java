@@ -4,34 +4,35 @@ import java.util.Map;
 
 import org.apache.log4j.Logger;
 import org.eclipse.draw2d.Connection;
+import org.eclipse.draw2d.ConnectionRouter;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Layer;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.zest.layouts.InvalidLayoutConfiguration;
-import org.eclipse.zest.layouts.LayoutAlgorithm;
 import org.eclipse.zest.layouts.LayoutEntity;
 import org.eclipse.zest.layouts.LayoutRelationship;
 import org.eclipse.zest.layouts.LayoutStyles;
-import org.eclipse.zest.layouts.algorithms.CompositeLayoutAlgorithm;
-import org.eclipse.zest.layouts.algorithms.GridLayoutAlgorithm;
+import org.eclipse.zest.layouts.algorithms.SpringLayoutAlgorithm;
 import org.eclipse.zest.layouts.exampleStructures.SimpleNode;
 import org.eclipse.zest.layouts.exampleStructures.SimpleRelationship;
 
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Maps;
 
-public class DiagramZestLayoutAdapter extends AbstractDiagramLayout {
+public class SpringAutoLayout extends AbstractAutoLayout {
 
-	private static final Logger LOG = Logger
-			.getLogger(DiagramZestLayoutAdapter.class);
+	private double blankToNodeAreaRatio = 3.1;
+
+	private double aspectRatio = 4. / 3.;
+
+	private static final Logger LOG = Logger.getLogger(SpringAutoLayout.class);
+
+	private int iterations = 200;
 
 	public void layout(IFigure container) {
-		LayoutAlgorithm layoutAlgorithm = new CompositeLayoutAlgorithm(new LayoutAlgorithm[] {
-				new GridLayoutAlgorithm(LayoutStyles.NONE)
-//				new SpringLayoutAslgorithm(LayoutStyles.NONE)
-//				, new HorizontalShift(LayoutStyles.NONE)
-		});
+		SpringLayoutAlgorithm layoutAlgorithm = new SpringLayoutAlgorithm(
+				LayoutStyles.NO_LAYOUT_NODE_RESIZING);
 		Map<ILayoutNode, LayoutEntity> childrenToNodes = Maps.newHashMap();
 		Map<Connection, LayoutRelationship> connectionToEdges = Maps
 				.newHashMap();
@@ -45,10 +46,12 @@ public class DiagramZestLayoutAdapter extends AbstractDiagramLayout {
 			}
 		}
 		Layer connectionLayer = getConnectionLayer(container);
+		ConnectionRouter connectionRouter = getConnectionRouter(container);
 		if (connectionLayer != null) {
 			for (Object child : connectionLayer.getChildren()) {
 				if (child instanceof Connection) {
 					Connection connection = (Connection) child;
+					connection.setConnectionRouter(connectionRouter);
 					LayoutEntity sourceNode = childrenToNodes.get(connection
 							.getSourceAnchor().getOwner());
 					LayoutEntity targetNode = childrenToNodes.get(connection
@@ -60,27 +63,61 @@ public class DiagramZestLayoutAdapter extends AbstractDiagramLayout {
 			}
 		}
 		try {
+			Dimension estimatedSize = estimateSize(container);
+			layoutAlgorithm.setIterations(getIterations());
 			layoutAlgorithm.applyLayout(Iterables.toArray(
 					childrenToNodes.values(), LayoutEntity.class), Iterables
 					.toArray(connectionToEdges.values(),
-							LayoutRelationship.class), 0, 0, 1024, 768, false,
-					false);
+							LayoutRelationship.class), 0, 0,
+					estimatedSize.width, estimatedSize.height, false, false);
 			for (Map.Entry<ILayoutNode, LayoutEntity> entry : childrenToNodes
 					.entrySet()) {
 				LayoutEntity node = entry.getValue();
 				ILayoutNode figure = entry.getKey();
 				figure.setBounds(new Rectangle((int) node.getXInLayout(),
-						(int) node.getYInLayout(), (int) node.getWidthInLayout(),
-						(int) node.getHeightInLayout()));
+						(int) node.getYInLayout(), (int) node
+								.getWidthInLayout(), (int) node
+								.getHeightInLayout()));
 			}
-//			for (Map.Entry<Connection, LayoutRelationship> entry : connectionToEdges
-//					.entrySet()) {
-//				Connection connection = entry.getKey();
-//				LayoutRelationship layoutRelationship = entry.getValue();
-//			}
 		} catch (InvalidLayoutConfiguration e) {
 			LOG.error("Error in layout config", e);
 		}
 	}
 
+	protected Dimension estimateSize(IFigure container) {
+		int area = 0;
+		for (Object child : container.getChildren()) {
+			if (child instanceof IFigure) {
+				IFigure childFigure = (IFigure) child;
+				area += childFigure.getSize().getArea();
+			}
+		}
+		double completeArea = getBlankToNodeAreaRatio() * area;
+		return new Dimension((int) Math.sqrt(completeArea * getAspectRatio()),
+				(int) Math.sqrt(completeArea / getAspectRatio()));
+	}
+
+	public double getAspectRatio() {
+		return aspectRatio;
+	}
+
+	public void setAspectRatio(double aspectRatio) {
+		this.aspectRatio = aspectRatio;
+	}
+
+	public double getBlankToNodeAreaRatio() {
+		return blankToNodeAreaRatio;
+	}
+
+	public void setBlankToNodeAreaRatio(double blankToNodeAreaRatio) {
+		this.blankToNodeAreaRatio = blankToNodeAreaRatio;
+	}
+
+	public int getIterations() {
+		return iterations;
+	}
+	
+	public void setIterations(int iterations) {
+		this.iterations = iterations;
+	}
 }

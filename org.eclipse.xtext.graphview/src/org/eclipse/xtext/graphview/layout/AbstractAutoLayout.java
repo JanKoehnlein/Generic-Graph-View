@@ -3,14 +3,18 @@ package org.eclipse.xtext.graphview.layout;
 import java.util.List;
 
 import org.eclipse.draw2d.AbstractLayout;
+import org.eclipse.draw2d.ConnectionRouter;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Layer;
 import org.eclipse.draw2d.LayeredPane;
+import org.eclipse.draw2d.ShortestPathConnectionRouter;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Rectangle;
 
-public abstract class AbstractDiagramLayout extends AbstractLayout {
+public abstract class AbstractAutoLayout extends AbstractLayout {
 
+	private ConnectionRouter connectionRouter;
+	
 	protected Dimension calculatePreferredSize(IFigure container, int wHint,
 			int hHint) {
 		container.validate();
@@ -38,5 +42,14 @@ public abstract class AbstractDiagramLayout extends AbstractLayout {
 		if (figure.getParent() != null)
 			return findParentOfType(figure.getParent(), type);
 		return null;
+	}
+	
+	
+	public void setConnectionRouter(ConnectionRouter connectionRouter) {
+		this.connectionRouter = connectionRouter;
+	}
+	
+	public ConnectionRouter getConnectionRouter(IFigure container) {
+		return (connectionRouter == null) ? new ShortestPathConnectionRouter(container) : connectionRouter;
 	}
 }

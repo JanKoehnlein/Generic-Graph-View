@@ -12,15 +12,15 @@ diagram PackageDiagram type EPackage {
 					+ "): " + a.EType.name
 			)		
 		}  
-		edge ReferenceEdge for each EReferences {
-			-> ClassNode(this.EType)   
-		}
+//		edge ReferenceEdge for each EReferences {
+//			-> ClassNode(this.EType)   
+//		}
 		edge SuperclassEdge for each ESuperTypes {
 			-> ClassNode(this)   
 		}
 	} 
 	 
-	node DataTypeNode for each this.EClassifiers.filter(typeof (EDataType)) {
-		label Name for name
-	}
+//	node DataTypeNode for each this.EClassifiers.filter(typeof (EDataType)) {
+//		label Name for name
+//	}
 }

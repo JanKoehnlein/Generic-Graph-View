@@ -1,9 +1,17 @@
-import JavaInheritanceDiagram.ClassNode.*
+import JavaInheritanceDiagram.*
 import org.eclipse.xtext.graphview.shape.*
+import org.eclipse.draw2d.* 
 
 stylesheet JavaInheritanceStyle for JavaInheritanceDiagram
 
-style ExtendsEdge, ImplementsEdge as ConnectionShape {
+style ClassNode.ClassLabel, InterfaceNode.InterfaceLabel, SuperClassNode.SuperCassLabel as LabelShape {
+	font = font("Helvetica", 14, 1)
+	border = new MarginBorder(4,4,4,4)
+}
+
+style ClassNode.ExtendsEdge, ClassNode.ImplementsEdge as ConnectionShape {
 	this.setTargetDecoration(null)
-	this.setSourceDecoration(new org.eclipse.draw2d.PolygonDecoration())   
+	val sourceDeco = new org.eclipse.draw2d.PolygonDecoration()
+	sourceDeco.setScale(10,10)
+	this.setSourceDecoration(sourceDeco)   
 }
