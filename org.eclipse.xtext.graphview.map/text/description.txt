@@ -31,5 +31,8 @@ Package graphViewMapping <http://www.eclipse.org/xtext/graphview/map/GraphViewMa
     Reference targetMapping : EdgeEndMapping
 
   Class EdgeEndMapping -> AbstractExpressionMapping
-    Reference mapping : NodeMapping
+    Reference mapping : AbstractExpressionMapping
     Attribute create : EBoolean
+
+  Class MappingCall -> AbstractExpressionMapping
+    Reference mapping : AbstractMapping

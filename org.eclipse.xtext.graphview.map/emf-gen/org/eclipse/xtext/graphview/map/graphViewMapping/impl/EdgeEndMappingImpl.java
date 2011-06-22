@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractExpressionMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.EdgeEndMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage;
 import org.eclipse.xtext.graphview.map.graphViewMapping.NodeMapping;
@@ -40,7 +41,7 @@ public class EdgeEndMappingImpl extends AbstractExpressionMappingImpl implements
 	 * @generated
 	 * @ordered
 	 */
-	protected NodeMapping mapping;
+	protected AbstractExpressionMapping mapping;
 
 	/**
 	 * The default value of the '{@link #isCreate() <em>Create</em>}' attribute.
@@ -85,10 +86,10 @@ public class EdgeEndMappingImpl extends AbstractExpressionMappingImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NodeMapping getMapping() {
+	public AbstractExpressionMapping getMapping() {
 		if (mapping != null && mapping.eIsProxy()) {
 			InternalEObject oldMapping = (InternalEObject)mapping;
-			mapping = (NodeMapping)eResolveProxy(oldMapping);
+			mapping = (AbstractExpressionMapping)eResolveProxy(oldMapping);
 			if (mapping != oldMapping) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GraphViewMappingPackage.EDGE_END_MAPPING__MAPPING, oldMapping, mapping));
@@ -102,7 +103,7 @@ public class EdgeEndMappingImpl extends AbstractExpressionMappingImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NodeMapping basicGetMapping() {
+	public AbstractExpressionMapping basicGetMapping() {
 		return mapping;
 	}
 
@@ -111,8 +112,8 @@ public class EdgeEndMappingImpl extends AbstractExpressionMappingImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMapping(NodeMapping newMapping) {
-		NodeMapping oldMapping = mapping;
+	public void setMapping(AbstractExpressionMapping newMapping) {
+		AbstractExpressionMapping oldMapping = mapping;
 		mapping = newMapping;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, GraphViewMappingPackage.EDGE_END_MAPPING__MAPPING, oldMapping, mapping));
@@ -165,7 +166,7 @@ public class EdgeEndMappingImpl extends AbstractExpressionMappingImpl implements
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case GraphViewMappingPackage.EDGE_END_MAPPING__MAPPING:
-				setMapping((NodeMapping)newValue);
+				setMapping((AbstractExpressionMapping)newValue);
 				return;
 			case GraphViewMappingPackage.EDGE_END_MAPPING__CREATE:
 				setCreate((Boolean)newValue);
@@ -183,7 +184,7 @@ public class EdgeEndMappingImpl extends AbstractExpressionMappingImpl implements
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case GraphViewMappingPackage.EDGE_END_MAPPING__MAPPING:
-				setMapping((NodeMapping)null);
+				setMapping((AbstractExpressionMapping)null);
 				return;
 			case GraphViewMappingPackage.EDGE_END_MAPPING__CREATE:
 				setCreate(CREATE_EDEFAULT);

@@ -106,6 +106,10 @@ public class GraphViewMappingAdapterFactory extends AdapterFactoryImpl {
 				return createEdgeEndMappingAdapter();
 			}
 			@Override
+			public Adapter caseMappingCall(MappingCall object) {
+				return createMappingCallAdapter();
+			}
+			@Override
 			public Adapter caseJvmIdentifiableElement(JvmIdentifiableElement object) {
 				return createJvmIdentifiableElementAdapter();
 			}
@@ -238,6 +242,20 @@ public class GraphViewMappingAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEdgeEndMappingAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.xtext.graphview.map.graphViewMapping.MappingCall <em>Mapping Call</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.MappingCall
+	 * @generated
+	 */
+	public Adapter createMappingCallAdapter() {
 		return null;
 	}
 

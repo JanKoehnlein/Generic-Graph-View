@@ -30,6 +30,17 @@ public class SpringAutoLayout extends AbstractAutoLayout {
 
 	private int iterations = 200;
 
+	@Override
+	protected Dimension calculatePreferredSize(IFigure container, int wHint,
+			int hHint) {
+		return estimateSize(container);
+	}
+
+	@Override
+	public Dimension getMinimumSize(IFigure container, int wHint, int hHint) {
+		return calculatePreferredSize(container, wHint, hHint);
+	}
+
 	public void layout(IFigure container) {
 		SpringLayoutAlgorithm layoutAlgorithm = new SpringLayoutAlgorithm(
 				LayoutStyles.NO_LAYOUT_NODE_RESIZING);
@@ -56,9 +67,11 @@ public class SpringAutoLayout extends AbstractAutoLayout {
 							.getSourceAnchor().getOwner());
 					LayoutEntity targetNode = childrenToNodes.get(connection
 							.getSourceAnchor().getOwner());
-					SimpleRelationship edge = new SimpleRelationship(
-							sourceNode, targetNode, false);
-					connectionToEdges.put(connection, edge);
+					if (targetNode != null && sourceNode != null) {
+						SimpleRelationship edge = new SimpleRelationship(
+								sourceNode, targetNode, false);
+						connectionToEdges.put(connection, edge);
+					}
 				}
 			}
 		}
@@ -74,10 +87,12 @@ public class SpringAutoLayout extends AbstractAutoLayout {
 					.entrySet()) {
 				LayoutEntity node = entry.getValue();
 				ILayoutNode figure = entry.getKey();
-				figure.setBounds(new Rectangle((int) node.getXInLayout(),
-						(int) node.getYInLayout(), (int) node
-								.getWidthInLayout(), (int) node
-								.getHeightInLayout()));
+				Rectangle bounds = new Rectangle((int) node.getXInLayout(),
+						(int) node.getYInLayout(),
+						(int) node.getWidthInLayout(),
+						(int) node.getHeightInLayout());
+				figure.setBounds(bounds);
+				container.setConstraint((IFigure) figure, bounds);
 			}
 		} catch (InvalidLayoutConfiguration e) {
 			LOG.error("Error in layout config", e);
@@ -89,7 +104,7 @@ public class SpringAutoLayout extends AbstractAutoLayout {
 		for (Object child : container.getChildren()) {
 			if (child instanceof IFigure) {
 				IFigure childFigure = (IFigure) child;
-				area += childFigure.getSize().getArea();
+				area += childFigure.getPreferredSize().getArea();
 			}
 		}
 		double completeArea = getBlankToNodeAreaRatio() * area;
@@ -116,7 +131,7 @@ public class SpringAutoLayout extends AbstractAutoLayout {
 	public int getIterations() {
 		return iterations;
 	}
-	
+
 	public void setIterations(int iterations) {
 		this.iterations = iterations;
 	}

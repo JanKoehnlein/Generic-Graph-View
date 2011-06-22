@@ -89,6 +89,15 @@ public interface GraphViewMappingFactory extends EFactory {
 	EdgeEndMapping createEdgeEndMapping();
 
 	/**
+	 * Returns a new object of class '<em>Mapping Call</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Mapping Call</em>'.
+	 * @generated
+	 */
+	MappingCall createMappingCall();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

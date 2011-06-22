@@ -16,6 +16,7 @@ import org.eclipse.xtext.graphview.map.graphViewMapping.EdgeMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage;
 import org.eclipse.xtext.graphview.map.graphViewMapping.Import;
 import org.eclipse.xtext.graphview.map.graphViewMapping.LabelMapping;
+import org.eclipse.xtext.graphview.map.graphViewMapping.MappingCall;
 import org.eclipse.xtext.graphview.map.graphViewMapping.NodeMapping;
 import org.eclipse.xtext.graphview.map.services.GraphViewMappingGrammarAccess;
 import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
@@ -125,6 +126,13 @@ public class AbstractGraphViewMappingSemanticSequencer extends AbstractSemanticS
 					return; 
 				}
 				else break;
+			case GraphViewMappingPackage.MAPPING_CALL:
+				if(context == grammarAccess.getAbstractExpressionMappingRule() ||
+				   context == grammarAccess.getMappingCallRule()) {
+					sequence_MappingCall_MappingCall(context, (MappingCall) semanticObject); 
+					return; 
+				}
+				else break;
 			case GraphViewMappingPackage.NODE_MAPPING:
 				if(context == grammarAccess.getAbstractExpressionMappingRule() ||
 				   context == grammarAccess.getNodeMappingRule()) {
@@ -161,12 +169,12 @@ public class AbstractGraphViewMappingSemanticSequencer extends AbstractSemanticS
 				}
 				else break;
 			case TypesPackage.JVM_UPPER_BOUND:
-				if(context == grammarAccess.getJvmUpperBoundAndedRule()) {
-					sequence_JvmUpperBoundAnded_JvmUpperBound(context, (JvmUpperBound) semanticObject); 
+				if(context == grammarAccess.getJvmUpperBoundRule()) {
+					sequence_JvmUpperBound_JvmUpperBound(context, (JvmUpperBound) semanticObject); 
 					return; 
 				}
-				else if(context == grammarAccess.getJvmUpperBoundRule()) {
-					sequence_JvmUpperBound_JvmUpperBound(context, (JvmUpperBound) semanticObject); 
+				else if(context == grammarAccess.getJvmUpperBoundAndedRule()) {
+					sequence_JvmUpperBoundAnded_JvmUpperBound(context, (JvmUpperBound) semanticObject); 
 					return; 
 				}
 				else break;
@@ -992,7 +1000,7 @@ public class AbstractGraphViewMappingSemanticSequencer extends AbstractSemanticS
 	
 	/**
 	 * Constraint:
-	 *     (create?='create'? mapping=[NodeMapping|ID] expression=XExpression)
+	 *     (create?='create'? mapping=[AbstractExpressionMapping|ID] expression=XExpression)
 	 *
 	 * Features:
 	 *    expression[1, 1]
@@ -1144,6 +1152,20 @@ public class AbstractGraphViewMappingSemanticSequencer extends AbstractSemanticS
 	 *    expression[1, 1]
 	 */
 	protected void sequence_LabelMapping_LabelMapping(EObject context, LabelMapping semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (mapping=[AbstractMapping|ID] multi?='each'? expression=XExpression)
+	 *
+	 * Features:
+	 *    multi[0, 1]
+	 *    expression[1, 1]
+	 *    mapping[1, 1]
+	 */
+	protected void sequence_MappingCall_MappingCall(EObject context, MappingCall semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

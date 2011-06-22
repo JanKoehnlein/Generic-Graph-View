@@ -34,12 +34,12 @@ public interface EdgeEndMapping extends AbstractExpressionMapping {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Mapping</em>' reference.
-	 * @see #setMapping(NodeMapping)
+	 * @see #setMapping(AbstractExpressionMapping)
 	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage#getEdgeEndMapping_Mapping()
 	 * @model
 	 * @generated
 	 */
-	NodeMapping getMapping();
+	AbstractExpressionMapping getMapping();
 
 	/**
 	 * Sets the value of the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.EdgeEndMapping#getMapping <em>Mapping</em>}' reference.
@@ -49,7 +49,7 @@ public interface EdgeEndMapping extends AbstractExpressionMapping {
 	 * @see #getMapping()
 	 * @generated
 	 */
-	void setMapping(NodeMapping value);
+	void setMapping(AbstractExpressionMapping value);
 
 	/**
 	 * Returns the value of the '<em><b>Create</b></em>' attribute.

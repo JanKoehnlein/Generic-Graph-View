@@ -1,0 +1,9 @@
+View
+- AutoLayout is not a draw2d layout
+- resize / move elements in subdiagrams
+- remember config selection
+
+Mapping DSL
+- validation
+- highlighting for xrefs
+- revise metamodel

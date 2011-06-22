@@ -154,6 +154,15 @@ public class GraphViewMappingSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case GraphViewMappingPackage.MAPPING_CALL: {
+				MappingCall mappingCall = (MappingCall)theEObject;
+				T result = caseMappingCall(mappingCall);
+				if (result == null) result = caseAbstractExpressionMapping(mappingCall);
+				if (result == null) result = caseAbstractMapping(mappingCall);
+				if (result == null) result = caseJvmIdentifiableElement(mappingCall);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -275,6 +284,21 @@ public class GraphViewMappingSwitch<T> {
 	 * @generated
 	 */
 	public T caseEdgeEndMapping(EdgeEndMapping object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Mapping Call</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Mapping Call</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMappingCall(MappingCall object) {
 		return null;
 	}
 

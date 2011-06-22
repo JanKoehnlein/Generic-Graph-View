@@ -18,7 +18,7 @@ QualifiedNameWithWildcard:
 	QualifiedName ('.' '*')?;
 
 AbstractExpressionMapping:
-	NodeMapping | LabelMapping | EdgeMapping;
+	NodeMapping | LabelMapping | EdgeMapping | MappingCall;
 	
 NodeMapping:
 	'node' name=ID 'for' multi?='each'? expression=XExpression '{'
@@ -37,5 +37,8 @@ EdgeMapping:
 	'}';
 	
 EdgeEndMapping:
-	create?='create'? mapping=[NodeMapping] '(' expression=XExpression ')';
+	create?='create'? mapping=[AbstractExpressionMapping] '(' expression=XExpression ')';
+	
+MappingCall:
+	'call' mapping=[AbstractMapping] 'for' multi?='each'? expression=XExpression;
 

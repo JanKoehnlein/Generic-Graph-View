@@ -20,7 +20,15 @@ diagram PackageDiagram type EPackage {
 //			-> ClassNode(this)   
 //		}
 	} 
-	 
+	node InnerPackage for each ESubpackages {
+		label PackageLabel for this
+		call PackageDiagram for this
+	}
+//	node InnerPackage for each ESubpackages {
+//		label PackageLabel for this
+//		call ClassNode for each EClassifiers.filter(typeof (EClass))
+//		call InnerPackage for each ESubpackages
+//	}
 //	node DataTypeNode for each this.EClassifiers.filter(typeof (EDataType)) {
 //		label Name for name
 //	}

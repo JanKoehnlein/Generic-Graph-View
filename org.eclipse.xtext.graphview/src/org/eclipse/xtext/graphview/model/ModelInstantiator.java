@@ -19,8 +19,10 @@ import org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.EdgeEndMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.EdgeMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.LabelMapping;
+import org.eclipse.xtext.graphview.map.graphViewMapping.MappingCall;
 import org.eclipse.xtext.graphview.map.graphViewMapping.NodeMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.util.GraphViewMappingSwitch;
+import org.eclipse.xtext.util.EmfFormatter;
 import org.eclipse.xtext.util.Strings;
 
 import com.google.common.collect.HashMultimap;
@@ -57,7 +59,7 @@ public class ModelInstantiator {
 		Multimap<Object, AbstractInstance> semantic2instance = HashMultimap
 				.create();
 		DiagramInstance diagramInstance = (DiagramInstance) internalCreateInstance(
-				mapping, semanticElement, semantic2instance, null);	
+				mapping, semanticElement, semantic2instance, null);
 		List<EdgeInstance> allEdges = Lists.newArrayList();
 		List<EdgeInstance> orphanedEdges = Lists.newArrayList();
 		for (TreeIterator<EObject> i = diagramInstance.eAllContents(); i
@@ -86,6 +88,10 @@ public class ModelInstantiator {
 			final Object semanticElement,
 			final Multimap<Object, AbstractInstance> semantic2instance,
 			AbstractInstance parentInstance) {
+		if (mapping instanceof MappingCall) {
+			return internalCreateInstance(((MappingCall) mapping).getMapping(),
+					semanticElement, semantic2instance, parentInstance);
+		}
 		if (semantic2instance.containsKey(semanticElement)) {
 			for (AbstractInstance instance : semantic2instance
 					.get(semanticElement)) {
@@ -143,6 +149,7 @@ public class ModelInstantiator {
 			public AbstractInstance caseEdgeMapping(EdgeMapping object) {
 				return InstancemodelFactory.eINSTANCE.createEdgeInstance();
 			}
+
 		}.doSwitch(mapping);
 		if (instanceModel != null) {
 			instanceModel.setSemanticElement(semanticElement);

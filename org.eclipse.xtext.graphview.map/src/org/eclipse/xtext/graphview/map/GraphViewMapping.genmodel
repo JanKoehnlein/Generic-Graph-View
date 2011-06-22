@@ -34,6 +34,10 @@
     </genClasses>
     <genClasses ecoreClass="GraphViewMapping.ecore#//EdgeEndMapping">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GraphViewMapping.ecore#//EdgeEndMapping/mapping"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GraphViewMapping.ecore#//EdgeEndMapping/create"/>
+    </genClasses>
+    <genClasses ecoreClass="GraphViewMapping.ecore#//MappingCall">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GraphViewMapping.ecore#//MappingCall/mapping"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

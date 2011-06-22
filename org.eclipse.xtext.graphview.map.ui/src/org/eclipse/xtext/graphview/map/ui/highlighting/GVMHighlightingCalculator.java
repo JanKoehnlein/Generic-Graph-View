@@ -8,6 +8,7 @@ import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightedPositionAcceptor;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.ISemanticHighlightingCalculator;
 import org.eclipse.xtext.util.ITextRegion;
+import org.eclipse.xtext.util.Strings;
 
 import com.google.inject.Inject;
 
@@ -23,7 +24,9 @@ public class GVMHighlightingCalculator implements
 			for (TreeIterator<EObject> i = resource.getAllContents(); i
 					.hasNext();) {
 				EObject eObject = i.next();
-				if (eObject instanceof AbstractMapping) {
+				if (eObject instanceof AbstractMapping
+						&& !Strings.isEmpty(((AbstractMapping) eObject)
+								.getName())) {
 					ITextRegion nameRegion = locationInFileProvider
 							.getSignificantTextRegion(eObject);
 					acceptor.addPosition(nameRegion.getOffset(),

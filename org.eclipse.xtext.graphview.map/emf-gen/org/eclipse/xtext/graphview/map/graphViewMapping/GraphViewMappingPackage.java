@@ -494,6 +494,71 @@ public interface GraphViewMappingPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.MappingCallImpl <em>Mapping Call</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.impl.MappingCallImpl
+	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.impl.GraphViewMappingPackageImpl#getMappingCall()
+	 * @generated
+	 */
+	int MAPPING_CALL = 8;
+
+	/**
+	 * The feature id for the '<em><b>Mappings</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING_CALL__MAPPINGS = ABSTRACT_EXPRESSION_MAPPING__MAPPINGS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING_CALL__NAME = ABSTRACT_EXPRESSION_MAPPING__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Multi</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING_CALL__MULTI = ABSTRACT_EXPRESSION_MAPPING__MULTI;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING_CALL__EXPRESSION = ABSTRACT_EXPRESSION_MAPPING__EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Mapping</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING_CALL__MAPPING = ABSTRACT_EXPRESSION_MAPPING_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Mapping Call</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING_CALL_FEATURE_COUNT = ABSTRACT_EXPRESSION_MAPPING_FEATURE_COUNT + 1;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping <em>Abstract Mapping</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -695,6 +760,27 @@ public interface GraphViewMappingPackage extends EPackage {
 	EAttribute getEdgeEndMapping_Create();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.xtext.graphview.map.graphViewMapping.MappingCall <em>Mapping Call</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Mapping Call</em>'.
+	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.MappingCall
+	 * @generated
+	 */
+	EClass getMappingCall();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.xtext.graphview.map.graphViewMapping.MappingCall#getMapping <em>Mapping</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Mapping</em>'.
+	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.MappingCall#getMapping()
+	 * @see #getMappingCall()
+	 * @generated
+	 */
+	EReference getMappingCall_Mapping();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -883,6 +969,24 @@ public interface GraphViewMappingPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute EDGE_END_MAPPING__CREATE = eINSTANCE.getEdgeEndMapping_Create();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.MappingCallImpl <em>Mapping Call</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.xtext.graphview.map.graphViewMapping.impl.MappingCallImpl
+		 * @see org.eclipse.xtext.graphview.map.graphViewMapping.impl.GraphViewMappingPackageImpl#getMappingCall()
+		 * @generated
+		 */
+		EClass MAPPING_CALL = eINSTANCE.getMappingCall();
+
+		/**
+		 * The meta object literal for the '<em><b>Mapping</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MAPPING_CALL__MAPPING = eINSTANCE.getMappingCall_Mapping();
 
 	}
 

@@ -24,6 +24,7 @@ import org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingFactory;
 import org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage;
 import org.eclipse.xtext.graphview.map.graphViewMapping.Import;
 import org.eclipse.xtext.graphview.map.graphViewMapping.LabelMapping;
+import org.eclipse.xtext.graphview.map.graphViewMapping.MappingCall;
 import org.eclipse.xtext.graphview.map.graphViewMapping.NodeMapping;
 
 import org.eclipse.xtext.xbase.XbasePackage;
@@ -90,6 +91,13 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 	 * @generated
 	 */
 	private EClass edgeEndMappingEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass mappingCallEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -331,6 +339,24 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getMappingCall() {
+		return mappingCallEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMappingCall_Mapping() {
+		return (EReference)mappingCallEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public GraphViewMappingFactory getGraphViewMappingFactory() {
 		return (GraphViewMappingFactory)getEFactoryInstance();
 	}
@@ -380,6 +406,9 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 		edgeEndMappingEClass = createEClass(EDGE_END_MAPPING);
 		createEReference(edgeEndMappingEClass, EDGE_END_MAPPING__MAPPING);
 		createEAttribute(edgeEndMappingEClass, EDGE_END_MAPPING__CREATE);
+
+		mappingCallEClass = createEClass(MAPPING_CALL);
+		createEReference(mappingCallEClass, MAPPING_CALL__MAPPING);
 	}
 
 	/**
@@ -421,6 +450,7 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 		labelMappingEClass.getESuperTypes().add(this.getAbstractExpressionMapping());
 		edgeMappingEClass.getESuperTypes().add(this.getAbstractExpressionMapping());
 		edgeEndMappingEClass.getESuperTypes().add(this.getAbstractExpressionMapping());
+		mappingCallEClass.getESuperTypes().add(this.getAbstractExpressionMapping());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(abstractMappingEClass, AbstractMapping.class, "AbstractMapping", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -447,8 +477,11 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 		initEReference(getEdgeMapping_TargetMapping(), this.getEdgeEndMapping(), null, "targetMapping", null, 0, 1, EdgeMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(edgeEndMappingEClass, EdgeEndMapping.class, "EdgeEndMapping", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEdgeEndMapping_Mapping(), this.getNodeMapping(), null, "mapping", null, 0, 1, EdgeEndMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEdgeEndMapping_Mapping(), this.getAbstractExpressionMapping(), null, "mapping", null, 0, 1, EdgeEndMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEdgeEndMapping_Create(), ecorePackage.getEBoolean(), "create", null, 0, 1, EdgeEndMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(mappingCallEClass, MappingCall.class, "MappingCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMappingCall_Mapping(), this.getAbstractMapping(), null, "mapping", null, 0, 1, MappingCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

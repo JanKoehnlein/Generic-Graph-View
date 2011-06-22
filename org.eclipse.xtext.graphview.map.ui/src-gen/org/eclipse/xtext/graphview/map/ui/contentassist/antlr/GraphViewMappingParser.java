@@ -72,6 +72,7 @@ public class GraphViewMappingParser extends AbstractContentAssistParser {
 					put(grammarAccess.getLabelMappingAccess().getGroup(), "rule__LabelMapping__Group__0");
 					put(grammarAccess.getEdgeMappingAccess().getGroup(), "rule__EdgeMapping__Group__0");
 					put(grammarAccess.getEdgeEndMappingAccess().getGroup(), "rule__EdgeEndMapping__Group__0");
+					put(grammarAccess.getMappingCallAccess().getGroup(), "rule__MappingCall__Group__0");
 					put(grammarAccess.getXAssignmentAccess().getGroup_0(), "rule__XAssignment__Group_0__0");
 					put(grammarAccess.getXAssignmentAccess().getGroup_1(), "rule__XAssignment__Group_1__0");
 					put(grammarAccess.getXAssignmentAccess().getGroup_1_1(), "rule__XAssignment__Group_1_1__0");
@@ -210,6 +211,9 @@ public class GraphViewMappingParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEdgeEndMappingAccess().getCreateAssignment_0(), "rule__EdgeEndMapping__CreateAssignment_0");
 					put(grammarAccess.getEdgeEndMappingAccess().getMappingAssignment_1(), "rule__EdgeEndMapping__MappingAssignment_1");
 					put(grammarAccess.getEdgeEndMappingAccess().getExpressionAssignment_3(), "rule__EdgeEndMapping__ExpressionAssignment_3");
+					put(grammarAccess.getMappingCallAccess().getMappingAssignment_1(), "rule__MappingCall__MappingAssignment_1");
+					put(grammarAccess.getMappingCallAccess().getMultiAssignment_3(), "rule__MappingCall__MultiAssignment_3");
+					put(grammarAccess.getMappingCallAccess().getExpressionAssignment_4(), "rule__MappingCall__ExpressionAssignment_4");
 					put(grammarAccess.getXAssignmentAccess().getFeatureAssignment_0_1(), "rule__XAssignment__FeatureAssignment_0_1");
 					put(grammarAccess.getXAssignmentAccess().getValueAssignment_0_3(), "rule__XAssignment__ValueAssignment_0_3");
 					put(grammarAccess.getXAssignmentAccess().getFeatureAssignment_1_1_0_0_1(), "rule__XAssignment__FeatureAssignment_1_1_0_0_1");

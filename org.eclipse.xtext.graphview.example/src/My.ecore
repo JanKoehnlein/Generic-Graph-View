@@ -13,4 +13,12 @@
   <eClassifiers xsi:type="ecore:EClass" name="AThirdClass" eSuperTypes="#//MyClass">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="thirdAttribute" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eSubpackages name="subPackage" nsURI="http://www.xtext.org/example/graphview" nsPrefix="subPackage">
+    <eClassifiers xsi:type="ecore:EClass" name="Foo"/>
+    <eSubpackages name="subsub" nsURI="subsub" nsPrefix="subsub">
+      <eClassifiers xsi:type="ecore:EClass" name="Bar">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="s" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eClassifiers>
+    </eSubpackages>
+  </eSubpackages>
 </ecore:EPackage>

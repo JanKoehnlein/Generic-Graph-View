@@ -302,6 +302,16 @@ ruleAbstractExpressionMapping returns [EObject current=null]
         $current = $this_EdgeMapping_2.current; 
         afterParserOrEnumRuleCall();
     }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getAbstractExpressionMappingAccess().getMappingCallParserRuleCall_3()); 
+    }
+    this_MappingCall_3=ruleMappingCall
+    { 
+        $current = $this_MappingCall_3.current; 
+        afterParserOrEnumRuleCall();
+    }
 )
 ;
 
@@ -679,7 +689,7 @@ ruleEdgeEndMapping returns [EObject current=null]
         }
 	otherlv_1=RULE_ID
 	{
-		newLeafNode(otherlv_1, grammarAccess.getEdgeEndMappingAccess().getMappingNodeMappingCrossReference_1_0()); 
+		newLeafNode(otherlv_1, grammarAccess.getEdgeEndMappingAccess().getMappingAbstractExpressionMappingCrossReference_1_0()); 
 	}
 
 )
@@ -710,6 +720,81 @@ ruleEdgeEndMapping returns [EObject current=null]
     	newLeafNode(otherlv_4, grammarAccess.getEdgeEndMappingAccess().getRightParenthesisKeyword_4());
     }
 )
+;
+
+
+
+
+
+// Entry rule entryRuleMappingCall
+entryRuleMappingCall returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getMappingCallRule()); }
+	 iv_ruleMappingCall=ruleMappingCall 
+	 { $current=$iv_ruleMappingCall.current; } 
+	 EOF 
+;
+
+// Rule MappingCall
+ruleMappingCall returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='call' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getMappingCallAccess().getCallKeyword_0());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getMappingCallRule());
+	        }
+        }
+	otherlv_1=RULE_ID
+	{
+		newLeafNode(otherlv_1, grammarAccess.getMappingCallAccess().getMappingAbstractMappingCrossReference_1_0()); 
+	}
+
+)
+)	otherlv_2='for' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getMappingCallAccess().getForKeyword_2());
+    }
+(
+(
+		lv_multi_3_0=	'each' 
+    {
+        newLeafNode(lv_multi_3_0, grammarAccess.getMappingCallAccess().getMultiEachKeyword_3_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getMappingCallRule());
+	        }
+       		setWithLastConsumed($current, "multi", true, "each");
+	    }
+
+)
+)?(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getMappingCallAccess().getExpressionXExpressionParserRuleCall_4_0()); 
+	    }
+		lv_expression_4_0=ruleXExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getMappingCallRule());
+	        }
+       		set(
+       			$current, 
+       			"expression",
+        		lv_expression_4_0, 
+        		"XExpression");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
 ;
 
 
