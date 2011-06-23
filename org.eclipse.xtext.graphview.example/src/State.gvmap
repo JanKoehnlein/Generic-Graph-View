@@ -1,0 +1,14 @@
+import org.eclipse.xtext.example.fowlerdsl.statemachine.*
+
+diagram StateMachineDiagram type Statemachine {
+	node StateNode for each states {
+		label Name for this
+		edge Transition for each transitions {
+			-> ref StateNode for state
+			label EventName for event
+		}
+		node ActionCompartment for actions {
+			label ActionName for each this
+		} unless actions.empty
+	}
+}

@@ -1,0 +1,34 @@
+import org.eclipse.draw2d.*
+import org.eclipse.xtext.graphview.shape.*
+import org.eclipse.xtext.graphview.layout.*
+import org.eclipse.xtext.example.fowlerdsl.statemachine.*
+
+stylesheet StateMachineStyle for StateMachineDiagram 
+
+style StateMachineDiagram as DiagramShape {
+	val autoLayout = new SpringAutoLayout()
+	autoLayout.blankToNodeAreaRatio = 6
+	autoLayout.iterations = 1000
+	autoLayoutManager = autoLayout 
+}
+	
+style StateMachineDiagram.StateNode.Transition.EventName as LabelShape {
+	connectionAlignment = ConnectionLocator::MIDDLE
+	opaque = true
+	if((element.eContainer as Statemachine).resetEvents.contains(element)) 
+		foregroundColor = color(#ff2222)
+}
+
+style StateMachineDiagram.StateNode {
+	border = new MarginBorder(5,5,5,5)
+}
+
+style StateMachineDiagram.StateNode.Name {
+	font = font("Helvetica", 14, 1)
+	border = new MarginBorder(5,5,5,5)
+}
+
+style StateMachineDiagram.StateNode.ActionCompartment as RectangleShape {
+	outline = false
+	backgroundColor = color(#ffffff)
+}
