@@ -15,8 +15,7 @@ package org.eclipse.xtext.graphview.map.graphViewMapping;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.EdgeEndMapping#getMapping <em>Mapping</em>}</li>
- *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.EdgeEndMapping#isCreate <em>Create</em>}</li>
+ *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.EdgeEndMapping#isCall <em>Call</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,57 +23,31 @@ package org.eclipse.xtext.graphview.map.graphViewMapping;
  * @model
  * @generated
  */
-public interface EdgeEndMapping extends AbstractExpressionMapping {
+public interface EdgeEndMapping extends AbstractMappingReference {
 	/**
-	 * Returns the value of the '<em><b>Mapping</b></em>' reference.
+	 * Returns the value of the '<em><b>Call</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Mapping</em>' reference isn't clear,
+	 * If the meaning of the '<em>Call</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Mapping</em>' reference.
-	 * @see #setMapping(AbstractExpressionMapping)
-	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage#getEdgeEndMapping_Mapping()
+	 * @return the value of the '<em>Call</em>' attribute.
+	 * @see #setCall(boolean)
+	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage#getEdgeEndMapping_Call()
 	 * @model
 	 * @generated
 	 */
-	AbstractExpressionMapping getMapping();
+	boolean isCall();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.EdgeEndMapping#getMapping <em>Mapping</em>}' reference.
+	 * Sets the value of the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.EdgeEndMapping#isCall <em>Call</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Mapping</em>' reference.
-	 * @see #getMapping()
+	 * @param value the new value of the '<em>Call</em>' attribute.
+	 * @see #isCall()
 	 * @generated
 	 */
-	void setMapping(AbstractExpressionMapping value);
-
-	/**
-	 * Returns the value of the '<em><b>Create</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Create</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Create</em>' attribute.
-	 * @see #setCreate(boolean)
-	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage#getEdgeEndMapping_Create()
-	 * @model
-	 * @generated
-	 */
-	boolean isCreate();
-
-	/**
-	 * Sets the value of the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.EdgeEndMapping#isCreate <em>Create</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Create</em>' attribute.
-	 * @see #isCreate()
-	 * @generated
-	 */
-	void setCreate(boolean value);
+	void setCall(boolean value);
 
 } // EdgeEndMapping

@@ -4,10 +4,10 @@ diagram JavaInheritanceDiagram type IType {
 	node ClassNode for this {
 		label ClassLabel for elementName	
 		edge ImplementsEdge for each superInterfaceNames {
-			-> InterfaceNode(this)
+			-> ref InterfaceNode for this
 		} 
 		edge ExtendsEdge for superclassName {
-			-> SuperClassNode(this)
+			-> ref SuperClassNode for this
 		} 
 	}
 	node InterfaceNode for each superInterfaceNames {

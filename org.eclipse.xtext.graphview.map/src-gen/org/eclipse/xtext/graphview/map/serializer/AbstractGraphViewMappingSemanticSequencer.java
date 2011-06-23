@@ -363,7 +363,11 @@ public class AbstractGraphViewMappingSemanticSequencer extends AbstractSemanticS
 				}
 				else break;
 			case XbasePackage.XCLOSURE:
-				if(context == grammarAccess.getXExpressionRule() ||
+				if(context == grammarAccess.getXShortClosureRule()) {
+					sequence_XShortClosure_XClosure(context, (XClosure) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getXExpressionRule() ||
 				   context == grammarAccess.getXAssignmentRule() ||
 				   context == grammarAccess.getXAssignmentAccess().getXBinaryOperationLeftOperandAction_1_1_0_0_0() ||
 				   context == grammarAccess.getXOrExpressionRule() ||
@@ -393,10 +397,6 @@ public class AbstractGraphViewMappingSemanticSequencer extends AbstractSemanticS
 				   context == grammarAccess.getXParenthesizedExpressionRule() ||
 				   context == grammarAccess.getXExpressionInsideBlockRule()) {
 					sequence_XClosure_XClosure(context, (XClosure) semanticObject); 
-					return; 
-				}
-				else if(context == grammarAccess.getXShortClosureRule()) {
-					sequence_XShortClosure_XClosure(context, (XClosure) semanticObject); 
 					return; 
 				}
 				else break;
@@ -988,8 +988,8 @@ public class AbstractGraphViewMappingSemanticSequencer extends AbstractSemanticS
 	 *     (imports+=Import* name=QualifiedName typeGuard=JvmTypeReference mappings+=AbstractExpressionMapping*)
 	 *
 	 * Features:
-	 *    mappings[0, *]
 	 *    name[1, 1]
+	 *    mappings[0, *]
 	 *    imports[0, *]
 	 *    typeGuard[1, 1]
 	 */
@@ -1000,12 +1000,12 @@ public class AbstractGraphViewMappingSemanticSequencer extends AbstractSemanticS
 	
 	/**
 	 * Constraint:
-	 *     (create?='create'? mapping=[AbstractExpressionMapping|ID] expression=XExpression)
+	 *     (call?='call'? referencedMapping=[AbstractMappingDefinition|ID] expression=XExpression)
 	 *
 	 * Features:
 	 *    expression[1, 1]
-	 *    mapping[1, 1]
-	 *    create[0, 1]
+	 *    referencedMapping[1, 1]
+	 *    call[0, 1]
 	 */
 	protected void sequence_EdgeEndMapping_EdgeEndMapping(EObject context, EdgeEndMapping semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1024,8 +1024,8 @@ public class AbstractGraphViewMappingSemanticSequencer extends AbstractSemanticS
 	 *     )
 	 *
 	 * Features:
-	 *    mappings[0, *]
 	 *    name[1, 1]
+	 *    mappings[0, *]
 	 *    multi[0, 1]
 	 *    expression[1, 1]
 	 *    sourceMapping[0, 1]
@@ -1158,12 +1158,12 @@ public class AbstractGraphViewMappingSemanticSequencer extends AbstractSemanticS
 	
 	/**
 	 * Constraint:
-	 *     (mapping=[AbstractMapping|ID] multi?='each'? expression=XExpression)
+	 *     (referencedMapping=[AbstractMappingDefinition|ID] multi?='each'? expression=XExpression)
 	 *
 	 * Features:
 	 *    multi[0, 1]
 	 *    expression[1, 1]
-	 *    mapping[1, 1]
+	 *    referencedMapping[1, 1]
 	 */
 	protected void sequence_MappingCall_MappingCall(EObject context, MappingCall semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1175,8 +1175,8 @@ public class AbstractGraphViewMappingSemanticSequencer extends AbstractSemanticS
 	 *     (name=ID multi?='each'? expression=XExpression mappings+=AbstractExpressionMapping*)
 	 *
 	 * Features:
-	 *    mappings[0, *]
 	 *    name[1, 1]
+	 *    mappings[0, *]
 	 *    multi[0, 1]
 	 *    expression[1, 1]
 	 */

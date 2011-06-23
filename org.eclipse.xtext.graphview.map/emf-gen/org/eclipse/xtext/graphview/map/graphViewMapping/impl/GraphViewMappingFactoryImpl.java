@@ -60,9 +60,11 @@ public class GraphViewMappingFactoryImpl extends EFactoryImpl implements GraphVi
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case GraphViewMappingPackage.DIAGRAM_MAPPING: return createDiagramMapping();
-			case GraphViewMappingPackage.IMPORT: return createImport();
+			case GraphViewMappingPackage.ABSTRACT_MAPPING_DEFINITION: return createAbstractMappingDefinition();
 			case GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING: return createAbstractExpressionMapping();
+			case GraphViewMappingPackage.ABSTRACT_MAPPING_REFERENCE: return createAbstractMappingReference();
+			case GraphViewMappingPackage.IMPORT: return createImport();
+			case GraphViewMappingPackage.DIAGRAM_MAPPING: return createDiagramMapping();
 			case GraphViewMappingPackage.NODE_MAPPING: return createNodeMapping();
 			case GraphViewMappingPackage.LABEL_MAPPING: return createLabelMapping();
 			case GraphViewMappingPackage.EDGE_MAPPING: return createEdgeMapping();
@@ -71,6 +73,16 @@ public class GraphViewMappingFactoryImpl extends EFactoryImpl implements GraphVi
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AbstractMappingDefinition createAbstractMappingDefinition() {
+		AbstractMappingDefinitionImpl abstractMappingDefinition = new AbstractMappingDefinitionImpl();
+		return abstractMappingDefinition;
 	}
 
 	/**
@@ -101,6 +113,16 @@ public class GraphViewMappingFactoryImpl extends EFactoryImpl implements GraphVi
 	public AbstractExpressionMapping createAbstractExpressionMapping() {
 		AbstractExpressionMappingImpl abstractExpressionMapping = new AbstractExpressionMappingImpl();
 		return abstractExpressionMapping;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AbstractMappingReference createAbstractMappingReference() {
+		AbstractMappingReferenceImpl abstractMappingReference = new AbstractMappingReferenceImpl();
+		return abstractMappingReference;
 	}
 
 	/**

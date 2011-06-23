@@ -17,5 +17,5 @@ package org.eclipse.xtext.graphview.map.graphViewMapping;
  * @model
  * @generated
  */
-public interface LabelMapping extends AbstractExpressionMapping {
+public interface LabelMapping extends AbstractMappingDefinition, AbstractExpressionMapping {
 } // LabelMapping

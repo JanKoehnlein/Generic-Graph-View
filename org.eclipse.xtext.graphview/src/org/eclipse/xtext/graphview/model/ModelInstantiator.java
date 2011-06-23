@@ -15,6 +15,7 @@ import org.eclipse.xtext.graphview.instancemodel.NodeInstance;
 import org.eclipse.xtext.graphview.map.IInstanceMapper;
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractExpressionMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping;
+import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMappingDefinition;
 import org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.EdgeEndMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.EdgeMapping;
@@ -88,7 +89,8 @@ public class ModelInstantiator {
 			final Multimap<Object, AbstractInstance> semantic2instance,
 			AbstractInstance parentInstance) {
 		if (mapping instanceof MappingCall) {
-			return internalCreateInstance(((MappingCall) mapping).getMapping(),
+			return internalCreateInstance(
+					((MappingCall) mapping).getReferencedMapping(),
 					semanticElement, semantic2instance, parentInstance);
 		}
 		if (semantic2instance.containsKey(semanticElement)) {
@@ -107,18 +109,23 @@ public class ModelInstantiator {
 			if (instanceModel instanceof EdgeInstance)
 				connectSourceAndTargetInstance(semantic2instance,
 						(EdgeInstance) instanceModel);
-			for (AbstractExpressionMapping childMapping : mapping.getMappings()) {
-				Object mapResult = instanceMapper.map(childMapping,
-						semanticElement);
-				if (mapResult != null) {
-					if (((AbstractExpressionMapping) childMapping).isMulti()) {
-						for (Object semanticChild : (Iterable<?>) mapResult) {
-							internalCreateInstance(childMapping, semanticChild,
+			if (mapping instanceof AbstractMappingDefinition) {
+				for (AbstractExpressionMapping childMapping : ((AbstractMappingDefinition) mapping)
+						.getMappings()) {
+					Object mapResult = instanceMapper.map(childMapping,
+							semanticElement);
+					if (mapResult != null) {
+						if (((AbstractExpressionMapping) childMapping)
+								.isMulti()) {
+							for (Object semanticChild : (Iterable<?>) mapResult) {
+								internalCreateInstance(childMapping,
+										semanticChild, semantic2instance,
+										instanceModel);
+							}
+						} else {
+							internalCreateInstance(childMapping, mapResult,
 									semantic2instance, instanceModel);
 						}
-					} else {
-						internalCreateInstance(childMapping, mapResult,
-								semantic2instance, instanceModel);
 					}
 				}
 			}
@@ -185,18 +192,18 @@ public class ModelInstantiator {
 				edgeInstance.getSemanticElement());
 		for (AbstractInstance instance : semantic2instance.get(semanticElement)) {
 			if (instance instanceof NodeInstance
-					&& instance.getMapping() == edgeEndMapping.getMapping()) {
+					&& instance.getMapping() == edgeEndMapping.getReferencedMapping()) {
 				return (NodeInstance) instance;
 			}
 		}
-		if (edgeEndMapping.isCreate()) {
-			EObject containerMapping = edgeEndMapping.getMapping().eContainer();
+		if (edgeEndMapping.isCall()) {
+			EObject containerMapping = edgeEndMapping.getReferencedMapping().eContainer();
 			if (containerMapping instanceof AbstractMapping) {
 				AbstractInstance parentInstance = findParentInstanceWithMapping(
 						edgeInstance, (AbstractMapping) containerMapping);
 				if (parentInstance != null) {
 					AbstractInstance edgeEndInstance = internalCreateInstance(
-							edgeEndMapping.getMapping(), semanticElement,
+							edgeEndMapping.getReferencedMapping(), semanticElement,
 							semantic2instance, parentInstance);
 					if (edgeEndInstance instanceof NodeInstance) {
 						return (NodeInstance) edgeEndInstance;

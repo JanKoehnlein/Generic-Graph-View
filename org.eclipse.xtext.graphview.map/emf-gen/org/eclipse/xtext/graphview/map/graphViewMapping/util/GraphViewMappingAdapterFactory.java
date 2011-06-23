@@ -78,16 +78,24 @@ public class GraphViewMappingAdapterFactory extends AdapterFactoryImpl {
 				return createAbstractMappingAdapter();
 			}
 			@Override
-			public Adapter caseDiagramMapping(DiagramMapping object) {
-				return createDiagramMappingAdapter();
+			public Adapter caseAbstractMappingDefinition(AbstractMappingDefinition object) {
+				return createAbstractMappingDefinitionAdapter();
+			}
+			@Override
+			public Adapter caseAbstractExpressionMapping(AbstractExpressionMapping object) {
+				return createAbstractExpressionMappingAdapter();
+			}
+			@Override
+			public Adapter caseAbstractMappingReference(AbstractMappingReference object) {
+				return createAbstractMappingReferenceAdapter();
 			}
 			@Override
 			public Adapter caseImport(Import object) {
 				return createImportAdapter();
 			}
 			@Override
-			public Adapter caseAbstractExpressionMapping(AbstractExpressionMapping object) {
-				return createAbstractExpressionMappingAdapter();
+			public Adapter caseDiagramMapping(DiagramMapping object) {
+				return createDiagramMappingAdapter();
 			}
 			@Override
 			public Adapter caseNodeMapping(NodeMapping object) {
@@ -148,6 +156,20 @@ public class GraphViewMappingAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMappingDefinition <em>Abstract Mapping Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMappingDefinition
+	 * @generated
+	 */
+	public Adapter createAbstractMappingDefinitionAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping <em>Diagram Mapping</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -186,6 +208,20 @@ public class GraphViewMappingAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAbstractExpressionMappingAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMappingReference <em>Abstract Mapping Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMappingReference
+	 * @generated
+	 */
+	public Adapter createAbstractMappingReferenceAdapter() {
 		return null;
 	}
 

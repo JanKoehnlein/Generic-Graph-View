@@ -2,7 +2,11 @@ package org.eclipse.xtext.graphview.map.ui.highlighting;
 
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping;
+import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMappingDefinition;
+import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMappingReference;
+import org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage;
+import org.eclipse.xtext.nodemodel.INode;
+import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 import org.eclipse.xtext.resource.ILocationInFileProvider;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightedPositionAcceptor;
@@ -24,14 +28,21 @@ public class GVMHighlightingCalculator implements
 			for (TreeIterator<EObject> i = resource.getAllContents(); i
 					.hasNext();) {
 				EObject eObject = i.next();
-				if (eObject instanceof AbstractMapping
-						&& !Strings.isEmpty(((AbstractMapping) eObject)
+				if (eObject instanceof AbstractMappingDefinition
+						&& !Strings.isEmpty(((AbstractMappingDefinition) eObject)
 								.getName())) {
 					ITextRegion nameRegion = locationInFileProvider
 							.getSignificantTextRegion(eObject);
 					acceptor.addPosition(nameRegion.getOffset(),
 							nameRegion.getLength(),
 							GVMHighlightingConfiguration.MAPPING_NAME_ID);
+				}
+				if(eObject instanceof AbstractMappingReference) {
+					for(INode crossRefNode : NodeModelUtils.findNodesForFeature(eObject, GraphViewMappingPackage.Literals.ABSTRACT_MAPPING_REFERENCE__REFERENCED_MAPPING)) {
+						acceptor.addPosition(crossRefNode.getOffset(),
+								crossRefNode.getLength(),
+								GVMHighlightingConfiguration.MAPPING_NAME_ID);
+					}
 				}
 			}
 		}

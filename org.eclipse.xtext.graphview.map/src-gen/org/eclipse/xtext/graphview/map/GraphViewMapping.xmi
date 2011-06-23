@@ -146,22 +146,24 @@
         <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/xtext/graphview/map/GraphViewMapping#//EdgeEndMapping"/>
       </type>
       <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:Assignment" cardinality="?" feature="create" operator="?=">
-          <terminal xsi:type="xtext:Keyword" value="create"/>
+        <elements xsi:type="xtext:Alternatives">
+          <elements xsi:type="xtext:Keyword" value="ref"/>
+          <elements xsi:type="xtext:Assignment" feature="call" operator="?=">
+            <terminal xsi:type="xtext:Keyword" value="call"/>
+          </elements>
         </elements>
-        <elements xsi:type="xtext:Assignment" feature="mapping" operator="=">
+        <elements xsi:type="xtext:Assignment" feature="referencedMapping" operator="=">
           <terminal xsi:type="xtext:CrossReference">
             <type metamodel="/0/@metamodelDeclarations.0">
-              <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/xtext/graphview/map/GraphViewMapping#//AbstractExpressionMapping"/>
+              <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/xtext/graphview/map/GraphViewMapping#//AbstractMappingDefinition"/>
             </type>
             <terminal xsi:type="xtext:RuleCall" rule="/2/@rules.11"/>
           </terminal>
         </elements>
-        <elements xsi:type="xtext:Keyword" value="("/>
+        <elements xsi:type="xtext:Keyword" value="for"/>
         <elements xsi:type="xtext:Assignment" feature="expression" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
         </elements>
-        <elements xsi:type="xtext:Keyword" value=")"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="MappingCall">
@@ -170,10 +172,10 @@
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Keyword" value="call"/>
-        <elements xsi:type="xtext:Assignment" feature="mapping" operator="=">
+        <elements xsi:type="xtext:Assignment" feature="referencedMapping" operator="=">
           <terminal xsi:type="xtext:CrossReference">
             <type metamodel="/0/@metamodelDeclarations.0">
-              <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/xtext/graphview/map/GraphViewMapping#//AbstractMapping"/>
+              <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/xtext/graphview/map/GraphViewMapping#//AbstractMappingDefinition"/>
             </type>
             <terminal xsi:type="xtext:RuleCall" rule="/2/@rules.11"/>
           </terminal>

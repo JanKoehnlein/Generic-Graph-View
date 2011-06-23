@@ -665,61 +665,62 @@ ruleEdgeEndMapping returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((
-(
-		lv_create_0_0=	'create' 
+((	otherlv_0='ref' 
     {
-        newLeafNode(lv_create_0_0, grammarAccess.getEdgeEndMappingAccess().getCreateCreateKeyword_0_0());
+    	newLeafNode(otherlv_0, grammarAccess.getEdgeEndMappingAccess().getRefKeyword_0_0());
+    }
+
+    |(
+(
+		lv_call_1_0=	'call' 
+    {
+        newLeafNode(lv_call_1_0, grammarAccess.getEdgeEndMappingAccess().getCallCallKeyword_0_1_0());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getEdgeEndMappingRule());
 	        }
-       		setWithLastConsumed($current, "create", true, "create");
+       		setWithLastConsumed($current, "call", true, "call");
 	    }
 
 )
-)?(
+))(
 (
 		{
 			if ($current==null) {
 	            $current = createModelElement(grammarAccess.getEdgeEndMappingRule());
 	        }
         }
-	otherlv_1=RULE_ID
+	otherlv_2=RULE_ID
 	{
-		newLeafNode(otherlv_1, grammarAccess.getEdgeEndMappingAccess().getMappingAbstractExpressionMappingCrossReference_1_0()); 
+		newLeafNode(otherlv_2, grammarAccess.getEdgeEndMappingAccess().getReferencedMappingAbstractMappingDefinitionCrossReference_1_0()); 
 	}
 
 )
-)	otherlv_2='(' 
+)	otherlv_3='for' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getEdgeEndMappingAccess().getLeftParenthesisKeyword_2());
+    	newLeafNode(otherlv_3, grammarAccess.getEdgeEndMappingAccess().getForKeyword_2());
     }
 (
 (
 		{ 
 	        newCompositeNode(grammarAccess.getEdgeEndMappingAccess().getExpressionXExpressionParserRuleCall_3_0()); 
 	    }
-		lv_expression_3_0=ruleXExpression		{
+		lv_expression_4_0=ruleXExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getEdgeEndMappingRule());
 	        }
        		set(
        			$current, 
        			"expression",
-        		lv_expression_3_0, 
+        		lv_expression_4_0, 
         		"XExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_4=')' 
-    {
-    	newLeafNode(otherlv_4, grammarAccess.getEdgeEndMappingAccess().getRightParenthesisKeyword_4());
-    }
-)
+))
 ;
 
 
@@ -753,7 +754,7 @@ ruleMappingCall returns [EObject current=null]
         }
 	otherlv_1=RULE_ID
 	{
-		newLeafNode(otherlv_1, grammarAccess.getMappingCallAccess().getMappingAbstractMappingCrossReference_1_0()); 
+		newLeafNode(otherlv_1, grammarAccess.getMappingCallAccess().getReferencedMappingAbstractMappingDefinitionCrossReference_1_0()); 
 	}
 
 )

@@ -79,10 +79,14 @@ public class SelectDiagramConfigurationDialog extends Dialog {
 				| GridData.HORIZONTAL_ALIGN_FILL));
 		mappingCombo.addSelectionListener(new SelectionListener() {
 			public void widgetSelected(SelectionEvent e) {
-				int index = mappingCombo.getSelectionIndex();
-				IEObjectDescription selectedMapping = (index == -1) ? null
-						: sortedMappings.get(index);
-				populateStyleCombo(selectedMapping);
+				Display.getDefault().asyncExec(new Runnable() {
+					public void run() {
+						int index = mappingCombo.getSelectionIndex();
+						IEObjectDescription selectedMapping = (index == -1) ? null
+								: sortedMappings.get(index);
+						populateStyleCombo(selectedMapping);
+					}
+				});
 			}
 
 			public void widgetDefaultSelected(SelectionEvent e) {
@@ -127,9 +131,10 @@ public class SelectDiagramConfigurationDialog extends Dialog {
 			mappingCombo.add(mapping.getName().toString());
 		}
 		if (!sortedMappings.isEmpty()) {
-			mappingCombo.select(findIndex(sortedMappings,
-					diagramConfigurationProvider.getDiagramMapping()));
-			populateStyleCombo(sortedMappings.get(0));
+			int selectedIndex = findIndex(sortedMappings,
+					diagramConfigurationProvider.getDiagramMapping());
+			mappingCombo.select(selectedIndex);
+			populateStyleCombo(sortedMappings.get(selectedIndex));
 		}
 	}
 
@@ -173,7 +178,7 @@ public class SelectDiagramConfigurationDialog extends Dialog {
 			if (uri != null) {
 				for (int i = 0; i < descriptions.size(); ++i) {
 					IEObjectDescription description = descriptions.get(i);
-					if (uri.equals(description.getEObjectURI())) {
+					if (description != nullSelection && uri.equals(description.getEObjectURI())) {
 						return i;
 					}
 				}

@@ -25,42 +25,32 @@ import org.eclipse.xtext.graphview.map.graphViewMapping.NodeMapping;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.EdgeEndMappingImpl#getMapping <em>Mapping</em>}</li>
- *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.EdgeEndMappingImpl#isCreate <em>Create</em>}</li>
+ *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.EdgeEndMappingImpl#isCall <em>Call</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class EdgeEndMappingImpl extends AbstractExpressionMappingImpl implements EdgeEndMapping {
+public class EdgeEndMappingImpl extends AbstractMappingReferenceImpl implements EdgeEndMapping {
 	/**
-	 * The cached value of the '{@link #getMapping() <em>Mapping</em>}' reference.
+	 * The default value of the '{@link #isCall() <em>Call</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMapping()
+	 * @see #isCall()
 	 * @generated
 	 * @ordered
 	 */
-	protected AbstractExpressionMapping mapping;
+	protected static final boolean CALL_EDEFAULT = false;
 
 	/**
-	 * The default value of the '{@link #isCreate() <em>Create</em>}' attribute.
+	 * The cached value of the '{@link #isCall() <em>Call</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isCreate()
+	 * @see #isCall()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean CREATE_EDEFAULT = false;
-	/**
-	 * The cached value of the '{@link #isCreate() <em>Create</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isCreate()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean create = CREATE_EDEFAULT;
+	protected boolean call = CALL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -86,16 +76,8 @@ public class EdgeEndMappingImpl extends AbstractExpressionMappingImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AbstractExpressionMapping getMapping() {
-		if (mapping != null && mapping.eIsProxy()) {
-			InternalEObject oldMapping = (InternalEObject)mapping;
-			mapping = (AbstractExpressionMapping)eResolveProxy(oldMapping);
-			if (mapping != oldMapping) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GraphViewMappingPackage.EDGE_END_MAPPING__MAPPING, oldMapping, mapping));
-			}
-		}
-		return mapping;
+	public boolean isCall() {
+		return call;
 	}
 
 	/**
@@ -103,41 +85,11 @@ public class EdgeEndMappingImpl extends AbstractExpressionMappingImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AbstractExpressionMapping basicGetMapping() {
-		return mapping;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setMapping(AbstractExpressionMapping newMapping) {
-		AbstractExpressionMapping oldMapping = mapping;
-		mapping = newMapping;
+	public void setCall(boolean newCall) {
+		boolean oldCall = call;
+		call = newCall;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GraphViewMappingPackage.EDGE_END_MAPPING__MAPPING, oldMapping, mapping));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isCreate() {
-		return create;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCreate(boolean newCreate) {
-		boolean oldCreate = create;
-		create = newCreate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GraphViewMappingPackage.EDGE_END_MAPPING__CREATE, oldCreate, create));
+			eNotify(new ENotificationImpl(this, Notification.SET, GraphViewMappingPackage.EDGE_END_MAPPING__CALL, oldCall, call));
 	}
 
 	/**
@@ -148,11 +100,8 @@ public class EdgeEndMappingImpl extends AbstractExpressionMappingImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case GraphViewMappingPackage.EDGE_END_MAPPING__MAPPING:
-				if (resolve) return getMapping();
-				return basicGetMapping();
-			case GraphViewMappingPackage.EDGE_END_MAPPING__CREATE:
-				return isCreate();
+			case GraphViewMappingPackage.EDGE_END_MAPPING__CALL:
+				return isCall();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -165,11 +114,8 @@ public class EdgeEndMappingImpl extends AbstractExpressionMappingImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case GraphViewMappingPackage.EDGE_END_MAPPING__MAPPING:
-				setMapping((AbstractExpressionMapping)newValue);
-				return;
-			case GraphViewMappingPackage.EDGE_END_MAPPING__CREATE:
-				setCreate((Boolean)newValue);
+			case GraphViewMappingPackage.EDGE_END_MAPPING__CALL:
+				setCall((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -183,11 +129,8 @@ public class EdgeEndMappingImpl extends AbstractExpressionMappingImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case GraphViewMappingPackage.EDGE_END_MAPPING__MAPPING:
-				setMapping((AbstractExpressionMapping)null);
-				return;
-			case GraphViewMappingPackage.EDGE_END_MAPPING__CREATE:
-				setCreate(CREATE_EDEFAULT);
+			case GraphViewMappingPackage.EDGE_END_MAPPING__CALL:
+				setCall(CALL_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -201,10 +144,8 @@ public class EdgeEndMappingImpl extends AbstractExpressionMappingImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case GraphViewMappingPackage.EDGE_END_MAPPING__MAPPING:
-				return mapping != null;
-			case GraphViewMappingPackage.EDGE_END_MAPPING__CREATE:
-				return create != CREATE_EDEFAULT;
+			case GraphViewMappingPackage.EDGE_END_MAPPING__CALL:
+				return call != CALL_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -219,8 +160,8 @@ public class EdgeEndMappingImpl extends AbstractExpressionMappingImpl implements
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (create: ");
-		result.append(create);
+		result.append(" (call: ");
+		result.append(call);
 		result.append(')');
 		return result.toString();
 	}

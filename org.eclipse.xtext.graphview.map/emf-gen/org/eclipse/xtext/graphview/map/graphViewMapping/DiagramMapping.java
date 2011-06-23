@@ -27,7 +27,7 @@ import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
  * @model
  * @generated
  */
-public interface DiagramMapping extends AbstractMapping {
+public interface DiagramMapping extends AbstractMappingDefinition {
 	/**
 	 * Returns the value of the '<em><b>Imports</b></em>' containment reference list.
 	 * The list contents are of type {@link org.eclipse.xtext.graphview.map.graphViewMapping.Import}.

@@ -26,6 +26,15 @@ public interface GraphViewMappingFactory extends EFactory {
 	GraphViewMappingFactory eINSTANCE = org.eclipse.xtext.graphview.map.graphViewMapping.impl.GraphViewMappingFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Abstract Mapping Definition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Abstract Mapping Definition</em>'.
+	 * @generated
+	 */
+	AbstractMappingDefinition createAbstractMappingDefinition();
+
+	/**
 	 * Returns a new object of class '<em>Diagram Mapping</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -51,6 +60,15 @@ public interface GraphViewMappingFactory extends EFactory {
 	 * @generated
 	 */
 	AbstractExpressionMapping createAbstractExpressionMapping();
+
+	/**
+	 * Returns a new object of class '<em>Abstract Mapping Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Abstract Mapping Reference</em>'.
+	 * @generated
+	 */
+	AbstractMappingReference createAbstractMappingReference();
 
 	/**
 	 * Returns a new object of class '<em>Node Mapping</em>'.

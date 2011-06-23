@@ -38,6 +38,7 @@ public class GraphViewMappingParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getAbstractExpressionMappingAccess().getAlternatives(), "rule__AbstractExpressionMapping__Alternatives");
+					put(grammarAccess.getEdgeEndMappingAccess().getAlternatives_0(), "rule__EdgeEndMapping__Alternatives_0");
 					put(grammarAccess.getXAssignmentAccess().getAlternatives(), "rule__XAssignment__Alternatives");
 					put(grammarAccess.getOpEqualityAccess().getAlternatives(), "rule__OpEquality__Alternatives");
 					put(grammarAccess.getXRelationalExpressionAccess().getAlternatives_1(), "rule__XRelationalExpression__Alternatives_1");
@@ -208,10 +209,10 @@ public class GraphViewMappingParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEdgeMappingAccess().getSourceMappingAssignment_6(), "rule__EdgeMapping__SourceMappingAssignment_6");
 					put(grammarAccess.getEdgeMappingAccess().getTargetMappingAssignment_8(), "rule__EdgeMapping__TargetMappingAssignment_8");
 					put(grammarAccess.getEdgeMappingAccess().getMappingsAssignment_9(), "rule__EdgeMapping__MappingsAssignment_9");
-					put(grammarAccess.getEdgeEndMappingAccess().getCreateAssignment_0(), "rule__EdgeEndMapping__CreateAssignment_0");
-					put(grammarAccess.getEdgeEndMappingAccess().getMappingAssignment_1(), "rule__EdgeEndMapping__MappingAssignment_1");
+					put(grammarAccess.getEdgeEndMappingAccess().getCallAssignment_0_1(), "rule__EdgeEndMapping__CallAssignment_0_1");
+					put(grammarAccess.getEdgeEndMappingAccess().getReferencedMappingAssignment_1(), "rule__EdgeEndMapping__ReferencedMappingAssignment_1");
 					put(grammarAccess.getEdgeEndMappingAccess().getExpressionAssignment_3(), "rule__EdgeEndMapping__ExpressionAssignment_3");
-					put(grammarAccess.getMappingCallAccess().getMappingAssignment_1(), "rule__MappingCall__MappingAssignment_1");
+					put(grammarAccess.getMappingCallAccess().getReferencedMappingAssignment_1(), "rule__MappingCall__ReferencedMappingAssignment_1");
 					put(grammarAccess.getMappingCallAccess().getMultiAssignment_3(), "rule__MappingCall__MultiAssignment_3");
 					put(grammarAccess.getMappingCallAccess().getExpressionAssignment_4(), "rule__MappingCall__ExpressionAssignment_4");
 					put(grammarAccess.getXAssignmentAccess().getFeatureAssignment_0_1(), "rule__XAssignment__FeatureAssignment_0_1");

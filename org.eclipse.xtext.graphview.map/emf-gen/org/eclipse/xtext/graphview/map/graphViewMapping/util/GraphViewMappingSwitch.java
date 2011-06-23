@@ -96,17 +96,11 @@ public class GraphViewMappingSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GraphViewMappingPackage.DIAGRAM_MAPPING: {
-				DiagramMapping diagramMapping = (DiagramMapping)theEObject;
-				T result = caseDiagramMapping(diagramMapping);
-				if (result == null) result = caseAbstractMapping(diagramMapping);
-				if (result == null) result = caseJvmIdentifiableElement(diagramMapping);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case GraphViewMappingPackage.IMPORT: {
-				Import import_ = (Import)theEObject;
-				T result = caseImport(import_);
+			case GraphViewMappingPackage.ABSTRACT_MAPPING_DEFINITION: {
+				AbstractMappingDefinition abstractMappingDefinition = (AbstractMappingDefinition)theEObject;
+				T result = caseAbstractMappingDefinition(abstractMappingDefinition);
+				if (result == null) result = caseAbstractMapping(abstractMappingDefinition);
+				if (result == null) result = caseJvmIdentifiableElement(abstractMappingDefinition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -118,9 +112,34 @@ public class GraphViewMappingSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case GraphViewMappingPackage.ABSTRACT_MAPPING_REFERENCE: {
+				AbstractMappingReference abstractMappingReference = (AbstractMappingReference)theEObject;
+				T result = caseAbstractMappingReference(abstractMappingReference);
+				if (result == null) result = caseAbstractExpressionMapping(abstractMappingReference);
+				if (result == null) result = caseAbstractMapping(abstractMappingReference);
+				if (result == null) result = caseJvmIdentifiableElement(abstractMappingReference);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case GraphViewMappingPackage.IMPORT: {
+				Import import_ = (Import)theEObject;
+				T result = caseImport(import_);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case GraphViewMappingPackage.DIAGRAM_MAPPING: {
+				DiagramMapping diagramMapping = (DiagramMapping)theEObject;
+				T result = caseDiagramMapping(diagramMapping);
+				if (result == null) result = caseAbstractMappingDefinition(diagramMapping);
+				if (result == null) result = caseAbstractMapping(diagramMapping);
+				if (result == null) result = caseJvmIdentifiableElement(diagramMapping);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case GraphViewMappingPackage.NODE_MAPPING: {
 				NodeMapping nodeMapping = (NodeMapping)theEObject;
 				T result = caseNodeMapping(nodeMapping);
+				if (result == null) result = caseAbstractMappingDefinition(nodeMapping);
 				if (result == null) result = caseAbstractExpressionMapping(nodeMapping);
 				if (result == null) result = caseAbstractMapping(nodeMapping);
 				if (result == null) result = caseJvmIdentifiableElement(nodeMapping);
@@ -130,6 +149,7 @@ public class GraphViewMappingSwitch<T> {
 			case GraphViewMappingPackage.LABEL_MAPPING: {
 				LabelMapping labelMapping = (LabelMapping)theEObject;
 				T result = caseLabelMapping(labelMapping);
+				if (result == null) result = caseAbstractMappingDefinition(labelMapping);
 				if (result == null) result = caseAbstractExpressionMapping(labelMapping);
 				if (result == null) result = caseAbstractMapping(labelMapping);
 				if (result == null) result = caseJvmIdentifiableElement(labelMapping);
@@ -139,6 +159,7 @@ public class GraphViewMappingSwitch<T> {
 			case GraphViewMappingPackage.EDGE_MAPPING: {
 				EdgeMapping edgeMapping = (EdgeMapping)theEObject;
 				T result = caseEdgeMapping(edgeMapping);
+				if (result == null) result = caseAbstractMappingDefinition(edgeMapping);
 				if (result == null) result = caseAbstractExpressionMapping(edgeMapping);
 				if (result == null) result = caseAbstractMapping(edgeMapping);
 				if (result == null) result = caseJvmIdentifiableElement(edgeMapping);
@@ -148,6 +169,7 @@ public class GraphViewMappingSwitch<T> {
 			case GraphViewMappingPackage.EDGE_END_MAPPING: {
 				EdgeEndMapping edgeEndMapping = (EdgeEndMapping)theEObject;
 				T result = caseEdgeEndMapping(edgeEndMapping);
+				if (result == null) result = caseAbstractMappingReference(edgeEndMapping);
 				if (result == null) result = caseAbstractExpressionMapping(edgeEndMapping);
 				if (result == null) result = caseAbstractMapping(edgeEndMapping);
 				if (result == null) result = caseJvmIdentifiableElement(edgeEndMapping);
@@ -157,6 +179,7 @@ public class GraphViewMappingSwitch<T> {
 			case GraphViewMappingPackage.MAPPING_CALL: {
 				MappingCall mappingCall = (MappingCall)theEObject;
 				T result = caseMappingCall(mappingCall);
+				if (result == null) result = caseAbstractMappingReference(mappingCall);
 				if (result == null) result = caseAbstractExpressionMapping(mappingCall);
 				if (result == null) result = caseAbstractMapping(mappingCall);
 				if (result == null) result = caseJvmIdentifiableElement(mappingCall);
@@ -179,6 +202,21 @@ public class GraphViewMappingSwitch<T> {
 	 * @generated
 	 */
 	public T caseAbstractMapping(AbstractMapping object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Mapping Definition</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Mapping Definition</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAbstractMappingDefinition(AbstractMappingDefinition object) {
 		return null;
 	}
 
@@ -224,6 +262,21 @@ public class GraphViewMappingSwitch<T> {
 	 * @generated
 	 */
 	public T caseAbstractExpressionMapping(AbstractExpressionMapping object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Mapping Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Mapping Reference</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAbstractMappingReference(AbstractMappingReference object) {
 		return null;
 	}
 

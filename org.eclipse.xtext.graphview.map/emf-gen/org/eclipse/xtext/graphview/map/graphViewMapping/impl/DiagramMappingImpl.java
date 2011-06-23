@@ -41,7 +41,7 @@ import org.eclipse.xtext.graphview.map.graphViewMapping.Import;
  *
  * @generated
  */
-public class DiagramMappingImpl extends AbstractMappingImpl implements DiagramMapping {
+public class DiagramMappingImpl extends AbstractMappingDefinitionImpl implements DiagramMapping {
 	/**
 	 * The cached value of the '{@link #getImports() <em>Imports</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

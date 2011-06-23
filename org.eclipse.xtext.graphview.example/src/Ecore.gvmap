@@ -13,7 +13,7 @@ diagram PackageDiagram type EPackage {
 			)		
 		}  
 		edge ReferenceEdge for each EReferences {
-			-> ClassNode(EType)
+			-> ref ClassNode for EType
 			label EdgeLabel for name   
 		}
 //		edge SuperclassEdge for each ESuperTypes {

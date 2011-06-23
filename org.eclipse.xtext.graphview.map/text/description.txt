@@ -8,31 +8,34 @@ This can be disabled with -vmargs -Dorg.eclipse.emf.examples.generator.validator
 Package graphViewMapping <http://www.eclipse.org/xtext/graphview/map/GraphViewMapping>
 
   Class AbstractMapping -> JvmIdentifiableElement
-    Reference mappings : AbstractExpressionMapping<<0..*>>
+
+  Class AbstractMappingDefinition -> AbstractMapping
     Attribute name : EString
-
-  Class DiagramMapping -> AbstractMapping
-    Reference imports : Import<<0..*>>
-    Reference typeGuard : JvmParameterizedTypeReference
-
-  Class Import
-    Attribute importedNamespace : EString
+    Reference mappings : AbstractExpressionMapping<<0..*>>
 
   Class AbstractExpressionMapping -> AbstractMapping
     Attribute multi : EBoolean
     Reference expression : XExpression
 
-  Class NodeMapping -> AbstractExpressionMapping
+  Class AbstractMappingReference -> AbstractExpressionMapping
+    Reference referencedMapping : AbstractMappingDefinition
 
-  Class LabelMapping -> AbstractExpressionMapping
+  Class Import
+    Attribute importedNamespace : EString
 
-  Class EdgeMapping -> AbstractExpressionMapping
+  Class DiagramMapping -> AbstractMappingDefinition
+    Reference imports : Import<<0..*>>
+    Reference typeGuard : JvmParameterizedTypeReference
+
+  Class NodeMapping -> AbstractMappingDefinition, AbstractExpressionMapping
+
+  Class LabelMapping -> AbstractMappingDefinition, AbstractExpressionMapping
+
+  Class EdgeMapping -> AbstractMappingDefinition, AbstractExpressionMapping
     Reference sourceMapping : EdgeEndMapping
     Reference targetMapping : EdgeEndMapping
 
-  Class EdgeEndMapping -> AbstractExpressionMapping
-    Reference mapping : AbstractExpressionMapping
-    Attribute create : EBoolean
+  Class EdgeEndMapping -> AbstractMappingReference
+    Attribute call : EBoolean
 
-  Class MappingCall -> AbstractExpressionMapping
-    Reference mapping : AbstractMapping
+  Class MappingCall -> AbstractMappingReference

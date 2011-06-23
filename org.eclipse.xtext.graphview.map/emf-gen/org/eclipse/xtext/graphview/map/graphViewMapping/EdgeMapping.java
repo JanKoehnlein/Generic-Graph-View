@@ -24,7 +24,7 @@ package org.eclipse.xtext.graphview.map.graphViewMapping;
  * @model
  * @generated
  */
-public interface EdgeMapping extends AbstractExpressionMapping {
+public interface EdgeMapping extends AbstractMappingDefinition, AbstractExpressionMapping {
 	/**
 	 * Returns the value of the '<em><b>Source Mapping</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

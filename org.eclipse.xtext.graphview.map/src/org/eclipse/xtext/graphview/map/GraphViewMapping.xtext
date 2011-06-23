@@ -37,8 +37,8 @@ EdgeMapping:
 	'}';
 	
 EdgeEndMapping:
-	create?='create'? mapping=[AbstractExpressionMapping] '(' expression=XExpression ')';
+	('ref' | call?='call') referencedMapping=[AbstractMappingDefinition] 'for' expression=XExpression;
 	
 MappingCall:
-	'call' mapping=[AbstractMapping] 'for' multi?='each'? expression=XExpression;
+	'call' referencedMapping=[AbstractMappingDefinition] 'for' multi?='each'? expression=XExpression;
 
