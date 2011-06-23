@@ -30,17 +30,6 @@ public class SpringAutoLayout extends AbstractAutoLayout {
 
 	private int iterations = 200;
 
-	@Override
-	protected Dimension calculatePreferredSize(IFigure container, int wHint,
-			int hHint) {
-		return estimateSize(container);
-	}
-
-	@Override
-	public Dimension getMinimumSize(IFigure container, int wHint, int hHint) {
-		return calculatePreferredSize(container, wHint, hHint);
-	}
-
 	public void layout(IFigure container) {
 		SpringLayoutAlgorithm layoutAlgorithm = new SpringLayoutAlgorithm(
 				LayoutStyles.NO_LAYOUT_NODE_RESIZING);
@@ -76,7 +65,7 @@ public class SpringAutoLayout extends AbstractAutoLayout {
 			}
 		}
 		try {
-			Dimension estimatedSize = estimateSize(container);
+			Dimension estimatedSize = getPeferredSize(container);
 			layoutAlgorithm.setIterations(getIterations());
 			layoutAlgorithm.applyLayout(Iterables.toArray(
 					childrenToNodes.values(), LayoutEntity.class), Iterables
@@ -99,7 +88,7 @@ public class SpringAutoLayout extends AbstractAutoLayout {
 		}
 	}
 
-	protected Dimension estimateSize(IFigure container) {
+	protected Dimension getPeferredSize(IFigure container) {
 		int area = 0;
 		for (Object child : container.getChildren()) {
 			if (child instanceof IFigure) {

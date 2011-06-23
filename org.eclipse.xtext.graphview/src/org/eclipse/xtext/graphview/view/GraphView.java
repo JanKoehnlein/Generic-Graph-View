@@ -34,13 +34,13 @@ public class GraphView extends ViewPart {
 
 	@Inject
 	private RefreshAction refreshAction;
-	
+
 	@Inject
 	private ExportToFileAction exportToFileAction;
-	
+
 	@Inject
 	private SelectDiagramConfigurationAction selectDiagramConfigurationAction;
-	
+
 	@Inject
 	private ElementSelectionConverter selectionConverter;
 
@@ -52,7 +52,6 @@ public class GraphView extends ViewPart {
 	private Object currentContents;
 
 	private Listener configurationListener;
-
 
 	@Override
 	public void createPartControl(Composite parent) {
@@ -67,10 +66,12 @@ public class GraphView extends ViewPart {
 				});
 			}
 		};
-		diagramConfigurationProvider.addConfigurationListener(configurationListener);
+		diagramConfigurationProvider
+				.addConfigurationListener(configurationListener);
 		getSite().getWorkbenchWindow().getSelectionService()
 				.addPostSelectionListener(selectionConverter);
-		IToolBarManager toolBarManager = getViewSite().getActionBars().getToolBarManager();
+		IToolBarManager toolBarManager = getViewSite().getActionBars()
+				.getToolBarManager();
 		toolBarManager.add(refreshAction);
 		toolBarManager.add(exportToFileAction);
 		toolBarManager.add(selectDiagramConfigurationAction);
@@ -93,7 +94,8 @@ public class GraphView extends ViewPart {
 		if (selectionConverter != null)
 			getSite().getWorkbenchWindow().getSelectionService()
 					.addPostSelectionListener(selectionConverter);
-		diagramConfigurationProvider.removeConfigurationListener(configurationListener);
+		diagramConfigurationProvider
+				.removeConfigurationListener(configurationListener);
 		currentContents = null;
 		super.dispose();
 	}
@@ -103,21 +105,22 @@ public class GraphView extends ViewPart {
 		setViewerContents(null, null, true);
 		setViewerContents(contents, editDomain.getClassLoader(), false);
 	}
-	
-	public boolean setViewerContents(Object contents, ClassLoader classLoader, boolean force) {
+
+	public boolean setViewerContents(Object contents, ClassLoader classLoader,
+			boolean force) {
 		boolean hasContent = false;
-		if(contents == null) {
-			if(force) {
+		if (contents == null) {
+			if (force) {
 				currentContents = null;
 				graphicalViewer.setContents(null);
 			}
 		} else {
-			if (force || contents != currentContents) {
-				DiagramInstance instanceModel = modelInstantiator.createInstance(
-					diagramConfigurationProvider.getDiagramMapping(),
-					contents, 
-					classLoader);
-				if(instanceModel != null) {
+			if ((force || contents != currentContents)
+					&& diagramConfigurationProvider.getDiagramMapping() != null) {
+				DiagramInstance instanceModel = modelInstantiator
+						.createInstance(diagramConfigurationProvider
+								.getDiagramMapping(), contents, classLoader);
+				if (instanceModel != null) {
 					currentContents = contents;
 					editDomain.setClassLoader(classLoader);
 					graphicalViewer.setContents(instanceModel);

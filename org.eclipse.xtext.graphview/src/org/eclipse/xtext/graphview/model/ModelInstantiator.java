@@ -22,7 +22,6 @@ import org.eclipse.xtext.graphview.map.graphViewMapping.LabelMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.MappingCall;
 import org.eclipse.xtext.graphview.map.graphViewMapping.NodeMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.util.GraphViewMappingSwitch;
-import org.eclipse.xtext.util.EmfFormatter;
 import org.eclipse.xtext.util.Strings;
 
 import com.google.common.collect.HashMultimap;

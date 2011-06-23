@@ -1,14 +1,14 @@
 package org.eclipse.xtext.graphview.shape;
 
 import org.eclipse.draw2d.FreeformLayer;
-import org.eclipse.draw2d.LayoutManager;
 import org.eclipse.draw2d.XYLayout;
 import org.eclipse.swt.SWT;
+import org.eclipse.xtext.graphview.layout.IAutoLayout;
 import org.eclipse.xtext.graphview.layout.SpringAutoLayout;
 
 public class DiagramShape extends FreeformLayer {
 
-	private LayoutManager autoLayoutManager;
+	private IAutoLayout autoLayoutManager;
 	
 	public DiagramShape() {
 		setLayoutManager(new XYLayout());
@@ -16,11 +16,11 @@ public class DiagramShape extends FreeformLayer {
 		setAutoLayoutManager(new SpringAutoLayout());
 	}
 
-	public LayoutManager getAutoLayoutManager() {
+	public IAutoLayout getAutoLayoutManager() {
 		return autoLayoutManager;
 	}
 
-	public void setAutoLayoutManager(LayoutManager autoLayoutManager) {
+	public void setAutoLayoutManager(IAutoLayout autoLayoutManager) {
 		this.autoLayoutManager = autoLayoutManager;
 	}
 }
