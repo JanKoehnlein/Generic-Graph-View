@@ -1,7 +1,6 @@
 package org.eclipse.xtext.graphview.view.config;
 
 import org.eclipse.jface.action.Action;
-import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.xtext.ui.PluginImageHelper;
 
@@ -13,8 +12,6 @@ public class SelectDiagramConfigurationAction extends Action {
 	@Inject
 	private Provider<SelectDiagramConfigurationDialog> configurationDialogProvider;
 
-	@Inject
-	private DefaultDiagramConfigurationProvider diagramConfigurationProvider;
 
 	public SelectDiagramConfigurationAction() {
 		setText("Config");
@@ -31,11 +28,6 @@ public class SelectDiagramConfigurationAction extends Action {
 	public void run() {
 		SelectDiagramConfigurationDialog configurationDialog = configurationDialogProvider
 				.get();
-		int result = configurationDialog.open();
-		if (result == Dialog.OK) {
-			diagramConfigurationProvider.setModels(
-					configurationDialog.getSelectedMapping(),
-					configurationDialog.getSelectedStyleSheet());
-		}
+		configurationDialog.open();
 	}
 }

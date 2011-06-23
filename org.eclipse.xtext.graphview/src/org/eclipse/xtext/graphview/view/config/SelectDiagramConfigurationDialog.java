@@ -5,6 +5,9 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
 
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionEvent;
@@ -18,6 +21,7 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage;
 import org.eclipse.xtext.graphview.style.graphViewStyle.GraphViewStylePackage;
+import org.eclipse.xtext.resource.EObjectDescription;
 import org.eclipse.xtext.resource.IEObjectDescription;
 import org.eclipse.xtext.resource.IReferenceDescription;
 import org.eclipse.xtext.resource.IResourceDescription;
@@ -39,6 +43,9 @@ public class SelectDiagramConfigurationDialog extends Dialog {
 	@Inject
 	private IReferenceFinder referenceFinder;
 
+	@Inject
+	private DefaultDiagramConfigurationProvider diagramConfigurationProvider;
+
 	private Combo mappingCombo;
 	private Combo styleCombo;
 
@@ -46,12 +53,11 @@ public class SelectDiagramConfigurationDialog extends Dialog {
 
 	private List<IEObjectDescription> sortedStyles;
 
-	private IEObjectDescription selectedMapping;
-
-	private IEObjectDescription selectedStyleSheet;;
+	private IEObjectDescription nullSelection;
 
 	public SelectDiagramConfigurationDialog() {
 		super(Display.getDefault().getActiveShell());
+		nullSelection = EObjectDescription.create("<none>", null);
 	}
 
 	@Override
@@ -94,20 +100,21 @@ public class SelectDiagramConfigurationDialog extends Dialog {
 
 	@Override
 	protected void okPressed() {
-		selectedMapping = getSelection(mappingCombo, sortedMappings);
-		selectedStyleSheet = getSelection(styleCombo, sortedStyles);
+		diagramConfigurationProvider.setModels(
+				getSelection(mappingCombo, sortedMappings),
+				getSelection(styleCombo, sortedStyles));
 		super.okPressed();
 	}
 
 	protected IEObjectDescription getSelection(Combo combo,
 			List<IEObjectDescription> data) {
 		int selectionIndex = combo.getSelectionIndex();
+		IEObjectDescription selection = null;
 		if (selectionIndex != -1)
-			return data.get(selectionIndex);
-		else if (data.isEmpty())
-			return null;
+			selection = data.get(selectionIndex);
 		else
-			return data.get(0);
+			selection = data.get(0);
+		return (selection == nullSelection) ? null : selection;
 	}
 
 	protected void populateMappingCombo() {
@@ -115,11 +122,13 @@ public class SelectDiagramConfigurationDialog extends Dialog {
 		Iterable<IEObjectDescription> mappings = index
 				.getExportedObjectsByType(GraphViewMappingPackage.Literals.DIAGRAM_MAPPING);
 		sortedMappings = sortByName(mappings);
+		sortedMappings.add(nullSelection);
 		for (IEObjectDescription mapping : sortedMappings) {
 			mappingCombo.add(mapping.getName().toString());
 		}
 		if (!sortedMappings.isEmpty()) {
-			mappingCombo.select(0);
+			mappingCombo.select(findIndex(sortedMappings,
+					diagramConfigurationProvider.getDiagramMapping()));
 			populateStyleCombo(sortedMappings.get(0));
 		}
 	}
@@ -128,29 +137,50 @@ public class SelectDiagramConfigurationDialog extends Dialog {
 		styleCombo.removeAll();
 		if (selectedMapping == null)
 			return;
-		final List<IReferenceDescription> references = Lists.newArrayList();
-		IAcceptor<IReferenceDescription> referenceAcceptor = new IAcceptor<IReferenceDescription>() {
-			public void accept(IReferenceDescription reference) {
-				references.add(reference);
-			}
-		};
-		referenceFinder.findIndexedReferences(new ReferenceQueryData(
-				selectedMapping.getEObjectURI()), referenceAcceptor, null);
 		Set<IEObjectDescription> styleSheets = Sets.newHashSet();
-		for (IReferenceDescription reference : references) {
-			IResourceDescription referringResource = index
-					.getResourceDescription(reference.getSourceEObjectUri()
-							.trimFragment());
-			for (IEObjectDescription styleSheet : referringResource
-					.getExportedObjectsByType(GraphViewStylePackage.Literals.STYLE_SHEET)) {
-				styleSheets.add(styleSheet);
+		if (selectedMapping != nullSelection) {
+			final List<IReferenceDescription> references = Lists.newArrayList();
+			IAcceptor<IReferenceDescription> referenceAcceptor = new IAcceptor<IReferenceDescription>() {
+				public void accept(IReferenceDescription reference) {
+					references.add(reference);
+				}
+			};
+			referenceFinder.findIndexedReferences(new ReferenceQueryData(
+					selectedMapping.getEObjectURI()), referenceAcceptor, null);
+			for (IReferenceDescription reference : references) {
+				IResourceDescription referringResource = index
+						.getResourceDescription(reference.getSourceEObjectUri()
+								.trimFragment());
+				for (IEObjectDescription styleSheet : referringResource
+						.getExportedObjectsByType(GraphViewStylePackage.Literals.STYLE_SHEET)) {
+					styleSheets.add(styleSheet);
+				}
 			}
 		}
 		sortedStyles = sortByName(styleSheets);
+		sortedStyles.add(nullSelection);
 		for (IEObjectDescription styleSheet : sortedStyles)
 			styleCombo.add(styleSheet.getName().toString());
 		if (!sortedStyles.isEmpty())
-			styleCombo.select(0);
+			styleCombo.select(findIndex(sortedStyles,
+					diagramConfigurationProvider.getStyleSheet()));
+	}
+
+	protected int findIndex(List<IEObjectDescription> descriptions,
+			EObject element) {
+		if (element != null) {
+			URI uri = EcoreUtil.getURI(element);
+			if (uri != null) {
+				for (int i = 0; i < descriptions.size(); ++i) {
+					IEObjectDescription description = descriptions.get(i);
+					if (uri.equals(description.getEObjectURI())) {
+						return i;
+					}
+				}
+			}
+			return 0;
+		}
+		return descriptions.size()-1;
 	}
 
 	protected List<IEObjectDescription> sortByName(
@@ -163,14 +193,6 @@ public class SelectDiagramConfigurationDialog extends Dialog {
 			}
 		});
 		return list;
-	}
-
-	public IEObjectDescription getSelectedMapping() {
-		return selectedMapping;
-	}
-
-	public IEObjectDescription getSelectedStyleSheet() {
-		return selectedStyleSheet;
 	}
 
 }

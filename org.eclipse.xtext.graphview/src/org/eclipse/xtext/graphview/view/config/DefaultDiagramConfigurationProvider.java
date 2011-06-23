@@ -66,7 +66,8 @@ public class DefaultDiagramConfigurationProvider implements
 			IEObjectDescription styleSheetModel) {
 		currentProject = null;
 		styleSheet = (StyleSheet) load(styleSheetModel);
-		EcoreUtil.resolveAll(styleSheet);
+		if(styleSheet != null) 
+			EcoreUtil.resolveAll(styleSheet);
 		diagramMapping = (DiagramMapping) load(mappingModel);
 		if (resourceChangeListener != null) {
 			workspace.removeResourceChangeListener(resourceChangeListener);
@@ -83,9 +84,11 @@ public class DefaultDiagramConfigurationProvider implements
 								LOG.error("Error reloading resource ", e);
 							}
 						}
-						diagramMapping = (DiagramMapping) EcoreUtil.resolve(
+						if(diagramMapping != null)
+							diagramMapping = (DiagramMapping) EcoreUtil.resolve(
 								diagramMapping, resourceSet);
-						styleSheet = (StyleSheet) EcoreUtil.resolve(styleSheet,
+						if(styleSheet != null) 
+							styleSheet = (StyleSheet) EcoreUtil.resolve(styleSheet,
 								resourceSet);
 						fireModelChanged();
 						return;
@@ -120,6 +123,8 @@ public class DefaultDiagramConfigurationProvider implements
 	}
 
 	protected EObject load(IEObjectDescription eObjectDescription) {
+		if (eObjectDescription == null)
+			return null;
 		IProject project = projectUtil.getProject(eObjectDescription
 				.getEObjectURI());
 		if (currentProject == null) {
