@@ -22,7 +22,7 @@ style EClassNode.Name as LabelShape {
 	border = new MarginBorder(5,5,5,5)
 }
 
-style EClassNode.Attributes , EClassNode.Operations as RectangleShape {
+style EClassNode.Attributes, EClassNode.Operations as RectangleShape {
 	outline = false
 	backgroundColor = color(#ffffff)
 }
