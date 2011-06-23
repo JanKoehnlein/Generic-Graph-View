@@ -169,12 +169,12 @@ public class AbstractGraphViewMappingSemanticSequencer extends AbstractSemanticS
 				}
 				else break;
 			case TypesPackage.JVM_UPPER_BOUND:
-				if(context == grammarAccess.getJvmUpperBoundRule()) {
-					sequence_JvmUpperBound_JvmUpperBound(context, (JvmUpperBound) semanticObject); 
+				if(context == grammarAccess.getJvmUpperBoundAndedRule()) {
+					sequence_JvmUpperBoundAnded_JvmUpperBound(context, (JvmUpperBound) semanticObject); 
 					return; 
 				}
-				else if(context == grammarAccess.getJvmUpperBoundAndedRule()) {
-					sequence_JvmUpperBoundAnded_JvmUpperBound(context, (JvmUpperBound) semanticObject); 
+				else if(context == grammarAccess.getJvmUpperBoundRule()) {
+					sequence_JvmUpperBound_JvmUpperBound(context, (JvmUpperBound) semanticObject); 
 					return; 
 				}
 				else break;
@@ -363,11 +363,7 @@ public class AbstractGraphViewMappingSemanticSequencer extends AbstractSemanticS
 				}
 				else break;
 			case XbasePackage.XCLOSURE:
-				if(context == grammarAccess.getXShortClosureRule()) {
-					sequence_XShortClosure_XClosure(context, (XClosure) semanticObject); 
-					return; 
-				}
-				else if(context == grammarAccess.getXExpressionRule() ||
+				if(context == grammarAccess.getXExpressionRule() ||
 				   context == grammarAccess.getXAssignmentRule() ||
 				   context == grammarAccess.getXAssignmentAccess().getXBinaryOperationLeftOperandAction_1_1_0_0_0() ||
 				   context == grammarAccess.getXOrExpressionRule() ||
@@ -397,6 +393,10 @@ public class AbstractGraphViewMappingSemanticSequencer extends AbstractSemanticS
 				   context == grammarAccess.getXParenthesizedExpressionRule() ||
 				   context == grammarAccess.getXExpressionInsideBlockRule()) {
 					sequence_XClosure_XClosure(context, (XClosure) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getXShortClosureRule()) {
+					sequence_XShortClosure_XClosure(context, (XClosure) semanticObject); 
 					return; 
 				}
 				else break;
@@ -985,9 +985,10 @@ public class AbstractGraphViewMappingSemanticSequencer extends AbstractSemanticS
 	
 	/**
 	 * Constraint:
-	 *     (imports+=Import* name=QualifiedName typeGuard=JvmTypeReference mappings+=AbstractExpressionMapping*)
+	 *     (imports+=Import* name=QualifiedName typeGuard=JvmTypeReference mappings+=AbstractExpressionMapping* unlessCondition=XExpression?)
 	 *
 	 * Features:
+	 *    unlessCondition[0, 1]
 	 *    name[1, 1]
 	 *    mappings[0, *]
 	 *    imports[0, *]
@@ -1020,10 +1021,12 @@ public class AbstractGraphViewMappingSemanticSequencer extends AbstractSemanticS
 	 *         expression=XExpression 
 	 *         sourceMapping=EdgeEndMapping? 
 	 *         targetMapping=EdgeEndMapping? 
-	 *         mappings+=LabelMapping*
+	 *         mappings+=LabelMapping* 
+	 *         unlessCondition=XExpression?
 	 *     )
 	 *
 	 * Features:
+	 *    unlessCondition[0, 1]
 	 *    name[1, 1]
 	 *    mappings[0, *]
 	 *    multi[0, 1]
@@ -1144,9 +1147,10 @@ public class AbstractGraphViewMappingSemanticSequencer extends AbstractSemanticS
 	
 	/**
 	 * Constraint:
-	 *     (name=ID multi?='each'? expression=XExpression)
+	 *     (name=ID multi?='each'? expression=XExpression unlessCondition=XExpression?)
 	 *
 	 * Features:
+	 *    unlessCondition[0, 1]
 	 *    name[1, 1]
 	 *    multi[0, 1]
 	 *    expression[1, 1]
@@ -1158,9 +1162,10 @@ public class AbstractGraphViewMappingSemanticSequencer extends AbstractSemanticS
 	
 	/**
 	 * Constraint:
-	 *     (referencedMapping=[AbstractMappingDefinition|ID] multi?='each'? expression=XExpression)
+	 *     (referencedMapping=[AbstractMappingDefinition|ID] multi?='each'? expression=XExpression unlessCondition=XExpression?)
 	 *
 	 * Features:
+	 *    unlessCondition[0, 1]
 	 *    multi[0, 1]
 	 *    expression[1, 1]
 	 *    referencedMapping[1, 1]
@@ -1172,9 +1177,10 @@ public class AbstractGraphViewMappingSemanticSequencer extends AbstractSemanticS
 	
 	/**
 	 * Constraint:
-	 *     (name=ID multi?='each'? expression=XExpression mappings+=AbstractExpressionMapping*)
+	 *     (name=ID multi?='each'? expression=XExpression mappings+=AbstractExpressionMapping* unlessCondition=XExpression?)
 	 *
 	 * Features:
+	 *    unlessCondition[0, 1]
 	 *    name[1, 1]
 	 *    mappings[0, *]
 	 *    multi[0, 1]

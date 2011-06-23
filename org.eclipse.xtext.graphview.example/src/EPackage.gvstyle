@@ -1,0 +1,40 @@
+import org.eclipse.xtext.graphview.shape.*
+import org.eclipse.xtext.graphview.layout.*  
+import org.eclipse.draw2d.*
+import EPackageDiagram.*
+
+stylesheet EPackageDiagram for EPackageDiagram
+
+style EPackageDiagram as DiagramShape {
+	val autoLayout = new SpringAutoLayout()
+	autoLayout.iterations = 500
+	autoLayout.blankToNodeAreaRatio = 3
+	autoLayoutManager = autoLayout  
+}
+
+style EDataTypeNode.Name as LabelShape {
+	font = font("Helvetica", 13, 1) 
+	border = new MarginBorder(5,5,5,5) 
+}
+
+style EClassNode.Name as LabelShape { 
+	font = font("Helvetica", 13, 1 + (if (element.abstract) 2 else 0))
+	border = new MarginBorder(5,5,5,5)
+}
+
+style EClassNode.Attributes , EClassNode.Operations as RectangleShape {
+	outline = false
+	backgroundColor = color(#ffffff)
+}
+
+style EClassNode.ReferenceEdge.EdgeLabel as LabelShape {
+	connectionAlignment = ConnectionLocator::TARGET
+}
+
+style EClassNode.SuperclassEdge as ConnectionShape {
+	var arrow = new PolygonDecoration()
+	arrow.setScale(10,10)
+	arrow.backgroundColor = color(#ffffff)
+	arrow.lineWidth = 2
+	targetDecoration = arrow 
+}

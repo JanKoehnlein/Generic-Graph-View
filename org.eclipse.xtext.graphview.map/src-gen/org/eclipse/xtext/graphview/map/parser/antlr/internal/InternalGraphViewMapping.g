@@ -165,7 +165,29 @@ ruleDiagramMapping returns [EObject current=null]
     {
     	newLeafNode(otherlv_7, grammarAccess.getDiagramMappingAccess().getRightCurlyBracketKeyword_7());
     }
+(	otherlv_8='unless' 
+    {
+    	newLeafNode(otherlv_8, grammarAccess.getDiagramMappingAccess().getUnlessKeyword_8_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getDiagramMappingAccess().getUnlessConditionXExpressionParserRuleCall_8_1_0()); 
+	    }
+		lv_unlessCondition_9_0=ruleXExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getDiagramMappingRule());
+	        }
+       		set(
+       			$current, 
+       			"unlessCondition",
+        		lv_unlessCondition_9_0, 
+        		"XExpression");
+	        afterParserOrEnumRuleCall();
+	    }
+
 )
+))?)
 ;
 
 
@@ -418,7 +440,29 @@ ruleNodeMapping returns [EObject current=null]
     {
     	newLeafNode(otherlv_7, grammarAccess.getNodeMappingAccess().getRightCurlyBracketKeyword_7());
     }
+(	otherlv_8='unless' 
+    {
+    	newLeafNode(otherlv_8, grammarAccess.getNodeMappingAccess().getUnlessKeyword_8_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getNodeMappingAccess().getUnlessConditionXExpressionParserRuleCall_8_1_0()); 
+	    }
+		lv_unlessCondition_9_0=ruleXExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getNodeMappingRule());
+	        }
+       		set(
+       			$current, 
+       			"unlessCondition",
+        		lv_unlessCondition_9_0, 
+        		"XExpression");
+	        afterParserOrEnumRuleCall();
+	    }
+
 )
+))?)
 ;
 
 
@@ -498,7 +542,29 @@ ruleLabelMapping returns [EObject current=null]
 	    }
 
 )
-))
+)(	otherlv_5='unless' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getLabelMappingAccess().getUnlessKeyword_5_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getLabelMappingAccess().getUnlessConditionXExpressionParserRuleCall_5_1_0()); 
+	    }
+		lv_unlessCondition_6_0=ruleXExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getLabelMappingRule());
+	        }
+       		set(
+       			$current, 
+       			"unlessCondition",
+        		lv_unlessCondition_6_0, 
+        		"XExpression");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?)
 ;
 
 
@@ -644,7 +710,29 @@ ruleEdgeMapping returns [EObject current=null]
     {
     	newLeafNode(otherlv_10, grammarAccess.getEdgeMappingAccess().getRightCurlyBracketKeyword_10());
     }
+(	otherlv_11='unless' 
+    {
+    	newLeafNode(otherlv_11, grammarAccess.getEdgeMappingAccess().getUnlessKeyword_11_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getEdgeMappingAccess().getUnlessConditionXExpressionParserRuleCall_11_1_0()); 
+	    }
+		lv_unlessCondition_12_0=ruleXExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getEdgeMappingRule());
+	        }
+       		set(
+       			$current, 
+       			"unlessCondition",
+        		lv_unlessCondition_12_0, 
+        		"XExpression");
+	        afterParserOrEnumRuleCall();
+	    }
+
 )
+))?)
 ;
 
 
@@ -795,7 +883,29 @@ ruleMappingCall returns [EObject current=null]
 	    }
 
 )
-))
+)(	otherlv_5='unless' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getMappingCallAccess().getUnlessKeyword_5_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getMappingCallAccess().getUnlessConditionXExpressionParserRuleCall_5_1_0()); 
+	    }
+		lv_unlessCondition_6_0=ruleXExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getMappingCallRule());
+	        }
+       		set(
+       			$current, 
+       			"unlessCondition",
+        		lv_unlessCondition_6_0, 
+        		"XExpression");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?)
 ;
 
 

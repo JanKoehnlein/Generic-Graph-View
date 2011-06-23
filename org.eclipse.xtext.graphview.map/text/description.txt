@@ -8,6 +8,7 @@ This can be disabled with -vmargs -Dorg.eclipse.emf.examples.generator.validator
 Package graphViewMapping <http://www.eclipse.org/xtext/graphview/map/GraphViewMapping>
 
   Class AbstractMapping -> JvmIdentifiableElement
+    Reference unlessCondition : XExpression
 
   Class AbstractMappingDefinition -> AbstractMapping
     Attribute name : EString

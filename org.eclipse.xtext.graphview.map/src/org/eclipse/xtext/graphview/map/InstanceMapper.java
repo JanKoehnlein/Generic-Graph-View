@@ -33,6 +33,12 @@ public class InstanceMapper implements IInstanceMapper {
 	}
 	
 	public Object map(AbstractExpressionMapping mapping, Object thisElement) {
+		if(mapping.getUnlessCondition() != null) {
+			Object unless = evaluate(mapping.getUnlessCondition(), thisElement);
+			if(unless instanceof Boolean && ((Boolean) unless).booleanValue()) {
+				return null;
+			}
+		}
 		Object value = evaluate(mapping.getExpression(), thisElement);
 		if (mapping.isMulti()) {
 			if (value == null) {

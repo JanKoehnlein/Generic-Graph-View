@@ -4,17 +4,19 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import org.eclipse.draw2d.Connection;
+import org.eclipse.draw2d.ConnectionRouter;
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.XYLayout;
+import org.eclipse.draw2d.Layer;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
 
 import com.google.common.collect.Lists;
 
-public class GridAutoLayout extends XYLayout {
+public class GridAutoLayout extends AbstractAutoLayout {
 
-	private int offset = 16;
+	private int offset = 40;
 
 	public int getOffset() {
 		return offset;
@@ -24,7 +26,6 @@ public class GridAutoLayout extends XYLayout {
 		this.offset = offset;
 	}
 	
-	@Override
 	public void layout(IFigure container) {
 		@SuppressWarnings("unchecked")
 		List<IFigure> children = Lists.newArrayList(container.getChildren());
@@ -56,6 +57,15 @@ public class GridAutoLayout extends XYLayout {
 				currentX += child.getBounds().width + getOffset();
 			}
 			currentY += currentRowHeight + getOffset();
+		}
+		Layer connectionLayer = getConnectionLayer(container);
+		ConnectionRouter connectionRouter = getConnectionRouter(container);
+		if (connectionLayer != null && connectionRouter != null) {
+			for (Object child : connectionLayer.getChildren()) {
+				if (child instanceof Connection) {
+					((Connection) child).setConnectionRouter(connectionRouter);
+				}
+			}
 		}
 	}
 

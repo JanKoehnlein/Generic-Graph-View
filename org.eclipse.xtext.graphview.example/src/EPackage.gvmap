@@ -1,0 +1,30 @@
+import org.eclipse.emf.ecore.*
+
+diagram EPackageDiagram type EPackage {
+ 	node EClassNode for each EClassifiers.filter(typeof (EClass)) {  
+		label Name for this
+		node Attributes for EAttributes {
+			label Label for each map(a|a.name + ": " + a.EType.name)		
+		} unless EAttributes.empty
+		node Operations for EOperations {
+			label Label for each map(a|a.name + "(" 
+					+ a.EParameters.map(p|p.EType.name).join(", ") 
+					+ "): " + a.EType.name
+			)		
+		}  unless EOperations.empty
+		edge ReferenceEdge for each EReferences {
+			-> ref EClassNode for EType
+			label EdgeLabel for name   
+		} unless true
+		edge SuperclassEdge for each ESuperTypes {
+			-> ref EClassNode for this   
+		}
+	} 
+	node EDataTypeNode for each this.EClassifiers.filter(typeof (EDataType)) {
+		label Name for name
+	} unless true 
+	node InnerPackage for each ESubpackages {
+		label PackageLabel for this
+		call EPackageDiagram for this
+	}
+}

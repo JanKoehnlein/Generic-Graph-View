@@ -3,8 +3,8 @@ package org.eclipse.xtext.graphview.shape;
 import org.eclipse.draw2d.FreeformLayer;
 import org.eclipse.draw2d.XYLayout;
 import org.eclipse.swt.SWT;
+import org.eclipse.xtext.graphview.layout.GridAutoLayout;
 import org.eclipse.xtext.graphview.layout.IAutoLayout;
-import org.eclipse.xtext.graphview.layout.SpringAutoLayout;
 
 public class DiagramShape extends FreeformLayer {
 
@@ -13,7 +13,7 @@ public class DiagramShape extends FreeformLayer {
 	public DiagramShape() {
 		setLayoutManager(new XYLayout());
 		setFont(FontLiterals.font("Helvetica", 11, SWT.None));
-		setAutoLayoutManager(new SpringAutoLayout());
+		setAutoLayoutManager(new GridAutoLayout());
 	}
 
 	public IAutoLayout getAutoLayoutManager() {

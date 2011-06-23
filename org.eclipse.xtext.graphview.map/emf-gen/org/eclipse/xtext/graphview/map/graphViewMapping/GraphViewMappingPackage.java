@@ -72,13 +72,22 @@ public interface GraphViewMappingPackage extends EPackage {
 	int ABSTRACT_MAPPING = 0;
 
 	/**
+	 * The feature id for the '<em><b>Unless Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_MAPPING__UNLESS_CONDITION = TypesPackage.JVM_IDENTIFIABLE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Abstract Mapping</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_MAPPING_FEATURE_COUNT = TypesPackage.JVM_IDENTIFIABLE_ELEMENT_FEATURE_COUNT + 0;
+	int ABSTRACT_MAPPING_FEATURE_COUNT = TypesPackage.JVM_IDENTIFIABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.AbstractMappingDefinitionImpl <em>Abstract Mapping Definition</em>}' class.
@@ -89,6 +98,15 @@ public interface GraphViewMappingPackage extends EPackage {
 	 * @generated
 	 */
 	int ABSTRACT_MAPPING_DEFINITION = 1;
+
+	/**
+	 * The feature id for the '<em><b>Unless Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_MAPPING_DEFINITION__UNLESS_CONDITION = ABSTRACT_MAPPING__UNLESS_CONDITION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -148,6 +166,15 @@ public interface GraphViewMappingPackage extends EPackage {
 	int ABSTRACT_EXPRESSION_MAPPING = 2;
 
 	/**
+	 * The feature id for the '<em><b>Unless Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_EXPRESSION_MAPPING__UNLESS_CONDITION = ABSTRACT_MAPPING__UNLESS_CONDITION;
+
+	/**
 	 * The feature id for the '<em><b>Multi</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -183,6 +210,15 @@ public interface GraphViewMappingPackage extends EPackage {
 	 * @generated
 	 */
 	int ABSTRACT_MAPPING_REFERENCE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Unless Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_MAPPING_REFERENCE__UNLESS_CONDITION = ABSTRACT_EXPRESSION_MAPPING__UNLESS_CONDITION;
 
 	/**
 	 * The feature id for the '<em><b>Multi</b></em>' attribute.
@@ -237,6 +273,15 @@ public interface GraphViewMappingPackage extends EPackage {
 	 * @ordered
 	 */
 	int IMPORT_FEATURE_COUNT = 1;
+
+	/**
+	 * The feature id for the '<em><b>Unless Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGRAM_MAPPING__UNLESS_CONDITION = ABSTRACT_MAPPING_DEFINITION__UNLESS_CONDITION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -294,6 +339,15 @@ public interface GraphViewMappingPackage extends EPackage {
 	int NODE_MAPPING = 6;
 
 	/**
+	 * The feature id for the '<em><b>Unless Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NODE_MAPPING__UNLESS_CONDITION = ABSTRACT_MAPPING_DEFINITION__UNLESS_CONDITION;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -349,6 +403,15 @@ public interface GraphViewMappingPackage extends EPackage {
 	int LABEL_MAPPING = 7;
 
 	/**
+	 * The feature id for the '<em><b>Unless Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LABEL_MAPPING__UNLESS_CONDITION = ABSTRACT_MAPPING_DEFINITION__UNLESS_CONDITION;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -402,6 +465,15 @@ public interface GraphViewMappingPackage extends EPackage {
 	 * @generated
 	 */
 	int EDGE_MAPPING = 8;
+
+	/**
+	 * The feature id for the '<em><b>Unless Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDGE_MAPPING__UNLESS_CONDITION = ABSTRACT_MAPPING_DEFINITION__UNLESS_CONDITION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -477,6 +549,15 @@ public interface GraphViewMappingPackage extends EPackage {
 	int EDGE_END_MAPPING = 9;
 
 	/**
+	 * The feature id for the '<em><b>Unless Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDGE_END_MAPPING__UNLESS_CONDITION = ABSTRACT_MAPPING_REFERENCE__UNLESS_CONDITION;
+
+	/**
 	 * The feature id for the '<em><b>Multi</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -533,6 +614,15 @@ public interface GraphViewMappingPackage extends EPackage {
 	int MAPPING_CALL = 10;
 
 	/**
+	 * The feature id for the '<em><b>Unless Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING_CALL__UNLESS_CONDITION = ABSTRACT_MAPPING_REFERENCE__UNLESS_CONDITION;
+
+	/**
 	 * The feature id for the '<em><b>Multi</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -578,6 +668,17 @@ public interface GraphViewMappingPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getAbstractMapping();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping#getUnlessCondition <em>Unless Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Unless Condition</em>'.
+	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping#getUnlessCondition()
+	 * @see #getAbstractMapping()
+	 * @generated
+	 */
+	EReference getAbstractMapping_UnlessCondition();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMappingDefinition <em>Abstract Mapping Definition</em>}'.
@@ -831,6 +932,14 @@ public interface GraphViewMappingPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ABSTRACT_MAPPING = eINSTANCE.getAbstractMapping();
+
+		/**
+		 * The meta object literal for the '<em><b>Unless Condition</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ABSTRACT_MAPPING__UNLESS_CONDITION = eINSTANCE.getAbstractMapping_UnlessCondition();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.AbstractMappingDefinitionImpl <em>Abstract Mapping Definition</em>}' class.

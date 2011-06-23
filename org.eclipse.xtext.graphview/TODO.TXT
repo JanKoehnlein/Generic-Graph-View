@@ -1,8 +1,15 @@
 View
 - resize / move elements in subdiagrams
+- zoom
+- persist config
+- loop edges
 
 Mapping DSL
+- skip
 - validation
+
+Styling DSL:
+- default imports
 
 DONE
 - AutoLayout is not a draw2d layout

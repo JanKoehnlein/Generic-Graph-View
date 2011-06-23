@@ -11,7 +11,9 @@
   <foreignModel>GraphViewMapping.ecore</foreignModel>
   <genPackages prefix="GraphViewMapping" basePackage="org.eclipse.xtext.graphview.map"
       disposableProviderFactory="true" ecorePackage="GraphViewMapping.ecore#/">
-    <genClasses image="false" ecoreClass="GraphViewMapping.ecore#//AbstractMapping"/>
+    <genClasses image="false" ecoreClass="GraphViewMapping.ecore#//AbstractMapping">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GraphViewMapping.ecore#//AbstractMapping/skip"/>
+    </genClasses>
     <genClasses ecoreClass="GraphViewMapping.ecore#//AbstractMappingDefinition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GraphViewMapping.ecore#//AbstractMappingDefinition/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GraphViewMapping.ecore#//AbstractMappingDefinition/mappings"/>

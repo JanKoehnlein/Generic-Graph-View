@@ -190,6 +190,8 @@ public class ModelInstantiator {
 			EdgeEndMapping edgeEndMapping, EdgeInstance edgeInstance) {
 		Object semanticElement = instanceMapper.map(edgeEndMapping,
 				edgeInstance.getSemanticElement());
+		if(semanticElement == null)
+			return null;
 		for (AbstractInstance instance : semantic2instance.get(semanticElement)) {
 			if (instance instanceof NodeInstance
 					&& instance.getMapping() == edgeEndMapping.getReferencedMapping()) {

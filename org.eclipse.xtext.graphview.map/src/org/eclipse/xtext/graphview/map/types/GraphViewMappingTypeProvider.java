@@ -1,10 +1,13 @@
 package org.eclipse.xtext.graphview.map.types;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.xtext.common.types.JvmGenericArrayTypeReference;
 import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
 import org.eclipse.xtext.common.types.JvmTypeReference;
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractExpressionMapping;
+import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping;
+import org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage;
 import org.eclipse.xtext.xbase.typing.XbaseTypeProvider;
 
 import com.google.inject.Singleton;
@@ -41,5 +44,12 @@ public class GraphViewMappingTypeProvider extends XbaseTypeProvider {
 			}
 		}
 		return type;
+	}
+	
+	protected JvmTypeReference _expectedType(AbstractMapping mapping, EReference reference, int index, boolean rawType) {
+		if(reference==GraphViewMappingPackage.Literals.ABSTRACT_MAPPING__UNLESS_CONDITION)
+			return getTypeReferences().getTypeForName(Boolean.TYPE, mapping);
+		else
+			return null;
 	}
 }

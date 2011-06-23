@@ -9,7 +9,7 @@ DiagramMapping:
 	imports+=Import*
 	'diagram' name=QualifiedName 'type' typeGuard=JvmTypeReference '{'
 		mappings+=AbstractExpressionMapping*
-	'}';
+	'}' ('unless' unlessCondition=XExpression)?;
 
 Import:
 	'import' importedNamespace=QualifiedNameWithWildcard;
@@ -23,10 +23,10 @@ AbstractExpressionMapping:
 NodeMapping:
 	'node' name=ID 'for' multi?='each'? expression=XExpression '{'
 		mappings+=AbstractExpressionMapping*
-	'}';
+	'}' ('unless' unlessCondition=XExpression)?;
 
 LabelMapping:
-	'label' name=ID 'for' multi?='each'? expression=XExpression;
+	'label' name=ID 'for' multi?='each'? expression=XExpression ('unless' unlessCondition=XExpression)?;
 
 EdgeMapping:
 	'edge' name=ID 'for' multi?='each'? expression=XExpression '{'
@@ -34,11 +34,11 @@ EdgeMapping:
 		'->' 
 		targetMapping=EdgeEndMapping? 
 		mappings+=LabelMapping*
-	'}';
+	'}' ('unless' unlessCondition=XExpression)?;
 	
 EdgeEndMapping:
 	('ref' | call?='call') referencedMapping=[AbstractMappingDefinition] 'for' expression=XExpression;
 	
 MappingCall:
-	'call' referencedMapping=[AbstractMappingDefinition] 'for' multi?='each'? expression=XExpression;
+	'call' referencedMapping=[AbstractMappingDefinition] 'for' multi?='each'? expression=XExpression ('unless' unlessCondition=XExpression)?;
 

@@ -33,14 +33,18 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 		private final Assignment cMappingsAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final RuleCall cMappingsAbstractExpressionMappingParserRuleCall_6_0 = (RuleCall)cMappingsAssignment_6.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
+		private final Keyword cUnlessKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Assignment cUnlessConditionAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
+		private final RuleCall cUnlessConditionXExpressionParserRuleCall_8_1_0 = (RuleCall)cUnlessConditionAssignment_8_1.eContents().get(0);
 		
 		//DiagramMapping:
 		//	imports+=Import* "diagram" name=QualifiedName "type" typeGuard=JvmTypeReference "{"
-		//	mappings+=AbstractExpressionMapping* "}";
+		//	mappings+=AbstractExpressionMapping* "}" ("unless" unlessCondition=XExpression)?;
 		public ParserRule getRule() { return rule; }
 
 		//imports+=Import* "diagram" name=QualifiedName "type" typeGuard=JvmTypeReference "{" mappings+=AbstractExpressionMapping*
-		//"}"
+		//"}" ("unless" unlessCondition=XExpression)?
 		public Group getGroup() { return cGroup; }
 
 		//imports+=Import*
@@ -78,6 +82,18 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
+
+		//("unless" unlessCondition=XExpression)?
+		public Group getGroup_8() { return cGroup_8; }
+
+		//"unless"
+		public Keyword getUnlessKeyword_8_0() { return cUnlessKeyword_8_0; }
+
+		//unlessCondition=XExpression
+		public Assignment getUnlessConditionAssignment_8_1() { return cUnlessConditionAssignment_8_1; }
+
+		//XExpression
+		public RuleCall getUnlessConditionXExpressionParserRuleCall_8_1_0() { return cUnlessConditionXExpressionParserRuleCall_8_1_0; }
 	}
 
 	public class ImportElements extends AbstractParserRuleElementFinder {
@@ -175,12 +191,18 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 		private final Assignment cMappingsAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final RuleCall cMappingsAbstractExpressionMappingParserRuleCall_6_0 = (RuleCall)cMappingsAssignment_6.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
+		private final Keyword cUnlessKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Assignment cUnlessConditionAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
+		private final RuleCall cUnlessConditionXExpressionParserRuleCall_8_1_0 = (RuleCall)cUnlessConditionAssignment_8_1.eContents().get(0);
 		
 		//NodeMapping:
-		//	"node" name=ID "for" multi?="each"? expression=XExpression "{" mappings+=AbstractExpressionMapping* "}";
+		//	"node" name=ID "for" multi?="each"? expression=XExpression "{" mappings+=AbstractExpressionMapping* "}" ("unless"
+		//	unlessCondition=XExpression)?;
 		public ParserRule getRule() { return rule; }
 
-		//"node" name=ID "for" multi?="each"? expression=XExpression "{" mappings+=AbstractExpressionMapping* "}"
+		//"node" name=ID "for" multi?="each"? expression=XExpression "{" mappings+=AbstractExpressionMapping* "}" ("unless"
+		//unlessCondition=XExpression)?
 		public Group getGroup() { return cGroup; }
 
 		//"node"
@@ -218,6 +240,18 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
+
+		//("unless" unlessCondition=XExpression)?
+		public Group getGroup_8() { return cGroup_8; }
+
+		//"unless"
+		public Keyword getUnlessKeyword_8_0() { return cUnlessKeyword_8_0; }
+
+		//unlessCondition=XExpression
+		public Assignment getUnlessConditionAssignment_8_1() { return cUnlessConditionAssignment_8_1; }
+
+		//XExpression
+		public RuleCall getUnlessConditionXExpressionParserRuleCall_8_1_0() { return cUnlessConditionXExpressionParserRuleCall_8_1_0; }
 	}
 
 	public class LabelMappingElements extends AbstractParserRuleElementFinder {
@@ -231,12 +265,16 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 		private final Keyword cMultiEachKeyword_3_0 = (Keyword)cMultiAssignment_3.eContents().get(0);
 		private final Assignment cExpressionAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cExpressionXExpressionParserRuleCall_4_0 = (RuleCall)cExpressionAssignment_4.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cUnlessKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cUnlessConditionAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cUnlessConditionXExpressionParserRuleCall_5_1_0 = (RuleCall)cUnlessConditionAssignment_5_1.eContents().get(0);
 		
 		//LabelMapping:
-		//	"label" name=ID "for" multi?="each"? expression=XExpression;
+		//	"label" name=ID "for" multi?="each"? expression=XExpression ("unless" unlessCondition=XExpression)?;
 		public ParserRule getRule() { return rule; }
 
-		//"label" name=ID "for" multi?="each"? expression=XExpression
+		//"label" name=ID "for" multi?="each"? expression=XExpression ("unless" unlessCondition=XExpression)?
 		public Group getGroup() { return cGroup; }
 
 		//"label"
@@ -262,6 +300,18 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 
 		//XExpression
 		public RuleCall getExpressionXExpressionParserRuleCall_4_0() { return cExpressionXExpressionParserRuleCall_4_0; }
+
+		//("unless" unlessCondition=XExpression)?
+		public Group getGroup_5() { return cGroup_5; }
+
+		//"unless"
+		public Keyword getUnlessKeyword_5_0() { return cUnlessKeyword_5_0; }
+
+		//unlessCondition=XExpression
+		public Assignment getUnlessConditionAssignment_5_1() { return cUnlessConditionAssignment_5_1; }
+
+		//XExpression
+		public RuleCall getUnlessConditionXExpressionParserRuleCall_5_1_0() { return cUnlessConditionXExpressionParserRuleCall_5_1_0; }
 	}
 
 	public class EdgeMappingElements extends AbstractParserRuleElementFinder {
@@ -284,14 +334,18 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 		private final Assignment cMappingsAssignment_9 = (Assignment)cGroup.eContents().get(9);
 		private final RuleCall cMappingsLabelMappingParserRuleCall_9_0 = (RuleCall)cMappingsAssignment_9.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Group cGroup_11 = (Group)cGroup.eContents().get(11);
+		private final Keyword cUnlessKeyword_11_0 = (Keyword)cGroup_11.eContents().get(0);
+		private final Assignment cUnlessConditionAssignment_11_1 = (Assignment)cGroup_11.eContents().get(1);
+		private final RuleCall cUnlessConditionXExpressionParserRuleCall_11_1_0 = (RuleCall)cUnlessConditionAssignment_11_1.eContents().get(0);
 		
 		//EdgeMapping:
 		//	"edge" name=ID "for" multi?="each"? expression=XExpression "{" sourceMapping=EdgeEndMapping? "->"
-		//	targetMapping=EdgeEndMapping? mappings+=LabelMapping* "}";
+		//	targetMapping=EdgeEndMapping? mappings+=LabelMapping* "}" ("unless" unlessCondition=XExpression)?;
 		public ParserRule getRule() { return rule; }
 
 		//"edge" name=ID "for" multi?="each"? expression=XExpression "{" sourceMapping=EdgeEndMapping? "->"
-		//targetMapping=EdgeEndMapping? mappings+=LabelMapping* "}"
+		//targetMapping=EdgeEndMapping? mappings+=LabelMapping* "}" ("unless" unlessCondition=XExpression)?
 		public Group getGroup() { return cGroup; }
 
 		//"edge"
@@ -344,6 +398,18 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
+
+		//("unless" unlessCondition=XExpression)?
+		public Group getGroup_11() { return cGroup_11; }
+
+		//"unless"
+		public Keyword getUnlessKeyword_11_0() { return cUnlessKeyword_11_0; }
+
+		//unlessCondition=XExpression
+		public Assignment getUnlessConditionAssignment_11_1() { return cUnlessConditionAssignment_11_1; }
+
+		//XExpression
+		public RuleCall getUnlessConditionXExpressionParserRuleCall_11_1_0() { return cUnlessConditionXExpressionParserRuleCall_11_1_0; }
 	}
 
 	public class EdgeEndMappingElements extends AbstractParserRuleElementFinder {
@@ -410,12 +476,18 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 		private final Keyword cMultiEachKeyword_3_0 = (Keyword)cMultiAssignment_3.eContents().get(0);
 		private final Assignment cExpressionAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cExpressionXExpressionParserRuleCall_4_0 = (RuleCall)cExpressionAssignment_4.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cUnlessKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cUnlessConditionAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cUnlessConditionXExpressionParserRuleCall_5_1_0 = (RuleCall)cUnlessConditionAssignment_5_1.eContents().get(0);
 		
 		//MappingCall:
-		//	"call" referencedMapping=[AbstractMappingDefinition] "for" multi?="each"? expression=XExpression;
+		//	"call" referencedMapping=[AbstractMappingDefinition] "for" multi?="each"? expression=XExpression ("unless"
+		//	unlessCondition=XExpression)?;
 		public ParserRule getRule() { return rule; }
 
-		//"call" referencedMapping=[AbstractMappingDefinition] "for" multi?="each"? expression=XExpression
+		//"call" referencedMapping=[AbstractMappingDefinition] "for" multi?="each"? expression=XExpression ("unless"
+		//unlessCondition=XExpression)?
 		public Group getGroup() { return cGroup; }
 
 		//"call"
@@ -444,6 +516,18 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 
 		//XExpression
 		public RuleCall getExpressionXExpressionParserRuleCall_4_0() { return cExpressionXExpressionParserRuleCall_4_0; }
+
+		//("unless" unlessCondition=XExpression)?
+		public Group getGroup_5() { return cGroup_5; }
+
+		//"unless"
+		public Keyword getUnlessKeyword_5_0() { return cUnlessKeyword_5_0; }
+
+		//unlessCondition=XExpression
+		public Assignment getUnlessConditionAssignment_5_1() { return cUnlessConditionAssignment_5_1; }
+
+		//XExpression
+		public RuleCall getUnlessConditionXExpressionParserRuleCall_5_1_0() { return cUnlessConditionXExpressionParserRuleCall_5_1_0; }
 	}
 	
 	
@@ -480,7 +564,7 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 	
 	//DiagramMapping:
 	//	imports+=Import* "diagram" name=QualifiedName "type" typeGuard=JvmTypeReference "{"
-	//	mappings+=AbstractExpressionMapping* "}";
+	//	mappings+=AbstractExpressionMapping* "}" ("unless" unlessCondition=XExpression)?;
 	public DiagramMappingElements getDiagramMappingAccess() {
 		return (pDiagramMapping != null) ? pDiagramMapping : (pDiagramMapping = new DiagramMappingElements());
 	}
@@ -520,7 +604,8 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 	}
 
 	//NodeMapping:
-	//	"node" name=ID "for" multi?="each"? expression=XExpression "{" mappings+=AbstractExpressionMapping* "}";
+	//	"node" name=ID "for" multi?="each"? expression=XExpression "{" mappings+=AbstractExpressionMapping* "}" ("unless"
+	//	unlessCondition=XExpression)?;
 	public NodeMappingElements getNodeMappingAccess() {
 		return (pNodeMapping != null) ? pNodeMapping : (pNodeMapping = new NodeMappingElements());
 	}
@@ -530,7 +615,7 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 	}
 
 	//LabelMapping:
-	//	"label" name=ID "for" multi?="each"? expression=XExpression;
+	//	"label" name=ID "for" multi?="each"? expression=XExpression ("unless" unlessCondition=XExpression)?;
 	public LabelMappingElements getLabelMappingAccess() {
 		return (pLabelMapping != null) ? pLabelMapping : (pLabelMapping = new LabelMappingElements());
 	}
@@ -541,7 +626,7 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 
 	//EdgeMapping:
 	//	"edge" name=ID "for" multi?="each"? expression=XExpression "{" sourceMapping=EdgeEndMapping? "->"
-	//	targetMapping=EdgeEndMapping? mappings+=LabelMapping* "}";
+	//	targetMapping=EdgeEndMapping? mappings+=LabelMapping* "}" ("unless" unlessCondition=XExpression)?;
 	public EdgeMappingElements getEdgeMappingAccess() {
 		return (pEdgeMapping != null) ? pEdgeMapping : (pEdgeMapping = new EdgeMappingElements());
 	}
@@ -561,7 +646,8 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 	}
 
 	//MappingCall:
-	//	"call" referencedMapping=[AbstractMappingDefinition] "for" multi?="each"? expression=XExpression;
+	//	"call" referencedMapping=[AbstractMappingDefinition] "for" multi?="each"? expression=XExpression ("unless"
+	//	unlessCondition=XExpression)?;
 	public MappingCallElements getMappingCallAccess() {
 		return (pMappingCall != null) ? pMappingCall : (pMappingCall = new MappingCallElements());
 	}
