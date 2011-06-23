@@ -5,8 +5,8 @@ View
 - loop edges
 
 Mapping DSL
-- skip
 - validation
+- identity mapping
 
 Styling DSL:
 - default imports
@@ -17,3 +17,4 @@ DONE
 - no ss
 - highlighting for xrefs
 - revise metamodel
+- skip
