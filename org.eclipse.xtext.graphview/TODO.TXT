@@ -6,7 +6,6 @@ View
 
 Mapping DSL
 - validation
-- identity mapping
 
 Styling DSL:
 - default imports
@@ -18,3 +17,4 @@ DONE
 - highlighting for xrefs
 - revise metamodel
 - skip
+- identity mapping

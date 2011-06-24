@@ -25,10 +25,9 @@ import org.eclipse.xtext.graphview.map.graphViewMapping.NodeMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.util.GraphViewMappingSwitch;
 import org.eclipse.xtext.util.Strings;
 
-import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Lists;
-import com.google.common.collect.Multimap;
 import com.google.inject.Inject;
+import com.google.inject.Provider;
 
 public class ModelInstantiator {
 
@@ -36,6 +35,9 @@ public class ModelInstantiator {
 
 	@Inject
 	private IInstanceMapper instanceMapper;
+
+	@Inject
+	private Provider<InstanceCache> cacheProvider;
 
 	protected boolean isType(JvmTypeReference type, Object object,
 			ClassLoader classLoader) {
@@ -56,10 +58,9 @@ public class ModelInstantiator {
 			return null;
 		}
 		instanceMapper.setClassLoader(classLoader);
-		Multimap<Object, AbstractInstance> semantic2instance = HashMultimap
-				.create();
+		InstanceCache instanceCache = cacheProvider.get();
 		DiagramInstance diagramInstance = (DiagramInstance) internalCreateInstance(
-				mapping, semanticElement, semantic2instance, null);
+				semanticElement, null, mapping, instanceCache);
 		List<EdgeInstance> allEdges = Lists.newArrayList();
 		List<EdgeInstance> orphanedEdges = Lists.newArrayList();
 		for (TreeIterator<EObject> i = diagramInstance.eAllContents(); i
@@ -67,7 +68,7 @@ public class ModelInstantiator {
 			EObject content = i.next();
 			if (content instanceof EdgeInstance) {
 				EdgeInstance edgeInstance = (EdgeInstance) content;
-				connectSourceAndTargetInstance(semantic2instance, edgeInstance);
+				connectSourceAndTargetInstance(edgeInstance, instanceCache);
 				if (edgeInstance.getTarget() == null
 						|| edgeInstance.getSource() == null) {
 					edgeInstance.setSource(null);
@@ -84,31 +85,27 @@ public class ModelInstantiator {
 		return diagramInstance;
 	}
 
-	protected AbstractInstance internalCreateInstance(AbstractMapping mapping,
-			final Object semanticElement,
-			final Multimap<Object, AbstractInstance> semantic2instance,
-			AbstractInstance parentInstance) {
+	protected AbstractInstance internalCreateInstance(
+			final Object semanticElement, AbstractInstance parentInstance,
+			AbstractMapping mapping, final InstanceCache instanceCache) {
 		if (mapping instanceof MappingCall) {
-			return internalCreateInstance(
+			return internalCreateInstance(semanticElement, parentInstance,
 					((MappingCall) mapping).getReferencedMapping(),
-					semanticElement, semantic2instance, parentInstance);
+					instanceCache);
 		}
-		if (semantic2instance.containsKey(semanticElement)) {
-			for (AbstractInstance instance : semantic2instance
-					.get(semanticElement)) {
-				if (instance.getMapping() == mapping) {
-					return instance;
-				}
-			}
+		AbstractInstance cachedInstance = instanceCache.get(semanticElement,
+				parentInstance, mapping);
+		if (cachedInstance != null) {
+			return cachedInstance;
 		}
-		AbstractInstance instanceModel = newInstance(semanticElement, mapping);
+		AbstractInstance instanceModel = newInstance(semanticElement, mapping,
+				parentInstance);
 		if (instanceModel != null) {
-			semantic2instance.put(semanticElement, instanceModel);
-			if (parentInstance != null)
-				parentInstance.getChildren().add(instanceModel);
+			instanceCache.put(semanticElement, parentInstance, mapping,
+					instanceModel);
 			if (instanceModel instanceof EdgeInstance)
-				connectSourceAndTargetInstance(semantic2instance,
-						(EdgeInstance) instanceModel);
+				connectSourceAndTargetInstance((EdgeInstance) instanceModel,
+						instanceCache);
 			if (mapping instanceof AbstractMappingDefinition) {
 				for (AbstractExpressionMapping childMapping : ((AbstractMappingDefinition) mapping)
 						.getMappings()) {
@@ -118,13 +115,13 @@ public class ModelInstantiator {
 						if (((AbstractExpressionMapping) childMapping)
 								.isMulti()) {
 							for (Object semanticChild : (Iterable<?>) mapResult) {
-								internalCreateInstance(childMapping,
-										semanticChild, semantic2instance,
-										instanceModel);
+								internalCreateInstance(semanticChild,
+										instanceModel, childMapping,
+										instanceCache);
 							}
 						} else {
-							internalCreateInstance(childMapping, mapResult,
-									semantic2instance, instanceModel);
+							internalCreateInstance(mapResult, instanceModel,
+									childMapping, instanceCache);
 						}
 					}
 				}
@@ -134,7 +131,7 @@ public class ModelInstantiator {
 	}
 
 	protected AbstractInstance newInstance(Object semanticElement,
-			AbstractMapping mapping) {
+			AbstractMapping mapping, AbstractInstance parentInstance) {
 		AbstractInstance instanceModel = new GraphViewMappingSwitch<AbstractInstance>() {
 			@Override
 			public AbstractInstance caseDiagramMapping(DiagramMapping object) {
@@ -160,56 +157,58 @@ public class ModelInstantiator {
 		if (instanceModel != null) {
 			instanceModel.setSemanticElement(semanticElement);
 			instanceModel.setMapping(mapping);
+			instanceModel.setParent(parentInstance);
 		}
 		return instanceModel;
 	}
 
-	protected void connectSourceAndTargetInstance(
-			Multimap<Object, AbstractInstance> semantic2instance,
-			EdgeInstance edgeInstance) {
+	protected void connectSourceAndTargetInstance(EdgeInstance edgeInstance,
+			InstanceCache instanceCache) {
 		EdgeMapping edgeMapping = (EdgeMapping) edgeInstance.getMapping();
 		if (edgeMapping.getSourceMapping() == null) {
 			edgeInstance.setSource((NodeInstance) edgeInstance.getParent());
 		} else {
-			edgeInstance.setSource(findInstanceForEdgeEnd(semantic2instance,
-					edgeMapping.getSourceMapping(), edgeInstance));
+			edgeInstance
+					.setSource(findInstanceForEdgeEnd(
+							edgeMapping.getSourceMapping(), edgeInstance,
+							instanceCache));
 		}
 		if (edgeInstance.getSource() != null) {
 			if (edgeMapping.getTargetMapping() == null) {
 				edgeInstance.setTarget((NodeInstance) edgeInstance.getParent());
 			} else {
 				edgeInstance.setTarget(findInstanceForEdgeEnd(
-						semantic2instance, edgeMapping.getTargetMapping(),
-						edgeInstance));
+						edgeMapping.getTargetMapping(), edgeInstance,
+						instanceCache));
 			}
 		}
 	}
 
 	protected NodeInstance findInstanceForEdgeEnd(
-			Multimap<Object, AbstractInstance> semantic2instance,
-			EdgeEndMapping edgeEndMapping, EdgeInstance edgeInstance) {
+			EdgeEndMapping edgeEndMapping, EdgeInstance edgeInstance,
+			InstanceCache instanceCache) {
 		Object semanticElement = instanceMapper.map(edgeEndMapping,
 				edgeInstance.getSemanticElement());
-		if(semanticElement == null)
+		if (semanticElement == null)
 			return null;
-		for (AbstractInstance instance : semantic2instance.get(semanticElement)) {
-			if (instance instanceof NodeInstance
-					&& instance.getMapping() == edgeEndMapping.getReferencedMapping()) {
-				return (NodeInstance) instance;
-			}
-		}
-		if (edgeEndMapping.isCall()) {
-			EObject containerMapping = edgeEndMapping.getReferencedMapping().eContainer();
-			if (containerMapping instanceof AbstractMapping) {
-				AbstractInstance parentInstance = findParentInstanceWithMapping(
-						edgeInstance, (AbstractMapping) containerMapping);
+		EObject containerMapping = edgeEndMapping.getReferencedMapping()
+				.eContainer();
+		if (containerMapping instanceof AbstractMapping) {
+			AbstractInstance parentInstance = findParentInstanceWithMapping(
+					edgeInstance, (AbstractMapping) containerMapping);
+			AbstractInstance cachedInstance = instanceCache.get(
+					semanticElement, parentInstance,
+					edgeEndMapping.getReferencedMapping());
+			if (cachedInstance != null)
+				return (NodeInstance) cachedInstance;
+			if (edgeEndMapping.isCall()) {
 				if (parentInstance != null) {
 					AbstractInstance edgeEndInstance = internalCreateInstance(
-							edgeEndMapping.getReferencedMapping(), semanticElement,
-							semantic2instance, parentInstance);
-					if (edgeEndInstance instanceof NodeInstance) {
+							semanticElement, parentInstance,
+							edgeEndMapping.getReferencedMapping(),
+							instanceCache);
+					if (edgeEndInstance instanceof NodeInstance)
 						return (NodeInstance) edgeEndInstance;
-					}
 				}
 			}
 		}
