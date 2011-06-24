@@ -13,7 +13,6 @@ style StateMachineDiagram as DiagramShape {
 }
 	
 style StateMachineDiagram.StateNode.Transition.EventName as LabelShape {
-	connectionAlignment = ConnectionLocator::MIDDLE
 	opaque = true
 	if((element.eContainer as Statemachine).resetEvents.contains(element)) 
 		foregroundColor = color(#ff2222)

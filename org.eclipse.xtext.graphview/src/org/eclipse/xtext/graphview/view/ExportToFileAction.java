@@ -27,8 +27,8 @@ public class ExportToFileAction extends Action {
 
 	public ExportToFileAction() {
 		setText("Export to file");
-		setDescription("Exports this diagram to an image file");
-		setToolTipText("Exports this diagram to an image file");
+		setDescription("Export this diagram to an image file");
+		setToolTipText("Export this diagram to an image file");
 	}
 
 	@Inject

@@ -3,6 +3,8 @@ View
 - zoom
 - persist config
 - loop edges
+- optional name
+
 
 Mapping DSL
 - validation

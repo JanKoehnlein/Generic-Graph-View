@@ -4,6 +4,7 @@ import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Connection;
 import org.eclipse.draw2d.ConnectionEndpointLocator;
 import org.eclipse.draw2d.ConnectionLocator;
+import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.Locator;
 import org.eclipse.draw2d.MidpointLocator;
@@ -29,21 +30,25 @@ public class LabelShape extends Label implements IConnectionChild {
 
 	public void setConnectionAlignment(int connectionAlignment) {
 		this.connectionAlignment = connectionAlignment;
-		if (getParent() instanceof Connection) {
-			Connection parent = (Connection) getParent();
+	}
+	
+	@Override
+	public void setParent(IFigure parent) {
+		super.setParent(parent);
+		if (parent instanceof Connection) {
 			Locator constraint;
-			switch (connectionAlignment) {
+			switch (getConnectionAlignment()) {
 			case ConnectionLocator.SOURCE:
-				constraint = new ConnectionEndpointLocator(parent, false);
+				constraint = new ConnectionEndpointLocator((Connection) parent, false);
 				break;
 			case ConnectionLocator.TARGET:
-				constraint = new ConnectionEndpointLocator(parent, true);
+				constraint = new ConnectionEndpointLocator((Connection) parent, true);
 				break;
 			case ConnectionLocator.MIDDLE:
 			default:
-				constraint = new MidpointLocator(parent, 0);
+				constraint = new MidpointLocator((Connection) parent, 0);
 			}
-			getParent().setConstraint(this, constraint);
+			parent.setConstraint(this, constraint);
 		}
 	}
 }
