@@ -6,10 +6,9 @@ import org.eclipse.xtext.example.fowlerdsl.statemachine.*
 stylesheet StateMachineStyle for StateMachineDiagram 
 
 style StateMachineDiagram as DiagramShape {
-	val autoLayout = new SpringAutoLayout()
-	autoLayout.blankToNodeAreaRatio = 6
-	autoLayout.iterations = 1000
-	autoLayoutManager = autoLayout 
+	val layoutManager = new KielerAutoLayout();
+	layoutManager.layoutName = "Planarization" 
+	autoLayoutManager = layoutManager
 }
 	
 style StateMachineDiagram.StateNode.Transition.EventName as LabelShape {
