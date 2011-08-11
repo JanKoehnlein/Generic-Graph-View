@@ -5,18 +5,9 @@ View
 - loop edges
 - optional name
 
-
 Mapping DSL
 - validation
 
 Styling DSL:
 - default imports
-
-DONE
-- AutoLayout is not a draw2d layout
-- remember config selection
-- no ss
-- highlighting for xrefs
-- revise metamodel
-- skip
-- identity mapping
+- typeProvider / simplenameforidentifiableprovider for mapping ref
