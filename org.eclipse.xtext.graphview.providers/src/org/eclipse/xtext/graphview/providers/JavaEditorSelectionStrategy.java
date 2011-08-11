@@ -7,17 +7,26 @@
  *******************************************************************************/
 package org.eclipse.xtext.graphview.providers;
 
+import org.apache.log4j.Logger;
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IResource;
+import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.internal.ui.javaeditor.JavaEditor;
 import org.eclipse.jface.text.ITextSelection;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.ui.IEditorPart;
+import org.eclipse.ui.PartInitException;
+import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.xtext.graphview.view.GraphView;
 import org.eclipse.xtext.graphview.view.selection.StructuredElementSelectionStrategy;
 import org.eclipse.xtext.util.PolymorphicDispatcher;
+import org.eclipse.xtext.util.Strings;
 
 @SuppressWarnings("restriction")
 public class JavaEditorSelectionStrategy extends StructuredElementSelectionStrategy {
 
+	private static Logger LOG = Logger.getLogger(JavaEditorSelectionStrategy.class);
+	
 	@Override
 	public boolean isStrategyFor(IEditorPart editor) {
 		return editor instanceof JavaEditor;
@@ -33,4 +42,28 @@ public class JavaEditorSelectionStrategy extends StructuredElementSelectionStrat
 		return super.editorSelectionChanged(editor, selection, graphView);
 	}
 
+	
+	@Override
+	public ISelection viewSelectionChanged(IEditorPart editor,
+			Object selectedElement, GraphView graphView) {
+		if(selectedElement instanceof IJavaElement) {
+			IResource resource = ((IJavaElement) selectedElement).getResource();
+			if(resource instanceof IFile) {
+				String editorID = null;
+				if(Strings.equal(resource.getFileExtension(), "java")) {
+					editorID = "org.eclipse.jdt.ui.CompilationUnitEditor";
+				} else if(Strings.equal(resource.getFileExtension(), "class")) {
+					editorID = "org.eclipse.jdt.ui.ClassFileEditor";
+				}
+				if(editorID != null) {
+					try {
+						editor.getEditorSite().getPage().openEditor(new FileEditorInput((IFile) resource), editorID);
+					} catch (PartInitException e) {
+						LOG.error("Error opening editor", e);
+					}
+				}
+			}
+		}
+		return super.viewSelectionChanged(editor, selectedElement, graphView);
+	}
 }

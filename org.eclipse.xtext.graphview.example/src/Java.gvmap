@@ -1,19 +1,13 @@
 import org.eclipse.jdt.core.*
 
 diagram JavaInheritanceDiagram type IType {
-	node ClassNode for this {
-		label ClassLabel for elementName	
-		edge ImplementsEdge for each superInterfaceNames {
-			-> ref InterfaceNode for this
+	node TypeNode for this {
+		label NameLabel for this	
+		edge ImplementsEdge for each superInterfaceNames.map(n|javaProject.findType(n)) {
+			-> call TypeNode for this
 		} 
-		edge ExtendsEdge for superclassName {
-			-> ref SuperClassNode for this
+		edge ExtendsEdge for if(superclassName != null) javaProject.findType(superclassName) {
+			-> call TypeNode for this
 		} 
-	}
-	node InterfaceNode for each superInterfaceNames {
-		label InterfaceLabel for this
-	}
-	node SuperClassNode for superclassName {
-		label SuperCassLabel for this
 	}
 }
