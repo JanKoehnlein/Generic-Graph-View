@@ -9,7 +9,9 @@ package org.eclipse.xtext.graphview.view;
 
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.gef.GraphicalViewer;
-import org.eclipse.gef.editparts.FreeformGraphicalRootEditPart;
+import org.eclipse.gef.editparts.ScalableFreeformRootEditPart;
+import org.eclipse.gef.editparts.ZoomManager;
+import org.eclipse.gef.ui.actions.ZoomComboContributionItem;
 import org.eclipse.gef.ui.parts.ScrollingGraphicalViewer;
 import org.eclipse.jface.action.IToolBarManager;
 import org.eclipse.swt.widgets.Composite;
@@ -24,6 +26,7 @@ import org.eclipse.xtext.graphview.view.config.IDiagramConfigurationProvider.Lis
 import org.eclipse.xtext.graphview.view.config.SelectDiagramConfigurationAction;
 import org.eclipse.xtext.graphview.view.selection.ElementSelectionConverter;
 
+import com.google.common.collect.Lists;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 
@@ -60,6 +63,13 @@ public class GraphView extends ViewPart {
 
 	private Listener configurationListener;
 
+	private static final String[] ZOOM_LEVELS = new String[] {
+			ZoomManager.FIT_ALL, ZoomManager.FIT_HEIGHT, ZoomManager.FIT_WIDTH };
+
+	private ZoomComboContributionItem zoomContributionItem;
+
+	private ZoomManager zoomManager;
+
 	@Override
 	public void createPartControl(Composite parent) {
 		graphicalViewer = createGraphicalViewer(parent);
@@ -82,6 +92,17 @@ public class GraphView extends ViewPart {
 		toolBarManager.add(refreshAction);
 		toolBarManager.add(exportToFileAction);
 		toolBarManager.add(selectDiagramConfigurationAction);
+		zoomContributionItem = new ZoomComboContributionItem(getSite().getPage(),
+				ZOOM_LEVELS) {
+			@Override
+			public void setZoomManager(ZoomManager zm) {
+				if(zm == null)
+					return;
+				super.setZoomManager(zm);
+			}
+		};
+		zoomContributionItem.setZoomManager(zoomManager);
+		toolBarManager.add(zoomContributionItem);
 		refreshAction.setEnabled(false);
 		exportToFileAction.setEnabled(false);
 	}
@@ -89,7 +110,10 @@ public class GraphView extends ViewPart {
 	protected GraphicalViewer createGraphicalViewer(Composite parent) {
 		GraphicalViewer graphicalViewer = new ScrollingGraphicalViewer();
 		graphicalViewer.createControl(parent);
-		graphicalViewer.setRootEditPart(new FreeformGraphicalRootEditPart());
+		ScalableFreeformRootEditPart rootEditPart = new ScalableFreeformRootEditPart();
+		zoomManager = rootEditPart.getZoomManager();
+		zoomManager.setZoomLevelContributions(Lists.newArrayList(ZOOM_LEVELS));
+		graphicalViewer.setRootEditPart(rootEditPart);
 		graphicalViewer.setEditPartFactory(editPartFactory);
 		graphicalViewer.getControl().setBackground(
 				ColorConstants.listBackground);
@@ -137,6 +161,7 @@ public class GraphView extends ViewPart {
 		}
 		exportToFileAction.setEnabled(currentContents != null);
 		refreshAction.setEnabled(currentContents != null);
+		zoomContributionItem.setZoomManager(zoomManager);
 		return hasContent;
 	}
 
