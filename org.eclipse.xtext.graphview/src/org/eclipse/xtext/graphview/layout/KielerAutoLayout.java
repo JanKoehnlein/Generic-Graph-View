@@ -113,7 +113,7 @@ public class KielerAutoLayout extends AbstractAutoLayout {
 					KNode sourceNode = childrenToNodes.get(connection
 							.getSourceAnchor().getOwner());
 					KNode targetNode = childrenToNodes.get(connection
-							.getSourceAnchor().getOwner());
+							.getTargetAnchor().getOwner());
 					if (targetNode != null && sourceNode != null) {
 						KEdge graphEdge = createKEdge(sourceNode, targetNode);
 						connectionToEdges.put(connection, graphEdge);
@@ -137,7 +137,7 @@ public class KielerAutoLayout extends AbstractAutoLayout {
 		for (Map.Entry<Connection, KEdge> entry : connectionToEdges.entrySet()) {
 			KEdgeLayout edgeLayout = entry.getValue()
 					.getData(KEdgeLayout.class);
-			if (edgeLayout != null) {
+			if (edgeLayout != null && !edgeLayout.getBendPoints().isEmpty()) {
 				List<Bendpoint> gefBendPoints = Lists.newArrayList();
 				for (KPoint bendPoint : edgeLayout.getBendPoints()) {
 					gefBendPoints.add(new AbsoluteBendpoint((int) bendPoint

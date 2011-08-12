@@ -8,7 +8,7 @@ stylesheet JavaInheritanceStyle for JavaInheritanceDiagram
 
 style JavaInheritanceDiagram as DiagramShape {
 	val layoutManager = new KielerAutoLayout();
-	layoutManager.layoutName = "Sugiyama" 
+	layoutManager.layoutName = "Upward-Planarization" 
 	autoLayoutManager = layoutManager
 		
 }
