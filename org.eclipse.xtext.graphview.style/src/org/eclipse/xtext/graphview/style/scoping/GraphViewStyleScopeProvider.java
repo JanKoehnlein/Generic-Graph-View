@@ -11,7 +11,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
 import org.eclipse.xtext.common.types.JvmType;
 import org.eclipse.xtext.common.types.JvmTypeReference;
@@ -25,6 +24,7 @@ import org.eclipse.xtext.resource.IEObjectDescription;
 import org.eclipse.xtext.resource.IResourceServiceProvider;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.impl.SimpleScope;
+import org.eclipse.xtext.xbase.scoping.LocalVariableScopeContext;
 import org.eclipse.xtext.xbase.scoping.XbaseScopeProvider;
 import org.eclipse.xtext.xbase.typing.ITypeProvider;
 
@@ -58,8 +58,9 @@ public class GraphViewStyleScopeProvider extends XbaseScopeProvider {
 	}
 
 	@Override
-	protected IScope createLocalVarScope(EObject context, EReference reference,
-			IScope parentScope, boolean includeCurrentBlock, int idx) {
+	protected IScope createLocalVarScope(IScope parentScope,
+			LocalVariableScopeContext scopeContext) {
+		EObject context = scopeContext.getContext();
 		if(context instanceof Style) {
 			List<IEObjectDescription> localVars = Lists.newArrayList();
 			JvmParameterizedTypeReference clazz = ((Style) context).getJavaClass();
@@ -84,7 +85,6 @@ public class GraphViewStyleScopeProvider extends XbaseScopeProvider {
 			if(!localVars.isEmpty()) 
 				return new SimpleScope(parentScope, localVars); 
 		}
-		return super.createLocalVarScope(context, reference, parentScope,
-				includeCurrentBlock, idx);
+		return super.createLocalVarScope(parentScope, scopeContext);
 	}
 }

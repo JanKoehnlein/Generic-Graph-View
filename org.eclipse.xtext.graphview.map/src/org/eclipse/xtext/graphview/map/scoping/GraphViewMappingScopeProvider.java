@@ -10,12 +10,12 @@ package org.eclipse.xtext.graphview.map.scoping;
 import java.util.Collections;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractExpressionMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping;
 import org.eclipse.xtext.resource.EObjectDescription;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.impl.SimpleScope;
+import org.eclipse.xtext.xbase.scoping.LocalVariableScopeContext;
 import org.eclipse.xtext.xbase.scoping.XbaseScopeProvider;
 
 /**
@@ -29,8 +29,9 @@ import org.eclipse.xtext.xbase.scoping.XbaseScopeProvider;
 public class GraphViewMappingScopeProvider extends XbaseScopeProvider {
 
 	@Override
-	protected IScope createLocalVarScope(EObject context, EReference reference,
-			IScope parentScope, boolean includeCurrentBlock, int idx) {
+	protected IScope createLocalVarScope(IScope parentScope,
+			LocalVariableScopeContext scopeContext) {
+		EObject context = scopeContext.getContext();
 		if (context instanceof DiagramMapping) {
 			return new SimpleScope(parentScope,
 					Collections.singleton(EObjectDescription.create(
@@ -41,8 +42,7 @@ public class GraphViewMappingScopeProvider extends XbaseScopeProvider {
 					Collections.singleton(EObjectDescription.create(
 							XbaseScopeProvider.THIS, parent)));
 		}
-		return super.createLocalVarScope(context, reference, parentScope,
-				includeCurrentBlock, idx);
+		return super.createLocalVarScope(parentScope, scopeContext);
 	}
 
 }
