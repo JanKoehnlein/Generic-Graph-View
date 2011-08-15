@@ -10,7 +10,6 @@ style JavaInheritanceDiagram as DiagramShape {
 	val layoutManager = new KielerAutoLayout();
 	layoutManager.layoutName = "Upward-Planarization" 
 	autoLayoutManager = layoutManager
-		
 }
 
 style TypeNode.NameLabel as LabelShape {

@@ -6,10 +6,13 @@ import EPackageDiagram.*
 stylesheet EPackageDiagram for EPackageDiagram
 
 style EPackageDiagram as DiagramShape {
-	val autoLayout = new SpringAutoLayout()
-	autoLayout.iterations = 500
-	autoLayout.blankToNodeAreaRatio = 3
-	autoLayoutManager = autoLayout  
+//	val autoLayout = new SpringAutoLayout()
+//	autoLayout.iterations = 500
+//	autoLayout.blankToNodeAreaRatio = 3
+//	autoLayoutManager = autoLayout 
+	val layoutManager = new KielerAutoLayout();
+	layoutManager.layoutName = "Sugiyama" 
+	autoLayoutManager = layoutManager 
 }
 
 style EDataTypeNode.Name as LabelShape {
