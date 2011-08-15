@@ -52,6 +52,7 @@ public class GridAutoLayout extends AbstractAutoLayout {
 				+ ((children.size() % numColumns != 0) ? 1 : 0);
 		int currentRowHeight = 0;
 		int currentY = getOffset();
+		int maxX = 0;
 		for (int row = 0; row < numRows; ++row) {
 			int currentX = getOffset();
 			currentRowHeight = 0;
@@ -63,8 +64,10 @@ public class GridAutoLayout extends AbstractAutoLayout {
 				child.setLocation(new Point(currentX, currentY));
 				currentX += child.getBounds().width + getOffset();
 			}
+			maxX = Math.max(currentX, maxX);
 			currentY += currentRowHeight + getOffset();
 		}
+		int maxY = currentY;
 		Layer connectionLayer = getConnectionLayer(container);
 		ConnectionRouter connectionRouter = getConnectionRouter(container);
 		if (connectionLayer != null && connectionRouter != null) {
@@ -74,6 +77,7 @@ public class GridAutoLayout extends AbstractAutoLayout {
 				}
 			}
 		}
+		container.setPreferredSize(new Dimension(maxX, maxY));
 	}
 
 }

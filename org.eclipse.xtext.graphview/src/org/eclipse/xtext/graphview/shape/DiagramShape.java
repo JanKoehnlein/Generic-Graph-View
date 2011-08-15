@@ -30,4 +30,9 @@ public class DiagramShape extends FreeformLayer {
 	public void setAutoLayoutManager(IAutoLayout autoLayoutManager) {
 		this.autoLayoutManager = autoLayoutManager;
 	}
+	
+	@Override
+	protected boolean useLocalCoordinates() {
+		return true;
+	}
 }
