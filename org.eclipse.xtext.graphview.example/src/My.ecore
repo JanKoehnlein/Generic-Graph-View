@@ -14,7 +14,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="thirdAttribute" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eSubpackages name="subPackage" nsURI="http://www.xtext.org/example/graphview" nsPrefix="subPackage">
-    <eClassifiers xsi:type="ecore:EClass" name="Foo"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Foo" eSuperTypes="#//MyClass"/>
     <eSubpackages name="subsub" nsURI="subsub" nsPrefix="subsub">
       <eClassifiers xsi:type="ecore:EClass" name="Bar">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="s" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

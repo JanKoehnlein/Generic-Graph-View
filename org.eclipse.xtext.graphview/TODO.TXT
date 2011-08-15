@@ -1,6 +1,5 @@
 View
 - resize / move elements in subdiagrams
-- persist config
 - optional name
 
 Mapping DSL
