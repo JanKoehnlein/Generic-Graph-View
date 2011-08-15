@@ -17,16 +17,20 @@ import org.eclipse.core.resources.IResourceChangeEvent;
 import org.eclipse.core.resources.IResourceChangeListener;
 import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.runtime.ListenerList;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.xtext.common.types.access.IJvmTypeProvider;
+import org.eclipse.xtext.graphview.Activator;
 import org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping;
 import org.eclipse.xtext.graphview.style.graphViewStyle.StyleSheet;
 import org.eclipse.xtext.resource.IEObjectDescription;
 import org.eclipse.xtext.ui.refactoring.impl.ProjectUtil;
 import org.eclipse.xtext.ui.resource.IResourceSetProvider;
+import org.eclipse.xtext.util.Strings;
 
 import com.google.common.collect.Lists;
 import com.google.inject.Inject;
@@ -36,6 +40,10 @@ import com.google.inject.Singleton;
 @Singleton
 public class DefaultDiagramConfigurationProvider implements
 		IDiagramConfigurationProvider {
+
+	private static final String CURRENT_MAPPING_URI_PROPERTY = "currentMapping";
+
+	private static final String CURRENT_STYLE_SHEET_URI_PROPERTY = "currentStyleSheet";
 
 	private static final Logger LOG = Logger
 			.getLogger(DefaultDiagramConfigurationProvider.class);
@@ -66,14 +74,11 @@ public class DefaultDiagramConfigurationProvider implements
 
 	private ResourceSet resourceSet;
 
-	public DefaultDiagramConfigurationProvider() {
-	}
-
 	protected void setModels(IEObjectDescription mappingModel,
 			IEObjectDescription styleSheetModel) {
 		currentProject = null;
 		styleSheet = (StyleSheet) load(styleSheetModel);
-		if(styleSheet != null) 
+		if (styleSheet != null)
 			EcoreUtil.resolveAll(styleSheet);
 		diagramMapping = (DiagramMapping) load(mappingModel);
 		if (resourceChangeListener != null) {
@@ -91,12 +96,12 @@ public class DefaultDiagramConfigurationProvider implements
 								LOG.error("Error reloading resource ", e);
 							}
 						}
-						if(diagramMapping != null)
-							diagramMapping = (DiagramMapping) EcoreUtil.resolve(
-								diagramMapping, resourceSet);
-						if(styleSheet != null) 
-							styleSheet = (StyleSheet) EcoreUtil.resolve(styleSheet,
-								resourceSet);
+						if (diagramMapping != null)
+							diagramMapping = (DiagramMapping) EcoreUtil
+									.resolve(diagramMapping, resourceSet);
+						if (styleSheet != null)
+							styleSheet = (StyleSheet) EcoreUtil.resolve(
+									styleSheet, resourceSet);
 						fireModelChanged();
 						return;
 					}
@@ -104,15 +109,37 @@ public class DefaultDiagramConfigurationProvider implements
 			}
 		};
 		workspace.addResourceChangeListener(resourceChangeListener);
+		storePreference(CURRENT_MAPPING_URI_PROPERTY, diagramMapping);
+		storePreference(CURRENT_STYLE_SHEET_URI_PROPERTY, styleSheet);
 		fireModelChanged();
 	}
 
+	protected void storePreference(String property, EObject model) {
+		getPreferenceStore().setValue(property,
+				(model != null) ? EcoreUtil.getURI(model).toString() : "");
+	}
+
+	protected IPreferenceStore getPreferenceStore() {
+		return Activator.getDefault().getPreferenceStore();
+	}
+
 	public DiagramMapping getDiagramMapping() {
+		loadDefaultsIfNecessary();
 		return diagramMapping;
 	}
 
 	public StyleSheet getStyleSheet() {
+		loadDefaultsIfNecessary();
 		return styleSheet;
+	}
+
+	protected void loadDefaultsIfNecessary() {
+		if (styleSheet == null && diagramMapping == null) {
+			styleSheet = (StyleSheet) load(CURRENT_STYLE_SHEET_URI_PROPERTY);
+			if (styleSheet != null)
+				EcoreUtil.resolveAll(styleSheet);
+			diagramMapping = (DiagramMapping) load(CURRENT_MAPPING_URI_PROPERTY);
+		}
 	}
 
 	protected void fireModelChanged() {
@@ -130,10 +157,19 @@ public class DefaultDiagramConfigurationProvider implements
 	}
 
 	protected EObject load(IEObjectDescription eObjectDescription) {
-		if (eObjectDescription == null)
-			return null;
-		IProject project = projectUtil.getProject(eObjectDescription
+		return (eObjectDescription == null) ? null : load(eObjectDescription
 				.getEObjectURI());
+	}
+
+	protected EObject load(String uriProperty) {
+		String uri = getPreferenceStore().getString(uriProperty);
+		return (!Strings.isEmpty(uri)) ? load(URI.createURI(uri)) : null;
+	}
+
+	protected EObject load(URI eObjectURI) {
+		if (eObjectURI == null)
+			return null;
+		IProject project = projectUtil.getProject(eObjectURI);
 		if (currentProject == null) {
 			resourceSet = resourceSetProvider.get(project);
 			currentProject = project;
@@ -142,8 +178,7 @@ public class DefaultDiagramConfigurationProvider implements
 			throw new IllegalArgumentException(
 					"GraphView diagram definition files must reside in the same project");
 		}
-		modelFiles.add(projectUtil.findFileStorage(
-				eObjectDescription.getEObjectURI(), false));
-		return resourceSet.getEObject(eObjectDescription.getEObjectURI(), true);
+		modelFiles.add(projectUtil.findFileStorage(eObjectURI, false));
+		return resourceSet.getEObject(eObjectURI, true);
 	}
 }
