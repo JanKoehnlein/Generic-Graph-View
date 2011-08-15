@@ -666,9 +666,9 @@ ruleEdgeMapping returns [EObject current=null]
 	    }
 
 )
-)?	otherlv_7='->' 
+)?	otherlv_7='=>' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getEdgeMappingAccess().getHyphenMinusGreaterThanSignKeyword_7());
+    	newLeafNode(otherlv_7, grammarAccess.getEdgeMappingAccess().getEqualsSignGreaterThanSignKeyword_7());
     }
 (
 (

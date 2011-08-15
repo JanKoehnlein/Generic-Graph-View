@@ -328,7 +328,7 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 		private final Keyword cLeftCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Assignment cSourceMappingAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final RuleCall cSourceMappingEdgeEndMappingParserRuleCall_6_0 = (RuleCall)cSourceMappingAssignment_6.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Keyword cEqualsSignGreaterThanSignKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		private final Assignment cTargetMappingAssignment_8 = (Assignment)cGroup.eContents().get(8);
 		private final RuleCall cTargetMappingEdgeEndMappingParserRuleCall_8_0 = (RuleCall)cTargetMappingAssignment_8.eContents().get(0);
 		private final Assignment cMappingsAssignment_9 = (Assignment)cGroup.eContents().get(9);
@@ -340,11 +340,11 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 		private final RuleCall cUnlessConditionXExpressionParserRuleCall_11_1_0 = (RuleCall)cUnlessConditionAssignment_11_1.eContents().get(0);
 		
 		//EdgeMapping:
-		//	"edge" name=ID "for" multi?="each"? expression=XExpression "{" sourceMapping=EdgeEndMapping? "->"
+		//	"edge" name=ID "for" multi?="each"? expression=XExpression "{" sourceMapping=EdgeEndMapping? "=>"
 		//	targetMapping=EdgeEndMapping? mappings+=LabelMapping* "}" ("unless" unlessCondition=XExpression)?;
 		public ParserRule getRule() { return rule; }
 
-		//"edge" name=ID "for" multi?="each"? expression=XExpression "{" sourceMapping=EdgeEndMapping? "->"
+		//"edge" name=ID "for" multi?="each"? expression=XExpression "{" sourceMapping=EdgeEndMapping? "=>"
 		//targetMapping=EdgeEndMapping? mappings+=LabelMapping* "}" ("unless" unlessCondition=XExpression)?
 		public Group getGroup() { return cGroup; }
 
@@ -381,8 +381,8 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 		//EdgeEndMapping
 		public RuleCall getSourceMappingEdgeEndMappingParserRuleCall_6_0() { return cSourceMappingEdgeEndMappingParserRuleCall_6_0; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_7() { return cHyphenMinusGreaterThanSignKeyword_7; }
+		//"=>"
+		public Keyword getEqualsSignGreaterThanSignKeyword_7() { return cEqualsSignGreaterThanSignKeyword_7; }
 
 		//targetMapping=EdgeEndMapping?
 		public Assignment getTargetMappingAssignment_8() { return cTargetMappingAssignment_8; }
@@ -625,7 +625,7 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 	}
 
 	//EdgeMapping:
-	//	"edge" name=ID "for" multi?="each"? expression=XExpression "{" sourceMapping=EdgeEndMapping? "->"
+	//	"edge" name=ID "for" multi?="each"? expression=XExpression "{" sourceMapping=EdgeEndMapping? "=>"
 	//	targetMapping=EdgeEndMapping? mappings+=LabelMapping* "}" ("unless" unlessCondition=XExpression)?;
 	public EdgeMappingElements getEdgeMappingAccess() {
 		return (pEdgeMapping != null) ? pEdgeMapping : (pEdgeMapping = new EdgeMappingElements());

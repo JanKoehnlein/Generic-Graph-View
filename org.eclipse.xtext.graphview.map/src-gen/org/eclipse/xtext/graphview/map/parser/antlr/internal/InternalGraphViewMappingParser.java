@@ -22,7 +22,7 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'diagram'", "'type'", "'{'", "'}'", "'unless'", "'import'", "'.'", "'*'", "'node'", "'for'", "'each'", "'label'", "'edge'", "'->'", "'ref'", "'call'", "'='", "'+='", "'||'", "'&&'", "'=='", "'!='", "'instanceof'", "'>='", "'<='", "'>'", "'<'", "'..'", "'+'", "'-'", "'**'", "'/'", "'%'", "'!'", "'as'", "'?.'", "'*.'", "','", "'('", "')'", "'['", "'|'", "']'", "'if'", "'else'", "'switch'", "':'", "'default'", "'case'", "'while'", "'do'", "';'", "'var'", "'val'", "'super'", "'::'", "'new'", "'false'", "'true'", "'null'", "'typeof'", "'throw'", "'return'", "'try'", "'finally'", "'catch'", "'=>'", "'?'", "'extends'", "'&'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'diagram'", "'type'", "'{'", "'}'", "'unless'", "'import'", "'.'", "'*'", "'node'", "'for'", "'each'", "'label'", "'edge'", "'=>'", "'ref'", "'call'", "'='", "'+='", "'||'", "'&&'", "'=='", "'!='", "'instanceof'", "'>='", "'<='", "'>'", "'<'", "'->'", "'..'", "'+'", "'-'", "'**'", "'/'", "'%'", "'!'", "'as'", "'?.'", "'*.'", "','", "'('", "')'", "'['", "'|'", "']'", "'if'", "'else'", "'switch'", "':'", "'default'", "'case'", "'while'", "'do'", "';'", "'var'", "'val'", "'super'", "'::'", "'new'", "'false'", "'true'", "'null'", "'typeof'", "'throw'", "'return'", "'try'", "'finally'", "'catch'", "'?'", "'extends'", "'&'"
     };
     public static final int T__68=68;
     public static final int T__69=69;
@@ -1571,7 +1571,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "ruleEdgeMapping"
-    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:584:1: ruleEdgeMapping returns [EObject current=null] : (otherlv_0= 'edge' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'for' ( (lv_multi_3_0= 'each' ) )? ( (lv_expression_4_0= ruleXExpression ) ) otherlv_5= '{' ( (lv_sourceMapping_6_0= ruleEdgeEndMapping ) )? otherlv_7= '->' ( (lv_targetMapping_8_0= ruleEdgeEndMapping ) )? ( (lv_mappings_9_0= ruleLabelMapping ) )* otherlv_10= '}' (otherlv_11= 'unless' ( (lv_unlessCondition_12_0= ruleXExpression ) ) )? ) ;
+    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:584:1: ruleEdgeMapping returns [EObject current=null] : (otherlv_0= 'edge' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'for' ( (lv_multi_3_0= 'each' ) )? ( (lv_expression_4_0= ruleXExpression ) ) otherlv_5= '{' ( (lv_sourceMapping_6_0= ruleEdgeEndMapping ) )? otherlv_7= '=>' ( (lv_targetMapping_8_0= ruleEdgeEndMapping ) )? ( (lv_mappings_9_0= ruleLabelMapping ) )* otherlv_10= '}' (otherlv_11= 'unless' ( (lv_unlessCondition_12_0= ruleXExpression ) ) )? ) ;
     public final EObject ruleEdgeMapping() throws RecognitionException {
         EObject current = null;
 
@@ -1597,11 +1597,11 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
          enterRule(); 
             
         try {
-            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:587:28: ( (otherlv_0= 'edge' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'for' ( (lv_multi_3_0= 'each' ) )? ( (lv_expression_4_0= ruleXExpression ) ) otherlv_5= '{' ( (lv_sourceMapping_6_0= ruleEdgeEndMapping ) )? otherlv_7= '->' ( (lv_targetMapping_8_0= ruleEdgeEndMapping ) )? ( (lv_mappings_9_0= ruleLabelMapping ) )* otherlv_10= '}' (otherlv_11= 'unless' ( (lv_unlessCondition_12_0= ruleXExpression ) ) )? ) )
-            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:588:1: (otherlv_0= 'edge' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'for' ( (lv_multi_3_0= 'each' ) )? ( (lv_expression_4_0= ruleXExpression ) ) otherlv_5= '{' ( (lv_sourceMapping_6_0= ruleEdgeEndMapping ) )? otherlv_7= '->' ( (lv_targetMapping_8_0= ruleEdgeEndMapping ) )? ( (lv_mappings_9_0= ruleLabelMapping ) )* otherlv_10= '}' (otherlv_11= 'unless' ( (lv_unlessCondition_12_0= ruleXExpression ) ) )? )
+            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:587:28: ( (otherlv_0= 'edge' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'for' ( (lv_multi_3_0= 'each' ) )? ( (lv_expression_4_0= ruleXExpression ) ) otherlv_5= '{' ( (lv_sourceMapping_6_0= ruleEdgeEndMapping ) )? otherlv_7= '=>' ( (lv_targetMapping_8_0= ruleEdgeEndMapping ) )? ( (lv_mappings_9_0= ruleLabelMapping ) )* otherlv_10= '}' (otherlv_11= 'unless' ( (lv_unlessCondition_12_0= ruleXExpression ) ) )? ) )
+            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:588:1: (otherlv_0= 'edge' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'for' ( (lv_multi_3_0= 'each' ) )? ( (lv_expression_4_0= ruleXExpression ) ) otherlv_5= '{' ( (lv_sourceMapping_6_0= ruleEdgeEndMapping ) )? otherlv_7= '=>' ( (lv_targetMapping_8_0= ruleEdgeEndMapping ) )? ( (lv_mappings_9_0= ruleLabelMapping ) )* otherlv_10= '}' (otherlv_11= 'unless' ( (lv_unlessCondition_12_0= ruleXExpression ) ) )? )
             {
-            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:588:1: (otherlv_0= 'edge' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'for' ( (lv_multi_3_0= 'each' ) )? ( (lv_expression_4_0= ruleXExpression ) ) otherlv_5= '{' ( (lv_sourceMapping_6_0= ruleEdgeEndMapping ) )? otherlv_7= '->' ( (lv_targetMapping_8_0= ruleEdgeEndMapping ) )? ( (lv_mappings_9_0= ruleLabelMapping ) )* otherlv_10= '}' (otherlv_11= 'unless' ( (lv_unlessCondition_12_0= ruleXExpression ) ) )? )
-            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:588:3: otherlv_0= 'edge' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'for' ( (lv_multi_3_0= 'each' ) )? ( (lv_expression_4_0= ruleXExpression ) ) otherlv_5= '{' ( (lv_sourceMapping_6_0= ruleEdgeEndMapping ) )? otherlv_7= '->' ( (lv_targetMapping_8_0= ruleEdgeEndMapping ) )? ( (lv_mappings_9_0= ruleLabelMapping ) )* otherlv_10= '}' (otherlv_11= 'unless' ( (lv_unlessCondition_12_0= ruleXExpression ) ) )?
+            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:588:1: (otherlv_0= 'edge' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'for' ( (lv_multi_3_0= 'each' ) )? ( (lv_expression_4_0= ruleXExpression ) ) otherlv_5= '{' ( (lv_sourceMapping_6_0= ruleEdgeEndMapping ) )? otherlv_7= '=>' ( (lv_targetMapping_8_0= ruleEdgeEndMapping ) )? ( (lv_mappings_9_0= ruleLabelMapping ) )* otherlv_10= '}' (otherlv_11= 'unless' ( (lv_unlessCondition_12_0= ruleXExpression ) ) )? )
+            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:588:3: otherlv_0= 'edge' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'for' ( (lv_multi_3_0= 'each' ) )? ( (lv_expression_4_0= ruleXExpression ) ) otherlv_5= '{' ( (lv_sourceMapping_6_0= ruleEdgeEndMapping ) )? otherlv_7= '=>' ( (lv_targetMapping_8_0= ruleEdgeEndMapping ) )? ( (lv_mappings_9_0= ruleLabelMapping ) )* otherlv_10= '}' (otherlv_11= 'unless' ( (lv_unlessCondition_12_0= ruleXExpression ) ) )?
             {
             otherlv_0=(Token)match(input,23,FOLLOW_23_in_ruleEdgeMapping1231); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -1772,7 +1772,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
             otherlv_7=(Token)match(input,24,FOLLOW_24_in_ruleEdgeMapping1364); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_7, grammarAccess.getEdgeMappingAccess().getHyphenMinusGreaterThanSignKeyword_7());
+                  	newLeafNode(otherlv_7, grammarAccess.getEdgeMappingAccess().getEqualsSignGreaterThanSignKeyword_7());
                   
             }
             // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:673:1: ( (lv_targetMapping_8_0= ruleEdgeEndMapping ) )?
@@ -2581,7 +2581,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
             if ( (LA20_0==RULE_ID) ) {
                 int LA20_1 = input.LA(2);
 
-                if ( (LA20_1==EOF||(LA20_1>=RULE_ID && LA20_1<=RULE_STRING)||(LA20_1>=13 && LA20_1<=15)||(LA20_1>=17 && LA20_1<=20)||(LA20_1>=22 && LA20_1<=24)||LA20_1==26||(LA20_1>=28 && LA20_1<=51)||(LA20_1>=53 && LA20_1<=77)) ) {
+                if ( (LA20_1==EOF||(LA20_1>=RULE_ID && LA20_1<=RULE_STRING)||(LA20_1>=13 && LA20_1<=15)||(LA20_1>=17 && LA20_1<=20)||(LA20_1>=22 && LA20_1<=24)||LA20_1==26||(LA20_1>=28 && LA20_1<=52)||(LA20_1>=54 && LA20_1<=77)) ) {
                     alt20=2;
                 }
                 else if ( (LA20_1==27) ) {
@@ -2595,7 +2595,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                     throw nvae;
                 }
             }
-            else if ( ((LA20_0>=RULE_INT && LA20_0<=RULE_STRING)||LA20_0==13||LA20_0==20||LA20_0==37||(LA20_0>=39 && LA20_0<=40)||LA20_0==44||LA20_0==49||LA20_0==51||LA20_0==54||LA20_0==56||(LA20_0>=60 && LA20_0<=61)||LA20_0==65||(LA20_0>=67 && LA20_0<=74)) ) {
+            else if ( ((LA20_0>=RULE_INT && LA20_0<=RULE_STRING)||LA20_0==13||LA20_0==20||LA20_0==37||(LA20_0>=40 && LA20_0<=41)||LA20_0==45||LA20_0==50||LA20_0==52||LA20_0==55||LA20_0==57||(LA20_0>=61 && LA20_0<=62)||LA20_0==66||(LA20_0>=68 && LA20_0<=75)) ) {
                 alt20=2;
             }
             else {
@@ -4578,7 +4578,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                 int alt27=2;
                 int LA27_0 = input.LA(1);
 
-                if ( (LA27_0==24) ) {
+                if ( (LA27_0==38) ) {
                     int LA27_2 = input.LA(2);
 
                     if ( (synpred7_InternalGraphViewMapping()) ) {
@@ -4587,7 +4587,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
 
                 }
-                else if ( (LA27_0==38) ) {
+                else if ( (LA27_0==39) ) {
                     int LA27_3 = input.LA(2);
 
                     if ( (synpred7_InternalGraphViewMapping()) ) {
@@ -4784,10 +4784,10 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
             int alt28=2;
             int LA28_0 = input.LA(1);
 
-            if ( (LA28_0==24) ) {
+            if ( (LA28_0==38) ) {
                 alt28=1;
             }
-            else if ( (LA28_0==38) ) {
+            else if ( (LA28_0==39) ) {
                 alt28=2;
             }
             else {
@@ -4801,7 +4801,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                 case 1 :
                     // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:1670:2: kw= '->'
                     {
-                    kw=(Token)match(input,24,FOLLOW_24_in_ruleOpOther3793); if (state.failed) return current;
+                    kw=(Token)match(input,38,FOLLOW_38_in_ruleOpOther3793); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -4814,7 +4814,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                 case 2 :
                     // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:1677:2: kw= '..'
                     {
-                    kw=(Token)match(input,38,FOLLOW_38_in_ruleOpOther3812); if (state.failed) return current;
+                    kw=(Token)match(input,39,FOLLOW_39_in_ruleOpOther3812); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -4927,7 +4927,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                 int alt29=2;
                 int LA29_0 = input.LA(1);
 
-                if ( (LA29_0==39) ) {
+                if ( (LA29_0==40) ) {
                     int LA29_2 = input.LA(2);
 
                     if ( (synpred8_InternalGraphViewMapping()) ) {
@@ -4936,7 +4936,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
 
                 }
-                else if ( (LA29_0==40) ) {
+                else if ( (LA29_0==41) ) {
                     int LA29_3 = input.LA(2);
 
                     if ( (synpred8_InternalGraphViewMapping()) ) {
@@ -5133,10 +5133,10 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
             int alt30=2;
             int LA30_0 = input.LA(1);
 
-            if ( (LA30_0==39) ) {
+            if ( (LA30_0==40) ) {
                 alt30=1;
             }
-            else if ( (LA30_0==40) ) {
+            else if ( (LA30_0==41) ) {
                 alt30=2;
             }
             else {
@@ -5150,7 +5150,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                 case 1 :
                     // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:1778:2: kw= '+'
                     {
-                    kw=(Token)match(input,39,FOLLOW_39_in_ruleOpAdd4073); if (state.failed) return current;
+                    kw=(Token)match(input,40,FOLLOW_40_in_ruleOpAdd4073); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -5163,7 +5163,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                 case 2 :
                     // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:1785:2: kw= '-'
                     {
-                    kw=(Token)match(input,40,FOLLOW_40_in_ruleOpAdd4092); if (state.failed) return current;
+                    kw=(Token)match(input,41,FOLLOW_41_in_ruleOpAdd4092); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -5286,7 +5286,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
                     }
                     break;
-                case 41:
+                case 42:
                     {
                     int LA31_3 = input.LA(2);
 
@@ -5297,7 +5297,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
                     }
                     break;
-                case 42:
+                case 43:
                     {
                     int LA31_4 = input.LA(2);
 
@@ -5308,7 +5308,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
                     }
                     break;
-                case 43:
+                case 44:
                     {
                     int LA31_5 = input.LA(2);
 
@@ -5512,17 +5512,17 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                 alt32=1;
                 }
                 break;
-            case 41:
+            case 42:
                 {
                 alt32=2;
                 }
                 break;
-            case 42:
+            case 43:
                 {
                 alt32=3;
                 }
                 break;
-            case 43:
+            case 44:
                 {
                 alt32=4;
                 }
@@ -5552,7 +5552,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                 case 2 :
                     // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:1893:2: kw= '**'
                     {
-                    kw=(Token)match(input,41,FOLLOW_41_in_ruleOpMulti4372); if (state.failed) return current;
+                    kw=(Token)match(input,42,FOLLOW_42_in_ruleOpMulti4372); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -5565,7 +5565,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                 case 3 :
                     // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:1900:2: kw= '/'
                     {
-                    kw=(Token)match(input,42,FOLLOW_42_in_ruleOpMulti4391); if (state.failed) return current;
+                    kw=(Token)match(input,43,FOLLOW_43_in_ruleOpMulti4391); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -5578,7 +5578,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                 case 4 :
                     // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:1907:2: kw= '%'
                     {
-                    kw=(Token)match(input,43,FOLLOW_43_in_ruleOpMulti4410); if (state.failed) return current;
+                    kw=(Token)match(input,44,FOLLOW_44_in_ruleOpMulti4410); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -5670,10 +5670,10 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
             int alt33=2;
             int LA33_0 = input.LA(1);
 
-            if ( ((LA33_0>=39 && LA33_0<=40)||LA33_0==44) ) {
+            if ( ((LA33_0>=40 && LA33_0<=41)||LA33_0==45) ) {
                 alt33=1;
             }
-            else if ( ((LA33_0>=RULE_ID && LA33_0<=RULE_STRING)||LA33_0==13||LA33_0==20||LA33_0==37||LA33_0==49||LA33_0==51||LA33_0==54||LA33_0==56||(LA33_0>=60 && LA33_0<=61)||LA33_0==65||(LA33_0>=67 && LA33_0<=74)) ) {
+            else if ( ((LA33_0>=RULE_ID && LA33_0<=RULE_STRING)||LA33_0==13||LA33_0==20||LA33_0==37||LA33_0==50||LA33_0==52||LA33_0==55||LA33_0==57||(LA33_0>=61 && LA33_0<=62)||LA33_0==66||(LA33_0>=68 && LA33_0<=75)) ) {
                 alt33=2;
             }
             else {
@@ -5878,17 +5878,17 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
             // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:2003:1: (kw= '!' | kw= '-' | kw= '+' )
             int alt34=3;
             switch ( input.LA(1) ) {
-            case 44:
+            case 45:
                 {
                 alt34=1;
                 }
                 break;
-            case 40:
+            case 41:
                 {
                 alt34=2;
                 }
                 break;
-            case 39:
+            case 40:
                 {
                 alt34=3;
                 }
@@ -5905,7 +5905,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                 case 1 :
                     // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:2004:2: kw= '!'
                     {
-                    kw=(Token)match(input,44,FOLLOW_44_in_ruleOpUnary4653); if (state.failed) return current;
+                    kw=(Token)match(input,45,FOLLOW_45_in_ruleOpUnary4653); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -5918,7 +5918,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                 case 2 :
                     // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:2011:2: kw= '-'
                     {
-                    kw=(Token)match(input,40,FOLLOW_40_in_ruleOpUnary4672); if (state.failed) return current;
+                    kw=(Token)match(input,41,FOLLOW_41_in_ruleOpUnary4672); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -5931,7 +5931,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                 case 3 :
                     // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:2018:2: kw= '+'
                     {
-                    kw=(Token)match(input,39,FOLLOW_39_in_ruleOpUnary4691); if (state.failed) return current;
+                    kw=(Token)match(input,40,FOLLOW_40_in_ruleOpUnary4691); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -6045,7 +6045,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                 int alt35=2;
                 int LA35_0 = input.LA(1);
 
-                if ( (LA35_0==45) ) {
+                if ( (LA35_0==46) ) {
                     int LA35_2 = input.LA(2);
 
                     if ( (synpred10_InternalGraphViewMapping()) ) {
@@ -6079,7 +6079,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
             	    }
 
-            	    otherlv_2=(Token)match(input,45,FOLLOW_45_in_ruleXCastedExpression4823); if (state.failed) return current;
+            	    otherlv_2=(Token)match(input,46,FOLLOW_46_in_ruleXCastedExpression4823); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	          	newLeafNode(otherlv_2, grammarAccess.getXCastedExpressionAccess().getAsKeyword_1_0_0_1());
@@ -6271,7 +6271,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
                     }
                     break;
-                case 46:
+                case 47:
                     {
                     int LA42_3 = input.LA(2);
 
@@ -6282,7 +6282,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
                     }
                     break;
-                case 47:
+                case 48:
                     {
                     int LA42_4 = input.LA(2);
 
@@ -6457,12 +6457,12 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
             	        alt36=1;
             	        }
             	        break;
-            	    case 46:
+            	    case 47:
             	        {
             	        alt36=2;
             	        }
             	        break;
-            	    case 47:
+            	    case 48:
             	        {
             	        alt36=3;
             	        }
@@ -6497,7 +6497,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
             	            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:2199:1: (lv_nullSafe_8_0= '?.' )
             	            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:2200:3: lv_nullSafe_8_0= '?.'
             	            {
-            	            lv_nullSafe_8_0=(Token)match(input,46,FOLLOW_46_in_ruleXMemberFeatureCall5161); if (state.failed) return current;
+            	            lv_nullSafe_8_0=(Token)match(input,47,FOLLOW_47_in_ruleXMemberFeatureCall5161); if (state.failed) return current;
             	            if ( state.backtracking==0 ) {
 
             	                      newLeafNode(lv_nullSafe_8_0, grammarAccess.getXMemberFeatureCallAccess().getNullSafeQuestionMarkFullStopKeyword_1_1_0_0_1_1_0());
@@ -6529,7 +6529,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
             	            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:2215:1: (lv_spreading_9_0= '*.' )
             	            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:2216:3: lv_spreading_9_0= '*.'
             	            {
-            	            lv_spreading_9_0=(Token)match(input,47,FOLLOW_47_in_ruleXMemberFeatureCall5198); if (state.failed) return current;
+            	            lv_spreading_9_0=(Token)match(input,48,FOLLOW_48_in_ruleXMemberFeatureCall5198); if (state.failed) return current;
             	            if ( state.backtracking==0 ) {
 
             	                      newLeafNode(lv_spreading_9_0, grammarAccess.getXMemberFeatureCallAccess().getSpreadingAsteriskFullStopKeyword_1_1_0_0_1_2_0());
@@ -6619,7 +6619,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
             	                int alt37=2;
             	                int LA37_0 = input.LA(1);
 
-            	                if ( (LA37_0==48) ) {
+            	                if ( (LA37_0==49) ) {
             	                    alt37=1;
             	                }
 
@@ -6628,7 +6628,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
             	            	case 1 :
             	            	    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:2251:4: otherlv_12= ',' ( (lv_typeArguments_13_0= ruleJvmArgumentTypeReference ) )
             	            	    {
-            	            	    otherlv_12=(Token)match(input,48,FOLLOW_48_in_ruleXMemberFeatureCall5261); if (state.failed) return current;
+            	            	    otherlv_12=(Token)match(input,49,FOLLOW_49_in_ruleXMemberFeatureCall5261); if (state.failed) return current;
             	            	    if ( state.backtracking==0 ) {
 
             	            	          	newLeafNode(otherlv_12, grammarAccess.getXMemberFeatureCallAccess().getCommaKeyword_1_1_1_2_0());
@@ -6737,7 +6737,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
             	            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:2299:1: (lv_explicitOperationCall_16_0= '(' )
             	            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:2300:3: lv_explicitOperationCall_16_0= '('
             	            {
-            	            lv_explicitOperationCall_16_0=(Token)match(input,49,FOLLOW_49_in_ruleXMemberFeatureCall5355); if (state.failed) return current;
+            	            lv_explicitOperationCall_16_0=(Token)match(input,50,FOLLOW_50_in_ruleXMemberFeatureCall5355); if (state.failed) return current;
             	            if ( state.backtracking==0 ) {
 
             	                      newLeafNode(lv_explicitOperationCall_16_0, grammarAccess.getXMemberFeatureCallAccess().getExplicitOperationCallLeftParenthesisKeyword_1_1_3_0_0());
@@ -6849,7 +6849,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
             	                        int alt39=2;
             	                        int LA39_0 = input.LA(1);
 
-            	                        if ( (LA39_0==48) ) {
+            	                        if ( (LA39_0==49) ) {
             	                            alt39=1;
             	                        }
 
@@ -6858,7 +6858,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
             	                    	case 1 :
             	                    	    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:2361:4: otherlv_19= ',' ( (lv_memberCallArguments_20_0= ruleXExpression ) )
             	                    	    {
-            	                    	    otherlv_19=(Token)match(input,48,FOLLOW_48_in_ruleXMemberFeatureCall5471); if (state.failed) return current;
+            	                    	    otherlv_19=(Token)match(input,49,FOLLOW_49_in_ruleXMemberFeatureCall5471); if (state.failed) return current;
             	                    	    if ( state.backtracking==0 ) {
 
             	                    	          	newLeafNode(otherlv_19, grammarAccess.getXMemberFeatureCallAccess().getCommaKeyword_1_1_3_1_1_1_0());
@@ -6917,7 +6917,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
             	            }
 
-            	            otherlv_21=(Token)match(input,50,FOLLOW_50_in_ruleXMemberFeatureCall5509); if (state.failed) return current;
+            	            otherlv_21=(Token)match(input,51,FOLLOW_51_in_ruleXMemberFeatureCall5509); if (state.failed) return current;
             	            if ( state.backtracking==0 ) {
 
             	                  	newLeafNode(otherlv_21, grammarAccess.getXMemberFeatureCallAccess().getRightParenthesisKeyword_1_1_3_2());
@@ -7044,7 +7044,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
             // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:2408:1: (this_XConstructorCall_0= ruleXConstructorCall | this_XBlockExpression_1= ruleXBlockExpression | this_XSwitchExpression_2= ruleXSwitchExpression | this_XFeatureCall_3= ruleXFeatureCall | this_XLiteral_4= ruleXLiteral | this_XIfExpression_5= ruleXIfExpression | this_XForLoopExpression_6= ruleXForLoopExpression | this_XWhileExpression_7= ruleXWhileExpression | this_XDoWhileExpression_8= ruleXDoWhileExpression | this_XThrowExpression_9= ruleXThrowExpression | this_XReturnExpression_10= ruleXReturnExpression | this_XTryCatchFinallyExpression_11= ruleXTryCatchFinallyExpression | this_XParenthesizedExpression_12= ruleXParenthesizedExpression )
             int alt43=13;
             switch ( input.LA(1) ) {
-            case 67:
+            case 68:
                 {
                 alt43=1;
                 }
@@ -7054,30 +7054,30 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                 alt43=2;
                 }
                 break;
-            case 56:
+            case 57:
                 {
                 alt43=3;
                 }
                 break;
             case RULE_ID:
             case 37:
-            case 65:
+            case 66:
                 {
                 alt43=4;
                 }
                 break;
             case RULE_INT:
             case RULE_STRING:
-            case 51:
-            case 68:
+            case 52:
             case 69:
             case 70:
             case 71:
+            case 72:
                 {
                 alt43=5;
                 }
                 break;
-            case 54:
+            case 55:
                 {
                 alt43=6;
                 }
@@ -7087,32 +7087,32 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                 alt43=7;
                 }
                 break;
-            case 60:
+            case 61:
                 {
                 alt43=8;
                 }
                 break;
-            case 61:
+            case 62:
                 {
                 alt43=9;
                 }
                 break;
-            case 72:
+            case 73:
                 {
                 alt43=10;
                 }
                 break;
-            case 73:
+            case 74:
                 {
                 alt43=11;
                 }
                 break;
-            case 74:
+            case 75:
                 {
                 alt43=12;
                 }
                 break;
-            case 49:
+            case 50:
                 {
                 alt43=13;
                 }
@@ -7501,13 +7501,13 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
             // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:2558:1: (this_XClosure_0= ruleXClosure | this_XBooleanLiteral_1= ruleXBooleanLiteral | this_XIntLiteral_2= ruleXIntLiteral | this_XNullLiteral_3= ruleXNullLiteral | this_XStringLiteral_4= ruleXStringLiteral | this_XTypeLiteral_5= ruleXTypeLiteral )
             int alt44=6;
             switch ( input.LA(1) ) {
-            case 51:
+            case 52:
                 {
                 alt44=1;
                 }
                 break;
-            case 68:
             case 69:
+            case 70:
                 {
                 alt44=2;
                 }
@@ -7517,7 +7517,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                 alt44=3;
                 }
                 break;
-            case 70:
+            case 71:
                 {
                 alt44=4;
                 }
@@ -7527,7 +7527,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                 alt44=5;
                 }
                 break;
-            case 71:
+            case 72:
                 {
                 alt44=6;
                 }
@@ -7773,7 +7773,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
             }
 
-            otherlv_1=(Token)match(input,51,FOLLOW_51_in_ruleXClosure6249); if (state.failed) return current;
+            otherlv_1=(Token)match(input,52,FOLLOW_52_in_ruleXClosure6249); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getXClosureAccess().getLeftSquareBracketKeyword_1());
@@ -7783,7 +7783,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
             int alt46=2;
             int LA46_0 = input.LA(1);
 
-            if ( (LA46_0==RULE_ID||LA46_0==49||LA46_0==77) ) {
+            if ( (LA46_0==RULE_ID||LA46_0==24||LA46_0==50) ) {
                 alt46=1;
             }
             switch (alt46) {
@@ -7831,7 +7831,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                         int alt45=2;
                         int LA45_0 = input.LA(1);
 
-                        if ( (LA45_0==48) ) {
+                        if ( (LA45_0==49) ) {
                             alt45=1;
                         }
 
@@ -7840,7 +7840,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                     	case 1 :
                     	    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:2666:4: otherlv_3= ',' ( (lv_formalParameters_4_0= ruleJvmFormalParameter ) )
                     	    {
-                    	    otherlv_3=(Token)match(input,48,FOLLOW_48_in_ruleXClosure6284); if (state.failed) return current;
+                    	    otherlv_3=(Token)match(input,49,FOLLOW_49_in_ruleXClosure6284); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	          	newLeafNode(otherlv_3, grammarAccess.getXClosureAccess().getCommaKeyword_2_1_0());
@@ -7896,7 +7896,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
             }
 
-            otherlv_5=(Token)match(input,52,FOLLOW_52_in_ruleXClosure6321); if (state.failed) return current;
+            otherlv_5=(Token)match(input,53,FOLLOW_53_in_ruleXClosure6321); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_5, grammarAccess.getXClosureAccess().getVerticalLineKeyword_3());
@@ -7937,7 +7937,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
             }
 
-            otherlv_7=(Token)match(input,53,FOLLOW_53_in_ruleXClosure6354); if (state.failed) return current;
+            otherlv_7=(Token)match(input,54,FOLLOW_54_in_ruleXClosure6354); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_7, grammarAccess.getXClosureAccess().getRightSquareBracketKeyword_5());
@@ -8051,7 +8051,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
             int alt48=2;
             int LA48_0 = input.LA(1);
 
-            if ( (LA48_0==RULE_ID||LA48_0==49||LA48_0==77) ) {
+            if ( (LA48_0==RULE_ID||LA48_0==24||LA48_0==50) ) {
                 alt48=1;
             }
             switch (alt48) {
@@ -8099,7 +8099,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                         int alt47=2;
                         int LA47_0 = input.LA(1);
 
-                        if ( (LA47_0==48) ) {
+                        if ( (LA47_0==49) ) {
                             alt47=1;
                         }
 
@@ -8108,7 +8108,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                     	case 1 :
                     	    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:2770:4: otherlv_2= ',' ( (lv_formalParameters_3_0= ruleJvmFormalParameter ) )
                     	    {
-                    	    otherlv_2=(Token)match(input,48,FOLLOW_48_in_ruleXShortClosure6511); if (state.failed) return current;
+                    	    otherlv_2=(Token)match(input,49,FOLLOW_49_in_ruleXShortClosure6511); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	          	newLeafNode(otherlv_2, grammarAccess.getXShortClosureAccess().getCommaKeyword_0_0_1_1_0());
@@ -8164,7 +8164,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
             }
 
-            otherlv_4=(Token)match(input,52,FOLLOW_52_in_ruleXShortClosure6548); if (state.failed) return current;
+            otherlv_4=(Token)match(input,53,FOLLOW_53_in_ruleXShortClosure6548); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_4, grammarAccess.getXShortClosureAccess().getVerticalLineKeyword_0_0_2());
@@ -8292,7 +8292,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
             // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:2835:1: (otherlv_0= '(' this_XExpression_1= ruleXExpression otherlv_2= ')' )
             // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:2835:3: otherlv_0= '(' this_XExpression_1= ruleXExpression otherlv_2= ')'
             {
-            otherlv_0=(Token)match(input,49,FOLLOW_49_in_ruleXParenthesizedExpression6654); if (state.failed) return current;
+            otherlv_0=(Token)match(input,50,FOLLOW_50_in_ruleXParenthesizedExpression6654); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getXParenthesizedExpressionAccess().getLeftParenthesisKeyword_0());
@@ -8314,7 +8314,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                       afterParserOrEnumRuleCall();
                   
             }
-            otherlv_2=(Token)match(input,50,FOLLOW_50_in_ruleXParenthesizedExpression6687); if (state.failed) return current;
+            otherlv_2=(Token)match(input,51,FOLLOW_51_in_ruleXParenthesizedExpression6687); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_2, grammarAccess.getXParenthesizedExpressionAccess().getRightParenthesisKeyword_2());
@@ -8420,13 +8420,13 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
             }
 
-            otherlv_1=(Token)match(input,54,FOLLOW_54_in_ruleXIfExpression6779); if (state.failed) return current;
+            otherlv_1=(Token)match(input,55,FOLLOW_55_in_ruleXIfExpression6779); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getXIfExpressionAccess().getIfKeyword_1());
                   
             }
-            otherlv_2=(Token)match(input,49,FOLLOW_49_in_ruleXIfExpression6791); if (state.failed) return current;
+            otherlv_2=(Token)match(input,50,FOLLOW_50_in_ruleXIfExpression6791); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_2, grammarAccess.getXIfExpressionAccess().getLeftParenthesisKeyword_2());
@@ -8467,7 +8467,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
             }
 
-            otherlv_4=(Token)match(input,50,FOLLOW_50_in_ruleXIfExpression6824); if (state.failed) return current;
+            otherlv_4=(Token)match(input,51,FOLLOW_51_in_ruleXIfExpression6824); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_4, grammarAccess.getXIfExpressionAccess().getRightParenthesisKeyword_4());
@@ -8512,7 +8512,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
             int alt49=2;
             int LA49_0 = input.LA(1);
 
-            if ( (LA49_0==55) ) {
+            if ( (LA49_0==56) ) {
                 int LA49_1 = input.LA(2);
 
                 if ( (synpred16_InternalGraphViewMapping()) ) {
@@ -8526,7 +8526,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                     // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:2927:3: ( ( 'else' )=>otherlv_6= 'else' )
                     // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:2927:4: ( 'else' )=>otherlv_6= 'else'
                     {
-                    otherlv_6=(Token)match(input,55,FOLLOW_55_in_ruleXIfExpression6866); if (state.failed) return current;
+                    otherlv_6=(Token)match(input,56,FOLLOW_56_in_ruleXIfExpression6866); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_6, grammarAccess.getXIfExpressionAccess().getElseKeyword_6_0());
@@ -8680,7 +8680,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
             }
 
-            otherlv_1=(Token)match(input,56,FOLLOW_56_in_ruleXSwitchExpression6982); if (state.failed) return current;
+            otherlv_1=(Token)match(input,57,FOLLOW_57_in_ruleXSwitchExpression6982); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getXSwitchExpressionAccess().getSwitchKeyword_1());
@@ -8693,7 +8693,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
             if ( (LA50_0==RULE_ID) ) {
                 int LA50_1 = input.LA(2);
 
-                if ( (LA50_1==57) ) {
+                if ( (LA50_1==58) ) {
                     alt50=1;
                 }
             }
@@ -8736,7 +8736,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
                     }
 
-                    otherlv_3=(Token)match(input,57,FOLLOW_57_in_ruleXSwitchExpression7016); if (state.failed) return current;
+                    otherlv_3=(Token)match(input,58,FOLLOW_58_in_ruleXSwitchExpression7016); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_3, grammarAccess.getXSwitchExpressionAccess().getColonKeyword_2_1());
@@ -8796,7 +8796,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                 int alt51=2;
                 int LA51_0 = input.LA(1);
 
-                if ( (LA51_0==RULE_ID||LA51_0==49||LA51_0==57||LA51_0==59||LA51_0==77) ) {
+                if ( (LA51_0==RULE_ID||LA51_0==24||LA51_0==50||LA51_0==58||LA51_0==60) ) {
                     alt51=1;
                 }
 
@@ -8852,20 +8852,20 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
             int alt52=2;
             int LA52_0 = input.LA(1);
 
-            if ( (LA52_0==58) ) {
+            if ( (LA52_0==59) ) {
                 alt52=1;
             }
             switch (alt52) {
                 case 1 :
                     // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:3043:5: otherlv_7= 'default' otherlv_8= ':' ( (lv_default_9_0= ruleXExpression ) )
                     {
-                    otherlv_7=(Token)match(input,58,FOLLOW_58_in_ruleXSwitchExpression7086); if (state.failed) return current;
+                    otherlv_7=(Token)match(input,59,FOLLOW_59_in_ruleXSwitchExpression7086); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_7, grammarAccess.getXSwitchExpressionAccess().getDefaultKeyword_6_0());
                           
                     }
-                    otherlv_8=(Token)match(input,57,FOLLOW_57_in_ruleXSwitchExpression7098); if (state.failed) return current;
+                    otherlv_8=(Token)match(input,58,FOLLOW_58_in_ruleXSwitchExpression7098); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_8, grammarAccess.getXSwitchExpressionAccess().getColonKeyword_6_1());
@@ -9007,7 +9007,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
             int alt53=2;
             int LA53_0 = input.LA(1);
 
-            if ( (LA53_0==RULE_ID||LA53_0==49||LA53_0==77) ) {
+            if ( (LA53_0==RULE_ID||LA53_0==24||LA53_0==50) ) {
                 alt53=1;
             }
             switch (alt53) {
@@ -9053,14 +9053,14 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
             int alt54=2;
             int LA54_0 = input.LA(1);
 
-            if ( (LA54_0==59) ) {
+            if ( (LA54_0==60) ) {
                 alt54=1;
             }
             switch (alt54) {
                 case 1 :
                     // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:3112:5: otherlv_1= 'case' ( (lv_case_2_0= ruleXExpression ) )
                     {
-                    otherlv_1=(Token)match(input,59,FOLLOW_59_in_ruleXCasePart7239); if (state.failed) return current;
+                    otherlv_1=(Token)match(input,60,FOLLOW_60_in_ruleXCasePart7239); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_1, grammarAccess.getXCasePartAccess().getCaseKeyword_1_0());
@@ -9107,7 +9107,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
             }
 
-            otherlv_3=(Token)match(input,57,FOLLOW_57_in_ruleXCasePart7274); if (state.failed) return current;
+            otherlv_3=(Token)match(input,58,FOLLOW_58_in_ruleXCasePart7274); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_3, grammarAccess.getXCasePartAccess().getColonKeyword_2());
@@ -9254,7 +9254,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                   	newLeafNode(otherlv_1, grammarAccess.getXForLoopExpressionAccess().getForKeyword_1());
                   
             }
-            otherlv_2=(Token)match(input,49,FOLLOW_49_in_ruleXForLoopExpression7399); if (state.failed) return current;
+            otherlv_2=(Token)match(input,50,FOLLOW_50_in_ruleXForLoopExpression7399); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_2, grammarAccess.getXForLoopExpressionAccess().getLeftParenthesisKeyword_2());
@@ -9295,7 +9295,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
             }
 
-            otherlv_4=(Token)match(input,57,FOLLOW_57_in_ruleXForLoopExpression7432); if (state.failed) return current;
+            otherlv_4=(Token)match(input,58,FOLLOW_58_in_ruleXForLoopExpression7432); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_4, grammarAccess.getXForLoopExpressionAccess().getColonKeyword_4());
@@ -9336,7 +9336,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
             }
 
-            otherlv_6=(Token)match(input,50,FOLLOW_50_in_ruleXForLoopExpression7465); if (state.failed) return current;
+            otherlv_6=(Token)match(input,51,FOLLOW_51_in_ruleXForLoopExpression7465); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_6, grammarAccess.getXForLoopExpressionAccess().getRightParenthesisKeyword_6());
@@ -9474,13 +9474,13 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
             }
 
-            otherlv_1=(Token)match(input,60,FOLLOW_60_in_ruleXWhileExpression7578); if (state.failed) return current;
+            otherlv_1=(Token)match(input,61,FOLLOW_61_in_ruleXWhileExpression7578); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getXWhileExpressionAccess().getWhileKeyword_1());
                   
             }
-            otherlv_2=(Token)match(input,49,FOLLOW_49_in_ruleXWhileExpression7590); if (state.failed) return current;
+            otherlv_2=(Token)match(input,50,FOLLOW_50_in_ruleXWhileExpression7590); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_2, grammarAccess.getXWhileExpressionAccess().getLeftParenthesisKeyword_2());
@@ -9521,7 +9521,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
             }
 
-            otherlv_4=(Token)match(input,50,FOLLOW_50_in_ruleXWhileExpression7623); if (state.failed) return current;
+            otherlv_4=(Token)match(input,51,FOLLOW_51_in_ruleXWhileExpression7623); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_4, grammarAccess.getXWhileExpressionAccess().getRightParenthesisKeyword_4());
@@ -9660,7 +9660,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
             }
 
-            otherlv_1=(Token)match(input,61,FOLLOW_61_in_ruleXDoWhileExpression7736); if (state.failed) return current;
+            otherlv_1=(Token)match(input,62,FOLLOW_62_in_ruleXDoWhileExpression7736); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getXDoWhileExpressionAccess().getDoKeyword_1());
@@ -9701,13 +9701,13 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
             }
 
-            otherlv_3=(Token)match(input,60,FOLLOW_60_in_ruleXDoWhileExpression7769); if (state.failed) return current;
+            otherlv_3=(Token)match(input,61,FOLLOW_61_in_ruleXDoWhileExpression7769); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_3, grammarAccess.getXDoWhileExpressionAccess().getWhileKeyword_3());
                   
             }
-            otherlv_4=(Token)match(input,49,FOLLOW_49_in_ruleXDoWhileExpression7781); if (state.failed) return current;
+            otherlv_4=(Token)match(input,50,FOLLOW_50_in_ruleXDoWhileExpression7781); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_4, grammarAccess.getXDoWhileExpressionAccess().getLeftParenthesisKeyword_4());
@@ -9748,7 +9748,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
             }
 
-            otherlv_6=(Token)match(input,50,FOLLOW_50_in_ruleXDoWhileExpression7814); if (state.failed) return current;
+            otherlv_6=(Token)match(input,51,FOLLOW_51_in_ruleXDoWhileExpression7814); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_6, grammarAccess.getXDoWhileExpressionAccess().getRightParenthesisKeyword_6());
@@ -9861,7 +9861,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                 int alt56=2;
                 int LA56_0 = input.LA(1);
 
-                if ( ((LA56_0>=RULE_ID && LA56_0<=RULE_STRING)||LA56_0==13||LA56_0==20||LA56_0==37||(LA56_0>=39 && LA56_0<=40)||LA56_0==44||LA56_0==49||LA56_0==51||LA56_0==54||LA56_0==56||(LA56_0>=60 && LA56_0<=61)||(LA56_0>=63 && LA56_0<=65)||(LA56_0>=67 && LA56_0<=74)) ) {
+                if ( ((LA56_0>=RULE_ID && LA56_0<=RULE_STRING)||LA56_0==13||LA56_0==20||LA56_0==37||(LA56_0>=40 && LA56_0<=41)||LA56_0==45||LA56_0==50||LA56_0==52||LA56_0==55||LA56_0==57||(LA56_0>=61 && LA56_0<=62)||(LA56_0>=64 && LA56_0<=66)||(LA56_0>=68 && LA56_0<=75)) ) {
                     alt56=1;
                 }
 
@@ -9909,14 +9909,14 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
             	    int alt55=2;
             	    int LA55_0 = input.LA(1);
 
-            	    if ( (LA55_0==62) ) {
+            	    if ( (LA55_0==63) ) {
             	        alt55=1;
             	    }
             	    switch (alt55) {
             	        case 1 :
             	            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:3456:4: otherlv_3= ';'
             	            {
-            	            otherlv_3=(Token)match(input,62,FOLLOW_62_in_ruleXBlockExpression7941); if (state.failed) return current;
+            	            otherlv_3=(Token)match(input,63,FOLLOW_63_in_ruleXBlockExpression7941); if (state.failed) return current;
             	            if ( state.backtracking==0 ) {
 
             	                  	newLeafNode(otherlv_3, grammarAccess.getXBlockExpressionAccess().getSemicolonKeyword_2_1());
@@ -10025,10 +10025,10 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
             int alt57=2;
             int LA57_0 = input.LA(1);
 
-            if ( ((LA57_0>=63 && LA57_0<=64)) ) {
+            if ( ((LA57_0>=64 && LA57_0<=65)) ) {
                 alt57=1;
             }
-            else if ( ((LA57_0>=RULE_ID && LA57_0<=RULE_STRING)||LA57_0==13||LA57_0==20||LA57_0==37||(LA57_0>=39 && LA57_0<=40)||LA57_0==44||LA57_0==49||LA57_0==51||LA57_0==54||LA57_0==56||(LA57_0>=60 && LA57_0<=61)||LA57_0==65||(LA57_0>=67 && LA57_0<=74)) ) {
+            else if ( ((LA57_0>=RULE_ID && LA57_0<=RULE_STRING)||LA57_0==13||LA57_0==20||LA57_0==37||(LA57_0>=40 && LA57_0<=41)||LA57_0==45||LA57_0==50||LA57_0==52||LA57_0==55||LA57_0==57||(LA57_0>=61 && LA57_0<=62)||LA57_0==66||(LA57_0>=68 && LA57_0<=75)) ) {
                 alt57=2;
             }
             else {
@@ -10188,10 +10188,10 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
             int alt58=2;
             int LA58_0 = input.LA(1);
 
-            if ( (LA58_0==63) ) {
+            if ( (LA58_0==64) ) {
                 alt58=1;
             }
-            else if ( (LA58_0==64) ) {
+            else if ( (LA58_0==65) ) {
                 alt58=2;
             }
             else {
@@ -10211,7 +10211,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                     // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:3532:1: (lv_writeable_1_0= 'var' )
                     // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:3533:3: lv_writeable_1_0= 'var'
                     {
-                    lv_writeable_1_0=(Token)match(input,63,FOLLOW_63_in_ruleXVariableDeclaration8175); if (state.failed) return current;
+                    lv_writeable_1_0=(Token)match(input,64,FOLLOW_64_in_ruleXVariableDeclaration8175); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_writeable_1_0, grammarAccess.getXVariableDeclarationAccess().getWriteableVarKeyword_1_0_0());
@@ -10237,7 +10237,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                 case 2 :
                     // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:3547:7: otherlv_2= 'val'
                     {
-                    otherlv_2=(Token)match(input,64,FOLLOW_64_in_ruleXVariableDeclaration8206); if (state.failed) return current;
+                    otherlv_2=(Token)match(input,65,FOLLOW_65_in_ruleXVariableDeclaration8206); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_2, grammarAccess.getXVariableDeclarationAccess().getValKeyword_1_1());
@@ -10270,10 +10270,10 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                     throw nvae;
                 }
             }
-            else if ( (LA59_0==49) && (synpred17_InternalGraphViewMapping())) {
+            else if ( (LA59_0==50) && (synpred17_InternalGraphViewMapping())) {
                 alt59=1;
             }
-            else if ( (LA59_0==77) && (synpred17_InternalGraphViewMapping())) {
+            else if ( (LA59_0==24) && (synpred17_InternalGraphViewMapping())) {
                 alt59=1;
             }
             else {
@@ -10566,7 +10566,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                     alt61=1;
                 }
             }
-            else if ( (LA61_0==49||LA61_0==77) ) {
+            else if ( (LA61_0==24||LA61_0==50) ) {
                 alt61=1;
             }
             switch (alt61) {
@@ -10756,7 +10756,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
             if ( (LA62_0==RULE_ID) ) {
                 int LA62_1 = input.LA(2);
 
-                if ( (LA62_1==66) ) {
+                if ( (LA62_1==67) ) {
                     alt62=1;
                 }
             }
@@ -10856,7 +10856,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                         int alt63=2;
                         int LA63_0 = input.LA(1);
 
-                        if ( (LA63_0==48) ) {
+                        if ( (LA63_0==49) ) {
                             alt63=1;
                         }
 
@@ -10865,7 +10865,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                     	case 1 :
                     	    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:3757:4: otherlv_4= ',' ( (lv_typeArguments_5_0= ruleJvmArgumentTypeReference ) )
                     	    {
-                    	    otherlv_4=(Token)match(input,48,FOLLOW_48_in_ruleXFeatureCall8606); if (state.failed) return current;
+                    	    otherlv_4=(Token)match(input,49,FOLLOW_49_in_ruleXFeatureCall8606); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	          	newLeafNode(otherlv_4, grammarAccess.getXFeatureCallAccess().getCommaKeyword_2_2_0());
@@ -10974,7 +10974,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                     // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:3805:1: (lv_explicitOperationCall_8_0= '(' )
                     // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:3806:3: lv_explicitOperationCall_8_0= '('
                     {
-                    lv_explicitOperationCall_8_0=(Token)match(input,49,FOLLOW_49_in_ruleXFeatureCall8700); if (state.failed) return current;
+                    lv_explicitOperationCall_8_0=(Token)match(input,50,FOLLOW_50_in_ruleXFeatureCall8700); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_explicitOperationCall_8_0, grammarAccess.getXFeatureCallAccess().getExplicitOperationCallLeftParenthesisKeyword_4_0_0());
@@ -11086,7 +11086,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                                 int alt65=2;
                                 int LA65_0 = input.LA(1);
 
-                                if ( (LA65_0==48) ) {
+                                if ( (LA65_0==49) ) {
                                     alt65=1;
                                 }
 
@@ -11095,7 +11095,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                             	case 1 :
                             	    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:3867:4: otherlv_11= ',' ( (lv_featureCallArguments_12_0= ruleXExpression ) )
                             	    {
-                            	    otherlv_11=(Token)match(input,48,FOLLOW_48_in_ruleXFeatureCall8816); if (state.failed) return current;
+                            	    otherlv_11=(Token)match(input,49,FOLLOW_49_in_ruleXFeatureCall8816); if (state.failed) return current;
                             	    if ( state.backtracking==0 ) {
 
                             	          	newLeafNode(otherlv_11, grammarAccess.getXFeatureCallAccess().getCommaKeyword_4_1_1_1_0());
@@ -11154,7 +11154,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
                     }
 
-                    otherlv_13=(Token)match(input,50,FOLLOW_50_in_ruleXFeatureCall8854); if (state.failed) return current;
+                    otherlv_13=(Token)match(input,51,FOLLOW_51_in_ruleXFeatureCall8854); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_13, grammarAccess.getXFeatureCallAccess().getRightParenthesisKeyword_4_2());
@@ -11250,7 +11250,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
             if ( (LA68_0==RULE_ID) ) {
                 alt68=1;
             }
-            else if ( (LA68_0==65) ) {
+            else if ( (LA68_0==66) ) {
                 alt68=2;
             }
             else {
@@ -11290,7 +11290,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                 case 2 :
                     // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:3927:2: kw= 'super'
                     {
-                    kw=(Token)match(input,65,FOLLOW_65_in_ruleIdOrSuper8975); if (state.failed) return current;
+                    kw=(Token)match(input,66,FOLLOW_66_in_ruleIdOrSuper8975); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -11387,7 +11387,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                 if ( (LA69_0==RULE_ID) ) {
                     int LA69_2 = input.LA(2);
 
-                    if ( (LA69_2==66) ) {
+                    if ( (LA69_2==67) ) {
                         alt69=1;
                     }
 
@@ -11419,7 +11419,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
             	              afterParserOrEnumRuleCall();
             	          
             	    }
-            	    kw=(Token)match(input,66,FOLLOW_66_in_ruleStaticQualifier9092); if (state.failed) return current;
+            	    kw=(Token)match(input,67,FOLLOW_67_in_ruleStaticQualifier9092); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	              current.merge(kw);
@@ -11544,7 +11544,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
             }
 
-            otherlv_1=(Token)match(input,67,FOLLOW_67_in_ruleXConstructorCall9189); if (state.failed) return current;
+            otherlv_1=(Token)match(input,68,FOLLOW_68_in_ruleXConstructorCall9189); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getXConstructorCallAccess().getNewKeyword_1());
@@ -11642,7 +11642,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                         int alt70=2;
                         int LA70_0 = input.LA(1);
 
-                        if ( (LA70_0==48) ) {
+                        if ( (LA70_0==49) ) {
                             alt70=1;
                         }
 
@@ -11651,7 +11651,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                     	case 1 :
                     	    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:4038:4: otherlv_5= ',' ( (lv_typeArguments_6_0= ruleJvmArgumentTypeReference ) )
                     	    {
-                    	    otherlv_5=(Token)match(input,48,FOLLOW_48_in_ruleXConstructorCall9259); if (state.failed) return current;
+                    	    otherlv_5=(Token)match(input,49,FOLLOW_49_in_ruleXConstructorCall9259); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	          	newLeafNode(otherlv_5, grammarAccess.getXConstructorCallAccess().getCommaKeyword_3_2_0());
@@ -11713,7 +11713,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
             }
 
-            otherlv_8=(Token)match(input,49,FOLLOW_49_in_ruleXConstructorCall9308); if (state.failed) return current;
+            otherlv_8=(Token)match(input,50,FOLLOW_50_in_ruleXConstructorCall9308); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_8, grammarAccess.getXConstructorCallAccess().getLeftParenthesisKeyword_4());
@@ -11811,7 +11811,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                         int alt72=2;
                         int LA72_0 = input.LA(1);
 
-                        if ( (LA72_0==48) ) {
+                        if ( (LA72_0==49) ) {
                             alt72=1;
                         }
 
@@ -11820,7 +11820,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                     	case 1 :
                     	    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:4116:4: otherlv_11= ',' ( (lv_arguments_12_0= ruleXExpression ) )
                     	    {
-                    	    otherlv_11=(Token)match(input,48,FOLLOW_48_in_ruleXConstructorCall9411); if (state.failed) return current;
+                    	    otherlv_11=(Token)match(input,49,FOLLOW_49_in_ruleXConstructorCall9411); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	          	newLeafNode(otherlv_11, grammarAccess.getXConstructorCallAccess().getCommaKeyword_5_1_1_0());
@@ -11879,7 +11879,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
             }
 
-            otherlv_13=(Token)match(input,50,FOLLOW_50_in_ruleXConstructorCall9449); if (state.failed) return current;
+            otherlv_13=(Token)match(input,51,FOLLOW_51_in_ruleXConstructorCall9449); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_13, grammarAccess.getXConstructorCallAccess().getRightParenthesisKeyword_6());
@@ -11981,10 +11981,10 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
             int alt74=2;
             int LA74_0 = input.LA(1);
 
-            if ( (LA74_0==68) ) {
+            if ( (LA74_0==69) ) {
                 alt74=1;
             }
-            else if ( (LA74_0==69) ) {
+            else if ( (LA74_0==70) ) {
                 alt74=2;
             }
             else {
@@ -11998,7 +11998,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                 case 1 :
                     // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:4169:4: otherlv_1= 'false'
                     {
-                    otherlv_1=(Token)match(input,68,FOLLOW_68_in_ruleXBooleanLiteral9542); if (state.failed) return current;
+                    otherlv_1=(Token)match(input,69,FOLLOW_69_in_ruleXBooleanLiteral9542); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_1, grammarAccess.getXBooleanLiteralAccess().getFalseKeyword_1_0());
@@ -12016,7 +12016,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                     // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:4175:1: (lv_isTrue_2_0= 'true' )
                     // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:4176:3: lv_isTrue_2_0= 'true'
                     {
-                    lv_isTrue_2_0=(Token)match(input,69,FOLLOW_69_in_ruleXBooleanLiteral9566); if (state.failed) return current;
+                    lv_isTrue_2_0=(Token)match(input,70,FOLLOW_70_in_ruleXBooleanLiteral9566); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_isTrue_2_0, grammarAccess.getXBooleanLiteralAccess().getIsTrueTrueKeyword_1_1_0());
@@ -12133,7 +12133,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
             }
 
-            otherlv_1=(Token)match(input,70,FOLLOW_70_in_ruleXNullLiteral9672); if (state.failed) return current;
+            otherlv_1=(Token)match(input,71,FOLLOW_71_in_ruleXNullLiteral9672); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getXNullLiteralAccess().getNullKeyword_1());
@@ -12474,13 +12474,13 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
             }
 
-            otherlv_1=(Token)match(input,71,FOLLOW_71_in_ruleXTypeLiteral9968); if (state.failed) return current;
+            otherlv_1=(Token)match(input,72,FOLLOW_72_in_ruleXTypeLiteral9968); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getXTypeLiteralAccess().getTypeofKeyword_1());
                   
             }
-            otherlv_2=(Token)match(input,49,FOLLOW_49_in_ruleXTypeLiteral9980); if (state.failed) return current;
+            otherlv_2=(Token)match(input,50,FOLLOW_50_in_ruleXTypeLiteral9980); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_2, grammarAccess.getXTypeLiteralAccess().getLeftParenthesisKeyword_2());
@@ -12520,7 +12520,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
             }
 
-            otherlv_4=(Token)match(input,50,FOLLOW_50_in_ruleXTypeLiteral10015); if (state.failed) return current;
+            otherlv_4=(Token)match(input,51,FOLLOW_51_in_ruleXTypeLiteral10015); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_4, grammarAccess.getXTypeLiteralAccess().getRightParenthesisKeyword_4());
@@ -12619,7 +12619,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
             }
 
-            otherlv_1=(Token)match(input,72,FOLLOW_72_in_ruleXThrowExpression10107); if (state.failed) return current;
+            otherlv_1=(Token)match(input,73,FOLLOW_73_in_ruleXThrowExpression10107); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getXThrowExpressionAccess().getThrowKeyword_1());
@@ -12753,7 +12753,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
             }
 
-            otherlv_1=(Token)match(input,73,FOLLOW_73_in_ruleXReturnExpression10220); if (state.failed) return current;
+            otherlv_1=(Token)match(input,74,FOLLOW_74_in_ruleXReturnExpression10220); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getXReturnExpressionAccess().getReturnKeyword_1());
@@ -12902,7 +12902,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
             }
 
-            otherlv_1=(Token)match(input,74,FOLLOW_74_in_ruleXTryCatchFinallyExpression10344); if (state.failed) return current;
+            otherlv_1=(Token)match(input,75,FOLLOW_75_in_ruleXTryCatchFinallyExpression10344); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getXTryCatchFinallyExpressionAccess().getTryKeyword_1());
@@ -12947,10 +12947,10 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
             int alt78=2;
             int LA78_0 = input.LA(1);
 
-            if ( (LA78_0==76) ) {
+            if ( (LA78_0==77) ) {
                 alt78=1;
             }
-            else if ( (LA78_0==75) ) {
+            else if ( (LA78_0==76) ) {
                 alt78=2;
             }
             else {
@@ -12974,7 +12974,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                         int alt76=2;
                         int LA76_0 = input.LA(1);
 
-                        if ( (LA76_0==76) ) {
+                        if ( (LA76_0==77) ) {
                             int LA76_2 = input.LA(2);
 
                             if ( (synpred22_InternalGraphViewMapping()) ) {
@@ -13036,7 +13036,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                     int alt77=2;
                     int LA77_0 = input.LA(1);
 
-                    if ( (LA77_0==75) ) {
+                    if ( (LA77_0==76) ) {
                         int LA77_1 = input.LA(2);
 
                         if ( (synpred23_InternalGraphViewMapping()) ) {
@@ -13050,7 +13050,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                             // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:4534:4: ( ( 'finally' )=>otherlv_4= 'finally' )
                             // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:4534:5: ( 'finally' )=>otherlv_4= 'finally'
                             {
-                            otherlv_4=(Token)match(input,75,FOLLOW_75_in_ruleXTryCatchFinallyExpression10417); if (state.failed) return current;
+                            otherlv_4=(Token)match(input,76,FOLLOW_76_in_ruleXTryCatchFinallyExpression10417); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
 
                                   	newLeafNode(otherlv_4, grammarAccess.getXTryCatchFinallyExpressionAccess().getFinallyKeyword_3_0_1_0());
@@ -13112,7 +13112,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                     // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:4558:6: (otherlv_6= 'finally' ( (lv_finallyExpression_7_0= ruleXExpression ) ) )
                     // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:4558:8: otherlv_6= 'finally' ( (lv_finallyExpression_7_0= ruleXExpression ) )
                     {
-                    otherlv_6=(Token)match(input,75,FOLLOW_75_in_ruleXTryCatchFinallyExpression10461); if (state.failed) return current;
+                    otherlv_6=(Token)match(input,76,FOLLOW_76_in_ruleXTryCatchFinallyExpression10461); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_6, grammarAccess.getXTryCatchFinallyExpressionAccess().getFinallyKeyword_3_1_0());
@@ -13249,7 +13249,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
             // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:4601:2: ( ( 'catch' )=>otherlv_0= 'catch' )
             // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:4601:3: ( 'catch' )=>otherlv_0= 'catch'
             {
-            otherlv_0=(Token)match(input,76,FOLLOW_76_in_ruleXCatchClause10575); if (state.failed) return current;
+            otherlv_0=(Token)match(input,77,FOLLOW_77_in_ruleXCatchClause10575); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getXCatchClauseAccess().getCatchKeyword_0());
@@ -13258,7 +13258,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
             }
 
-            otherlv_1=(Token)match(input,49,FOLLOW_49_in_ruleXCatchClause10588); if (state.failed) return current;
+            otherlv_1=(Token)match(input,50,FOLLOW_50_in_ruleXCatchClause10588); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getXCatchClauseAccess().getLeftParenthesisKeyword_1());
@@ -13299,7 +13299,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
             }
 
-            otherlv_3=(Token)match(input,50,FOLLOW_50_in_ruleXCatchClause10621); if (state.failed) return current;
+            otherlv_3=(Token)match(input,51,FOLLOW_51_in_ruleXCatchClause10621); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_3, grammarAccess.getXCatchClauseAccess().getRightParenthesisKeyword_3());
@@ -13596,7 +13596,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
             if ( (LA80_0==RULE_ID) ) {
                 alt80=1;
             }
-            else if ( (LA80_0==49||LA80_0==77) ) {
+            else if ( (LA80_0==24||LA80_0==50) ) {
                 alt80=2;
             }
             else {
@@ -13742,14 +13742,14 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
             int alt82=2;
             int LA82_0 = input.LA(1);
 
-            if ( (LA82_0==49) ) {
+            if ( (LA82_0==50) ) {
                 alt82=1;
             }
             switch (alt82) {
                 case 1 :
                     // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:4762:4: otherlv_0= '(' ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* otherlv_4= ')'
                     {
-                    otherlv_0=(Token)match(input,49,FOLLOW_49_in_ruleXFunctionTypeRef11002); if (state.failed) return current;
+                    otherlv_0=(Token)match(input,50,FOLLOW_50_in_ruleXFunctionTypeRef11002); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_0, grammarAccess.getXFunctionTypeRefAccess().getLeftParenthesisKeyword_0_0());
@@ -13796,7 +13796,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                         int alt81=2;
                         int LA81_0 = input.LA(1);
 
-                        if ( (LA81_0==48) ) {
+                        if ( (LA81_0==49) ) {
                             alt81=1;
                         }
 
@@ -13805,7 +13805,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                     	case 1 :
                     	    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:4784:4: otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) )
                     	    {
-                    	    otherlv_2=(Token)match(input,48,FOLLOW_48_in_ruleXFunctionTypeRef11036); if (state.failed) return current;
+                    	    otherlv_2=(Token)match(input,49,FOLLOW_49_in_ruleXFunctionTypeRef11036); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	          	newLeafNode(otherlv_2, grammarAccess.getXFunctionTypeRefAccess().getCommaKeyword_0_2_0());
@@ -13855,7 +13855,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                         }
                     } while (true);
 
-                    otherlv_4=(Token)match(input,50,FOLLOW_50_in_ruleXFunctionTypeRef11071); if (state.failed) return current;
+                    otherlv_4=(Token)match(input,51,FOLLOW_51_in_ruleXFunctionTypeRef11071); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_4, grammarAccess.getXFunctionTypeRefAccess().getRightParenthesisKeyword_0_3());
@@ -13867,7 +13867,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
             }
 
-            otherlv_5=(Token)match(input,77,FOLLOW_77_in_ruleXFunctionTypeRef11085); if (state.failed) return current;
+            otherlv_5=(Token)match(input,24,FOLLOW_24_in_ruleXFunctionTypeRef11085); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_5, grammarAccess.getXFunctionTypeRefAccess().getEqualsSignGreaterThanSignKeyword_1());
@@ -14086,7 +14086,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                         int alt83=2;
                         int LA83_0 = input.LA(1);
 
-                        if ( (LA83_0==48) ) {
+                        if ( (LA83_0==49) ) {
                             alt83=1;
                         }
 
@@ -14095,7 +14095,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                     	case 1 :
                     	    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:4891:4: otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) )
                     	    {
-                    	    otherlv_3=(Token)match(input,48,FOLLOW_48_in_ruleJvmParameterizedTypeReference11256); if (state.failed) return current;
+                    	    otherlv_3=(Token)match(input,49,FOLLOW_49_in_ruleJvmParameterizedTypeReference11256); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	          	newLeafNode(otherlv_3, grammarAccess.getJvmParameterizedTypeReferenceAccess().getCommaKeyword_1_2_0());
@@ -14239,7 +14239,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
             int alt85=2;
             int LA85_0 = input.LA(1);
 
-            if ( (LA85_0==RULE_ID||LA85_0==49||LA85_0==77) ) {
+            if ( (LA85_0==RULE_ID||LA85_0==24||LA85_0==50) ) {
                 alt85=1;
             }
             else if ( (LA85_0==78) ) {
@@ -14405,7 +14405,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
             if ( (LA86_0==79) ) {
                 alt86=1;
             }
-            else if ( (LA86_0==65) ) {
+            else if ( (LA86_0==66) ) {
                 alt86=2;
             }
             switch (alt86) {
@@ -14816,7 +14816,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
             // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:5132:1: (otherlv_0= 'super' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) )
             // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:5132:3: otherlv_0= 'super' ( (lv_typeReference_1_0= ruleJvmTypeReference ) )
             {
-            otherlv_0=(Token)match(input,65,FOLLOW_65_in_ruleJvmLowerBound11846); if (state.failed) return current;
+            otherlv_0=(Token)match(input,66,FOLLOW_66_in_ruleJvmLowerBound11846); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getJvmLowerBoundAccess().getSuperKeyword_0());
@@ -15300,7 +15300,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
         {
         }
 
-        match(input,45,FOLLOW_45_in_synpred10_InternalGraphViewMapping4804); if (state.failed) return ;
+        match(input,46,FOLLOW_46_in_synpred10_InternalGraphViewMapping4804); if (state.failed) return ;
 
         }
 
@@ -15374,12 +15374,12 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
             alt87=1;
             }
             break;
-        case 46:
+        case 47:
             {
             alt87=2;
             }
             break;
-        case 47:
+        case 48:
             {
             alt87=3;
             }
@@ -15409,7 +15409,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                 // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:2175:1: ( '?.' )
                 // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:2176:2: '?.'
                 {
-                match(input,46,FOLLOW_46_in_synpred12_InternalGraphViewMapping5090); if (state.failed) return ;
+                match(input,47,FOLLOW_47_in_synpred12_InternalGraphViewMapping5090); if (state.failed) return ;
 
                 }
 
@@ -15428,7 +15428,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                 // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:2182:1: ( '*.' )
                 // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:2183:2: '*.'
                 {
-                match(input,47,FOLLOW_47_in_synpred12_InternalGraphViewMapping5110); if (state.failed) return ;
+                match(input,48,FOLLOW_48_in_synpred12_InternalGraphViewMapping5110); if (state.failed) return ;
 
                 }
 
@@ -15457,7 +15457,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
         // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:2293:1: ( '(' )
         // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:2294:2: '('
         {
-        match(input,49,FOLLOW_49_in_synpred13_InternalGraphViewMapping5337); if (state.failed) return ;
+        match(input,50,FOLLOW_50_in_synpred13_InternalGraphViewMapping5337); if (state.failed) return ;
 
         }
 
@@ -15483,7 +15483,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
         int alt89=2;
         int LA89_0 = input.LA(1);
 
-        if ( (LA89_0==RULE_ID||LA89_0==49||LA89_0==77) ) {
+        if ( (LA89_0==RULE_ID||LA89_0==24||LA89_0==50) ) {
             alt89=1;
         }
         switch (alt89) {
@@ -15513,7 +15513,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                     int alt88=2;
                     int LA88_0 = input.LA(1);
 
-                    if ( (LA88_0==48) ) {
+                    if ( (LA88_0==49) ) {
                         alt88=1;
                     }
 
@@ -15522,7 +15522,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                 	case 1 :
                 	    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:2318:4: ',' ( ( ruleJvmFormalParameter ) )
                 	    {
-                	    match(input,48,FOLLOW_48_in_synpred14_InternalGraphViewMapping5396); if (state.failed) return ;
+                	    match(input,49,FOLLOW_49_in_synpred14_InternalGraphViewMapping5396); if (state.failed) return ;
                 	    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:2319:1: ( ( ruleJvmFormalParameter ) )
                 	    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:2320:1: ( ruleJvmFormalParameter )
                 	    {
@@ -15555,7 +15555,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
         }
 
-        match(input,52,FOLLOW_52_in_synpred14_InternalGraphViewMapping5413); if (state.failed) return ;
+        match(input,53,FOLLOW_53_in_synpred14_InternalGraphViewMapping5413); if (state.failed) return ;
 
         }
 
@@ -15569,7 +15569,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
         // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:2927:4: ( 'else' )
         // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:2927:6: 'else'
         {
-        match(input,55,FOLLOW_55_in_synpred16_InternalGraphViewMapping6858); if (state.failed) return ;
+        match(input,56,FOLLOW_56_in_synpred16_InternalGraphViewMapping6858); if (state.failed) return ;
 
         }
     }
@@ -15633,7 +15633,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
         // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:3799:1: ( '(' )
         // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:3800:2: '('
         {
-        match(input,49,FOLLOW_49_in_synpred18_InternalGraphViewMapping8682); if (state.failed) return ;
+        match(input,50,FOLLOW_50_in_synpred18_InternalGraphViewMapping8682); if (state.failed) return ;
 
         }
 
@@ -15659,7 +15659,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
         int alt93=2;
         int LA93_0 = input.LA(1);
 
-        if ( (LA93_0==RULE_ID||LA93_0==49||LA93_0==77) ) {
+        if ( (LA93_0==RULE_ID||LA93_0==24||LA93_0==50) ) {
             alt93=1;
         }
         switch (alt93) {
@@ -15689,7 +15689,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                     int alt92=2;
                     int LA92_0 = input.LA(1);
 
-                    if ( (LA92_0==48) ) {
+                    if ( (LA92_0==49) ) {
                         alt92=1;
                     }
 
@@ -15698,7 +15698,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                 	case 1 :
                 	    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:3824:4: ',' ( ( ruleJvmFormalParameter ) )
                 	    {
-                	    match(input,48,FOLLOW_48_in_synpred19_InternalGraphViewMapping8741); if (state.failed) return ;
+                	    match(input,49,FOLLOW_49_in_synpred19_InternalGraphViewMapping8741); if (state.failed) return ;
                 	    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:3825:1: ( ( ruleJvmFormalParameter ) )
                 	    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:3826:1: ( ruleJvmFormalParameter )
                 	    {
@@ -15731,7 +15731,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
         }
 
-        match(input,52,FOLLOW_52_in_synpred19_InternalGraphViewMapping8758); if (state.failed) return ;
+        match(input,53,FOLLOW_53_in_synpred19_InternalGraphViewMapping8758); if (state.failed) return ;
 
         }
 
@@ -15757,7 +15757,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
         int alt95=2;
         int LA95_0 = input.LA(1);
 
-        if ( (LA95_0==RULE_ID||LA95_0==49||LA95_0==77) ) {
+        if ( (LA95_0==RULE_ID||LA95_0==24||LA95_0==50) ) {
             alt95=1;
         }
         switch (alt95) {
@@ -15787,7 +15787,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                     int alt94=2;
                     int LA94_0 = input.LA(1);
 
-                    if ( (LA94_0==48) ) {
+                    if ( (LA94_0==49) ) {
                         alt94=1;
                     }
 
@@ -15796,7 +15796,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                 	case 1 :
                 	    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:4073:4: ',' ( ( ruleJvmFormalParameter ) )
                 	    {
-                	    match(input,48,FOLLOW_48_in_synpred20_InternalGraphViewMapping9336); if (state.failed) return ;
+                	    match(input,49,FOLLOW_49_in_synpred20_InternalGraphViewMapping9336); if (state.failed) return ;
                 	    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:4074:1: ( ( ruleJvmFormalParameter ) )
                 	    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:4075:1: ( ruleJvmFormalParameter )
                 	    {
@@ -15829,7 +15829,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
         }
 
-        match(input,52,FOLLOW_52_in_synpred20_InternalGraphViewMapping9353); if (state.failed) return ;
+        match(input,53,FOLLOW_53_in_synpred20_InternalGraphViewMapping9353); if (state.failed) return ;
 
         }
 
@@ -15864,7 +15864,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
         // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:4515:5: ( 'catch' )
         // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:4515:7: 'catch'
         {
-        match(input,76,FOLLOW_76_in_synpred22_InternalGraphViewMapping10379); if (state.failed) return ;
+        match(input,77,FOLLOW_77_in_synpred22_InternalGraphViewMapping10379); if (state.failed) return ;
 
         }
     }
@@ -15875,7 +15875,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
         // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:4534:5: ( 'finally' )
         // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:4534:7: 'finally'
         {
-        match(input,75,FOLLOW_75_in_synpred23_InternalGraphViewMapping10409); if (state.failed) return ;
+        match(input,76,FOLLOW_76_in_synpred23_InternalGraphViewMapping10409); if (state.failed) return ;
 
         }
     }
@@ -16264,7 +16264,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
         "\1\uffff\1\0\77\uffff}>";
     static final String[] DFA41_transitionS = {
             "\3\2\6\uffff\3\2\1\uffff\4\2\1\uffff\3\2\1\uffff\1\2\1\uffff"+
-            "\25\2\1\1\2\2\1\uffff\15\2\1\uffff\13\2",
+            "\26\2\1\1\2\2\1\uffff\15\2\1\uffff\12\2",
             "\1\uffff",
             "",
             "",
@@ -16397,15 +16397,15 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
     static final String DFA40_minS =
         "\1\4\2\0\31\uffff";
     static final String DFA40_maxS =
-        "\1\115\2\0\31\uffff";
+        "\1\113\2\0\31\uffff";
     static final String DFA40_acceptS =
         "\3\uffff\2\1\1\2\25\uffff\1\3";
     static final String DFA40_specialS =
         "\1\0\1\1\1\2\31\uffff}>";
     static final String[] DFA40_transitionS = {
-            "\1\1\2\5\6\uffff\1\5\6\uffff\1\5\20\uffff\1\5\1\uffff\2\5\3"+
-            "\uffff\1\5\4\uffff\1\2\1\33\1\5\1\4\1\uffff\1\5\1\uffff\1\5"+
-            "\3\uffff\2\5\3\uffff\1\5\1\uffff\10\5\2\uffff\1\3",
+            "\1\1\2\5\6\uffff\1\5\6\uffff\1\5\3\uffff\1\3\14\uffff\1\5\2"+
+            "\uffff\2\5\3\uffff\1\5\4\uffff\1\2\1\33\1\5\1\4\1\uffff\1\5"+
+            "\1\uffff\1\5\3\uffff\2\5\3\uffff\1\5\1\uffff\10\5",
             "\1\uffff",
             "\1\uffff",
             "",
@@ -16480,15 +16480,15 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                         s = -1;
                         if ( (LA40_0==RULE_ID) ) {s = 1;}
 
-                        else if ( (LA40_0==49) ) {s = 2;}
+                        else if ( (LA40_0==50) ) {s = 2;}
 
-                        else if ( (LA40_0==77) && (synpred14_InternalGraphViewMapping())) {s = 3;}
+                        else if ( (LA40_0==24) && (synpred14_InternalGraphViewMapping())) {s = 3;}
 
-                        else if ( (LA40_0==52) && (synpred14_InternalGraphViewMapping())) {s = 4;}
+                        else if ( (LA40_0==53) && (synpred14_InternalGraphViewMapping())) {s = 4;}
 
-                        else if ( ((LA40_0>=RULE_INT && LA40_0<=RULE_STRING)||LA40_0==13||LA40_0==20||LA40_0==37||(LA40_0>=39 && LA40_0<=40)||LA40_0==44||LA40_0==51||LA40_0==54||LA40_0==56||(LA40_0>=60 && LA40_0<=61)||LA40_0==65||(LA40_0>=67 && LA40_0<=74)) ) {s = 5;}
+                        else if ( ((LA40_0>=RULE_INT && LA40_0<=RULE_STRING)||LA40_0==13||LA40_0==20||LA40_0==37||(LA40_0>=40 && LA40_0<=41)||LA40_0==45||LA40_0==52||LA40_0==55||LA40_0==57||(LA40_0>=61 && LA40_0<=62)||LA40_0==66||(LA40_0>=68 && LA40_0<=75)) ) {s = 5;}
 
-                        else if ( (LA40_0==50) ) {s = 27;}
+                        else if ( (LA40_0==51) ) {s = 27;}
 
                          
                         input.seek(index40_0);
@@ -16546,7 +16546,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
         "\1\uffff\1\0\77\uffff}>";
     static final String[] DFA67_transitionS = {
             "\3\2\6\uffff\3\2\1\uffff\4\2\1\uffff\3\2\1\uffff\1\2\1\uffff"+
-            "\25\2\1\1\2\2\1\uffff\15\2\1\uffff\13\2",
+            "\26\2\1\1\2\2\1\uffff\15\2\1\uffff\12\2",
             "\1\uffff",
             "",
             "",
@@ -16679,15 +16679,15 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
     static final String DFA66_minS =
         "\1\4\2\0\31\uffff";
     static final String DFA66_maxS =
-        "\1\115\2\0\31\uffff";
+        "\1\113\2\0\31\uffff";
     static final String DFA66_acceptS =
         "\3\uffff\2\1\1\2\25\uffff\1\3";
     static final String DFA66_specialS =
         "\1\0\1\1\1\2\31\uffff}>";
     static final String[] DFA66_transitionS = {
-            "\1\1\2\5\6\uffff\1\5\6\uffff\1\5\20\uffff\1\5\1\uffff\2\5\3"+
-            "\uffff\1\5\4\uffff\1\2\1\33\1\5\1\4\1\uffff\1\5\1\uffff\1\5"+
-            "\3\uffff\2\5\3\uffff\1\5\1\uffff\10\5\2\uffff\1\3",
+            "\1\1\2\5\6\uffff\1\5\6\uffff\1\5\3\uffff\1\3\14\uffff\1\5\2"+
+            "\uffff\2\5\3\uffff\1\5\4\uffff\1\2\1\33\1\5\1\4\1\uffff\1\5"+
+            "\1\uffff\1\5\3\uffff\2\5\3\uffff\1\5\1\uffff\10\5",
             "\1\uffff",
             "\1\uffff",
             "",
@@ -16762,15 +16762,15 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                         s = -1;
                         if ( (LA66_0==RULE_ID) ) {s = 1;}
 
-                        else if ( (LA66_0==49) ) {s = 2;}
+                        else if ( (LA66_0==50) ) {s = 2;}
 
-                        else if ( (LA66_0==77) && (synpred19_InternalGraphViewMapping())) {s = 3;}
+                        else if ( (LA66_0==24) && (synpred19_InternalGraphViewMapping())) {s = 3;}
 
-                        else if ( (LA66_0==52) && (synpred19_InternalGraphViewMapping())) {s = 4;}
+                        else if ( (LA66_0==53) && (synpred19_InternalGraphViewMapping())) {s = 4;}
 
-                        else if ( ((LA66_0>=RULE_INT && LA66_0<=RULE_STRING)||LA66_0==13||LA66_0==20||LA66_0==37||(LA66_0>=39 && LA66_0<=40)||LA66_0==44||LA66_0==51||LA66_0==54||LA66_0==56||(LA66_0>=60 && LA66_0<=61)||LA66_0==65||(LA66_0>=67 && LA66_0<=74)) ) {s = 5;}
+                        else if ( ((LA66_0>=RULE_INT && LA66_0<=RULE_STRING)||LA66_0==13||LA66_0==20||LA66_0==37||(LA66_0>=40 && LA66_0<=41)||LA66_0==45||LA66_0==52||LA66_0==55||LA66_0==57||(LA66_0>=61 && LA66_0<=62)||LA66_0==66||(LA66_0>=68 && LA66_0<=75)) ) {s = 5;}
 
-                        else if ( (LA66_0==50) ) {s = 27;}
+                        else if ( (LA66_0==51) ) {s = 27;}
 
                          
                         input.seek(index66_0);
@@ -16821,15 +16821,15 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
     static final String DFA73_minS =
         "\1\4\2\0\31\uffff";
     static final String DFA73_maxS =
-        "\1\115\2\0\31\uffff";
+        "\1\113\2\0\31\uffff";
     static final String DFA73_acceptS =
         "\3\uffff\2\1\1\2\25\uffff\1\3";
     static final String DFA73_specialS =
         "\1\0\1\1\1\2\31\uffff}>";
     static final String[] DFA73_transitionS = {
-            "\1\1\2\5\6\uffff\1\5\6\uffff\1\5\20\uffff\1\5\1\uffff\2\5\3"+
-            "\uffff\1\5\4\uffff\1\2\1\33\1\5\1\4\1\uffff\1\5\1\uffff\1\5"+
-            "\3\uffff\2\5\3\uffff\1\5\1\uffff\10\5\2\uffff\1\3",
+            "\1\1\2\5\6\uffff\1\5\6\uffff\1\5\3\uffff\1\3\14\uffff\1\5\2"+
+            "\uffff\2\5\3\uffff\1\5\4\uffff\1\2\1\33\1\5\1\4\1\uffff\1\5"+
+            "\1\uffff\1\5\3\uffff\2\5\3\uffff\1\5\1\uffff\10\5",
             "\1\uffff",
             "\1\uffff",
             "",
@@ -16904,15 +16904,15 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                         s = -1;
                         if ( (LA73_0==RULE_ID) ) {s = 1;}
 
-                        else if ( (LA73_0==49) ) {s = 2;}
+                        else if ( (LA73_0==50) ) {s = 2;}
 
-                        else if ( (LA73_0==77) && (synpred20_InternalGraphViewMapping())) {s = 3;}
+                        else if ( (LA73_0==24) && (synpred20_InternalGraphViewMapping())) {s = 3;}
 
-                        else if ( (LA73_0==52) && (synpred20_InternalGraphViewMapping())) {s = 4;}
+                        else if ( (LA73_0==53) && (synpred20_InternalGraphViewMapping())) {s = 4;}
 
-                        else if ( ((LA73_0>=RULE_INT && LA73_0<=RULE_STRING)||LA73_0==13||LA73_0==20||LA73_0==37||(LA73_0>=39 && LA73_0<=40)||LA73_0==44||LA73_0==51||LA73_0==54||LA73_0==56||(LA73_0>=60 && LA73_0<=61)||LA73_0==65||(LA73_0>=67 && LA73_0<=74)) ) {s = 5;}
+                        else if ( ((LA73_0>=RULE_INT && LA73_0<=RULE_STRING)||LA73_0==13||LA73_0==20||LA73_0==37||(LA73_0>=40 && LA73_0<=41)||LA73_0==45||LA73_0==52||LA73_0==55||LA73_0==57||(LA73_0>=61 && LA73_0<=62)||LA73_0==66||(LA73_0>=68 && LA73_0<=75)) ) {s = 5;}
 
-                        else if ( (LA73_0==50) ) {s = 27;}
+                        else if ( (LA73_0==51) ) {s = 27;}
 
                          
                         input.seek(index73_0);
@@ -16971,9 +16971,9 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
         "\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\26\1\27\50\uffff}>";
     static final String[] DFA75_transitionS = {
             "\1\1\1\15\1\17\6\uffff\1\6\2\31\1\uffff\3\31\1\22\1\uffff\3"+
-            "\31\1\uffff\1\31\1\uffff\11\31\1\10\1\31\1\4\1\3\3\31\1\2\4"+
+            "\31\1\uffff\1\31\1\uffff\11\31\1\10\2\31\1\4\1\3\3\31\1\2\4"+
             "\31\1\30\1\31\1\12\1\uffff\1\31\1\21\1\31\1\7\3\31\1\23\1\24"+
-            "\3\31\1\11\1\uffff\1\5\1\13\1\14\1\16\1\20\1\25\1\26\1\27\3"+
+            "\3\31\1\11\1\uffff\1\5\1\13\1\14\1\16\1\20\1\25\1\26\1\27\2"+
             "\31",
             "\1\uffff",
             "\1\uffff",
@@ -17459,7 +17459,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
         "\1\uffff\1\0\77\uffff}>";
     static final String[] DFA84_transitionS = {
             "\3\2\6\uffff\3\2\1\uffff\4\2\1\uffff\3\2\1\uffff\1\2\1\uffff"+
-            "\11\2\1\1\16\2\1\uffff\15\2\1\uffff\13\2",
+            "\11\2\1\1\17\2\1\uffff\15\2\1\uffff\12\2",
             "\1\uffff",
             "",
             "",
@@ -17592,12 +17592,12 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
     public static final BitSet FOLLOW_ruleImport_in_ruleDiagramMapping131 = new BitSet(new long[]{0x0000000000010800L});
     public static final BitSet FOLLOW_11_in_ruleDiagramMapping144 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_ruleQualifiedName_in_ruleDiagramMapping165 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_12_in_ruleDiagramMapping177 = new BitSet(new long[]{0x0002000000000010L,0x0000000000002000L});
+    public static final BitSet FOLLOW_12_in_ruleDiagramMapping177 = new BitSet(new long[]{0x0004000001000010L});
     public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleDiagramMapping198 = new BitSet(new long[]{0x0000000000002000L});
     public static final BitSet FOLLOW_13_in_ruleDiagramMapping210 = new BitSet(new long[]{0x0000000004C84000L});
     public static final BitSet FOLLOW_ruleAbstractExpressionMapping_in_ruleDiagramMapping231 = new BitSet(new long[]{0x0000000004C84000L});
     public static final BitSet FOLLOW_14_in_ruleDiagramMapping244 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_15_in_ruleDiagramMapping257 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
+    public static final BitSet FOLLOW_15_in_ruleDiagramMapping257 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleDiagramMapping278 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleImport_in_entryRuleImport316 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleImport326 = new BitSet(new long[]{0x0000000000000002L});
@@ -17618,29 +17618,29 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
     public static final BitSet FOLLOW_EOF_in_entryRuleNodeMapping736 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_19_in_ruleNodeMapping773 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleNodeMapping790 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20_in_ruleNodeMapping807 = new BitSet(new long[]{0x314A11A000302070L,0x00000000000007FAL});
-    public static final BitSet FOLLOW_21_in_ruleNodeMapping825 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
+    public static final BitSet FOLLOW_20_in_ruleNodeMapping807 = new BitSet(new long[]{0x6294232000302070L,0x0000000000000FF4L});
+    public static final BitSet FOLLOW_21_in_ruleNodeMapping825 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleNodeMapping860 = new BitSet(new long[]{0x0000000000002000L});
     public static final BitSet FOLLOW_13_in_ruleNodeMapping872 = new BitSet(new long[]{0x0000000004C84000L});
     public static final BitSet FOLLOW_ruleAbstractExpressionMapping_in_ruleNodeMapping893 = new BitSet(new long[]{0x0000000004C84000L});
     public static final BitSet FOLLOW_14_in_ruleNodeMapping906 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_15_in_ruleNodeMapping919 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
+    public static final BitSet FOLLOW_15_in_ruleNodeMapping919 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleNodeMapping940 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleLabelMapping_in_entryRuleLabelMapping978 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleLabelMapping988 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_22_in_ruleLabelMapping1025 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleLabelMapping1042 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20_in_ruleLabelMapping1059 = new BitSet(new long[]{0x314A11A000302070L,0x00000000000007FAL});
-    public static final BitSet FOLLOW_21_in_ruleLabelMapping1077 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
+    public static final BitSet FOLLOW_20_in_ruleLabelMapping1059 = new BitSet(new long[]{0x6294232000302070L,0x0000000000000FF4L});
+    public static final BitSet FOLLOW_21_in_ruleLabelMapping1077 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleLabelMapping1112 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_15_in_ruleLabelMapping1125 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
+    public static final BitSet FOLLOW_15_in_ruleLabelMapping1125 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleLabelMapping1146 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleEdgeMapping_in_entryRuleEdgeMapping1184 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleEdgeMapping1194 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_23_in_ruleEdgeMapping1231 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleEdgeMapping1248 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20_in_ruleEdgeMapping1265 = new BitSet(new long[]{0x314A11A000302070L,0x00000000000007FAL});
-    public static final BitSet FOLLOW_21_in_ruleEdgeMapping1283 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
+    public static final BitSet FOLLOW_20_in_ruleEdgeMapping1265 = new BitSet(new long[]{0x6294232000302070L,0x0000000000000FF4L});
+    public static final BitSet FOLLOW_21_in_ruleEdgeMapping1283 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleEdgeMapping1318 = new BitSet(new long[]{0x0000000000002000L});
     public static final BitSet FOLLOW_13_in_ruleEdgeMapping1330 = new BitSet(new long[]{0x0000000007000000L});
     public static final BitSet FOLLOW_ruleEdgeEndMapping_in_ruleEdgeMapping1351 = new BitSet(new long[]{0x0000000001000000L});
@@ -17648,23 +17648,23 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
     public static final BitSet FOLLOW_ruleEdgeEndMapping_in_ruleEdgeMapping1385 = new BitSet(new long[]{0x0000000000404000L});
     public static final BitSet FOLLOW_ruleLabelMapping_in_ruleEdgeMapping1407 = new BitSet(new long[]{0x0000000000404000L});
     public static final BitSet FOLLOW_14_in_ruleEdgeMapping1420 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_15_in_ruleEdgeMapping1433 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
+    public static final BitSet FOLLOW_15_in_ruleEdgeMapping1433 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleEdgeMapping1454 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleEdgeEndMapping_in_entryRuleEdgeEndMapping1492 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleEdgeEndMapping1502 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_25_in_ruleEdgeEndMapping1540 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_26_in_ruleEdgeEndMapping1564 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleEdgeEndMapping1598 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20_in_ruleEdgeEndMapping1610 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
+    public static final BitSet FOLLOW_20_in_ruleEdgeEndMapping1610 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleEdgeEndMapping1631 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleMappingCall_in_entryRuleMappingCall1667 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleMappingCall1677 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_26_in_ruleMappingCall1714 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleMappingCall1734 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20_in_ruleMappingCall1746 = new BitSet(new long[]{0x314A11A000302070L,0x00000000000007FAL});
-    public static final BitSet FOLLOW_21_in_ruleMappingCall1764 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
+    public static final BitSet FOLLOW_20_in_ruleMappingCall1746 = new BitSet(new long[]{0x6294232000302070L,0x0000000000000FF4L});
+    public static final BitSet FOLLOW_21_in_ruleMappingCall1764 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleMappingCall1799 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_15_in_ruleMappingCall1812 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
+    public static final BitSet FOLLOW_15_in_ruleMappingCall1812 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleMappingCall1833 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXExpression_in_entryRuleXExpression1871 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXExpression1881 = new BitSet(new long[]{0x0000000000000002L});
@@ -17672,10 +17672,10 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
     public static final BitSet FOLLOW_ruleXAssignment_in_entryRuleXAssignment1961 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXAssignment1971 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleValidID_in_ruleXAssignment2029 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_ruleOpSingleAssign_in_ruleXAssignment2045 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
+    public static final BitSet FOLLOW_ruleOpSingleAssign_in_ruleXAssignment2045 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
     public static final BitSet FOLLOW_ruleXAssignment_in_ruleXAssignment2065 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXOrExpression_in_ruleXAssignment2095 = new BitSet(new long[]{0x0000000010000002L});
-    public static final BitSet FOLLOW_ruleOpMultiAssign_in_ruleXAssignment2148 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
+    public static final BitSet FOLLOW_ruleOpMultiAssign_in_ruleXAssignment2148 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
     public static final BitSet FOLLOW_ruleXAssignment_in_ruleXAssignment2171 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleOpSingleAssign_in_entryRuleOpSingleAssign2211 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleOpSingleAssign2222 = new BitSet(new long[]{0x0000000000000002L});
@@ -17686,7 +17686,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
     public static final BitSet FOLLOW_ruleXOrExpression_in_entryRuleXOrExpression2386 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXOrExpression2396 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXAndExpression_in_ruleXOrExpression2443 = new BitSet(new long[]{0x0000000020000002L});
-    public static final BitSet FOLLOW_ruleOpOr_in_ruleXOrExpression2496 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
+    public static final BitSet FOLLOW_ruleOpOr_in_ruleXOrExpression2496 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
     public static final BitSet FOLLOW_ruleXAndExpression_in_ruleXOrExpression2519 = new BitSet(new long[]{0x0000000020000002L});
     public static final BitSet FOLLOW_ruleOpOr_in_entryRuleOpOr2558 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleOpOr2569 = new BitSet(new long[]{0x0000000000000002L});
@@ -17694,7 +17694,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
     public static final BitSet FOLLOW_ruleXAndExpression_in_entryRuleXAndExpression2645 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXAndExpression2655 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXEqualityExpression_in_ruleXAndExpression2702 = new BitSet(new long[]{0x0000000040000002L});
-    public static final BitSet FOLLOW_ruleOpAnd_in_ruleXAndExpression2755 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
+    public static final BitSet FOLLOW_ruleOpAnd_in_ruleXAndExpression2755 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
     public static final BitSet FOLLOW_ruleXEqualityExpression_in_ruleXAndExpression2778 = new BitSet(new long[]{0x0000000040000002L});
     public static final BitSet FOLLOW_ruleOpAnd_in_entryRuleOpAnd2817 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleOpAnd2828 = new BitSet(new long[]{0x0000000000000002L});
@@ -17702,7 +17702,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
     public static final BitSet FOLLOW_ruleXEqualityExpression_in_entryRuleXEqualityExpression2904 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXEqualityExpression2914 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXRelationalExpression_in_ruleXEqualityExpression2961 = new BitSet(new long[]{0x0000000180000002L});
-    public static final BitSet FOLLOW_ruleOpEquality_in_ruleXEqualityExpression3014 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
+    public static final BitSet FOLLOW_ruleOpEquality_in_ruleXEqualityExpression3014 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
     public static final BitSet FOLLOW_ruleXRelationalExpression_in_ruleXEqualityExpression3037 = new BitSet(new long[]{0x0000000180000002L});
     public static final BitSet FOLLOW_ruleOpEquality_in_entryRuleOpEquality3076 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleOpEquality3087 = new BitSet(new long[]{0x0000000000000002L});
@@ -17713,7 +17713,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
     public static final BitSet FOLLOW_ruleXOtherOperatorExpression_in_ruleXRelationalExpression3241 = new BitSet(new long[]{0x0000003E00000002L});
     public static final BitSet FOLLOW_33_in_ruleXRelationalExpression3277 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_ruleQualifiedName_in_ruleXRelationalExpression3302 = new BitSet(new long[]{0x0000003E00000002L});
-    public static final BitSet FOLLOW_ruleOpCompare_in_ruleXRelationalExpression3363 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
+    public static final BitSet FOLLOW_ruleOpCompare_in_ruleXRelationalExpression3363 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
     public static final BitSet FOLLOW_ruleXOtherOperatorExpression_in_ruleXRelationalExpression3386 = new BitSet(new long[]{0x0000003E00000002L});
     public static final BitSet FOLLOW_ruleOpCompare_in_entryRuleOpCompare3426 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleOpCompare3437 = new BitSet(new long[]{0x0000000000000002L});
@@ -17723,70 +17723,70 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
     public static final BitSet FOLLOW_37_in_ruleOpCompare3532 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXOtherOperatorExpression_in_entryRuleXOtherOperatorExpression3572 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXOtherOperatorExpression3582 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXAdditiveExpression_in_ruleXOtherOperatorExpression3629 = new BitSet(new long[]{0x0000004001000002L});
-    public static final BitSet FOLLOW_ruleOpOther_in_ruleXOtherOperatorExpression3682 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
-    public static final BitSet FOLLOW_ruleXAdditiveExpression_in_ruleXOtherOperatorExpression3705 = new BitSet(new long[]{0x0000004001000002L});
+    public static final BitSet FOLLOW_ruleXAdditiveExpression_in_ruleXOtherOperatorExpression3629 = new BitSet(new long[]{0x000000C000000002L});
+    public static final BitSet FOLLOW_ruleOpOther_in_ruleXOtherOperatorExpression3682 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
+    public static final BitSet FOLLOW_ruleXAdditiveExpression_in_ruleXOtherOperatorExpression3705 = new BitSet(new long[]{0x000000C000000002L});
     public static final BitSet FOLLOW_ruleOpOther_in_entryRuleOpOther3744 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleOpOther3755 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_ruleOpOther3793 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_38_in_ruleOpOther3812 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_38_in_ruleOpOther3793 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_39_in_ruleOpOther3812 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXAdditiveExpression_in_entryRuleXAdditiveExpression3852 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXAdditiveExpression3862 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXMultiplicativeExpression_in_ruleXAdditiveExpression3909 = new BitSet(new long[]{0x0000018000000002L});
-    public static final BitSet FOLLOW_ruleOpAdd_in_ruleXAdditiveExpression3962 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
-    public static final BitSet FOLLOW_ruleXMultiplicativeExpression_in_ruleXAdditiveExpression3985 = new BitSet(new long[]{0x0000018000000002L});
+    public static final BitSet FOLLOW_ruleXMultiplicativeExpression_in_ruleXAdditiveExpression3909 = new BitSet(new long[]{0x0000030000000002L});
+    public static final BitSet FOLLOW_ruleOpAdd_in_ruleXAdditiveExpression3962 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
+    public static final BitSet FOLLOW_ruleXMultiplicativeExpression_in_ruleXAdditiveExpression3985 = new BitSet(new long[]{0x0000030000000002L});
     public static final BitSet FOLLOW_ruleOpAdd_in_entryRuleOpAdd4024 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleOpAdd4035 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_ruleOpAdd4073 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_ruleOpAdd4092 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_ruleOpAdd4073 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_41_in_ruleOpAdd4092 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXMultiplicativeExpression_in_entryRuleXMultiplicativeExpression4132 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXMultiplicativeExpression4142 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXUnaryOperation_in_ruleXMultiplicativeExpression4189 = new BitSet(new long[]{0x00000E0000040002L});
-    public static final BitSet FOLLOW_ruleOpMulti_in_ruleXMultiplicativeExpression4242 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
-    public static final BitSet FOLLOW_ruleXUnaryOperation_in_ruleXMultiplicativeExpression4265 = new BitSet(new long[]{0x00000E0000040002L});
+    public static final BitSet FOLLOW_ruleXUnaryOperation_in_ruleXMultiplicativeExpression4189 = new BitSet(new long[]{0x00001C0000040002L});
+    public static final BitSet FOLLOW_ruleOpMulti_in_ruleXMultiplicativeExpression4242 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
+    public static final BitSet FOLLOW_ruleXUnaryOperation_in_ruleXMultiplicativeExpression4265 = new BitSet(new long[]{0x00001C0000040002L});
     public static final BitSet FOLLOW_ruleOpMulti_in_entryRuleOpMulti4304 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleOpMulti4315 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_18_in_ruleOpMulti4353 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_41_in_ruleOpMulti4372 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_42_in_ruleOpMulti4391 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_43_in_ruleOpMulti4410 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_42_in_ruleOpMulti4372 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_43_in_ruleOpMulti4391 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_44_in_ruleOpMulti4410 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXUnaryOperation_in_entryRuleXUnaryOperation4450 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXUnaryOperation4460 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOpUnary_in_ruleXUnaryOperation4518 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
+    public static final BitSet FOLLOW_ruleOpUnary_in_ruleXUnaryOperation4518 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
     public static final BitSet FOLLOW_ruleXCastedExpression_in_ruleXUnaryOperation4539 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXCastedExpression_in_ruleXUnaryOperation4568 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleOpUnary_in_entryRuleOpUnary4604 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleOpUnary4615 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_44_in_ruleOpUnary4653 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_ruleOpUnary4672 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_ruleOpUnary4691 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_45_in_ruleOpUnary4653 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_41_in_ruleOpUnary4672 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_ruleOpUnary4691 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXCastedExpression_in_entryRuleXCastedExpression4731 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXCastedExpression4741 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXMemberFeatureCall_in_ruleXCastedExpression4788 = new BitSet(new long[]{0x0000200000000002L});
-    public static final BitSet FOLLOW_45_in_ruleXCastedExpression4823 = new BitSet(new long[]{0x0002000000000010L,0x0000000000002000L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXCastedExpression4846 = new BitSet(new long[]{0x0000200000000002L});
+    public static final BitSet FOLLOW_ruleXMemberFeatureCall_in_ruleXCastedExpression4788 = new BitSet(new long[]{0x0000400000000002L});
+    public static final BitSet FOLLOW_46_in_ruleXCastedExpression4823 = new BitSet(new long[]{0x0004000001000010L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXCastedExpression4846 = new BitSet(new long[]{0x0000400000000002L});
     public static final BitSet FOLLOW_ruleXMemberFeatureCall_in_entryRuleXMemberFeatureCall4884 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXMemberFeatureCall4894 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXPrimaryExpression_in_ruleXMemberFeatureCall4941 = new BitSet(new long[]{0x0000C00000020002L});
+    public static final BitSet FOLLOW_ruleXPrimaryExpression_in_ruleXMemberFeatureCall4941 = new BitSet(new long[]{0x0001800000020002L});
     public static final BitSet FOLLOW_17_in_ruleXMemberFeatureCall4990 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_ruleValidID_in_ruleXMemberFeatureCall5013 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_ruleOpSingleAssign_in_ruleXMemberFeatureCall5029 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
-    public static final BitSet FOLLOW_ruleXAssignment_in_ruleXMemberFeatureCall5051 = new BitSet(new long[]{0x0000C00000020002L});
+    public static final BitSet FOLLOW_ruleOpSingleAssign_in_ruleXMemberFeatureCall5029 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
+    public static final BitSet FOLLOW_ruleXAssignment_in_ruleXMemberFeatureCall5051 = new BitSet(new long[]{0x0001800000020002L});
     public static final BitSet FOLLOW_17_in_ruleXMemberFeatureCall5137 = new BitSet(new long[]{0x0000002000000010L});
-    public static final BitSet FOLLOW_46_in_ruleXMemberFeatureCall5161 = new BitSet(new long[]{0x0000002000000010L});
-    public static final BitSet FOLLOW_47_in_ruleXMemberFeatureCall5198 = new BitSet(new long[]{0x0000002000000010L});
-    public static final BitSet FOLLOW_37_in_ruleXMemberFeatureCall5227 = new BitSet(new long[]{0x0002000000000010L,0x0000000000006000L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXMemberFeatureCall5248 = new BitSet(new long[]{0x0001001000000000L});
-    public static final BitSet FOLLOW_48_in_ruleXMemberFeatureCall5261 = new BitSet(new long[]{0x0002000000000010L,0x0000000000006000L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXMemberFeatureCall5282 = new BitSet(new long[]{0x0001001000000000L});
+    public static final BitSet FOLLOW_47_in_ruleXMemberFeatureCall5161 = new BitSet(new long[]{0x0000002000000010L});
+    public static final BitSet FOLLOW_48_in_ruleXMemberFeatureCall5198 = new BitSet(new long[]{0x0000002000000010L});
+    public static final BitSet FOLLOW_37_in_ruleXMemberFeatureCall5227 = new BitSet(new long[]{0x0004000001000010L,0x0000000000004000L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXMemberFeatureCall5248 = new BitSet(new long[]{0x0002001000000000L});
+    public static final BitSet FOLLOW_49_in_ruleXMemberFeatureCall5261 = new BitSet(new long[]{0x0004000001000010L,0x0000000000004000L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXMemberFeatureCall5282 = new BitSet(new long[]{0x0002001000000000L});
     public static final BitSet FOLLOW_36_in_ruleXMemberFeatureCall5296 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleValidID_in_ruleXMemberFeatureCall5321 = new BitSet(new long[]{0x0002C00000020002L});
-    public static final BitSet FOLLOW_49_in_ruleXMemberFeatureCall5355 = new BitSet(new long[]{0x315E11A000102070L,0x00000000000027FAL});
-    public static final BitSet FOLLOW_ruleXShortClosure_in_ruleXMemberFeatureCall5430 = new BitSet(new long[]{0x0004000000000000L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXMemberFeatureCall5458 = new BitSet(new long[]{0x0005000000000000L});
-    public static final BitSet FOLLOW_48_in_ruleXMemberFeatureCall5471 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXMemberFeatureCall5492 = new BitSet(new long[]{0x0005000000000000L});
-    public static final BitSet FOLLOW_50_in_ruleXMemberFeatureCall5509 = new BitSet(new long[]{0x0000C00000020002L});
+    public static final BitSet FOLLOW_ruleValidID_in_ruleXMemberFeatureCall5321 = new BitSet(new long[]{0x0005800000020002L});
+    public static final BitSet FOLLOW_50_in_ruleXMemberFeatureCall5355 = new BitSet(new long[]{0x62BC232001102070L,0x0000000000000FF4L});
+    public static final BitSet FOLLOW_ruleXShortClosure_in_ruleXMemberFeatureCall5430 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXMemberFeatureCall5458 = new BitSet(new long[]{0x000A000000000000L});
+    public static final BitSet FOLLOW_49_in_ruleXMemberFeatureCall5471 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXMemberFeatureCall5492 = new BitSet(new long[]{0x000A000000000000L});
+    public static final BitSet FOLLOW_51_in_ruleXMemberFeatureCall5509 = new BitSet(new long[]{0x0001800000020002L});
     public static final BitSet FOLLOW_ruleXPrimaryExpression_in_entryRuleXPrimaryExpression5550 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXPrimaryExpression5560 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXConstructorCall_in_ruleXPrimaryExpression5607 = new BitSet(new long[]{0x0000000000000002L});
@@ -17812,82 +17812,82 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
     public static final BitSet FOLLOW_ruleXTypeLiteral_in_ruleXLiteral6158 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXClosure_in_entryRuleXClosure6193 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXClosure6203 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_51_in_ruleXClosure6249 = new BitSet(new long[]{0x0012000000000010L,0x0000000000002000L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_ruleXClosure6271 = new BitSet(new long[]{0x0011000000000000L});
-    public static final BitSet FOLLOW_48_in_ruleXClosure6284 = new BitSet(new long[]{0x0002000000000010L,0x0000000000002000L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_ruleXClosure6305 = new BitSet(new long[]{0x0011000000000000L});
-    public static final BitSet FOLLOW_52_in_ruleXClosure6321 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXClosure6342 = new BitSet(new long[]{0x0020000000000000L});
-    public static final BitSet FOLLOW_53_in_ruleXClosure6354 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_52_in_ruleXClosure6249 = new BitSet(new long[]{0x0024000001000010L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_ruleXClosure6271 = new BitSet(new long[]{0x0022000000000000L});
+    public static final BitSet FOLLOW_49_in_ruleXClosure6284 = new BitSet(new long[]{0x0004000001000010L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_ruleXClosure6305 = new BitSet(new long[]{0x0022000000000000L});
+    public static final BitSet FOLLOW_53_in_ruleXClosure6321 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXClosure6342 = new BitSet(new long[]{0x0040000000000000L});
+    public static final BitSet FOLLOW_54_in_ruleXClosure6354 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXShortClosure_in_entryRuleXShortClosure6390 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXShortClosure6400 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_ruleXShortClosure6498 = new BitSet(new long[]{0x0011000000000000L});
-    public static final BitSet FOLLOW_48_in_ruleXShortClosure6511 = new BitSet(new long[]{0x0002000000000010L,0x0000000000002000L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_ruleXShortClosure6532 = new BitSet(new long[]{0x0011000000000000L});
-    public static final BitSet FOLLOW_52_in_ruleXShortClosure6548 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_ruleXShortClosure6498 = new BitSet(new long[]{0x0022000000000000L});
+    public static final BitSet FOLLOW_49_in_ruleXShortClosure6511 = new BitSet(new long[]{0x0004000001000010L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_ruleXShortClosure6532 = new BitSet(new long[]{0x0022000000000000L});
+    public static final BitSet FOLLOW_53_in_ruleXShortClosure6548 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXShortClosure6571 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXParenthesizedExpression_in_entryRuleXParenthesizedExpression6607 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXParenthesizedExpression6617 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_49_in_ruleXParenthesizedExpression6654 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXParenthesizedExpression6676 = new BitSet(new long[]{0x0004000000000000L});
-    public static final BitSet FOLLOW_50_in_ruleXParenthesizedExpression6687 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_50_in_ruleXParenthesizedExpression6654 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXParenthesizedExpression6676 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_51_in_ruleXParenthesizedExpression6687 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXIfExpression_in_entryRuleXIfExpression6723 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXIfExpression6733 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_54_in_ruleXIfExpression6779 = new BitSet(new long[]{0x0002000000000000L});
-    public static final BitSet FOLLOW_49_in_ruleXIfExpression6791 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXIfExpression6812 = new BitSet(new long[]{0x0004000000000000L});
-    public static final BitSet FOLLOW_50_in_ruleXIfExpression6824 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXIfExpression6845 = new BitSet(new long[]{0x0080000000000002L});
-    public static final BitSet FOLLOW_55_in_ruleXIfExpression6866 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
+    public static final BitSet FOLLOW_55_in_ruleXIfExpression6779 = new BitSet(new long[]{0x0004000000000000L});
+    public static final BitSet FOLLOW_50_in_ruleXIfExpression6791 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXIfExpression6812 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_51_in_ruleXIfExpression6824 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXIfExpression6845 = new BitSet(new long[]{0x0100000000000002L});
+    public static final BitSet FOLLOW_56_in_ruleXIfExpression6866 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXIfExpression6888 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXSwitchExpression_in_entryRuleXSwitchExpression6926 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXSwitchExpression6936 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_56_in_ruleXSwitchExpression6982 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
-    public static final BitSet FOLLOW_ruleValidID_in_ruleXSwitchExpression7004 = new BitSet(new long[]{0x0200000000000000L});
-    public static final BitSet FOLLOW_57_in_ruleXSwitchExpression7016 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
+    public static final BitSet FOLLOW_57_in_ruleXSwitchExpression6982 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
+    public static final BitSet FOLLOW_ruleValidID_in_ruleXSwitchExpression7004 = new BitSet(new long[]{0x0400000000000000L});
+    public static final BitSet FOLLOW_58_in_ruleXSwitchExpression7016 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXSwitchExpression7039 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_13_in_ruleXSwitchExpression7051 = new BitSet(new long[]{0x0A02000000000010L,0x0000000000002000L});
-    public static final BitSet FOLLOW_ruleXCasePart_in_ruleXSwitchExpression7072 = new BitSet(new long[]{0x0E02000000004010L,0x0000000000002000L});
-    public static final BitSet FOLLOW_58_in_ruleXSwitchExpression7086 = new BitSet(new long[]{0x0200000000000000L});
-    public static final BitSet FOLLOW_57_in_ruleXSwitchExpression7098 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
+    public static final BitSet FOLLOW_13_in_ruleXSwitchExpression7051 = new BitSet(new long[]{0x1404000001000010L});
+    public static final BitSet FOLLOW_ruleXCasePart_in_ruleXSwitchExpression7072 = new BitSet(new long[]{0x1C04000001004010L});
+    public static final BitSet FOLLOW_59_in_ruleXSwitchExpression7086 = new BitSet(new long[]{0x0400000000000000L});
+    public static final BitSet FOLLOW_58_in_ruleXSwitchExpression7098 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXSwitchExpression7119 = new BitSet(new long[]{0x0000000000004000L});
     public static final BitSet FOLLOW_14_in_ruleXSwitchExpression7133 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXCasePart_in_entryRuleXCasePart7169 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXCasePart7179 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXCasePart7225 = new BitSet(new long[]{0x0A00000000000000L});
-    public static final BitSet FOLLOW_59_in_ruleXCasePart7239 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXCasePart7260 = new BitSet(new long[]{0x0200000000000000L});
-    public static final BitSet FOLLOW_57_in_ruleXCasePart7274 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXCasePart7225 = new BitSet(new long[]{0x1400000000000000L});
+    public static final BitSet FOLLOW_60_in_ruleXCasePart7239 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXCasePart7260 = new BitSet(new long[]{0x0400000000000000L});
+    public static final BitSet FOLLOW_58_in_ruleXCasePart7274 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXCasePart7295 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXForLoopExpression_in_entryRuleXForLoopExpression7331 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXForLoopExpression7341 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_ruleXForLoopExpression7387 = new BitSet(new long[]{0x0002000000000000L});
-    public static final BitSet FOLLOW_49_in_ruleXForLoopExpression7399 = new BitSet(new long[]{0x0002000000000010L,0x0000000000002000L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_ruleXForLoopExpression7420 = new BitSet(new long[]{0x0200000000000000L});
-    public static final BitSet FOLLOW_57_in_ruleXForLoopExpression7432 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXForLoopExpression7453 = new BitSet(new long[]{0x0004000000000000L});
-    public static final BitSet FOLLOW_50_in_ruleXForLoopExpression7465 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
+    public static final BitSet FOLLOW_20_in_ruleXForLoopExpression7387 = new BitSet(new long[]{0x0004000000000000L});
+    public static final BitSet FOLLOW_50_in_ruleXForLoopExpression7399 = new BitSet(new long[]{0x0004000001000010L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_ruleXForLoopExpression7420 = new BitSet(new long[]{0x0400000000000000L});
+    public static final BitSet FOLLOW_58_in_ruleXForLoopExpression7432 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXForLoopExpression7453 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_51_in_ruleXForLoopExpression7465 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXForLoopExpression7486 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXWhileExpression_in_entryRuleXWhileExpression7522 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXWhileExpression7532 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_60_in_ruleXWhileExpression7578 = new BitSet(new long[]{0x0002000000000000L});
-    public static final BitSet FOLLOW_49_in_ruleXWhileExpression7590 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXWhileExpression7611 = new BitSet(new long[]{0x0004000000000000L});
-    public static final BitSet FOLLOW_50_in_ruleXWhileExpression7623 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
+    public static final BitSet FOLLOW_61_in_ruleXWhileExpression7578 = new BitSet(new long[]{0x0004000000000000L});
+    public static final BitSet FOLLOW_50_in_ruleXWhileExpression7590 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXWhileExpression7611 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_51_in_ruleXWhileExpression7623 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXWhileExpression7644 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXDoWhileExpression_in_entryRuleXDoWhileExpression7680 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXDoWhileExpression7690 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_61_in_ruleXDoWhileExpression7736 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXDoWhileExpression7757 = new BitSet(new long[]{0x1000000000000000L});
-    public static final BitSet FOLLOW_60_in_ruleXDoWhileExpression7769 = new BitSet(new long[]{0x0002000000000000L});
-    public static final BitSet FOLLOW_49_in_ruleXDoWhileExpression7781 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXDoWhileExpression7802 = new BitSet(new long[]{0x0004000000000000L});
-    public static final BitSet FOLLOW_50_in_ruleXDoWhileExpression7814 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_62_in_ruleXDoWhileExpression7736 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXDoWhileExpression7757 = new BitSet(new long[]{0x2000000000000000L});
+    public static final BitSet FOLLOW_61_in_ruleXDoWhileExpression7769 = new BitSet(new long[]{0x0004000000000000L});
+    public static final BitSet FOLLOW_50_in_ruleXDoWhileExpression7781 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXDoWhileExpression7802 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_51_in_ruleXDoWhileExpression7814 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXBlockExpression_in_entryRuleXBlockExpression7850 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXBlockExpression7860 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_13_in_ruleXBlockExpression7906 = new BitSet(new long[]{0xB14A11A000106070L,0x00000000000007FBL});
-    public static final BitSet FOLLOW_ruleXExpressionInsideBlock_in_ruleXBlockExpression7928 = new BitSet(new long[]{0xF14A11A000106070L,0x00000000000007FBL});
-    public static final BitSet FOLLOW_62_in_ruleXBlockExpression7941 = new BitSet(new long[]{0xB14A11A000106070L,0x00000000000007FBL});
+    public static final BitSet FOLLOW_13_in_ruleXBlockExpression7906 = new BitSet(new long[]{0x6294232000106070L,0x0000000000000FF7L});
+    public static final BitSet FOLLOW_ruleXExpressionInsideBlock_in_ruleXBlockExpression7928 = new BitSet(new long[]{0xE294232000106070L,0x0000000000000FF7L});
+    public static final BitSet FOLLOW_63_in_ruleXBlockExpression7941 = new BitSet(new long[]{0x6294232000106070L,0x0000000000000FF7L});
     public static final BitSet FOLLOW_14_in_ruleXBlockExpression7957 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXExpressionInsideBlock_in_entryRuleXExpressionInsideBlock7993 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXExpressionInsideBlock8003 = new BitSet(new long[]{0x0000000000000002L});
@@ -17895,12 +17895,12 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXExpressionInsideBlock8077 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXVariableDeclaration_in_entryRuleXVariableDeclaration8112 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXVariableDeclaration8122 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_63_in_ruleXVariableDeclaration8175 = new BitSet(new long[]{0x0002000000000010L,0x0000000000002000L});
-    public static final BitSet FOLLOW_64_in_ruleXVariableDeclaration8206 = new BitSet(new long[]{0x0002000000000010L,0x0000000000002000L});
+    public static final BitSet FOLLOW_64_in_ruleXVariableDeclaration8175 = new BitSet(new long[]{0x0004000001000010L});
+    public static final BitSet FOLLOW_65_in_ruleXVariableDeclaration8206 = new BitSet(new long[]{0x0004000001000010L});
     public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXVariableDeclaration8254 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_ruleValidID_in_ruleXVariableDeclaration8275 = new BitSet(new long[]{0x0000000008000002L});
     public static final BitSet FOLLOW_ruleValidID_in_ruleXVariableDeclaration8304 = new BitSet(new long[]{0x0000000008000002L});
-    public static final BitSet FOLLOW_27_in_ruleXVariableDeclaration8318 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
+    public static final BitSet FOLLOW_27_in_ruleXVariableDeclaration8318 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXVariableDeclaration8339 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleJvmFormalParameter_in_entryRuleJvmFormalParameter8377 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleJvmFormalParameter8387 = new BitSet(new long[]{0x0000000000000002L});
@@ -17908,49 +17908,49 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
     public static final BitSet FOLLOW_ruleValidID_in_ruleJvmFormalParameter8455 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXFeatureCall_in_entryRuleXFeatureCall8491 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXFeatureCall8501 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStaticQualifier_in_ruleXFeatureCall8558 = new BitSet(new long[]{0x0000002000000010L,0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_ruleXFeatureCall8572 = new BitSet(new long[]{0x0002000000000010L,0x0000000000006000L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXFeatureCall8593 = new BitSet(new long[]{0x0001001000000000L});
-    public static final BitSet FOLLOW_48_in_ruleXFeatureCall8606 = new BitSet(new long[]{0x0002000000000010L,0x0000000000006000L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXFeatureCall8627 = new BitSet(new long[]{0x0001001000000000L});
-    public static final BitSet FOLLOW_36_in_ruleXFeatureCall8641 = new BitSet(new long[]{0x0000002000000010L,0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIdOrSuper_in_ruleXFeatureCall8666 = new BitSet(new long[]{0x0002000000000002L});
-    public static final BitSet FOLLOW_49_in_ruleXFeatureCall8700 = new BitSet(new long[]{0x315E11A000102070L,0x00000000000027FAL});
-    public static final BitSet FOLLOW_ruleXShortClosure_in_ruleXFeatureCall8775 = new BitSet(new long[]{0x0004000000000000L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXFeatureCall8803 = new BitSet(new long[]{0x0005000000000000L});
-    public static final BitSet FOLLOW_48_in_ruleXFeatureCall8816 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXFeatureCall8837 = new BitSet(new long[]{0x0005000000000000L});
-    public static final BitSet FOLLOW_50_in_ruleXFeatureCall8854 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStaticQualifier_in_ruleXFeatureCall8558 = new BitSet(new long[]{0x0000002000000010L,0x0000000000000004L});
+    public static final BitSet FOLLOW_37_in_ruleXFeatureCall8572 = new BitSet(new long[]{0x0004000001000010L,0x0000000000004000L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXFeatureCall8593 = new BitSet(new long[]{0x0002001000000000L});
+    public static final BitSet FOLLOW_49_in_ruleXFeatureCall8606 = new BitSet(new long[]{0x0004000001000010L,0x0000000000004000L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXFeatureCall8627 = new BitSet(new long[]{0x0002001000000000L});
+    public static final BitSet FOLLOW_36_in_ruleXFeatureCall8641 = new BitSet(new long[]{0x0000002000000010L,0x0000000000000004L});
+    public static final BitSet FOLLOW_ruleIdOrSuper_in_ruleXFeatureCall8666 = new BitSet(new long[]{0x0004000000000002L});
+    public static final BitSet FOLLOW_50_in_ruleXFeatureCall8700 = new BitSet(new long[]{0x62BC232001102070L,0x0000000000000FF4L});
+    public static final BitSet FOLLOW_ruleXShortClosure_in_ruleXFeatureCall8775 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXFeatureCall8803 = new BitSet(new long[]{0x000A000000000000L});
+    public static final BitSet FOLLOW_49_in_ruleXFeatureCall8816 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXFeatureCall8837 = new BitSet(new long[]{0x000A000000000000L});
+    public static final BitSet FOLLOW_51_in_ruleXFeatureCall8854 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleIdOrSuper_in_entryRuleIdOrSuper8893 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleIdOrSuper8904 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleValidID_in_ruleIdOrSuper8951 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_65_in_ruleIdOrSuper8975 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_66_in_ruleIdOrSuper8975 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleStaticQualifier_in_entryRuleStaticQualifier9016 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleStaticQualifier9027 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValidID_in_ruleStaticQualifier9074 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_66_in_ruleStaticQualifier9092 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_ruleValidID_in_ruleStaticQualifier9074 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_67_in_ruleStaticQualifier9092 = new BitSet(new long[]{0x0000000000000012L});
     public static final BitSet FOLLOW_ruleXConstructorCall_in_entryRuleXConstructorCall9133 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXConstructorCall9143 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_67_in_ruleXConstructorCall9189 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleXConstructorCall9212 = new BitSet(new long[]{0x0002002000000000L});
-    public static final BitSet FOLLOW_37_in_ruleXConstructorCall9225 = new BitSet(new long[]{0x0002000000000010L,0x0000000000006000L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXConstructorCall9246 = new BitSet(new long[]{0x0001001000000000L});
-    public static final BitSet FOLLOW_48_in_ruleXConstructorCall9259 = new BitSet(new long[]{0x0002000000000010L,0x0000000000006000L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXConstructorCall9280 = new BitSet(new long[]{0x0001001000000000L});
-    public static final BitSet FOLLOW_36_in_ruleXConstructorCall9294 = new BitSet(new long[]{0x0002000000000000L});
-    public static final BitSet FOLLOW_49_in_ruleXConstructorCall9308 = new BitSet(new long[]{0x315E11A000102070L,0x00000000000027FAL});
-    public static final BitSet FOLLOW_ruleXShortClosure_in_ruleXConstructorCall9370 = new BitSet(new long[]{0x0004000000000000L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXConstructorCall9398 = new BitSet(new long[]{0x0005000000000000L});
-    public static final BitSet FOLLOW_48_in_ruleXConstructorCall9411 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXConstructorCall9432 = new BitSet(new long[]{0x0005000000000000L});
-    public static final BitSet FOLLOW_50_in_ruleXConstructorCall9449 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_68_in_ruleXConstructorCall9189 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleXConstructorCall9212 = new BitSet(new long[]{0x0004002000000000L});
+    public static final BitSet FOLLOW_37_in_ruleXConstructorCall9225 = new BitSet(new long[]{0x0004000001000010L,0x0000000000004000L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXConstructorCall9246 = new BitSet(new long[]{0x0002001000000000L});
+    public static final BitSet FOLLOW_49_in_ruleXConstructorCall9259 = new BitSet(new long[]{0x0004000001000010L,0x0000000000004000L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXConstructorCall9280 = new BitSet(new long[]{0x0002001000000000L});
+    public static final BitSet FOLLOW_36_in_ruleXConstructorCall9294 = new BitSet(new long[]{0x0004000000000000L});
+    public static final BitSet FOLLOW_50_in_ruleXConstructorCall9308 = new BitSet(new long[]{0x62BC232001102070L,0x0000000000000FF4L});
+    public static final BitSet FOLLOW_ruleXShortClosure_in_ruleXConstructorCall9370 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXConstructorCall9398 = new BitSet(new long[]{0x000A000000000000L});
+    public static final BitSet FOLLOW_49_in_ruleXConstructorCall9411 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXConstructorCall9432 = new BitSet(new long[]{0x000A000000000000L});
+    public static final BitSet FOLLOW_51_in_ruleXConstructorCall9449 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXBooleanLiteral_in_entryRuleXBooleanLiteral9485 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXBooleanLiteral9495 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_68_in_ruleXBooleanLiteral9542 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_69_in_ruleXBooleanLiteral9566 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_69_in_ruleXBooleanLiteral9542 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_70_in_ruleXBooleanLiteral9566 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXNullLiteral_in_entryRuleXNullLiteral9616 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXNullLiteral9626 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_70_in_ruleXNullLiteral9672 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_71_in_ruleXNullLiteral9672 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXIntLiteral_in_entryRuleXIntLiteral9708 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXIntLiteral9718 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_INT_in_ruleXIntLiteral9769 = new BitSet(new long[]{0x0000000000000002L});
@@ -17959,33 +17959,33 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
     public static final BitSet FOLLOW_RULE_STRING_in_ruleXStringLiteral9871 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXTypeLiteral_in_entryRuleXTypeLiteral9912 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXTypeLiteral9922 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_71_in_ruleXTypeLiteral9968 = new BitSet(new long[]{0x0002000000000000L});
-    public static final BitSet FOLLOW_49_in_ruleXTypeLiteral9980 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleXTypeLiteral10003 = new BitSet(new long[]{0x0004000000000000L});
-    public static final BitSet FOLLOW_50_in_ruleXTypeLiteral10015 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_72_in_ruleXTypeLiteral9968 = new BitSet(new long[]{0x0004000000000000L});
+    public static final BitSet FOLLOW_50_in_ruleXTypeLiteral9980 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleXTypeLiteral10003 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_51_in_ruleXTypeLiteral10015 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXThrowExpression_in_entryRuleXThrowExpression10051 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXThrowExpression10061 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_72_in_ruleXThrowExpression10107 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
+    public static final BitSet FOLLOW_73_in_ruleXThrowExpression10107 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXThrowExpression10128 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXReturnExpression_in_entryRuleXReturnExpression10164 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXReturnExpression10174 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_73_in_ruleXReturnExpression10220 = new BitSet(new long[]{0x314A11A000102072L,0x00000000000007FAL});
+    public static final BitSet FOLLOW_74_in_ruleXReturnExpression10220 = new BitSet(new long[]{0x6294232000102072L,0x0000000000000FF4L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXReturnExpression10251 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXTryCatchFinallyExpression_in_entryRuleXTryCatchFinallyExpression10288 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXTryCatchFinallyExpression10298 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_74_in_ruleXTryCatchFinallyExpression10344 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXTryCatchFinallyExpression10365 = new BitSet(new long[]{0x0000000000000000L,0x0000000000001800L});
-    public static final BitSet FOLLOW_ruleXCatchClause_in_ruleXTryCatchFinallyExpression10395 = new BitSet(new long[]{0x0000000000000002L,0x0000000000001800L});
-    public static final BitSet FOLLOW_75_in_ruleXTryCatchFinallyExpression10417 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
+    public static final BitSet FOLLOW_75_in_ruleXTryCatchFinallyExpression10344 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXTryCatchFinallyExpression10365 = new BitSet(new long[]{0x0000000000000000L,0x0000000000003000L});
+    public static final BitSet FOLLOW_ruleXCatchClause_in_ruleXTryCatchFinallyExpression10395 = new BitSet(new long[]{0x0000000000000002L,0x0000000000003000L});
+    public static final BitSet FOLLOW_76_in_ruleXTryCatchFinallyExpression10417 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXTryCatchFinallyExpression10439 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_75_in_ruleXTryCatchFinallyExpression10461 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
+    public static final BitSet FOLLOW_76_in_ruleXTryCatchFinallyExpression10461 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXTryCatchFinallyExpression10482 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXCatchClause_in_entryRuleXCatchClause10520 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXCatchClause10530 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_76_in_ruleXCatchClause10575 = new BitSet(new long[]{0x0002000000000000L});
-    public static final BitSet FOLLOW_49_in_ruleXCatchClause10588 = new BitSet(new long[]{0x0002000000000010L,0x0000000000002000L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_ruleXCatchClause10609 = new BitSet(new long[]{0x0004000000000000L});
-    public static final BitSet FOLLOW_50_in_ruleXCatchClause10621 = new BitSet(new long[]{0x314A11A000102070L,0x00000000000007FAL});
+    public static final BitSet FOLLOW_77_in_ruleXCatchClause10575 = new BitSet(new long[]{0x0004000000000000L});
+    public static final BitSet FOLLOW_50_in_ruleXCatchClause10588 = new BitSet(new long[]{0x0004000001000010L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_ruleXCatchClause10609 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_51_in_ruleXCatchClause10621 = new BitSet(new long[]{0x6294232000102070L,0x0000000000000FF4L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXCatchClause10642 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName10679 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedName10690 = new BitSet(new long[]{0x0000000000000002L});
@@ -17998,20 +17998,20 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
     public static final BitSet FOLLOW_ruleXFunctionTypeRef_in_ruleJvmTypeReference10919 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXFunctionTypeRef_in_entryRuleXFunctionTypeRef10954 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXFunctionTypeRef10964 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_49_in_ruleXFunctionTypeRef11002 = new BitSet(new long[]{0x0002000000000010L,0x0000000000002000L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef11023 = new BitSet(new long[]{0x0005000000000000L});
-    public static final BitSet FOLLOW_48_in_ruleXFunctionTypeRef11036 = new BitSet(new long[]{0x0002000000000010L,0x0000000000002000L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef11057 = new BitSet(new long[]{0x0005000000000000L});
-    public static final BitSet FOLLOW_50_in_ruleXFunctionTypeRef11071 = new BitSet(new long[]{0x0000000000000000L,0x0000000000002000L});
-    public static final BitSet FOLLOW_77_in_ruleXFunctionTypeRef11085 = new BitSet(new long[]{0x0002000000000010L,0x0000000000002000L});
+    public static final BitSet FOLLOW_50_in_ruleXFunctionTypeRef11002 = new BitSet(new long[]{0x0004000001000010L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef11023 = new BitSet(new long[]{0x000A000000000000L});
+    public static final BitSet FOLLOW_49_in_ruleXFunctionTypeRef11036 = new BitSet(new long[]{0x0004000001000010L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef11057 = new BitSet(new long[]{0x000A000000000000L});
+    public static final BitSet FOLLOW_51_in_ruleXFunctionTypeRef11071 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_24_in_ruleXFunctionTypeRef11085 = new BitSet(new long[]{0x0004000001000010L});
     public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef11106 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleJvmParameterizedTypeReference_in_entryRuleJvmParameterizedTypeReference11142 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleJvmParameterizedTypeReference11152 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleQualifiedName_in_ruleJvmParameterizedTypeReference11200 = new BitSet(new long[]{0x0000002000000002L});
-    public static final BitSet FOLLOW_37_in_ruleJvmParameterizedTypeReference11221 = new BitSet(new long[]{0x0002000000000010L,0x0000000000006000L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleJvmParameterizedTypeReference11243 = new BitSet(new long[]{0x0001001000000000L});
-    public static final BitSet FOLLOW_48_in_ruleJvmParameterizedTypeReference11256 = new BitSet(new long[]{0x0002000000000010L,0x0000000000006000L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleJvmParameterizedTypeReference11277 = new BitSet(new long[]{0x0001001000000000L});
+    public static final BitSet FOLLOW_37_in_ruleJvmParameterizedTypeReference11221 = new BitSet(new long[]{0x0004000001000010L,0x0000000000004000L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleJvmParameterizedTypeReference11243 = new BitSet(new long[]{0x0002001000000000L});
+    public static final BitSet FOLLOW_49_in_ruleJvmParameterizedTypeReference11256 = new BitSet(new long[]{0x0004000001000010L,0x0000000000004000L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleJvmParameterizedTypeReference11277 = new BitSet(new long[]{0x0002001000000000L});
     public static final BitSet FOLLOW_36_in_ruleJvmParameterizedTypeReference11291 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_entryRuleJvmArgumentTypeReference11329 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleJvmArgumentTypeReference11339 = new BitSet(new long[]{0x0000000000000002L});
@@ -18019,20 +18019,20 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
     public static final BitSet FOLLOW_ruleJvmWildcardTypeReference_in_ruleJvmArgumentTypeReference11413 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleJvmWildcardTypeReference_in_entryRuleJvmWildcardTypeReference11448 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleJvmWildcardTypeReference11458 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_78_in_ruleJvmWildcardTypeReference11504 = new BitSet(new long[]{0x0000000000000002L,0x0000000000008002L});
+    public static final BitSet FOLLOW_78_in_ruleJvmWildcardTypeReference11504 = new BitSet(new long[]{0x0000000000000002L,0x0000000000008004L});
     public static final BitSet FOLLOW_ruleJvmUpperBound_in_ruleJvmWildcardTypeReference11526 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleJvmLowerBound_in_ruleJvmWildcardTypeReference11553 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleJvmUpperBound_in_entryRuleJvmUpperBound11591 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleJvmUpperBound11601 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_79_in_ruleJvmUpperBound11638 = new BitSet(new long[]{0x0002000000000010L,0x0000000000002000L});
+    public static final BitSet FOLLOW_79_in_ruleJvmUpperBound11638 = new BitSet(new long[]{0x0004000001000010L});
     public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleJvmUpperBound11659 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleJvmUpperBoundAnded_in_entryRuleJvmUpperBoundAnded11695 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleJvmUpperBoundAnded11705 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_80_in_ruleJvmUpperBoundAnded11742 = new BitSet(new long[]{0x0002000000000010L,0x0000000000002000L});
+    public static final BitSet FOLLOW_80_in_ruleJvmUpperBoundAnded11742 = new BitSet(new long[]{0x0004000001000010L});
     public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleJvmUpperBoundAnded11763 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleJvmLowerBound_in_entryRuleJvmLowerBound11799 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleJvmLowerBound11809 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_65_in_ruleJvmLowerBound11846 = new BitSet(new long[]{0x0002000000000010L,0x0000000000002000L});
+    public static final BitSet FOLLOW_66_in_ruleJvmLowerBound11846 = new BitSet(new long[]{0x0004000001000010L});
     public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleJvmLowerBound11867 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleValidID_in_entryRuleValidID11906 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleValidID11917 = new BitSet(new long[]{0x0000000000000002L});
@@ -18046,33 +18046,33 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
     public static final BitSet FOLLOW_ruleOpOther_in_synpred7_InternalGraphViewMapping3650 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleOpAdd_in_synpred8_InternalGraphViewMapping3930 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleOpMulti_in_synpred9_InternalGraphViewMapping4210 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_45_in_synpred10_InternalGraphViewMapping4804 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_46_in_synpred10_InternalGraphViewMapping4804 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_17_in_synpred11_InternalGraphViewMapping4958 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_ruleValidID_in_synpred11_InternalGraphViewMapping4967 = new BitSet(new long[]{0x0000000008000000L});
     public static final BitSet FOLLOW_ruleOpSingleAssign_in_synpred11_InternalGraphViewMapping4973 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_17_in_synpred12_InternalGraphViewMapping5076 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_46_in_synpred12_InternalGraphViewMapping5090 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_47_in_synpred12_InternalGraphViewMapping5110 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_49_in_synpred13_InternalGraphViewMapping5337 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred14_InternalGraphViewMapping5389 = new BitSet(new long[]{0x0011000000000000L});
-    public static final BitSet FOLLOW_48_in_synpred14_InternalGraphViewMapping5396 = new BitSet(new long[]{0x0002000000000010L,0x0000000000002000L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred14_InternalGraphViewMapping5403 = new BitSet(new long[]{0x0011000000000000L});
-    public static final BitSet FOLLOW_52_in_synpred14_InternalGraphViewMapping5413 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_55_in_synpred16_InternalGraphViewMapping6858 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_47_in_synpred12_InternalGraphViewMapping5090 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_48_in_synpred12_InternalGraphViewMapping5110 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_50_in_synpred13_InternalGraphViewMapping5337 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred14_InternalGraphViewMapping5389 = new BitSet(new long[]{0x0022000000000000L});
+    public static final BitSet FOLLOW_49_in_synpred14_InternalGraphViewMapping5396 = new BitSet(new long[]{0x0004000001000010L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred14_InternalGraphViewMapping5403 = new BitSet(new long[]{0x0022000000000000L});
+    public static final BitSet FOLLOW_53_in_synpred14_InternalGraphViewMapping5413 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_56_in_synpred16_InternalGraphViewMapping6858 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleJvmTypeReference_in_synpred17_InternalGraphViewMapping8224 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_ruleValidID_in_synpred17_InternalGraphViewMapping8233 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_49_in_synpred18_InternalGraphViewMapping8682 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred19_InternalGraphViewMapping8734 = new BitSet(new long[]{0x0011000000000000L});
-    public static final BitSet FOLLOW_48_in_synpred19_InternalGraphViewMapping8741 = new BitSet(new long[]{0x0002000000000010L,0x0000000000002000L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred19_InternalGraphViewMapping8748 = new BitSet(new long[]{0x0011000000000000L});
-    public static final BitSet FOLLOW_52_in_synpred19_InternalGraphViewMapping8758 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred20_InternalGraphViewMapping9329 = new BitSet(new long[]{0x0011000000000000L});
-    public static final BitSet FOLLOW_48_in_synpred20_InternalGraphViewMapping9336 = new BitSet(new long[]{0x0002000000000010L,0x0000000000002000L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred20_InternalGraphViewMapping9343 = new BitSet(new long[]{0x0011000000000000L});
-    public static final BitSet FOLLOW_52_in_synpred20_InternalGraphViewMapping9353 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_50_in_synpred18_InternalGraphViewMapping8682 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred19_InternalGraphViewMapping8734 = new BitSet(new long[]{0x0022000000000000L});
+    public static final BitSet FOLLOW_49_in_synpred19_InternalGraphViewMapping8741 = new BitSet(new long[]{0x0004000001000010L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred19_InternalGraphViewMapping8748 = new BitSet(new long[]{0x0022000000000000L});
+    public static final BitSet FOLLOW_53_in_synpred19_InternalGraphViewMapping8758 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred20_InternalGraphViewMapping9329 = new BitSet(new long[]{0x0022000000000000L});
+    public static final BitSet FOLLOW_49_in_synpred20_InternalGraphViewMapping9336 = new BitSet(new long[]{0x0004000001000010L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred20_InternalGraphViewMapping9343 = new BitSet(new long[]{0x0022000000000000L});
+    public static final BitSet FOLLOW_53_in_synpred20_InternalGraphViewMapping9353 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXExpression_in_synpred21_InternalGraphViewMapping10234 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_76_in_synpred22_InternalGraphViewMapping10379 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_75_in_synpred23_InternalGraphViewMapping10409 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_77_in_synpred22_InternalGraphViewMapping10379 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_76_in_synpred23_InternalGraphViewMapping10409 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_17_in_synpred25_InternalGraphViewMapping10756 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_37_in_synpred26_InternalGraphViewMapping11213 = new BitSet(new long[]{0x0000000000000002L});
 

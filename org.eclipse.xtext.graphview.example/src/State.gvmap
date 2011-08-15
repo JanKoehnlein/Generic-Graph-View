@@ -4,7 +4,7 @@ diagram StateMachineDiagram type Statemachine {
 	node StateNode for each states {
 		label Name for this
 		edge Transition for each transitions {
-			-> ref StateNode for state
+			=> ref StateNode for state
 			label EventName for event
 		}
 		node ActionCompartment for actions {

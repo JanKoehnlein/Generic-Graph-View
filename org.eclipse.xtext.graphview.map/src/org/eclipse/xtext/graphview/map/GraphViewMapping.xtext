@@ -38,7 +38,7 @@ LabelMapping:
 EdgeMapping:
 	'edge' name=ID 'for' multi?='each'? expression=XExpression '{'
 		sourceMapping=EdgeEndMapping? 
-		'->' 
+		'=>' 
 		targetMapping=EdgeEndMapping? 
 		mappings+=LabelMapping*
 	'}' ('unless' unlessCondition=XExpression)?;

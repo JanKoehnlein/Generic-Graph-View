@@ -4152,11 +4152,11 @@ rule__EdgeMapping__Group__7__Impl
     }
 :
 (
-{ before(grammarAccess.getEdgeMappingAccess().getHyphenMinusGreaterThanSignKeyword_7()); }
+{ before(grammarAccess.getEdgeMappingAccess().getEqualsSignGreaterThanSignKeyword_7()); }
 
-	'->' 
+	'=>' 
 
-{ after(grammarAccess.getEdgeMappingAccess().getHyphenMinusGreaterThanSignKeyword_7()); }
+{ after(grammarAccess.getEdgeMappingAccess().getEqualsSignGreaterThanSignKeyword_7()); }
 )
 
 ;
