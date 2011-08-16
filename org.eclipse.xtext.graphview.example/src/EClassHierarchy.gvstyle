@@ -6,12 +6,21 @@ import EClassHierarchy.*
 
 stylesheet EClassHierarchy for EClassHierarchy
 
-style EClassNode.SuperType.SuperTypeLabel as LabelShape {
-	connectionAlignment = ConnectionLocator::TARGET
-	text='sub'
+style EClassHierarchy {
+	val layoutManager = new KielerAutoLayout();
+	layoutManager.layoutName = "Sugiyama" 
+	autoLayoutManager = layoutManager 
 }
 
-style EClassNode.name {
+style EClassNode.SuperType {
+	var arrow = new PolygonDecoration()
+	arrow.setScale(10,10)
+	arrow.backgroundColor = color(#ffffff)
+	arrow.lineWidth = 2
+	targetDecoration = arrow 
+}
+
+style EClassNode.Name {
 	font = font("Helvetica", 14, 1)
 	border = new MarginBorder(5,5,5,5)
 }

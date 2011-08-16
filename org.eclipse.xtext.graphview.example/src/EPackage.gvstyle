@@ -5,7 +5,7 @@ import EPackageDiagram.*
 
 stylesheet EPackageDiagram for EPackageDiagram
 
-style EPackageDiagram as DiagramShape {
+style EPackageDiagram {
 //	autoLayoutManager = new GridAutoLayout()
 //
 //	val autoLayout = new SpringAutoLayout()
@@ -18,12 +18,12 @@ style EPackageDiagram as DiagramShape {
 	autoLayoutManager = layoutManager 
 }
 
-style EDataTypeNode.Name as LabelShape {
+style EDataTypeNode.Name {
 	font = font("Helvetica", 13, 1) 
 	border = new MarginBorder(5,5,5,5) 
 }
 
-style EClassNode.Name as LabelShape { 
+style EClassNode.Name { 
 	font = font("Helvetica", 13, 1 + (if (element.abstract) 2 else 0))
 	border = new MarginBorder(5,5,5,5)
 }
@@ -33,11 +33,11 @@ style EClassNode.Attributes, EClassNode.Operations as RectangleShape {
 	backgroundColor = color(#ffffff)
 }
 
-style EClassNode.ReferenceEdge.EdgeLabel as LabelShape {
+style EClassNode.ReferenceEdge.EdgeLabel {
 	connectionAlignment = ConnectionLocator::TARGET
 }
 
-style EClassNode.SuperclassEdge as ConnectionShape {
+style EClassNode.SuperclassEdge {
 	var arrow = new PolygonDecoration()
 	arrow.setScale(10,10)
 	arrow.backgroundColor = color(#ffffff)

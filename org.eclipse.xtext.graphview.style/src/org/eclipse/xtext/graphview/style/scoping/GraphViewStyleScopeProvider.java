@@ -17,6 +17,7 @@ import org.eclipse.xtext.common.types.JvmTypeReference;
 import org.eclipse.xtext.common.types.util.TypeConformanceComputer;
 import org.eclipse.xtext.common.types.util.TypeReferences;
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping;
+import org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage;
 import org.eclipse.xtext.graphview.style.graphViewStyle.Style;
 import org.eclipse.xtext.naming.QualifiedName;
 import org.eclipse.xtext.resource.EObjectDescription;
@@ -63,13 +64,7 @@ public class GraphViewStyleScopeProvider extends XbaseScopeProvider {
 		EObject context = scopeContext.getContext();
 		if(context instanceof Style) {
 			List<IEObjectDescription> localVars = Lists.newArrayList();
-			JvmParameterizedTypeReference clazz = ((Style) context).getJavaClass();
-			if(clazz != null && clazz.getType() != null) {
-				localVars.add(EObjectDescription.create(XbaseScopeProvider.THIS, clazz.getType()));
-			} else {
-				JvmType figureType = typeReferences.findDeclaredType("org.eclipse.draw2d.IFigure", context);
-				localVars.add(EObjectDescription.create(XbaseScopeProvider.THIS, figureType));
-			}
+			localVars.add(EObjectDescription.create(XbaseScopeProvider.THIS, getFigureType((Style) context)));
 			List<JvmTypeReference> mappingTypes = Lists.newArrayList();
 			for(AbstractMapping mapping : ((Style) context).getMappings()) {
 				JvmTypeReference mappingType = mappingTypeProvider.getTypeForIdentifiable(mapping);
@@ -86,5 +81,45 @@ public class GraphViewStyleScopeProvider extends XbaseScopeProvider {
 				return new SimpleScope(parentScope, localVars); 
 		}
 		return super.createLocalVarScope(parentScope, scopeContext);
+	}
+	
+	protected JvmType getFigureType(Style style) {
+		JvmParameterizedTypeReference clazz = style.getJavaClass();
+		if(clazz != null && clazz.getType() != null) {
+			return clazz.getType();
+		} else {
+			String currentFigureTypeName = null;
+			for(AbstractMapping mapping: style.getMappings()) {
+				String mappingFigureTypeName = getDefaultFigureTypeName(mapping);
+				if(mappingFigureTypeName != null) {
+					if(currentFigureTypeName != null) {
+						currentFigureTypeName = "org.eclipse.draw2d.IFigure";
+						break;
+					} else { 
+						currentFigureTypeName = mappingFigureTypeName;
+					}
+				}
+			}
+			if(currentFigureTypeName == null)
+				currentFigureTypeName = "org.eclipse.draw2d.IFigure";
+			JvmType figureType = typeReferences.findDeclaredType(currentFigureTypeName, style);
+			return figureType;
+		}
+
+	}
+
+	private String getDefaultFigureTypeName(AbstractMapping mapping) {
+		switch(mapping.eClass().getClassifierID()) {
+		case GraphViewMappingPackage.LABEL_MAPPING:
+			return "org.eclipse.xtext.graphview.shape.LabelShape";
+		case GraphViewMappingPackage.EDGE_MAPPING:
+			return "org.eclipse.xtext.graphview.shape.ConnectionShape";
+		case GraphViewMappingPackage.DIAGRAM_MAPPING:
+			return "org.eclipse.xtext.graphview.shape.DiagramShape";
+		case GraphViewMappingPackage.NODE_MAPPING:
+			return "org.eclipse.xtext.graphview.shape.RoundedRectangleShape";
+		default:
+			return null;
+		}
 	}
 }

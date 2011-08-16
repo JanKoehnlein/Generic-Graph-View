@@ -2,10 +2,9 @@ import org.eclipse.emf.ecore.*
 
 diagram EClassHierarchy type EClass {
 	node EClassNode for this {
-		label name for this
+		label Name for this
 		edge SuperType for each ESuperTypes {
-			call EClassNode for this =>   
-			label SuperTypeLabel for this 
+			=>  call EClassNode for this  
 		}
 	}
 }

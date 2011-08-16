@@ -25,7 +25,7 @@ QualifiedNameWithWildcard:
 	QualifiedName ('.' '*')?;
 	 
 Style:
-	'style' mappings+=[gvmapping::AbstractMapping|QualifiedName] (',' mappings+=[gvmapping::AbstractMapping|QualifiedName])* // should become a crossref to a Mapping ID
+	'style' mappings+=[gvmapping::AbstractMapping|QualifiedName] (',' mappings+=[gvmapping::AbstractMapping|QualifiedName])* 
 	('as' javaClass=JvmTypeReference)?
 	expression=XBlockExpression?;
 

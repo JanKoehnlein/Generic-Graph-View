@@ -5,13 +5,13 @@ import org.eclipse.xtext.example.fowlerdsl.statemachine.*
 
 stylesheet StateMachineStyle for StateMachineDiagram 
 
-style StateMachineDiagram as DiagramShape {
+style StateMachineDiagram {
 	val layoutManager = new KielerAutoLayout();
-	layoutManager.layoutName = "Planarization" 
+	layoutManager.layoutName = "Fruchterman-Reingold" 
 	autoLayoutManager = layoutManager
 }
 	
-style StateMachineDiagram.StateNode.Transition.EventName as LabelShape {
+style StateMachineDiagram.StateNode.Transition.EventName {
 	opaque = true
 	if((element.eContainer as Statemachine).resetEvents.contains(element)) 
 		foregroundColor = color(#ff2222)
