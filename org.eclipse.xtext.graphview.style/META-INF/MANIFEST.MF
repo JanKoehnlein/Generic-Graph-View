@@ -27,7 +27,6 @@ Import-Package: org.apache.log4j,
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.eclipse.xtext.graphview.style,
  org.eclipse.xtext.graphview.style.formatting,
- org.eclipse.xtext.graphview.style.generator,
  org.eclipse.xtext.graphview.style.graphViewStyle,
  org.eclipse.xtext.graphview.style.graphViewStyle.impl,
  org.eclipse.xtext.graphview.style.graphViewStyle.util,

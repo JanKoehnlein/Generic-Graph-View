@@ -27,7 +27,6 @@ Import-Package: org.apache.log4j,
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.eclipse.xtext.graphview.map,
  org.eclipse.xtext.graphview.map.formatting,
- org.eclipse.xtext.graphview.map.generator,
  org.eclipse.xtext.graphview.map.graphViewMapping,
  org.eclipse.xtext.graphview.map.graphViewMapping.impl,
  org.eclipse.xtext.graphview.map.graphViewMapping.util,
