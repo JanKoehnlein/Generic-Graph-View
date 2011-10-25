@@ -8,7 +8,7 @@
 package org.eclipse.xtext.graphview.style;
 
 import org.apache.log4j.Logger;
-import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
+import org.eclipse.xtext.common.types.JvmTypeReference;
 import org.eclipse.xtext.graphview.style.graphViewStyle.Style;
 import org.eclipse.xtext.graphview.style.scoping.GraphViewStyleScopeProvider;
 import org.eclipse.xtext.util.CancelIndicator;
@@ -41,7 +41,7 @@ public class Styler implements IStyler {
 		if (style.getExpression() == null)
 			return true;
 		try {
-			JvmParameterizedTypeReference javaClass = style.getJavaClass();
+			JvmTypeReference javaClass = style.getJavaClass();
 			if (javaClass == null
 					|| Strings.equal(javaClass.getIdentifier(), figure
 							.getClass().getCanonicalName())) {

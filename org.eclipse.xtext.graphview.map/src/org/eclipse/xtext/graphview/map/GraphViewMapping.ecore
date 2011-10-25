@@ -26,7 +26,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="DiagramMapping" eSuperTypes="#//AbstractMappingDefinition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
         eType="#//Import" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="typeGuard" eType="ecore:EClass ../../../../../../../org.eclipse.xtext.common.types/model/JavaVMTypes.ecore#//JvmParameterizedTypeReference"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="typeGuard" eType="ecore:EClass ../../../../../../../org.eclipse.xtext.common.types/model/JavaVMTypes.ecore#//JvmTypeReference"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NodeMapping" eSuperTypes="#//AbstractMappingDefinition #//AbstractExpressionMapping"/>

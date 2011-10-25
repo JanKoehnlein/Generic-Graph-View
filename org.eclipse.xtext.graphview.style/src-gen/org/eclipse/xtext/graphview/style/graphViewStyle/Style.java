@@ -6,13 +6,9 @@
 package org.eclipse.xtext.graphview.style.graphViewStyle;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
-
-import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
-
+import org.eclipse.xtext.common.types.JvmTypeReference;
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping;
-
 import org.eclipse.xtext.xbase.XExpression;
 
 /**
@@ -60,12 +56,12 @@ public interface Style extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Java Class</em>' containment reference.
-   * @see #setJavaClass(JvmParameterizedTypeReference)
+   * @see #setJavaClass(JvmTypeReference)
    * @see org.eclipse.xtext.graphview.style.graphViewStyle.GraphViewStylePackage#getStyle_JavaClass()
    * @model containment="true"
    * @generated
    */
-  JvmParameterizedTypeReference getJavaClass();
+  JvmTypeReference getJavaClass();
 
   /**
    * Sets the value of the '{@link org.eclipse.xtext.graphview.style.graphViewStyle.Style#getJavaClass <em>Java Class</em>}' containment reference.
@@ -75,7 +71,7 @@ public interface Style extends EObject
    * @see #getJavaClass()
    * @generated
    */
-  void setJavaClass(JvmParameterizedTypeReference value);
+  void setJavaClass(JvmTypeReference value);
 
   /**
    * Returns the value of the '<em><b>Expression</b></em>' containment reference.

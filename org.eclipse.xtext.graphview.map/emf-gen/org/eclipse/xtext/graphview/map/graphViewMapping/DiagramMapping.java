@@ -8,6 +8,7 @@ package org.eclipse.xtext.graphview.map.graphViewMapping;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.xtext.common.types.JvmTypeReference;
 import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
 
 /**
@@ -53,12 +54,12 @@ public interface DiagramMapping extends AbstractMappingDefinition {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type Guard</em>' containment reference.
-	 * @see #setTypeGuard(JvmParameterizedTypeReference)
+	 * @see #setTypeGuard(JvmTypeReference)
 	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage#getDiagramMapping_TypeGuard()
 	 * @model containment="true"
 	 * @generated
 	 */
-	JvmParameterizedTypeReference getTypeGuard();
+	JvmTypeReference getTypeGuard();
 
 	/**
 	 * Sets the value of the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping#getTypeGuard <em>Type Guard</em>}' containment reference.
@@ -68,6 +69,6 @@ public interface DiagramMapping extends AbstractMappingDefinition {
 	 * @see #getTypeGuard()
 	 * @generated
 	 */
-	void setTypeGuard(JvmParameterizedTypeReference value);
+	void setTypeGuard(JvmTypeReference value);
 
 } // DiagramMapping

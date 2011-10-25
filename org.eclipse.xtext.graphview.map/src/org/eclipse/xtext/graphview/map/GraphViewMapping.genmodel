@@ -7,12 +7,12 @@
     updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
     editPluginID="org.eclipse.xtext.graphview.map.edit" editorPluginID="org.eclipse.xtext.graphview.map.editor"
-    usedGenPackages="../../../../../../../org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types ../../../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase">
+    usedGenPackages="../../../../../../../org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types">
   <foreignModel>GraphViewMapping.ecore</foreignModel>
   <genPackages prefix="GraphViewMapping" basePackage="org.eclipse.xtext.graphview.map"
       disposableProviderFactory="true" ecorePackage="GraphViewMapping.ecore#/">
     <genClasses image="false" ecoreClass="GraphViewMapping.ecore#//AbstractMapping">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GraphViewMapping.ecore#//AbstractMapping/skip"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GraphViewMapping.ecore#//AbstractMapping/unlessCondition"/>
     </genClasses>
     <genClasses ecoreClass="GraphViewMapping.ecore#//AbstractMappingDefinition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GraphViewMapping.ecore#//AbstractMappingDefinition/name"/>
@@ -42,5 +42,128 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GraphViewMapping.ecore#//EdgeEndMapping/call"/>
     </genClasses>
     <genClasses ecoreClass="GraphViewMapping.ecore#//MappingCall"/>
+  </genPackages>
+  <genPackages prefix="Xbase" ecorePackage="http://www.eclipse.org/xtext/xbase/Xbase#/">
+    <genClasses image="false" ecoreClass="http://www.eclipse.org/xtext/xbase/Xbase#//XExpression"/>
+    <genClasses ecoreClass="http://www.eclipse.org/xtext/xbase/Xbase#//XIfExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XIfExpression/if"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XIfExpression/then"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XIfExpression/else"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/xtext/xbase/Xbase#//XSwitchExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XSwitchExpression/switch"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XSwitchExpression/cases"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XSwitchExpression/default"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/xtext/xbase/Xbase#//XSwitchExpression/localVarName"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/xtext/xbase/Xbase#//XCasePart">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XCasePart/case"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XCasePart/then"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XCasePart/typeGuard"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/xtext/xbase/Xbase#//XBlockExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XBlockExpression/expressions"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/xtext/xbase/Xbase#//XVariableDeclaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XVariableDeclaration/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/xtext/xbase/Xbase#//XVariableDeclaration/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XVariableDeclaration/right"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/xtext/xbase/Xbase#//XVariableDeclaration/writeable"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="http://www.eclipse.org/xtext/xbase/Xbase#//XAbstractFeatureCall">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XAbstractFeatureCall/feature"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XAbstractFeatureCall/typeArguments"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XAbstractFeatureCall/implicitReceiver"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/xtext/xbase/Xbase#//XAbstractFeatureCall/invalidFeatureIssueCode"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/xtext/xbase/Xbase#//XAbstractFeatureCall/validFeature"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XAbstractFeatureCall/implicitFirstArgument"/>
+      <genOperations ecoreOperation="http://www.eclipse.org/xtext/xbase/Xbase#//XAbstractFeatureCall/getConcreteSyntaxFeatureName"/>
+      <genOperations ecoreOperation="http://www.eclipse.org/xtext/xbase/Xbase#//XAbstractFeatureCall/getExplicitArguments"/>
+      <genOperations ecoreOperation="http://www.eclipse.org/xtext/xbase/Xbase#//XAbstractFeatureCall/isExplicitOperationCallOrBuilderSyntax"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/xtext/xbase/Xbase#//XMemberFeatureCall">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XMemberFeatureCall/memberCallTarget"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XMemberFeatureCall/memberCallArguments"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/xtext/xbase/Xbase#//XMemberFeatureCall/explicitOperationCall"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/xtext/xbase/Xbase#//XMemberFeatureCall/spreading"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/xtext/xbase/Xbase#//XMemberFeatureCall/nullSafe"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/xtext/xbase/Xbase#//XFeatureCall">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XFeatureCall/featureCallArguments"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/xtext/xbase/Xbase#//XFeatureCall/explicitOperationCall"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XFeatureCall/declaringType"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/xtext/xbase/Xbase#//XConstructorCall">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XConstructorCall/constructor"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XConstructorCall/arguments"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XConstructorCall/typeArguments"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/xtext/xbase/Xbase#//XConstructorCall/invalidFeatureIssueCode"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/xtext/xbase/Xbase#//XConstructorCall/validFeature"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/xtext/xbase/Xbase#//XBooleanLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/xtext/xbase/Xbase#//XBooleanLiteral/isTrue"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/xtext/xbase/Xbase#//XNullLiteral"/>
+    <genClasses ecoreClass="http://www.eclipse.org/xtext/xbase/Xbase#//XIntLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/xtext/xbase/Xbase#//XIntLiteral/value"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/xtext/xbase/Xbase#//XStringLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/xtext/xbase/Xbase#//XStringLiteral/value"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/xtext/xbase/Xbase#//XClosure">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XClosure/declaredFormalParameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XClosure/expression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/xtext/xbase/Xbase#//XClosure/explicitSyntax"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XClosure/implicitParameter"/>
+      <genOperations ecoreOperation="http://www.eclipse.org/xtext/xbase/Xbase#//XClosure/getFormalParameters"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/xtext/xbase/Xbase#//XCastedExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XCastedExpression/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XCastedExpression/target"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/xtext/xbase/Xbase#//XBinaryOperation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XBinaryOperation/leftOperand"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XBinaryOperation/rightOperand"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/xtext/xbase/Xbase#//XUnaryOperation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XUnaryOperation/operand"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/xtext/xbase/Xbase#//XForLoopExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XForLoopExpression/forExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XForLoopExpression/eachExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XForLoopExpression/declaredParam"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="http://www.eclipse.org/xtext/xbase/Xbase#//XAbstractWhileExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XAbstractWhileExpression/predicate"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XAbstractWhileExpression/body"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/xtext/xbase/Xbase#//XDoWhileExpression"/>
+    <genClasses ecoreClass="http://www.eclipse.org/xtext/xbase/Xbase#//XWhileExpression"/>
+    <genClasses ecoreClass="http://www.eclipse.org/xtext/xbase/Xbase#//XTypeLiteral">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XTypeLiteral/type"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/xtext/xbase/Xbase#//XInstanceOfExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XInstanceOfExpression/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XInstanceOfExpression/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/xtext/xbase/Xbase#//XThrowExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XThrowExpression/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/xtext/xbase/Xbase#//XTryCatchFinallyExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XTryCatchFinallyExpression/expression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XTryCatchFinallyExpression/finallyExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XTryCatchFinallyExpression/catchClauses"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/xtext/xbase/Xbase#//XCatchClause">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XCatchClause/expression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XCatchClause/declaredParam"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/xtext/xbase/Xbase#//XAssignment">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XAssignment/assignable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XAssignment/value"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/xtext/xbase/Xbase#//XReturnExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/xtext/xbase/Xbase#//XReturnExpression/expression"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

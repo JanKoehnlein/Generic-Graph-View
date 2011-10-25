@@ -13,7 +13,7 @@ import org.apache.log4j.Logger;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.RequestConstants;
-import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
+import org.eclipse.xtext.common.types.JvmTypeReference;
 import org.eclipse.xtext.graphview.instancemodel.AbstractInstance;
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping;
 import org.eclipse.xtext.graphview.style.StyleProvider;
@@ -72,7 +72,7 @@ public class InstanceModelEditPartHelper {
 	}
 
 	public IFigure createShape(Style style) {
-		JvmParameterizedTypeReference javaClass = style.getJavaClass();
+		JvmTypeReference javaClass = style.getJavaClass();
 		if (javaClass != null) {
 			try {
 				Class<?> figure = Class.forName(javaClass.getType()

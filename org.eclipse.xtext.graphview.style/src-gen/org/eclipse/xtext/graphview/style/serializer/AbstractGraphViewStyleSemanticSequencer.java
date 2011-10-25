@@ -4,6 +4,7 @@ import com.google.inject.Inject;
 import com.google.inject.Provider;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.common.types.JvmFormalParameter;
+import org.eclipse.xtext.common.types.JvmGenericArrayTypeReference;
 import org.eclipse.xtext.common.types.JvmLowerBound;
 import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
 import org.eclipse.xtext.common.types.JvmTypeParameter;
@@ -146,8 +147,20 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 			}
 		else if(semanticObject.eClass().getEPackage() == TypesPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case TypesPackage.JVM_FORMAL_PARAMETER:
-				if(context == grammarAccess.getJvmFormalParameterRule()) {
+				if(context == grammarAccess.getFullJvmFormalParameterRule()) {
+					sequence_FullJvmFormalParameter(context, (JvmFormalParameter) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getJvmFormalParameterRule()) {
 					sequence_JvmFormalParameter(context, (JvmFormalParameter) semanticObject); 
+					return; 
+				}
+				else break;
+			case TypesPackage.JVM_GENERIC_ARRAY_TYPE_REFERENCE:
+				if(context == grammarAccess.getJvmArgumentTypeReferenceRule() ||
+				   context == grammarAccess.getJvmTypeReferenceRule() ||
+				   context == grammarAccess.getJvmTypeReferenceAccess().getJvmGenericArrayTypeReferenceComponentTypeAction_0_1_0_0()) {
+					sequence_JvmTypeReference(context, (JvmGenericArrayTypeReference) semanticObject); 
 					return; 
 				}
 				else break;
@@ -160,7 +173,8 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 			case TypesPackage.JVM_PARAMETERIZED_TYPE_REFERENCE:
 				if(context == grammarAccess.getJvmArgumentTypeReferenceRule() ||
 				   context == grammarAccess.getJvmParameterizedTypeReferenceRule() ||
-				   context == grammarAccess.getJvmTypeReferenceRule()) {
+				   context == grammarAccess.getJvmTypeReferenceRule() ||
+				   context == grammarAccess.getJvmTypeReferenceAccess().getJvmGenericArrayTypeReferenceComponentTypeAction_0_1_0_0()) {
 					sequence_JvmParameterizedTypeReference(context, (JvmParameterizedTypeReference) semanticObject); 
 					return; 
 				}
@@ -284,6 +298,10 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 				   context == grammarAccess.getXRelationalExpressionAccess().getXInstanceOfExpressionExpressionAction_1_0_0_0_0() ||
 				   context == grammarAccess.getXUnaryOperationRule()) {
 					sequence_XBlockExpression(context, (XBlockExpression) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getXExpressionInClosureRule()) {
+					sequence_XExpressionInClosure(context, (XBlockExpression) semanticObject); 
 					return; 
 				}
 				else break;
@@ -988,10 +1006,16 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	
 	/**
 	 * Constraint:
+	 *     (parameterType=JvmTypeReference name=ValidID)
+	 */
+	protected void sequence_FullJvmFormalParameter(EObject context, JvmFormalParameter semanticObject) {
+		superSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     importedNamespace=QualifiedNameWithWildcard
-	 *
-	 * Features:
-	 *    importedNamespace[1, 1]
 	 */
 	protected void sequence_Import(EObject context, Import semanticObject) {
 		if(errorAcceptor != null) {
@@ -1008,10 +1032,6 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	/**
 	 * Constraint:
 	 *     (parameterType=JvmTypeReference? name=ValidID)
-	 *
-	 * Features:
-	 *    name[1, 1]
-	 *    parameterType[0, 1]
 	 */
 	protected void sequence_JvmFormalParameter(EObject context, JvmFormalParameter semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -1021,9 +1041,6 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	/**
 	 * Constraint:
 	 *     typeReference=JvmTypeReference
-	 *
-	 * Features:
-	 *    typeReference[1, 1]
 	 */
 	protected void sequence_JvmLowerBound(EObject context, JvmLowerBound semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -1033,10 +1050,6 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	/**
 	 * Constraint:
 	 *     (type=[JvmType|QualifiedName] (arguments+=JvmArgumentTypeReference arguments+=JvmArgumentTypeReference*)?)
-	 *
-	 * Features:
-	 *    arguments[0, *]
-	 *    type[1, 1]
 	 */
 	protected void sequence_JvmParameterizedTypeReference(EObject context, JvmParameterizedTypeReference semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -1046,10 +1059,6 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	/**
 	 * Constraint:
 	 *     (name=ValidID ((constraints+=JvmUpperBound constraints+=JvmUpperBoundAnded*) | constraints+=JvmLowerBound)?)
-	 *
-	 * Features:
-	 *    constraints[0, *]
-	 *    name[1, 1]
 	 */
 	protected void sequence_JvmTypeParameter(EObject context, JvmTypeParameter semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -1058,10 +1067,16 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	
 	/**
 	 * Constraint:
+	 *     componentType=JvmTypeReference_JvmGenericArrayTypeReference_0_1_0_0
+	 */
+	protected void sequence_JvmTypeReference(EObject context, JvmGenericArrayTypeReference semanticObject) {
+		superSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     typeReference=JvmTypeReference
-	 *
-	 * Features:
-	 *    typeReference[1, 1]
 	 */
 	protected void sequence_JvmUpperBoundAnded(EObject context, JvmUpperBound semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -1071,9 +1086,6 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	/**
 	 * Constraint:
 	 *     typeReference=JvmTypeReference
-	 *
-	 * Features:
-	 *    typeReference[1, 1]
 	 */
 	protected void sequence_JvmUpperBound(EObject context, JvmUpperBound semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -1083,9 +1095,6 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	/**
 	 * Constraint:
 	 *     ((constraints+=JvmUpperBound | constraints+=JvmLowerBound)?)
-	 *
-	 * Features:
-	 *    constraints[0, 2]
 	 */
 	protected void sequence_JvmWildcardTypeReference(EObject context, JvmWildcardTypeReference semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -1095,12 +1104,6 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	/**
 	 * Constraint:
 	 *     (imports+=Import* name=QualifiedName diagramMapping=[DiagramMapping|QualifiedName] styles+=Style*)
-	 *
-	 * Features:
-	 *    imports[0, *]
-	 *    name[1, 1]
-	 *    diagramMapping[1, 1]
-	 *    styles[0, *]
 	 */
 	protected void sequence_StyleSheet(EObject context, StyleSheet semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1110,11 +1113,6 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	/**
 	 * Constraint:
 	 *     (mappings+=[AbstractMapping|QualifiedName] mappings+=[AbstractMapping|QualifiedName]* javaClass=JvmTypeReference? expression=XBlockExpression?)
-	 *
-	 * Features:
-	 *    mappings[1, *]
-	 *    javaClass[0, 1]
-	 *    expression[0, 1]
 	 */
 	protected void sequence_Style(EObject context, Style semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1133,11 +1131,6 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	 *         (leftOperand=XOrExpression_XBinaryOperation_1_0_0_0 feature=[JvmIdentifiableElement|OpOr] rightOperand=XAndExpression) | 
 	 *         (leftOperand=XAssignment_XBinaryOperation_1_1_0_0_0 feature=[JvmIdentifiableElement|OpMultiAssign] rightOperand=XAssignment)
 	 *     )
-	 *
-	 * Features:
-	 *    feature[0, 8]
-	 *    leftOperand[0, 8]
-	 *    rightOperand[0, 8]
 	 */
 	protected void sequence_XAdditiveExpression(EObject context, XBinaryOperation semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -1150,17 +1143,6 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	 *         (feature=[JvmIdentifiableElement|ValidID] value=XAssignment) | 
 	 *         (assignable=XMemberFeatureCall_XAssignment_1_0_0_0_0 feature=[JvmIdentifiableElement|ValidID] value=XAssignment)
 	 *     )
-	 *
-	 * Features:
-	 *    feature[0, 2]
-	 *    assignable[0, 1]
-	 *         EXCLUDE_IF_UNSET feature
-	 *         MANDATORY_IF_SET feature
-	 *         EXCLUDE_IF_UNSET value
-	 *         MANDATORY_IF_SET value
-	 *         EXCLUDE_IF_SET feature
-	 *         EXCLUDE_IF_SET value
-	 *    value[0, 2]
 	 */
 	protected void sequence_XAssignment(EObject context, XAssignment semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -1170,9 +1152,6 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	/**
 	 * Constraint:
 	 *     (expressions+=XExpressionInsideBlock*)
-	 *
-	 * Features:
-	 *    expressions[0, *]
 	 */
 	protected void sequence_XBlockExpression(EObject context, XBlockExpression semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -1182,9 +1161,6 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	/**
 	 * Constraint:
 	 *     (isTrue?='true'?)
-	 *
-	 * Features:
-	 *    isTrue[0, 1]
 	 */
 	protected void sequence_XBooleanLiteral(EObject context, XBooleanLiteral semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -1194,11 +1170,6 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	/**
 	 * Constraint:
 	 *     (typeGuard=JvmTypeReference? case=XExpression? then=XExpression)
-	 *
-	 * Features:
-	 *    case[0, 1]
-	 *    then[1, 1]
-	 *    typeGuard[0, 1]
 	 */
 	protected void sequence_XCasePart(EObject context, XCasePart semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -1208,10 +1179,6 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	/**
 	 * Constraint:
 	 *     (target=XCastedExpression_XCastedExpression_1_0_0_0 type=JvmTypeReference)
-	 *
-	 * Features:
-	 *    type[1, 1]
-	 *    target[1, 1]
 	 */
 	protected void sequence_XCastedExpression(EObject context, XCastedExpression semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -1220,11 +1187,7 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	
 	/**
 	 * Constraint:
-	 *     (declaredParam=JvmFormalParameter expression=XExpression)
-	 *
-	 * Features:
-	 *    expression[1, 1]
-	 *    declaredParam[1, 1]
+	 *     (declaredParam=FullJvmFormalParameter expression=XExpression)
 	 */
 	protected void sequence_XCatchClause(EObject context, XCatchClause semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -1233,11 +1196,10 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	
 	/**
 	 * Constraint:
-	 *     ((formalParameters+=JvmFormalParameter formalParameters+=JvmFormalParameter*)? expression=XExpression)
-	 *
-	 * Features:
-	 *    formalParameters[0, *]
-	 *    expression[1, 1]
+	 *     (
+	 *         ((declaredFormalParameters+=JvmFormalParameter declaredFormalParameters+=JvmFormalParameter*)? explicitSyntax?='|')? 
+	 *         expression=XExpressionInClosure
+	 *     )
 	 */
 	protected void sequence_XClosure(EObject context, XClosure semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -1247,9 +1209,6 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	/**
 	 * Constraint:
 	 *     color=Color
-	 *
-	 * Features:
-	 *    color[1, 1]
 	 */
 	protected void sequence_XColorLiteral(EObject context, XColorLiteral semanticObject) {
 		if(errorAcceptor != null) {
@@ -1268,13 +1227,9 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	 *     (
 	 *         constructor=[JvmConstructor|QualifiedName] 
 	 *         (typeArguments+=JvmArgumentTypeReference typeArguments+=JvmArgumentTypeReference*)? 
-	 *         (arguments+=XShortClosure | (arguments+=XExpression arguments+=XExpression*))?
+	 *         (arguments+=XShortClosure | (arguments+=XExpression arguments+=XExpression*))? 
+	 *         arguments+=XClosure?
 	 *     )
-	 *
-	 * Features:
-	 *    constructor[1, 1]
-	 *    arguments[0, *]
-	 *    typeArguments[0, *]
 	 */
 	protected void sequence_XConstructorCall(EObject context, XConstructorCall semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -1284,12 +1239,17 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	/**
 	 * Constraint:
 	 *     (body=XExpression predicate=XExpression)
-	 *
-	 * Features:
-	 *    predicate[1, 1]
-	 *    body[1, 1]
 	 */
 	protected void sequence_XDoWhileExpression(EObject context, XDoWhileExpression semanticObject) {
+		superSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (expressions+=XExpressionInsideBlock*)
+	 */
+	protected void sequence_XExpressionInClosure(EObject context, XBlockExpression semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1300,19 +1260,9 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	 *         declaringType=[JvmDeclaredType|StaticQualifier]? 
 	 *         (typeArguments+=JvmArgumentTypeReference typeArguments+=JvmArgumentTypeReference*)? 
 	 *         feature=[JvmIdentifiableElement|IdOrSuper] 
-	 *         (explicitOperationCall?='(' (featureCallArguments+=XShortClosure | (featureCallArguments+=XExpression featureCallArguments+=XExpression*))?)?
+	 *         (explicitOperationCall?='(' (featureCallArguments+=XShortClosure | (featureCallArguments+=XExpression featureCallArguments+=XExpression*))?)? 
+	 *         featureCallArguments+=XClosure?
 	 *     )
-	 *
-	 * Features:
-	 *    feature[1, 1]
-	 *    typeArguments[0, *]
-	 *    featureCallArguments[0, *]
-	 *         EXCLUDE_IF_UNSET explicitOperationCall
-	 *    explicitOperationCall[0, 1]
-	 *         MANDATORY_IF_SET featureCallArguments
-	 *         MANDATORY_IF_SET featureCallArguments
-	 *         MANDATORY_IF_SET featureCallArguments
-	 *    declaringType[0, 1]
 	 */
 	protected void sequence_XFeatureCall(EObject context, XFeatureCall semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -1322,11 +1272,6 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	/**
 	 * Constraint:
 	 *     (declaredParam=JvmFormalParameter forExpression=XExpression eachExpression=XExpression)
-	 *
-	 * Features:
-	 *    forExpression[1, 1]
-	 *    eachExpression[1, 1]
-	 *    declaredParam[1, 1]
 	 */
 	protected void sequence_XForLoopExpression(EObject context, XForLoopExpression semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -1336,10 +1281,6 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	/**
 	 * Constraint:
 	 *     ((paramTypes+=JvmTypeReference paramTypes+=JvmTypeReference*)? returnType=JvmTypeReference)
-	 *
-	 * Features:
-	 *    paramTypes[0, *]
-	 *    returnType[1, 1]
 	 */
 	protected void sequence_XFunctionTypeRef(EObject context, XFunctionTypeRef semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -1349,11 +1290,6 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	/**
 	 * Constraint:
 	 *     (if=XExpression then=XExpression else=XExpression?)
-	 *
-	 * Features:
-	 *    if[1, 1]
-	 *    then[1, 1]
-	 *    else[0, 1]
 	 */
 	protected void sequence_XIfExpression(EObject context, XIfExpression semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -1363,9 +1299,6 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	/**
 	 * Constraint:
 	 *     value=INT
-	 *
-	 * Features:
-	 *    value[1, 1]
 	 */
 	protected void sequence_XIntLiteral(EObject context, XIntLiteral semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -1375,8 +1308,6 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	/**
 	 * Constraint:
 	 *     {XNullLiteral}
-	 *
-	 * Features:
 	 */
 	protected void sequence_XLiteral(EObject context, XNullLiteral semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1390,23 +1321,9 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	 *         (nullSafe?='?.' | spreading?='*.')? 
 	 *         (typeArguments+=JvmArgumentTypeReference typeArguments+=JvmArgumentTypeReference*)? 
 	 *         feature=[JvmIdentifiableElement|ValidID] 
-	 *         (explicitOperationCall?='(' (memberCallArguments+=XShortClosure | (memberCallArguments+=XExpression memberCallArguments+=XExpression*))?)?
+	 *         (explicitOperationCall?='(' (memberCallArguments+=XShortClosure | (memberCallArguments+=XExpression memberCallArguments+=XExpression*))?)? 
+	 *         memberCallArguments+=XClosure?
 	 *     )
-	 *
-	 * Features:
-	 *    feature[1, 1]
-	 *    typeArguments[0, *]
-	 *    memberCallTarget[1, 1]
-	 *    memberCallArguments[0, *]
-	 *         EXCLUDE_IF_UNSET explicitOperationCall
-	 *    explicitOperationCall[0, 1]
-	 *         MANDATORY_IF_SET memberCallArguments
-	 *         MANDATORY_IF_SET memberCallArguments
-	 *         MANDATORY_IF_SET memberCallArguments
-	 *    spreading[0, 1]
-	 *         EXCLUDE_IF_SET nullSafe
-	 *    nullSafe[0, 1]
-	 *         EXCLUDE_IF_SET spreading
 	 */
 	protected void sequence_XMemberFeatureCall(EObject context, XMemberFeatureCall semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -1416,10 +1333,6 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	/**
 	 * Constraint:
 	 *     (expression=XRelationalExpression_XInstanceOfExpression_1_0_0_0_0 type=[JvmType|QualifiedName])
-	 *
-	 * Features:
-	 *    type[1, 1]
-	 *    expression[1, 1]
 	 */
 	protected void sequence_XRelationalExpression(EObject context, XInstanceOfExpression semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -1429,9 +1342,6 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	/**
 	 * Constraint:
 	 *     (expression=XExpression?)
-	 *
-	 * Features:
-	 *    expression[0, 1]
 	 */
 	protected void sequence_XReturnExpression(EObject context, XReturnExpression semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -1440,11 +1350,7 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	
 	/**
 	 * Constraint:
-	 *     ((formalParameters+=JvmFormalParameter formalParameters+=JvmFormalParameter*)? expression=XExpression)
-	 *
-	 * Features:
-	 *    formalParameters[0, *]
-	 *    expression[1, 1]
+	 *     ((declaredFormalParameters+=JvmFormalParameter declaredFormalParameters+=JvmFormalParameter*)? explicitSyntax?='|' expression=XExpression)
 	 */
 	protected void sequence_XShortClosure(EObject context, XClosure semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -1454,9 +1360,6 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	/**
 	 * Constraint:
 	 *     value=STRING
-	 *
-	 * Features:
-	 *    value[1, 1]
 	 */
 	protected void sequence_XStringLiteral(EObject context, XStringLiteral semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -1466,12 +1369,6 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	/**
 	 * Constraint:
 	 *     (localVarName=ValidID? switch=XExpression cases+=XCasePart+ default=XExpression?)
-	 *
-	 * Features:
-	 *    switch[1, 1]
-	 *    cases[1, *]
-	 *    default[0, 1]
-	 *    localVarName[0, 1]
 	 */
 	protected void sequence_XSwitchExpression(EObject context, XSwitchExpression semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -1481,9 +1378,6 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	/**
 	 * Constraint:
 	 *     expression=XExpression
-	 *
-	 * Features:
-	 *    expression[1, 1]
 	 */
 	protected void sequence_XThrowExpression(EObject context, XThrowExpression semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -1493,13 +1387,6 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	/**
 	 * Constraint:
 	 *     (expression=XExpression ((catchClauses+=XCatchClause+ finallyExpression=XExpression?) | finallyExpression=XExpression))
-	 *
-	 * Features:
-	 *    expression[1, 1]
-	 *    finallyExpression[0, 2]
-	 *    catchClauses[0, *]
-	 *         MANDATORY_IF_SET finallyExpression
-	 *         EXCLUDE_IF_SET finallyExpression
 	 */
 	protected void sequence_XTryCatchFinallyExpression(EObject context, XTryCatchFinallyExpression semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -1509,9 +1396,6 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	/**
 	 * Constraint:
 	 *     type=[JvmType|QualifiedName]
-	 *
-	 * Features:
-	 *    type[1, 1]
 	 */
 	protected void sequence_XTypeLiteral(EObject context, XTypeLiteral semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -1521,10 +1405,6 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	/**
 	 * Constraint:
 	 *     (feature=[JvmIdentifiableElement|OpUnary] operand=XCastedExpression)
-	 *
-	 * Features:
-	 *    feature[1, 1]
-	 *    operand[1, 1]
 	 */
 	protected void sequence_XUnaryOperation(EObject context, XUnaryOperation semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -1534,15 +1414,6 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	/**
 	 * Constraint:
 	 *     (writeable?='var'? ((type=JvmTypeReference name=ValidID) | name=ValidID) right=XExpression?)
-	 *
-	 * Features:
-	 *    type[0, 1]
-	 *         EXCLUDE_IF_UNSET name
-	 *         MANDATORY_IF_SET name
-	 *         EXCLUDE_IF_SET name
-	 *    name[0, 2]
-	 *    right[0, 1]
-	 *    writeable[0, 1]
 	 */
 	protected void sequence_XVariableDeclaration(EObject context, XVariableDeclaration semanticObject) {
 		superSequencer.createSequence(context, semanticObject);
@@ -1552,10 +1423,6 @@ public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSeq
 	/**
 	 * Constraint:
 	 *     (predicate=XExpression body=XExpression)
-	 *
-	 * Features:
-	 *    predicate[1, 1]
-	 *    body[1, 1]
 	 */
 	protected void sequence_XWhileExpression(EObject context, XWhileExpression semanticObject) {
 		superSequencer.createSequence(context, semanticObject);

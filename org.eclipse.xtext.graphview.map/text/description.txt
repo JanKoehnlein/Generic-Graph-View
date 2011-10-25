@@ -26,7 +26,7 @@ Package graphViewMapping <http://www.eclipse.org/xtext/graphview/map/GraphViewMa
 
   Class DiagramMapping -> AbstractMappingDefinition
     Reference imports : Import<<0..*>>
-    Reference typeGuard : JvmParameterizedTypeReference
+    Reference typeGuard : JvmTypeReference
 
   Class NodeMapping -> AbstractMappingDefinition, AbstractExpressionMapping
 

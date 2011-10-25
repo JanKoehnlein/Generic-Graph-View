@@ -881,7 +881,7 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 	//	OpSingleAssign) value=XAssignment | => ({XMemberFeatureCall.memberCallTarget=current} ("." | nullSafe?="?." |
 	//	spreading?="*.")) ("<" typeArguments+=JvmArgumentTypeReference ("," typeArguments+=JvmArgumentTypeReference)* ">")?
 	//	feature=[types::JvmIdentifiableElement|ValidID] (=> explicitOperationCall?="(" (memberCallArguments+=XShortClosure |
-	//	memberCallArguments+=XExpression ("," memberCallArguments+=XExpression)*)? ")")?)*;
+	//	memberCallArguments+=XExpression ("," memberCallArguments+=XExpression)*)? ")")? => memberCallArguments+=XClosure?)*;
 	public XbaseGrammarAccess.XMemberFeatureCallElements getXMemberFeatureCallAccess() {
 		return gaXbase.getXMemberFeatureCallAccess();
 	}
@@ -913,8 +913,8 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 	}
 
 	//XClosure returns XExpression:
-	//	{XClosure} "[" (formalParameters+=JvmFormalParameter ("," formalParameters+=JvmFormalParameter)*)? "|"
-	//	expression=XExpression "]";
+	//	{XClosure} "[" => ((declaredFormalParameters+=JvmFormalParameter ("," declaredFormalParameters+=JvmFormalParameter)*)?
+	//	explicitSyntax?="|")? expression=XExpressionInClosure "]";
 	public XbaseGrammarAccess.XClosureElements getXClosureAccess() {
 		return gaXbase.getXClosureAccess();
 	}
@@ -923,9 +923,19 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 		return getXClosureAccess().getRule();
 	}
 
+	//XExpressionInClosure returns XExpression:
+	//	{XBlockExpression} (expressions+=XExpressionInsideBlock ";"?)*;
+	public XbaseGrammarAccess.XExpressionInClosureElements getXExpressionInClosureAccess() {
+		return gaXbase.getXExpressionInClosureAccess();
+	}
+	
+	public ParserRule getXExpressionInClosureRule() {
+		return getXExpressionInClosureAccess().getRule();
+	}
+
 	//XShortClosure returns XExpression:
-	//	=> ({XClosure} (formalParameters+=JvmFormalParameter ("," formalParameters+=JvmFormalParameter)*)? "|")
-	//	expression=XExpression;
+	//	=> ({XClosure} (declaredFormalParameters+=JvmFormalParameter ("," declaredFormalParameters+=JvmFormalParameter)*)?
+	//	explicitSyntax?="|") expression=XExpression;
 	public XbaseGrammarAccess.XShortClosureElements getXShortClosureAccess() {
 		return gaXbase.getXShortClosureAccess();
 	}
@@ -955,7 +965,7 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 	}
 
 	//XSwitchExpression returns XExpression:
-	//	{XSwitchExpression} "switch" (localVarName=ValidID ":")? switch=XExpression "{" cases+=XCasePart+ ("default" ":"
+	//	{XSwitchExpression} "switch" => (localVarName=ValidID ":")? switch=XExpression "{" cases+=XCasePart+ ("default" ":"
 	//	default=XExpression)? "}";
 	public XbaseGrammarAccess.XSwitchExpressionElements getXSwitchExpressionAccess() {
 		return gaXbase.getXSwitchExpressionAccess();
@@ -1047,11 +1057,21 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 		return getJvmFormalParameterAccess().getRule();
 	}
 
+	//FullJvmFormalParameter returns types::JvmFormalParameter:
+	//	parameterType=JvmTypeReference name=ValidID;
+	public XbaseGrammarAccess.FullJvmFormalParameterElements getFullJvmFormalParameterAccess() {
+		return gaXbase.getFullJvmFormalParameterAccess();
+	}
+	
+	public ParserRule getFullJvmFormalParameterRule() {
+		return getFullJvmFormalParameterAccess().getRule();
+	}
+
 	//XFeatureCall returns XExpression:
 	//	{XFeatureCall} declaringType=[types::JvmDeclaredType|StaticQualifier]? ("<" typeArguments+=JvmArgumentTypeReference
 	//	("," typeArguments+=JvmArgumentTypeReference)* ">")? feature=[types::JvmIdentifiableElement|IdOrSuper] (=>
 	//	explicitOperationCall?="(" (featureCallArguments+=XShortClosure | featureCallArguments+=XExpression (","
-	//	featureCallArguments+=XExpression)*)? ")")?;
+	//	featureCallArguments+=XExpression)*)? ")")? => featureCallArguments+=XClosure?;
 	public XbaseGrammarAccess.XFeatureCallElements getXFeatureCallAccess() {
 		return gaXbase.getXFeatureCallAccess();
 	}
@@ -1086,7 +1106,7 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 	//XConstructorCall returns XExpression:
 	//	{XConstructorCall} "new" constructor=[types::JvmConstructor|QualifiedName] ("<"
 	//	typeArguments+=JvmArgumentTypeReference ("," typeArguments+=JvmArgumentTypeReference)* ">")? "("
-	//	(arguments+=XShortClosure | arguments+=XExpression ("," arguments+=XExpression)*)? ")";
+	//	(arguments+=XShortClosure | arguments+=XExpression ("," arguments+=XExpression)*)? ")" => arguments+=XClosure?;
 	public XbaseGrammarAccess.XConstructorCallElements getXConstructorCallAccess() {
 		return gaXbase.getXConstructorCallAccess();
 	}
@@ -1177,7 +1197,7 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 	}
 
 	//XCatchClause:
-	//	"catch" "(" declaredParam=JvmFormalParameter ")" expression=XExpression;
+	//	"catch" "(" declaredParam=FullJvmFormalParameter ")" expression=XExpression;
 	public XbaseGrammarAccess.XCatchClauseElements getXCatchClauseAccess() {
 		return gaXbase.getXCatchClauseAccess();
 	}
@@ -1196,8 +1216,8 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 		return getQualifiedNameAccess().getRule();
 	}
 
-	//JvmTypeReference returns JvmParameterizedTypeReference:
-	//	JvmParameterizedTypeReference | XFunctionTypeRef;
+	//JvmTypeReference:
+	//	JvmParameterizedTypeReference => ({JvmGenericArrayTypeReference.componentType=current} "[" "]")* | XFunctionTypeRef;
 	public XtypeGrammarAccess.JvmTypeReferenceElements getJvmTypeReferenceAccess() {
 		return gaXbase.getJvmTypeReferenceAccess();
 	}

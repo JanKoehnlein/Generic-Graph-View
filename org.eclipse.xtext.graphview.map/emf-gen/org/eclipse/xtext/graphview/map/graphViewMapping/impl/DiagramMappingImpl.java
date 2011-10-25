@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.eclipse.xtext.common.types.JvmTypeReference;
 import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
 
 import org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping;
@@ -60,7 +61,7 @@ public class DiagramMappingImpl extends AbstractMappingDefinitionImpl implements
 	 * @generated
 	 * @ordered
 	 */
-	protected JvmParameterizedTypeReference typeGuard;
+	protected JvmTypeReference typeGuard;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -98,7 +99,7 @@ public class DiagramMappingImpl extends AbstractMappingDefinitionImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public JvmParameterizedTypeReference getTypeGuard() {
+	public JvmTypeReference getTypeGuard() {
 		return typeGuard;
 	}
 
@@ -107,8 +108,8 @@ public class DiagramMappingImpl extends AbstractMappingDefinitionImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTypeGuard(JvmParameterizedTypeReference newTypeGuard, NotificationChain msgs) {
-		JvmParameterizedTypeReference oldTypeGuard = typeGuard;
+	public NotificationChain basicSetTypeGuard(JvmTypeReference newTypeGuard, NotificationChain msgs) {
+		JvmTypeReference oldTypeGuard = typeGuard;
 		typeGuard = newTypeGuard;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GraphViewMappingPackage.DIAGRAM_MAPPING__TYPE_GUARD, oldTypeGuard, newTypeGuard);
@@ -122,7 +123,7 @@ public class DiagramMappingImpl extends AbstractMappingDefinitionImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTypeGuard(JvmParameterizedTypeReference newTypeGuard) {
+	public void setTypeGuard(JvmTypeReference newTypeGuard) {
 		if (newTypeGuard != typeGuard) {
 			NotificationChain msgs = null;
 			if (typeGuard != null)
@@ -182,7 +183,7 @@ public class DiagramMappingImpl extends AbstractMappingDefinitionImpl implements
 				getImports().addAll((Collection<? extends Import>)newValue);
 				return;
 			case GraphViewMappingPackage.DIAGRAM_MAPPING__TYPE_GUARD:
-				setTypeGuard((JvmParameterizedTypeReference)newValue);
+				setTypeGuard((JvmTypeReference)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -200,7 +201,7 @@ public class DiagramMappingImpl extends AbstractMappingDefinitionImpl implements
 				getImports().clear();
 				return;
 			case GraphViewMappingPackage.DIAGRAM_MAPPING__TYPE_GUARD:
-				setTypeGuard((JvmParameterizedTypeReference)null);
+				setTypeGuard((JvmTypeReference)null);
 				return;
 		}
 		super.eUnset(featureID);

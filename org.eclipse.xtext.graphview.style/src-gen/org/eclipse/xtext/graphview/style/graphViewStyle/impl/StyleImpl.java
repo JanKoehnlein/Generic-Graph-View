@@ -9,24 +9,16 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
-import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
-
+import org.eclipse.xtext.common.types.JvmTypeReference;
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping;
-
 import org.eclipse.xtext.graphview.style.graphViewStyle.GraphViewStylePackage;
 import org.eclipse.xtext.graphview.style.graphViewStyle.Style;
-
 import org.eclipse.xtext.xbase.XExpression;
 
 /**
@@ -64,7 +56,7 @@ public class StyleImpl extends MinimalEObjectImpl.Container implements Style
    * @generated
    * @ordered
    */
-  protected JvmParameterizedTypeReference javaClass;
+  protected JvmTypeReference javaClass;
 
   /**
    * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
@@ -116,7 +108,7 @@ public class StyleImpl extends MinimalEObjectImpl.Container implements Style
    * <!-- end-user-doc -->
    * @generated
    */
-  public JvmParameterizedTypeReference getJavaClass()
+  public JvmTypeReference getJavaClass()
   {
     return javaClass;
   }
@@ -126,9 +118,9 @@ public class StyleImpl extends MinimalEObjectImpl.Container implements Style
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetJavaClass(JvmParameterizedTypeReference newJavaClass, NotificationChain msgs)
+  public NotificationChain basicSetJavaClass(JvmTypeReference newJavaClass, NotificationChain msgs)
   {
-    JvmParameterizedTypeReference oldJavaClass = javaClass;
+    JvmTypeReference oldJavaClass = javaClass;
     javaClass = newJavaClass;
     if (eNotificationRequired())
     {
@@ -143,7 +135,7 @@ public class StyleImpl extends MinimalEObjectImpl.Container implements Style
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setJavaClass(JvmParameterizedTypeReference newJavaClass)
+  public void setJavaClass(JvmTypeReference newJavaClass)
   {
     if (newJavaClass != javaClass)
     {
@@ -261,7 +253,7 @@ public class StyleImpl extends MinimalEObjectImpl.Container implements Style
         getMappings().addAll((Collection<? extends AbstractMapping>)newValue);
         return;
       case GraphViewStylePackage.STYLE__JAVA_CLASS:
-        setJavaClass((JvmParameterizedTypeReference)newValue);
+        setJavaClass((JvmTypeReference)newValue);
         return;
       case GraphViewStylePackage.STYLE__EXPRESSION:
         setExpression((XExpression)newValue);
@@ -284,7 +276,7 @@ public class StyleImpl extends MinimalEObjectImpl.Container implements Style
         getMappings().clear();
         return;
       case GraphViewStylePackage.STYLE__JAVA_CLASS:
-        setJavaClass((JvmParameterizedTypeReference)null);
+        setJavaClass((JvmTypeReference)null);
         return;
       case GraphViewStylePackage.STYLE__EXPRESSION:
         setExpression((XExpression)null);

@@ -11,7 +11,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
 import org.eclipse.xtext.common.types.JvmType;
 import org.eclipse.xtext.common.types.JvmTypeReference;
 import org.eclipse.xtext.common.types.util.TypeConformanceComputer;
@@ -84,7 +83,7 @@ public class GraphViewStyleScopeProvider extends XbaseScopeProvider {
 	}
 	
 	protected JvmType getFigureType(Style style) {
-		JvmParameterizedTypeReference clazz = style.getJavaClass();
+		JvmTypeReference clazz = style.getJavaClass();
 		if(clazz != null && clazz.getType() != null) {
 			return clazz.getType();
 		} else {

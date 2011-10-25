@@ -8,6 +8,7 @@ package org.eclipse.xtext.graphview.map.graphViewMapping.validation;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.xtext.common.types.JvmTypeReference;
 import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
 
 import org.eclipse.xtext.graphview.map.graphViewMapping.Import;
@@ -22,5 +23,7 @@ public interface DiagramMappingValidator {
 	boolean validate();
 
 	boolean validateImports(EList<Import> value);
+	boolean validateTypeGuard(JvmTypeReference value);
+
 	boolean validateTypeGuard(JvmParameterizedTypeReference value);
 }

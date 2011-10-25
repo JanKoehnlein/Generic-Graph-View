@@ -9,20 +9,15 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.xtext.common.types.TypesPackage;
-
 import org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage;
-
 import org.eclipse.xtext.graphview.style.graphViewStyle.GraphViewStyleFactory;
 import org.eclipse.xtext.graphview.style.graphViewStyle.GraphViewStylePackage;
 import org.eclipse.xtext.graphview.style.graphViewStyle.Import;
 import org.eclipse.xtext.graphview.style.graphViewStyle.Style;
 import org.eclipse.xtext.graphview.style.graphViewStyle.StyleSheet;
 import org.eclipse.xtext.graphview.style.graphViewStyle.XColorLiteral;
-
 import org.eclipse.xtext.xbase.XbasePackage;
 
 /**
@@ -353,7 +348,7 @@ public class GraphViewStylePackageImpl extends EPackageImpl implements GraphView
 
     initEClass(styleEClass, Style.class, "Style", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getStyle_Mappings(), theGraphViewMappingPackage.getAbstractMapping(), null, "mappings", null, 0, -1, Style.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getStyle_JavaClass(), theTypesPackage.getJvmParameterizedTypeReference(), null, "javaClass", null, 0, 1, Style.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStyle_JavaClass(), theTypesPackage.getJvmTypeReference(), null, "javaClass", null, 0, 1, Style.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStyle_Expression(), theXbasePackage.getXExpression(), null, "expression", null, 0, 1, Style.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(xColorLiteralEClass, XColorLiteral.class, "XColorLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
