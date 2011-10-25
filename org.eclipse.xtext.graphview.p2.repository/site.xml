@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.eclipse.xtext.graphview.feature_1.0.0.201110251758.jar" id="org.eclipse.xtext.graphview.feature" version="1.0.0.201110251758"/>
+</site>
