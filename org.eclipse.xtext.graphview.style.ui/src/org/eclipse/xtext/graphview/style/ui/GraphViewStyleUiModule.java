@@ -7,10 +7,12 @@
  *******************************************************************************/
 package org.eclipse.xtext.graphview.style.ui;
 
+import org.eclipse.jface.text.hyperlink.IHyperlinkDetector;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.eclipse.xtext.graphview.style.ui.highlighting.GVSHighlightingCalculator;
 import org.eclipse.xtext.graphview.style.ui.highlighting.GVSHighlightingConfiguration;
 import org.eclipse.xtext.graphview.style.ui.highlighting.GVSTokenToAttributeIdMapper;
+import org.eclipse.xtext.graphview.style.ui.hyperlink.GVSHyperlinkDetector;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.AbstractAntlrTokenToAttributeIdMapper;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightingConfiguration;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.ISemanticHighlightingCalculator;
@@ -35,5 +37,9 @@ public class GraphViewStyleUiModule extends org.eclipse.xtext.graphview.style.ui
 	
 	public Class<? extends IHighlightingConfiguration> bindIHighlightingConfiguration() {
 		return GVSHighlightingConfiguration.class;
+	}
+	
+	public Class<? extends IHyperlinkDetector> bindIHyperlinkDetector() {
+		return GVSHyperlinkDetector.class;
 	}
 }
