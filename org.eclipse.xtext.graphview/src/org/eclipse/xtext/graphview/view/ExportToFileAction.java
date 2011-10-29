@@ -41,32 +41,40 @@ public class ExportToFileAction extends Action {
 	@Inject
 	public void setImages(IWorkbench workbench) {
 		ISharedImages sharedImages = workbench.getSharedImages();
-		setImageDescriptor(sharedImages.getImageDescriptor(ISharedImages.IMG_ETOOL_SAVE_EDIT));
-		setDisabledImageDescriptor(sharedImages.getImageDescriptor(ISharedImages.IMG_ETOOL_SAVE_EDIT_DISABLED));
+		setImageDescriptor(sharedImages
+				.getImageDescriptor(ISharedImages.IMG_ETOOL_SAVE_EDIT));
+		setDisabledImageDescriptor(sharedImages
+				.getImageDescriptor(ISharedImages.IMG_ETOOL_SAVE_EDIT_DISABLED));
 	}
-	
+
 	@Override
 	public void run() {
-		IFigure contents = ((GraphicalEditPart) graphView.getGraphicalViewer().getRootEditPart()).getFigure();
-		while(contents instanceof Viewport)
+		IFigure contents = ((GraphicalEditPart) graphView.getGraphicalViewer()
+				.getRootEditPart()).getFigure();
+		while (contents instanceof Viewport)
 			contents = (IFigure) contents.getChildren().get(0);
 		if (contents != null) {
-			FileDialog fileDialog = new FileDialog(graphView.getSite().getShell(), SWT.SAVE);
+			FileDialog fileDialog = new FileDialog(graphView.getSite()
+					.getShell(), SWT.SAVE);
 			fileDialog.setFilterExtensions(new String[] { "*.png" });
 			fileDialog.setText("Choose diagram file");
 			String fileName = fileDialog.open();
-			Dimension preferredSize = contents.getPreferredSize();
-			Image image = new Image(Display.getDefault(), preferredSize.width + 2 * PADDING, preferredSize.height + 2
-					* PADDING);
-			GC gc = new GC(image);
-			SWTGraphics graphics = new SWTGraphics(gc);
-			graphics.translate(PADDING, PADDING);
-			graphics.translate(contents.getBounds().getLocation().getNegated());
-			contents.paint(graphics);
-			ImageData imageData = image.getImageData();
-			ImageLoader imageLoader = new ImageLoader();
-			imageLoader.data = new ImageData[] { imageData };
-			imageLoader.save(fileName, SWT.IMAGE_PNG);
+			if (fileName != null) {
+				Dimension preferredSize = contents.getPreferredSize();
+				Image image = new Image(Display.getDefault(),
+						preferredSize.width + 2 * PADDING, preferredSize.height
+								+ 2 * PADDING);
+				GC gc = new GC(image);
+				SWTGraphics graphics = new SWTGraphics(gc);
+				graphics.translate(PADDING, PADDING);
+				graphics.translate(contents.getBounds().getLocation()
+						.getNegated());
+				contents.paint(graphics);
+				ImageData imageData = image.getImageData();
+				ImageLoader imageLoader = new ImageLoader();
+				imageLoader.data = new ImageData[] { imageData };
+				imageLoader.save(fileName, SWT.IMAGE_PNG);
+			}
 		}
 	}
 }
