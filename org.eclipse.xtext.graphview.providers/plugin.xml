@@ -4,7 +4,7 @@
    <extension
          point="org.eclipse.xtext.graphview.selectionStrategy">
       <strategy
-            class="org.eclipse.xtext.graphview.providers.EcoreEditorElementSelectionStrategy">
+            class="org.eclipse.xtext.graphview.providers.EMFEditorElementSelectionStrategy">
       </strategy>
       <strategy
             class="org.eclipse.xtext.graphview.providers.JavaEditorSelectionStrategy">

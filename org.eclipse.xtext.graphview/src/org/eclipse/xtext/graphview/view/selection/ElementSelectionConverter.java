@@ -14,11 +14,8 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.ISelectionListener;
-import org.eclipse.ui.IWorkbench;
-import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.xtext.graphview.view.GraphView;
 
@@ -37,36 +34,29 @@ public class ElementSelectionConverter implements ISelectionListener {
 	private GraphView graphView;
 
 	@Inject
-	private IWorkbench workbench;
-	
-	@Inject
 	private IExtensionRegistry extensionRegistry;
 
-	private IEditorInput editorInput;
-
-	private String editorId;
-
-	private List<IElementSelectionStrategy> contributions;
+	private IEditorPart myEditor;
 
 	private ISelection mySelection = null;
 
-	private IElementSelectionStrategy defaultElementSelectionStrategy = new StructuredElementSelectionStrategy() {
-		public boolean isStrategyFor(IEditorPart editor) {
-			return true;
-		}
-	};
+	private IElementSelectionStrategy myStrategy;
+
+	private List<IElementSelectionStrategy> contributions;
 
 	@Inject
 	protected void initialize(Injector injector) {
 		contributions = Lists.newArrayList();
-		for(IConfigurationElement configurationElement : extensionRegistry.getConfigurationElementsFor("org.eclipse.xtext.graphview.selectionStrategy")) {
+		for (IConfigurationElement configurationElement : extensionRegistry
+				.getConfigurationElementsFor("org.eclipse.xtext.graphview.selectionStrategy")) {
 			try {
-				contributions.add((IElementSelectionStrategy) configurationElement.createExecutableExtension("class"));
+				contributions
+						.add((IElementSelectionStrategy) configurationElement
+								.createExecutableExtension("class"));
 			} catch (CoreException e) {
 				LOG.error("Error instantiating selection strategy", e);
 			}
 		}
-		contributions.add(defaultElementSelectionStrategy);
 	}
 
 	protected IElementSelectionStrategy findElementSelectionStrategy(
@@ -86,32 +76,31 @@ public class ElementSelectionConverter implements ISelectionListener {
 			if (part instanceof IEditorPart && !selection.isEmpty()) {
 				IEditorPart editor = (IEditorPart) part;
 				IElementSelectionStrategy elementSelectionStrategy = findElementSelectionStrategy((IEditorPart) editor);
-				Object semanticElement = elementSelectionStrategy
-						.editorSelectionChanged(editor, selection, graphView);
-				if (semanticElement != null) {
-						this.editorInput = ((IEditorPart) part)
-								.getEditorInput();
-						this.editorId = ((IEditorPart) part).getEditorSite()
-								.getId();
+				if (elementSelectionStrategy != null) {
+					if (myEditor != editor) {
+						if (myStrategy != null) {
+							myStrategy.deregister(myEditor, graphView);
+						}
+						this.myEditor = editor;
+						myStrategy = elementSelectionStrategy;
+						elementSelectionStrategy.register(editor, graphView);
+					}
+					elementSelectionStrategy.editorSelectionChanged(selection, false);
 				}
 			}
 		} catch (Exception e) {
-			LOG.error("Error getting selected element", e);
-		} finally {
 			mySelection = null;
+			LOG.error("Error getting selected element", e);
 		}
 	}
 
 	public void select(Object selectedElement) {
 		try {
-			IWorkbenchPage activePage = workbench.getActiveWorkbenchWindow()
-					.getActivePage();
-			IEditorPart editor = activePage.openEditor(editorInput, editorId);
-			if (editor != null) {
-				activePage.bringToTop(editor);
-				IElementSelectionStrategy elementSelectionStrategy = findElementSelectionStrategy((IEditorPart) editor);
+			if (myEditor != null) {
+				myEditor.getEditorSite().getPage().bringToTop(myEditor);
+				IElementSelectionStrategy elementSelectionStrategy = findElementSelectionStrategy(myEditor);
 				ISelection selection = elementSelectionStrategy
-						.viewSelectionChanged(editor, selectedElement, graphView);
+						.viewSelectionChanged(selectedElement);
 				if (selection != null) {
 					mySelection = selection;
 				}

@@ -15,7 +15,11 @@ public interface IElementSelectionStrategy {
 
 	boolean isStrategyFor(IEditorPart editor);
 	
-	Object editorSelectionChanged(IEditorPart editor, ISelection selection, GraphView graphView);
+	Object editorSelectionChanged(ISelection selection, boolean force);
 	
-	ISelection viewSelectionChanged(IEditorPart editor, Object selectedElement, GraphView graphView);
+	ISelection viewSelectionChanged(Object selectedElement);
+	
+	void register(IEditorPart editor, GraphView graphView);
+	
+	void deregister(IEditorPart editor, GraphView graphView);
 }

@@ -13,43 +13,43 @@ import org.eclipse.jdt.internal.ui.javaeditor.EditorUtility;
 import org.eclipse.jdt.internal.ui.javaeditor.JavaEditor;
 import org.eclipse.jface.text.ITextSelection;
 import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PartInitException;
-import org.eclipse.xtext.graphview.view.GraphView;
-import org.eclipse.xtext.graphview.view.selection.StructuredElementSelectionStrategy;
+import org.eclipse.xtext.graphview.view.selection.AbstractElementSelectionStrategy;
 import org.eclipse.xtext.util.PolymorphicDispatcher;
 
 @SuppressWarnings("restriction")
-public class JavaEditorSelectionStrategy extends StructuredElementSelectionStrategy {
+public class JavaEditorSelectionStrategy extends
+		AbstractElementSelectionStrategy {
 
-	private static Logger LOG = Logger.getLogger(JavaEditorSelectionStrategy.class);
-	
-	@Override
+	private static Logger LOG = Logger
+			.getLogger(JavaEditorSelectionStrategy.class);
+
 	public boolean isStrategyFor(IEditorPart editor) {
 		return editor instanceof JavaEditor;
 	}
 
-	@Override
-	public Object editorSelectionChanged(IEditorPart editor, ISelection selection, GraphView graphView) {
-		if(selection instanceof ITextSelection) {
-			Object element = PolymorphicDispatcher.createForSingleTarget("getElementAt", 1, 1, editor).invoke(((ITextSelection)selection).getOffset());
-			graphView.setViewerContents(element, getClassLoader(), false);
+	public Object editorSelectionChanged(ISelection selection, boolean force) {
+		if (selection instanceof ITextSelection) {
+			Object element = PolymorphicDispatcher.createForSingleTarget(
+					"getElementAt", 1, 1, getEditor()).invoke(
+					((ITextSelection) selection).getOffset());
+			getGraphView().setViewerContents(element, getClassLoader(), force);
 			return element;
 		}
-		return super.editorSelectionChanged(editor, selection, graphView);
+		return null;
 	}
 
-	
-	@Override
-	public ISelection viewSelectionChanged(IEditorPart editor,
-			Object selectedElement, GraphView graphView) {
-		if(selectedElement instanceof IJavaElement) {
+	public ISelection viewSelectionChanged(Object selectedElement) {
+		if (selectedElement instanceof IJavaElement) {
 			try {
 				EditorUtility.openInEditor(selectedElement, true);
+				return new StructuredSelection(selectedElement);
 			} catch (PartInitException e) {
-				LOG.error("Error opening editor",  e);
+				LOG.error("Error opening editor", e);
 			}
 		}
-		return super.viewSelectionChanged(editor, selectedElement, graphView);
+		return null;
 	}
 }

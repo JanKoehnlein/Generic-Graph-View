@@ -14,6 +14,7 @@ import org.eclipse.jface.text.ITextSelection;
 import org.eclipse.jface.text.TextSelection;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.eclipse.xtext.Constants;
@@ -22,6 +23,7 @@ import org.eclipse.xtext.resource.EObjectAtOffsetHelper;
 import org.eclipse.xtext.resource.ILocationInFileProvider;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.XtextEditor;
+import org.eclipse.xtext.ui.editor.model.IXtextModelListener;
 import org.eclipse.xtext.util.ITextRegion;
 import org.eclipse.xtext.util.Strings;
 import org.eclipse.xtext.util.concurrent.IUnitOfWork;
@@ -29,7 +31,8 @@ import org.eclipse.xtext.util.concurrent.IUnitOfWork;
 import com.google.inject.Inject;
 import com.google.inject.name.Named;
 
-public class XtextEditorSelectionStrategy implements IElementSelectionStrategy {
+public class XtextEditorSelectionStrategy extends
+		AbstractElementSelectionStrategy implements IXtextModelListener {
 
 	@Inject
 	private EObjectAtOffsetHelper eObjectAtOffsetHelper;
@@ -40,7 +43,7 @@ public class XtextEditorSelectionStrategy implements IElementSelectionStrategy {
 	@Inject
 	@Named(Constants.LANGUAGE_NAME)
 	private String languageName;
-	
+
 	@Inject
 	private AbstractUIPlugin plugin;
 
@@ -49,10 +52,9 @@ public class XtextEditorSelectionStrategy implements IElementSelectionStrategy {
 				&& Strings.equal(editor.getSite().getId(), languageName);
 	}
 
-	public Object editorSelectionChanged(IEditorPart editor,
-			final ISelection selection, final GraphView graphView) {
+	public Object editorSelectionChanged(final ISelection selection, final boolean force) {
 		if (selection instanceof ITextSelection) {
-			return ((XtextEditor) editor).getDocument().readOnly(
+			return ((XtextEditor) getEditor()).getDocument().readOnly(
 					new IUnitOfWork<URI, XtextResource>() {
 						public URI exec(XtextResource state) throws Exception {
 							EObject selectedElement = eObjectAtOffsetHelper
@@ -60,8 +62,9 @@ public class XtextEditorSelectionStrategy implements IElementSelectionStrategy {
 											((ITextSelection) selection)
 													.getOffset());
 							if (selectedElement != null) {
-								graphView.setViewerContents(selectedElement,
-										getClassLoader(), false);
+								getGraphView().setViewerContents(
+										selectedElement, getClassLoader(),
+										force);
 								return EcoreUtil.getURI(selectedElement);
 							}
 							return null;
@@ -71,16 +74,15 @@ public class XtextEditorSelectionStrategy implements IElementSelectionStrategy {
 		return null;
 	}
 
-	public ISelection viewSelectionChanged(final IEditorPart editor,
-			final Object selectedElement, GraphView graphView) {
+	public ISelection viewSelectionChanged(final Object selectedElement) {
 		if (selectedElement instanceof EObject) {
-			return ((XtextEditor) editor).getDocument().readOnly(
+			return ((XtextEditor) getEditor()).getDocument().readOnly(
 					new IUnitOfWork<ITextSelection, XtextResource>() {
 						public ITextSelection exec(XtextResource state)
 								throws Exception {
 							ITextRegion textRegion = locationInFileProvider
 									.getSignificantTextRegion((EObject) selectedElement);
-							((XtextEditor) editor).selectAndReveal(
+							((XtextEditor) getEditor()).selectAndReveal(
 									textRegion.getOffset(),
 									textRegion.getLength());
 							return new TextSelection(textRegion.getOffset(),
@@ -93,5 +95,23 @@ public class XtextEditorSelectionStrategy implements IElementSelectionStrategy {
 
 	protected ClassLoader getClassLoader() {
 		return plugin.getClass().getClassLoader();
+	}
+
+	public void register(IEditorPart editor, GraphView graphView) {
+		super.register(editor, graphView);
+		((XtextEditor) editor).getDocument().addModelListener(this);
+	}
+
+	public void deregister(IEditorPart editor, GraphView graphView) {
+		((XtextEditor) editor).getDocument().removeModelListener(this);
+		super.deregister(editor, graphView);
+	}
+
+	public void modelChanged(XtextResource resource) {
+		Display.getDefault().asyncExec(new Runnable() {
+			public void run() {
+				refreshView();
+			}
+		});
 	}
 }
