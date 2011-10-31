@@ -6,7 +6,7 @@ diagram JavaInheritanceDiagram type IType {
 		edge ImplementsEdge for each superInterfaceNames.map(n|javaProject.findType(n)) {
 			=> call TypeNode for this
 		} 
-		edge ExtendsEdge for  javaProject.findType(superclassName) {
+		edge ExtendsEdge for javaProject.findType(superclassName) {
 			=> call TypeNode for this
 		}  unless superclassName == null
 	}

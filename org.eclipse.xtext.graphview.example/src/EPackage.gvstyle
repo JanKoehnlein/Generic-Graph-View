@@ -1,31 +1,22 @@
 import org.eclipse.xtext.graphview.shape.*
 import org.eclipse.xtext.graphview.layout.*  
 import org.eclipse.draw2d.*
+import org.eclipse.swt.SWT
 import EPackageDiagram.*
 
 stylesheet EPackageDiagram for EPackageDiagram
 
 style EPackageDiagram {
-//	autoLayoutManager = new GridAutoLayout()
-//
-//	val autoLayout = new SpringAutoLayout()
-//	autoLayout.iterations = 500
-//	autoLayout.blankToNodeAreaRatio = 3
-//	autoLayoutManager = autoLayout 
-	
-	val layoutManager = new KielerAutoLayout();
-	layoutManager.layoutName = "Sugiyama" 
-	autoLayoutManager = layoutManager 
+	autoLayoutManager = new KielerAutoLayout() 
 }
 
-style EDataTypeNode.Name {
-	font = font("Helvetica", 13, 1) 
-	border = new MarginBorder(5,5,5,5) 
+style EDataTypeNode as RectangleShape { 
 }
 
 style EClassNode.Name { 
-	font = font("Helvetica", 13, 1 + (if (element.abstract) 2 else 0))
-	border = new MarginBorder(5,5,5,5)
+	font = font("Helvetica", 13, SWT::BOLD + 
+		(if (element.abstract) SWT::ITALIC else SWT::NONE)
+	)
 }
 
 style EClassNode.Attributes, EClassNode.Operations as RectangleShape {
@@ -39,8 +30,17 @@ style EClassNode.ReferenceEdge.EdgeLabel {
 
 style EClassNode.SuperclassEdge {
 	var arrow = new PolygonDecoration()
-	arrow.setScale(10,10)
+	arrow.setScale(10,8)
 	arrow.backgroundColor = color(#ffffff)
 	arrow.lineWidth = 2
 	targetDecoration = arrow 
+}
+
+style EClassNode {
+	backgroundColor = color(#deedf5)
+}
+
+style EClassNode.Attributes.Label, EClassNode.Operations.Label {
+	font = font("Helvetica", 11, SWT::NONE)
+	border = null
 }

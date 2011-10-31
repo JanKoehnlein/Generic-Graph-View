@@ -14,6 +14,7 @@ import org.eclipse.draw2d.ConnectionLocator;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.Locator;
+import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.MidpointLocator;
 
 public class LabelShape extends Label implements IConnectionChild {
@@ -23,6 +24,7 @@ public class LabelShape extends Label implements IConnectionChild {
 	public LabelShape() {
 		setText("unnamed");
 		setForegroundColor(ColorConstants.black);
+		setBorder(new MarginBorder(5, 5, 5, 5));
 	}
 
 	/**

@@ -2,31 +2,28 @@ import org.eclipse.draw2d.*
 import org.eclipse.xtext.graphview.shape.*
 import org.eclipse.xtext.graphview.layout.*
 import org.eclipse.xtext.example.fowlerdsl.statemachine.*
+import org.eclipse.swt.SWT
+
+import StateMachineDiagram.StateNode.*
 
 stylesheet StateMachineStyle for StateMachineDiagram 
 
 style StateMachineDiagram {
-	val layoutManager = new KielerAutoLayout();
-	layoutManager.layoutName = "Fruchterman-Reingold" 
-	autoLayoutManager = layoutManager
+	autoLayoutManager = new KielerAutoLayout("Fruchterman-Reingold")
 }
 	
-style StateMachineDiagram.StateNode.Transition.EventName {
+style Transition.EventName {
 	opaque = true
 	if((element.eContainer as Statemachine).resetEvents.contains(element)) 
 		foregroundColor = color(#ff2222)
 }
 
-style StateMachineDiagram.StateNode {
-	border = new MarginBorder(5,5,5,5)
-}
-
-style StateMachineDiagram.StateNode.Name {
-	font = font("Helvetica", 14, 1)
-	border = new MarginBorder(5,5,5,5)
-}
-
-style StateMachineDiagram.StateNode.ActionCompartment as RectangleShape {
+style ActionCompartment as RectangleShape {
 	outline = false
 	backgroundColor = color(#ffffff)
+}
+
+style ActionCompartment.ActionName {
+	border = null
+	font = font("Helvetica", 11, SWT::NONE)
 }

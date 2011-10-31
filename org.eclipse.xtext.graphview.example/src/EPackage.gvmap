@@ -18,11 +18,11 @@ diagram EPackageDiagram type EPackage {
 		} unless true
 		edge SuperclassEdge for each ESuperTypes {
 			=> ref EClassNode for this   
-		}
+		} 
 	} 
 	node EDataTypeNode for each this.EClassifiers.filter(typeof (EDataType)) {
 		label Name for name
-	} unless true 
+	} 
 	node InnerPackage for each ESubpackages {
 		label PackageLabel for this
 		call EPackageDiagram for this

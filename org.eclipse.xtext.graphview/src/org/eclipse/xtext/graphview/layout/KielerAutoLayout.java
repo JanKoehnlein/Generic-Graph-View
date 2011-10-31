@@ -87,6 +87,14 @@ public class KielerAutoLayout extends AbstractAutoLayout {
 
 	private String layoutName;
 	
+	public KielerAutoLayout() {
+		this("Sugiyama");
+	}
+	
+	public KielerAutoLayout(String layoutName) {
+		setLayoutName(layoutName);
+	}
+	
 	public void setLayoutName(String layoutName) {
 		this.layoutName = layoutName;
 	}

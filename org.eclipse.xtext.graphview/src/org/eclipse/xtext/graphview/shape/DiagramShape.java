@@ -19,7 +19,7 @@ public class DiagramShape extends FreeformLayer {
 	
 	public DiagramShape() {
 		setLayoutManager(new XYLayout());
-		setFont(FontLiterals.font("Helvetica", 11, SWT.None));
+		setFont(FontLiterals.font("Helvetica", 12, SWT.BOLD));
 		setAutoLayoutManager(new GridAutoLayout());
 	}
 

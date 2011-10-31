@@ -2,28 +2,30 @@ import JavaInheritanceDiagram.*
 import org.eclipse.xtext.graphview.shape.*
 import org.eclipse.draw2d.* 
 import org.eclipse.xtext.graphview.layout.*
+import org.eclipse.swt.SWT
 
 stylesheet JavaInheritanceStyle for JavaInheritanceDiagram
 
 
 style JavaInheritanceDiagram as DiagramShape {
-	val layoutManager = new KielerAutoLayout();
-	layoutManager.layoutName = "Upward-Planarization" 
-	autoLayoutManager = layoutManager
+	autoLayoutManager = new KielerAutoLayout("Upward-Planarization")
 }
 
 style TypeNode.NameLabel as LabelShape {
-	font = font("Helvetica", 14, if(element.interface) 3 else 1)
-	border = new MarginBorder(4,4,4,4)
+	font = font("Helvetica", 12, 
+		SWT::BOLD + if(element.interface) SWT::ITALIC else SWT::NONE
+	)
 	text = element.elementName
 }
 
+style TypeNode as RectangleShape {
+}
+
 style TypeNode.ExtendsEdge, TypeNode.ImplementsEdge as ConnectionShape {
-	sourceDecoration = null
 	val targetDeco = new org.eclipse.draw2d.PolygonDecoration()
-	targetDeco.setScale(10,10)
+	targetDeco.setScale(8,8)
 	targetDeco.lineWidth = 2
-	this.setTargetDecoration(targetDeco)
 	if(element.interface) targetDeco.backgroundColor = color(#ffffff) 
+	this.setTargetDecoration(targetDeco)
 }
 

@@ -21,7 +21,7 @@ public class RoundedRectangleShape extends RoundedRectangle implements ILayoutNo
 		setSize(200,100);
 		setLineWidth(2);
 		setForegroundColor(ColorConstants.buttonDarkest);
-		setBackgroundColor(ColorLiterals.color(new ColorLiteral("#ffeedd")));
+		setBackgroundColor(ColorLiterals.color(new ColorLiteral("#deedf5")));
 		ToolbarLayout layout = new ToolbarLayout(false);
 		layout.setSpacing(5);
 		layout.setStretchMinorAxis(true);
