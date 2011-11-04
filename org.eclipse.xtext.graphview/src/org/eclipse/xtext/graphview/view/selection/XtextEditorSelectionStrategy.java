@@ -23,6 +23,7 @@ import org.eclipse.xtext.resource.EObjectAtOffsetHelper;
 import org.eclipse.xtext.resource.ILocationInFileProvider;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.XtextEditor;
+import org.eclipse.xtext.ui.editor.model.IXtextDocument;
 import org.eclipse.xtext.ui.editor.model.IXtextModelListener;
 import org.eclipse.xtext.util.ITextRegion;
 import org.eclipse.xtext.util.Strings;
@@ -99,11 +100,15 @@ public class XtextEditorSelectionStrategy extends
 
 	public void register(IEditorPart editor, GraphView graphView) {
 		super.register(editor, graphView);
-		((XtextEditor) editor).getDocument().addModelListener(this);
+		IXtextDocument document = ((XtextEditor) editor).getDocument();
+		if(document != null)
+			document.addModelListener(this);
 	}
 
 	public void deregister(IEditorPart editor, GraphView graphView) {
-		((XtextEditor) editor).getDocument().removeModelListener(this);
+		IXtextDocument document = ((XtextEditor) editor).getDocument();
+		if(document != null)
+			document.removeModelListener(this);
 		super.deregister(editor, graphView);
 	}
 
