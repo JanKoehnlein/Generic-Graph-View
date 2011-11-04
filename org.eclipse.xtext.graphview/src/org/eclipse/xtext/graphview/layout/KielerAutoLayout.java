@@ -38,6 +38,7 @@ import de.cau.cs.kieler.kiml.util.BoxLayoutProvider;
 public class KielerAutoLayout extends AbstractAutoLayout {
 
 	protected static class ExtensionPointReader {
+		
 		private static final String KIML_CLASS = "class";
 
 		private static final Logger LOG = Logger
@@ -48,6 +49,17 @@ public class KielerAutoLayout extends AbstractAutoLayout {
 		private static final String KIML_NAME = "name";
 
 		private static final String KIML_LAYOUT_PROVIDERS = "de.cau.cs.kieler.kiml.layoutProviders";
+
+		static {
+			for (IConfigurationElement layoutProviderConfig : Platform
+					.getExtensionRegistry().getConfigurationElementsFor(
+							KIML_LAYOUT_PROVIDERS)) {
+				String layoutAlgorithmName = layoutProviderConfig
+						.getAttribute(KIML_NAME);
+				if(layoutProviderConfig.getAttribute(KIML_CLASS) != null)
+					System.out.println(layoutAlgorithmName);
+			}
+		}
 
 		protected static AbstractLayoutProvider getLayoutProvider(
 				String layoutName) {
@@ -78,7 +90,7 @@ public class KielerAutoLayout extends AbstractAutoLayout {
 			return new BoxLayoutProvider();
 		}
 	}
-	
+
 	private KGraphFactory graphFactory = KGraphFactory.eINSTANCE;
 
 	private KLayoutDataFactory layoutDataFactory = KLayoutDataFactory.eINSTANCE;
@@ -86,15 +98,15 @@ public class KielerAutoLayout extends AbstractAutoLayout {
 	private BendpointConnectionRouter connectionRouter = new BendpointConnectionRouter();
 
 	private String layoutName;
-	
+
 	public KielerAutoLayout() {
 		this("Sugiyama");
 	}
-	
+
 	public KielerAutoLayout(String layoutName) {
 		setLayoutName(layoutName);
 	}
-	
+
 	public void setLayoutName(String layoutName) {
 		this.layoutName = layoutName;
 	}
@@ -150,8 +162,8 @@ public class KielerAutoLayout extends AbstractAutoLayout {
 			if (edgeLayout != null && !edgeLayout.getBendPoints().isEmpty()) {
 				List<Bendpoint> gefBendPoints = Lists.newArrayList();
 				for (KPoint bendPoint : edgeLayout.getBendPoints()) {
-					AbsoluteBendpoint gefBendPoint = new AbsoluteBendpoint((int) bendPoint
-							.getX(), (int) bendPoint.getY());
+					AbsoluteBendpoint gefBendPoint = new AbsoluteBendpoint(
+							(int) bendPoint.getX(), (int) bendPoint.getY());
 					gefBendPoints.add(gefBendPoint);
 					containerBounds.union(gefBendPoint);
 				}
@@ -159,7 +171,7 @@ public class KielerAutoLayout extends AbstractAutoLayout {
 						gefBendPoints);
 			}
 		}
-		container.setPreferredSize(containerBounds.getSize().expand(16,16));
+		container.setPreferredSize(containerBounds.getSize().expand(16, 16));
 	}
 
 	protected KEdge createKEdge(KNode sourceNode, KNode targetNode) {
