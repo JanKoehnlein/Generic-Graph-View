@@ -162,8 +162,14 @@ public class DefaultDiagramConfigurationProvider implements
 	}
 
 	protected EObject load(String uriProperty) {
-		String uri = getPreferenceStore().getString(uriProperty);
-		return (!Strings.isEmpty(uri)) ? load(URI.createURI(uri)) : null;
+		String uri = "";
+		try {
+			uri = getPreferenceStore().getString(uriProperty);
+			return (!Strings.isEmpty(uri)) ? load(URI.createURI(uri)) : null;
+		} catch (Exception exc) {
+			LOG.error("Error loading model " + uri, exc);
+		}
+		return null;
 	}
 
 	protected EObject load(URI eObjectURI) {
