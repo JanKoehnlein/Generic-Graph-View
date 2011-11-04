@@ -8,6 +8,6 @@ diagram JavaInheritanceDiagram type IType {
 		} 
 		edge ExtendsEdge for javaProject.findType(superclassName) {
 			=> call TypeNode for this
-		}  unless superclassName == null
+		}  unless superclassName == null || superclassName == "java.lang.Object"
 	}
 }
