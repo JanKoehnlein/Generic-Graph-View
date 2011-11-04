@@ -10,8 +10,8 @@ package org.eclipse.xtext.graphview.shape;
 import org.eclipse.draw2d.FreeformLayer;
 import org.eclipse.draw2d.XYLayout;
 import org.eclipse.swt.SWT;
-import org.eclipse.xtext.graphview.layout.GridAutoLayout;
 import org.eclipse.xtext.graphview.layout.IAutoLayout;
+import org.eclipse.xtext.graphview.layout.KielerAutoLayout;
 
 public class DiagramShape extends FreeformLayer {
 
@@ -20,7 +20,7 @@ public class DiagramShape extends FreeformLayer {
 	public DiagramShape() {
 		setLayoutManager(new XYLayout());
 		setFont(FontLiterals.font("Helvetica", 12, SWT.BOLD));
-		setAutoLayoutManager(new GridAutoLayout());
+		setAutoLayoutManager(new KielerAutoLayout());
 	}
 
 	public IAutoLayout getAutoLayoutManager() {
