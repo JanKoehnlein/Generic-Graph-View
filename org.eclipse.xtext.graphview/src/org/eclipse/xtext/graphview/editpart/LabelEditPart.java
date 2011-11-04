@@ -10,6 +10,8 @@ package org.eclipse.xtext.graphview.editpart;
 import java.lang.reflect.Method;
 
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.gef.EditPart;
+import org.eclipse.gef.Request;
 import org.eclipse.xtext.graphview.shape.LabelShape;
 
 public class LabelEditPart extends AbstractMappingEditPart {
@@ -44,5 +46,21 @@ public class LabelEditPart extends AbstractMappingEditPart {
 			// ignore
 		}
 		return semanticElement.toString();
+	}
+
+	protected boolean isDescriptionLabel() {
+		if (getParent() instanceof AbstractMappingEditPart) {
+			return ((AbstractMappingEditPart) getParent()).helper
+					.getSemanticElement() == helper.getSemanticElement();
+		}
+		return false;
+	}
+
+	@Override
+	public EditPart getTargetEditPart(Request request) {
+		if (isDescriptionLabel())
+			return getParent().getTargetEditPart(request);
+		else
+			 return super.getTargetEditPart(request);
 	}
 }
