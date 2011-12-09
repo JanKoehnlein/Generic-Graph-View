@@ -6,9 +6,13 @@
 package org.eclipse.xtext.graphview.style.graphViewStyle;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
+
 import org.eclipse.xtext.common.types.JvmTypeReference;
+
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping;
+
 import org.eclipse.xtext.xbase.XExpression;
 
 /**

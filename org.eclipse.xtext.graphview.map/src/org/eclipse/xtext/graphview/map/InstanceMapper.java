@@ -18,9 +18,9 @@ import org.eclipse.xtext.xbase.interpreter.IEvaluationResult;
 import org.eclipse.xtext.xbase.interpreter.impl.XbaseInterpreter;
 import org.eclipse.xtext.xbase.scoping.XbaseScopeProvider;
 
+import com.google.common.collect.Lists;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
-import com.google.inject.internal.Lists;
 
 @SuppressWarnings("restriction")
 public class InstanceMapper implements IInstanceMapper {

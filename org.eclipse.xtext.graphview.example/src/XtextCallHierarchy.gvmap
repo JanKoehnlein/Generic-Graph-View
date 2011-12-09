@@ -1,0 +1,10 @@
+import org.eclipse.xtext.*
+
+diagram XtextCallHierarchy type Grammar {
+	node RuleNode for each rules {
+		label Name for this
+		edge callsEdge for each EcoreUtil2::eAllOfType(this, typeof(RuleCall)).map[rule].toSet {
+			=> call RuleNode for this
+		}
+	}
+}

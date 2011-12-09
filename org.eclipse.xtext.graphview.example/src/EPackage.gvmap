@@ -4,13 +4,12 @@ diagram EPackageDiagram type EPackage {
  	node EClassNode for each EClassifiers.filter(typeof (EClass)) {  
 		label Name for this
 		node Attributes for EAttributes {
-			label Label for each map(a|a.name + ": " + a.EType.name)		
+			label Label for each map[name + ": " + EType.name]		
 		} unless EAttributes.empty
 		node Operations for EOperations {
-			label Label for each map(a|a.name + "(" 
-					+ a.EParameters.map(p|p.EType.name).join(", ") 
-					+ "): " + a.EType.name
-			)		
+			label Label for each map[name + "(" 
+					+ EParameters.map(p|p.EType.name).join(", ") 
+					+ "): " + EType.name]
 		}  unless EOperations.empty
 		edge ReferenceEdge for each EReferences {
 			=> ref EClassNode for EType

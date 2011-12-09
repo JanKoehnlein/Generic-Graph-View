@@ -6074,11 +6074,11 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
             if ( (LA3_0==RULE_ID) ) {
                 int LA3_1 = input.LA(2);
 
-                if ( (LA3_1==EOF||(LA3_1>=RULE_ID && LA3_1<=RULE_STRING)||(LA3_1>=13 && LA3_1<=34)||LA3_1==36||(LA3_1>=39 && LA3_1<=66)||(LA3_1>=70 && LA3_1<=71)||(LA3_1>=73 && LA3_1<=74)) ) {
-                    alt3=2;
-                }
-                else if ( (LA3_1==12) ) {
+                if ( (LA3_1==12) ) {
                     alt3=1;
+                }
+                else if ( (LA3_1==EOF||(LA3_1>=RULE_ID && LA3_1<=RULE_STRING)||(LA3_1>=13 && LA3_1<=34)||LA3_1==36||(LA3_1>=39 && LA3_1<=66)||(LA3_1>=70 && LA3_1<=71)||(LA3_1>=73 && LA3_1<=74)) ) {
+                    alt3=2;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return ;}
@@ -6994,14 +6994,17 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
             if ( (LA12_0==31) ) {
                 int LA12_1 = input.LA(2);
 
-                if ( (LA12_1==RULE_ID) ) {
+                if ( (LA12_1==21) ) {
+                    alt12=2;
+                }
+                else if ( (LA12_1==RULE_ID) ) {
                     int LA12_3 = input.LA(3);
 
-                    if ( (LA12_3==EOF||(LA12_3>=RULE_ID && LA12_3<=RULE_STRING)||(LA12_3>=13 && LA12_3<=34)||LA12_3==36||(LA12_3>=39 && LA12_3<=56)||(LA12_3>=58 && LA12_3<=66)||(LA12_3>=70 && LA12_3<=71)||(LA12_3>=73 && LA12_3<=74)) ) {
-                        alt12=2;
-                    }
-                    else if ( (LA12_3==12) ) {
+                    if ( (LA12_3==12) ) {
                         alt12=1;
+                    }
+                    else if ( (LA12_3==EOF||(LA12_3>=RULE_ID && LA12_3<=RULE_STRING)||(LA12_3>=13 && LA12_3<=34)||LA12_3==36||(LA12_3>=39 && LA12_3<=56)||(LA12_3>=58 && LA12_3<=66)||(LA12_3>=70 && LA12_3<=71)||(LA12_3>=73 && LA12_3<=74)) ) {
+                        alt12=2;
                     }
                     else {
                         if (state.backtracking>0) {state.failed=true; return ;}
@@ -7010,9 +7013,6 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
                         throw nvae;
                     }
-                }
-                else if ( (LA12_1==21) ) {
-                    alt12=2;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return ;}
@@ -35719,34 +35719,45 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XFunctionTypeRef__Group_0__1__Impl"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12454:1: rule__XFunctionTypeRef__Group_0__1__Impl : ( ( rule__XFunctionTypeRef__ParamTypesAssignment_0_1 ) ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12454:1: rule__XFunctionTypeRef__Group_0__1__Impl : ( ( rule__XFunctionTypeRef__Group_0_1__0 )? ) ;
     public final void rule__XFunctionTypeRef__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12458:1: ( ( ( rule__XFunctionTypeRef__ParamTypesAssignment_0_1 ) ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12459:1: ( ( rule__XFunctionTypeRef__ParamTypesAssignment_0_1 ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12458:1: ( ( ( rule__XFunctionTypeRef__Group_0_1__0 )? ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12459:1: ( ( rule__XFunctionTypeRef__Group_0_1__0 )? )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12459:1: ( ( rule__XFunctionTypeRef__ParamTypesAssignment_0_1 ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12460:1: ( rule__XFunctionTypeRef__ParamTypesAssignment_0_1 )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12459:1: ( ( rule__XFunctionTypeRef__Group_0_1__0 )? )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12460:1: ( rule__XFunctionTypeRef__Group_0_1__0 )?
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getXFunctionTypeRefAccess().getParamTypesAssignment_0_1()); 
+               before(grammarAccess.getXFunctionTypeRefAccess().getGroup_0_1()); 
             }
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12461:1: ( rule__XFunctionTypeRef__ParamTypesAssignment_0_1 )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12461:2: rule__XFunctionTypeRef__ParamTypesAssignment_0_1
-            {
-            pushFollow(FOLLOW_rule__XFunctionTypeRef__ParamTypesAssignment_0_1_in_rule__XFunctionTypeRef__Group_0__1__Impl25028);
-            rule__XFunctionTypeRef__ParamTypesAssignment_0_1();
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12461:1: ( rule__XFunctionTypeRef__Group_0_1__0 )?
+            int alt84=2;
+            int LA84_0 = input.LA(1);
 
-            state._fsp--;
-            if (state.failed) return ;
+            if ( (LA84_0==RULE_ID||LA84_0==46||LA84_0==66) ) {
+                alt84=1;
+            }
+            switch (alt84) {
+                case 1 :
+                    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12461:2: rule__XFunctionTypeRef__Group_0_1__0
+                    {
+                    pushFollow(FOLLOW_rule__XFunctionTypeRef__Group_0_1__0_in_rule__XFunctionTypeRef__Group_0__1__Impl25028);
+                    rule__XFunctionTypeRef__Group_0_1__0();
+
+                    state._fsp--;
+                    if (state.failed) return ;
+
+                    }
+                    break;
 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getXFunctionTypeRefAccess().getParamTypesAssignment_0_1()); 
+               after(grammarAccess.getXFunctionTypeRefAccess().getGroup_0_1()); 
             }
 
             }
@@ -35770,22 +35781,17 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XFunctionTypeRef__Group_0__2"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12471:1: rule__XFunctionTypeRef__Group_0__2 : rule__XFunctionTypeRef__Group_0__2__Impl rule__XFunctionTypeRef__Group_0__3 ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12471:1: rule__XFunctionTypeRef__Group_0__2 : rule__XFunctionTypeRef__Group_0__2__Impl ;
     public final void rule__XFunctionTypeRef__Group_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12475:1: ( rule__XFunctionTypeRef__Group_0__2__Impl rule__XFunctionTypeRef__Group_0__3 )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12476:2: rule__XFunctionTypeRef__Group_0__2__Impl rule__XFunctionTypeRef__Group_0__3
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12475:1: ( rule__XFunctionTypeRef__Group_0__2__Impl )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12476:2: rule__XFunctionTypeRef__Group_0__2__Impl
             {
-            pushFollow(FOLLOW_rule__XFunctionTypeRef__Group_0__2__Impl_in_rule__XFunctionTypeRef__Group_0__225058);
+            pushFollow(FOLLOW_rule__XFunctionTypeRef__Group_0__2__Impl_in_rule__XFunctionTypeRef__Group_0__225059);
             rule__XFunctionTypeRef__Group_0__2__Impl();
-
-            state._fsp--;
-            if (state.failed) return ;
-            pushFollow(FOLLOW_rule__XFunctionTypeRef__Group_0__3_in_rule__XFunctionTypeRef__Group_0__225061);
-            rule__XFunctionTypeRef__Group_0__3();
 
             state._fsp--;
             if (state.failed) return ;
@@ -35808,52 +35814,24 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XFunctionTypeRef__Group_0__2__Impl"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12483:1: rule__XFunctionTypeRef__Group_0__2__Impl : ( ( rule__XFunctionTypeRef__Group_0_2__0 )* ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12482:1: rule__XFunctionTypeRef__Group_0__2__Impl : ( ')' ) ;
     public final void rule__XFunctionTypeRef__Group_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12487:1: ( ( ( rule__XFunctionTypeRef__Group_0_2__0 )* ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12488:1: ( ( rule__XFunctionTypeRef__Group_0_2__0 )* )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12486:1: ( ( ')' ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12487:1: ( ')' )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12488:1: ( ( rule__XFunctionTypeRef__Group_0_2__0 )* )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12489:1: ( rule__XFunctionTypeRef__Group_0_2__0 )*
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12487:1: ( ')' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12488:1: ')'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getXFunctionTypeRefAccess().getGroup_0_2()); 
+               before(grammarAccess.getXFunctionTypeRefAccess().getRightParenthesisKeyword_0_2()); 
             }
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12490:1: ( rule__XFunctionTypeRef__Group_0_2__0 )*
-            loop84:
-            do {
-                int alt84=2;
-                int LA84_0 = input.LA(1);
-
-                if ( (LA84_0==39) ) {
-                    alt84=1;
-                }
-
-
-                switch (alt84) {
-            	case 1 :
-            	    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12490:2: rule__XFunctionTypeRef__Group_0_2__0
-            	    {
-            	    pushFollow(FOLLOW_rule__XFunctionTypeRef__Group_0_2__0_in_rule__XFunctionTypeRef__Group_0__2__Impl25088);
-            	    rule__XFunctionTypeRef__Group_0_2__0();
-
-            	    state._fsp--;
-            	    if (state.failed) return ;
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop84;
-                }
-            } while (true);
-
+            match(input,42,FOLLOW_42_in_rule__XFunctionTypeRef__Group_0__2__Impl25087); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getXFunctionTypeRefAccess().getGroup_0_2()); 
+               after(grammarAccess.getXFunctionTypeRefAccess().getRightParenthesisKeyword_0_2()); 
             }
 
             }
@@ -35876,18 +35854,23 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
     // $ANTLR end "rule__XFunctionTypeRef__Group_0__2__Impl"
 
 
-    // $ANTLR start "rule__XFunctionTypeRef__Group_0__3"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12500:1: rule__XFunctionTypeRef__Group_0__3 : rule__XFunctionTypeRef__Group_0__3__Impl ;
-    public final void rule__XFunctionTypeRef__Group_0__3() throws RecognitionException {
+    // $ANTLR start "rule__XFunctionTypeRef__Group_0_1__0"
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12507:1: rule__XFunctionTypeRef__Group_0_1__0 : rule__XFunctionTypeRef__Group_0_1__0__Impl rule__XFunctionTypeRef__Group_0_1__1 ;
+    public final void rule__XFunctionTypeRef__Group_0_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12504:1: ( rule__XFunctionTypeRef__Group_0__3__Impl )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12505:2: rule__XFunctionTypeRef__Group_0__3__Impl
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12511:1: ( rule__XFunctionTypeRef__Group_0_1__0__Impl rule__XFunctionTypeRef__Group_0_1__1 )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12512:2: rule__XFunctionTypeRef__Group_0_1__0__Impl rule__XFunctionTypeRef__Group_0_1__1
             {
-            pushFollow(FOLLOW_rule__XFunctionTypeRef__Group_0__3__Impl_in_rule__XFunctionTypeRef__Group_0__325119);
-            rule__XFunctionTypeRef__Group_0__3__Impl();
+            pushFollow(FOLLOW_rule__XFunctionTypeRef__Group_0_1__0__Impl_in_rule__XFunctionTypeRef__Group_0_1__025124);
+            rule__XFunctionTypeRef__Group_0_1__0__Impl();
+
+            state._fsp--;
+            if (state.failed) return ;
+            pushFollow(FOLLOW_rule__XFunctionTypeRef__Group_0_1__1_in_rule__XFunctionTypeRef__Group_0_1__025127);
+            rule__XFunctionTypeRef__Group_0_1__1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -35906,107 +35889,38 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__XFunctionTypeRef__Group_0__3"
+    // $ANTLR end "rule__XFunctionTypeRef__Group_0_1__0"
 
 
-    // $ANTLR start "rule__XFunctionTypeRef__Group_0__3__Impl"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12511:1: rule__XFunctionTypeRef__Group_0__3__Impl : ( ')' ) ;
-    public final void rule__XFunctionTypeRef__Group_0__3__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12515:1: ( ( ')' ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12516:1: ( ')' )
-            {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12516:1: ( ')' )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12517:1: ')'
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getXFunctionTypeRefAccess().getRightParenthesisKeyword_0_3()); 
-            }
-            match(input,42,FOLLOW_42_in_rule__XFunctionTypeRef__Group_0__3__Impl25147); if (state.failed) return ;
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getXFunctionTypeRefAccess().getRightParenthesisKeyword_0_3()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__XFunctionTypeRef__Group_0__3__Impl"
-
-
-    // $ANTLR start "rule__XFunctionTypeRef__Group_0_2__0"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12538:1: rule__XFunctionTypeRef__Group_0_2__0 : rule__XFunctionTypeRef__Group_0_2__0__Impl rule__XFunctionTypeRef__Group_0_2__1 ;
-    public final void rule__XFunctionTypeRef__Group_0_2__0() throws RecognitionException {
+    // $ANTLR start "rule__XFunctionTypeRef__Group_0_1__0__Impl"
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12519:1: rule__XFunctionTypeRef__Group_0_1__0__Impl : ( ( rule__XFunctionTypeRef__ParamTypesAssignment_0_1_0 ) ) ;
+    public final void rule__XFunctionTypeRef__Group_0_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12542:1: ( rule__XFunctionTypeRef__Group_0_2__0__Impl rule__XFunctionTypeRef__Group_0_2__1 )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12543:2: rule__XFunctionTypeRef__Group_0_2__0__Impl rule__XFunctionTypeRef__Group_0_2__1
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12523:1: ( ( ( rule__XFunctionTypeRef__ParamTypesAssignment_0_1_0 ) ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12524:1: ( ( rule__XFunctionTypeRef__ParamTypesAssignment_0_1_0 ) )
             {
-            pushFollow(FOLLOW_rule__XFunctionTypeRef__Group_0_2__0__Impl_in_rule__XFunctionTypeRef__Group_0_2__025186);
-            rule__XFunctionTypeRef__Group_0_2__0__Impl();
-
-            state._fsp--;
-            if (state.failed) return ;
-            pushFollow(FOLLOW_rule__XFunctionTypeRef__Group_0_2__1_in_rule__XFunctionTypeRef__Group_0_2__025189);
-            rule__XFunctionTypeRef__Group_0_2__1();
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12524:1: ( ( rule__XFunctionTypeRef__ParamTypesAssignment_0_1_0 ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12525:1: ( rule__XFunctionTypeRef__ParamTypesAssignment_0_1_0 )
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getXFunctionTypeRefAccess().getParamTypesAssignment_0_1_0()); 
+            }
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12526:1: ( rule__XFunctionTypeRef__ParamTypesAssignment_0_1_0 )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12526:2: rule__XFunctionTypeRef__ParamTypesAssignment_0_1_0
+            {
+            pushFollow(FOLLOW_rule__XFunctionTypeRef__ParamTypesAssignment_0_1_0_in_rule__XFunctionTypeRef__Group_0_1__0__Impl25154);
+            rule__XFunctionTypeRef__ParamTypesAssignment_0_1_0();
 
             state._fsp--;
             if (state.failed) return ;
 
             }
 
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__XFunctionTypeRef__Group_0_2__0"
-
-
-    // $ANTLR start "rule__XFunctionTypeRef__Group_0_2__0__Impl"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12550:1: rule__XFunctionTypeRef__Group_0_2__0__Impl : ( ',' ) ;
-    public final void rule__XFunctionTypeRef__Group_0_2__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12554:1: ( ( ',' ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12555:1: ( ',' )
-            {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12555:1: ( ',' )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12556:1: ','
-            {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getXFunctionTypeRefAccess().getCommaKeyword_0_2_0()); 
-            }
-            match(input,39,FOLLOW_39_in_rule__XFunctionTypeRef__Group_0_2__0__Impl25217); if (state.failed) return ;
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getXFunctionTypeRefAccess().getCommaKeyword_0_2_0()); 
+               after(grammarAccess.getXFunctionTypeRefAccess().getParamTypesAssignment_0_1_0()); 
             }
 
             }
@@ -36026,21 +35940,21 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__XFunctionTypeRef__Group_0_2__0__Impl"
+    // $ANTLR end "rule__XFunctionTypeRef__Group_0_1__0__Impl"
 
 
-    // $ANTLR start "rule__XFunctionTypeRef__Group_0_2__1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12569:1: rule__XFunctionTypeRef__Group_0_2__1 : rule__XFunctionTypeRef__Group_0_2__1__Impl ;
-    public final void rule__XFunctionTypeRef__Group_0_2__1() throws RecognitionException {
+    // $ANTLR start "rule__XFunctionTypeRef__Group_0_1__1"
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12536:1: rule__XFunctionTypeRef__Group_0_1__1 : rule__XFunctionTypeRef__Group_0_1__1__Impl ;
+    public final void rule__XFunctionTypeRef__Group_0_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12573:1: ( rule__XFunctionTypeRef__Group_0_2__1__Impl )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12574:2: rule__XFunctionTypeRef__Group_0_2__1__Impl
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12540:1: ( rule__XFunctionTypeRef__Group_0_1__1__Impl )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12541:2: rule__XFunctionTypeRef__Group_0_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__XFunctionTypeRef__Group_0_2__1__Impl_in_rule__XFunctionTypeRef__Group_0_2__125248);
-            rule__XFunctionTypeRef__Group_0_2__1__Impl();
+            pushFollow(FOLLOW_rule__XFunctionTypeRef__Group_0_1__1__Impl_in_rule__XFunctionTypeRef__Group_0_1__125184);
+            rule__XFunctionTypeRef__Group_0_1__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
@@ -36059,38 +35973,56 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__XFunctionTypeRef__Group_0_2__1"
+    // $ANTLR end "rule__XFunctionTypeRef__Group_0_1__1"
 
 
-    // $ANTLR start "rule__XFunctionTypeRef__Group_0_2__1__Impl"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12580:1: rule__XFunctionTypeRef__Group_0_2__1__Impl : ( ( rule__XFunctionTypeRef__ParamTypesAssignment_0_2_1 ) ) ;
-    public final void rule__XFunctionTypeRef__Group_0_2__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__XFunctionTypeRef__Group_0_1__1__Impl"
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12547:1: rule__XFunctionTypeRef__Group_0_1__1__Impl : ( ( rule__XFunctionTypeRef__Group_0_1_1__0 )* ) ;
+    public final void rule__XFunctionTypeRef__Group_0_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12584:1: ( ( ( rule__XFunctionTypeRef__ParamTypesAssignment_0_2_1 ) ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12585:1: ( ( rule__XFunctionTypeRef__ParamTypesAssignment_0_2_1 ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12551:1: ( ( ( rule__XFunctionTypeRef__Group_0_1_1__0 )* ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12552:1: ( ( rule__XFunctionTypeRef__Group_0_1_1__0 )* )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12585:1: ( ( rule__XFunctionTypeRef__ParamTypesAssignment_0_2_1 ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12586:1: ( rule__XFunctionTypeRef__ParamTypesAssignment_0_2_1 )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12552:1: ( ( rule__XFunctionTypeRef__Group_0_1_1__0 )* )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12553:1: ( rule__XFunctionTypeRef__Group_0_1_1__0 )*
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getXFunctionTypeRefAccess().getParamTypesAssignment_0_2_1()); 
+               before(grammarAccess.getXFunctionTypeRefAccess().getGroup_0_1_1()); 
             }
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12587:1: ( rule__XFunctionTypeRef__ParamTypesAssignment_0_2_1 )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12587:2: rule__XFunctionTypeRef__ParamTypesAssignment_0_2_1
-            {
-            pushFollow(FOLLOW_rule__XFunctionTypeRef__ParamTypesAssignment_0_2_1_in_rule__XFunctionTypeRef__Group_0_2__1__Impl25275);
-            rule__XFunctionTypeRef__ParamTypesAssignment_0_2_1();
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12554:1: ( rule__XFunctionTypeRef__Group_0_1_1__0 )*
+            loop85:
+            do {
+                int alt85=2;
+                int LA85_0 = input.LA(1);
 
-            state._fsp--;
-            if (state.failed) return ;
+                if ( (LA85_0==39) ) {
+                    alt85=1;
+                }
 
-            }
+
+                switch (alt85) {
+            	case 1 :
+            	    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12554:2: rule__XFunctionTypeRef__Group_0_1_1__0
+            	    {
+            	    pushFollow(FOLLOW_rule__XFunctionTypeRef__Group_0_1_1__0_in_rule__XFunctionTypeRef__Group_0_1__1__Impl25211);
+            	    rule__XFunctionTypeRef__Group_0_1_1__0();
+
+            	    state._fsp--;
+            	    if (state.failed) return ;
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop85;
+                }
+            } while (true);
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getXFunctionTypeRefAccess().getParamTypesAssignment_0_2_1()); 
+               after(grammarAccess.getXFunctionTypeRefAccess().getGroup_0_1_1()); 
             }
 
             }
@@ -36110,25 +36042,188 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__XFunctionTypeRef__Group_0_2__1__Impl"
+    // $ANTLR end "rule__XFunctionTypeRef__Group_0_1__1__Impl"
+
+
+    // $ANTLR start "rule__XFunctionTypeRef__Group_0_1_1__0"
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12568:1: rule__XFunctionTypeRef__Group_0_1_1__0 : rule__XFunctionTypeRef__Group_0_1_1__0__Impl rule__XFunctionTypeRef__Group_0_1_1__1 ;
+    public final void rule__XFunctionTypeRef__Group_0_1_1__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12572:1: ( rule__XFunctionTypeRef__Group_0_1_1__0__Impl rule__XFunctionTypeRef__Group_0_1_1__1 )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12573:2: rule__XFunctionTypeRef__Group_0_1_1__0__Impl rule__XFunctionTypeRef__Group_0_1_1__1
+            {
+            pushFollow(FOLLOW_rule__XFunctionTypeRef__Group_0_1_1__0__Impl_in_rule__XFunctionTypeRef__Group_0_1_1__025246);
+            rule__XFunctionTypeRef__Group_0_1_1__0__Impl();
+
+            state._fsp--;
+            if (state.failed) return ;
+            pushFollow(FOLLOW_rule__XFunctionTypeRef__Group_0_1_1__1_in_rule__XFunctionTypeRef__Group_0_1_1__025249);
+            rule__XFunctionTypeRef__Group_0_1_1__1();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__XFunctionTypeRef__Group_0_1_1__0"
+
+
+    // $ANTLR start "rule__XFunctionTypeRef__Group_0_1_1__0__Impl"
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12580:1: rule__XFunctionTypeRef__Group_0_1_1__0__Impl : ( ',' ) ;
+    public final void rule__XFunctionTypeRef__Group_0_1_1__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12584:1: ( ( ',' ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12585:1: ( ',' )
+            {
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12585:1: ( ',' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12586:1: ','
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getXFunctionTypeRefAccess().getCommaKeyword_0_1_1_0()); 
+            }
+            match(input,39,FOLLOW_39_in_rule__XFunctionTypeRef__Group_0_1_1__0__Impl25277); if (state.failed) return ;
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getXFunctionTypeRefAccess().getCommaKeyword_0_1_1_0()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__XFunctionTypeRef__Group_0_1_1__0__Impl"
+
+
+    // $ANTLR start "rule__XFunctionTypeRef__Group_0_1_1__1"
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12599:1: rule__XFunctionTypeRef__Group_0_1_1__1 : rule__XFunctionTypeRef__Group_0_1_1__1__Impl ;
+    public final void rule__XFunctionTypeRef__Group_0_1_1__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12603:1: ( rule__XFunctionTypeRef__Group_0_1_1__1__Impl )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12604:2: rule__XFunctionTypeRef__Group_0_1_1__1__Impl
+            {
+            pushFollow(FOLLOW_rule__XFunctionTypeRef__Group_0_1_1__1__Impl_in_rule__XFunctionTypeRef__Group_0_1_1__125308);
+            rule__XFunctionTypeRef__Group_0_1_1__1__Impl();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__XFunctionTypeRef__Group_0_1_1__1"
+
+
+    // $ANTLR start "rule__XFunctionTypeRef__Group_0_1_1__1__Impl"
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12610:1: rule__XFunctionTypeRef__Group_0_1_1__1__Impl : ( ( rule__XFunctionTypeRef__ParamTypesAssignment_0_1_1_1 ) ) ;
+    public final void rule__XFunctionTypeRef__Group_0_1_1__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12614:1: ( ( ( rule__XFunctionTypeRef__ParamTypesAssignment_0_1_1_1 ) ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12615:1: ( ( rule__XFunctionTypeRef__ParamTypesAssignment_0_1_1_1 ) )
+            {
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12615:1: ( ( rule__XFunctionTypeRef__ParamTypesAssignment_0_1_1_1 ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12616:1: ( rule__XFunctionTypeRef__ParamTypesAssignment_0_1_1_1 )
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getXFunctionTypeRefAccess().getParamTypesAssignment_0_1_1_1()); 
+            }
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12617:1: ( rule__XFunctionTypeRef__ParamTypesAssignment_0_1_1_1 )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12617:2: rule__XFunctionTypeRef__ParamTypesAssignment_0_1_1_1
+            {
+            pushFollow(FOLLOW_rule__XFunctionTypeRef__ParamTypesAssignment_0_1_1_1_in_rule__XFunctionTypeRef__Group_0_1_1__1__Impl25335);
+            rule__XFunctionTypeRef__ParamTypesAssignment_0_1_1_1();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getXFunctionTypeRefAccess().getParamTypesAssignment_0_1_1_1()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__XFunctionTypeRef__Group_0_1_1__1__Impl"
 
 
     // $ANTLR start "rule__JvmParameterizedTypeReference__Group__0"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12601:1: rule__JvmParameterizedTypeReference__Group__0 : rule__JvmParameterizedTypeReference__Group__0__Impl rule__JvmParameterizedTypeReference__Group__1 ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12631:1: rule__JvmParameterizedTypeReference__Group__0 : rule__JvmParameterizedTypeReference__Group__0__Impl rule__JvmParameterizedTypeReference__Group__1 ;
     public final void rule__JvmParameterizedTypeReference__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12605:1: ( rule__JvmParameterizedTypeReference__Group__0__Impl rule__JvmParameterizedTypeReference__Group__1 )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12606:2: rule__JvmParameterizedTypeReference__Group__0__Impl rule__JvmParameterizedTypeReference__Group__1
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12635:1: ( rule__JvmParameterizedTypeReference__Group__0__Impl rule__JvmParameterizedTypeReference__Group__1 )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12636:2: rule__JvmParameterizedTypeReference__Group__0__Impl rule__JvmParameterizedTypeReference__Group__1
             {
-            pushFollow(FOLLOW_rule__JvmParameterizedTypeReference__Group__0__Impl_in_rule__JvmParameterizedTypeReference__Group__025309);
+            pushFollow(FOLLOW_rule__JvmParameterizedTypeReference__Group__0__Impl_in_rule__JvmParameterizedTypeReference__Group__025369);
             rule__JvmParameterizedTypeReference__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__JvmParameterizedTypeReference__Group__1_in_rule__JvmParameterizedTypeReference__Group__025312);
+            pushFollow(FOLLOW_rule__JvmParameterizedTypeReference__Group__1_in_rule__JvmParameterizedTypeReference__Group__025372);
             rule__JvmParameterizedTypeReference__Group__1();
 
             state._fsp--;
@@ -36152,25 +36247,25 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__JvmParameterizedTypeReference__Group__0__Impl"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12613:1: rule__JvmParameterizedTypeReference__Group__0__Impl : ( ( rule__JvmParameterizedTypeReference__TypeAssignment_0 ) ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12643:1: rule__JvmParameterizedTypeReference__Group__0__Impl : ( ( rule__JvmParameterizedTypeReference__TypeAssignment_0 ) ) ;
     public final void rule__JvmParameterizedTypeReference__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12617:1: ( ( ( rule__JvmParameterizedTypeReference__TypeAssignment_0 ) ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12618:1: ( ( rule__JvmParameterizedTypeReference__TypeAssignment_0 ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12647:1: ( ( ( rule__JvmParameterizedTypeReference__TypeAssignment_0 ) ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12648:1: ( ( rule__JvmParameterizedTypeReference__TypeAssignment_0 ) )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12618:1: ( ( rule__JvmParameterizedTypeReference__TypeAssignment_0 ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12619:1: ( rule__JvmParameterizedTypeReference__TypeAssignment_0 )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12648:1: ( ( rule__JvmParameterizedTypeReference__TypeAssignment_0 ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12649:1: ( rule__JvmParameterizedTypeReference__TypeAssignment_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmParameterizedTypeReferenceAccess().getTypeAssignment_0()); 
             }
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12620:1: ( rule__JvmParameterizedTypeReference__TypeAssignment_0 )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12620:2: rule__JvmParameterizedTypeReference__TypeAssignment_0
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12650:1: ( rule__JvmParameterizedTypeReference__TypeAssignment_0 )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12650:2: rule__JvmParameterizedTypeReference__TypeAssignment_0
             {
-            pushFollow(FOLLOW_rule__JvmParameterizedTypeReference__TypeAssignment_0_in_rule__JvmParameterizedTypeReference__Group__0__Impl25339);
+            pushFollow(FOLLOW_rule__JvmParameterizedTypeReference__TypeAssignment_0_in_rule__JvmParameterizedTypeReference__Group__0__Impl25399);
             rule__JvmParameterizedTypeReference__TypeAssignment_0();
 
             state._fsp--;
@@ -36203,16 +36298,16 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__JvmParameterizedTypeReference__Group__1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12630:1: rule__JvmParameterizedTypeReference__Group__1 : rule__JvmParameterizedTypeReference__Group__1__Impl ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12660:1: rule__JvmParameterizedTypeReference__Group__1 : rule__JvmParameterizedTypeReference__Group__1__Impl ;
     public final void rule__JvmParameterizedTypeReference__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12634:1: ( rule__JvmParameterizedTypeReference__Group__1__Impl )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12635:2: rule__JvmParameterizedTypeReference__Group__1__Impl
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12664:1: ( rule__JvmParameterizedTypeReference__Group__1__Impl )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12665:2: rule__JvmParameterizedTypeReference__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__JvmParameterizedTypeReference__Group__1__Impl_in_rule__JvmParameterizedTypeReference__Group__125369);
+            pushFollow(FOLLOW_rule__JvmParameterizedTypeReference__Group__1__Impl_in_rule__JvmParameterizedTypeReference__Group__125429);
             rule__JvmParameterizedTypeReference__Group__1__Impl();
 
             state._fsp--;
@@ -36236,29 +36331,29 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__JvmParameterizedTypeReference__Group__1__Impl"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12641:1: rule__JvmParameterizedTypeReference__Group__1__Impl : ( ( rule__JvmParameterizedTypeReference__Group_1__0 )? ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12671:1: rule__JvmParameterizedTypeReference__Group__1__Impl : ( ( rule__JvmParameterizedTypeReference__Group_1__0 )? ) ;
     public final void rule__JvmParameterizedTypeReference__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12645:1: ( ( ( rule__JvmParameterizedTypeReference__Group_1__0 )? ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12646:1: ( ( rule__JvmParameterizedTypeReference__Group_1__0 )? )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12675:1: ( ( ( rule__JvmParameterizedTypeReference__Group_1__0 )? ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12676:1: ( ( rule__JvmParameterizedTypeReference__Group_1__0 )? )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12646:1: ( ( rule__JvmParameterizedTypeReference__Group_1__0 )? )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12647:1: ( rule__JvmParameterizedTypeReference__Group_1__0 )?
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12676:1: ( ( rule__JvmParameterizedTypeReference__Group_1__0 )? )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12677:1: ( rule__JvmParameterizedTypeReference__Group_1__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmParameterizedTypeReferenceAccess().getGroup_1()); 
             }
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12648:1: ( rule__JvmParameterizedTypeReference__Group_1__0 )?
-            int alt85=2;
-            alt85 = dfa85.predict(input);
-            switch (alt85) {
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12678:1: ( rule__JvmParameterizedTypeReference__Group_1__0 )?
+            int alt86=2;
+            alt86 = dfa86.predict(input);
+            switch (alt86) {
                 case 1 :
-                    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12648:2: rule__JvmParameterizedTypeReference__Group_1__0
+                    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12678:2: rule__JvmParameterizedTypeReference__Group_1__0
                     {
-                    pushFollow(FOLLOW_rule__JvmParameterizedTypeReference__Group_1__0_in_rule__JvmParameterizedTypeReference__Group__1__Impl25396);
+                    pushFollow(FOLLOW_rule__JvmParameterizedTypeReference__Group_1__0_in_rule__JvmParameterizedTypeReference__Group__1__Impl25456);
                     rule__JvmParameterizedTypeReference__Group_1__0();
 
                     state._fsp--;
@@ -36294,21 +36389,21 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__JvmParameterizedTypeReference__Group_1__0"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12662:1: rule__JvmParameterizedTypeReference__Group_1__0 : rule__JvmParameterizedTypeReference__Group_1__0__Impl rule__JvmParameterizedTypeReference__Group_1__1 ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12692:1: rule__JvmParameterizedTypeReference__Group_1__0 : rule__JvmParameterizedTypeReference__Group_1__0__Impl rule__JvmParameterizedTypeReference__Group_1__1 ;
     public final void rule__JvmParameterizedTypeReference__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12666:1: ( rule__JvmParameterizedTypeReference__Group_1__0__Impl rule__JvmParameterizedTypeReference__Group_1__1 )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12667:2: rule__JvmParameterizedTypeReference__Group_1__0__Impl rule__JvmParameterizedTypeReference__Group_1__1
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12696:1: ( rule__JvmParameterizedTypeReference__Group_1__0__Impl rule__JvmParameterizedTypeReference__Group_1__1 )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12697:2: rule__JvmParameterizedTypeReference__Group_1__0__Impl rule__JvmParameterizedTypeReference__Group_1__1
             {
-            pushFollow(FOLLOW_rule__JvmParameterizedTypeReference__Group_1__0__Impl_in_rule__JvmParameterizedTypeReference__Group_1__025431);
+            pushFollow(FOLLOW_rule__JvmParameterizedTypeReference__Group_1__0__Impl_in_rule__JvmParameterizedTypeReference__Group_1__025491);
             rule__JvmParameterizedTypeReference__Group_1__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__JvmParameterizedTypeReference__Group_1__1_in_rule__JvmParameterizedTypeReference__Group_1__025434);
+            pushFollow(FOLLOW_rule__JvmParameterizedTypeReference__Group_1__1_in_rule__JvmParameterizedTypeReference__Group_1__025494);
             rule__JvmParameterizedTypeReference__Group_1__1();
 
             state._fsp--;
@@ -36332,25 +36427,25 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__JvmParameterizedTypeReference__Group_1__0__Impl"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12674:1: rule__JvmParameterizedTypeReference__Group_1__0__Impl : ( ( '<' ) ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12704:1: rule__JvmParameterizedTypeReference__Group_1__0__Impl : ( ( '<' ) ) ;
     public final void rule__JvmParameterizedTypeReference__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12678:1: ( ( ( '<' ) ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12679:1: ( ( '<' ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12708:1: ( ( ( '<' ) ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12709:1: ( ( '<' ) )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12679:1: ( ( '<' ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12680:1: ( '<' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12709:1: ( ( '<' ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12710:1: ( '<' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmParameterizedTypeReferenceAccess().getLessThanSignKeyword_1_0()); 
             }
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12681:1: ( '<' )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12682:2: '<'
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12711:1: ( '<' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12712:2: '<'
             {
-            match(input,21,FOLLOW_21_in_rule__JvmParameterizedTypeReference__Group_1__0__Impl25463); if (state.failed) return ;
+            match(input,21,FOLLOW_21_in_rule__JvmParameterizedTypeReference__Group_1__0__Impl25523); if (state.failed) return ;
 
             }
 
@@ -36379,21 +36474,21 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__JvmParameterizedTypeReference__Group_1__1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12693:1: rule__JvmParameterizedTypeReference__Group_1__1 : rule__JvmParameterizedTypeReference__Group_1__1__Impl rule__JvmParameterizedTypeReference__Group_1__2 ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12723:1: rule__JvmParameterizedTypeReference__Group_1__1 : rule__JvmParameterizedTypeReference__Group_1__1__Impl rule__JvmParameterizedTypeReference__Group_1__2 ;
     public final void rule__JvmParameterizedTypeReference__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12697:1: ( rule__JvmParameterizedTypeReference__Group_1__1__Impl rule__JvmParameterizedTypeReference__Group_1__2 )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12698:2: rule__JvmParameterizedTypeReference__Group_1__1__Impl rule__JvmParameterizedTypeReference__Group_1__2
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12727:1: ( rule__JvmParameterizedTypeReference__Group_1__1__Impl rule__JvmParameterizedTypeReference__Group_1__2 )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12728:2: rule__JvmParameterizedTypeReference__Group_1__1__Impl rule__JvmParameterizedTypeReference__Group_1__2
             {
-            pushFollow(FOLLOW_rule__JvmParameterizedTypeReference__Group_1__1__Impl_in_rule__JvmParameterizedTypeReference__Group_1__125495);
+            pushFollow(FOLLOW_rule__JvmParameterizedTypeReference__Group_1__1__Impl_in_rule__JvmParameterizedTypeReference__Group_1__125555);
             rule__JvmParameterizedTypeReference__Group_1__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__JvmParameterizedTypeReference__Group_1__2_in_rule__JvmParameterizedTypeReference__Group_1__125498);
+            pushFollow(FOLLOW_rule__JvmParameterizedTypeReference__Group_1__2_in_rule__JvmParameterizedTypeReference__Group_1__125558);
             rule__JvmParameterizedTypeReference__Group_1__2();
 
             state._fsp--;
@@ -36417,25 +36512,25 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__JvmParameterizedTypeReference__Group_1__1__Impl"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12705:1: rule__JvmParameterizedTypeReference__Group_1__1__Impl : ( ( rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_1 ) ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12735:1: rule__JvmParameterizedTypeReference__Group_1__1__Impl : ( ( rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_1 ) ) ;
     public final void rule__JvmParameterizedTypeReference__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12709:1: ( ( ( rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_1 ) ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12710:1: ( ( rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_1 ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12739:1: ( ( ( rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_1 ) ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12740:1: ( ( rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_1 ) )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12710:1: ( ( rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_1 ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12711:1: ( rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_1 )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12740:1: ( ( rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_1 ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12741:1: ( rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmParameterizedTypeReferenceAccess().getArgumentsAssignment_1_1()); 
             }
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12712:1: ( rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_1 )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12712:2: rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_1
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12742:1: ( rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_1 )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12742:2: rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_1
             {
-            pushFollow(FOLLOW_rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_1_in_rule__JvmParameterizedTypeReference__Group_1__1__Impl25525);
+            pushFollow(FOLLOW_rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_1_in_rule__JvmParameterizedTypeReference__Group_1__1__Impl25585);
             rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_1();
 
             state._fsp--;
@@ -36468,21 +36563,21 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__JvmParameterizedTypeReference__Group_1__2"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12722:1: rule__JvmParameterizedTypeReference__Group_1__2 : rule__JvmParameterizedTypeReference__Group_1__2__Impl rule__JvmParameterizedTypeReference__Group_1__3 ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12752:1: rule__JvmParameterizedTypeReference__Group_1__2 : rule__JvmParameterizedTypeReference__Group_1__2__Impl rule__JvmParameterizedTypeReference__Group_1__3 ;
     public final void rule__JvmParameterizedTypeReference__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12726:1: ( rule__JvmParameterizedTypeReference__Group_1__2__Impl rule__JvmParameterizedTypeReference__Group_1__3 )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12727:2: rule__JvmParameterizedTypeReference__Group_1__2__Impl rule__JvmParameterizedTypeReference__Group_1__3
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12756:1: ( rule__JvmParameterizedTypeReference__Group_1__2__Impl rule__JvmParameterizedTypeReference__Group_1__3 )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12757:2: rule__JvmParameterizedTypeReference__Group_1__2__Impl rule__JvmParameterizedTypeReference__Group_1__3
             {
-            pushFollow(FOLLOW_rule__JvmParameterizedTypeReference__Group_1__2__Impl_in_rule__JvmParameterizedTypeReference__Group_1__225555);
+            pushFollow(FOLLOW_rule__JvmParameterizedTypeReference__Group_1__2__Impl_in_rule__JvmParameterizedTypeReference__Group_1__225615);
             rule__JvmParameterizedTypeReference__Group_1__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__JvmParameterizedTypeReference__Group_1__3_in_rule__JvmParameterizedTypeReference__Group_1__225558);
+            pushFollow(FOLLOW_rule__JvmParameterizedTypeReference__Group_1__3_in_rule__JvmParameterizedTypeReference__Group_1__225618);
             rule__JvmParameterizedTypeReference__Group_1__3();
 
             state._fsp--;
@@ -36506,37 +36601,37 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__JvmParameterizedTypeReference__Group_1__2__Impl"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12734:1: rule__JvmParameterizedTypeReference__Group_1__2__Impl : ( ( rule__JvmParameterizedTypeReference__Group_1_2__0 )* ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12764:1: rule__JvmParameterizedTypeReference__Group_1__2__Impl : ( ( rule__JvmParameterizedTypeReference__Group_1_2__0 )* ) ;
     public final void rule__JvmParameterizedTypeReference__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12738:1: ( ( ( rule__JvmParameterizedTypeReference__Group_1_2__0 )* ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12739:1: ( ( rule__JvmParameterizedTypeReference__Group_1_2__0 )* )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12768:1: ( ( ( rule__JvmParameterizedTypeReference__Group_1_2__0 )* ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12769:1: ( ( rule__JvmParameterizedTypeReference__Group_1_2__0 )* )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12739:1: ( ( rule__JvmParameterizedTypeReference__Group_1_2__0 )* )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12740:1: ( rule__JvmParameterizedTypeReference__Group_1_2__0 )*
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12769:1: ( ( rule__JvmParameterizedTypeReference__Group_1_2__0 )* )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12770:1: ( rule__JvmParameterizedTypeReference__Group_1_2__0 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmParameterizedTypeReferenceAccess().getGroup_1_2()); 
             }
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12741:1: ( rule__JvmParameterizedTypeReference__Group_1_2__0 )*
-            loop86:
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12771:1: ( rule__JvmParameterizedTypeReference__Group_1_2__0 )*
+            loop87:
             do {
-                int alt86=2;
-                int LA86_0 = input.LA(1);
+                int alt87=2;
+                int LA87_0 = input.LA(1);
 
-                if ( (LA86_0==39) ) {
-                    alt86=1;
+                if ( (LA87_0==39) ) {
+                    alt87=1;
                 }
 
 
-                switch (alt86) {
+                switch (alt87) {
             	case 1 :
-            	    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12741:2: rule__JvmParameterizedTypeReference__Group_1_2__0
+            	    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12771:2: rule__JvmParameterizedTypeReference__Group_1_2__0
             	    {
-            	    pushFollow(FOLLOW_rule__JvmParameterizedTypeReference__Group_1_2__0_in_rule__JvmParameterizedTypeReference__Group_1__2__Impl25585);
+            	    pushFollow(FOLLOW_rule__JvmParameterizedTypeReference__Group_1_2__0_in_rule__JvmParameterizedTypeReference__Group_1__2__Impl25645);
             	    rule__JvmParameterizedTypeReference__Group_1_2__0();
 
             	    state._fsp--;
@@ -36546,7 +36641,7 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
             	    break;
 
             	default :
-            	    break loop86;
+            	    break loop87;
                 }
             } while (true);
 
@@ -36575,16 +36670,16 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__JvmParameterizedTypeReference__Group_1__3"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12751:1: rule__JvmParameterizedTypeReference__Group_1__3 : rule__JvmParameterizedTypeReference__Group_1__3__Impl ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12781:1: rule__JvmParameterizedTypeReference__Group_1__3 : rule__JvmParameterizedTypeReference__Group_1__3__Impl ;
     public final void rule__JvmParameterizedTypeReference__Group_1__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12755:1: ( rule__JvmParameterizedTypeReference__Group_1__3__Impl )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12756:2: rule__JvmParameterizedTypeReference__Group_1__3__Impl
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12785:1: ( rule__JvmParameterizedTypeReference__Group_1__3__Impl )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12786:2: rule__JvmParameterizedTypeReference__Group_1__3__Impl
             {
-            pushFollow(FOLLOW_rule__JvmParameterizedTypeReference__Group_1__3__Impl_in_rule__JvmParameterizedTypeReference__Group_1__325616);
+            pushFollow(FOLLOW_rule__JvmParameterizedTypeReference__Group_1__3__Impl_in_rule__JvmParameterizedTypeReference__Group_1__325676);
             rule__JvmParameterizedTypeReference__Group_1__3__Impl();
 
             state._fsp--;
@@ -36608,22 +36703,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__JvmParameterizedTypeReference__Group_1__3__Impl"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12762:1: rule__JvmParameterizedTypeReference__Group_1__3__Impl : ( '>' ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12792:1: rule__JvmParameterizedTypeReference__Group_1__3__Impl : ( '>' ) ;
     public final void rule__JvmParameterizedTypeReference__Group_1__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12766:1: ( ( '>' ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12767:1: ( '>' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12796:1: ( ( '>' ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12797:1: ( '>' )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12767:1: ( '>' )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12768:1: '>'
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12797:1: ( '>' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12798:1: '>'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmParameterizedTypeReferenceAccess().getGreaterThanSignKeyword_1_3()); 
             }
-            match(input,20,FOLLOW_20_in_rule__JvmParameterizedTypeReference__Group_1__3__Impl25644); if (state.failed) return ;
+            match(input,20,FOLLOW_20_in_rule__JvmParameterizedTypeReference__Group_1__3__Impl25704); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getJvmParameterizedTypeReferenceAccess().getGreaterThanSignKeyword_1_3()); 
             }
@@ -36649,21 +36744,21 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__JvmParameterizedTypeReference__Group_1_2__0"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12789:1: rule__JvmParameterizedTypeReference__Group_1_2__0 : rule__JvmParameterizedTypeReference__Group_1_2__0__Impl rule__JvmParameterizedTypeReference__Group_1_2__1 ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12819:1: rule__JvmParameterizedTypeReference__Group_1_2__0 : rule__JvmParameterizedTypeReference__Group_1_2__0__Impl rule__JvmParameterizedTypeReference__Group_1_2__1 ;
     public final void rule__JvmParameterizedTypeReference__Group_1_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12793:1: ( rule__JvmParameterizedTypeReference__Group_1_2__0__Impl rule__JvmParameterizedTypeReference__Group_1_2__1 )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12794:2: rule__JvmParameterizedTypeReference__Group_1_2__0__Impl rule__JvmParameterizedTypeReference__Group_1_2__1
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12823:1: ( rule__JvmParameterizedTypeReference__Group_1_2__0__Impl rule__JvmParameterizedTypeReference__Group_1_2__1 )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12824:2: rule__JvmParameterizedTypeReference__Group_1_2__0__Impl rule__JvmParameterizedTypeReference__Group_1_2__1
             {
-            pushFollow(FOLLOW_rule__JvmParameterizedTypeReference__Group_1_2__0__Impl_in_rule__JvmParameterizedTypeReference__Group_1_2__025683);
+            pushFollow(FOLLOW_rule__JvmParameterizedTypeReference__Group_1_2__0__Impl_in_rule__JvmParameterizedTypeReference__Group_1_2__025743);
             rule__JvmParameterizedTypeReference__Group_1_2__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__JvmParameterizedTypeReference__Group_1_2__1_in_rule__JvmParameterizedTypeReference__Group_1_2__025686);
+            pushFollow(FOLLOW_rule__JvmParameterizedTypeReference__Group_1_2__1_in_rule__JvmParameterizedTypeReference__Group_1_2__025746);
             rule__JvmParameterizedTypeReference__Group_1_2__1();
 
             state._fsp--;
@@ -36687,22 +36782,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__JvmParameterizedTypeReference__Group_1_2__0__Impl"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12801:1: rule__JvmParameterizedTypeReference__Group_1_2__0__Impl : ( ',' ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12831:1: rule__JvmParameterizedTypeReference__Group_1_2__0__Impl : ( ',' ) ;
     public final void rule__JvmParameterizedTypeReference__Group_1_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12805:1: ( ( ',' ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12806:1: ( ',' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12835:1: ( ( ',' ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12836:1: ( ',' )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12806:1: ( ',' )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12807:1: ','
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12836:1: ( ',' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12837:1: ','
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmParameterizedTypeReferenceAccess().getCommaKeyword_1_2_0()); 
             }
-            match(input,39,FOLLOW_39_in_rule__JvmParameterizedTypeReference__Group_1_2__0__Impl25714); if (state.failed) return ;
+            match(input,39,FOLLOW_39_in_rule__JvmParameterizedTypeReference__Group_1_2__0__Impl25774); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getJvmParameterizedTypeReferenceAccess().getCommaKeyword_1_2_0()); 
             }
@@ -36728,16 +36823,16 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__JvmParameterizedTypeReference__Group_1_2__1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12820:1: rule__JvmParameterizedTypeReference__Group_1_2__1 : rule__JvmParameterizedTypeReference__Group_1_2__1__Impl ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12850:1: rule__JvmParameterizedTypeReference__Group_1_2__1 : rule__JvmParameterizedTypeReference__Group_1_2__1__Impl ;
     public final void rule__JvmParameterizedTypeReference__Group_1_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12824:1: ( rule__JvmParameterizedTypeReference__Group_1_2__1__Impl )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12825:2: rule__JvmParameterizedTypeReference__Group_1_2__1__Impl
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12854:1: ( rule__JvmParameterizedTypeReference__Group_1_2__1__Impl )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12855:2: rule__JvmParameterizedTypeReference__Group_1_2__1__Impl
             {
-            pushFollow(FOLLOW_rule__JvmParameterizedTypeReference__Group_1_2__1__Impl_in_rule__JvmParameterizedTypeReference__Group_1_2__125745);
+            pushFollow(FOLLOW_rule__JvmParameterizedTypeReference__Group_1_2__1__Impl_in_rule__JvmParameterizedTypeReference__Group_1_2__125805);
             rule__JvmParameterizedTypeReference__Group_1_2__1__Impl();
 
             state._fsp--;
@@ -36761,25 +36856,25 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__JvmParameterizedTypeReference__Group_1_2__1__Impl"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12831:1: rule__JvmParameterizedTypeReference__Group_1_2__1__Impl : ( ( rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_2_1 ) ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12861:1: rule__JvmParameterizedTypeReference__Group_1_2__1__Impl : ( ( rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_2_1 ) ) ;
     public final void rule__JvmParameterizedTypeReference__Group_1_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12835:1: ( ( ( rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_2_1 ) ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12836:1: ( ( rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_2_1 ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12865:1: ( ( ( rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_2_1 ) ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12866:1: ( ( rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_2_1 ) )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12836:1: ( ( rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_2_1 ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12837:1: ( rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_2_1 )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12866:1: ( ( rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_2_1 ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12867:1: ( rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_2_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmParameterizedTypeReferenceAccess().getArgumentsAssignment_1_2_1()); 
             }
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12838:1: ( rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_2_1 )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12838:2: rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_2_1
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12868:1: ( rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_2_1 )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12868:2: rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_2_1
             {
-            pushFollow(FOLLOW_rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_2_1_in_rule__JvmParameterizedTypeReference__Group_1_2__1__Impl25772);
+            pushFollow(FOLLOW_rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_2_1_in_rule__JvmParameterizedTypeReference__Group_1_2__1__Impl25832);
             rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_2_1();
 
             state._fsp--;
@@ -36812,21 +36907,21 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__JvmWildcardTypeReference__Group__0"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12852:1: rule__JvmWildcardTypeReference__Group__0 : rule__JvmWildcardTypeReference__Group__0__Impl rule__JvmWildcardTypeReference__Group__1 ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12882:1: rule__JvmWildcardTypeReference__Group__0 : rule__JvmWildcardTypeReference__Group__0__Impl rule__JvmWildcardTypeReference__Group__1 ;
     public final void rule__JvmWildcardTypeReference__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12856:1: ( rule__JvmWildcardTypeReference__Group__0__Impl rule__JvmWildcardTypeReference__Group__1 )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12857:2: rule__JvmWildcardTypeReference__Group__0__Impl rule__JvmWildcardTypeReference__Group__1
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12886:1: ( rule__JvmWildcardTypeReference__Group__0__Impl rule__JvmWildcardTypeReference__Group__1 )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12887:2: rule__JvmWildcardTypeReference__Group__0__Impl rule__JvmWildcardTypeReference__Group__1
             {
-            pushFollow(FOLLOW_rule__JvmWildcardTypeReference__Group__0__Impl_in_rule__JvmWildcardTypeReference__Group__025806);
+            pushFollow(FOLLOW_rule__JvmWildcardTypeReference__Group__0__Impl_in_rule__JvmWildcardTypeReference__Group__025866);
             rule__JvmWildcardTypeReference__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__JvmWildcardTypeReference__Group__1_in_rule__JvmWildcardTypeReference__Group__025809);
+            pushFollow(FOLLOW_rule__JvmWildcardTypeReference__Group__1_in_rule__JvmWildcardTypeReference__Group__025869);
             rule__JvmWildcardTypeReference__Group__1();
 
             state._fsp--;
@@ -36850,23 +36945,23 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__JvmWildcardTypeReference__Group__0__Impl"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12864:1: rule__JvmWildcardTypeReference__Group__0__Impl : ( () ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12894:1: rule__JvmWildcardTypeReference__Group__0__Impl : ( () ) ;
     public final void rule__JvmWildcardTypeReference__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12868:1: ( ( () ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12869:1: ( () )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12898:1: ( ( () ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12899:1: ( () )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12869:1: ( () )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12870:1: ()
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12899:1: ( () )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12900:1: ()
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmWildcardTypeReferenceAccess().getJvmWildcardTypeReferenceAction_0()); 
             }
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12871:1: ()
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12873:1: 
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12901:1: ()
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12903:1: 
             {
             }
 
@@ -36891,21 +36986,21 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__JvmWildcardTypeReference__Group__1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12883:1: rule__JvmWildcardTypeReference__Group__1 : rule__JvmWildcardTypeReference__Group__1__Impl rule__JvmWildcardTypeReference__Group__2 ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12913:1: rule__JvmWildcardTypeReference__Group__1 : rule__JvmWildcardTypeReference__Group__1__Impl rule__JvmWildcardTypeReference__Group__2 ;
     public final void rule__JvmWildcardTypeReference__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12887:1: ( rule__JvmWildcardTypeReference__Group__1__Impl rule__JvmWildcardTypeReference__Group__2 )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12888:2: rule__JvmWildcardTypeReference__Group__1__Impl rule__JvmWildcardTypeReference__Group__2
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12917:1: ( rule__JvmWildcardTypeReference__Group__1__Impl rule__JvmWildcardTypeReference__Group__2 )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12918:2: rule__JvmWildcardTypeReference__Group__1__Impl rule__JvmWildcardTypeReference__Group__2
             {
-            pushFollow(FOLLOW_rule__JvmWildcardTypeReference__Group__1__Impl_in_rule__JvmWildcardTypeReference__Group__125867);
+            pushFollow(FOLLOW_rule__JvmWildcardTypeReference__Group__1__Impl_in_rule__JvmWildcardTypeReference__Group__125927);
             rule__JvmWildcardTypeReference__Group__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__JvmWildcardTypeReference__Group__2_in_rule__JvmWildcardTypeReference__Group__125870);
+            pushFollow(FOLLOW_rule__JvmWildcardTypeReference__Group__2_in_rule__JvmWildcardTypeReference__Group__125930);
             rule__JvmWildcardTypeReference__Group__2();
 
             state._fsp--;
@@ -36929,22 +37024,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__JvmWildcardTypeReference__Group__1__Impl"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12895:1: rule__JvmWildcardTypeReference__Group__1__Impl : ( '?' ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12925:1: rule__JvmWildcardTypeReference__Group__1__Impl : ( '?' ) ;
     public final void rule__JvmWildcardTypeReference__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12899:1: ( ( '?' ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12900:1: ( '?' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12929:1: ( ( '?' ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12930:1: ( '?' )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12900:1: ( '?' )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12901:1: '?'
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12930:1: ( '?' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12931:1: '?'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmWildcardTypeReferenceAccess().getQuestionMarkKeyword_1()); 
             }
-            match(input,67,FOLLOW_67_in_rule__JvmWildcardTypeReference__Group__1__Impl25898); if (state.failed) return ;
+            match(input,67,FOLLOW_67_in_rule__JvmWildcardTypeReference__Group__1__Impl25958); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getJvmWildcardTypeReferenceAccess().getQuestionMarkKeyword_1()); 
             }
@@ -36970,16 +37065,16 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__JvmWildcardTypeReference__Group__2"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12914:1: rule__JvmWildcardTypeReference__Group__2 : rule__JvmWildcardTypeReference__Group__2__Impl ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12944:1: rule__JvmWildcardTypeReference__Group__2 : rule__JvmWildcardTypeReference__Group__2__Impl ;
     public final void rule__JvmWildcardTypeReference__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12918:1: ( rule__JvmWildcardTypeReference__Group__2__Impl )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12919:2: rule__JvmWildcardTypeReference__Group__2__Impl
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12948:1: ( rule__JvmWildcardTypeReference__Group__2__Impl )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12949:2: rule__JvmWildcardTypeReference__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__JvmWildcardTypeReference__Group__2__Impl_in_rule__JvmWildcardTypeReference__Group__225929);
+            pushFollow(FOLLOW_rule__JvmWildcardTypeReference__Group__2__Impl_in_rule__JvmWildcardTypeReference__Group__225989);
             rule__JvmWildcardTypeReference__Group__2__Impl();
 
             state._fsp--;
@@ -37003,33 +37098,33 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__JvmWildcardTypeReference__Group__2__Impl"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12925:1: rule__JvmWildcardTypeReference__Group__2__Impl : ( ( rule__JvmWildcardTypeReference__Alternatives_2 )? ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12955:1: rule__JvmWildcardTypeReference__Group__2__Impl : ( ( rule__JvmWildcardTypeReference__Alternatives_2 )? ) ;
     public final void rule__JvmWildcardTypeReference__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12929:1: ( ( ( rule__JvmWildcardTypeReference__Alternatives_2 )? ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12930:1: ( ( rule__JvmWildcardTypeReference__Alternatives_2 )? )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12959:1: ( ( ( rule__JvmWildcardTypeReference__Alternatives_2 )? ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12960:1: ( ( rule__JvmWildcardTypeReference__Alternatives_2 )? )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12930:1: ( ( rule__JvmWildcardTypeReference__Alternatives_2 )? )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12931:1: ( rule__JvmWildcardTypeReference__Alternatives_2 )?
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12960:1: ( ( rule__JvmWildcardTypeReference__Alternatives_2 )? )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12961:1: ( rule__JvmWildcardTypeReference__Alternatives_2 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmWildcardTypeReferenceAccess().getAlternatives_2()); 
             }
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12932:1: ( rule__JvmWildcardTypeReference__Alternatives_2 )?
-            int alt87=2;
-            int LA87_0 = input.LA(1);
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12962:1: ( rule__JvmWildcardTypeReference__Alternatives_2 )?
+            int alt88=2;
+            int LA88_0 = input.LA(1);
 
-            if ( (LA87_0==33||LA87_0==68) ) {
-                alt87=1;
+            if ( (LA88_0==33||LA88_0==68) ) {
+                alt88=1;
             }
-            switch (alt87) {
+            switch (alt88) {
                 case 1 :
-                    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12932:2: rule__JvmWildcardTypeReference__Alternatives_2
+                    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12962:2: rule__JvmWildcardTypeReference__Alternatives_2
                     {
-                    pushFollow(FOLLOW_rule__JvmWildcardTypeReference__Alternatives_2_in_rule__JvmWildcardTypeReference__Group__2__Impl25956);
+                    pushFollow(FOLLOW_rule__JvmWildcardTypeReference__Alternatives_2_in_rule__JvmWildcardTypeReference__Group__2__Impl26016);
                     rule__JvmWildcardTypeReference__Alternatives_2();
 
                     state._fsp--;
@@ -37065,21 +37160,21 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__JvmUpperBound__Group__0"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12948:1: rule__JvmUpperBound__Group__0 : rule__JvmUpperBound__Group__0__Impl rule__JvmUpperBound__Group__1 ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12978:1: rule__JvmUpperBound__Group__0 : rule__JvmUpperBound__Group__0__Impl rule__JvmUpperBound__Group__1 ;
     public final void rule__JvmUpperBound__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12952:1: ( rule__JvmUpperBound__Group__0__Impl rule__JvmUpperBound__Group__1 )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12953:2: rule__JvmUpperBound__Group__0__Impl rule__JvmUpperBound__Group__1
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12982:1: ( rule__JvmUpperBound__Group__0__Impl rule__JvmUpperBound__Group__1 )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12983:2: rule__JvmUpperBound__Group__0__Impl rule__JvmUpperBound__Group__1
             {
-            pushFollow(FOLLOW_rule__JvmUpperBound__Group__0__Impl_in_rule__JvmUpperBound__Group__025993);
+            pushFollow(FOLLOW_rule__JvmUpperBound__Group__0__Impl_in_rule__JvmUpperBound__Group__026053);
             rule__JvmUpperBound__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__JvmUpperBound__Group__1_in_rule__JvmUpperBound__Group__025996);
+            pushFollow(FOLLOW_rule__JvmUpperBound__Group__1_in_rule__JvmUpperBound__Group__026056);
             rule__JvmUpperBound__Group__1();
 
             state._fsp--;
@@ -37103,22 +37198,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__JvmUpperBound__Group__0__Impl"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12960:1: rule__JvmUpperBound__Group__0__Impl : ( 'extends' ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12990:1: rule__JvmUpperBound__Group__0__Impl : ( 'extends' ) ;
     public final void rule__JvmUpperBound__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12964:1: ( ( 'extends' ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12965:1: ( 'extends' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12994:1: ( ( 'extends' ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12995:1: ( 'extends' )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12965:1: ( 'extends' )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12966:1: 'extends'
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12995:1: ( 'extends' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12996:1: 'extends'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmUpperBoundAccess().getExtendsKeyword_0()); 
             }
-            match(input,68,FOLLOW_68_in_rule__JvmUpperBound__Group__0__Impl26024); if (state.failed) return ;
+            match(input,68,FOLLOW_68_in_rule__JvmUpperBound__Group__0__Impl26084); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getJvmUpperBoundAccess().getExtendsKeyword_0()); 
             }
@@ -37144,16 +37239,16 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__JvmUpperBound__Group__1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12979:1: rule__JvmUpperBound__Group__1 : rule__JvmUpperBound__Group__1__Impl ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13009:1: rule__JvmUpperBound__Group__1 : rule__JvmUpperBound__Group__1__Impl ;
     public final void rule__JvmUpperBound__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12983:1: ( rule__JvmUpperBound__Group__1__Impl )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12984:2: rule__JvmUpperBound__Group__1__Impl
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13013:1: ( rule__JvmUpperBound__Group__1__Impl )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13014:2: rule__JvmUpperBound__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__JvmUpperBound__Group__1__Impl_in_rule__JvmUpperBound__Group__126055);
+            pushFollow(FOLLOW_rule__JvmUpperBound__Group__1__Impl_in_rule__JvmUpperBound__Group__126115);
             rule__JvmUpperBound__Group__1__Impl();
 
             state._fsp--;
@@ -37177,25 +37272,25 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__JvmUpperBound__Group__1__Impl"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12990:1: rule__JvmUpperBound__Group__1__Impl : ( ( rule__JvmUpperBound__TypeReferenceAssignment_1 ) ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13020:1: rule__JvmUpperBound__Group__1__Impl : ( ( rule__JvmUpperBound__TypeReferenceAssignment_1 ) ) ;
     public final void rule__JvmUpperBound__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12994:1: ( ( ( rule__JvmUpperBound__TypeReferenceAssignment_1 ) ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12995:1: ( ( rule__JvmUpperBound__TypeReferenceAssignment_1 ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13024:1: ( ( ( rule__JvmUpperBound__TypeReferenceAssignment_1 ) ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13025:1: ( ( rule__JvmUpperBound__TypeReferenceAssignment_1 ) )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12995:1: ( ( rule__JvmUpperBound__TypeReferenceAssignment_1 ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12996:1: ( rule__JvmUpperBound__TypeReferenceAssignment_1 )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13025:1: ( ( rule__JvmUpperBound__TypeReferenceAssignment_1 ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13026:1: ( rule__JvmUpperBound__TypeReferenceAssignment_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmUpperBoundAccess().getTypeReferenceAssignment_1()); 
             }
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12997:1: ( rule__JvmUpperBound__TypeReferenceAssignment_1 )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12997:2: rule__JvmUpperBound__TypeReferenceAssignment_1
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13027:1: ( rule__JvmUpperBound__TypeReferenceAssignment_1 )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13027:2: rule__JvmUpperBound__TypeReferenceAssignment_1
             {
-            pushFollow(FOLLOW_rule__JvmUpperBound__TypeReferenceAssignment_1_in_rule__JvmUpperBound__Group__1__Impl26082);
+            pushFollow(FOLLOW_rule__JvmUpperBound__TypeReferenceAssignment_1_in_rule__JvmUpperBound__Group__1__Impl26142);
             rule__JvmUpperBound__TypeReferenceAssignment_1();
 
             state._fsp--;
@@ -37228,21 +37323,21 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__JvmUpperBoundAnded__Group__0"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13011:1: rule__JvmUpperBoundAnded__Group__0 : rule__JvmUpperBoundAnded__Group__0__Impl rule__JvmUpperBoundAnded__Group__1 ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13041:1: rule__JvmUpperBoundAnded__Group__0 : rule__JvmUpperBoundAnded__Group__0__Impl rule__JvmUpperBoundAnded__Group__1 ;
     public final void rule__JvmUpperBoundAnded__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13015:1: ( rule__JvmUpperBoundAnded__Group__0__Impl rule__JvmUpperBoundAnded__Group__1 )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13016:2: rule__JvmUpperBoundAnded__Group__0__Impl rule__JvmUpperBoundAnded__Group__1
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13045:1: ( rule__JvmUpperBoundAnded__Group__0__Impl rule__JvmUpperBoundAnded__Group__1 )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13046:2: rule__JvmUpperBoundAnded__Group__0__Impl rule__JvmUpperBoundAnded__Group__1
             {
-            pushFollow(FOLLOW_rule__JvmUpperBoundAnded__Group__0__Impl_in_rule__JvmUpperBoundAnded__Group__026116);
+            pushFollow(FOLLOW_rule__JvmUpperBoundAnded__Group__0__Impl_in_rule__JvmUpperBoundAnded__Group__026176);
             rule__JvmUpperBoundAnded__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__JvmUpperBoundAnded__Group__1_in_rule__JvmUpperBoundAnded__Group__026119);
+            pushFollow(FOLLOW_rule__JvmUpperBoundAnded__Group__1_in_rule__JvmUpperBoundAnded__Group__026179);
             rule__JvmUpperBoundAnded__Group__1();
 
             state._fsp--;
@@ -37266,22 +37361,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__JvmUpperBoundAnded__Group__0__Impl"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13023:1: rule__JvmUpperBoundAnded__Group__0__Impl : ( '&' ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13053:1: rule__JvmUpperBoundAnded__Group__0__Impl : ( '&' ) ;
     public final void rule__JvmUpperBoundAnded__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13027:1: ( ( '&' ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13028:1: ( '&' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13057:1: ( ( '&' ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13058:1: ( '&' )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13028:1: ( '&' )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13029:1: '&'
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13058:1: ( '&' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13059:1: '&'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmUpperBoundAndedAccess().getAmpersandKeyword_0()); 
             }
-            match(input,69,FOLLOW_69_in_rule__JvmUpperBoundAnded__Group__0__Impl26147); if (state.failed) return ;
+            match(input,69,FOLLOW_69_in_rule__JvmUpperBoundAnded__Group__0__Impl26207); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getJvmUpperBoundAndedAccess().getAmpersandKeyword_0()); 
             }
@@ -37307,16 +37402,16 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__JvmUpperBoundAnded__Group__1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13042:1: rule__JvmUpperBoundAnded__Group__1 : rule__JvmUpperBoundAnded__Group__1__Impl ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13072:1: rule__JvmUpperBoundAnded__Group__1 : rule__JvmUpperBoundAnded__Group__1__Impl ;
     public final void rule__JvmUpperBoundAnded__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13046:1: ( rule__JvmUpperBoundAnded__Group__1__Impl )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13047:2: rule__JvmUpperBoundAnded__Group__1__Impl
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13076:1: ( rule__JvmUpperBoundAnded__Group__1__Impl )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13077:2: rule__JvmUpperBoundAnded__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__JvmUpperBoundAnded__Group__1__Impl_in_rule__JvmUpperBoundAnded__Group__126178);
+            pushFollow(FOLLOW_rule__JvmUpperBoundAnded__Group__1__Impl_in_rule__JvmUpperBoundAnded__Group__126238);
             rule__JvmUpperBoundAnded__Group__1__Impl();
 
             state._fsp--;
@@ -37340,25 +37435,25 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__JvmUpperBoundAnded__Group__1__Impl"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13053:1: rule__JvmUpperBoundAnded__Group__1__Impl : ( ( rule__JvmUpperBoundAnded__TypeReferenceAssignment_1 ) ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13083:1: rule__JvmUpperBoundAnded__Group__1__Impl : ( ( rule__JvmUpperBoundAnded__TypeReferenceAssignment_1 ) ) ;
     public final void rule__JvmUpperBoundAnded__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13057:1: ( ( ( rule__JvmUpperBoundAnded__TypeReferenceAssignment_1 ) ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13058:1: ( ( rule__JvmUpperBoundAnded__TypeReferenceAssignment_1 ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13087:1: ( ( ( rule__JvmUpperBoundAnded__TypeReferenceAssignment_1 ) ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13088:1: ( ( rule__JvmUpperBoundAnded__TypeReferenceAssignment_1 ) )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13058:1: ( ( rule__JvmUpperBoundAnded__TypeReferenceAssignment_1 ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13059:1: ( rule__JvmUpperBoundAnded__TypeReferenceAssignment_1 )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13088:1: ( ( rule__JvmUpperBoundAnded__TypeReferenceAssignment_1 ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13089:1: ( rule__JvmUpperBoundAnded__TypeReferenceAssignment_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmUpperBoundAndedAccess().getTypeReferenceAssignment_1()); 
             }
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13060:1: ( rule__JvmUpperBoundAnded__TypeReferenceAssignment_1 )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13060:2: rule__JvmUpperBoundAnded__TypeReferenceAssignment_1
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13090:1: ( rule__JvmUpperBoundAnded__TypeReferenceAssignment_1 )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13090:2: rule__JvmUpperBoundAnded__TypeReferenceAssignment_1
             {
-            pushFollow(FOLLOW_rule__JvmUpperBoundAnded__TypeReferenceAssignment_1_in_rule__JvmUpperBoundAnded__Group__1__Impl26205);
+            pushFollow(FOLLOW_rule__JvmUpperBoundAnded__TypeReferenceAssignment_1_in_rule__JvmUpperBoundAnded__Group__1__Impl26265);
             rule__JvmUpperBoundAnded__TypeReferenceAssignment_1();
 
             state._fsp--;
@@ -37391,21 +37486,21 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__JvmLowerBound__Group__0"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13074:1: rule__JvmLowerBound__Group__0 : rule__JvmLowerBound__Group__0__Impl rule__JvmLowerBound__Group__1 ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13104:1: rule__JvmLowerBound__Group__0 : rule__JvmLowerBound__Group__0__Impl rule__JvmLowerBound__Group__1 ;
     public final void rule__JvmLowerBound__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13078:1: ( rule__JvmLowerBound__Group__0__Impl rule__JvmLowerBound__Group__1 )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13079:2: rule__JvmLowerBound__Group__0__Impl rule__JvmLowerBound__Group__1
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13108:1: ( rule__JvmLowerBound__Group__0__Impl rule__JvmLowerBound__Group__1 )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13109:2: rule__JvmLowerBound__Group__0__Impl rule__JvmLowerBound__Group__1
             {
-            pushFollow(FOLLOW_rule__JvmLowerBound__Group__0__Impl_in_rule__JvmLowerBound__Group__026239);
+            pushFollow(FOLLOW_rule__JvmLowerBound__Group__0__Impl_in_rule__JvmLowerBound__Group__026299);
             rule__JvmLowerBound__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__JvmLowerBound__Group__1_in_rule__JvmLowerBound__Group__026242);
+            pushFollow(FOLLOW_rule__JvmLowerBound__Group__1_in_rule__JvmLowerBound__Group__026302);
             rule__JvmLowerBound__Group__1();
 
             state._fsp--;
@@ -37429,22 +37524,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__JvmLowerBound__Group__0__Impl"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13086:1: rule__JvmLowerBound__Group__0__Impl : ( 'super' ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13116:1: rule__JvmLowerBound__Group__0__Impl : ( 'super' ) ;
     public final void rule__JvmLowerBound__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13090:1: ( ( 'super' ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13091:1: ( 'super' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13120:1: ( ( 'super' ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13121:1: ( 'super' )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13091:1: ( 'super' )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13092:1: 'super'
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13121:1: ( 'super' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13122:1: 'super'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmLowerBoundAccess().getSuperKeyword_0()); 
             }
-            match(input,33,FOLLOW_33_in_rule__JvmLowerBound__Group__0__Impl26270); if (state.failed) return ;
+            match(input,33,FOLLOW_33_in_rule__JvmLowerBound__Group__0__Impl26330); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getJvmLowerBoundAccess().getSuperKeyword_0()); 
             }
@@ -37470,16 +37565,16 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__JvmLowerBound__Group__1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13105:1: rule__JvmLowerBound__Group__1 : rule__JvmLowerBound__Group__1__Impl ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13135:1: rule__JvmLowerBound__Group__1 : rule__JvmLowerBound__Group__1__Impl ;
     public final void rule__JvmLowerBound__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13109:1: ( rule__JvmLowerBound__Group__1__Impl )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13110:2: rule__JvmLowerBound__Group__1__Impl
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13139:1: ( rule__JvmLowerBound__Group__1__Impl )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13140:2: rule__JvmLowerBound__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__JvmLowerBound__Group__1__Impl_in_rule__JvmLowerBound__Group__126301);
+            pushFollow(FOLLOW_rule__JvmLowerBound__Group__1__Impl_in_rule__JvmLowerBound__Group__126361);
             rule__JvmLowerBound__Group__1__Impl();
 
             state._fsp--;
@@ -37503,25 +37598,25 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__JvmLowerBound__Group__1__Impl"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13116:1: rule__JvmLowerBound__Group__1__Impl : ( ( rule__JvmLowerBound__TypeReferenceAssignment_1 ) ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13146:1: rule__JvmLowerBound__Group__1__Impl : ( ( rule__JvmLowerBound__TypeReferenceAssignment_1 ) ) ;
     public final void rule__JvmLowerBound__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13120:1: ( ( ( rule__JvmLowerBound__TypeReferenceAssignment_1 ) ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13121:1: ( ( rule__JvmLowerBound__TypeReferenceAssignment_1 ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13150:1: ( ( ( rule__JvmLowerBound__TypeReferenceAssignment_1 ) ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13151:1: ( ( rule__JvmLowerBound__TypeReferenceAssignment_1 ) )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13121:1: ( ( rule__JvmLowerBound__TypeReferenceAssignment_1 ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13122:1: ( rule__JvmLowerBound__TypeReferenceAssignment_1 )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13151:1: ( ( rule__JvmLowerBound__TypeReferenceAssignment_1 ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13152:1: ( rule__JvmLowerBound__TypeReferenceAssignment_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmLowerBoundAccess().getTypeReferenceAssignment_1()); 
             }
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13123:1: ( rule__JvmLowerBound__TypeReferenceAssignment_1 )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13123:2: rule__JvmLowerBound__TypeReferenceAssignment_1
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13153:1: ( rule__JvmLowerBound__TypeReferenceAssignment_1 )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13153:2: rule__JvmLowerBound__TypeReferenceAssignment_1
             {
-            pushFollow(FOLLOW_rule__JvmLowerBound__TypeReferenceAssignment_1_in_rule__JvmLowerBound__Group__1__Impl26328);
+            pushFollow(FOLLOW_rule__JvmLowerBound__TypeReferenceAssignment_1_in_rule__JvmLowerBound__Group__1__Impl26388);
             rule__JvmLowerBound__TypeReferenceAssignment_1();
 
             state._fsp--;
@@ -37554,22 +37649,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__StyleSheet__ImportsAssignment_0"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13140:1: rule__StyleSheet__ImportsAssignment_0 : ( ruleImport ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13170:1: rule__StyleSheet__ImportsAssignment_0 : ( ruleImport ) ;
     public final void rule__StyleSheet__ImportsAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13144:1: ( ( ruleImport ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13145:1: ( ruleImport )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13174:1: ( ( ruleImport ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13175:1: ( ruleImport )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13145:1: ( ruleImport )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13146:1: ruleImport
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13175:1: ( ruleImport )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13176:1: ruleImport
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getStyleSheetAccess().getImportsImportParserRuleCall_0_0()); 
             }
-            pushFollow(FOLLOW_ruleImport_in_rule__StyleSheet__ImportsAssignment_026369);
+            pushFollow(FOLLOW_ruleImport_in_rule__StyleSheet__ImportsAssignment_026429);
             ruleImport();
 
             state._fsp--;
@@ -37599,22 +37694,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__StyleSheet__NameAssignment_2"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13155:1: rule__StyleSheet__NameAssignment_2 : ( ruleQualifiedName ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13185:1: rule__StyleSheet__NameAssignment_2 : ( ruleQualifiedName ) ;
     public final void rule__StyleSheet__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13159:1: ( ( ruleQualifiedName ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13160:1: ( ruleQualifiedName )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13189:1: ( ( ruleQualifiedName ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13190:1: ( ruleQualifiedName )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13160:1: ( ruleQualifiedName )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13161:1: ruleQualifiedName
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13190:1: ( ruleQualifiedName )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13191:1: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getStyleSheetAccess().getNameQualifiedNameParserRuleCall_2_0()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__StyleSheet__NameAssignment_226400);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__StyleSheet__NameAssignment_226460);
             ruleQualifiedName();
 
             state._fsp--;
@@ -37644,28 +37739,28 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__StyleSheet__DiagramMappingAssignment_4"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13170:1: rule__StyleSheet__DiagramMappingAssignment_4 : ( ( ruleQualifiedName ) ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13200:1: rule__StyleSheet__DiagramMappingAssignment_4 : ( ( ruleQualifiedName ) ) ;
     public final void rule__StyleSheet__DiagramMappingAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13174:1: ( ( ( ruleQualifiedName ) ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13175:1: ( ( ruleQualifiedName ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13204:1: ( ( ( ruleQualifiedName ) ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13205:1: ( ( ruleQualifiedName ) )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13175:1: ( ( ruleQualifiedName ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13176:1: ( ruleQualifiedName )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13205:1: ( ( ruleQualifiedName ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13206:1: ( ruleQualifiedName )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getStyleSheetAccess().getDiagramMappingDiagramMappingCrossReference_4_0()); 
             }
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13177:1: ( ruleQualifiedName )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13178:1: ruleQualifiedName
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13207:1: ( ruleQualifiedName )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13208:1: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getStyleSheetAccess().getDiagramMappingDiagramMappingQualifiedNameParserRuleCall_4_0_1()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__StyleSheet__DiagramMappingAssignment_426435);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__StyleSheet__DiagramMappingAssignment_426495);
             ruleQualifiedName();
 
             state._fsp--;
@@ -37701,22 +37796,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__StyleSheet__StylesAssignment_5"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13189:1: rule__StyleSheet__StylesAssignment_5 : ( ruleStyle ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13219:1: rule__StyleSheet__StylesAssignment_5 : ( ruleStyle ) ;
     public final void rule__StyleSheet__StylesAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13193:1: ( ( ruleStyle ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13194:1: ( ruleStyle )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13223:1: ( ( ruleStyle ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13224:1: ( ruleStyle )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13194:1: ( ruleStyle )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13195:1: ruleStyle
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13224:1: ( ruleStyle )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13225:1: ruleStyle
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getStyleSheetAccess().getStylesStyleParserRuleCall_5_0()); 
             }
-            pushFollow(FOLLOW_ruleStyle_in_rule__StyleSheet__StylesAssignment_526470);
+            pushFollow(FOLLOW_ruleStyle_in_rule__StyleSheet__StylesAssignment_526530);
             ruleStyle();
 
             state._fsp--;
@@ -37746,22 +37841,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Import__ImportedNamespaceAssignment_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13204:1: rule__Import__ImportedNamespaceAssignment_1 : ( ruleQualifiedNameWithWildcard ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13234:1: rule__Import__ImportedNamespaceAssignment_1 : ( ruleQualifiedNameWithWildcard ) ;
     public final void rule__Import__ImportedNamespaceAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13208:1: ( ( ruleQualifiedNameWithWildcard ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13209:1: ( ruleQualifiedNameWithWildcard )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13238:1: ( ( ruleQualifiedNameWithWildcard ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13239:1: ( ruleQualifiedNameWithWildcard )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13209:1: ( ruleQualifiedNameWithWildcard )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13210:1: ruleQualifiedNameWithWildcard
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13239:1: ( ruleQualifiedNameWithWildcard )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13240:1: ruleQualifiedNameWithWildcard
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedNameWithWildcard_in_rule__Import__ImportedNamespaceAssignment_126501);
+            pushFollow(FOLLOW_ruleQualifiedNameWithWildcard_in_rule__Import__ImportedNamespaceAssignment_126561);
             ruleQualifiedNameWithWildcard();
 
             state._fsp--;
@@ -37791,28 +37886,28 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Style__MappingsAssignment_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13219:1: rule__Style__MappingsAssignment_1 : ( ( ruleQualifiedName ) ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13249:1: rule__Style__MappingsAssignment_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Style__MappingsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13223:1: ( ( ( ruleQualifiedName ) ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13224:1: ( ( ruleQualifiedName ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13253:1: ( ( ( ruleQualifiedName ) ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13254:1: ( ( ruleQualifiedName ) )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13224:1: ( ( ruleQualifiedName ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13225:1: ( ruleQualifiedName )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13254:1: ( ( ruleQualifiedName ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13255:1: ( ruleQualifiedName )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getStyleAccess().getMappingsAbstractMappingCrossReference_1_0()); 
             }
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13226:1: ( ruleQualifiedName )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13227:1: ruleQualifiedName
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13256:1: ( ruleQualifiedName )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13257:1: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getStyleAccess().getMappingsAbstractMappingQualifiedNameParserRuleCall_1_0_1()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Style__MappingsAssignment_126536);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Style__MappingsAssignment_126596);
             ruleQualifiedName();
 
             state._fsp--;
@@ -37848,28 +37943,28 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Style__MappingsAssignment_2_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13238:1: rule__Style__MappingsAssignment_2_1 : ( ( ruleQualifiedName ) ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13268:1: rule__Style__MappingsAssignment_2_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Style__MappingsAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13242:1: ( ( ( ruleQualifiedName ) ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13243:1: ( ( ruleQualifiedName ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13272:1: ( ( ( ruleQualifiedName ) ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13273:1: ( ( ruleQualifiedName ) )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13243:1: ( ( ruleQualifiedName ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13244:1: ( ruleQualifiedName )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13273:1: ( ( ruleQualifiedName ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13274:1: ( ruleQualifiedName )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getStyleAccess().getMappingsAbstractMappingCrossReference_2_1_0()); 
             }
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13245:1: ( ruleQualifiedName )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13246:1: ruleQualifiedName
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13275:1: ( ruleQualifiedName )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13276:1: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getStyleAccess().getMappingsAbstractMappingQualifiedNameParserRuleCall_2_1_0_1()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Style__MappingsAssignment_2_126575);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Style__MappingsAssignment_2_126635);
             ruleQualifiedName();
 
             state._fsp--;
@@ -37905,22 +38000,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Style__JavaClassAssignment_3_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13257:1: rule__Style__JavaClassAssignment_3_1 : ( ruleJvmTypeReference ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13287:1: rule__Style__JavaClassAssignment_3_1 : ( ruleJvmTypeReference ) ;
     public final void rule__Style__JavaClassAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13261:1: ( ( ruleJvmTypeReference ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13262:1: ( ruleJvmTypeReference )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13291:1: ( ( ruleJvmTypeReference ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13292:1: ( ruleJvmTypeReference )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13262:1: ( ruleJvmTypeReference )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13263:1: ruleJvmTypeReference
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13292:1: ( ruleJvmTypeReference )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13293:1: ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getStyleAccess().getJavaClassJvmTypeReferenceParserRuleCall_3_1_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__Style__JavaClassAssignment_3_126610);
+            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__Style__JavaClassAssignment_3_126670);
             ruleJvmTypeReference();
 
             state._fsp--;
@@ -37950,22 +38045,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Style__ExpressionAssignment_4"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13272:1: rule__Style__ExpressionAssignment_4 : ( ruleXBlockExpression ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13302:1: rule__Style__ExpressionAssignment_4 : ( ruleXBlockExpression ) ;
     public final void rule__Style__ExpressionAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13276:1: ( ( ruleXBlockExpression ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13277:1: ( ruleXBlockExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13306:1: ( ( ruleXBlockExpression ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13307:1: ( ruleXBlockExpression )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13277:1: ( ruleXBlockExpression )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13278:1: ruleXBlockExpression
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13307:1: ( ruleXBlockExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13308:1: ruleXBlockExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getStyleAccess().getExpressionXBlockExpressionParserRuleCall_4_0()); 
             }
-            pushFollow(FOLLOW_ruleXBlockExpression_in_rule__Style__ExpressionAssignment_426641);
+            pushFollow(FOLLOW_ruleXBlockExpression_in_rule__Style__ExpressionAssignment_426701);
             ruleXBlockExpression();
 
             state._fsp--;
@@ -37995,22 +38090,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XColorLiteral__ColorAssignment"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13287:1: rule__XColorLiteral__ColorAssignment : ( RULE_COLOR ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13317:1: rule__XColorLiteral__ColorAssignment : ( RULE_COLOR ) ;
     public final void rule__XColorLiteral__ColorAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13291:1: ( ( RULE_COLOR ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13292:1: ( RULE_COLOR )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13321:1: ( ( RULE_COLOR ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13322:1: ( RULE_COLOR )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13292:1: ( RULE_COLOR )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13293:1: RULE_COLOR
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13322:1: ( RULE_COLOR )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13323:1: RULE_COLOR
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXColorLiteralAccess().getColorColorTerminalRuleCall_0()); 
             }
-            match(input,RULE_COLOR,FOLLOW_RULE_COLOR_in_rule__XColorLiteral__ColorAssignment26672); if (state.failed) return ;
+            match(input,RULE_COLOR,FOLLOW_RULE_COLOR_in_rule__XColorLiteral__ColorAssignment26732); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getXColorLiteralAccess().getColorColorTerminalRuleCall_0()); 
             }
@@ -38036,28 +38131,28 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XAssignment__FeatureAssignment_0_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13302:1: rule__XAssignment__FeatureAssignment_0_1 : ( ( ruleValidID ) ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13332:1: rule__XAssignment__FeatureAssignment_0_1 : ( ( ruleValidID ) ) ;
     public final void rule__XAssignment__FeatureAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13306:1: ( ( ( ruleValidID ) ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13307:1: ( ( ruleValidID ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13336:1: ( ( ( ruleValidID ) ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13337:1: ( ( ruleValidID ) )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13307:1: ( ( ruleValidID ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13308:1: ( ruleValidID )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13337:1: ( ( ruleValidID ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13338:1: ( ruleValidID )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXAssignmentAccess().getFeatureJvmIdentifiableElementCrossReference_0_1_0()); 
             }
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13309:1: ( ruleValidID )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13310:1: ruleValidID
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13339:1: ( ruleValidID )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13340:1: ruleValidID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXAssignmentAccess().getFeatureJvmIdentifiableElementValidIDParserRuleCall_0_1_0_1()); 
             }
-            pushFollow(FOLLOW_ruleValidID_in_rule__XAssignment__FeatureAssignment_0_126707);
+            pushFollow(FOLLOW_ruleValidID_in_rule__XAssignment__FeatureAssignment_0_126767);
             ruleValidID();
 
             state._fsp--;
@@ -38093,22 +38188,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XAssignment__ValueAssignment_0_3"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13321:1: rule__XAssignment__ValueAssignment_0_3 : ( ruleXAssignment ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13351:1: rule__XAssignment__ValueAssignment_0_3 : ( ruleXAssignment ) ;
     public final void rule__XAssignment__ValueAssignment_0_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13325:1: ( ( ruleXAssignment ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13326:1: ( ruleXAssignment )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13355:1: ( ( ruleXAssignment ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13356:1: ( ruleXAssignment )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13326:1: ( ruleXAssignment )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13327:1: ruleXAssignment
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13356:1: ( ruleXAssignment )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13357:1: ruleXAssignment
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXAssignmentAccess().getValueXAssignmentParserRuleCall_0_3_0()); 
             }
-            pushFollow(FOLLOW_ruleXAssignment_in_rule__XAssignment__ValueAssignment_0_326742);
+            pushFollow(FOLLOW_ruleXAssignment_in_rule__XAssignment__ValueAssignment_0_326802);
             ruleXAssignment();
 
             state._fsp--;
@@ -38138,28 +38233,28 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XAssignment__FeatureAssignment_1_1_0_0_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13336:1: rule__XAssignment__FeatureAssignment_1_1_0_0_1 : ( ( ruleOpMultiAssign ) ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13366:1: rule__XAssignment__FeatureAssignment_1_1_0_0_1 : ( ( ruleOpMultiAssign ) ) ;
     public final void rule__XAssignment__FeatureAssignment_1_1_0_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13340:1: ( ( ( ruleOpMultiAssign ) ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13341:1: ( ( ruleOpMultiAssign ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13370:1: ( ( ( ruleOpMultiAssign ) ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13371:1: ( ( ruleOpMultiAssign ) )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13341:1: ( ( ruleOpMultiAssign ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13342:1: ( ruleOpMultiAssign )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13371:1: ( ( ruleOpMultiAssign ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13372:1: ( ruleOpMultiAssign )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXAssignmentAccess().getFeatureJvmIdentifiableElementCrossReference_1_1_0_0_1_0()); 
             }
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13343:1: ( ruleOpMultiAssign )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13344:1: ruleOpMultiAssign
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13373:1: ( ruleOpMultiAssign )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13374:1: ruleOpMultiAssign
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXAssignmentAccess().getFeatureJvmIdentifiableElementOpMultiAssignParserRuleCall_1_1_0_0_1_0_1()); 
             }
-            pushFollow(FOLLOW_ruleOpMultiAssign_in_rule__XAssignment__FeatureAssignment_1_1_0_0_126777);
+            pushFollow(FOLLOW_ruleOpMultiAssign_in_rule__XAssignment__FeatureAssignment_1_1_0_0_126837);
             ruleOpMultiAssign();
 
             state._fsp--;
@@ -38195,22 +38290,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XAssignment__RightOperandAssignment_1_1_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13355:1: rule__XAssignment__RightOperandAssignment_1_1_1 : ( ruleXAssignment ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13385:1: rule__XAssignment__RightOperandAssignment_1_1_1 : ( ruleXAssignment ) ;
     public final void rule__XAssignment__RightOperandAssignment_1_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13359:1: ( ( ruleXAssignment ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13360:1: ( ruleXAssignment )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13389:1: ( ( ruleXAssignment ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13390:1: ( ruleXAssignment )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13360:1: ( ruleXAssignment )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13361:1: ruleXAssignment
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13390:1: ( ruleXAssignment )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13391:1: ruleXAssignment
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXAssignmentAccess().getRightOperandXAssignmentParserRuleCall_1_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXAssignment_in_rule__XAssignment__RightOperandAssignment_1_1_126812);
+            pushFollow(FOLLOW_ruleXAssignment_in_rule__XAssignment__RightOperandAssignment_1_1_126872);
             ruleXAssignment();
 
             state._fsp--;
@@ -38240,28 +38335,28 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XOrExpression__FeatureAssignment_1_0_0_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13370:1: rule__XOrExpression__FeatureAssignment_1_0_0_1 : ( ( ruleOpOr ) ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13400:1: rule__XOrExpression__FeatureAssignment_1_0_0_1 : ( ( ruleOpOr ) ) ;
     public final void rule__XOrExpression__FeatureAssignment_1_0_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13374:1: ( ( ( ruleOpOr ) ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13375:1: ( ( ruleOpOr ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13404:1: ( ( ( ruleOpOr ) ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13405:1: ( ( ruleOpOr ) )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13375:1: ( ( ruleOpOr ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13376:1: ( ruleOpOr )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13405:1: ( ( ruleOpOr ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13406:1: ( ruleOpOr )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXOrExpressionAccess().getFeatureJvmIdentifiableElementCrossReference_1_0_0_1_0()); 
             }
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13377:1: ( ruleOpOr )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13378:1: ruleOpOr
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13407:1: ( ruleOpOr )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13408:1: ruleOpOr
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXOrExpressionAccess().getFeatureJvmIdentifiableElementOpOrParserRuleCall_1_0_0_1_0_1()); 
             }
-            pushFollow(FOLLOW_ruleOpOr_in_rule__XOrExpression__FeatureAssignment_1_0_0_126847);
+            pushFollow(FOLLOW_ruleOpOr_in_rule__XOrExpression__FeatureAssignment_1_0_0_126907);
             ruleOpOr();
 
             state._fsp--;
@@ -38297,22 +38392,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XOrExpression__RightOperandAssignment_1_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13389:1: rule__XOrExpression__RightOperandAssignment_1_1 : ( ruleXAndExpression ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13419:1: rule__XOrExpression__RightOperandAssignment_1_1 : ( ruleXAndExpression ) ;
     public final void rule__XOrExpression__RightOperandAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13393:1: ( ( ruleXAndExpression ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13394:1: ( ruleXAndExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13423:1: ( ( ruleXAndExpression ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13424:1: ( ruleXAndExpression )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13394:1: ( ruleXAndExpression )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13395:1: ruleXAndExpression
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13424:1: ( ruleXAndExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13425:1: ruleXAndExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXOrExpressionAccess().getRightOperandXAndExpressionParserRuleCall_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXAndExpression_in_rule__XOrExpression__RightOperandAssignment_1_126882);
+            pushFollow(FOLLOW_ruleXAndExpression_in_rule__XOrExpression__RightOperandAssignment_1_126942);
             ruleXAndExpression();
 
             state._fsp--;
@@ -38342,28 +38437,28 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XAndExpression__FeatureAssignment_1_0_0_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13404:1: rule__XAndExpression__FeatureAssignment_1_0_0_1 : ( ( ruleOpAnd ) ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13434:1: rule__XAndExpression__FeatureAssignment_1_0_0_1 : ( ( ruleOpAnd ) ) ;
     public final void rule__XAndExpression__FeatureAssignment_1_0_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13408:1: ( ( ( ruleOpAnd ) ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13409:1: ( ( ruleOpAnd ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13438:1: ( ( ( ruleOpAnd ) ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13439:1: ( ( ruleOpAnd ) )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13409:1: ( ( ruleOpAnd ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13410:1: ( ruleOpAnd )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13439:1: ( ( ruleOpAnd ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13440:1: ( ruleOpAnd )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXAndExpressionAccess().getFeatureJvmIdentifiableElementCrossReference_1_0_0_1_0()); 
             }
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13411:1: ( ruleOpAnd )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13412:1: ruleOpAnd
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13441:1: ( ruleOpAnd )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13442:1: ruleOpAnd
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXAndExpressionAccess().getFeatureJvmIdentifiableElementOpAndParserRuleCall_1_0_0_1_0_1()); 
             }
-            pushFollow(FOLLOW_ruleOpAnd_in_rule__XAndExpression__FeatureAssignment_1_0_0_126917);
+            pushFollow(FOLLOW_ruleOpAnd_in_rule__XAndExpression__FeatureAssignment_1_0_0_126977);
             ruleOpAnd();
 
             state._fsp--;
@@ -38399,22 +38494,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XAndExpression__RightOperandAssignment_1_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13423:1: rule__XAndExpression__RightOperandAssignment_1_1 : ( ruleXEqualityExpression ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13453:1: rule__XAndExpression__RightOperandAssignment_1_1 : ( ruleXEqualityExpression ) ;
     public final void rule__XAndExpression__RightOperandAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13427:1: ( ( ruleXEqualityExpression ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13428:1: ( ruleXEqualityExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13457:1: ( ( ruleXEqualityExpression ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13458:1: ( ruleXEqualityExpression )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13428:1: ( ruleXEqualityExpression )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13429:1: ruleXEqualityExpression
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13458:1: ( ruleXEqualityExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13459:1: ruleXEqualityExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXAndExpressionAccess().getRightOperandXEqualityExpressionParserRuleCall_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXEqualityExpression_in_rule__XAndExpression__RightOperandAssignment_1_126952);
+            pushFollow(FOLLOW_ruleXEqualityExpression_in_rule__XAndExpression__RightOperandAssignment_1_127012);
             ruleXEqualityExpression();
 
             state._fsp--;
@@ -38444,28 +38539,28 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XEqualityExpression__FeatureAssignment_1_0_0_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13438:1: rule__XEqualityExpression__FeatureAssignment_1_0_0_1 : ( ( ruleOpEquality ) ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13468:1: rule__XEqualityExpression__FeatureAssignment_1_0_0_1 : ( ( ruleOpEquality ) ) ;
     public final void rule__XEqualityExpression__FeatureAssignment_1_0_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13442:1: ( ( ( ruleOpEquality ) ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13443:1: ( ( ruleOpEquality ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13472:1: ( ( ( ruleOpEquality ) ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13473:1: ( ( ruleOpEquality ) )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13443:1: ( ( ruleOpEquality ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13444:1: ( ruleOpEquality )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13473:1: ( ( ruleOpEquality ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13474:1: ( ruleOpEquality )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXEqualityExpressionAccess().getFeatureJvmIdentifiableElementCrossReference_1_0_0_1_0()); 
             }
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13445:1: ( ruleOpEquality )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13446:1: ruleOpEquality
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13475:1: ( ruleOpEquality )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13476:1: ruleOpEquality
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXEqualityExpressionAccess().getFeatureJvmIdentifiableElementOpEqualityParserRuleCall_1_0_0_1_0_1()); 
             }
-            pushFollow(FOLLOW_ruleOpEquality_in_rule__XEqualityExpression__FeatureAssignment_1_0_0_126987);
+            pushFollow(FOLLOW_ruleOpEquality_in_rule__XEqualityExpression__FeatureAssignment_1_0_0_127047);
             ruleOpEquality();
 
             state._fsp--;
@@ -38501,22 +38596,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XEqualityExpression__RightOperandAssignment_1_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13457:1: rule__XEqualityExpression__RightOperandAssignment_1_1 : ( ruleXRelationalExpression ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13487:1: rule__XEqualityExpression__RightOperandAssignment_1_1 : ( ruleXRelationalExpression ) ;
     public final void rule__XEqualityExpression__RightOperandAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13461:1: ( ( ruleXRelationalExpression ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13462:1: ( ruleXRelationalExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13491:1: ( ( ruleXRelationalExpression ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13492:1: ( ruleXRelationalExpression )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13462:1: ( ruleXRelationalExpression )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13463:1: ruleXRelationalExpression
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13492:1: ( ruleXRelationalExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13493:1: ruleXRelationalExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXEqualityExpressionAccess().getRightOperandXRelationalExpressionParserRuleCall_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXRelationalExpression_in_rule__XEqualityExpression__RightOperandAssignment_1_127022);
+            pushFollow(FOLLOW_ruleXRelationalExpression_in_rule__XEqualityExpression__RightOperandAssignment_1_127082);
             ruleXRelationalExpression();
 
             state._fsp--;
@@ -38546,28 +38641,28 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XRelationalExpression__TypeAssignment_1_0_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13472:1: rule__XRelationalExpression__TypeAssignment_1_0_1 : ( ( ruleQualifiedName ) ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13502:1: rule__XRelationalExpression__TypeAssignment_1_0_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__XRelationalExpression__TypeAssignment_1_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13476:1: ( ( ( ruleQualifiedName ) ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13477:1: ( ( ruleQualifiedName ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13506:1: ( ( ( ruleQualifiedName ) ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13507:1: ( ( ruleQualifiedName ) )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13477:1: ( ( ruleQualifiedName ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13478:1: ( ruleQualifiedName )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13507:1: ( ( ruleQualifiedName ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13508:1: ( ruleQualifiedName )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXRelationalExpressionAccess().getTypeJvmTypeCrossReference_1_0_1_0()); 
             }
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13479:1: ( ruleQualifiedName )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13480:1: ruleQualifiedName
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13509:1: ( ruleQualifiedName )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13510:1: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXRelationalExpressionAccess().getTypeJvmTypeQualifiedNameParserRuleCall_1_0_1_0_1()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__XRelationalExpression__TypeAssignment_1_0_127057);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__XRelationalExpression__TypeAssignment_1_0_127117);
             ruleQualifiedName();
 
             state._fsp--;
@@ -38603,28 +38698,28 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XRelationalExpression__FeatureAssignment_1_1_0_0_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13491:1: rule__XRelationalExpression__FeatureAssignment_1_1_0_0_1 : ( ( ruleOpCompare ) ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13521:1: rule__XRelationalExpression__FeatureAssignment_1_1_0_0_1 : ( ( ruleOpCompare ) ) ;
     public final void rule__XRelationalExpression__FeatureAssignment_1_1_0_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13495:1: ( ( ( ruleOpCompare ) ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13496:1: ( ( ruleOpCompare ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13525:1: ( ( ( ruleOpCompare ) ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13526:1: ( ( ruleOpCompare ) )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13496:1: ( ( ruleOpCompare ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13497:1: ( ruleOpCompare )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13526:1: ( ( ruleOpCompare ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13527:1: ( ruleOpCompare )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXRelationalExpressionAccess().getFeatureJvmIdentifiableElementCrossReference_1_1_0_0_1_0()); 
             }
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13498:1: ( ruleOpCompare )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13499:1: ruleOpCompare
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13528:1: ( ruleOpCompare )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13529:1: ruleOpCompare
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXRelationalExpressionAccess().getFeatureJvmIdentifiableElementOpCompareParserRuleCall_1_1_0_0_1_0_1()); 
             }
-            pushFollow(FOLLOW_ruleOpCompare_in_rule__XRelationalExpression__FeatureAssignment_1_1_0_0_127096);
+            pushFollow(FOLLOW_ruleOpCompare_in_rule__XRelationalExpression__FeatureAssignment_1_1_0_0_127156);
             ruleOpCompare();
 
             state._fsp--;
@@ -38660,22 +38755,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XRelationalExpression__RightOperandAssignment_1_1_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13510:1: rule__XRelationalExpression__RightOperandAssignment_1_1_1 : ( ruleXOtherOperatorExpression ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13540:1: rule__XRelationalExpression__RightOperandAssignment_1_1_1 : ( ruleXOtherOperatorExpression ) ;
     public final void rule__XRelationalExpression__RightOperandAssignment_1_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13514:1: ( ( ruleXOtherOperatorExpression ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13515:1: ( ruleXOtherOperatorExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13544:1: ( ( ruleXOtherOperatorExpression ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13545:1: ( ruleXOtherOperatorExpression )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13515:1: ( ruleXOtherOperatorExpression )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13516:1: ruleXOtherOperatorExpression
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13545:1: ( ruleXOtherOperatorExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13546:1: ruleXOtherOperatorExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXRelationalExpressionAccess().getRightOperandXOtherOperatorExpressionParserRuleCall_1_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXOtherOperatorExpression_in_rule__XRelationalExpression__RightOperandAssignment_1_1_127131);
+            pushFollow(FOLLOW_ruleXOtherOperatorExpression_in_rule__XRelationalExpression__RightOperandAssignment_1_1_127191);
             ruleXOtherOperatorExpression();
 
             state._fsp--;
@@ -38705,28 +38800,28 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XOtherOperatorExpression__FeatureAssignment_1_0_0_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13525:1: rule__XOtherOperatorExpression__FeatureAssignment_1_0_0_1 : ( ( ruleOpOther ) ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13555:1: rule__XOtherOperatorExpression__FeatureAssignment_1_0_0_1 : ( ( ruleOpOther ) ) ;
     public final void rule__XOtherOperatorExpression__FeatureAssignment_1_0_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13529:1: ( ( ( ruleOpOther ) ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13530:1: ( ( ruleOpOther ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13559:1: ( ( ( ruleOpOther ) ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13560:1: ( ( ruleOpOther ) )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13530:1: ( ( ruleOpOther ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13531:1: ( ruleOpOther )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13560:1: ( ( ruleOpOther ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13561:1: ( ruleOpOther )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXOtherOperatorExpressionAccess().getFeatureJvmIdentifiableElementCrossReference_1_0_0_1_0()); 
             }
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13532:1: ( ruleOpOther )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13533:1: ruleOpOther
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13562:1: ( ruleOpOther )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13563:1: ruleOpOther
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXOtherOperatorExpressionAccess().getFeatureJvmIdentifiableElementOpOtherParserRuleCall_1_0_0_1_0_1()); 
             }
-            pushFollow(FOLLOW_ruleOpOther_in_rule__XOtherOperatorExpression__FeatureAssignment_1_0_0_127166);
+            pushFollow(FOLLOW_ruleOpOther_in_rule__XOtherOperatorExpression__FeatureAssignment_1_0_0_127226);
             ruleOpOther();
 
             state._fsp--;
@@ -38762,22 +38857,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XOtherOperatorExpression__RightOperandAssignment_1_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13544:1: rule__XOtherOperatorExpression__RightOperandAssignment_1_1 : ( ruleXAdditiveExpression ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13574:1: rule__XOtherOperatorExpression__RightOperandAssignment_1_1 : ( ruleXAdditiveExpression ) ;
     public final void rule__XOtherOperatorExpression__RightOperandAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13548:1: ( ( ruleXAdditiveExpression ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13549:1: ( ruleXAdditiveExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13578:1: ( ( ruleXAdditiveExpression ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13579:1: ( ruleXAdditiveExpression )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13549:1: ( ruleXAdditiveExpression )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13550:1: ruleXAdditiveExpression
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13579:1: ( ruleXAdditiveExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13580:1: ruleXAdditiveExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXOtherOperatorExpressionAccess().getRightOperandXAdditiveExpressionParserRuleCall_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXAdditiveExpression_in_rule__XOtherOperatorExpression__RightOperandAssignment_1_127201);
+            pushFollow(FOLLOW_ruleXAdditiveExpression_in_rule__XOtherOperatorExpression__RightOperandAssignment_1_127261);
             ruleXAdditiveExpression();
 
             state._fsp--;
@@ -38807,28 +38902,28 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XAdditiveExpression__FeatureAssignment_1_0_0_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13559:1: rule__XAdditiveExpression__FeatureAssignment_1_0_0_1 : ( ( ruleOpAdd ) ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13589:1: rule__XAdditiveExpression__FeatureAssignment_1_0_0_1 : ( ( ruleOpAdd ) ) ;
     public final void rule__XAdditiveExpression__FeatureAssignment_1_0_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13563:1: ( ( ( ruleOpAdd ) ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13564:1: ( ( ruleOpAdd ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13593:1: ( ( ( ruleOpAdd ) ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13594:1: ( ( ruleOpAdd ) )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13564:1: ( ( ruleOpAdd ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13565:1: ( ruleOpAdd )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13594:1: ( ( ruleOpAdd ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13595:1: ( ruleOpAdd )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXAdditiveExpressionAccess().getFeatureJvmIdentifiableElementCrossReference_1_0_0_1_0()); 
             }
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13566:1: ( ruleOpAdd )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13567:1: ruleOpAdd
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13596:1: ( ruleOpAdd )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13597:1: ruleOpAdd
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXAdditiveExpressionAccess().getFeatureJvmIdentifiableElementOpAddParserRuleCall_1_0_0_1_0_1()); 
             }
-            pushFollow(FOLLOW_ruleOpAdd_in_rule__XAdditiveExpression__FeatureAssignment_1_0_0_127236);
+            pushFollow(FOLLOW_ruleOpAdd_in_rule__XAdditiveExpression__FeatureAssignment_1_0_0_127296);
             ruleOpAdd();
 
             state._fsp--;
@@ -38864,22 +38959,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XAdditiveExpression__RightOperandAssignment_1_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13578:1: rule__XAdditiveExpression__RightOperandAssignment_1_1 : ( ruleXMultiplicativeExpression ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13608:1: rule__XAdditiveExpression__RightOperandAssignment_1_1 : ( ruleXMultiplicativeExpression ) ;
     public final void rule__XAdditiveExpression__RightOperandAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13582:1: ( ( ruleXMultiplicativeExpression ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13583:1: ( ruleXMultiplicativeExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13612:1: ( ( ruleXMultiplicativeExpression ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13613:1: ( ruleXMultiplicativeExpression )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13583:1: ( ruleXMultiplicativeExpression )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13584:1: ruleXMultiplicativeExpression
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13613:1: ( ruleXMultiplicativeExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13614:1: ruleXMultiplicativeExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXAdditiveExpressionAccess().getRightOperandXMultiplicativeExpressionParserRuleCall_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXMultiplicativeExpression_in_rule__XAdditiveExpression__RightOperandAssignment_1_127271);
+            pushFollow(FOLLOW_ruleXMultiplicativeExpression_in_rule__XAdditiveExpression__RightOperandAssignment_1_127331);
             ruleXMultiplicativeExpression();
 
             state._fsp--;
@@ -38909,28 +39004,28 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XMultiplicativeExpression__FeatureAssignment_1_0_0_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13593:1: rule__XMultiplicativeExpression__FeatureAssignment_1_0_0_1 : ( ( ruleOpMulti ) ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13623:1: rule__XMultiplicativeExpression__FeatureAssignment_1_0_0_1 : ( ( ruleOpMulti ) ) ;
     public final void rule__XMultiplicativeExpression__FeatureAssignment_1_0_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13597:1: ( ( ( ruleOpMulti ) ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13598:1: ( ( ruleOpMulti ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13627:1: ( ( ( ruleOpMulti ) ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13628:1: ( ( ruleOpMulti ) )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13598:1: ( ( ruleOpMulti ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13599:1: ( ruleOpMulti )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13628:1: ( ( ruleOpMulti ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13629:1: ( ruleOpMulti )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXMultiplicativeExpressionAccess().getFeatureJvmIdentifiableElementCrossReference_1_0_0_1_0()); 
             }
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13600:1: ( ruleOpMulti )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13601:1: ruleOpMulti
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13630:1: ( ruleOpMulti )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13631:1: ruleOpMulti
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXMultiplicativeExpressionAccess().getFeatureJvmIdentifiableElementOpMultiParserRuleCall_1_0_0_1_0_1()); 
             }
-            pushFollow(FOLLOW_ruleOpMulti_in_rule__XMultiplicativeExpression__FeatureAssignment_1_0_0_127306);
+            pushFollow(FOLLOW_ruleOpMulti_in_rule__XMultiplicativeExpression__FeatureAssignment_1_0_0_127366);
             ruleOpMulti();
 
             state._fsp--;
@@ -38966,22 +39061,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XMultiplicativeExpression__RightOperandAssignment_1_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13612:1: rule__XMultiplicativeExpression__RightOperandAssignment_1_1 : ( ruleXUnaryOperation ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13642:1: rule__XMultiplicativeExpression__RightOperandAssignment_1_1 : ( ruleXUnaryOperation ) ;
     public final void rule__XMultiplicativeExpression__RightOperandAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13616:1: ( ( ruleXUnaryOperation ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13617:1: ( ruleXUnaryOperation )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13646:1: ( ( ruleXUnaryOperation ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13647:1: ( ruleXUnaryOperation )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13617:1: ( ruleXUnaryOperation )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13618:1: ruleXUnaryOperation
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13647:1: ( ruleXUnaryOperation )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13648:1: ruleXUnaryOperation
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXMultiplicativeExpressionAccess().getRightOperandXUnaryOperationParserRuleCall_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXUnaryOperation_in_rule__XMultiplicativeExpression__RightOperandAssignment_1_127341);
+            pushFollow(FOLLOW_ruleXUnaryOperation_in_rule__XMultiplicativeExpression__RightOperandAssignment_1_127401);
             ruleXUnaryOperation();
 
             state._fsp--;
@@ -39011,28 +39106,28 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XUnaryOperation__FeatureAssignment_0_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13627:1: rule__XUnaryOperation__FeatureAssignment_0_1 : ( ( ruleOpUnary ) ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13657:1: rule__XUnaryOperation__FeatureAssignment_0_1 : ( ( ruleOpUnary ) ) ;
     public final void rule__XUnaryOperation__FeatureAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13631:1: ( ( ( ruleOpUnary ) ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13632:1: ( ( ruleOpUnary ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13661:1: ( ( ( ruleOpUnary ) ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13662:1: ( ( ruleOpUnary ) )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13632:1: ( ( ruleOpUnary ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13633:1: ( ruleOpUnary )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13662:1: ( ( ruleOpUnary ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13663:1: ( ruleOpUnary )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXUnaryOperationAccess().getFeatureJvmIdentifiableElementCrossReference_0_1_0()); 
             }
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13634:1: ( ruleOpUnary )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13635:1: ruleOpUnary
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13664:1: ( ruleOpUnary )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13665:1: ruleOpUnary
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXUnaryOperationAccess().getFeatureJvmIdentifiableElementOpUnaryParserRuleCall_0_1_0_1()); 
             }
-            pushFollow(FOLLOW_ruleOpUnary_in_rule__XUnaryOperation__FeatureAssignment_0_127376);
+            pushFollow(FOLLOW_ruleOpUnary_in_rule__XUnaryOperation__FeatureAssignment_0_127436);
             ruleOpUnary();
 
             state._fsp--;
@@ -39068,22 +39163,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XUnaryOperation__OperandAssignment_0_2"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13646:1: rule__XUnaryOperation__OperandAssignment_0_2 : ( ruleXCastedExpression ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13676:1: rule__XUnaryOperation__OperandAssignment_0_2 : ( ruleXCastedExpression ) ;
     public final void rule__XUnaryOperation__OperandAssignment_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13650:1: ( ( ruleXCastedExpression ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13651:1: ( ruleXCastedExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13680:1: ( ( ruleXCastedExpression ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13681:1: ( ruleXCastedExpression )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13651:1: ( ruleXCastedExpression )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13652:1: ruleXCastedExpression
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13681:1: ( ruleXCastedExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13682:1: ruleXCastedExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXUnaryOperationAccess().getOperandXCastedExpressionParserRuleCall_0_2_0()); 
             }
-            pushFollow(FOLLOW_ruleXCastedExpression_in_rule__XUnaryOperation__OperandAssignment_0_227411);
+            pushFollow(FOLLOW_ruleXCastedExpression_in_rule__XUnaryOperation__OperandAssignment_0_227471);
             ruleXCastedExpression();
 
             state._fsp--;
@@ -39113,22 +39208,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XCastedExpression__TypeAssignment_1_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13661:1: rule__XCastedExpression__TypeAssignment_1_1 : ( ruleJvmTypeReference ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13691:1: rule__XCastedExpression__TypeAssignment_1_1 : ( ruleJvmTypeReference ) ;
     public final void rule__XCastedExpression__TypeAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13665:1: ( ( ruleJvmTypeReference ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13666:1: ( ruleJvmTypeReference )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13695:1: ( ( ruleJvmTypeReference ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13696:1: ( ruleJvmTypeReference )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13666:1: ( ruleJvmTypeReference )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13667:1: ruleJvmTypeReference
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13696:1: ( ruleJvmTypeReference )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13697:1: ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXCastedExpressionAccess().getTypeJvmTypeReferenceParserRuleCall_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__XCastedExpression__TypeAssignment_1_127442);
+            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__XCastedExpression__TypeAssignment_1_127502);
             ruleJvmTypeReference();
 
             state._fsp--;
@@ -39158,28 +39253,28 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XMemberFeatureCall__FeatureAssignment_1_0_0_0_2"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13676:1: rule__XMemberFeatureCall__FeatureAssignment_1_0_0_0_2 : ( ( ruleValidID ) ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13706:1: rule__XMemberFeatureCall__FeatureAssignment_1_0_0_0_2 : ( ( ruleValidID ) ) ;
     public final void rule__XMemberFeatureCall__FeatureAssignment_1_0_0_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13680:1: ( ( ( ruleValidID ) ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13681:1: ( ( ruleValidID ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13710:1: ( ( ( ruleValidID ) ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13711:1: ( ( ruleValidID ) )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13681:1: ( ( ruleValidID ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13682:1: ( ruleValidID )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13711:1: ( ( ruleValidID ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13712:1: ( ruleValidID )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXMemberFeatureCallAccess().getFeatureJvmIdentifiableElementCrossReference_1_0_0_0_2_0()); 
             }
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13683:1: ( ruleValidID )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13684:1: ruleValidID
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13713:1: ( ruleValidID )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13714:1: ruleValidID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXMemberFeatureCallAccess().getFeatureJvmIdentifiableElementValidIDParserRuleCall_1_0_0_0_2_0_1()); 
             }
-            pushFollow(FOLLOW_ruleValidID_in_rule__XMemberFeatureCall__FeatureAssignment_1_0_0_0_227477);
+            pushFollow(FOLLOW_ruleValidID_in_rule__XMemberFeatureCall__FeatureAssignment_1_0_0_0_227537);
             ruleValidID();
 
             state._fsp--;
@@ -39215,22 +39310,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XMemberFeatureCall__ValueAssignment_1_0_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13695:1: rule__XMemberFeatureCall__ValueAssignment_1_0_1 : ( ruleXAssignment ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13725:1: rule__XMemberFeatureCall__ValueAssignment_1_0_1 : ( ruleXAssignment ) ;
     public final void rule__XMemberFeatureCall__ValueAssignment_1_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13699:1: ( ( ruleXAssignment ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13700:1: ( ruleXAssignment )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13729:1: ( ( ruleXAssignment ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13730:1: ( ruleXAssignment )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13700:1: ( ruleXAssignment )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13701:1: ruleXAssignment
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13730:1: ( ruleXAssignment )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13731:1: ruleXAssignment
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXMemberFeatureCallAccess().getValueXAssignmentParserRuleCall_1_0_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXAssignment_in_rule__XMemberFeatureCall__ValueAssignment_1_0_127512);
+            pushFollow(FOLLOW_ruleXAssignment_in_rule__XMemberFeatureCall__ValueAssignment_1_0_127572);
             ruleXAssignment();
 
             state._fsp--;
@@ -39260,28 +39355,28 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XMemberFeatureCall__NullSafeAssignment_1_1_0_0_1_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13710:1: rule__XMemberFeatureCall__NullSafeAssignment_1_1_0_0_1_1 : ( ( '?.' ) ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13740:1: rule__XMemberFeatureCall__NullSafeAssignment_1_1_0_0_1_1 : ( ( '?.' ) ) ;
     public final void rule__XMemberFeatureCall__NullSafeAssignment_1_1_0_0_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13714:1: ( ( ( '?.' ) ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13715:1: ( ( '?.' ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13744:1: ( ( ( '?.' ) ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13745:1: ( ( '?.' ) )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13715:1: ( ( '?.' ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13716:1: ( '?.' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getXMemberFeatureCallAccess().getNullSafeQuestionMarkFullStopKeyword_1_1_0_0_1_1_0()); 
-            }
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13717:1: ( '?.' )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13718:1: '?.'
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13745:1: ( ( '?.' ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13746:1: ( '?.' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXMemberFeatureCallAccess().getNullSafeQuestionMarkFullStopKeyword_1_1_0_0_1_1_0()); 
             }
-            match(input,70,FOLLOW_70_in_rule__XMemberFeatureCall__NullSafeAssignment_1_1_0_0_1_127548); if (state.failed) return ;
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13747:1: ( '?.' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13748:1: '?.'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getXMemberFeatureCallAccess().getNullSafeQuestionMarkFullStopKeyword_1_1_0_0_1_1_0()); 
+            }
+            match(input,70,FOLLOW_70_in_rule__XMemberFeatureCall__NullSafeAssignment_1_1_0_0_1_127608); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getXMemberFeatureCallAccess().getNullSafeQuestionMarkFullStopKeyword_1_1_0_0_1_1_0()); 
             }
@@ -39313,28 +39408,28 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XMemberFeatureCall__SpreadingAssignment_1_1_0_0_1_2"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13733:1: rule__XMemberFeatureCall__SpreadingAssignment_1_1_0_0_1_2 : ( ( '*.' ) ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13763:1: rule__XMemberFeatureCall__SpreadingAssignment_1_1_0_0_1_2 : ( ( '*.' ) ) ;
     public final void rule__XMemberFeatureCall__SpreadingAssignment_1_1_0_0_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13737:1: ( ( ( '*.' ) ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13738:1: ( ( '*.' ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13767:1: ( ( ( '*.' ) ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13768:1: ( ( '*.' ) )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13738:1: ( ( '*.' ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13739:1: ( '*.' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getXMemberFeatureCallAccess().getSpreadingAsteriskFullStopKeyword_1_1_0_0_1_2_0()); 
-            }
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13740:1: ( '*.' )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13741:1: '*.'
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13768:1: ( ( '*.' ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13769:1: ( '*.' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXMemberFeatureCallAccess().getSpreadingAsteriskFullStopKeyword_1_1_0_0_1_2_0()); 
             }
-            match(input,71,FOLLOW_71_in_rule__XMemberFeatureCall__SpreadingAssignment_1_1_0_0_1_227592); if (state.failed) return ;
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13770:1: ( '*.' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13771:1: '*.'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getXMemberFeatureCallAccess().getSpreadingAsteriskFullStopKeyword_1_1_0_0_1_2_0()); 
+            }
+            match(input,71,FOLLOW_71_in_rule__XMemberFeatureCall__SpreadingAssignment_1_1_0_0_1_227652); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getXMemberFeatureCallAccess().getSpreadingAsteriskFullStopKeyword_1_1_0_0_1_2_0()); 
             }
@@ -39366,22 +39461,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XMemberFeatureCall__TypeArgumentsAssignment_1_1_1_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13756:1: rule__XMemberFeatureCall__TypeArgumentsAssignment_1_1_1_1 : ( ruleJvmArgumentTypeReference ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13786:1: rule__XMemberFeatureCall__TypeArgumentsAssignment_1_1_1_1 : ( ruleJvmArgumentTypeReference ) ;
     public final void rule__XMemberFeatureCall__TypeArgumentsAssignment_1_1_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13760:1: ( ( ruleJvmArgumentTypeReference ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13761:1: ( ruleJvmArgumentTypeReference )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13790:1: ( ( ruleJvmArgumentTypeReference ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13791:1: ( ruleJvmArgumentTypeReference )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13761:1: ( ruleJvmArgumentTypeReference )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13762:1: ruleJvmArgumentTypeReference
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13791:1: ( ruleJvmArgumentTypeReference )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13792:1: ruleJvmArgumentTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXMemberFeatureCallAccess().getTypeArgumentsJvmArgumentTypeReferenceParserRuleCall_1_1_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_rule__XMemberFeatureCall__TypeArgumentsAssignment_1_1_1_127631);
+            pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_rule__XMemberFeatureCall__TypeArgumentsAssignment_1_1_1_127691);
             ruleJvmArgumentTypeReference();
 
             state._fsp--;
@@ -39411,22 +39506,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XMemberFeatureCall__TypeArgumentsAssignment_1_1_1_2_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13771:1: rule__XMemberFeatureCall__TypeArgumentsAssignment_1_1_1_2_1 : ( ruleJvmArgumentTypeReference ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13801:1: rule__XMemberFeatureCall__TypeArgumentsAssignment_1_1_1_2_1 : ( ruleJvmArgumentTypeReference ) ;
     public final void rule__XMemberFeatureCall__TypeArgumentsAssignment_1_1_1_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13775:1: ( ( ruleJvmArgumentTypeReference ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13776:1: ( ruleJvmArgumentTypeReference )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13805:1: ( ( ruleJvmArgumentTypeReference ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13806:1: ( ruleJvmArgumentTypeReference )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13776:1: ( ruleJvmArgumentTypeReference )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13777:1: ruleJvmArgumentTypeReference
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13806:1: ( ruleJvmArgumentTypeReference )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13807:1: ruleJvmArgumentTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXMemberFeatureCallAccess().getTypeArgumentsJvmArgumentTypeReferenceParserRuleCall_1_1_1_2_1_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_rule__XMemberFeatureCall__TypeArgumentsAssignment_1_1_1_2_127662);
+            pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_rule__XMemberFeatureCall__TypeArgumentsAssignment_1_1_1_2_127722);
             ruleJvmArgumentTypeReference();
 
             state._fsp--;
@@ -39456,28 +39551,28 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XMemberFeatureCall__FeatureAssignment_1_1_2"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13786:1: rule__XMemberFeatureCall__FeatureAssignment_1_1_2 : ( ( ruleValidID ) ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13816:1: rule__XMemberFeatureCall__FeatureAssignment_1_1_2 : ( ( ruleValidID ) ) ;
     public final void rule__XMemberFeatureCall__FeatureAssignment_1_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13790:1: ( ( ( ruleValidID ) ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13791:1: ( ( ruleValidID ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13820:1: ( ( ( ruleValidID ) ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13821:1: ( ( ruleValidID ) )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13791:1: ( ( ruleValidID ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13792:1: ( ruleValidID )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13821:1: ( ( ruleValidID ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13822:1: ( ruleValidID )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXMemberFeatureCallAccess().getFeatureJvmIdentifiableElementCrossReference_1_1_2_0()); 
             }
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13793:1: ( ruleValidID )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13794:1: ruleValidID
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13823:1: ( ruleValidID )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13824:1: ruleValidID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXMemberFeatureCallAccess().getFeatureJvmIdentifiableElementValidIDParserRuleCall_1_1_2_0_1()); 
             }
-            pushFollow(FOLLOW_ruleValidID_in_rule__XMemberFeatureCall__FeatureAssignment_1_1_227697);
+            pushFollow(FOLLOW_ruleValidID_in_rule__XMemberFeatureCall__FeatureAssignment_1_1_227757);
             ruleValidID();
 
             state._fsp--;
@@ -39513,28 +39608,28 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XMemberFeatureCall__ExplicitOperationCallAssignment_1_1_3_0"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13805:1: rule__XMemberFeatureCall__ExplicitOperationCallAssignment_1_1_3_0 : ( ( '(' ) ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13835:1: rule__XMemberFeatureCall__ExplicitOperationCallAssignment_1_1_3_0 : ( ( '(' ) ) ;
     public final void rule__XMemberFeatureCall__ExplicitOperationCallAssignment_1_1_3_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13809:1: ( ( ( '(' ) ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13810:1: ( ( '(' ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13839:1: ( ( ( '(' ) ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13840:1: ( ( '(' ) )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13810:1: ( ( '(' ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13811:1: ( '(' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getXMemberFeatureCallAccess().getExplicitOperationCallLeftParenthesisKeyword_1_1_3_0_0()); 
-            }
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13812:1: ( '(' )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13813:1: '('
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13840:1: ( ( '(' ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13841:1: ( '(' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXMemberFeatureCallAccess().getExplicitOperationCallLeftParenthesisKeyword_1_1_3_0_0()); 
             }
-            match(input,46,FOLLOW_46_in_rule__XMemberFeatureCall__ExplicitOperationCallAssignment_1_1_3_027737); if (state.failed) return ;
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13842:1: ( '(' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13843:1: '('
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getXMemberFeatureCallAccess().getExplicitOperationCallLeftParenthesisKeyword_1_1_3_0_0()); 
+            }
+            match(input,46,FOLLOW_46_in_rule__XMemberFeatureCall__ExplicitOperationCallAssignment_1_1_3_027797); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getXMemberFeatureCallAccess().getExplicitOperationCallLeftParenthesisKeyword_1_1_3_0_0()); 
             }
@@ -39566,22 +39661,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_0"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13828:1: rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_0 : ( ruleXShortClosure ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13858:1: rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_0 : ( ruleXShortClosure ) ;
     public final void rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13832:1: ( ( ruleXShortClosure ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13833:1: ( ruleXShortClosure )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13862:1: ( ( ruleXShortClosure ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13863:1: ( ruleXShortClosure )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13833:1: ( ruleXShortClosure )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13834:1: ruleXShortClosure
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13863:1: ( ruleXShortClosure )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13864:1: ruleXShortClosure
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXMemberFeatureCallAccess().getMemberCallArgumentsXShortClosureParserRuleCall_1_1_3_1_0_0()); 
             }
-            pushFollow(FOLLOW_ruleXShortClosure_in_rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_027776);
+            pushFollow(FOLLOW_ruleXShortClosure_in_rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_027836);
             ruleXShortClosure();
 
             state._fsp--;
@@ -39611,22 +39706,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_1_0"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13843:1: rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_1_0 : ( ruleXExpression ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13873:1: rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_1_0 : ( ruleXExpression ) ;
     public final void rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13847:1: ( ( ruleXExpression ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13848:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13877:1: ( ( ruleXExpression ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13878:1: ( ruleXExpression )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13848:1: ( ruleXExpression )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13849:1: ruleXExpression
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13878:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13879:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXMemberFeatureCallAccess().getMemberCallArgumentsXExpressionParserRuleCall_1_1_3_1_1_0_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_1_027807);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_1_027867);
             ruleXExpression();
 
             state._fsp--;
@@ -39656,22 +39751,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_1_1_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13858:1: rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_1_1_1 : ( ruleXExpression ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13888:1: rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_1_1_1 : ( ruleXExpression ) ;
     public final void rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_1_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13862:1: ( ( ruleXExpression ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13863:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13892:1: ( ( ruleXExpression ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13893:1: ( ruleXExpression )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13863:1: ( ruleXExpression )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13864:1: ruleXExpression
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13893:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13894:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXMemberFeatureCallAccess().getMemberCallArgumentsXExpressionParserRuleCall_1_1_3_1_1_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_1_1_127838);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_1_1_127898);
             ruleXExpression();
 
             state._fsp--;
@@ -39701,22 +39796,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_4"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13873:1: rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_4 : ( ruleXClosure ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13903:1: rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_4 : ( ruleXClosure ) ;
     public final void rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13877:1: ( ( ruleXClosure ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13878:1: ( ruleXClosure )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13907:1: ( ( ruleXClosure ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13908:1: ( ruleXClosure )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13878:1: ( ruleXClosure )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13879:1: ruleXClosure
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13908:1: ( ruleXClosure )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13909:1: ruleXClosure
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXMemberFeatureCallAccess().getMemberCallArgumentsXClosureParserRuleCall_1_1_4_0()); 
             }
-            pushFollow(FOLLOW_ruleXClosure_in_rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_427869);
+            pushFollow(FOLLOW_ruleXClosure_in_rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_427929);
             ruleXClosure();
 
             state._fsp--;
@@ -39746,22 +39841,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XClosure__DeclaredFormalParametersAssignment_2_0_0_0"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13888:1: rule__XClosure__DeclaredFormalParametersAssignment_2_0_0_0 : ( ruleJvmFormalParameter ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13918:1: rule__XClosure__DeclaredFormalParametersAssignment_2_0_0_0 : ( ruleJvmFormalParameter ) ;
     public final void rule__XClosure__DeclaredFormalParametersAssignment_2_0_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13892:1: ( ( ruleJvmFormalParameter ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13893:1: ( ruleJvmFormalParameter )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13922:1: ( ( ruleJvmFormalParameter ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13923:1: ( ruleJvmFormalParameter )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13893:1: ( ruleJvmFormalParameter )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13894:1: ruleJvmFormalParameter
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13923:1: ( ruleJvmFormalParameter )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13924:1: ruleJvmFormalParameter
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXClosureAccess().getDeclaredFormalParametersJvmFormalParameterParserRuleCall_2_0_0_0_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmFormalParameter_in_rule__XClosure__DeclaredFormalParametersAssignment_2_0_0_027900);
+            pushFollow(FOLLOW_ruleJvmFormalParameter_in_rule__XClosure__DeclaredFormalParametersAssignment_2_0_0_027960);
             ruleJvmFormalParameter();
 
             state._fsp--;
@@ -39791,22 +39886,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XClosure__DeclaredFormalParametersAssignment_2_0_0_1_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13903:1: rule__XClosure__DeclaredFormalParametersAssignment_2_0_0_1_1 : ( ruleJvmFormalParameter ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13933:1: rule__XClosure__DeclaredFormalParametersAssignment_2_0_0_1_1 : ( ruleJvmFormalParameter ) ;
     public final void rule__XClosure__DeclaredFormalParametersAssignment_2_0_0_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13907:1: ( ( ruleJvmFormalParameter ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13908:1: ( ruleJvmFormalParameter )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13937:1: ( ( ruleJvmFormalParameter ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13938:1: ( ruleJvmFormalParameter )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13908:1: ( ruleJvmFormalParameter )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13909:1: ruleJvmFormalParameter
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13938:1: ( ruleJvmFormalParameter )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13939:1: ruleJvmFormalParameter
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXClosureAccess().getDeclaredFormalParametersJvmFormalParameterParserRuleCall_2_0_0_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmFormalParameter_in_rule__XClosure__DeclaredFormalParametersAssignment_2_0_0_1_127931);
+            pushFollow(FOLLOW_ruleJvmFormalParameter_in_rule__XClosure__DeclaredFormalParametersAssignment_2_0_0_1_127991);
             ruleJvmFormalParameter();
 
             state._fsp--;
@@ -39836,28 +39931,28 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XClosure__ExplicitSyntaxAssignment_2_0_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13918:1: rule__XClosure__ExplicitSyntaxAssignment_2_0_1 : ( ( '|' ) ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13948:1: rule__XClosure__ExplicitSyntaxAssignment_2_0_1 : ( ( '|' ) ) ;
     public final void rule__XClosure__ExplicitSyntaxAssignment_2_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13922:1: ( ( ( '|' ) ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13923:1: ( ( '|' ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13952:1: ( ( ( '|' ) ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13953:1: ( ( '|' ) )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13923:1: ( ( '|' ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13924:1: ( '|' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getXClosureAccess().getExplicitSyntaxVerticalLineKeyword_2_0_1_0()); 
-            }
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13925:1: ( '|' )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13926:1: '|'
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13953:1: ( ( '|' ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13954:1: ( '|' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXClosureAccess().getExplicitSyntaxVerticalLineKeyword_2_0_1_0()); 
             }
-            match(input,72,FOLLOW_72_in_rule__XClosure__ExplicitSyntaxAssignment_2_0_127967); if (state.failed) return ;
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13955:1: ( '|' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13956:1: '|'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getXClosureAccess().getExplicitSyntaxVerticalLineKeyword_2_0_1_0()); 
+            }
+            match(input,72,FOLLOW_72_in_rule__XClosure__ExplicitSyntaxAssignment_2_0_128027); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getXClosureAccess().getExplicitSyntaxVerticalLineKeyword_2_0_1_0()); 
             }
@@ -39889,22 +39984,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XClosure__ExpressionAssignment_3"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13941:1: rule__XClosure__ExpressionAssignment_3 : ( ruleXExpressionInClosure ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13971:1: rule__XClosure__ExpressionAssignment_3 : ( ruleXExpressionInClosure ) ;
     public final void rule__XClosure__ExpressionAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13945:1: ( ( ruleXExpressionInClosure ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13946:1: ( ruleXExpressionInClosure )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13975:1: ( ( ruleXExpressionInClosure ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13976:1: ( ruleXExpressionInClosure )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13946:1: ( ruleXExpressionInClosure )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13947:1: ruleXExpressionInClosure
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13976:1: ( ruleXExpressionInClosure )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13977:1: ruleXExpressionInClosure
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXClosureAccess().getExpressionXExpressionInClosureParserRuleCall_3_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpressionInClosure_in_rule__XClosure__ExpressionAssignment_328006);
+            pushFollow(FOLLOW_ruleXExpressionInClosure_in_rule__XClosure__ExpressionAssignment_328066);
             ruleXExpressionInClosure();
 
             state._fsp--;
@@ -39934,22 +40029,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XExpressionInClosure__ExpressionsAssignment_1_0"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13956:1: rule__XExpressionInClosure__ExpressionsAssignment_1_0 : ( ruleXExpressionInsideBlock ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13986:1: rule__XExpressionInClosure__ExpressionsAssignment_1_0 : ( ruleXExpressionInsideBlock ) ;
     public final void rule__XExpressionInClosure__ExpressionsAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13960:1: ( ( ruleXExpressionInsideBlock ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13961:1: ( ruleXExpressionInsideBlock )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13990:1: ( ( ruleXExpressionInsideBlock ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13991:1: ( ruleXExpressionInsideBlock )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13961:1: ( ruleXExpressionInsideBlock )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13962:1: ruleXExpressionInsideBlock
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13991:1: ( ruleXExpressionInsideBlock )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13992:1: ruleXExpressionInsideBlock
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXExpressionInClosureAccess().getExpressionsXExpressionInsideBlockParserRuleCall_1_0_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpressionInsideBlock_in_rule__XExpressionInClosure__ExpressionsAssignment_1_028037);
+            pushFollow(FOLLOW_ruleXExpressionInsideBlock_in_rule__XExpressionInClosure__ExpressionsAssignment_1_028097);
             ruleXExpressionInsideBlock();
 
             state._fsp--;
@@ -39979,22 +40074,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XShortClosure__DeclaredFormalParametersAssignment_0_0_1_0"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13971:1: rule__XShortClosure__DeclaredFormalParametersAssignment_0_0_1_0 : ( ruleJvmFormalParameter ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14001:1: rule__XShortClosure__DeclaredFormalParametersAssignment_0_0_1_0 : ( ruleJvmFormalParameter ) ;
     public final void rule__XShortClosure__DeclaredFormalParametersAssignment_0_0_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13975:1: ( ( ruleJvmFormalParameter ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13976:1: ( ruleJvmFormalParameter )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14005:1: ( ( ruleJvmFormalParameter ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14006:1: ( ruleJvmFormalParameter )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13976:1: ( ruleJvmFormalParameter )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13977:1: ruleJvmFormalParameter
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14006:1: ( ruleJvmFormalParameter )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14007:1: ruleJvmFormalParameter
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXShortClosureAccess().getDeclaredFormalParametersJvmFormalParameterParserRuleCall_0_0_1_0_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmFormalParameter_in_rule__XShortClosure__DeclaredFormalParametersAssignment_0_0_1_028068);
+            pushFollow(FOLLOW_ruleJvmFormalParameter_in_rule__XShortClosure__DeclaredFormalParametersAssignment_0_0_1_028128);
             ruleJvmFormalParameter();
 
             state._fsp--;
@@ -40024,22 +40119,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XShortClosure__DeclaredFormalParametersAssignment_0_0_1_1_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13986:1: rule__XShortClosure__DeclaredFormalParametersAssignment_0_0_1_1_1 : ( ruleJvmFormalParameter ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14016:1: rule__XShortClosure__DeclaredFormalParametersAssignment_0_0_1_1_1 : ( ruleJvmFormalParameter ) ;
     public final void rule__XShortClosure__DeclaredFormalParametersAssignment_0_0_1_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13990:1: ( ( ruleJvmFormalParameter ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13991:1: ( ruleJvmFormalParameter )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14020:1: ( ( ruleJvmFormalParameter ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14021:1: ( ruleJvmFormalParameter )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13991:1: ( ruleJvmFormalParameter )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:13992:1: ruleJvmFormalParameter
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14021:1: ( ruleJvmFormalParameter )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14022:1: ruleJvmFormalParameter
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXShortClosureAccess().getDeclaredFormalParametersJvmFormalParameterParserRuleCall_0_0_1_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmFormalParameter_in_rule__XShortClosure__DeclaredFormalParametersAssignment_0_0_1_1_128099);
+            pushFollow(FOLLOW_ruleJvmFormalParameter_in_rule__XShortClosure__DeclaredFormalParametersAssignment_0_0_1_1_128159);
             ruleJvmFormalParameter();
 
             state._fsp--;
@@ -40069,28 +40164,28 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XShortClosure__ExplicitSyntaxAssignment_0_0_2"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14001:1: rule__XShortClosure__ExplicitSyntaxAssignment_0_0_2 : ( ( '|' ) ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14031:1: rule__XShortClosure__ExplicitSyntaxAssignment_0_0_2 : ( ( '|' ) ) ;
     public final void rule__XShortClosure__ExplicitSyntaxAssignment_0_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14005:1: ( ( ( '|' ) ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14006:1: ( ( '|' ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14035:1: ( ( ( '|' ) ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14036:1: ( ( '|' ) )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14006:1: ( ( '|' ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14007:1: ( '|' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getXShortClosureAccess().getExplicitSyntaxVerticalLineKeyword_0_0_2_0()); 
-            }
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14008:1: ( '|' )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14009:1: '|'
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14036:1: ( ( '|' ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14037:1: ( '|' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXShortClosureAccess().getExplicitSyntaxVerticalLineKeyword_0_0_2_0()); 
             }
-            match(input,72,FOLLOW_72_in_rule__XShortClosure__ExplicitSyntaxAssignment_0_0_228135); if (state.failed) return ;
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14038:1: ( '|' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14039:1: '|'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getXShortClosureAccess().getExplicitSyntaxVerticalLineKeyword_0_0_2_0()); 
+            }
+            match(input,72,FOLLOW_72_in_rule__XShortClosure__ExplicitSyntaxAssignment_0_0_228195); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getXShortClosureAccess().getExplicitSyntaxVerticalLineKeyword_0_0_2_0()); 
             }
@@ -40122,22 +40217,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XShortClosure__ExpressionAssignment_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14024:1: rule__XShortClosure__ExpressionAssignment_1 : ( ruleXExpression ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14054:1: rule__XShortClosure__ExpressionAssignment_1 : ( ruleXExpression ) ;
     public final void rule__XShortClosure__ExpressionAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14028:1: ( ( ruleXExpression ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14029:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14058:1: ( ( ruleXExpression ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14059:1: ( ruleXExpression )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14029:1: ( ruleXExpression )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14030:1: ruleXExpression
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14059:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14060:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXShortClosureAccess().getExpressionXExpressionParserRuleCall_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XShortClosure__ExpressionAssignment_128174);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XShortClosure__ExpressionAssignment_128234);
             ruleXExpression();
 
             state._fsp--;
@@ -40167,22 +40262,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XIfExpression__IfAssignment_3"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14039:1: rule__XIfExpression__IfAssignment_3 : ( ruleXExpression ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14069:1: rule__XIfExpression__IfAssignment_3 : ( ruleXExpression ) ;
     public final void rule__XIfExpression__IfAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14043:1: ( ( ruleXExpression ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14044:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14073:1: ( ( ruleXExpression ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14074:1: ( ruleXExpression )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14044:1: ( ruleXExpression )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14045:1: ruleXExpression
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14074:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14075:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXIfExpressionAccess().getIfXExpressionParserRuleCall_3_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XIfExpression__IfAssignment_328205);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XIfExpression__IfAssignment_328265);
             ruleXExpression();
 
             state._fsp--;
@@ -40212,22 +40307,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XIfExpression__ThenAssignment_5"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14054:1: rule__XIfExpression__ThenAssignment_5 : ( ruleXExpression ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14084:1: rule__XIfExpression__ThenAssignment_5 : ( ruleXExpression ) ;
     public final void rule__XIfExpression__ThenAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14058:1: ( ( ruleXExpression ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14059:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14088:1: ( ( ruleXExpression ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14089:1: ( ruleXExpression )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14059:1: ( ruleXExpression )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14060:1: ruleXExpression
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14089:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14090:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXIfExpressionAccess().getThenXExpressionParserRuleCall_5_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XIfExpression__ThenAssignment_528236);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XIfExpression__ThenAssignment_528296);
             ruleXExpression();
 
             state._fsp--;
@@ -40257,22 +40352,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XIfExpression__ElseAssignment_6_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14069:1: rule__XIfExpression__ElseAssignment_6_1 : ( ruleXExpression ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14099:1: rule__XIfExpression__ElseAssignment_6_1 : ( ruleXExpression ) ;
     public final void rule__XIfExpression__ElseAssignment_6_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14073:1: ( ( ruleXExpression ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14074:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14103:1: ( ( ruleXExpression ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14104:1: ( ruleXExpression )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14074:1: ( ruleXExpression )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14075:1: ruleXExpression
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14104:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14105:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXIfExpressionAccess().getElseXExpressionParserRuleCall_6_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XIfExpression__ElseAssignment_6_128267);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XIfExpression__ElseAssignment_6_128327);
             ruleXExpression();
 
             state._fsp--;
@@ -40302,22 +40397,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XSwitchExpression__LocalVarNameAssignment_2_0_0"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14084:1: rule__XSwitchExpression__LocalVarNameAssignment_2_0_0 : ( ruleValidID ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14114:1: rule__XSwitchExpression__LocalVarNameAssignment_2_0_0 : ( ruleValidID ) ;
     public final void rule__XSwitchExpression__LocalVarNameAssignment_2_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14088:1: ( ( ruleValidID ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14089:1: ( ruleValidID )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14118:1: ( ( ruleValidID ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14119:1: ( ruleValidID )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14089:1: ( ruleValidID )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14090:1: ruleValidID
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14119:1: ( ruleValidID )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14120:1: ruleValidID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXSwitchExpressionAccess().getLocalVarNameValidIDParserRuleCall_2_0_0_0()); 
             }
-            pushFollow(FOLLOW_ruleValidID_in_rule__XSwitchExpression__LocalVarNameAssignment_2_0_028298);
+            pushFollow(FOLLOW_ruleValidID_in_rule__XSwitchExpression__LocalVarNameAssignment_2_0_028358);
             ruleValidID();
 
             state._fsp--;
@@ -40347,22 +40442,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XSwitchExpression__SwitchAssignment_3"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14099:1: rule__XSwitchExpression__SwitchAssignment_3 : ( ruleXExpression ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14129:1: rule__XSwitchExpression__SwitchAssignment_3 : ( ruleXExpression ) ;
     public final void rule__XSwitchExpression__SwitchAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14103:1: ( ( ruleXExpression ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14104:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14133:1: ( ( ruleXExpression ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14134:1: ( ruleXExpression )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14104:1: ( ruleXExpression )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14105:1: ruleXExpression
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14134:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14135:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXSwitchExpressionAccess().getSwitchXExpressionParserRuleCall_3_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XSwitchExpression__SwitchAssignment_328329);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XSwitchExpression__SwitchAssignment_328389);
             ruleXExpression();
 
             state._fsp--;
@@ -40392,22 +40487,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XSwitchExpression__CasesAssignment_5"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14114:1: rule__XSwitchExpression__CasesAssignment_5 : ( ruleXCasePart ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14144:1: rule__XSwitchExpression__CasesAssignment_5 : ( ruleXCasePart ) ;
     public final void rule__XSwitchExpression__CasesAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14118:1: ( ( ruleXCasePart ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14119:1: ( ruleXCasePart )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14148:1: ( ( ruleXCasePart ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14149:1: ( ruleXCasePart )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14119:1: ( ruleXCasePart )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14120:1: ruleXCasePart
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14149:1: ( ruleXCasePart )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14150:1: ruleXCasePart
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXSwitchExpressionAccess().getCasesXCasePartParserRuleCall_5_0()); 
             }
-            pushFollow(FOLLOW_ruleXCasePart_in_rule__XSwitchExpression__CasesAssignment_528360);
+            pushFollow(FOLLOW_ruleXCasePart_in_rule__XSwitchExpression__CasesAssignment_528420);
             ruleXCasePart();
 
             state._fsp--;
@@ -40437,22 +40532,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XSwitchExpression__DefaultAssignment_6_2"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14129:1: rule__XSwitchExpression__DefaultAssignment_6_2 : ( ruleXExpression ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14159:1: rule__XSwitchExpression__DefaultAssignment_6_2 : ( ruleXExpression ) ;
     public final void rule__XSwitchExpression__DefaultAssignment_6_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14133:1: ( ( ruleXExpression ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14134:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14163:1: ( ( ruleXExpression ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14164:1: ( ruleXExpression )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14134:1: ( ruleXExpression )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14135:1: ruleXExpression
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14164:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14165:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXSwitchExpressionAccess().getDefaultXExpressionParserRuleCall_6_2_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XSwitchExpression__DefaultAssignment_6_228391);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XSwitchExpression__DefaultAssignment_6_228451);
             ruleXExpression();
 
             state._fsp--;
@@ -40482,22 +40577,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XCasePart__TypeGuardAssignment_0"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14144:1: rule__XCasePart__TypeGuardAssignment_0 : ( ruleJvmTypeReference ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14174:1: rule__XCasePart__TypeGuardAssignment_0 : ( ruleJvmTypeReference ) ;
     public final void rule__XCasePart__TypeGuardAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14148:1: ( ( ruleJvmTypeReference ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14149:1: ( ruleJvmTypeReference )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14178:1: ( ( ruleJvmTypeReference ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14179:1: ( ruleJvmTypeReference )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14149:1: ( ruleJvmTypeReference )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14150:1: ruleJvmTypeReference
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14179:1: ( ruleJvmTypeReference )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14180:1: ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXCasePartAccess().getTypeGuardJvmTypeReferenceParserRuleCall_0_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__XCasePart__TypeGuardAssignment_028422);
+            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__XCasePart__TypeGuardAssignment_028482);
             ruleJvmTypeReference();
 
             state._fsp--;
@@ -40527,22 +40622,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XCasePart__CaseAssignment_1_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14159:1: rule__XCasePart__CaseAssignment_1_1 : ( ruleXExpression ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14189:1: rule__XCasePart__CaseAssignment_1_1 : ( ruleXExpression ) ;
     public final void rule__XCasePart__CaseAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14163:1: ( ( ruleXExpression ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14164:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14193:1: ( ( ruleXExpression ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14194:1: ( ruleXExpression )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14164:1: ( ruleXExpression )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14165:1: ruleXExpression
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14194:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14195:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXCasePartAccess().getCaseXExpressionParserRuleCall_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XCasePart__CaseAssignment_1_128453);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XCasePart__CaseAssignment_1_128513);
             ruleXExpression();
 
             state._fsp--;
@@ -40572,22 +40667,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XCasePart__ThenAssignment_3"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14174:1: rule__XCasePart__ThenAssignment_3 : ( ruleXExpression ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14204:1: rule__XCasePart__ThenAssignment_3 : ( ruleXExpression ) ;
     public final void rule__XCasePart__ThenAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14178:1: ( ( ruleXExpression ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14179:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14208:1: ( ( ruleXExpression ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14209:1: ( ruleXExpression )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14179:1: ( ruleXExpression )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14180:1: ruleXExpression
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14209:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14210:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXCasePartAccess().getThenXExpressionParserRuleCall_3_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XCasePart__ThenAssignment_328484);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XCasePart__ThenAssignment_328544);
             ruleXExpression();
 
             state._fsp--;
@@ -40617,22 +40712,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XForLoopExpression__DeclaredParamAssignment_3"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14189:1: rule__XForLoopExpression__DeclaredParamAssignment_3 : ( ruleJvmFormalParameter ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14219:1: rule__XForLoopExpression__DeclaredParamAssignment_3 : ( ruleJvmFormalParameter ) ;
     public final void rule__XForLoopExpression__DeclaredParamAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14193:1: ( ( ruleJvmFormalParameter ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14194:1: ( ruleJvmFormalParameter )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14223:1: ( ( ruleJvmFormalParameter ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14224:1: ( ruleJvmFormalParameter )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14194:1: ( ruleJvmFormalParameter )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14195:1: ruleJvmFormalParameter
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14224:1: ( ruleJvmFormalParameter )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14225:1: ruleJvmFormalParameter
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXForLoopExpressionAccess().getDeclaredParamJvmFormalParameterParserRuleCall_3_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmFormalParameter_in_rule__XForLoopExpression__DeclaredParamAssignment_328515);
+            pushFollow(FOLLOW_ruleJvmFormalParameter_in_rule__XForLoopExpression__DeclaredParamAssignment_328575);
             ruleJvmFormalParameter();
 
             state._fsp--;
@@ -40662,22 +40757,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XForLoopExpression__ForExpressionAssignment_5"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14204:1: rule__XForLoopExpression__ForExpressionAssignment_5 : ( ruleXExpression ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14234:1: rule__XForLoopExpression__ForExpressionAssignment_5 : ( ruleXExpression ) ;
     public final void rule__XForLoopExpression__ForExpressionAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14208:1: ( ( ruleXExpression ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14209:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14238:1: ( ( ruleXExpression ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14239:1: ( ruleXExpression )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14209:1: ( ruleXExpression )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14210:1: ruleXExpression
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14239:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14240:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXForLoopExpressionAccess().getForExpressionXExpressionParserRuleCall_5_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XForLoopExpression__ForExpressionAssignment_528546);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XForLoopExpression__ForExpressionAssignment_528606);
             ruleXExpression();
 
             state._fsp--;
@@ -40707,22 +40802,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XForLoopExpression__EachExpressionAssignment_7"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14219:1: rule__XForLoopExpression__EachExpressionAssignment_7 : ( ruleXExpression ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14249:1: rule__XForLoopExpression__EachExpressionAssignment_7 : ( ruleXExpression ) ;
     public final void rule__XForLoopExpression__EachExpressionAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14223:1: ( ( ruleXExpression ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14224:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14253:1: ( ( ruleXExpression ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14254:1: ( ruleXExpression )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14224:1: ( ruleXExpression )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14225:1: ruleXExpression
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14254:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14255:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXForLoopExpressionAccess().getEachExpressionXExpressionParserRuleCall_7_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XForLoopExpression__EachExpressionAssignment_728577);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XForLoopExpression__EachExpressionAssignment_728637);
             ruleXExpression();
 
             state._fsp--;
@@ -40752,22 +40847,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XWhileExpression__PredicateAssignment_3"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14234:1: rule__XWhileExpression__PredicateAssignment_3 : ( ruleXExpression ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14264:1: rule__XWhileExpression__PredicateAssignment_3 : ( ruleXExpression ) ;
     public final void rule__XWhileExpression__PredicateAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14238:1: ( ( ruleXExpression ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14239:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14268:1: ( ( ruleXExpression ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14269:1: ( ruleXExpression )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14239:1: ( ruleXExpression )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14240:1: ruleXExpression
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14269:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14270:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXWhileExpressionAccess().getPredicateXExpressionParserRuleCall_3_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XWhileExpression__PredicateAssignment_328608);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XWhileExpression__PredicateAssignment_328668);
             ruleXExpression();
 
             state._fsp--;
@@ -40797,22 +40892,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XWhileExpression__BodyAssignment_5"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14249:1: rule__XWhileExpression__BodyAssignment_5 : ( ruleXExpression ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14279:1: rule__XWhileExpression__BodyAssignment_5 : ( ruleXExpression ) ;
     public final void rule__XWhileExpression__BodyAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14253:1: ( ( ruleXExpression ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14254:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14283:1: ( ( ruleXExpression ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14284:1: ( ruleXExpression )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14254:1: ( ruleXExpression )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14255:1: ruleXExpression
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14284:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14285:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXWhileExpressionAccess().getBodyXExpressionParserRuleCall_5_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XWhileExpression__BodyAssignment_528639);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XWhileExpression__BodyAssignment_528699);
             ruleXExpression();
 
             state._fsp--;
@@ -40842,22 +40937,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XDoWhileExpression__BodyAssignment_2"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14264:1: rule__XDoWhileExpression__BodyAssignment_2 : ( ruleXExpression ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14294:1: rule__XDoWhileExpression__BodyAssignment_2 : ( ruleXExpression ) ;
     public final void rule__XDoWhileExpression__BodyAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14268:1: ( ( ruleXExpression ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14269:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14298:1: ( ( ruleXExpression ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14299:1: ( ruleXExpression )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14269:1: ( ruleXExpression )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14270:1: ruleXExpression
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14299:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14300:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXDoWhileExpressionAccess().getBodyXExpressionParserRuleCall_2_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XDoWhileExpression__BodyAssignment_228670);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XDoWhileExpression__BodyAssignment_228730);
             ruleXExpression();
 
             state._fsp--;
@@ -40887,22 +40982,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XDoWhileExpression__PredicateAssignment_5"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14279:1: rule__XDoWhileExpression__PredicateAssignment_5 : ( ruleXExpression ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14309:1: rule__XDoWhileExpression__PredicateAssignment_5 : ( ruleXExpression ) ;
     public final void rule__XDoWhileExpression__PredicateAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14283:1: ( ( ruleXExpression ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14284:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14313:1: ( ( ruleXExpression ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14314:1: ( ruleXExpression )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14284:1: ( ruleXExpression )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14285:1: ruleXExpression
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14314:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14315:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXDoWhileExpressionAccess().getPredicateXExpressionParserRuleCall_5_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XDoWhileExpression__PredicateAssignment_528701);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XDoWhileExpression__PredicateAssignment_528761);
             ruleXExpression();
 
             state._fsp--;
@@ -40932,22 +41027,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XBlockExpression__ExpressionsAssignment_2_0"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14294:1: rule__XBlockExpression__ExpressionsAssignment_2_0 : ( ruleXExpressionInsideBlock ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14324:1: rule__XBlockExpression__ExpressionsAssignment_2_0 : ( ruleXExpressionInsideBlock ) ;
     public final void rule__XBlockExpression__ExpressionsAssignment_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14298:1: ( ( ruleXExpressionInsideBlock ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14299:1: ( ruleXExpressionInsideBlock )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14328:1: ( ( ruleXExpressionInsideBlock ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14329:1: ( ruleXExpressionInsideBlock )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14299:1: ( ruleXExpressionInsideBlock )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14300:1: ruleXExpressionInsideBlock
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14329:1: ( ruleXExpressionInsideBlock )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14330:1: ruleXExpressionInsideBlock
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXBlockExpressionAccess().getExpressionsXExpressionInsideBlockParserRuleCall_2_0_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpressionInsideBlock_in_rule__XBlockExpression__ExpressionsAssignment_2_028732);
+            pushFollow(FOLLOW_ruleXExpressionInsideBlock_in_rule__XBlockExpression__ExpressionsAssignment_2_028792);
             ruleXExpressionInsideBlock();
 
             state._fsp--;
@@ -40977,28 +41072,28 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XVariableDeclaration__WriteableAssignment_1_0"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14309:1: rule__XVariableDeclaration__WriteableAssignment_1_0 : ( ( 'var' ) ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14339:1: rule__XVariableDeclaration__WriteableAssignment_1_0 : ( ( 'var' ) ) ;
     public final void rule__XVariableDeclaration__WriteableAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14313:1: ( ( ( 'var' ) ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14314:1: ( ( 'var' ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14343:1: ( ( ( 'var' ) ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14344:1: ( ( 'var' ) )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14314:1: ( ( 'var' ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14315:1: ( 'var' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getXVariableDeclarationAccess().getWriteableVarKeyword_1_0_0()); 
-            }
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14316:1: ( 'var' )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14317:1: 'var'
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14344:1: ( ( 'var' ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14345:1: ( 'var' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXVariableDeclarationAccess().getWriteableVarKeyword_1_0_0()); 
             }
-            match(input,73,FOLLOW_73_in_rule__XVariableDeclaration__WriteableAssignment_1_028768); if (state.failed) return ;
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14346:1: ( 'var' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14347:1: 'var'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getXVariableDeclarationAccess().getWriteableVarKeyword_1_0_0()); 
+            }
+            match(input,73,FOLLOW_73_in_rule__XVariableDeclaration__WriteableAssignment_1_028828); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getXVariableDeclarationAccess().getWriteableVarKeyword_1_0_0()); 
             }
@@ -41030,22 +41125,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XVariableDeclaration__TypeAssignment_2_0_0_0"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14332:1: rule__XVariableDeclaration__TypeAssignment_2_0_0_0 : ( ruleJvmTypeReference ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14362:1: rule__XVariableDeclaration__TypeAssignment_2_0_0_0 : ( ruleJvmTypeReference ) ;
     public final void rule__XVariableDeclaration__TypeAssignment_2_0_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14336:1: ( ( ruleJvmTypeReference ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14337:1: ( ruleJvmTypeReference )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14366:1: ( ( ruleJvmTypeReference ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14367:1: ( ruleJvmTypeReference )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14337:1: ( ruleJvmTypeReference )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14338:1: ruleJvmTypeReference
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14367:1: ( ruleJvmTypeReference )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14368:1: ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXVariableDeclarationAccess().getTypeJvmTypeReferenceParserRuleCall_2_0_0_0_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__XVariableDeclaration__TypeAssignment_2_0_0_028807);
+            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__XVariableDeclaration__TypeAssignment_2_0_0_028867);
             ruleJvmTypeReference();
 
             state._fsp--;
@@ -41075,22 +41170,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XVariableDeclaration__NameAssignment_2_0_0_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14347:1: rule__XVariableDeclaration__NameAssignment_2_0_0_1 : ( ruleValidID ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14377:1: rule__XVariableDeclaration__NameAssignment_2_0_0_1 : ( ruleValidID ) ;
     public final void rule__XVariableDeclaration__NameAssignment_2_0_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14351:1: ( ( ruleValidID ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14352:1: ( ruleValidID )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14381:1: ( ( ruleValidID ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14382:1: ( ruleValidID )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14352:1: ( ruleValidID )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14353:1: ruleValidID
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14382:1: ( ruleValidID )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14383:1: ruleValidID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXVariableDeclarationAccess().getNameValidIDParserRuleCall_2_0_0_1_0()); 
             }
-            pushFollow(FOLLOW_ruleValidID_in_rule__XVariableDeclaration__NameAssignment_2_0_0_128838);
+            pushFollow(FOLLOW_ruleValidID_in_rule__XVariableDeclaration__NameAssignment_2_0_0_128898);
             ruleValidID();
 
             state._fsp--;
@@ -41120,22 +41215,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XVariableDeclaration__NameAssignment_2_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14362:1: rule__XVariableDeclaration__NameAssignment_2_1 : ( ruleValidID ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14392:1: rule__XVariableDeclaration__NameAssignment_2_1 : ( ruleValidID ) ;
     public final void rule__XVariableDeclaration__NameAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14366:1: ( ( ruleValidID ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14367:1: ( ruleValidID )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14396:1: ( ( ruleValidID ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14397:1: ( ruleValidID )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14367:1: ( ruleValidID )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14368:1: ruleValidID
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14397:1: ( ruleValidID )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14398:1: ruleValidID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXVariableDeclarationAccess().getNameValidIDParserRuleCall_2_1_0()); 
             }
-            pushFollow(FOLLOW_ruleValidID_in_rule__XVariableDeclaration__NameAssignment_2_128869);
+            pushFollow(FOLLOW_ruleValidID_in_rule__XVariableDeclaration__NameAssignment_2_128929);
             ruleValidID();
 
             state._fsp--;
@@ -41165,22 +41260,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XVariableDeclaration__RightAssignment_3_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14377:1: rule__XVariableDeclaration__RightAssignment_3_1 : ( ruleXExpression ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14407:1: rule__XVariableDeclaration__RightAssignment_3_1 : ( ruleXExpression ) ;
     public final void rule__XVariableDeclaration__RightAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14381:1: ( ( ruleXExpression ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14382:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14411:1: ( ( ruleXExpression ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14412:1: ( ruleXExpression )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14382:1: ( ruleXExpression )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14383:1: ruleXExpression
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14412:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14413:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXVariableDeclarationAccess().getRightXExpressionParserRuleCall_3_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XVariableDeclaration__RightAssignment_3_128900);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XVariableDeclaration__RightAssignment_3_128960);
             ruleXExpression();
 
             state._fsp--;
@@ -41210,22 +41305,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__JvmFormalParameter__ParameterTypeAssignment_0"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14392:1: rule__JvmFormalParameter__ParameterTypeAssignment_0 : ( ruleJvmTypeReference ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14422:1: rule__JvmFormalParameter__ParameterTypeAssignment_0 : ( ruleJvmTypeReference ) ;
     public final void rule__JvmFormalParameter__ParameterTypeAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14396:1: ( ( ruleJvmTypeReference ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14397:1: ( ruleJvmTypeReference )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14426:1: ( ( ruleJvmTypeReference ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14427:1: ( ruleJvmTypeReference )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14397:1: ( ruleJvmTypeReference )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14398:1: ruleJvmTypeReference
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14427:1: ( ruleJvmTypeReference )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14428:1: ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmFormalParameterAccess().getParameterTypeJvmTypeReferenceParserRuleCall_0_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__JvmFormalParameter__ParameterTypeAssignment_028931);
+            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__JvmFormalParameter__ParameterTypeAssignment_028991);
             ruleJvmTypeReference();
 
             state._fsp--;
@@ -41255,22 +41350,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__JvmFormalParameter__NameAssignment_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14407:1: rule__JvmFormalParameter__NameAssignment_1 : ( ruleValidID ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14437:1: rule__JvmFormalParameter__NameAssignment_1 : ( ruleValidID ) ;
     public final void rule__JvmFormalParameter__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14411:1: ( ( ruleValidID ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14412:1: ( ruleValidID )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14441:1: ( ( ruleValidID ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14442:1: ( ruleValidID )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14412:1: ( ruleValidID )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14413:1: ruleValidID
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14442:1: ( ruleValidID )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14443:1: ruleValidID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmFormalParameterAccess().getNameValidIDParserRuleCall_1_0()); 
             }
-            pushFollow(FOLLOW_ruleValidID_in_rule__JvmFormalParameter__NameAssignment_128962);
+            pushFollow(FOLLOW_ruleValidID_in_rule__JvmFormalParameter__NameAssignment_129022);
             ruleValidID();
 
             state._fsp--;
@@ -41300,22 +41395,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FullJvmFormalParameter__ParameterTypeAssignment_0"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14422:1: rule__FullJvmFormalParameter__ParameterTypeAssignment_0 : ( ruleJvmTypeReference ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14452:1: rule__FullJvmFormalParameter__ParameterTypeAssignment_0 : ( ruleJvmTypeReference ) ;
     public final void rule__FullJvmFormalParameter__ParameterTypeAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14426:1: ( ( ruleJvmTypeReference ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14427:1: ( ruleJvmTypeReference )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14456:1: ( ( ruleJvmTypeReference ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14457:1: ( ruleJvmTypeReference )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14427:1: ( ruleJvmTypeReference )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14428:1: ruleJvmTypeReference
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14457:1: ( ruleJvmTypeReference )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14458:1: ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFullJvmFormalParameterAccess().getParameterTypeJvmTypeReferenceParserRuleCall_0_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__FullJvmFormalParameter__ParameterTypeAssignment_028993);
+            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__FullJvmFormalParameter__ParameterTypeAssignment_029053);
             ruleJvmTypeReference();
 
             state._fsp--;
@@ -41345,22 +41440,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FullJvmFormalParameter__NameAssignment_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14437:1: rule__FullJvmFormalParameter__NameAssignment_1 : ( ruleValidID ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14467:1: rule__FullJvmFormalParameter__NameAssignment_1 : ( ruleValidID ) ;
     public final void rule__FullJvmFormalParameter__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14441:1: ( ( ruleValidID ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14442:1: ( ruleValidID )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14471:1: ( ( ruleValidID ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14472:1: ( ruleValidID )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14442:1: ( ruleValidID )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14443:1: ruleValidID
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14472:1: ( ruleValidID )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14473:1: ruleValidID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFullJvmFormalParameterAccess().getNameValidIDParserRuleCall_1_0()); 
             }
-            pushFollow(FOLLOW_ruleValidID_in_rule__FullJvmFormalParameter__NameAssignment_129024);
+            pushFollow(FOLLOW_ruleValidID_in_rule__FullJvmFormalParameter__NameAssignment_129084);
             ruleValidID();
 
             state._fsp--;
@@ -41390,28 +41485,28 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XFeatureCall__DeclaringTypeAssignment_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14452:1: rule__XFeatureCall__DeclaringTypeAssignment_1 : ( ( ruleStaticQualifier ) ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14482:1: rule__XFeatureCall__DeclaringTypeAssignment_1 : ( ( ruleStaticQualifier ) ) ;
     public final void rule__XFeatureCall__DeclaringTypeAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14456:1: ( ( ( ruleStaticQualifier ) ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14457:1: ( ( ruleStaticQualifier ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14486:1: ( ( ( ruleStaticQualifier ) ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14487:1: ( ( ruleStaticQualifier ) )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14457:1: ( ( ruleStaticQualifier ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14458:1: ( ruleStaticQualifier )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14487:1: ( ( ruleStaticQualifier ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14488:1: ( ruleStaticQualifier )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXFeatureCallAccess().getDeclaringTypeJvmDeclaredTypeCrossReference_1_0()); 
             }
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14459:1: ( ruleStaticQualifier )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14460:1: ruleStaticQualifier
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14489:1: ( ruleStaticQualifier )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14490:1: ruleStaticQualifier
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXFeatureCallAccess().getDeclaringTypeJvmDeclaredTypeStaticQualifierParserRuleCall_1_0_1()); 
             }
-            pushFollow(FOLLOW_ruleStaticQualifier_in_rule__XFeatureCall__DeclaringTypeAssignment_129059);
+            pushFollow(FOLLOW_ruleStaticQualifier_in_rule__XFeatureCall__DeclaringTypeAssignment_129119);
             ruleStaticQualifier();
 
             state._fsp--;
@@ -41447,22 +41542,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XFeatureCall__TypeArgumentsAssignment_2_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14471:1: rule__XFeatureCall__TypeArgumentsAssignment_2_1 : ( ruleJvmArgumentTypeReference ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14501:1: rule__XFeatureCall__TypeArgumentsAssignment_2_1 : ( ruleJvmArgumentTypeReference ) ;
     public final void rule__XFeatureCall__TypeArgumentsAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14475:1: ( ( ruleJvmArgumentTypeReference ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14476:1: ( ruleJvmArgumentTypeReference )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14505:1: ( ( ruleJvmArgumentTypeReference ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14506:1: ( ruleJvmArgumentTypeReference )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14476:1: ( ruleJvmArgumentTypeReference )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14477:1: ruleJvmArgumentTypeReference
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14506:1: ( ruleJvmArgumentTypeReference )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14507:1: ruleJvmArgumentTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXFeatureCallAccess().getTypeArgumentsJvmArgumentTypeReferenceParserRuleCall_2_1_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_rule__XFeatureCall__TypeArgumentsAssignment_2_129094);
+            pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_rule__XFeatureCall__TypeArgumentsAssignment_2_129154);
             ruleJvmArgumentTypeReference();
 
             state._fsp--;
@@ -41492,22 +41587,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XFeatureCall__TypeArgumentsAssignment_2_2_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14486:1: rule__XFeatureCall__TypeArgumentsAssignment_2_2_1 : ( ruleJvmArgumentTypeReference ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14516:1: rule__XFeatureCall__TypeArgumentsAssignment_2_2_1 : ( ruleJvmArgumentTypeReference ) ;
     public final void rule__XFeatureCall__TypeArgumentsAssignment_2_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14490:1: ( ( ruleJvmArgumentTypeReference ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14491:1: ( ruleJvmArgumentTypeReference )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14520:1: ( ( ruleJvmArgumentTypeReference ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14521:1: ( ruleJvmArgumentTypeReference )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14491:1: ( ruleJvmArgumentTypeReference )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14492:1: ruleJvmArgumentTypeReference
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14521:1: ( ruleJvmArgumentTypeReference )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14522:1: ruleJvmArgumentTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXFeatureCallAccess().getTypeArgumentsJvmArgumentTypeReferenceParserRuleCall_2_2_1_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_rule__XFeatureCall__TypeArgumentsAssignment_2_2_129125);
+            pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_rule__XFeatureCall__TypeArgumentsAssignment_2_2_129185);
             ruleJvmArgumentTypeReference();
 
             state._fsp--;
@@ -41537,28 +41632,28 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XFeatureCall__FeatureAssignment_3"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14501:1: rule__XFeatureCall__FeatureAssignment_3 : ( ( ruleIdOrSuper ) ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14531:1: rule__XFeatureCall__FeatureAssignment_3 : ( ( ruleIdOrSuper ) ) ;
     public final void rule__XFeatureCall__FeatureAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14505:1: ( ( ( ruleIdOrSuper ) ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14506:1: ( ( ruleIdOrSuper ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14535:1: ( ( ( ruleIdOrSuper ) ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14536:1: ( ( ruleIdOrSuper ) )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14506:1: ( ( ruleIdOrSuper ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14507:1: ( ruleIdOrSuper )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14536:1: ( ( ruleIdOrSuper ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14537:1: ( ruleIdOrSuper )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXFeatureCallAccess().getFeatureJvmIdentifiableElementCrossReference_3_0()); 
             }
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14508:1: ( ruleIdOrSuper )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14509:1: ruleIdOrSuper
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14538:1: ( ruleIdOrSuper )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14539:1: ruleIdOrSuper
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXFeatureCallAccess().getFeatureJvmIdentifiableElementIdOrSuperParserRuleCall_3_0_1()); 
             }
-            pushFollow(FOLLOW_ruleIdOrSuper_in_rule__XFeatureCall__FeatureAssignment_329160);
+            pushFollow(FOLLOW_ruleIdOrSuper_in_rule__XFeatureCall__FeatureAssignment_329220);
             ruleIdOrSuper();
 
             state._fsp--;
@@ -41594,28 +41689,28 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XFeatureCall__ExplicitOperationCallAssignment_4_0"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14520:1: rule__XFeatureCall__ExplicitOperationCallAssignment_4_0 : ( ( '(' ) ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14550:1: rule__XFeatureCall__ExplicitOperationCallAssignment_4_0 : ( ( '(' ) ) ;
     public final void rule__XFeatureCall__ExplicitOperationCallAssignment_4_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14524:1: ( ( ( '(' ) ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14525:1: ( ( '(' ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14554:1: ( ( ( '(' ) ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14555:1: ( ( '(' ) )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14525:1: ( ( '(' ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14526:1: ( '(' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getXFeatureCallAccess().getExplicitOperationCallLeftParenthesisKeyword_4_0_0()); 
-            }
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14527:1: ( '(' )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14528:1: '('
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14555:1: ( ( '(' ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14556:1: ( '(' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXFeatureCallAccess().getExplicitOperationCallLeftParenthesisKeyword_4_0_0()); 
             }
-            match(input,46,FOLLOW_46_in_rule__XFeatureCall__ExplicitOperationCallAssignment_4_029200); if (state.failed) return ;
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14557:1: ( '(' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14558:1: '('
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getXFeatureCallAccess().getExplicitOperationCallLeftParenthesisKeyword_4_0_0()); 
+            }
+            match(input,46,FOLLOW_46_in_rule__XFeatureCall__ExplicitOperationCallAssignment_4_029260); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getXFeatureCallAccess().getExplicitOperationCallLeftParenthesisKeyword_4_0_0()); 
             }
@@ -41647,22 +41742,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XFeatureCall__FeatureCallArgumentsAssignment_4_1_0"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14543:1: rule__XFeatureCall__FeatureCallArgumentsAssignment_4_1_0 : ( ruleXShortClosure ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14573:1: rule__XFeatureCall__FeatureCallArgumentsAssignment_4_1_0 : ( ruleXShortClosure ) ;
     public final void rule__XFeatureCall__FeatureCallArgumentsAssignment_4_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14547:1: ( ( ruleXShortClosure ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14548:1: ( ruleXShortClosure )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14577:1: ( ( ruleXShortClosure ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14578:1: ( ruleXShortClosure )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14548:1: ( ruleXShortClosure )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14549:1: ruleXShortClosure
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14578:1: ( ruleXShortClosure )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14579:1: ruleXShortClosure
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXFeatureCallAccess().getFeatureCallArgumentsXShortClosureParserRuleCall_4_1_0_0()); 
             }
-            pushFollow(FOLLOW_ruleXShortClosure_in_rule__XFeatureCall__FeatureCallArgumentsAssignment_4_1_029239);
+            pushFollow(FOLLOW_ruleXShortClosure_in_rule__XFeatureCall__FeatureCallArgumentsAssignment_4_1_029299);
             ruleXShortClosure();
 
             state._fsp--;
@@ -41692,22 +41787,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XFeatureCall__FeatureCallArgumentsAssignment_4_1_1_0"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14558:1: rule__XFeatureCall__FeatureCallArgumentsAssignment_4_1_1_0 : ( ruleXExpression ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14588:1: rule__XFeatureCall__FeatureCallArgumentsAssignment_4_1_1_0 : ( ruleXExpression ) ;
     public final void rule__XFeatureCall__FeatureCallArgumentsAssignment_4_1_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14562:1: ( ( ruleXExpression ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14563:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14592:1: ( ( ruleXExpression ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14593:1: ( ruleXExpression )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14563:1: ( ruleXExpression )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14564:1: ruleXExpression
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14593:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14594:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXFeatureCallAccess().getFeatureCallArgumentsXExpressionParserRuleCall_4_1_1_0_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XFeatureCall__FeatureCallArgumentsAssignment_4_1_1_029270);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XFeatureCall__FeatureCallArgumentsAssignment_4_1_1_029330);
             ruleXExpression();
 
             state._fsp--;
@@ -41737,22 +41832,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XFeatureCall__FeatureCallArgumentsAssignment_4_1_1_1_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14573:1: rule__XFeatureCall__FeatureCallArgumentsAssignment_4_1_1_1_1 : ( ruleXExpression ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14603:1: rule__XFeatureCall__FeatureCallArgumentsAssignment_4_1_1_1_1 : ( ruleXExpression ) ;
     public final void rule__XFeatureCall__FeatureCallArgumentsAssignment_4_1_1_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14577:1: ( ( ruleXExpression ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14578:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14607:1: ( ( ruleXExpression ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14608:1: ( ruleXExpression )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14578:1: ( ruleXExpression )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14579:1: ruleXExpression
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14608:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14609:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXFeatureCallAccess().getFeatureCallArgumentsXExpressionParserRuleCall_4_1_1_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XFeatureCall__FeatureCallArgumentsAssignment_4_1_1_1_129301);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XFeatureCall__FeatureCallArgumentsAssignment_4_1_1_1_129361);
             ruleXExpression();
 
             state._fsp--;
@@ -41782,22 +41877,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XFeatureCall__FeatureCallArgumentsAssignment_5"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14588:1: rule__XFeatureCall__FeatureCallArgumentsAssignment_5 : ( ruleXClosure ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14618:1: rule__XFeatureCall__FeatureCallArgumentsAssignment_5 : ( ruleXClosure ) ;
     public final void rule__XFeatureCall__FeatureCallArgumentsAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14592:1: ( ( ruleXClosure ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14593:1: ( ruleXClosure )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14622:1: ( ( ruleXClosure ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14623:1: ( ruleXClosure )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14593:1: ( ruleXClosure )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14594:1: ruleXClosure
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14623:1: ( ruleXClosure )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14624:1: ruleXClosure
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXFeatureCallAccess().getFeatureCallArgumentsXClosureParserRuleCall_5_0()); 
             }
-            pushFollow(FOLLOW_ruleXClosure_in_rule__XFeatureCall__FeatureCallArgumentsAssignment_529332);
+            pushFollow(FOLLOW_ruleXClosure_in_rule__XFeatureCall__FeatureCallArgumentsAssignment_529392);
             ruleXClosure();
 
             state._fsp--;
@@ -41827,28 +41922,28 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XConstructorCall__ConstructorAssignment_2"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14603:1: rule__XConstructorCall__ConstructorAssignment_2 : ( ( ruleQualifiedName ) ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14633:1: rule__XConstructorCall__ConstructorAssignment_2 : ( ( ruleQualifiedName ) ) ;
     public final void rule__XConstructorCall__ConstructorAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14607:1: ( ( ( ruleQualifiedName ) ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14608:1: ( ( ruleQualifiedName ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14637:1: ( ( ( ruleQualifiedName ) ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14638:1: ( ( ruleQualifiedName ) )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14608:1: ( ( ruleQualifiedName ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14609:1: ( ruleQualifiedName )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14638:1: ( ( ruleQualifiedName ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14639:1: ( ruleQualifiedName )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXConstructorCallAccess().getConstructorJvmConstructorCrossReference_2_0()); 
             }
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14610:1: ( ruleQualifiedName )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14611:1: ruleQualifiedName
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14640:1: ( ruleQualifiedName )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14641:1: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXConstructorCallAccess().getConstructorJvmConstructorQualifiedNameParserRuleCall_2_0_1()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__XConstructorCall__ConstructorAssignment_229367);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__XConstructorCall__ConstructorAssignment_229427);
             ruleQualifiedName();
 
             state._fsp--;
@@ -41884,22 +41979,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XConstructorCall__TypeArgumentsAssignment_3_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14622:1: rule__XConstructorCall__TypeArgumentsAssignment_3_1 : ( ruleJvmArgumentTypeReference ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14652:1: rule__XConstructorCall__TypeArgumentsAssignment_3_1 : ( ruleJvmArgumentTypeReference ) ;
     public final void rule__XConstructorCall__TypeArgumentsAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14626:1: ( ( ruleJvmArgumentTypeReference ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14627:1: ( ruleJvmArgumentTypeReference )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14656:1: ( ( ruleJvmArgumentTypeReference ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14657:1: ( ruleJvmArgumentTypeReference )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14627:1: ( ruleJvmArgumentTypeReference )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14628:1: ruleJvmArgumentTypeReference
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14657:1: ( ruleJvmArgumentTypeReference )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14658:1: ruleJvmArgumentTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXConstructorCallAccess().getTypeArgumentsJvmArgumentTypeReferenceParserRuleCall_3_1_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_rule__XConstructorCall__TypeArgumentsAssignment_3_129402);
+            pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_rule__XConstructorCall__TypeArgumentsAssignment_3_129462);
             ruleJvmArgumentTypeReference();
 
             state._fsp--;
@@ -41929,22 +42024,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XConstructorCall__TypeArgumentsAssignment_3_2_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14637:1: rule__XConstructorCall__TypeArgumentsAssignment_3_2_1 : ( ruleJvmArgumentTypeReference ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14667:1: rule__XConstructorCall__TypeArgumentsAssignment_3_2_1 : ( ruleJvmArgumentTypeReference ) ;
     public final void rule__XConstructorCall__TypeArgumentsAssignment_3_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14641:1: ( ( ruleJvmArgumentTypeReference ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14642:1: ( ruleJvmArgumentTypeReference )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14671:1: ( ( ruleJvmArgumentTypeReference ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14672:1: ( ruleJvmArgumentTypeReference )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14642:1: ( ruleJvmArgumentTypeReference )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14643:1: ruleJvmArgumentTypeReference
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14672:1: ( ruleJvmArgumentTypeReference )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14673:1: ruleJvmArgumentTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXConstructorCallAccess().getTypeArgumentsJvmArgumentTypeReferenceParserRuleCall_3_2_1_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_rule__XConstructorCall__TypeArgumentsAssignment_3_2_129433);
+            pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_rule__XConstructorCall__TypeArgumentsAssignment_3_2_129493);
             ruleJvmArgumentTypeReference();
 
             state._fsp--;
@@ -41974,22 +42069,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XConstructorCall__ArgumentsAssignment_5_0"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14652:1: rule__XConstructorCall__ArgumentsAssignment_5_0 : ( ruleXShortClosure ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14682:1: rule__XConstructorCall__ArgumentsAssignment_5_0 : ( ruleXShortClosure ) ;
     public final void rule__XConstructorCall__ArgumentsAssignment_5_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14656:1: ( ( ruleXShortClosure ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14657:1: ( ruleXShortClosure )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14686:1: ( ( ruleXShortClosure ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14687:1: ( ruleXShortClosure )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14657:1: ( ruleXShortClosure )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14658:1: ruleXShortClosure
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14687:1: ( ruleXShortClosure )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14688:1: ruleXShortClosure
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXConstructorCallAccess().getArgumentsXShortClosureParserRuleCall_5_0_0()); 
             }
-            pushFollow(FOLLOW_ruleXShortClosure_in_rule__XConstructorCall__ArgumentsAssignment_5_029464);
+            pushFollow(FOLLOW_ruleXShortClosure_in_rule__XConstructorCall__ArgumentsAssignment_5_029524);
             ruleXShortClosure();
 
             state._fsp--;
@@ -42019,22 +42114,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XConstructorCall__ArgumentsAssignment_5_1_0"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14667:1: rule__XConstructorCall__ArgumentsAssignment_5_1_0 : ( ruleXExpression ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14697:1: rule__XConstructorCall__ArgumentsAssignment_5_1_0 : ( ruleXExpression ) ;
     public final void rule__XConstructorCall__ArgumentsAssignment_5_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14671:1: ( ( ruleXExpression ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14672:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14701:1: ( ( ruleXExpression ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14702:1: ( ruleXExpression )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14672:1: ( ruleXExpression )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14673:1: ruleXExpression
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14702:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14703:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXConstructorCallAccess().getArgumentsXExpressionParserRuleCall_5_1_0_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XConstructorCall__ArgumentsAssignment_5_1_029495);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XConstructorCall__ArgumentsAssignment_5_1_029555);
             ruleXExpression();
 
             state._fsp--;
@@ -42064,22 +42159,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XConstructorCall__ArgumentsAssignment_5_1_1_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14682:1: rule__XConstructorCall__ArgumentsAssignment_5_1_1_1 : ( ruleXExpression ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14712:1: rule__XConstructorCall__ArgumentsAssignment_5_1_1_1 : ( ruleXExpression ) ;
     public final void rule__XConstructorCall__ArgumentsAssignment_5_1_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14686:1: ( ( ruleXExpression ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14687:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14716:1: ( ( ruleXExpression ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14717:1: ( ruleXExpression )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14687:1: ( ruleXExpression )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14688:1: ruleXExpression
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14717:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14718:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXConstructorCallAccess().getArgumentsXExpressionParserRuleCall_5_1_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XConstructorCall__ArgumentsAssignment_5_1_1_129526);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XConstructorCall__ArgumentsAssignment_5_1_1_129586);
             ruleXExpression();
 
             state._fsp--;
@@ -42109,22 +42204,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XConstructorCall__ArgumentsAssignment_7"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14697:1: rule__XConstructorCall__ArgumentsAssignment_7 : ( ruleXClosure ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14727:1: rule__XConstructorCall__ArgumentsAssignment_7 : ( ruleXClosure ) ;
     public final void rule__XConstructorCall__ArgumentsAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14701:1: ( ( ruleXClosure ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14702:1: ( ruleXClosure )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14731:1: ( ( ruleXClosure ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14732:1: ( ruleXClosure )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14702:1: ( ruleXClosure )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14703:1: ruleXClosure
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14732:1: ( ruleXClosure )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14733:1: ruleXClosure
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXConstructorCallAccess().getArgumentsXClosureParserRuleCall_7_0()); 
             }
-            pushFollow(FOLLOW_ruleXClosure_in_rule__XConstructorCall__ArgumentsAssignment_729557);
+            pushFollow(FOLLOW_ruleXClosure_in_rule__XConstructorCall__ArgumentsAssignment_729617);
             ruleXClosure();
 
             state._fsp--;
@@ -42154,28 +42249,28 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XBooleanLiteral__IsTrueAssignment_1_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14712:1: rule__XBooleanLiteral__IsTrueAssignment_1_1 : ( ( 'true' ) ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14742:1: rule__XBooleanLiteral__IsTrueAssignment_1_1 : ( ( 'true' ) ) ;
     public final void rule__XBooleanLiteral__IsTrueAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14716:1: ( ( ( 'true' ) ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14717:1: ( ( 'true' ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14746:1: ( ( ( 'true' ) ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14747:1: ( ( 'true' ) )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14717:1: ( ( 'true' ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14718:1: ( 'true' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getXBooleanLiteralAccess().getIsTrueTrueKeyword_1_1_0()); 
-            }
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14719:1: ( 'true' )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14720:1: 'true'
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14747:1: ( ( 'true' ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14748:1: ( 'true' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXBooleanLiteralAccess().getIsTrueTrueKeyword_1_1_0()); 
             }
-            match(input,74,FOLLOW_74_in_rule__XBooleanLiteral__IsTrueAssignment_1_129593); if (state.failed) return ;
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14749:1: ( 'true' )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14750:1: 'true'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getXBooleanLiteralAccess().getIsTrueTrueKeyword_1_1_0()); 
+            }
+            match(input,74,FOLLOW_74_in_rule__XBooleanLiteral__IsTrueAssignment_1_129653); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getXBooleanLiteralAccess().getIsTrueTrueKeyword_1_1_0()); 
             }
@@ -42207,22 +42302,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XIntLiteral__ValueAssignment_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14735:1: rule__XIntLiteral__ValueAssignment_1 : ( RULE_INT ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14765:1: rule__XIntLiteral__ValueAssignment_1 : ( RULE_INT ) ;
     public final void rule__XIntLiteral__ValueAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14739:1: ( ( RULE_INT ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14740:1: ( RULE_INT )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14769:1: ( ( RULE_INT ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14770:1: ( RULE_INT )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14740:1: ( RULE_INT )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14741:1: RULE_INT
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14770:1: ( RULE_INT )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14771:1: RULE_INT
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXIntLiteralAccess().getValueINTTerminalRuleCall_1_0()); 
             }
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__XIntLiteral__ValueAssignment_129632); if (state.failed) return ;
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__XIntLiteral__ValueAssignment_129692); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getXIntLiteralAccess().getValueINTTerminalRuleCall_1_0()); 
             }
@@ -42248,22 +42343,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XStringLiteral__ValueAssignment_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14750:1: rule__XStringLiteral__ValueAssignment_1 : ( RULE_STRING ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14780:1: rule__XStringLiteral__ValueAssignment_1 : ( RULE_STRING ) ;
     public final void rule__XStringLiteral__ValueAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14754:1: ( ( RULE_STRING ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14755:1: ( RULE_STRING )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14784:1: ( ( RULE_STRING ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14785:1: ( RULE_STRING )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14755:1: ( RULE_STRING )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14756:1: RULE_STRING
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14785:1: ( RULE_STRING )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14786:1: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXStringLiteralAccess().getValueSTRINGTerminalRuleCall_1_0()); 
             }
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__XStringLiteral__ValueAssignment_129663); if (state.failed) return ;
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__XStringLiteral__ValueAssignment_129723); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getXStringLiteralAccess().getValueSTRINGTerminalRuleCall_1_0()); 
             }
@@ -42289,28 +42384,28 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XTypeLiteral__TypeAssignment_3"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14765:1: rule__XTypeLiteral__TypeAssignment_3 : ( ( ruleQualifiedName ) ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14795:1: rule__XTypeLiteral__TypeAssignment_3 : ( ( ruleQualifiedName ) ) ;
     public final void rule__XTypeLiteral__TypeAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14769:1: ( ( ( ruleQualifiedName ) ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14770:1: ( ( ruleQualifiedName ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14799:1: ( ( ( ruleQualifiedName ) ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14800:1: ( ( ruleQualifiedName ) )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14770:1: ( ( ruleQualifiedName ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14771:1: ( ruleQualifiedName )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14800:1: ( ( ruleQualifiedName ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14801:1: ( ruleQualifiedName )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXTypeLiteralAccess().getTypeJvmTypeCrossReference_3_0()); 
             }
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14772:1: ( ruleQualifiedName )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14773:1: ruleQualifiedName
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14802:1: ( ruleQualifiedName )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14803:1: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXTypeLiteralAccess().getTypeJvmTypeQualifiedNameParserRuleCall_3_0_1()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__XTypeLiteral__TypeAssignment_329698);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__XTypeLiteral__TypeAssignment_329758);
             ruleQualifiedName();
 
             state._fsp--;
@@ -42346,22 +42441,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XThrowExpression__ExpressionAssignment_2"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14784:1: rule__XThrowExpression__ExpressionAssignment_2 : ( ruleXExpression ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14814:1: rule__XThrowExpression__ExpressionAssignment_2 : ( ruleXExpression ) ;
     public final void rule__XThrowExpression__ExpressionAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14788:1: ( ( ruleXExpression ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14789:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14818:1: ( ( ruleXExpression ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14819:1: ( ruleXExpression )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14789:1: ( ruleXExpression )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14790:1: ruleXExpression
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14819:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14820:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXThrowExpressionAccess().getExpressionXExpressionParserRuleCall_2_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XThrowExpression__ExpressionAssignment_229733);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XThrowExpression__ExpressionAssignment_229793);
             ruleXExpression();
 
             state._fsp--;
@@ -42391,22 +42486,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XReturnExpression__ExpressionAssignment_2"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14799:1: rule__XReturnExpression__ExpressionAssignment_2 : ( ruleXExpression ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14829:1: rule__XReturnExpression__ExpressionAssignment_2 : ( ruleXExpression ) ;
     public final void rule__XReturnExpression__ExpressionAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14803:1: ( ( ruleXExpression ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14804:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14833:1: ( ( ruleXExpression ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14834:1: ( ruleXExpression )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14804:1: ( ruleXExpression )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14805:1: ruleXExpression
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14834:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14835:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXReturnExpressionAccess().getExpressionXExpressionParserRuleCall_2_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XReturnExpression__ExpressionAssignment_229764);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XReturnExpression__ExpressionAssignment_229824);
             ruleXExpression();
 
             state._fsp--;
@@ -42436,22 +42531,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XTryCatchFinallyExpression__ExpressionAssignment_2"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14814:1: rule__XTryCatchFinallyExpression__ExpressionAssignment_2 : ( ruleXExpression ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14844:1: rule__XTryCatchFinallyExpression__ExpressionAssignment_2 : ( ruleXExpression ) ;
     public final void rule__XTryCatchFinallyExpression__ExpressionAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14818:1: ( ( ruleXExpression ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14819:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14848:1: ( ( ruleXExpression ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14849:1: ( ruleXExpression )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14819:1: ( ruleXExpression )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14820:1: ruleXExpression
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14849:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14850:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXTryCatchFinallyExpressionAccess().getExpressionXExpressionParserRuleCall_2_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XTryCatchFinallyExpression__ExpressionAssignment_229795);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XTryCatchFinallyExpression__ExpressionAssignment_229855);
             ruleXExpression();
 
             state._fsp--;
@@ -42481,22 +42576,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XTryCatchFinallyExpression__CatchClausesAssignment_3_0_0"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14829:1: rule__XTryCatchFinallyExpression__CatchClausesAssignment_3_0_0 : ( ruleXCatchClause ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14859:1: rule__XTryCatchFinallyExpression__CatchClausesAssignment_3_0_0 : ( ruleXCatchClause ) ;
     public final void rule__XTryCatchFinallyExpression__CatchClausesAssignment_3_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14833:1: ( ( ruleXCatchClause ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14834:1: ( ruleXCatchClause )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14863:1: ( ( ruleXCatchClause ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14864:1: ( ruleXCatchClause )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14834:1: ( ruleXCatchClause )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14835:1: ruleXCatchClause
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14864:1: ( ruleXCatchClause )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14865:1: ruleXCatchClause
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXTryCatchFinallyExpressionAccess().getCatchClausesXCatchClauseParserRuleCall_3_0_0_0()); 
             }
-            pushFollow(FOLLOW_ruleXCatchClause_in_rule__XTryCatchFinallyExpression__CatchClausesAssignment_3_0_029826);
+            pushFollow(FOLLOW_ruleXCatchClause_in_rule__XTryCatchFinallyExpression__CatchClausesAssignment_3_0_029886);
             ruleXCatchClause();
 
             state._fsp--;
@@ -42526,22 +42621,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XTryCatchFinallyExpression__FinallyExpressionAssignment_3_0_1_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14844:1: rule__XTryCatchFinallyExpression__FinallyExpressionAssignment_3_0_1_1 : ( ruleXExpression ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14874:1: rule__XTryCatchFinallyExpression__FinallyExpressionAssignment_3_0_1_1 : ( ruleXExpression ) ;
     public final void rule__XTryCatchFinallyExpression__FinallyExpressionAssignment_3_0_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14848:1: ( ( ruleXExpression ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14849:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14878:1: ( ( ruleXExpression ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14879:1: ( ruleXExpression )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14849:1: ( ruleXExpression )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14850:1: ruleXExpression
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14879:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14880:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXTryCatchFinallyExpressionAccess().getFinallyExpressionXExpressionParserRuleCall_3_0_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XTryCatchFinallyExpression__FinallyExpressionAssignment_3_0_1_129857);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XTryCatchFinallyExpression__FinallyExpressionAssignment_3_0_1_129917);
             ruleXExpression();
 
             state._fsp--;
@@ -42571,22 +42666,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XTryCatchFinallyExpression__FinallyExpressionAssignment_3_1_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14859:1: rule__XTryCatchFinallyExpression__FinallyExpressionAssignment_3_1_1 : ( ruleXExpression ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14889:1: rule__XTryCatchFinallyExpression__FinallyExpressionAssignment_3_1_1 : ( ruleXExpression ) ;
     public final void rule__XTryCatchFinallyExpression__FinallyExpressionAssignment_3_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14863:1: ( ( ruleXExpression ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14864:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14893:1: ( ( ruleXExpression ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14894:1: ( ruleXExpression )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14864:1: ( ruleXExpression )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14865:1: ruleXExpression
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14894:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14895:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXTryCatchFinallyExpressionAccess().getFinallyExpressionXExpressionParserRuleCall_3_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XTryCatchFinallyExpression__FinallyExpressionAssignment_3_1_129888);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XTryCatchFinallyExpression__FinallyExpressionAssignment_3_1_129948);
             ruleXExpression();
 
             state._fsp--;
@@ -42616,22 +42711,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XCatchClause__DeclaredParamAssignment_2"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14874:1: rule__XCatchClause__DeclaredParamAssignment_2 : ( ruleFullJvmFormalParameter ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14904:1: rule__XCatchClause__DeclaredParamAssignment_2 : ( ruleFullJvmFormalParameter ) ;
     public final void rule__XCatchClause__DeclaredParamAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14878:1: ( ( ruleFullJvmFormalParameter ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14879:1: ( ruleFullJvmFormalParameter )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14908:1: ( ( ruleFullJvmFormalParameter ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14909:1: ( ruleFullJvmFormalParameter )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14879:1: ( ruleFullJvmFormalParameter )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14880:1: ruleFullJvmFormalParameter
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14909:1: ( ruleFullJvmFormalParameter )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14910:1: ruleFullJvmFormalParameter
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXCatchClauseAccess().getDeclaredParamFullJvmFormalParameterParserRuleCall_2_0()); 
             }
-            pushFollow(FOLLOW_ruleFullJvmFormalParameter_in_rule__XCatchClause__DeclaredParamAssignment_229919);
+            pushFollow(FOLLOW_ruleFullJvmFormalParameter_in_rule__XCatchClause__DeclaredParamAssignment_229979);
             ruleFullJvmFormalParameter();
 
             state._fsp--;
@@ -42661,22 +42756,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__XCatchClause__ExpressionAssignment_4"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14889:1: rule__XCatchClause__ExpressionAssignment_4 : ( ruleXExpression ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14919:1: rule__XCatchClause__ExpressionAssignment_4 : ( ruleXExpression ) ;
     public final void rule__XCatchClause__ExpressionAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14893:1: ( ( ruleXExpression ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14894:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14923:1: ( ( ruleXExpression ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14924:1: ( ruleXExpression )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14894:1: ( ruleXExpression )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14895:1: ruleXExpression
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14924:1: ( ruleXExpression )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14925:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXCatchClauseAccess().getExpressionXExpressionParserRuleCall_4_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XCatchClause__ExpressionAssignment_429950);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XCatchClause__ExpressionAssignment_430010);
             ruleXExpression();
 
             state._fsp--;
@@ -42705,99 +42800,9 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
     // $ANTLR end "rule__XCatchClause__ExpressionAssignment_4"
 
 
-    // $ANTLR start "rule__XFunctionTypeRef__ParamTypesAssignment_0_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14904:1: rule__XFunctionTypeRef__ParamTypesAssignment_0_1 : ( ruleJvmTypeReference ) ;
-    public final void rule__XFunctionTypeRef__ParamTypesAssignment_0_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14908:1: ( ( ruleJvmTypeReference ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14909:1: ( ruleJvmTypeReference )
-            {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14909:1: ( ruleJvmTypeReference )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14910:1: ruleJvmTypeReference
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getXFunctionTypeRefAccess().getParamTypesJvmTypeReferenceParserRuleCall_0_1_0()); 
-            }
-            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__XFunctionTypeRef__ParamTypesAssignment_0_129981);
-            ruleJvmTypeReference();
-
-            state._fsp--;
-            if (state.failed) return ;
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getXFunctionTypeRefAccess().getParamTypesJvmTypeReferenceParserRuleCall_0_1_0()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__XFunctionTypeRef__ParamTypesAssignment_0_1"
-
-
-    // $ANTLR start "rule__XFunctionTypeRef__ParamTypesAssignment_0_2_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14919:1: rule__XFunctionTypeRef__ParamTypesAssignment_0_2_1 : ( ruleJvmTypeReference ) ;
-    public final void rule__XFunctionTypeRef__ParamTypesAssignment_0_2_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14923:1: ( ( ruleJvmTypeReference ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14924:1: ( ruleJvmTypeReference )
-            {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14924:1: ( ruleJvmTypeReference )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14925:1: ruleJvmTypeReference
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getXFunctionTypeRefAccess().getParamTypesJvmTypeReferenceParserRuleCall_0_2_1_0()); 
-            }
-            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__XFunctionTypeRef__ParamTypesAssignment_0_2_130012);
-            ruleJvmTypeReference();
-
-            state._fsp--;
-            if (state.failed) return ;
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getXFunctionTypeRefAccess().getParamTypesJvmTypeReferenceParserRuleCall_0_2_1_0()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__XFunctionTypeRef__ParamTypesAssignment_0_2_1"
-
-
-    // $ANTLR start "rule__XFunctionTypeRef__ReturnTypeAssignment_2"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14934:1: rule__XFunctionTypeRef__ReturnTypeAssignment_2 : ( ruleJvmTypeReference ) ;
-    public final void rule__XFunctionTypeRef__ReturnTypeAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__XFunctionTypeRef__ParamTypesAssignment_0_1_0"
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14934:1: rule__XFunctionTypeRef__ParamTypesAssignment_0_1_0 : ( ruleJvmTypeReference ) ;
+    public final void rule__XFunctionTypeRef__ParamTypesAssignment_0_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -42809,9 +42814,99 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
             // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14940:1: ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
+               before(grammarAccess.getXFunctionTypeRefAccess().getParamTypesJvmTypeReferenceParserRuleCall_0_1_0_0()); 
+            }
+            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__XFunctionTypeRef__ParamTypesAssignment_0_1_030041);
+            ruleJvmTypeReference();
+
+            state._fsp--;
+            if (state.failed) return ;
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getXFunctionTypeRefAccess().getParamTypesJvmTypeReferenceParserRuleCall_0_1_0_0()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__XFunctionTypeRef__ParamTypesAssignment_0_1_0"
+
+
+    // $ANTLR start "rule__XFunctionTypeRef__ParamTypesAssignment_0_1_1_1"
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14949:1: rule__XFunctionTypeRef__ParamTypesAssignment_0_1_1_1 : ( ruleJvmTypeReference ) ;
+    public final void rule__XFunctionTypeRef__ParamTypesAssignment_0_1_1_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14953:1: ( ( ruleJvmTypeReference ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14954:1: ( ruleJvmTypeReference )
+            {
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14954:1: ( ruleJvmTypeReference )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14955:1: ruleJvmTypeReference
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getXFunctionTypeRefAccess().getParamTypesJvmTypeReferenceParserRuleCall_0_1_1_1_0()); 
+            }
+            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__XFunctionTypeRef__ParamTypesAssignment_0_1_1_130072);
+            ruleJvmTypeReference();
+
+            state._fsp--;
+            if (state.failed) return ;
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getXFunctionTypeRefAccess().getParamTypesJvmTypeReferenceParserRuleCall_0_1_1_1_0()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__XFunctionTypeRef__ParamTypesAssignment_0_1_1_1"
+
+
+    // $ANTLR start "rule__XFunctionTypeRef__ReturnTypeAssignment_2"
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14964:1: rule__XFunctionTypeRef__ReturnTypeAssignment_2 : ( ruleJvmTypeReference ) ;
+    public final void rule__XFunctionTypeRef__ReturnTypeAssignment_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14968:1: ( ( ruleJvmTypeReference ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14969:1: ( ruleJvmTypeReference )
+            {
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14969:1: ( ruleJvmTypeReference )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14970:1: ruleJvmTypeReference
+            {
+            if ( state.backtracking==0 ) {
                before(grammarAccess.getXFunctionTypeRefAccess().getReturnTypeJvmTypeReferenceParserRuleCall_2_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__XFunctionTypeRef__ReturnTypeAssignment_230043);
+            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__XFunctionTypeRef__ReturnTypeAssignment_230103);
             ruleJvmTypeReference();
 
             state._fsp--;
@@ -42841,28 +42936,28 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__JvmParameterizedTypeReference__TypeAssignment_0"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14949:1: rule__JvmParameterizedTypeReference__TypeAssignment_0 : ( ( ruleQualifiedName ) ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14979:1: rule__JvmParameterizedTypeReference__TypeAssignment_0 : ( ( ruleQualifiedName ) ) ;
     public final void rule__JvmParameterizedTypeReference__TypeAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14953:1: ( ( ( ruleQualifiedName ) ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14954:1: ( ( ruleQualifiedName ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14983:1: ( ( ( ruleQualifiedName ) ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14984:1: ( ( ruleQualifiedName ) )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14954:1: ( ( ruleQualifiedName ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14955:1: ( ruleQualifiedName )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14984:1: ( ( ruleQualifiedName ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14985:1: ( ruleQualifiedName )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmParameterizedTypeReferenceAccess().getTypeJvmTypeCrossReference_0_0()); 
             }
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14956:1: ( ruleQualifiedName )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14957:1: ruleQualifiedName
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14986:1: ( ruleQualifiedName )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14987:1: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmParameterizedTypeReferenceAccess().getTypeJvmTypeQualifiedNameParserRuleCall_0_0_1()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__JvmParameterizedTypeReference__TypeAssignment_030078);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__JvmParameterizedTypeReference__TypeAssignment_030138);
             ruleQualifiedName();
 
             state._fsp--;
@@ -42898,22 +42993,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14968:1: rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_1 : ( ruleJvmArgumentTypeReference ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14998:1: rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_1 : ( ruleJvmArgumentTypeReference ) ;
     public final void rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14972:1: ( ( ruleJvmArgumentTypeReference ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14973:1: ( ruleJvmArgumentTypeReference )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15002:1: ( ( ruleJvmArgumentTypeReference ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15003:1: ( ruleJvmArgumentTypeReference )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14973:1: ( ruleJvmArgumentTypeReference )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14974:1: ruleJvmArgumentTypeReference
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15003:1: ( ruleJvmArgumentTypeReference )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15004:1: ruleJvmArgumentTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmParameterizedTypeReferenceAccess().getArgumentsJvmArgumentTypeReferenceParserRuleCall_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_130113);
+            pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_130173);
             ruleJvmArgumentTypeReference();
 
             state._fsp--;
@@ -42943,22 +43038,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_2_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14983:1: rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_2_1 : ( ruleJvmArgumentTypeReference ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15013:1: rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_2_1 : ( ruleJvmArgumentTypeReference ) ;
     public final void rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14987:1: ( ( ruleJvmArgumentTypeReference ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14988:1: ( ruleJvmArgumentTypeReference )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15017:1: ( ( ruleJvmArgumentTypeReference ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15018:1: ( ruleJvmArgumentTypeReference )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14988:1: ( ruleJvmArgumentTypeReference )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14989:1: ruleJvmArgumentTypeReference
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15018:1: ( ruleJvmArgumentTypeReference )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15019:1: ruleJvmArgumentTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmParameterizedTypeReferenceAccess().getArgumentsJvmArgumentTypeReferenceParserRuleCall_1_2_1_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_2_130144);
+            pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_2_130204);
             ruleJvmArgumentTypeReference();
 
             state._fsp--;
@@ -42988,22 +43083,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__JvmWildcardTypeReference__ConstraintsAssignment_2_0"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:14998:1: rule__JvmWildcardTypeReference__ConstraintsAssignment_2_0 : ( ruleJvmUpperBound ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15028:1: rule__JvmWildcardTypeReference__ConstraintsAssignment_2_0 : ( ruleJvmUpperBound ) ;
     public final void rule__JvmWildcardTypeReference__ConstraintsAssignment_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15002:1: ( ( ruleJvmUpperBound ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15003:1: ( ruleJvmUpperBound )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15032:1: ( ( ruleJvmUpperBound ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15033:1: ( ruleJvmUpperBound )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15003:1: ( ruleJvmUpperBound )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15004:1: ruleJvmUpperBound
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15033:1: ( ruleJvmUpperBound )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15034:1: ruleJvmUpperBound
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmWildcardTypeReferenceAccess().getConstraintsJvmUpperBoundParserRuleCall_2_0_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmUpperBound_in_rule__JvmWildcardTypeReference__ConstraintsAssignment_2_030175);
+            pushFollow(FOLLOW_ruleJvmUpperBound_in_rule__JvmWildcardTypeReference__ConstraintsAssignment_2_030235);
             ruleJvmUpperBound();
 
             state._fsp--;
@@ -43033,22 +43128,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__JvmWildcardTypeReference__ConstraintsAssignment_2_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15013:1: rule__JvmWildcardTypeReference__ConstraintsAssignment_2_1 : ( ruleJvmLowerBound ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15043:1: rule__JvmWildcardTypeReference__ConstraintsAssignment_2_1 : ( ruleJvmLowerBound ) ;
     public final void rule__JvmWildcardTypeReference__ConstraintsAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15017:1: ( ( ruleJvmLowerBound ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15018:1: ( ruleJvmLowerBound )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15047:1: ( ( ruleJvmLowerBound ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15048:1: ( ruleJvmLowerBound )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15018:1: ( ruleJvmLowerBound )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15019:1: ruleJvmLowerBound
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15048:1: ( ruleJvmLowerBound )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15049:1: ruleJvmLowerBound
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmWildcardTypeReferenceAccess().getConstraintsJvmLowerBoundParserRuleCall_2_1_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmLowerBound_in_rule__JvmWildcardTypeReference__ConstraintsAssignment_2_130206);
+            pushFollow(FOLLOW_ruleJvmLowerBound_in_rule__JvmWildcardTypeReference__ConstraintsAssignment_2_130266);
             ruleJvmLowerBound();
 
             state._fsp--;
@@ -43078,22 +43173,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__JvmUpperBound__TypeReferenceAssignment_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15028:1: rule__JvmUpperBound__TypeReferenceAssignment_1 : ( ruleJvmTypeReference ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15058:1: rule__JvmUpperBound__TypeReferenceAssignment_1 : ( ruleJvmTypeReference ) ;
     public final void rule__JvmUpperBound__TypeReferenceAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15032:1: ( ( ruleJvmTypeReference ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15033:1: ( ruleJvmTypeReference )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15062:1: ( ( ruleJvmTypeReference ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15063:1: ( ruleJvmTypeReference )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15033:1: ( ruleJvmTypeReference )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15034:1: ruleJvmTypeReference
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15063:1: ( ruleJvmTypeReference )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15064:1: ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmUpperBoundAccess().getTypeReferenceJvmTypeReferenceParserRuleCall_1_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__JvmUpperBound__TypeReferenceAssignment_130237);
+            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__JvmUpperBound__TypeReferenceAssignment_130297);
             ruleJvmTypeReference();
 
             state._fsp--;
@@ -43123,22 +43218,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__JvmUpperBoundAnded__TypeReferenceAssignment_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15043:1: rule__JvmUpperBoundAnded__TypeReferenceAssignment_1 : ( ruleJvmTypeReference ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15073:1: rule__JvmUpperBoundAnded__TypeReferenceAssignment_1 : ( ruleJvmTypeReference ) ;
     public final void rule__JvmUpperBoundAnded__TypeReferenceAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15047:1: ( ( ruleJvmTypeReference ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15048:1: ( ruleJvmTypeReference )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15077:1: ( ( ruleJvmTypeReference ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15078:1: ( ruleJvmTypeReference )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15048:1: ( ruleJvmTypeReference )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15049:1: ruleJvmTypeReference
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15078:1: ( ruleJvmTypeReference )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15079:1: ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmUpperBoundAndedAccess().getTypeReferenceJvmTypeReferenceParserRuleCall_1_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__JvmUpperBoundAnded__TypeReferenceAssignment_130268);
+            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__JvmUpperBoundAnded__TypeReferenceAssignment_130328);
             ruleJvmTypeReference();
 
             state._fsp--;
@@ -43168,22 +43263,22 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__JvmLowerBound__TypeReferenceAssignment_1"
-    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15058:1: rule__JvmLowerBound__TypeReferenceAssignment_1 : ( ruleJvmTypeReference ) ;
+    // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15088:1: rule__JvmLowerBound__TypeReferenceAssignment_1 : ( ruleJvmTypeReference ) ;
     public final void rule__JvmLowerBound__TypeReferenceAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15062:1: ( ( ruleJvmTypeReference ) )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15063:1: ( ruleJvmTypeReference )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15092:1: ( ( ruleJvmTypeReference ) )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15093:1: ( ruleJvmTypeReference )
             {
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15063:1: ( ruleJvmTypeReference )
-            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15064:1: ruleJvmTypeReference
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15093:1: ( ruleJvmTypeReference )
+            // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:15094:1: ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmLowerBoundAccess().getTypeReferenceJvmTypeReferenceParserRuleCall_1_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__JvmLowerBound__TypeReferenceAssignment_130299);
+            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__JvmLowerBound__TypeReferenceAssignment_130359);
             ruleJvmTypeReference();
 
             state._fsp--;
@@ -43661,12 +43756,12 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
     }
     // $ANTLR end synpred104_InternalGraphViewStyle
 
-    // $ANTLR start synpred107_InternalGraphViewStyle
-    public final void synpred107_InternalGraphViewStyle_fragment() throws RecognitionException {   
-        // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12648:2: ( rule__JvmParameterizedTypeReference__Group_1__0 )
-        // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12648:2: rule__JvmParameterizedTypeReference__Group_1__0
+    // $ANTLR start synpred108_InternalGraphViewStyle
+    public final void synpred108_InternalGraphViewStyle_fragment() throws RecognitionException {   
+        // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12678:2: ( rule__JvmParameterizedTypeReference__Group_1__0 )
+        // ../org.eclipse.xtext.graphview.style.ui/src-gen/org/eclipse/xtext/graphview/style/ui/contentassist/antlr/internal/InternalGraphViewStyle.g:12678:2: rule__JvmParameterizedTypeReference__Group_1__0
         {
-        pushFollow(FOLLOW_rule__JvmParameterizedTypeReference__Group_1__0_in_synpred107_InternalGraphViewStyle25396);
+        pushFollow(FOLLOW_rule__JvmParameterizedTypeReference__Group_1__0_in_synpred108_InternalGraphViewStyle25456);
         rule__JvmParameterizedTypeReference__Group_1__0();
 
         state._fsp--;
@@ -43674,7 +43769,7 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
 
         }
     }
-    // $ANTLR end synpred107_InternalGraphViewStyle
+    // $ANTLR end synpred108_InternalGraphViewStyle
 
     // Delegated rules
 
@@ -43944,20 +44039,6 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
         state.failed=false;
         return success;
     }
-    public final boolean synpred107_InternalGraphViewStyle() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred107_InternalGraphViewStyle_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
     public final boolean synpred40_InternalGraphViewStyle() {
         state.backtracking++;
         int start = input.mark();
@@ -44005,6 +44086,20 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
         int start = input.mark();
         try {
             synpred25_InternalGraphViewStyle_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred108_InternalGraphViewStyle() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred108_InternalGraphViewStyle_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -44068,7 +44163,7 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
     protected DFA69 dfa69 = new DFA69(this);
     protected DFA75 dfa75 = new DFA75(this);
     protected DFA78 dfa78 = new DFA78(this);
-    protected DFA85 dfa85 = new DFA85(this);
+    protected DFA86 dfa86 = new DFA86(this);
     static final String DFA14_eotS =
         "\34\uffff";
     static final String DFA14_eofS =
@@ -45728,19 +45823,19 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
             throw nvae;
         }
     }
-    static final String DFA85_eotS =
+    static final String DFA86_eotS =
         "\76\uffff";
-    static final String DFA85_eofS =
+    static final String DFA86_eofS =
         "\1\2\75\uffff";
-    static final String DFA85_minS =
+    static final String DFA86_minS =
         "\1\4\1\0\74\uffff";
-    static final String DFA85_maxS =
+    static final String DFA86_maxS =
         "\1\112\1\0\74\uffff";
-    static final String DFA85_acceptS =
+    static final String DFA86_acceptS =
         "\2\uffff\1\2\72\uffff\1\1";
-    static final String DFA85_specialS =
+    static final String DFA86_specialS =
         "\1\uffff\1\0\74\uffff}>";
-    static final String[] DFA85_transitionS = {
+    static final String[] DFA86_transitionS = {
             "\4\2\5\uffff\10\2\1\1\15\2\1\uffff\1\2\1\uffff\23\2\1\uffff"+
             "\11\2\3\uffff\2\2\1\uffff\2\2",
             "\1\uffff",
@@ -45806,61 +45901,61 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
             ""
     };
 
-    static final short[] DFA85_eot = DFA.unpackEncodedString(DFA85_eotS);
-    static final short[] DFA85_eof = DFA.unpackEncodedString(DFA85_eofS);
-    static final char[] DFA85_min = DFA.unpackEncodedStringToUnsignedChars(DFA85_minS);
-    static final char[] DFA85_max = DFA.unpackEncodedStringToUnsignedChars(DFA85_maxS);
-    static final short[] DFA85_accept = DFA.unpackEncodedString(DFA85_acceptS);
-    static final short[] DFA85_special = DFA.unpackEncodedString(DFA85_specialS);
-    static final short[][] DFA85_transition;
+    static final short[] DFA86_eot = DFA.unpackEncodedString(DFA86_eotS);
+    static final short[] DFA86_eof = DFA.unpackEncodedString(DFA86_eofS);
+    static final char[] DFA86_min = DFA.unpackEncodedStringToUnsignedChars(DFA86_minS);
+    static final char[] DFA86_max = DFA.unpackEncodedStringToUnsignedChars(DFA86_maxS);
+    static final short[] DFA86_accept = DFA.unpackEncodedString(DFA86_acceptS);
+    static final short[] DFA86_special = DFA.unpackEncodedString(DFA86_specialS);
+    static final short[][] DFA86_transition;
 
     static {
-        int numStates = DFA85_transitionS.length;
-        DFA85_transition = new short[numStates][];
+        int numStates = DFA86_transitionS.length;
+        DFA86_transition = new short[numStates][];
         for (int i=0; i<numStates; i++) {
-            DFA85_transition[i] = DFA.unpackEncodedString(DFA85_transitionS[i]);
+            DFA86_transition[i] = DFA.unpackEncodedString(DFA86_transitionS[i]);
         }
     }
 
-    class DFA85 extends DFA {
+    class DFA86 extends DFA {
 
-        public DFA85(BaseRecognizer recognizer) {
+        public DFA86(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 85;
-            this.eot = DFA85_eot;
-            this.eof = DFA85_eof;
-            this.min = DFA85_min;
-            this.max = DFA85_max;
-            this.accept = DFA85_accept;
-            this.special = DFA85_special;
-            this.transition = DFA85_transition;
+            this.decisionNumber = 86;
+            this.eot = DFA86_eot;
+            this.eof = DFA86_eof;
+            this.min = DFA86_min;
+            this.max = DFA86_max;
+            this.accept = DFA86_accept;
+            this.special = DFA86_special;
+            this.transition = DFA86_transition;
         }
         public String getDescription() {
-            return "12648:1: ( rule__JvmParameterizedTypeReference__Group_1__0 )?";
+            return "12678:1: ( rule__JvmParameterizedTypeReference__Group_1__0 )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA85_1 = input.LA(1);
+                        int LA86_1 = input.LA(1);
 
                          
-                        int index85_1 = input.index();
+                        int index86_1 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred107_InternalGraphViewStyle()) ) {s = 61;}
+                        if ( (synpred108_InternalGraphViewStyle()) ) {s = 61;}
 
                         else if ( (true) ) {s = 2;}
 
                          
-                        input.seek(index85_1);
+                        input.seek(index86_1);
                         if ( s>=0 ) return s;
                         break;
             }
             if (state.backtracking>0) {state.failed=true; return -1;}
             NoViableAltException nvae =
-                new NoViableAltException(getDescription(), 85, _s, input);
+                new NoViableAltException(getDescription(), 86, _s, input);
             error(nvae);
             throw nvae;
         }
@@ -46916,184 +47011,186 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
     public static final BitSet FOLLOW_66_in_rule__XFunctionTypeRef__Group__1__Impl24842 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XFunctionTypeRef__Group__2__Impl_in_rule__XFunctionTypeRef__Group__224873 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XFunctionTypeRef__ReturnTypeAssignment_2_in_rule__XFunctionTypeRef__Group__2__Impl24900 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__XFunctionTypeRef__Group_0__0__Impl_in_rule__XFunctionTypeRef__Group_0__024936 = new BitSet(new long[]{0x0000400000000010L,0x0000000000000004L});
+    public static final BitSet FOLLOW_rule__XFunctionTypeRef__Group_0__0__Impl_in_rule__XFunctionTypeRef__Group_0__024936 = new BitSet(new long[]{0x0000440000000010L,0x0000000000000004L});
     public static final BitSet FOLLOW_rule__XFunctionTypeRef__Group_0__1_in_rule__XFunctionTypeRef__Group_0__024939 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_46_in_rule__XFunctionTypeRef__Group_0__0__Impl24967 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__XFunctionTypeRef__Group_0__1__Impl_in_rule__XFunctionTypeRef__Group_0__124998 = new BitSet(new long[]{0x0000048000000000L});
+    public static final BitSet FOLLOW_rule__XFunctionTypeRef__Group_0__1__Impl_in_rule__XFunctionTypeRef__Group_0__124998 = new BitSet(new long[]{0x0000440000000010L,0x0000000000000004L});
     public static final BitSet FOLLOW_rule__XFunctionTypeRef__Group_0__2_in_rule__XFunctionTypeRef__Group_0__125001 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__XFunctionTypeRef__ParamTypesAssignment_0_1_in_rule__XFunctionTypeRef__Group_0__1__Impl25028 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__XFunctionTypeRef__Group_0__2__Impl_in_rule__XFunctionTypeRef__Group_0__225058 = new BitSet(new long[]{0x0000048000000000L});
-    public static final BitSet FOLLOW_rule__XFunctionTypeRef__Group_0__3_in_rule__XFunctionTypeRef__Group_0__225061 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__XFunctionTypeRef__Group_0_2__0_in_rule__XFunctionTypeRef__Group_0__2__Impl25088 = new BitSet(new long[]{0x0000008000000002L});
-    public static final BitSet FOLLOW_rule__XFunctionTypeRef__Group_0__3__Impl_in_rule__XFunctionTypeRef__Group_0__325119 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_42_in_rule__XFunctionTypeRef__Group_0__3__Impl25147 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__XFunctionTypeRef__Group_0_2__0__Impl_in_rule__XFunctionTypeRef__Group_0_2__025186 = new BitSet(new long[]{0x0000400000000010L,0x0000000000000004L});
-    public static final BitSet FOLLOW_rule__XFunctionTypeRef__Group_0_2__1_in_rule__XFunctionTypeRef__Group_0_2__025189 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_rule__XFunctionTypeRef__Group_0_2__0__Impl25217 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__XFunctionTypeRef__Group_0_2__1__Impl_in_rule__XFunctionTypeRef__Group_0_2__125248 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__XFunctionTypeRef__ParamTypesAssignment_0_2_1_in_rule__XFunctionTypeRef__Group_0_2__1__Impl25275 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JvmParameterizedTypeReference__Group__0__Impl_in_rule__JvmParameterizedTypeReference__Group__025309 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_rule__JvmParameterizedTypeReference__Group__1_in_rule__JvmParameterizedTypeReference__Group__025312 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JvmParameterizedTypeReference__TypeAssignment_0_in_rule__JvmParameterizedTypeReference__Group__0__Impl25339 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JvmParameterizedTypeReference__Group__1__Impl_in_rule__JvmParameterizedTypeReference__Group__125369 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JvmParameterizedTypeReference__Group_1__0_in_rule__JvmParameterizedTypeReference__Group__1__Impl25396 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JvmParameterizedTypeReference__Group_1__0__Impl_in_rule__JvmParameterizedTypeReference__Group_1__025431 = new BitSet(new long[]{0x0000400000000010L,0x000000000000000CL});
-    public static final BitSet FOLLOW_rule__JvmParameterizedTypeReference__Group_1__1_in_rule__JvmParameterizedTypeReference__Group_1__025434 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_rule__JvmParameterizedTypeReference__Group_1__0__Impl25463 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JvmParameterizedTypeReference__Group_1__1__Impl_in_rule__JvmParameterizedTypeReference__Group_1__125495 = new BitSet(new long[]{0x0000008000100000L});
-    public static final BitSet FOLLOW_rule__JvmParameterizedTypeReference__Group_1__2_in_rule__JvmParameterizedTypeReference__Group_1__125498 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_1_in_rule__JvmParameterizedTypeReference__Group_1__1__Impl25525 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JvmParameterizedTypeReference__Group_1__2__Impl_in_rule__JvmParameterizedTypeReference__Group_1__225555 = new BitSet(new long[]{0x0000008000100000L});
-    public static final BitSet FOLLOW_rule__JvmParameterizedTypeReference__Group_1__3_in_rule__JvmParameterizedTypeReference__Group_1__225558 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JvmParameterizedTypeReference__Group_1_2__0_in_rule__JvmParameterizedTypeReference__Group_1__2__Impl25585 = new BitSet(new long[]{0x0000008000000002L});
-    public static final BitSet FOLLOW_rule__JvmParameterizedTypeReference__Group_1__3__Impl_in_rule__JvmParameterizedTypeReference__Group_1__325616 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_rule__JvmParameterizedTypeReference__Group_1__3__Impl25644 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JvmParameterizedTypeReference__Group_1_2__0__Impl_in_rule__JvmParameterizedTypeReference__Group_1_2__025683 = new BitSet(new long[]{0x0000400000000010L,0x000000000000000CL});
-    public static final BitSet FOLLOW_rule__JvmParameterizedTypeReference__Group_1_2__1_in_rule__JvmParameterizedTypeReference__Group_1_2__025686 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_rule__JvmParameterizedTypeReference__Group_1_2__0__Impl25714 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JvmParameterizedTypeReference__Group_1_2__1__Impl_in_rule__JvmParameterizedTypeReference__Group_1_2__125745 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_2_1_in_rule__JvmParameterizedTypeReference__Group_1_2__1__Impl25772 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JvmWildcardTypeReference__Group__0__Impl_in_rule__JvmWildcardTypeReference__Group__025806 = new BitSet(new long[]{0x0000400000000010L,0x000000000000000CL});
-    public static final BitSet FOLLOW_rule__JvmWildcardTypeReference__Group__1_in_rule__JvmWildcardTypeReference__Group__025809 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JvmWildcardTypeReference__Group__1__Impl_in_rule__JvmWildcardTypeReference__Group__125867 = new BitSet(new long[]{0x0000000200000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__JvmWildcardTypeReference__Group__2_in_rule__JvmWildcardTypeReference__Group__125870 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_67_in_rule__JvmWildcardTypeReference__Group__1__Impl25898 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JvmWildcardTypeReference__Group__2__Impl_in_rule__JvmWildcardTypeReference__Group__225929 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JvmWildcardTypeReference__Alternatives_2_in_rule__JvmWildcardTypeReference__Group__2__Impl25956 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JvmUpperBound__Group__0__Impl_in_rule__JvmUpperBound__Group__025993 = new BitSet(new long[]{0x0000400000000010L,0x0000000000000004L});
-    public static final BitSet FOLLOW_rule__JvmUpperBound__Group__1_in_rule__JvmUpperBound__Group__025996 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_68_in_rule__JvmUpperBound__Group__0__Impl26024 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JvmUpperBound__Group__1__Impl_in_rule__JvmUpperBound__Group__126055 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JvmUpperBound__TypeReferenceAssignment_1_in_rule__JvmUpperBound__Group__1__Impl26082 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JvmUpperBoundAnded__Group__0__Impl_in_rule__JvmUpperBoundAnded__Group__026116 = new BitSet(new long[]{0x0000400000000010L,0x0000000000000004L});
-    public static final BitSet FOLLOW_rule__JvmUpperBoundAnded__Group__1_in_rule__JvmUpperBoundAnded__Group__026119 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_69_in_rule__JvmUpperBoundAnded__Group__0__Impl26147 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JvmUpperBoundAnded__Group__1__Impl_in_rule__JvmUpperBoundAnded__Group__126178 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JvmUpperBoundAnded__TypeReferenceAssignment_1_in_rule__JvmUpperBoundAnded__Group__1__Impl26205 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JvmLowerBound__Group__0__Impl_in_rule__JvmLowerBound__Group__026239 = new BitSet(new long[]{0x0000400000000010L,0x0000000000000004L});
-    public static final BitSet FOLLOW_rule__JvmLowerBound__Group__1_in_rule__JvmLowerBound__Group__026242 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_33_in_rule__JvmLowerBound__Group__0__Impl26270 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JvmLowerBound__Group__1__Impl_in_rule__JvmLowerBound__Group__126301 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JvmLowerBound__TypeReferenceAssignment_1_in_rule__JvmLowerBound__Group__1__Impl26328 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleImport_in_rule__StyleSheet__ImportsAssignment_026369 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__StyleSheet__NameAssignment_226400 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__StyleSheet__DiagramMappingAssignment_426435 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStyle_in_rule__StyleSheet__StylesAssignment_526470 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedNameWithWildcard_in_rule__Import__ImportedNamespaceAssignment_126501 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Style__MappingsAssignment_126536 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Style__MappingsAssignment_2_126575 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__Style__JavaClassAssignment_3_126610 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXBlockExpression_in_rule__Style__ExpressionAssignment_426641 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_COLOR_in_rule__XColorLiteral__ColorAssignment26672 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValidID_in_rule__XAssignment__FeatureAssignment_0_126707 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXAssignment_in_rule__XAssignment__ValueAssignment_0_326742 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOpMultiAssign_in_rule__XAssignment__FeatureAssignment_1_1_0_0_126777 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXAssignment_in_rule__XAssignment__RightOperandAssignment_1_1_126812 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOpOr_in_rule__XOrExpression__FeatureAssignment_1_0_0_126847 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXAndExpression_in_rule__XOrExpression__RightOperandAssignment_1_126882 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOpAnd_in_rule__XAndExpression__FeatureAssignment_1_0_0_126917 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXEqualityExpression_in_rule__XAndExpression__RightOperandAssignment_1_126952 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOpEquality_in_rule__XEqualityExpression__FeatureAssignment_1_0_0_126987 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXRelationalExpression_in_rule__XEqualityExpression__RightOperandAssignment_1_127022 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__XRelationalExpression__TypeAssignment_1_0_127057 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOpCompare_in_rule__XRelationalExpression__FeatureAssignment_1_1_0_0_127096 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXOtherOperatorExpression_in_rule__XRelationalExpression__RightOperandAssignment_1_1_127131 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOpOther_in_rule__XOtherOperatorExpression__FeatureAssignment_1_0_0_127166 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXAdditiveExpression_in_rule__XOtherOperatorExpression__RightOperandAssignment_1_127201 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOpAdd_in_rule__XAdditiveExpression__FeatureAssignment_1_0_0_127236 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXMultiplicativeExpression_in_rule__XAdditiveExpression__RightOperandAssignment_1_127271 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOpMulti_in_rule__XMultiplicativeExpression__FeatureAssignment_1_0_0_127306 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXUnaryOperation_in_rule__XMultiplicativeExpression__RightOperandAssignment_1_127341 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOpUnary_in_rule__XUnaryOperation__FeatureAssignment_0_127376 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXCastedExpression_in_rule__XUnaryOperation__OperandAssignment_0_227411 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__XCastedExpression__TypeAssignment_1_127442 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValidID_in_rule__XMemberFeatureCall__FeatureAssignment_1_0_0_0_227477 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXAssignment_in_rule__XMemberFeatureCall__ValueAssignment_1_0_127512 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_70_in_rule__XMemberFeatureCall__NullSafeAssignment_1_1_0_0_1_127548 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_71_in_rule__XMemberFeatureCall__SpreadingAssignment_1_1_0_0_1_227592 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_rule__XMemberFeatureCall__TypeArgumentsAssignment_1_1_1_127631 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_rule__XMemberFeatureCall__TypeArgumentsAssignment_1_1_1_2_127662 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValidID_in_rule__XMemberFeatureCall__FeatureAssignment_1_1_227697 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_46_in_rule__XMemberFeatureCall__ExplicitOperationCallAssignment_1_1_3_027737 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXShortClosure_in_rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_027776 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_1_027807 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_1_1_127838 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXClosure_in_rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_427869 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_rule__XClosure__DeclaredFormalParametersAssignment_2_0_0_027900 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_rule__XClosure__DeclaredFormalParametersAssignment_2_0_0_1_127931 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_72_in_rule__XClosure__ExplicitSyntaxAssignment_2_0_127967 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpressionInClosure_in_rule__XClosure__ExpressionAssignment_328006 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpressionInsideBlock_in_rule__XExpressionInClosure__ExpressionsAssignment_1_028037 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_rule__XShortClosure__DeclaredFormalParametersAssignment_0_0_1_028068 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_rule__XShortClosure__DeclaredFormalParametersAssignment_0_0_1_1_128099 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_72_in_rule__XShortClosure__ExplicitSyntaxAssignment_0_0_228135 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XShortClosure__ExpressionAssignment_128174 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XIfExpression__IfAssignment_328205 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XIfExpression__ThenAssignment_528236 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XIfExpression__ElseAssignment_6_128267 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValidID_in_rule__XSwitchExpression__LocalVarNameAssignment_2_0_028298 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XSwitchExpression__SwitchAssignment_328329 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXCasePart_in_rule__XSwitchExpression__CasesAssignment_528360 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XSwitchExpression__DefaultAssignment_6_228391 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__XCasePart__TypeGuardAssignment_028422 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XCasePart__CaseAssignment_1_128453 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XCasePart__ThenAssignment_328484 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_rule__XForLoopExpression__DeclaredParamAssignment_328515 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XForLoopExpression__ForExpressionAssignment_528546 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XForLoopExpression__EachExpressionAssignment_728577 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XWhileExpression__PredicateAssignment_328608 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XWhileExpression__BodyAssignment_528639 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XDoWhileExpression__BodyAssignment_228670 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XDoWhileExpression__PredicateAssignment_528701 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpressionInsideBlock_in_rule__XBlockExpression__ExpressionsAssignment_2_028732 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_73_in_rule__XVariableDeclaration__WriteableAssignment_1_028768 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__XVariableDeclaration__TypeAssignment_2_0_0_028807 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValidID_in_rule__XVariableDeclaration__NameAssignment_2_0_0_128838 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValidID_in_rule__XVariableDeclaration__NameAssignment_2_128869 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XVariableDeclaration__RightAssignment_3_128900 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__JvmFormalParameter__ParameterTypeAssignment_028931 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValidID_in_rule__JvmFormalParameter__NameAssignment_128962 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__FullJvmFormalParameter__ParameterTypeAssignment_028993 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValidID_in_rule__FullJvmFormalParameter__NameAssignment_129024 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStaticQualifier_in_rule__XFeatureCall__DeclaringTypeAssignment_129059 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_rule__XFeatureCall__TypeArgumentsAssignment_2_129094 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_rule__XFeatureCall__TypeArgumentsAssignment_2_2_129125 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIdOrSuper_in_rule__XFeatureCall__FeatureAssignment_329160 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_46_in_rule__XFeatureCall__ExplicitOperationCallAssignment_4_029200 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXShortClosure_in_rule__XFeatureCall__FeatureCallArgumentsAssignment_4_1_029239 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XFeatureCall__FeatureCallArgumentsAssignment_4_1_1_029270 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XFeatureCall__FeatureCallArgumentsAssignment_4_1_1_1_129301 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXClosure_in_rule__XFeatureCall__FeatureCallArgumentsAssignment_529332 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__XConstructorCall__ConstructorAssignment_229367 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_rule__XConstructorCall__TypeArgumentsAssignment_3_129402 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_rule__XConstructorCall__TypeArgumentsAssignment_3_2_129433 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXShortClosure_in_rule__XConstructorCall__ArgumentsAssignment_5_029464 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XConstructorCall__ArgumentsAssignment_5_1_029495 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XConstructorCall__ArgumentsAssignment_5_1_1_129526 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXClosure_in_rule__XConstructorCall__ArgumentsAssignment_729557 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_74_in_rule__XBooleanLiteral__IsTrueAssignment_1_129593 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__XIntLiteral__ValueAssignment_129632 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__XStringLiteral__ValueAssignment_129663 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__XTypeLiteral__TypeAssignment_329698 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XThrowExpression__ExpressionAssignment_229733 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XReturnExpression__ExpressionAssignment_229764 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XTryCatchFinallyExpression__ExpressionAssignment_229795 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXCatchClause_in_rule__XTryCatchFinallyExpression__CatchClausesAssignment_3_0_029826 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XTryCatchFinallyExpression__FinallyExpressionAssignment_3_0_1_129857 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XTryCatchFinallyExpression__FinallyExpressionAssignment_3_1_129888 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFullJvmFormalParameter_in_rule__XCatchClause__DeclaredParamAssignment_229919 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XCatchClause__ExpressionAssignment_429950 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__XFunctionTypeRef__ParamTypesAssignment_0_129981 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__XFunctionTypeRef__ParamTypesAssignment_0_2_130012 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__XFunctionTypeRef__ReturnTypeAssignment_230043 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__JvmParameterizedTypeReference__TypeAssignment_030078 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_130113 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_2_130144 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmUpperBound_in_rule__JvmWildcardTypeReference__ConstraintsAssignment_2_030175 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmLowerBound_in_rule__JvmWildcardTypeReference__ConstraintsAssignment_2_130206 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__JvmUpperBound__TypeReferenceAssignment_130237 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__JvmUpperBoundAnded__TypeReferenceAssignment_130268 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__JvmLowerBound__TypeReferenceAssignment_130299 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__XFunctionTypeRef__Group_0_1__0_in_rule__XFunctionTypeRef__Group_0__1__Impl25028 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__XFunctionTypeRef__Group_0__2__Impl_in_rule__XFunctionTypeRef__Group_0__225059 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_42_in_rule__XFunctionTypeRef__Group_0__2__Impl25087 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__XFunctionTypeRef__Group_0_1__0__Impl_in_rule__XFunctionTypeRef__Group_0_1__025124 = new BitSet(new long[]{0x0000008000000000L});
+    public static final BitSet FOLLOW_rule__XFunctionTypeRef__Group_0_1__1_in_rule__XFunctionTypeRef__Group_0_1__025127 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__XFunctionTypeRef__ParamTypesAssignment_0_1_0_in_rule__XFunctionTypeRef__Group_0_1__0__Impl25154 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__XFunctionTypeRef__Group_0_1__1__Impl_in_rule__XFunctionTypeRef__Group_0_1__125184 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__XFunctionTypeRef__Group_0_1_1__0_in_rule__XFunctionTypeRef__Group_0_1__1__Impl25211 = new BitSet(new long[]{0x0000008000000002L});
+    public static final BitSet FOLLOW_rule__XFunctionTypeRef__Group_0_1_1__0__Impl_in_rule__XFunctionTypeRef__Group_0_1_1__025246 = new BitSet(new long[]{0x0000400000000010L,0x0000000000000004L});
+    public static final BitSet FOLLOW_rule__XFunctionTypeRef__Group_0_1_1__1_in_rule__XFunctionTypeRef__Group_0_1_1__025249 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_39_in_rule__XFunctionTypeRef__Group_0_1_1__0__Impl25277 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__XFunctionTypeRef__Group_0_1_1__1__Impl_in_rule__XFunctionTypeRef__Group_0_1_1__125308 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__XFunctionTypeRef__ParamTypesAssignment_0_1_1_1_in_rule__XFunctionTypeRef__Group_0_1_1__1__Impl25335 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JvmParameterizedTypeReference__Group__0__Impl_in_rule__JvmParameterizedTypeReference__Group__025369 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_rule__JvmParameterizedTypeReference__Group__1_in_rule__JvmParameterizedTypeReference__Group__025372 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JvmParameterizedTypeReference__TypeAssignment_0_in_rule__JvmParameterizedTypeReference__Group__0__Impl25399 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JvmParameterizedTypeReference__Group__1__Impl_in_rule__JvmParameterizedTypeReference__Group__125429 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JvmParameterizedTypeReference__Group_1__0_in_rule__JvmParameterizedTypeReference__Group__1__Impl25456 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JvmParameterizedTypeReference__Group_1__0__Impl_in_rule__JvmParameterizedTypeReference__Group_1__025491 = new BitSet(new long[]{0x0000400000000010L,0x000000000000000CL});
+    public static final BitSet FOLLOW_rule__JvmParameterizedTypeReference__Group_1__1_in_rule__JvmParameterizedTypeReference__Group_1__025494 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_rule__JvmParameterizedTypeReference__Group_1__0__Impl25523 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JvmParameterizedTypeReference__Group_1__1__Impl_in_rule__JvmParameterizedTypeReference__Group_1__125555 = new BitSet(new long[]{0x0000008000100000L});
+    public static final BitSet FOLLOW_rule__JvmParameterizedTypeReference__Group_1__2_in_rule__JvmParameterizedTypeReference__Group_1__125558 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_1_in_rule__JvmParameterizedTypeReference__Group_1__1__Impl25585 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JvmParameterizedTypeReference__Group_1__2__Impl_in_rule__JvmParameterizedTypeReference__Group_1__225615 = new BitSet(new long[]{0x0000008000100000L});
+    public static final BitSet FOLLOW_rule__JvmParameterizedTypeReference__Group_1__3_in_rule__JvmParameterizedTypeReference__Group_1__225618 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JvmParameterizedTypeReference__Group_1_2__0_in_rule__JvmParameterizedTypeReference__Group_1__2__Impl25645 = new BitSet(new long[]{0x0000008000000002L});
+    public static final BitSet FOLLOW_rule__JvmParameterizedTypeReference__Group_1__3__Impl_in_rule__JvmParameterizedTypeReference__Group_1__325676 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_rule__JvmParameterizedTypeReference__Group_1__3__Impl25704 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JvmParameterizedTypeReference__Group_1_2__0__Impl_in_rule__JvmParameterizedTypeReference__Group_1_2__025743 = new BitSet(new long[]{0x0000400000000010L,0x000000000000000CL});
+    public static final BitSet FOLLOW_rule__JvmParameterizedTypeReference__Group_1_2__1_in_rule__JvmParameterizedTypeReference__Group_1_2__025746 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_39_in_rule__JvmParameterizedTypeReference__Group_1_2__0__Impl25774 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JvmParameterizedTypeReference__Group_1_2__1__Impl_in_rule__JvmParameterizedTypeReference__Group_1_2__125805 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_2_1_in_rule__JvmParameterizedTypeReference__Group_1_2__1__Impl25832 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JvmWildcardTypeReference__Group__0__Impl_in_rule__JvmWildcardTypeReference__Group__025866 = new BitSet(new long[]{0x0000400000000010L,0x000000000000000CL});
+    public static final BitSet FOLLOW_rule__JvmWildcardTypeReference__Group__1_in_rule__JvmWildcardTypeReference__Group__025869 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JvmWildcardTypeReference__Group__1__Impl_in_rule__JvmWildcardTypeReference__Group__125927 = new BitSet(new long[]{0x0000000200000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__JvmWildcardTypeReference__Group__2_in_rule__JvmWildcardTypeReference__Group__125930 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_67_in_rule__JvmWildcardTypeReference__Group__1__Impl25958 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JvmWildcardTypeReference__Group__2__Impl_in_rule__JvmWildcardTypeReference__Group__225989 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JvmWildcardTypeReference__Alternatives_2_in_rule__JvmWildcardTypeReference__Group__2__Impl26016 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JvmUpperBound__Group__0__Impl_in_rule__JvmUpperBound__Group__026053 = new BitSet(new long[]{0x0000400000000010L,0x0000000000000004L});
+    public static final BitSet FOLLOW_rule__JvmUpperBound__Group__1_in_rule__JvmUpperBound__Group__026056 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_68_in_rule__JvmUpperBound__Group__0__Impl26084 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JvmUpperBound__Group__1__Impl_in_rule__JvmUpperBound__Group__126115 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JvmUpperBound__TypeReferenceAssignment_1_in_rule__JvmUpperBound__Group__1__Impl26142 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JvmUpperBoundAnded__Group__0__Impl_in_rule__JvmUpperBoundAnded__Group__026176 = new BitSet(new long[]{0x0000400000000010L,0x0000000000000004L});
+    public static final BitSet FOLLOW_rule__JvmUpperBoundAnded__Group__1_in_rule__JvmUpperBoundAnded__Group__026179 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_69_in_rule__JvmUpperBoundAnded__Group__0__Impl26207 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JvmUpperBoundAnded__Group__1__Impl_in_rule__JvmUpperBoundAnded__Group__126238 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JvmUpperBoundAnded__TypeReferenceAssignment_1_in_rule__JvmUpperBoundAnded__Group__1__Impl26265 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JvmLowerBound__Group__0__Impl_in_rule__JvmLowerBound__Group__026299 = new BitSet(new long[]{0x0000400000000010L,0x0000000000000004L});
+    public static final BitSet FOLLOW_rule__JvmLowerBound__Group__1_in_rule__JvmLowerBound__Group__026302 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_33_in_rule__JvmLowerBound__Group__0__Impl26330 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JvmLowerBound__Group__1__Impl_in_rule__JvmLowerBound__Group__126361 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JvmLowerBound__TypeReferenceAssignment_1_in_rule__JvmLowerBound__Group__1__Impl26388 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleImport_in_rule__StyleSheet__ImportsAssignment_026429 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__StyleSheet__NameAssignment_226460 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__StyleSheet__DiagramMappingAssignment_426495 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStyle_in_rule__StyleSheet__StylesAssignment_526530 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedNameWithWildcard_in_rule__Import__ImportedNamespaceAssignment_126561 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Style__MappingsAssignment_126596 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Style__MappingsAssignment_2_126635 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__Style__JavaClassAssignment_3_126670 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXBlockExpression_in_rule__Style__ExpressionAssignment_426701 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_COLOR_in_rule__XColorLiteral__ColorAssignment26732 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValidID_in_rule__XAssignment__FeatureAssignment_0_126767 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXAssignment_in_rule__XAssignment__ValueAssignment_0_326802 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOpMultiAssign_in_rule__XAssignment__FeatureAssignment_1_1_0_0_126837 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXAssignment_in_rule__XAssignment__RightOperandAssignment_1_1_126872 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOpOr_in_rule__XOrExpression__FeatureAssignment_1_0_0_126907 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXAndExpression_in_rule__XOrExpression__RightOperandAssignment_1_126942 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOpAnd_in_rule__XAndExpression__FeatureAssignment_1_0_0_126977 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXEqualityExpression_in_rule__XAndExpression__RightOperandAssignment_1_127012 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOpEquality_in_rule__XEqualityExpression__FeatureAssignment_1_0_0_127047 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXRelationalExpression_in_rule__XEqualityExpression__RightOperandAssignment_1_127082 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__XRelationalExpression__TypeAssignment_1_0_127117 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOpCompare_in_rule__XRelationalExpression__FeatureAssignment_1_1_0_0_127156 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXOtherOperatorExpression_in_rule__XRelationalExpression__RightOperandAssignment_1_1_127191 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOpOther_in_rule__XOtherOperatorExpression__FeatureAssignment_1_0_0_127226 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXAdditiveExpression_in_rule__XOtherOperatorExpression__RightOperandAssignment_1_127261 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOpAdd_in_rule__XAdditiveExpression__FeatureAssignment_1_0_0_127296 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXMultiplicativeExpression_in_rule__XAdditiveExpression__RightOperandAssignment_1_127331 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOpMulti_in_rule__XMultiplicativeExpression__FeatureAssignment_1_0_0_127366 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXUnaryOperation_in_rule__XMultiplicativeExpression__RightOperandAssignment_1_127401 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOpUnary_in_rule__XUnaryOperation__FeatureAssignment_0_127436 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXCastedExpression_in_rule__XUnaryOperation__OperandAssignment_0_227471 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__XCastedExpression__TypeAssignment_1_127502 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValidID_in_rule__XMemberFeatureCall__FeatureAssignment_1_0_0_0_227537 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXAssignment_in_rule__XMemberFeatureCall__ValueAssignment_1_0_127572 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_70_in_rule__XMemberFeatureCall__NullSafeAssignment_1_1_0_0_1_127608 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_71_in_rule__XMemberFeatureCall__SpreadingAssignment_1_1_0_0_1_227652 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_rule__XMemberFeatureCall__TypeArgumentsAssignment_1_1_1_127691 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_rule__XMemberFeatureCall__TypeArgumentsAssignment_1_1_1_2_127722 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValidID_in_rule__XMemberFeatureCall__FeatureAssignment_1_1_227757 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_46_in_rule__XMemberFeatureCall__ExplicitOperationCallAssignment_1_1_3_027797 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXShortClosure_in_rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_027836 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_1_027867 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_1_1_127898 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXClosure_in_rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_427929 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_rule__XClosure__DeclaredFormalParametersAssignment_2_0_0_027960 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_rule__XClosure__DeclaredFormalParametersAssignment_2_0_0_1_127991 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_72_in_rule__XClosure__ExplicitSyntaxAssignment_2_0_128027 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpressionInClosure_in_rule__XClosure__ExpressionAssignment_328066 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpressionInsideBlock_in_rule__XExpressionInClosure__ExpressionsAssignment_1_028097 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_rule__XShortClosure__DeclaredFormalParametersAssignment_0_0_1_028128 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_rule__XShortClosure__DeclaredFormalParametersAssignment_0_0_1_1_128159 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_72_in_rule__XShortClosure__ExplicitSyntaxAssignment_0_0_228195 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XShortClosure__ExpressionAssignment_128234 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XIfExpression__IfAssignment_328265 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XIfExpression__ThenAssignment_528296 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XIfExpression__ElseAssignment_6_128327 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValidID_in_rule__XSwitchExpression__LocalVarNameAssignment_2_0_028358 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XSwitchExpression__SwitchAssignment_328389 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXCasePart_in_rule__XSwitchExpression__CasesAssignment_528420 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XSwitchExpression__DefaultAssignment_6_228451 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__XCasePart__TypeGuardAssignment_028482 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XCasePart__CaseAssignment_1_128513 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XCasePart__ThenAssignment_328544 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_rule__XForLoopExpression__DeclaredParamAssignment_328575 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XForLoopExpression__ForExpressionAssignment_528606 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XForLoopExpression__EachExpressionAssignment_728637 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XWhileExpression__PredicateAssignment_328668 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XWhileExpression__BodyAssignment_528699 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XDoWhileExpression__BodyAssignment_228730 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XDoWhileExpression__PredicateAssignment_528761 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpressionInsideBlock_in_rule__XBlockExpression__ExpressionsAssignment_2_028792 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_73_in_rule__XVariableDeclaration__WriteableAssignment_1_028828 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__XVariableDeclaration__TypeAssignment_2_0_0_028867 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValidID_in_rule__XVariableDeclaration__NameAssignment_2_0_0_128898 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValidID_in_rule__XVariableDeclaration__NameAssignment_2_128929 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XVariableDeclaration__RightAssignment_3_128960 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__JvmFormalParameter__ParameterTypeAssignment_028991 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValidID_in_rule__JvmFormalParameter__NameAssignment_129022 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__FullJvmFormalParameter__ParameterTypeAssignment_029053 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValidID_in_rule__FullJvmFormalParameter__NameAssignment_129084 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStaticQualifier_in_rule__XFeatureCall__DeclaringTypeAssignment_129119 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_rule__XFeatureCall__TypeArgumentsAssignment_2_129154 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_rule__XFeatureCall__TypeArgumentsAssignment_2_2_129185 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleIdOrSuper_in_rule__XFeatureCall__FeatureAssignment_329220 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_46_in_rule__XFeatureCall__ExplicitOperationCallAssignment_4_029260 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXShortClosure_in_rule__XFeatureCall__FeatureCallArgumentsAssignment_4_1_029299 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XFeatureCall__FeatureCallArgumentsAssignment_4_1_1_029330 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XFeatureCall__FeatureCallArgumentsAssignment_4_1_1_1_129361 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXClosure_in_rule__XFeatureCall__FeatureCallArgumentsAssignment_529392 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__XConstructorCall__ConstructorAssignment_229427 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_rule__XConstructorCall__TypeArgumentsAssignment_3_129462 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_rule__XConstructorCall__TypeArgumentsAssignment_3_2_129493 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXShortClosure_in_rule__XConstructorCall__ArgumentsAssignment_5_029524 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XConstructorCall__ArgumentsAssignment_5_1_029555 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XConstructorCall__ArgumentsAssignment_5_1_1_129586 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXClosure_in_rule__XConstructorCall__ArgumentsAssignment_729617 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_74_in_rule__XBooleanLiteral__IsTrueAssignment_1_129653 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__XIntLiteral__ValueAssignment_129692 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__XStringLiteral__ValueAssignment_129723 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__XTypeLiteral__TypeAssignment_329758 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XThrowExpression__ExpressionAssignment_229793 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XReturnExpression__ExpressionAssignment_229824 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XTryCatchFinallyExpression__ExpressionAssignment_229855 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXCatchClause_in_rule__XTryCatchFinallyExpression__CatchClausesAssignment_3_0_029886 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XTryCatchFinallyExpression__FinallyExpressionAssignment_3_0_1_129917 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XTryCatchFinallyExpression__FinallyExpressionAssignment_3_1_129948 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFullJvmFormalParameter_in_rule__XCatchClause__DeclaredParamAssignment_229979 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XCatchClause__ExpressionAssignment_430010 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__XFunctionTypeRef__ParamTypesAssignment_0_1_030041 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__XFunctionTypeRef__ParamTypesAssignment_0_1_1_130072 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__XFunctionTypeRef__ReturnTypeAssignment_230103 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__JvmParameterizedTypeReference__TypeAssignment_030138 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_130173 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_2_130204 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmUpperBound_in_rule__JvmWildcardTypeReference__ConstraintsAssignment_2_030235 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmLowerBound_in_rule__JvmWildcardTypeReference__ConstraintsAssignment_2_130266 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__JvmUpperBound__TypeReferenceAssignment_130297 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__JvmUpperBoundAnded__TypeReferenceAssignment_130328 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__JvmLowerBound__TypeReferenceAssignment_130359 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XMemberFeatureCall__MemberCallArgumentsAssignment_1_1_3_1_0_in_synpred25_InternalGraphViewStyle4959 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XVariableDeclaration__Group_2_0__0_in_synpred40_InternalGraphViewStyle5348 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XFeatureCall__FeatureCallArgumentsAssignment_4_1_0_in_synpred41_InternalGraphViewStyle5399 = new BitSet(new long[]{0x0000000000000002L});
@@ -47120,6 +47217,6 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
     public static final BitSet FOLLOW_rule__XTryCatchFinallyExpression__Group_3_0_1__0_in_synpred102_InternalGraphViewStyle23539 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__QualifiedName__Group_1__0_in_synpred103_InternalGraphViewStyle24223 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__JvmTypeReference__Group_0_1__0_in_synpred104_InternalGraphViewStyle24468 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JvmParameterizedTypeReference__Group_1__0_in_synpred107_InternalGraphViewStyle25396 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JvmParameterizedTypeReference__Group_1__0_in_synpred108_InternalGraphViewStyle25456 = new BitSet(new long[]{0x0000000000000002L});
 
 }

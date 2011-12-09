@@ -244,4 +244,9 @@ public abstract class AbstractGraphViewMappingRuntimeModule extends DefaultRunti
 		return org.eclipse.xtext.xbase.typing.XbaseTypeArgumentContextProvider.class;
 	}
 
+	// contributed by org.eclipse.xtext.generator.xbase.XbaseGeneratorFragment
+	public Class<? extends org.eclipse.xtext.resource.ILocationInFileProvider> bindILocationInFileProvider() {
+		return org.eclipse.xtext.xbase.resource.XbaseLocationInFileProvider.class;
+	}
+
 }

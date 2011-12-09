@@ -8,7 +8,7 @@ stylesheet JavaInheritanceStyle for JavaInheritanceDiagram
 
 
 style JavaInheritanceDiagram as DiagramShape {
-	autoLayoutManager = new KielerAutoLayout("Upward-Planarization")
+	autoLayoutManager = new KielerAutoLayout("Dot")
 }
 
 style TypeNode.NameLabel as LabelShape {

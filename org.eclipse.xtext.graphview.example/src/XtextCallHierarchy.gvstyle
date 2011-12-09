@@ -1,0 +1,13 @@
+import org.eclipse.xtext.graphview.layout.*
+import org.eclipse.xtext.*
+import org.eclipse.emf.ecore.*
+
+stylesheet XtextCallStyle for XtextCallHierarchy
+
+style XtextCallHierarchy.RuleNode {
+	if(element instanceof ParserRule) 
+		if(element.type.classifier instanceof EClass) 
+			backgroundColor = color(#ffe3e3) 
+		else
+			backgroundColor = color(#ffffee)
+}

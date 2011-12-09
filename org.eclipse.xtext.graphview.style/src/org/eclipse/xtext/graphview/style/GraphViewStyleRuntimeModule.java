@@ -13,7 +13,7 @@ import org.eclipse.xtext.graphview.style.type.GVSExtensionClassNameProvider;
 import org.eclipse.xtext.graphview.style.type.GraphViewStyleTypeProvider;
 import org.eclipse.xtext.xbase.interpreter.impl.XbaseInterpreter;
 import org.eclipse.xtext.xbase.scoping.XbaseScopeProvider;
-import org.eclipse.xtext.xbase.scoping.featurecalls.StaticMethodsFeatureForTypeProvider;
+import org.eclipse.xtext.xbase.scoping.featurecalls.StaticImplicitMethodsFeatureForTypeProvider;
 import org.eclipse.xtext.xbase.typing.ITypeProvider;
 
 /**
@@ -27,7 +27,7 @@ public class GraphViewStyleRuntimeModule extends org.eclipse.xtext.graphview.sty
 		return GraphViewStyleTypeProvider.class;
 	}
 	
-	public Class<? extends StaticMethodsFeatureForTypeProvider.ExtensionClassNameProvider> bindExtensionClassNameProvider() {
+	public Class<? extends StaticImplicitMethodsFeatureForTypeProvider.ExtensionClassNameProvider> bindExtensionClassNameProvider() {
 		return GVSExtensionClassNameProvider.class;
 	}
 	

@@ -9,13 +9,12 @@ package org.eclipse.xtext.graphview.providers;
 
 import org.apache.log4j.Logger;
 import org.eclipse.jdt.core.IJavaElement;
-import org.eclipse.jdt.internal.ui.javaeditor.EditorUtility;
 import org.eclipse.jdt.internal.ui.javaeditor.JavaEditor;
+import org.eclipse.jdt.ui.JavaUI;
 import org.eclipse.jface.text.ITextSelection;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.ui.IEditorPart;
-import org.eclipse.ui.PartInitException;
 import org.eclipse.xtext.graphview.view.selection.AbstractElementSelectionStrategy;
 import org.eclipse.xtext.util.PolymorphicDispatcher;
 
@@ -44,9 +43,9 @@ public class JavaEditorSelectionStrategy extends
 	public ISelection viewSelectionChanged(Object selectedElement) {
 		if (selectedElement instanceof IJavaElement) {
 			try {
-				EditorUtility.openInEditor(selectedElement, true);
+				JavaUI.openInEditor((IJavaElement) selectedElement);
 				return new StructuredSelection(selectedElement);
-			} catch (PartInitException e) {
+			} catch (Exception e) {
 				LOG.error("Error opening editor", e);
 			}
 		}

@@ -11,14 +11,13 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Map;
 
-import org.eclipse.xtext.xbase.scoping.featurecalls.StaticMethodsFeatureForTypeProvider.ExtensionClassNameProvider;
+import org.eclipse.xtext.xbase.scoping.featurecalls.StaticImplicitMethodsFeatureForTypeProvider.ExtensionClassNameProvider;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 
 @SuppressWarnings("restriction")
-public class GVSExtensionClassNameProvider extends
-		ExtensionClassNameProvider {
+public class GVSExtensionClassNameProvider extends ExtensionClassNameProvider {
 	@Override
 	protected Map<String, Collection<String>> computeExtensionClassNames() {
 		return ImmutableMap

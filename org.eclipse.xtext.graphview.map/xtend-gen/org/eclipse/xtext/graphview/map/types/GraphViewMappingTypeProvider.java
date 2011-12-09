@@ -1,6 +1,7 @@
 package org.eclipse.xtext.graphview.map.types;
 
 import com.google.inject.Singleton;
+import java.util.Arrays;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
@@ -58,27 +59,26 @@ public class GraphViewMappingTypeProvider extends XbaseTypeProvider {
       final JvmTypeReference expressionType = _type;
       boolean _isMulti = it.isMulti();
       if (_isMulti) {
-        final JvmTypeReference expressionType_1 = expressionType;
         boolean matched = false;
         if (!matched) {
-          if (expressionType_1 instanceof JvmParameterizedTypeReference) {
-            final JvmParameterizedTypeReference expressionType_2 = (JvmParameterizedTypeReference) expressionType_1;
-            EList<JvmTypeReference> _arguments = expressionType_2.getArguments();
+          if (expressionType instanceof JvmParameterizedTypeReference) {
+            final JvmParameterizedTypeReference _jvmParameterizedTypeReference = (JvmParameterizedTypeReference)expressionType;
+            EList<JvmTypeReference> _arguments = _jvmParameterizedTypeReference.getArguments();
             boolean _isEmpty = _arguments.isEmpty();
             boolean _operator_not = BooleanExtensions.operator_not(_isEmpty);
             if (_operator_not) {
               matched=true;
-              EList<JvmTypeReference> _arguments_1 = expressionType_2.getArguments();
+              EList<JvmTypeReference> _arguments_1 = _jvmParameterizedTypeReference.getArguments();
               JvmTypeReference _head = IterableExtensions.<JvmTypeReference>head(_arguments_1);
               return _head;
             }
           }
         }
         if (!matched) {
-          if (expressionType_1 instanceof JvmGenericArrayTypeReference) {
-            final JvmGenericArrayTypeReference expressionType_3 = (JvmGenericArrayTypeReference) expressionType_1;
+          if (expressionType instanceof JvmGenericArrayTypeReference) {
+            final JvmGenericArrayTypeReference _jvmGenericArrayTypeReference = (JvmGenericArrayTypeReference)expressionType;
             matched=true;
-            JvmTypeReference _componentType = expressionType_3.getComponentType();
+            JvmTypeReference _componentType = _jvmGenericArrayTypeReference.getComponentType();
             return _componentType;
           }
         }
@@ -124,8 +124,11 @@ public class GraphViewMappingTypeProvider extends XbaseTypeProvider {
       return _typeForIdentifiable((XSwitchExpression)constructor, rawType);
     } else if (constructor instanceof XVariableDeclaration) {
       return _typeForIdentifiable((XVariableDeclaration)constructor, rawType);
-    } else {
+    } else if (constructor != null) {
       return _typeForIdentifiable(constructor, rawType);
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(constructor, rawType).toString());
     }
   }
   
@@ -166,8 +169,11 @@ public class GraphViewMappingTypeProvider extends XbaseTypeProvider {
       return _expectedType((XVariableDeclaration)assignment, reference, index, rawType);
     } else if (assignment instanceof XCatchClause) {
       return _expectedType((XCatchClause)assignment, reference, index, rawType);
-    } else {
+    } else if (assignment != null) {
       return _expectedType(assignment, reference, index, rawType);
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(assignment, reference, index, rawType).toString());
     }
   }
 }

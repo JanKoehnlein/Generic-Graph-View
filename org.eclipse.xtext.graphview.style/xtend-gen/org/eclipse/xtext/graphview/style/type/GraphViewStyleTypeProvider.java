@@ -1,6 +1,7 @@
 package org.eclipse.xtext.graphview.style.type;
 
 import com.google.inject.Singleton;
+import java.util.Arrays;
 import org.eclipse.xtext.common.types.JvmTypeReference;
 import org.eclipse.xtext.common.types.util.TypeReferences;
 import org.eclipse.xtext.graphview.style.graphViewStyle.XColorLiteral;
@@ -12,6 +13,7 @@ import org.eclipse.xtext.xbase.XCastedExpression;
 import org.eclipse.xtext.xbase.XClosure;
 import org.eclipse.xtext.xbase.XConstructorCall;
 import org.eclipse.xtext.xbase.XExpression;
+import org.eclipse.xtext.xbase.XFeatureCall;
 import org.eclipse.xtext.xbase.XForLoopExpression;
 import org.eclipse.xtext.xbase.XIfExpression;
 import org.eclipse.xtext.xbase.XInstanceOfExpression;
@@ -35,49 +37,54 @@ public class GraphViewStyleTypeProvider extends XbaseTypeProvider {
     return _typeForName;
   }
   
-  public JvmTypeReference type(final XExpression colorLiteral, final JvmTypeReference rawExpectation, final boolean rawType) {
-    if (colorLiteral instanceof XColorLiteral) {
-      return _type((XColorLiteral)colorLiteral, rawExpectation, rawType);
-    } else if (colorLiteral instanceof XAbstractFeatureCall) {
-      return _type((XAbstractFeatureCall)colorLiteral, rawExpectation, rawType);
-    } else if (colorLiteral instanceof XAbstractWhileExpression) {
-      return _type((XAbstractWhileExpression)colorLiteral, rawExpectation, rawType);
-    } else if (colorLiteral instanceof XBlockExpression) {
-      return _type((XBlockExpression)colorLiteral, rawExpectation, rawType);
-    } else if (colorLiteral instanceof XBooleanLiteral) {
-      return _type((XBooleanLiteral)colorLiteral, rawExpectation, rawType);
-    } else if (colorLiteral instanceof XCastedExpression) {
-      return _type((XCastedExpression)colorLiteral, rawExpectation, rawType);
-    } else if (colorLiteral instanceof XClosure) {
-      return _type((XClosure)colorLiteral, rawExpectation, rawType);
-    } else if (colorLiteral instanceof XConstructorCall) {
-      return _type((XConstructorCall)colorLiteral, rawExpectation, rawType);
-    } else if (colorLiteral instanceof XForLoopExpression) {
-      return _type((XForLoopExpression)colorLiteral, rawExpectation, rawType);
-    } else if (colorLiteral instanceof XIfExpression) {
-      return _type((XIfExpression)colorLiteral, rawExpectation, rawType);
-    } else if (colorLiteral instanceof XInstanceOfExpression) {
-      return _type((XInstanceOfExpression)colorLiteral, rawExpectation, rawType);
-    } else if (colorLiteral instanceof XIntLiteral) {
-      return _type((XIntLiteral)colorLiteral, rawExpectation, rawType);
-    } else if (colorLiteral instanceof XNullLiteral) {
-      return _type((XNullLiteral)colorLiteral, rawExpectation, rawType);
-    } else if (colorLiteral instanceof XReturnExpression) {
-      return _type((XReturnExpression)colorLiteral, rawExpectation, rawType);
-    } else if (colorLiteral instanceof XStringLiteral) {
-      return _type((XStringLiteral)colorLiteral, rawExpectation, rawType);
-    } else if (colorLiteral instanceof XSwitchExpression) {
-      return _type((XSwitchExpression)colorLiteral, rawExpectation, rawType);
-    } else if (colorLiteral instanceof XThrowExpression) {
-      return _type((XThrowExpression)colorLiteral, rawExpectation, rawType);
-    } else if (colorLiteral instanceof XTryCatchFinallyExpression) {
-      return _type((XTryCatchFinallyExpression)colorLiteral, rawExpectation, rawType);
-    } else if (colorLiteral instanceof XTypeLiteral) {
-      return _type((XTypeLiteral)colorLiteral, rawExpectation, rawType);
-    } else if (colorLiteral instanceof XVariableDeclaration) {
-      return _type((XVariableDeclaration)colorLiteral, rawExpectation, rawType);
+  public JvmTypeReference type(final XExpression featureCall, final JvmTypeReference rawExpectation, final boolean rawType) {
+    if (featureCall instanceof XFeatureCall) {
+      return _type((XFeatureCall)featureCall, rawExpectation, rawType);
+    } else if (featureCall instanceof XColorLiteral) {
+      return _type((XColorLiteral)featureCall, rawExpectation, rawType);
+    } else if (featureCall instanceof XAbstractFeatureCall) {
+      return _type((XAbstractFeatureCall)featureCall, rawExpectation, rawType);
+    } else if (featureCall instanceof XAbstractWhileExpression) {
+      return _type((XAbstractWhileExpression)featureCall, rawExpectation, rawType);
+    } else if (featureCall instanceof XBlockExpression) {
+      return _type((XBlockExpression)featureCall, rawExpectation, rawType);
+    } else if (featureCall instanceof XBooleanLiteral) {
+      return _type((XBooleanLiteral)featureCall, rawExpectation, rawType);
+    } else if (featureCall instanceof XCastedExpression) {
+      return _type((XCastedExpression)featureCall, rawExpectation, rawType);
+    } else if (featureCall instanceof XClosure) {
+      return _type((XClosure)featureCall, rawExpectation, rawType);
+    } else if (featureCall instanceof XConstructorCall) {
+      return _type((XConstructorCall)featureCall, rawExpectation, rawType);
+    } else if (featureCall instanceof XForLoopExpression) {
+      return _type((XForLoopExpression)featureCall, rawExpectation, rawType);
+    } else if (featureCall instanceof XIfExpression) {
+      return _type((XIfExpression)featureCall, rawExpectation, rawType);
+    } else if (featureCall instanceof XInstanceOfExpression) {
+      return _type((XInstanceOfExpression)featureCall, rawExpectation, rawType);
+    } else if (featureCall instanceof XIntLiteral) {
+      return _type((XIntLiteral)featureCall, rawExpectation, rawType);
+    } else if (featureCall instanceof XNullLiteral) {
+      return _type((XNullLiteral)featureCall, rawExpectation, rawType);
+    } else if (featureCall instanceof XReturnExpression) {
+      return _type((XReturnExpression)featureCall, rawExpectation, rawType);
+    } else if (featureCall instanceof XStringLiteral) {
+      return _type((XStringLiteral)featureCall, rawExpectation, rawType);
+    } else if (featureCall instanceof XSwitchExpression) {
+      return _type((XSwitchExpression)featureCall, rawExpectation, rawType);
+    } else if (featureCall instanceof XThrowExpression) {
+      return _type((XThrowExpression)featureCall, rawExpectation, rawType);
+    } else if (featureCall instanceof XTryCatchFinallyExpression) {
+      return _type((XTryCatchFinallyExpression)featureCall, rawExpectation, rawType);
+    } else if (featureCall instanceof XTypeLiteral) {
+      return _type((XTypeLiteral)featureCall, rawExpectation, rawType);
+    } else if (featureCall instanceof XVariableDeclaration) {
+      return _type((XVariableDeclaration)featureCall, rawExpectation, rawType);
+    } else if (featureCall != null) {
+      return _type(featureCall, rawExpectation, rawType);
     } else {
-      return _type(colorLiteral, rawExpectation, rawType);
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(featureCall, rawExpectation, rawType).toString());
     }
   }
 }
