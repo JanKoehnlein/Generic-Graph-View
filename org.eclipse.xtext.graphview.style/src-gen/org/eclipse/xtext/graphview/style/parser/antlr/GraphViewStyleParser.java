@@ -3,10 +3,10 @@
 */
 package org.eclipse.xtext.graphview.style.parser.antlr;
 
-import com.google.inject.Inject;
-
-import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.eclipse.xtext.graphview.style.services.GraphViewStyleGrammarAccess;
+import org.eclipse.xtext.parser.antlr.XtextTokenStream;
+
+import com.google.inject.Inject;
 
 public class GraphViewStyleParser extends org.eclipse.xtext.parser.antlr.AbstractAntlrParser {
 	

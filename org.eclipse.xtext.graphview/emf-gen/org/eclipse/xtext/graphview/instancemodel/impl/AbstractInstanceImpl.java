@@ -20,6 +20,8 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.xtext.graphview.instancemodel.AbstractInstance;
 import org.eclipse.xtext.graphview.instancemodel.InstancemodelPackage;
+import org.eclipse.xtext.graphview.instancemodel.Visibility;
+import org.eclipse.xtext.graphview.instancemodel.ViewState;
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping;
 
 /**
@@ -33,6 +35,7 @@ import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping;
  *   <li>{@link org.eclipse.xtext.graphview.instancemodel.impl.AbstractInstanceImpl#getChildren <em>Children</em>}</li>
  *   <li>{@link org.eclipse.xtext.graphview.instancemodel.impl.AbstractInstanceImpl#getSemanticElement <em>Semantic Element</em>}</li>
  *   <li>{@link org.eclipse.xtext.graphview.instancemodel.impl.AbstractInstanceImpl#getMapping <em>Mapping</em>}</li>
+ *   <li>{@link org.eclipse.xtext.graphview.instancemodel.impl.AbstractInstanceImpl#getVisibility <em>Visibility</em>}</li>
  * </ul>
  * </p>
  *
@@ -77,6 +80,26 @@ public abstract class AbstractInstanceImpl extends EObjectImpl implements Abstra
 	 * @ordered
 	 */
 	protected AbstractMapping mapping;
+
+	/**
+	 * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVisibility()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Visibility VISIBILITY_EDEFAULT = Visibility.VISIBLE;
+
+	/**
+	 * The cached value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVisibility()
+	 * @generated
+	 * @ordered
+	 */
+	protected Visibility visibility = VISIBILITY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -214,6 +237,27 @@ public abstract class AbstractInstanceImpl extends EObjectImpl implements Abstra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Visibility getVisibility() {
+		return visibility;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setVisibility(Visibility newVisibility) {
+		Visibility oldVisibility = visibility;
+		visibility = newVisibility == null ? VISIBILITY_EDEFAULT : newVisibility;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InstancemodelPackage.ABSTRACT_INSTANCE__VISIBILITY, oldVisibility, visibility));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -275,6 +319,8 @@ public abstract class AbstractInstanceImpl extends EObjectImpl implements Abstra
 			case InstancemodelPackage.ABSTRACT_INSTANCE__MAPPING:
 				if (resolve) return getMapping();
 				return basicGetMapping();
+			case InstancemodelPackage.ABSTRACT_INSTANCE__VISIBILITY:
+				return getVisibility();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -301,6 +347,9 @@ public abstract class AbstractInstanceImpl extends EObjectImpl implements Abstra
 			case InstancemodelPackage.ABSTRACT_INSTANCE__MAPPING:
 				setMapping((AbstractMapping)newValue);
 				return;
+			case InstancemodelPackage.ABSTRACT_INSTANCE__VISIBILITY:
+				setVisibility((Visibility)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -325,6 +374,9 @@ public abstract class AbstractInstanceImpl extends EObjectImpl implements Abstra
 			case InstancemodelPackage.ABSTRACT_INSTANCE__MAPPING:
 				setMapping((AbstractMapping)null);
 				return;
+			case InstancemodelPackage.ABSTRACT_INSTANCE__VISIBILITY:
+				setVisibility(VISIBILITY_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -345,6 +397,8 @@ public abstract class AbstractInstanceImpl extends EObjectImpl implements Abstra
 				return SEMANTIC_ELEMENT_EDEFAULT == null ? semanticElement != null : !SEMANTIC_ELEMENT_EDEFAULT.equals(semanticElement);
 			case InstancemodelPackage.ABSTRACT_INSTANCE__MAPPING:
 				return mapping != null;
+			case InstancemodelPackage.ABSTRACT_INSTANCE__VISIBILITY:
+				return visibility != VISIBILITY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -361,6 +415,8 @@ public abstract class AbstractInstanceImpl extends EObjectImpl implements Abstra
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (semanticElement: ");
 		result.append(semanticElement);
+		result.append(", visibility: ");
+		result.append(visibility);
 		result.append(')');
 		return result.toString();
 	}

@@ -7,7 +7,6 @@
 package org.eclipse.xtext.graphview.instancemodel;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping;
 
@@ -23,6 +22,7 @@ import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping;
  *   <li>{@link org.eclipse.xtext.graphview.instancemodel.AbstractInstance#getChildren <em>Children</em>}</li>
  *   <li>{@link org.eclipse.xtext.graphview.instancemodel.AbstractInstance#getSemanticElement <em>Semantic Element</em>}</li>
  *   <li>{@link org.eclipse.xtext.graphview.instancemodel.AbstractInstance#getMapping <em>Mapping</em>}</li>
+ *   <li>{@link org.eclipse.xtext.graphview.instancemodel.AbstractInstance#getVisibility <em>Visibility</em>}</li>
  * </ul>
  * </p>
  *
@@ -128,5 +128,34 @@ public interface AbstractInstance extends EObject {
 	 * @generated
 	 */
 	void setMapping(AbstractMapping value);
+
+	/**
+	 * Returns the value of the '<em><b>Visibility</b></em>' attribute.
+	 * The literals are from the enumeration {@link org.eclipse.xtext.graphview.instancemodel.Visibility}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Visibility</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Visibility</em>' attribute.
+	 * @see org.eclipse.xtext.graphview.instancemodel.Visibility
+	 * @see #setVisibility(Visibility)
+	 * @see org.eclipse.xtext.graphview.instancemodel.InstancemodelPackage#getAbstractInstance_Visibility()
+	 * @model
+	 * @generated
+	 */
+	Visibility getVisibility();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.xtext.graphview.instancemodel.AbstractInstance#getVisibility <em>Visibility</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Visibility</em>' attribute.
+	 * @see org.eclipse.xtext.graphview.instancemodel.Visibility
+	 * @see #getVisibility()
+	 * @generated
+	 */
+	void setVisibility(Visibility value);
 
 } // AbstractInstance

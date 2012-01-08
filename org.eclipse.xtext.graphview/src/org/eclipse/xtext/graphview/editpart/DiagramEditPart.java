@@ -9,6 +9,7 @@ package org.eclipse.xtext.graphview.editpart;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.gef.EditPolicy;
+import org.eclipse.gef.RootEditPart;
 import org.eclipse.xtext.graphview.editpolicy.DiagramLayoutEditPolicy;
 import org.eclipse.xtext.graphview.shape.DiagramShape;
 
@@ -19,6 +20,9 @@ public class DiagramEditPart extends AbstractMappingEditPart {
 	@Inject
 	private DiagramLayoutEditPolicy diagramLayoutEditPolicy;
 	
+	@Inject 
+	private VisibilityListener VisibilityListener;
+
 	@Override
 	protected void createEditPolicies() {
 		super.createEditPolicies();
@@ -33,8 +37,16 @@ public class DiagramEditPart extends AbstractMappingEditPart {
 	public void activate() {
 		super.activate();
 		IFigure figure = getFigure();
-		if (figure instanceof DiagramShape) {
+		if (figure instanceof DiagramShape) 
 			((DiagramShape) figure).getAutoLayoutManager().layout(figure);
-		}
+		if(getParent() instanceof RootEditPart)
+			VisibilityListener.register(this);
+	}
+	
+	@Override
+	public void deactivate() {
+		if(getParent() instanceof RootEditPart)
+			VisibilityListener.deregister(this);
+		super.deactivate();
 	}
 }

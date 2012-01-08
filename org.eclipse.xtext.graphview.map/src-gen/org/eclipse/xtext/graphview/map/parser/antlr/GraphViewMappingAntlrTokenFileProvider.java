@@ -4,6 +4,7 @@
 package org.eclipse.xtext.graphview.map.parser.antlr;
 
 import java.io.InputStream;
+
 import org.eclipse.xtext.parser.antlr.IAntlrTokenFileProvider;
 
 public class GraphViewMappingAntlrTokenFileProvider implements IAntlrTokenFileProvider {

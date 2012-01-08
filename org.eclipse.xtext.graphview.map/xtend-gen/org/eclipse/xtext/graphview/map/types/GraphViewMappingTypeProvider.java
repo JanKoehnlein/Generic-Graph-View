@@ -1,7 +1,7 @@
 package org.eclipse.xtext.graphview.map.types;
 
-import com.google.inject.Singleton;
 import java.util.Arrays;
+
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
@@ -42,6 +42,8 @@ import org.eclipse.xtext.xbase.lib.BooleanExtensions;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.typing.XbaseTypeProvider;
+
+import com.google.inject.Singleton;
 
 @SuppressWarnings("all")
 @Singleton

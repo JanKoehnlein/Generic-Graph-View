@@ -7,7 +7,6 @@
  *******************************************************************************/
 package org.eclipse.xtext.graphview.map.ui.contentassist;
 
-import org.eclipse.xtext.graphview.map.ui.contentassist.AbstractGraphViewMappingProposalProvider;
 /**
  * see http://www.eclipse.org/Xtext/documentation/latest/xtext.html#contentAssist on how to customize content assistant
  */

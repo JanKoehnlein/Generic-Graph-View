@@ -10,6 +10,7 @@
         eType="#//AbstractInstance" containment="true" eOpposite="#//AbstractInstance/parent"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="semanticElement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mapping" eType="ecore:EClass ../../org.eclipse.xtext.graphview.map/src/org/eclipse/xtext/graphview/map/GraphViewMapping.ecore#//AbstractMapping"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" eType="#//Visibility"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DiagramInstance" eSuperTypes="#//AbstractInstance">
     <eStructuralFeatures xsi:type="ecore:EReference" name="edges" upperBound="-1"
@@ -27,5 +28,10 @@
         eOpposite="#//NodeInstance/outgoingEdges"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//NodeInstance"
         eOpposite="#//NodeInstance/incomingEdges"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Visibility">
+    <eLiterals name="VISIBLE"/>
+    <eLiterals name="TRANSPARENT"/>
+    <eLiterals name="HIDDEN"/>
   </eClassifiers>
 </ecore:EPackage>

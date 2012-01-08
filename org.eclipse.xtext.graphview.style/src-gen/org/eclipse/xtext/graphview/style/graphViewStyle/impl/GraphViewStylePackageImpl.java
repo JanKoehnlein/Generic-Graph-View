@@ -9,20 +9,15 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.xtext.common.types.TypesPackage;
-
 import org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage;
-
 import org.eclipse.xtext.graphview.style.graphViewStyle.GraphViewStyleFactory;
 import org.eclipse.xtext.graphview.style.graphViewStyle.GraphViewStylePackage;
 import org.eclipse.xtext.graphview.style.graphViewStyle.Import;
 import org.eclipse.xtext.graphview.style.graphViewStyle.Style;
 import org.eclipse.xtext.graphview.style.graphViewStyle.StyleSheet;
 import org.eclipse.xtext.graphview.style.graphViewStyle.XColorLiteral;
-
 import org.eclipse.xtext.xbase.XbasePackage;
 
 /**

@@ -6,10 +6,9 @@
  */
 package org.eclipse.xtext.graphview.map.graphViewMapping.validation;
 
-import org.eclipse.xtext.xbase.XExpression;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractExpressionMapping;
+import org.eclipse.xtext.xbase.XExpression;
 
 /**
  * A sample validator interface for {@link org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping}.

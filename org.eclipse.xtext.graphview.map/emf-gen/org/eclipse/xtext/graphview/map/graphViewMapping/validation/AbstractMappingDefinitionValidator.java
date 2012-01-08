@@ -7,7 +7,6 @@
 package org.eclipse.xtext.graphview.map.graphViewMapping.validation;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractExpressionMapping;
 
 /**

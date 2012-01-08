@@ -10,8 +10,13 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.xtext.graphview.instancemodel.*;
+import org.eclipse.xtext.graphview.instancemodel.AbstractInstance;
+import org.eclipse.xtext.graphview.instancemodel.DiagramInstance;
+import org.eclipse.xtext.graphview.instancemodel.EdgeInstance;
+import org.eclipse.xtext.graphview.instancemodel.InstancemodelPackage;
+import org.eclipse.xtext.graphview.instancemodel.LabelInstance;
+import org.eclipse.xtext.graphview.instancemodel.NodeInstance;
 
 /**
  * <!-- begin-user-doc -->

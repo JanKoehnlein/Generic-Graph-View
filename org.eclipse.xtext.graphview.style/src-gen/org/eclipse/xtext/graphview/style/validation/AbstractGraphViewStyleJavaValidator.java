@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.xtext.xbase.validation.XbaseJavaValidator;
 import org.eclipse.xtext.validation.ComposedChecks;
+import org.eclipse.xtext.xbase.validation.XbaseJavaValidator;
 
 @ComposedChecks(validators= {org.eclipse.xtext.validation.ImportUriValidator.class, org.eclipse.xtext.validation.NamesAreUniqueValidator.class})
 public class AbstractGraphViewStyleJavaValidator extends XbaseJavaValidator {

@@ -19,6 +19,7 @@
       <eClassifiers xsi:type="ecore:EClass" name="Bar">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="s" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="Baz" eSuperTypes="#//subPackage/subsub/Bar #//subPackage/Foo"/>
     </eSubpackages>
   </eSubpackages>
 </ecore:EPackage>

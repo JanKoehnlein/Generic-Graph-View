@@ -10,11 +10,17 @@ package org.eclipse.xtext.graphview.editpart;
 import java.util.List;
 
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.geometry.Point;
+import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.editparts.AbstractGraphicalEditPart;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
+import org.eclipse.xtext.graphview.instancemodel.AbstractInstance;
+import org.eclipse.xtext.graphview.instancemodel.Visibility;
+import org.eclipse.xtext.graphview.shape.TransparencyHelper;
 
+import com.google.common.collect.Lists;
 import com.google.inject.Inject;
 
 public abstract class AbstractMappingEditPart extends AbstractGraphicalEditPart
@@ -26,6 +32,9 @@ public abstract class AbstractMappingEditPart extends AbstractGraphicalEditPart
 	@Inject
 	protected NonResizableEditPolicy nonResizableEditPolicy;
 	
+	@Inject
+	private TransparencyHelper transparencyHelper;;
+
 	@Override
 	protected void createEditPolicies() {
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, nonResizableEditPolicy);
@@ -35,7 +44,7 @@ public abstract class AbstractMappingEditPart extends AbstractGraphicalEditPart
 	public void performRequest(Request request) {
 		helper.performRequest(request);
 	}
-	
+
 	@Override
 	public void setModel(Object model) {
 		super.setModel(model);
@@ -44,16 +53,43 @@ public abstract class AbstractMappingEditPart extends AbstractGraphicalEditPart
 
 	@Override
 	protected List<?> getModelChildren() {
-		return helper.getInstanceModel().getChildren();
+		return filterVisible(helper.getInstanceModel().getChildren());
 	}
 
+	protected <T extends AbstractInstance> List<T> filterVisible(List<T> instances) {
+		List<T> visibleChildren = Lists.newArrayList();
+		for(T child: instances) {
+			if(child.getVisibility() != Visibility.HIDDEN)
+				visibleChildren.add(child);
+		}
+		return visibleChildren;
+	}
+	
 	@Override
 	protected IFigure createFigure() {
-		return helper.createFigure();
+		IFigure createFigure = helper.createFigure();
+		transparencyHelper.setFigure(createFigure);
+		return createFigure;
 	}
 
 	@Override
 	protected void refreshVisuals() {
 		helper.style(getFigure());
+	}
+	
+	@Override
+	public AbstractInstance getModel() {
+		return (AbstractInstance) super.getModel();
+	}
+	
+	public void setTransparent(boolean isTransparent) {
+		transparencyHelper.setTransparent(isTransparent);
+	}
+	
+	@Override
+	public void activate() {
+		super.activate();
+		Rectangle bounds = new Rectangle(new Point(10,10), getFigure().getPreferredSize());
+		getFigure().setBounds(bounds);
 	}
 }

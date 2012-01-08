@@ -30,11 +30,11 @@ public class InstanceModelEditPartHelper {
 	
 	@Inject 
 	private ElementSelectionConverter selectionConverter;
-
+	
 	private AbstractInstance instanceModel;
 
 	private IInstanceModelEditPart host; 
-	
+
 	public void initialize(IInstanceModelEditPart host) {
 		this.host = host;
 		if (!(host.getModel() instanceof AbstractInstance))
@@ -103,5 +103,5 @@ public class InstanceModelEditPartHelper {
 		if(RequestConstants.REQ_OPEN.equals(request.getType()))
 			selectionConverter.select(getSemanticElement());
 	}
-
+	
 }

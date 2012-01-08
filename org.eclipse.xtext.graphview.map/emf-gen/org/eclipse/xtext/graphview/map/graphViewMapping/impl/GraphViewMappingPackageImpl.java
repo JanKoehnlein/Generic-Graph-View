@@ -10,11 +10,8 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.xtext.common.types.TypesPackage;
-
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractExpressionMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMappingDefinition;
@@ -28,7 +25,6 @@ import org.eclipse.xtext.graphview.map.graphViewMapping.Import;
 import org.eclipse.xtext.graphview.map.graphViewMapping.LabelMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.MappingCall;
 import org.eclipse.xtext.graphview.map.graphViewMapping.NodeMapping;
-
 import org.eclipse.xtext.xbase.XbasePackage;
 
 /**

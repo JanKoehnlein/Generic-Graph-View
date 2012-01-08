@@ -7,7 +7,6 @@
  *******************************************************************************/
 package org.eclipse.xtext.graphview.style.ui.contentassist;
 
-import org.eclipse.xtext.graphview.style.ui.contentassist.AbstractGraphViewStyleProposalProvider;
 /**
  * see http://www.eclipse.org/Xtext/documentation/latest/xtext.html#contentAssist on how to customize content assistant
  */

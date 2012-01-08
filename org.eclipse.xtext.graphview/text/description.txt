@@ -12,6 +12,7 @@ Package instancemodel <http://www.xtext.org/graphView/instancemodel>
     Reference children : AbstractInstance<<0..*>>
     Attribute semanticElement : EJavaObject
     Reference mapping : AbstractMapping
+    Attribute visibility : Visibility
 
   Class DiagramInstance -> AbstractInstance
     Reference edges : EdgeInstance<<0..*>>
@@ -25,3 +26,8 @@ Package instancemodel <http://www.xtext.org/graphView/instancemodel>
   Class EdgeInstance -> AbstractInstance
     Reference source : NodeInstance
     Reference target : NodeInstance
+
+  Enum Visibility
+    Literal VISIBLE = 0
+    Literal TRANSPARENT = 0
+    Literal HIDDEN = 0

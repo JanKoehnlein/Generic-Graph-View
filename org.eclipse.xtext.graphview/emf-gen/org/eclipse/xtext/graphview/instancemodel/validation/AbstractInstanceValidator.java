@@ -7,9 +7,10 @@
 package org.eclipse.xtext.graphview.instancemodel.validation;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.graphview.instancemodel.AbstractInstance;
+import org.eclipse.xtext.graphview.instancemodel.Visibility;
+import org.eclipse.xtext.graphview.instancemodel.ViewState;
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping;
 
 /**
@@ -27,6 +28,10 @@ public interface AbstractInstanceValidator {
 	boolean validateSemanticElement(Object value);
 
 	boolean validateMapping(AbstractMapping value);
+
+	boolean validateVisibility(Visibility value);
+
+	boolean validateVisibility(ViewState value);
 
 	boolean validateMapping(EObject value);
 }

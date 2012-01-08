@@ -9,8 +9,13 @@ package org.eclipse.xtext.graphview.editpart;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.gef.GraphicalEditPart;
+import org.eclipse.xtext.graphview.instancemodel.AbstractInstance;
 
 public interface IInstanceModelEditPart extends GraphicalEditPart {
 
 	IFigure createDefaultFigure();
+
+	AbstractInstance getModel();
+	
+	void setTransparent(boolean isTransparent);
 }

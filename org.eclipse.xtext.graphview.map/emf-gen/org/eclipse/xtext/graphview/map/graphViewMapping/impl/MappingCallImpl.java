@@ -6,15 +6,7 @@
  */
 package org.eclipse.xtext.graphview.map.graphViewMapping.impl;
 
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping;
-import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractExpressionMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage;
 import org.eclipse.xtext.graphview.map.graphViewMapping.MappingCall;
 

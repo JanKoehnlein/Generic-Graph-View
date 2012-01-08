@@ -8,14 +8,21 @@ package org.eclipse.xtext.graphview.map.graphViewMapping.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.xtext.common.types.JvmIdentifiableElement;
-
-import org.eclipse.xtext.graphview.map.graphViewMapping.*;
+import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractExpressionMapping;
+import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping;
+import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMappingDefinition;
+import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMappingReference;
+import org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping;
+import org.eclipse.xtext.graphview.map.graphViewMapping.EdgeEndMapping;
+import org.eclipse.xtext.graphview.map.graphViewMapping.EdgeMapping;
+import org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage;
+import org.eclipse.xtext.graphview.map.graphViewMapping.Import;
+import org.eclipse.xtext.graphview.map.graphViewMapping.LabelMapping;
+import org.eclipse.xtext.graphview.map.graphViewMapping.MappingCall;
+import org.eclipse.xtext.graphview.map.graphViewMapping.NodeMapping;
 
 /**
  * <!-- begin-user-doc -->

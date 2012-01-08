@@ -8,11 +8,10 @@ package org.eclipse.xtext.graphview.instancemodel.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.xtext.graphview.instancemodel.AbstractInstance;
 import org.eclipse.xtext.graphview.instancemodel.DiagramInstance;
 import org.eclipse.xtext.graphview.instancemodel.EdgeInstance;
@@ -20,7 +19,10 @@ import org.eclipse.xtext.graphview.instancemodel.InstancemodelFactory;
 import org.eclipse.xtext.graphview.instancemodel.InstancemodelPackage;
 import org.eclipse.xtext.graphview.instancemodel.LabelInstance;
 import org.eclipse.xtext.graphview.instancemodel.NodeInstance;
+import org.eclipse.xtext.graphview.instancemodel.Visibility;
+import org.eclipse.xtext.graphview.instancemodel.ViewState;
 import org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage;
+import org.eclipse.xtext.xbase.XbasePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -63,6 +65,13 @@ public class InstancemodelPackageImpl extends EPackageImpl implements Instancemo
 	 * @generated
 	 */
 	private EClass edgeInstanceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum visibilityEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -112,6 +121,7 @@ public class InstancemodelPackageImpl extends EPackageImpl implements Instancemo
 
 		// Initialize simple dependencies
 		GraphViewMappingPackage.eINSTANCE.eClass();
+		XbasePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theInstancemodelPackage.createPackageContents();
@@ -171,6 +181,15 @@ public class InstancemodelPackageImpl extends EPackageImpl implements Instancemo
 	 */
 	public EReference getAbstractInstance_Mapping() {
 		return (EReference)abstractInstanceEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAbstractInstance_Visibility() {
+		return (EAttribute)abstractInstanceEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -259,6 +278,15 @@ public class InstancemodelPackageImpl extends EPackageImpl implements Instancemo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getVisibility() {
+		return visibilityEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public InstancemodelFactory getInstancemodelFactory() {
 		return (InstancemodelFactory)getEFactoryInstance();
 	}
@@ -287,6 +315,7 @@ public class InstancemodelPackageImpl extends EPackageImpl implements Instancemo
 		createEReference(abstractInstanceEClass, ABSTRACT_INSTANCE__CHILDREN);
 		createEAttribute(abstractInstanceEClass, ABSTRACT_INSTANCE__SEMANTIC_ELEMENT);
 		createEReference(abstractInstanceEClass, ABSTRACT_INSTANCE__MAPPING);
+		createEAttribute(abstractInstanceEClass, ABSTRACT_INSTANCE__VISIBILITY);
 
 		diagramInstanceEClass = createEClass(DIAGRAM_INSTANCE);
 		createEReference(diagramInstanceEClass, DIAGRAM_INSTANCE__EDGES);
@@ -300,6 +329,9 @@ public class InstancemodelPackageImpl extends EPackageImpl implements Instancemo
 		edgeInstanceEClass = createEClass(EDGE_INSTANCE);
 		createEReference(edgeInstanceEClass, EDGE_INSTANCE__SOURCE);
 		createEReference(edgeInstanceEClass, EDGE_INSTANCE__TARGET);
+
+		// Create enums
+		visibilityEEnum = createEEnum(VISIBILITY);
 	}
 
 	/**
@@ -344,6 +376,7 @@ public class InstancemodelPackageImpl extends EPackageImpl implements Instancemo
 		initEReference(getAbstractInstance_Children(), this.getAbstractInstance(), this.getAbstractInstance_Parent(), "children", null, 0, -1, AbstractInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAbstractInstance_SemanticElement(), ecorePackage.getEJavaObject(), "semanticElement", null, 0, 1, AbstractInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAbstractInstance_Mapping(), theGraphViewMappingPackage.getAbstractMapping(), null, "mapping", null, 0, 1, AbstractInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAbstractInstance_Visibility(), this.getVisibility(), "visibility", null, 0, 1, AbstractInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(diagramInstanceEClass, DiagramInstance.class, "DiagramInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDiagramInstance_Edges(), this.getEdgeInstance(), null, "edges", null, 0, -1, DiagramInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -357,6 +390,12 @@ public class InstancemodelPackageImpl extends EPackageImpl implements Instancemo
 		initEClass(edgeInstanceEClass, EdgeInstance.class, "EdgeInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEdgeInstance_Source(), this.getNodeInstance(), this.getNodeInstance_OutgoingEdges(), "source", null, 0, 1, EdgeInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEdgeInstance_Target(), this.getNodeInstance(), this.getNodeInstance_IncomingEdges(), "target", null, 0, 1, EdgeInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		// Initialize enums and add enum literals
+		initEEnum(visibilityEEnum, Visibility.class, "Visibility");
+		addEEnumLiteral(visibilityEEnum, Visibility.VISIBLE);
+		addEEnumLiteral(visibilityEEnum, Visibility.TRANSPARENT);
+		addEEnumLiteral(visibilityEEnum, Visibility.HIDDEN);
 
 		// Create resource
 		createResource(eNS_URI);

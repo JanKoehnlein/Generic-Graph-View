@@ -7,7 +7,6 @@
 package org.eclipse.xtext.graphview.instancemodel.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.xtext.graphview.instancemodel.InstancemodelPackage;
 import org.eclipse.xtext.graphview.instancemodel.LabelInstance;
 

@@ -44,3 +44,4 @@ style EClassNode.Attributes.Label, EClassNode.Operations.Label {
 	font = font("Helvetica", 11, SWT::NONE)
 	border = null
 }
+

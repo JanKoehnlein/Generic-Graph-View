@@ -14,6 +14,7 @@ import org.eclipse.xtext.graphview.instancemodel.DiagramInstance;
 import org.eclipse.xtext.graphview.instancemodel.EdgeInstance;
 import org.eclipse.xtext.graphview.instancemodel.LabelInstance;
 import org.eclipse.xtext.graphview.instancemodel.NodeInstance;
+import org.eclipse.xtext.graphview.instancemodel.Visibility;
 import org.eclipse.xtext.graphview.instancemodel.util.InstancemodelSwitch;
 
 import com.google.inject.Inject;
@@ -35,24 +36,29 @@ public class GraphViewEditPartFactory implements EditPartFactory {
 
 	public EditPart createEditPart(EditPart parent, Object model) {
 		if (model instanceof AbstractInstance) {
-			EditPart editPart = new InstancemodelSwitch<EditPart>() {
-				public EditPart caseDiagramInstance(DiagramInstance object) {
-					return diagramEditPartProvider.get();
+			if (((AbstractInstance) model).getVisibility() != Visibility.HIDDEN) {
+				EditPart editPart = new InstancemodelSwitch<EditPart>() {
+					public EditPart caseDiagramInstance(DiagramInstance object) {
+						return diagramEditPartProvider.get();
+					}
+
+					public EditPart caseNodeInstance(NodeInstance object) {
+						return nodeEditPartProvider.get();
+					}
+
+					public EditPart caseLabelInstance(LabelInstance object) {
+						return labelEditPartProvider.get();
+					}
+
+					public EditPart caseEdgeInstance(EdgeInstance object) {
+						return edgeEditPartProvider.get();
+					}
+				}.doSwitch((AbstractInstance) model);
+				if (editPart != null) {
+					editPart.setModel(model);
 				}
-				public EditPart caseNodeInstance(NodeInstance object) {
-					return nodeEditPartProvider.get();
-				}
-				public EditPart caseLabelInstance(LabelInstance object) {
-					return labelEditPartProvider.get();
-				}
-				public EditPart caseEdgeInstance(EdgeInstance object) {
-					return edgeEditPartProvider.get();
-				}
-			}.doSwitch((AbstractInstance) model);
-			if (editPart != null) {
-				editPart.setModel(model);
+				return editPart;
 			}
-			return editPart;
 		}
 		return null;
 	}

@@ -10,7 +10,6 @@ style EClassHierarchy {
 	autoLayoutManager = new KielerAutoLayout() 
 }
 
-
 style EClassNode.SuperType {
 	var arrow = new PolygonDecoration()
 	arrow.setScale(8,8)

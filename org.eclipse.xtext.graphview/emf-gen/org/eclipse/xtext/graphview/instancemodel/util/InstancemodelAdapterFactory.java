@@ -8,12 +8,15 @@ package org.eclipse.xtext.graphview.instancemodel.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.xtext.graphview.instancemodel.*;
+import org.eclipse.xtext.graphview.instancemodel.AbstractInstance;
+import org.eclipse.xtext.graphview.instancemodel.DiagramInstance;
+import org.eclipse.xtext.graphview.instancemodel.EdgeInstance;
+import org.eclipse.xtext.graphview.instancemodel.InstancemodelPackage;
+import org.eclipse.xtext.graphview.instancemodel.LabelInstance;
+import org.eclipse.xtext.graphview.instancemodel.NodeInstance;
 
 /**
  * <!-- begin-user-doc -->

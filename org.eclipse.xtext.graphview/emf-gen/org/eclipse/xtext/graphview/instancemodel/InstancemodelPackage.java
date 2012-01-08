@@ -8,6 +8,7 @@ package org.eclipse.xtext.graphview.instancemodel;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -106,13 +107,22 @@ public interface InstancemodelPackage extends EPackage {
 	int ABSTRACT_INSTANCE__MAPPING = 3;
 
 	/**
+	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_INSTANCE__VISIBILITY = 4;
+
+	/**
 	 * The number of structural features of the '<em>Abstract Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_INSTANCE_FEATURE_COUNT = 4;
+	int ABSTRACT_INSTANCE_FEATURE_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.xtext.graphview.instancemodel.impl.DiagramInstanceImpl <em>Diagram Instance</em>}' class.
@@ -159,6 +169,15 @@ public interface InstancemodelPackage extends EPackage {
 	 * @ordered
 	 */
 	int DIAGRAM_INSTANCE__MAPPING = ABSTRACT_INSTANCE__MAPPING;
+
+	/**
+	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGRAM_INSTANCE__VISIBILITY = ABSTRACT_INSTANCE__VISIBILITY;
 
 	/**
 	 * The feature id for the '<em><b>Edges</b></em>' containment reference list.
@@ -223,6 +242,15 @@ public interface InstancemodelPackage extends EPackage {
 	 * @ordered
 	 */
 	int NODE_INSTANCE__MAPPING = ABSTRACT_INSTANCE__MAPPING;
+
+	/**
+	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NODE_INSTANCE__VISIBILITY = ABSTRACT_INSTANCE__VISIBILITY;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing Edges</b></em>' reference list.
@@ -298,6 +326,15 @@ public interface InstancemodelPackage extends EPackage {
 	int LABEL_INSTANCE__MAPPING = ABSTRACT_INSTANCE__MAPPING;
 
 	/**
+	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LABEL_INSTANCE__VISIBILITY = ABSTRACT_INSTANCE__VISIBILITY;
+
+	/**
 	 * The number of structural features of the '<em>Label Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -353,6 +390,15 @@ public interface InstancemodelPackage extends EPackage {
 	int EDGE_INSTANCE__MAPPING = ABSTRACT_INSTANCE__MAPPING;
 
 	/**
+	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDGE_INSTANCE__VISIBILITY = ABSTRACT_INSTANCE__VISIBILITY;
+
+	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -379,6 +425,16 @@ public interface InstancemodelPackage extends EPackage {
 	 */
 	int EDGE_INSTANCE_FEATURE_COUNT = ABSTRACT_INSTANCE_FEATURE_COUNT + 2;
 
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.xtext.graphview.instancemodel.Visibility <em>Visibility</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.xtext.graphview.instancemodel.Visibility
+	 * @see org.eclipse.xtext.graphview.instancemodel.impl.InstancemodelPackageImpl#getVisibility()
+	 * @generated
+	 */
+	int VISIBILITY = 5;
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.xtext.graphview.instancemodel.AbstractInstance <em>Abstract Instance</em>}'.
@@ -433,6 +489,17 @@ public interface InstancemodelPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAbstractInstance_Mapping();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.xtext.graphview.instancemodel.AbstractInstance#getVisibility <em>Visibility</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Visibility</em>'.
+	 * @see org.eclipse.xtext.graphview.instancemodel.AbstractInstance#getVisibility()
+	 * @see #getAbstractInstance()
+	 * @generated
+	 */
+	EAttribute getAbstractInstance_Visibility();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.xtext.graphview.instancemodel.DiagramInstance <em>Diagram Instance</em>}'.
@@ -530,6 +597,16 @@ public interface InstancemodelPackage extends EPackage {
 	EReference getEdgeInstance_Target();
 
 	/**
+	 * Returns the meta object for enum '{@link org.eclipse.xtext.graphview.instancemodel.Visibility <em>Visibility</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Visibility</em>'.
+	 * @see org.eclipse.xtext.graphview.instancemodel.Visibility
+	 * @generated
+	 */
+	EEnum getVisibility();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -592,6 +669,14 @@ public interface InstancemodelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ABSTRACT_INSTANCE__MAPPING = eINSTANCE.getAbstractInstance_Mapping();
+
+		/**
+		 * The meta object literal for the '<em><b>Visibility</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ABSTRACT_INSTANCE__VISIBILITY = eINSTANCE.getAbstractInstance_Visibility();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.xtext.graphview.instancemodel.impl.DiagramInstanceImpl <em>Diagram Instance</em>}' class.
@@ -672,6 +757,16 @@ public interface InstancemodelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference EDGE_INSTANCE__TARGET = eINSTANCE.getEdgeInstance_Target();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.xtext.graphview.instancemodel.Visibility <em>Visibility</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.xtext.graphview.instancemodel.Visibility
+		 * @see org.eclipse.xtext.graphview.instancemodel.impl.InstancemodelPackageImpl#getVisibility()
+		 * @generated
+		 */
+		EEnum VISIBILITY = eINSTANCE.getVisibility();
 
 	}
 

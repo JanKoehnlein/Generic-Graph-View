@@ -15,7 +15,7 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.XYLayoutEditPolicy;
 import org.eclipse.gef.requests.ChangeBoundsRequest;
 import org.eclipse.gef.requests.CreateRequest;
-import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping;
+import org.eclipse.xtext.graphview.instancemodel.AbstractInstance;
 
 public class DiagramLayoutEditPolicy extends XYLayoutEditPolicy {
 
@@ -62,7 +62,8 @@ public class DiagramLayoutEditPolicy extends XYLayoutEditPolicy {
 	@Override
 	protected Command createAddCommand(ChangeBoundsRequest request,
 			EditPart child, Object constraint) {
-		if(child.getModel() instanceof AbstractMapping && ((AbstractMapping) child.getModel()).eContainer() == getHost().getModel()) 
+		if(child.getModel() instanceof AbstractInstance 
+				&& ((AbstractInstance) child.getModel()).eContainer() == getHost().getModel()) 
 			return createChangeConstraintCommand(request, child, constraint);
 		else 
 			return super.createAddCommand(request, child, constraint);
