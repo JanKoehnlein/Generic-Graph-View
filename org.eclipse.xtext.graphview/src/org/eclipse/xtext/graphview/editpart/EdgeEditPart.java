@@ -17,6 +17,7 @@ import org.eclipse.gef.editpolicies.ConnectionEndpointEditPolicy;
 import org.eclipse.xtext.graphview.editpolicy.EdgeBendpointEditPolicy;
 import org.eclipse.xtext.graphview.editpolicy.HideEditPolicy;
 import org.eclipse.xtext.graphview.instancemodel.AbstractInstance;
+import org.eclipse.xtext.graphview.instancemodel.Visibility;
 import org.eclipse.xtext.graphview.shape.ConnectionShape;
 import org.eclipse.xtext.graphview.shape.TransparencyHelper;
 
@@ -88,4 +89,12 @@ public class EdgeEditPart extends AbstractConnectionEditPart implements
 	public void setTransparent(boolean isTransparent) {
 		transparencyHelper.setTransparent(isTransparent);
 	}
+	
+	@Override
+	public void activate() {
+		super.activate();
+		if(getModel().getVisibility() == Visibility.TRANSPARENT)
+			setTransparent(true);
+	}
+
 }

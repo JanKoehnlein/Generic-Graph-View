@@ -91,5 +91,7 @@ public abstract class AbstractMappingEditPart extends AbstractGraphicalEditPart
 		super.activate();
 		Rectangle bounds = new Rectangle(new Point(10,10), getFigure().getPreferredSize());
 		getFigure().setBounds(bounds);
+		if(getModel().getVisibility() == Visibility.TRANSPARENT)
+			setTransparent(true);
 	}
 }

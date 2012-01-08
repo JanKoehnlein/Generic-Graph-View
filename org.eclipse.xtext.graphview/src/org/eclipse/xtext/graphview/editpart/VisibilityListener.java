@@ -18,19 +18,18 @@ public class VisibilityListener extends EContentAdapter {
 			AbstractInstance instanceModel = (AbstractInstance) notification
 					.getNotifier();
 			IInstanceModelEditPart editPart = findEditPart(instanceModel);
-			if (notification.getOldValue() == Visibility.TRANSPARENT)
-				if (editPart != null)
+			if (editPart != null) {
+				if (notification.getOldValue() == Visibility.TRANSPARENT)
 					editPart.setTransparent(false);
-			if (notification.getNewValue() == Visibility.TRANSPARENT) {
-				if (editPart != null)
+				if (notification.getNewValue() == Visibility.TRANSPARENT) {
 					editPart.setTransparent(true);
-			} else {
-				if (instanceModel instanceof EdgeInstance) {
-					refreshEditPart(((EdgeInstance) instanceModel).getSource());
-					refreshEditPart(((EdgeInstance) instanceModel).getTarget());
-				} else {
-					refreshEditPart(instanceModel.eContainer());
 				}
+			}
+			if (instanceModel instanceof EdgeInstance) {
+				refreshEditPart(((EdgeInstance) instanceModel).getSource());
+				refreshEditPart(((EdgeInstance) instanceModel).getTarget());
+			} else {
+				refreshEditPart(instanceModel.eContainer());
 			}
 		}
 	}
