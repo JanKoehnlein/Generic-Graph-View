@@ -61,7 +61,6 @@ public class RevealButton extends AbstractRapidButton {
 
 			@Override
 			protected boolean handleDrag() {
-				System.out.println("handleDrag");
 				return true;
 			}
 

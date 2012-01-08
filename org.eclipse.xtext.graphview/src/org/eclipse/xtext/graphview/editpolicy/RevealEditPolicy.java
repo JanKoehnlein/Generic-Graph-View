@@ -86,7 +86,6 @@ public class RevealEditPolicy extends AbstractEditPolicy {
 			double angle = Math.atan2(dragDifference.preciseHeight(), dragDifference.preciseWidth());
 			double deltaAngle = 2 * Math.PI / toBeRevealed.size();
 			for(IInstanceModelEditPart editPart: toBeRevealed) {
-				System.out.println(angle);
 				IFigure figure = editPart.getFigure();
 				Point newCenter = new Point(center);
 				Dimension figureSize = figure.getSize();
