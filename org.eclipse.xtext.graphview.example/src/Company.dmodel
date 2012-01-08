@@ -1,0 +1,20 @@
+
+package company {
+	entity Person {
+		firstName : String
+		lastName : String
+		op fullName ( ) : String { firstName + " " + lastName }
+		address : Address
+	}
+
+	entity Address {
+		street : String
+		city : String
+		country : String
+	}
+	
+	entity Boss extends Person {
+		
+	}
+}
+

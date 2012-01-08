@@ -1,0 +1,49 @@
+import org.eclipse.xtext.graphview.shape.*
+import org.eclipse.xtext.graphview.layout.*  
+import org.eclipse.draw2d.*
+import org.eclipse.swt.SWT
+import DomainmodelPackageDiagram.*
+
+stylesheet DomainmodelPackageDiagram for DomainmodelPackageDiagram
+
+style DomainmodelPackageDiagram {
+	autoLayoutManager = new KielerAutoLayout() 
+}
+
+style EntityNode.Name { 
+	font = font("Helvetica", 13, SWT::BOLD) 
+	text = element.simpleName
+}
+
+style EntityNode.Operations.Label { 
+	text = (element.simpleName 
+		+ '('
+		+ element.parameters.map[parameterType.simpleName].join(', ') + ') : ' 
+		+ if(element.returnType != null) 
+			element.returnType.simpleName 
+		  else '')
+}
+
+style EntityNode.Attributes.Label { 
+	text = element.simpleName + ' ' + element.type.simpleName
+}
+
+
+style EntityNode.Attributes, EntityNode.Operations as RectangleShape {
+	outline = false
+	backgroundColor = color(#ffffff)
+}
+
+style EntityNode.Attributes.Label, EntityNode.Operations.Label {
+	font = font("Helvetica", 11, SWT::NONE)
+	border = null
+}
+
+style EntityNode.SuperType {
+	var arrow = new PolygonDecoration()
+	arrow.setScale(8,8)
+	arrow.backgroundColor = color(#ffffff)
+	arrow.lineWidth = 2
+	targetDecoration = arrow 
+}
+

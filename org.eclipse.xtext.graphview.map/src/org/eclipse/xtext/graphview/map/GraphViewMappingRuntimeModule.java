@@ -9,9 +9,11 @@ package org.eclipse.xtext.graphview.map;
 
 import org.eclipse.xtext.graphview.map.scoping.GraphViewMappingIdentifiableSimpleNameProvider;
 import org.eclipse.xtext.graphview.map.scoping.GraphViewMappingScopeProvider;
+import org.eclipse.xtext.graphview.map.types.GVMExtensionClassNameProvider;
 import org.eclipse.xtext.graphview.map.types.GraphViewMappingTypeProvider;
 import org.eclipse.xtext.xbase.featurecalls.IdentifiableSimpleNameProvider;
 import org.eclipse.xtext.xbase.scoping.XbaseScopeProvider;
+import org.eclipse.xtext.xbase.scoping.featurecalls.StaticImplicitMethodsFeatureForTypeProvider;
 import org.eclipse.xtext.xbase.typing.ITypeProvider;
 
 /**
@@ -32,5 +34,9 @@ public class GraphViewMappingRuntimeModule extends org.eclipse.xtext.graphview.m
 	
 	public Class<? extends XbaseScopeProvider> bindXbaseScopeProvider() {
 		return GraphViewMappingScopeProvider.class;
+	}
+	
+	public Class<? extends StaticImplicitMethodsFeatureForTypeProvider.ExtensionClassNameProvider> bindExtensionClassNameProvider() {
+		return GVMExtensionClassNameProvider.class;
 	}
 }
