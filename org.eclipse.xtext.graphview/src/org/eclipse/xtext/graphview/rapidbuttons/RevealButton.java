@@ -55,8 +55,11 @@ public class RevealButton extends AbstractRapidButton {
 			}
 
 			protected boolean handleButtonDown(int button) {
-				stateTransition(STATE_INITIAL, STATE_DRAG);
-				return true;
+				if(stateTransition(STATE_INITIAL, STATE_DRAG)) {
+					((RevealRequest) getSourceRequest()).setRevealSingle(button!=1);
+					return true;
+				}
+				return false;
 			}
 
 			@Override
@@ -67,20 +70,22 @@ public class RevealButton extends AbstractRapidButton {
 			@Override
 			protected boolean handleDragInProgress() {
 				stateTransition(STATE_DRAG, STATE_DRAG_IN_PROGRESS);
-				Point mouseLocation = getCurrentInput().getMouseLocation();
+				Point mouseLocation = getCurrentInput(). 
+					getMouseLocation();
 				((RevealRequest) getSourceRequest()).setCurrentMouseLocation(mouseLocation);
 				showSourceFeedback();
 				return true;
 			}
 
 			protected boolean handleButtonUp(int button) {
-				eraseSourceFeedback();
 				if (stateTransition(STATE_DRAG_IN_PROGRESS, STATE_TERMINAL)) {
+					eraseSourceFeedback();
 					setCurrentCommand(getEditPolicy().getHost().getCommand(
 							getSourceRequest()));
 					executeCurrentCommand();
+					return true;
 				}
-				return true;
+				return false;
 			}
 		};
 	}

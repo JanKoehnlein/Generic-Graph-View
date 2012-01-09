@@ -3,25 +3,27 @@ package org.eclipse.xtext.graphview.shape;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.swt.graphics.Color;
 
-import com.google.inject.Inject;
-
 public class TransparencyHelper {
 
-	@Inject
 	private ColorMemento colorMemento;
-	
+
 	private IFigure figure;
-	
+
 	public void setFigure(IFigure figure) {
 		this.figure = figure;
 	}
-	
+
 	public void setTransparent(boolean isTransparent) {
-		if(isTransparent) { 
-			colorMemento.create(figure);
-			makeTransparent(figure);
-		} else { 
-			colorMemento.restore();
+		if (isTransparent) {
+			if (colorMemento == null) {
+				colorMemento = new ColorMemento(figure);
+				makeTransparent(figure);
+			}
+		} else {
+			if (colorMemento != null) {
+				colorMemento.restore();
+				colorMemento = null;
+			}
 		}
 	}
 

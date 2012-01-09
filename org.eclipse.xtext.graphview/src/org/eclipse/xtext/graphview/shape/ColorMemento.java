@@ -13,7 +13,7 @@ public class ColorMemento {
 
 	private Map<IFigure, Color> bgColors;
 
-	public void create(IFigure parent) {
+	public ColorMemento(IFigure parent) {
 		fgColors = Maps.newHashMap();
 		bgColors = Maps.newHashMap();
 		addFigure(parent);

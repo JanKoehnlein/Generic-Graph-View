@@ -1,6 +1,7 @@
 package company;
 
 import company.Address;
+import company.Phone;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
 
 public class Person {
@@ -38,5 +39,15 @@ public class Person {
   
   public void setAddress(final Address address) {
     this.address = address;
+  }
+  
+  private Phone phone;
+  
+  public Phone getPhone() {
+    return this.phone;
+  }
+  
+  public void setPhone(final Phone phone) {
+    this.phone = phone;
   }
 }

@@ -5,6 +5,11 @@ package company {
 		lastName : String
 		op fullName ( ) : String { firstName + " " + lastName }
 		address : Address
+		phone: Phone
+	}
+
+	entity Phone {
+		number: String
 	}
 
 	entity Address {
@@ -14,7 +19,9 @@ package company {
 	}
 	
 	entity Boss extends Person {
-		
+	}
+
+	entity Employee extends Person {
 	}
 }
 
