@@ -3,8 +3,9 @@ import org.eclipse.xtext.graphview.layout.*
 import org.eclipse.draw2d.*
 import org.eclipse.swt.SWT
 import DomainmodelEntityDiagram.*
+import org.eclipse.xtext.common.types.JvmVisibility
 
-stylesheet DomainmodelPackageDiagram for DomainmodelEntityDiagram
+stylesheet DomainmodelEntityDiagram for DomainmodelEntityDiagram
 
 style DomainmodelEntityDiagram {
 	autoLayoutManager = new KielerAutoLayout() 
@@ -18,14 +19,14 @@ style EntityNode.Name {
 style EntityNode.Operations.Label { 
 	text = (element.simpleName 
 		+ '('
-		+ element.parameters.map[parameterType.simpleName].join(', ') + ') : ' 
+		+ element.parameters.map[it.parameterType.simpleName].join(', ') + ') : ' 
 		+ if(element.returnType != null) 
 			element.returnType.simpleName 
 		  else '')
 }
 
 style EntityNode.Attributes.Label { 
-	text = element.simpleName + ' ' + element.type.simpleName
+	text = element.simpleName + ' : ' + element.type.simpleName
 }
 
 

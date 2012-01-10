@@ -25,7 +25,7 @@ public class Person {
     this.lastName = lastName;
   }
   
-  public String fullName() {
+  public String fullName(final String x) {
     String _operator_plus = StringExtensions.operator_plus(this.firstName, " ");
     String _operator_plus_1 = StringExtensions.operator_plus(_operator_plus, this.lastName);
     return _operator_plus_1;

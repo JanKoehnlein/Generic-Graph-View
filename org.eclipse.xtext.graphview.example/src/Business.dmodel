@@ -1,0 +1,17 @@
+import company.*
+import java.util.*
+
+package business {
+	entity Customer extends Person {
+		orders: List<Order>
+		op placeOrder(Order order) : boolean {
+			if(orders == null)
+				orders = newArrayList()
+			orders += order
+		}		
+	}
+	
+	entity Order {
+		orderID: long
+	}
+}

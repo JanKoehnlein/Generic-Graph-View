@@ -3,7 +3,7 @@ package company {
 	entity Person {
 		firstName : String
 		lastName : String
-		op fullName ( ) : String { firstName + " " + lastName }
+		op fullName (String x) : String { firstName + " " + lastName }
 		address : Address
 		phone: Phone
 	}

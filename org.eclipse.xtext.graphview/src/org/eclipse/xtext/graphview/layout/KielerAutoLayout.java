@@ -38,7 +38,7 @@ import de.cau.cs.kieler.kiml.util.BoxLayoutProvider;
 public class KielerAutoLayout extends AbstractAutoLayout {
 
 	protected static class ExtensionPointReader {
-		
+
 		private static final String KIML_CLASS = "class";
 
 		private static final Logger LOG = Logger
@@ -56,7 +56,7 @@ public class KielerAutoLayout extends AbstractAutoLayout {
 							KIML_LAYOUT_PROVIDERS)) {
 				String layoutAlgorithmName = layoutProviderConfig
 						.getAttribute(KIML_NAME);
-				if(layoutProviderConfig.getAttribute(KIML_CLASS) != null)
+				if (layoutProviderConfig.getAttribute(KIML_CLASS) != null)
 					System.out.println(layoutAlgorithmName);
 			}
 		}
@@ -153,9 +153,9 @@ public class KielerAutoLayout extends AbstractAutoLayout {
 						(int) data.getYpos(), (int) data.getWidth(),
 						(int) data.getHeight());
 				entry.getKey().setBounds(bounds);
-				if(containerBounds == null)
+				if (containerBounds == null)
 					containerBounds = bounds.getCopy();
-				else 
+				else
 					containerBounds.union(bounds);
 			}
 		}
@@ -167,17 +167,19 @@ public class KielerAutoLayout extends AbstractAutoLayout {
 				for (KPoint bendPoint : edgeLayout.getBendPoints()) {
 					AbsoluteBendpoint gefBendPoint = new AbsoluteBendpoint(
 							(int) bendPoint.getX(), (int) bendPoint.getY());
-					gefBendPoints.add(gefBendPoint);				
-					if(containerBounds == null)
-						containerBounds = new Rectangle(gefBendPoint, new Dimension(0,0));
-					else 
+					gefBendPoints.add(gefBendPoint);
+					if (containerBounds == null)
+						containerBounds = new Rectangle(gefBendPoint,
+								new Dimension(0, 0));
+					else
 						containerBounds.union(gefBendPoint);
 				}
 				getConnectionRouter(container).setConstraint(entry.getKey(),
 						gefBendPoints);
 			}
 		}
-		return containerBounds.getSize().expand(2*containerBounds.x, 2*containerBounds.y);
+		return (containerBounds == null) ? new Dimension() : containerBounds
+				.getSize().expand(2 * containerBounds.x, 2 * containerBounds.y);
 	}
 
 	protected KEdge createKEdge(KNode sourceNode, KNode targetNode) {
