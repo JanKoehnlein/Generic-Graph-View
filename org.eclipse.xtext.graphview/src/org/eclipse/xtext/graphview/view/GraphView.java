@@ -7,10 +7,13 @@
  *******************************************************************************/
 package org.eclipse.xtext.graphview.view;
 
+import java.util.Iterator;
+
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.gef.GraphicalViewer;
 import org.eclipse.gef.KeyHandler;
 import org.eclipse.gef.KeyStroke;
+import org.eclipse.gef.commands.CommandStack;
 import org.eclipse.gef.editparts.ScalableFreeformRootEditPart;
 import org.eclipse.gef.editparts.ZoomManager;
 import org.eclipse.gef.ui.actions.ActionRegistry;
@@ -18,11 +21,13 @@ import org.eclipse.gef.ui.actions.DeleteAction;
 import org.eclipse.gef.ui.actions.RedoAction;
 import org.eclipse.gef.ui.actions.SelectAllAction;
 import org.eclipse.gef.ui.actions.UndoAction;
+import org.eclipse.gef.ui.actions.UpdateAction;
 import org.eclipse.gef.ui.actions.ZoomComboContributionItem;
 import org.eclipse.gef.ui.parts.GraphicalViewerKeyHandler;
 import org.eclipse.gef.ui.parts.ScrollingGraphicalViewer;
-import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.action.IToolBarManager;
+import org.eclipse.jface.viewers.ISelectionChangedListener;
+import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
@@ -84,6 +89,8 @@ public class GraphView extends ViewPart {
 
 	private ActionRegistry actionRegistry;
 
+	private ISelectionChangedListener actionUpdater;
+
 	@Override
 	public void createPartControl(Composite parent) {
 		graphicalViewer = createGraphicalViewer(parent);
@@ -120,30 +127,32 @@ public class GraphView extends ViewPart {
 		toolBarManager.add(zoomContributionItem);
 		refreshAction.setEnabled(false);
 		exportToFileAction.setEnabled(false);
+		actionUpdater = new ISelectionChangedListener() {
+			public void selectionChanged(SelectionChangedEvent event) {
+				for(Iterator<?> i = actionRegistry.getActions(); i.hasNext();) {
+					Object action = i.next();
+					if (action instanceof UpdateAction) {
+						((UpdateAction) action).update();
+					}
+				}
+			}
+		};
+		getGraphicalViewer().addSelectionChangedListener(actionUpdater);
 		graphicalViewer.setKeyHandler(new GraphicalViewerKeyHandler(
 				graphicalViewer).setParent(createActionKeyHandler()));
 	}
 
 	protected ActionRegistry createActionRegistry() {
 		ActionRegistry registry = new ActionRegistry();
-		IAction action;
-
-		action = new UndoAction(this);
-		registry.registerAction(action);
-
-		action = new RedoAction(this);
-		registry.registerAction(action);
-
-		action = new SelectAllAction(this);
-		registry.registerAction(action);
-
-		action = new DeleteAction((IWorkbenchPart) this);
-		registry.registerAction(action);
-
-		// action = new SaveAction(this);
-		// registry.registerAction(action);
-		//
-		// registry.registerAction(new PrintAction(this));
+		UndoAction undoAction = new UndoAction(this);
+		registry.registerAction(undoAction);
+		RedoAction redoAction = new RedoAction(this);
+		registry.registerAction(redoAction);
+		SelectAllAction selectAllAction = new SelectAllAction(this);
+		registry.registerAction(selectAllAction);
+		DeleteAction deleteAction = new DeleteAction((IWorkbenchPart) this);
+		deleteAction.setSelectionProvider(graphicalViewer);
+		registry.registerAction(deleteAction);
 		return registry;
 	}
 
@@ -151,10 +160,20 @@ public class GraphView extends ViewPart {
 		KeyHandler actionKeyHandler = new KeyHandler();
 		actionKeyHandler.put(KeyStroke.getPressed(SWT.DEL, 127, 0),
 				actionRegistry.getAction(ActionFactory.DELETE.getId()));
-		actionKeyHandler.put(KeyStroke.getPressed('z', SWT.CTRL),
+		actionKeyHandler.put(KeyStroke.getPressed(SWT.BS, 0x8, 0),
+				actionRegistry.getAction(ActionFactory.DELETE.getId()));
+		actionKeyHandler.put(KeyStroke.getPressed('z', 0x7a, SWT.COMMAND),
 				actionRegistry.getAction(ActionFactory.UNDO.getId()));
-		actionKeyHandler.put(KeyStroke.getPressed('z', SWT.SHIFT | SWT.CTRL),
+		actionKeyHandler.put(KeyStroke.getPressed('z', 0x7a, SWT.COMMAND | SWT.SHIFT),
 				actionRegistry.getAction(ActionFactory.REDO.getId()));
+		actionKeyHandler.put(KeyStroke.getPressed('a', 0x61, SWT.COMMAND),
+				actionRegistry.getAction(ActionFactory.SELECT_ALL.getId()));
+		actionKeyHandler.put(KeyStroke.getPressed('z', 0x7a, SWT.CTRL),
+				actionRegistry.getAction(ActionFactory.UNDO.getId()));
+		actionKeyHandler.put(KeyStroke.getPressed('z', 0x7a, SWT.CTRL | SWT.SHIFT),
+				actionRegistry.getAction(ActionFactory.REDO.getId()));
+		actionKeyHandler.put(KeyStroke.getPressed('a', 0x61, SWT.CTRL),
+				actionRegistry.getAction(ActionFactory.SELECT_ALL.getId()));
 		return actionKeyHandler;
 	}
 
@@ -175,6 +194,8 @@ public class GraphView extends ViewPart {
 	public void dispose() {
 		if (actionRegistry != null)
 			actionRegistry.dispose();
+		if (actionUpdater != null) 
+			graphicalViewer.removeSelectionChangedListener(actionUpdater);
 		if (selectionConverter != null)
 			getSite().getWorkbenchWindow().getSelectionService()
 					.addPostSelectionListener(selectionConverter);
@@ -231,4 +252,14 @@ public class GraphView extends ViewPart {
 		return Display.getDefault();
 	}
 
+	@SuppressWarnings("rawtypes")
+	@Override
+	public Object getAdapter(Class adapter) {
+		if(adapter == CommandStack.class) {
+			return getGraphicalViewer().getEditDomain().getCommandStack();
+		} else if(adapter == GraphicalViewer.class) {
+			return graphicalViewer;
+		}
+		return super.getAdapter(adapter);
+	}
 }
