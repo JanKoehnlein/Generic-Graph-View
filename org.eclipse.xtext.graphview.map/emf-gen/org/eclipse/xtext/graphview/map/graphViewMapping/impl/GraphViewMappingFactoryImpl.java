@@ -2,27 +2,18 @@
  * <copyright>
  * </copyright>
  *
- * $Id$
  */
 package org.eclipse.xtext.graphview.map.graphViewMapping.impl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractExpressionMapping;
-import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMappingDefinition;
-import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMappingReference;
-import org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping;
-import org.eclipse.xtext.graphview.map.graphViewMapping.EdgeEndMapping;
-import org.eclipse.xtext.graphview.map.graphViewMapping.EdgeMapping;
-import org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingFactory;
-import org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage;
-import org.eclipse.xtext.graphview.map.graphViewMapping.Import;
-import org.eclipse.xtext.graphview.map.graphViewMapping.LabelMapping;
-import org.eclipse.xtext.graphview.map.graphViewMapping.MappingCall;
-import org.eclipse.xtext.graphview.map.graphViewMapping.NodeMapping;
+
+import org.eclipse.xtext.graphview.map.graphViewMapping.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,21 +21,26 @@ import org.eclipse.xtext.graphview.map.graphViewMapping.NodeMapping;
  * <!-- end-user-doc -->
  * @generated
  */
-public class GraphViewMappingFactoryImpl extends EFactoryImpl implements GraphViewMappingFactory {
+public class GraphViewMappingFactoryImpl extends EFactoryImpl implements GraphViewMappingFactory
+{
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static GraphViewMappingFactory init() {
-		try {
+	public static GraphViewMappingFactory init()
+	{
+		try
+		{
 			GraphViewMappingFactory theGraphViewMappingFactory = (GraphViewMappingFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.eclipse.org/xtext/graphview/map/GraphViewMapping"); 
-			if (theGraphViewMappingFactory != null) {
+			if (theGraphViewMappingFactory != null)
+			{
 				return theGraphViewMappingFactory;
 			}
 		}
-		catch (Exception exception) {
+		catch (Exception exception)
+		{
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new GraphViewMappingFactoryImpl();
@@ -56,7 +52,8 @@ public class GraphViewMappingFactoryImpl extends EFactoryImpl implements GraphVi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GraphViewMappingFactoryImpl() {
+	public GraphViewMappingFactoryImpl()
+	{
 		super();
 	}
 
@@ -66,8 +63,10 @@ public class GraphViewMappingFactoryImpl extends EFactoryImpl implements GraphVi
 	 * @generated
 	 */
 	@Override
-	public EObject create(EClass eClass) {
-		switch (eClass.getClassifierID()) {
+	public EObject create(EClass eClass)
+	{
+		switch (eClass.getClassifierID())
+		{
 			case GraphViewMappingPackage.ABSTRACT_MAPPING_DEFINITION: return createAbstractMappingDefinition();
 			case GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING: return createAbstractExpressionMapping();
 			case GraphViewMappingPackage.ABSTRACT_MAPPING_REFERENCE: return createAbstractMappingReference();
@@ -88,7 +87,8 @@ public class GraphViewMappingFactoryImpl extends EFactoryImpl implements GraphVi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AbstractMappingDefinition createAbstractMappingDefinition() {
+	public AbstractMappingDefinition createAbstractMappingDefinition()
+	{
 		AbstractMappingDefinitionImpl abstractMappingDefinition = new AbstractMappingDefinitionImpl();
 		return abstractMappingDefinition;
 	}
@@ -98,27 +98,8 @@ public class GraphViewMappingFactoryImpl extends EFactoryImpl implements GraphVi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DiagramMapping createDiagramMapping() {
-		DiagramMappingImpl diagramMapping = new DiagramMappingImpl();
-		return diagramMapping;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Import createImport() {
-		ImportImpl import_ = new ImportImpl();
-		return import_;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public AbstractExpressionMapping createAbstractExpressionMapping() {
+	public AbstractExpressionMapping createAbstractExpressionMapping()
+	{
 		AbstractExpressionMappingImpl abstractExpressionMapping = new AbstractExpressionMappingImpl();
 		return abstractExpressionMapping;
 	}
@@ -128,7 +109,8 @@ public class GraphViewMappingFactoryImpl extends EFactoryImpl implements GraphVi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AbstractMappingReference createAbstractMappingReference() {
+	public AbstractMappingReference createAbstractMappingReference()
+	{
 		AbstractMappingReferenceImpl abstractMappingReference = new AbstractMappingReferenceImpl();
 		return abstractMappingReference;
 	}
@@ -138,7 +120,30 @@ public class GraphViewMappingFactoryImpl extends EFactoryImpl implements GraphVi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NodeMapping createNodeMapping() {
+	public Import createImport()
+	{
+		ImportImpl import_ = new ImportImpl();
+		return import_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DiagramMapping createDiagramMapping()
+	{
+		DiagramMappingImpl diagramMapping = new DiagramMappingImpl();
+		return diagramMapping;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NodeMapping createNodeMapping()
+	{
 		NodeMappingImpl nodeMapping = new NodeMappingImpl();
 		return nodeMapping;
 	}
@@ -148,7 +153,8 @@ public class GraphViewMappingFactoryImpl extends EFactoryImpl implements GraphVi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public LabelMapping createLabelMapping() {
+	public LabelMapping createLabelMapping()
+	{
 		LabelMappingImpl labelMapping = new LabelMappingImpl();
 		return labelMapping;
 	}
@@ -158,7 +164,8 @@ public class GraphViewMappingFactoryImpl extends EFactoryImpl implements GraphVi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EdgeMapping createEdgeMapping() {
+	public EdgeMapping createEdgeMapping()
+	{
 		EdgeMappingImpl edgeMapping = new EdgeMappingImpl();
 		return edgeMapping;
 	}
@@ -168,7 +175,8 @@ public class GraphViewMappingFactoryImpl extends EFactoryImpl implements GraphVi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EdgeEndMapping createEdgeEndMapping() {
+	public EdgeEndMapping createEdgeEndMapping()
+	{
 		EdgeEndMappingImpl edgeEndMapping = new EdgeEndMappingImpl();
 		return edgeEndMapping;
 	}
@@ -178,7 +186,8 @@ public class GraphViewMappingFactoryImpl extends EFactoryImpl implements GraphVi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MappingCall createMappingCall() {
+	public MappingCall createMappingCall()
+	{
 		MappingCallImpl mappingCall = new MappingCallImpl();
 		return mappingCall;
 	}
@@ -188,7 +197,8 @@ public class GraphViewMappingFactoryImpl extends EFactoryImpl implements GraphVi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GraphViewMappingPackage getGraphViewMappingPackage() {
+	public GraphViewMappingPackage getGraphViewMappingPackage()
+	{
 		return (GraphViewMappingPackage)getEPackage();
 	}
 
@@ -199,7 +209,8 @@ public class GraphViewMappingFactoryImpl extends EFactoryImpl implements GraphVi
 	 * @generated
 	 */
 	@Deprecated
-	public static GraphViewMappingPackage getPackage() {
+	public static GraphViewMappingPackage getPackage()
+	{
 		return GraphViewMappingPackage.eINSTANCE;
 	}
 

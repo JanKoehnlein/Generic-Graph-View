@@ -1,5 +1,7 @@
 package org.eclipse.xtext.graphview.map.serializer;
 
+import com.google.inject.Inject;
+import com.google.inject.Provider;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.common.types.JvmFormalParameter;
 import org.eclipse.xtext.common.types.JvmGenericArrayTypeReference;
@@ -58,9 +60,6 @@ import org.eclipse.xtext.xbase.XbasePackage;
 import org.eclipse.xtext.xbase.serializer.XbaseSemanticSequencer;
 import org.eclipse.xtext.xtype.XFunctionTypeRef;
 import org.eclipse.xtext.xtype.XtypePackage;
-
-import com.google.inject.Inject;
-import com.google.inject.Provider;
 
 @SuppressWarnings("restriction")
 public class AbstractGraphViewMappingSemanticSequencer extends AbstractSemanticSequencer {
@@ -1023,6 +1022,7 @@ public class AbstractGraphViewMappingSemanticSequencer extends AbstractSemanticS
 	/**
 	 * Constraint:
 	 *     (
+	 *         reveal?='reveal'? 
 	 *         name=ID 
 	 *         multi?='each'? 
 	 *         expression=XExpression 
@@ -1136,7 +1136,7 @@ public class AbstractGraphViewMappingSemanticSequencer extends AbstractSemanticS
 	
 	/**
 	 * Constraint:
-	 *     (name=ID multi?='each'? expression=XExpression unlessCondition=XExpression?)
+	 *     (reveal?='reveal'? name=ID multi?='each'? expression=XExpression unlessCondition=XExpression?)
 	 */
 	protected void sequence_LabelMapping(EObject context, LabelMapping semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1145,7 +1145,7 @@ public class AbstractGraphViewMappingSemanticSequencer extends AbstractSemanticS
 	
 	/**
 	 * Constraint:
-	 *     (referencedMapping=[AbstractMappingDefinition|ID] multi?='each'? expression=XExpression unlessCondition=XExpression?)
+	 *     (reveal?='reveal'? referencedMapping=[AbstractMappingDefinition|ID] multi?='each'? expression=XExpression unlessCondition=XExpression?)
 	 */
 	protected void sequence_MappingCall(EObject context, MappingCall semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1154,7 +1154,14 @@ public class AbstractGraphViewMappingSemanticSequencer extends AbstractSemanticS
 	
 	/**
 	 * Constraint:
-	 *     (name=ID multi?='each'? expression=XExpression mappings+=AbstractExpressionMapping* unlessCondition=XExpression?)
+	 *     (
+	 *         reveal?='reveal'? 
+	 *         name=ID 
+	 *         multi?='each'? 
+	 *         expression=XExpression 
+	 *         mappings+=AbstractExpressionMapping* 
+	 *         unlessCondition=XExpression?
+	 *     )
 	 */
 	protected void sequence_NodeMapping(EObject context, NodeMapping semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

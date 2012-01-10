@@ -2,7 +2,6 @@
  * <copyright>
  * </copyright>
  *
- * $Id$
  */
 package org.eclipse.xtext.graphview.map.graphViewMapping.impl;
 
@@ -10,8 +9,11 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import org.eclipse.xtext.common.types.TypesPackage;
+
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractExpressionMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMappingDefinition;
@@ -25,6 +27,7 @@ import org.eclipse.xtext.graphview.map.graphViewMapping.Import;
 import org.eclipse.xtext.graphview.map.graphViewMapping.LabelMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.MappingCall;
 import org.eclipse.xtext.graphview.map.graphViewMapping.NodeMapping;
+
 import org.eclipse.xtext.xbase.XbasePackage;
 
 /**
@@ -33,7 +36,8 @@ import org.eclipse.xtext.xbase.XbasePackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphViewMappingPackage {
+public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphViewMappingPackage
+{
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -53,7 +57,14 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass diagramMappingEClass = null;
+	private EClass abstractExpressionMappingEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass abstractMappingReferenceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -67,14 +78,7 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass abstractExpressionMappingEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass abstractMappingReferenceEClass = null;
+	private EClass diagramMappingEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -126,7 +130,8 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 	 * @see #init()
 	 * @generated
 	 */
-	private GraphViewMappingPackageImpl() {
+	private GraphViewMappingPackageImpl()
+	{
 		super(eNS_URI, GraphViewMappingFactory.eINSTANCE);
 	}
 
@@ -149,7 +154,8 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
-	public static GraphViewMappingPackage init() {
+	public static GraphViewMappingPackage init()
+	{
 		if (isInited) return (GraphViewMappingPackage)EPackage.Registry.INSTANCE.getEPackage(GraphViewMappingPackage.eNS_URI);
 
 		// Obtain or create and register package
@@ -180,7 +186,8 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAbstractMapping() {
+	public EClass getAbstractMapping()
+	{
 		return abstractMappingEClass;
 	}
 
@@ -189,7 +196,8 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAbstractMapping_UnlessCondition() {
+	public EReference getAbstractMapping_UnlessCondition()
+	{
 		return (EReference)abstractMappingEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -198,7 +206,8 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAbstractMappingDefinition() {
+	public EClass getAbstractMappingDefinition()
+	{
 		return abstractMappingDefinitionEClass;
 	}
 
@@ -207,7 +216,8 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAbstractMappingDefinition_Name() {
+	public EAttribute getAbstractMappingDefinition_Name()
+	{
 		return (EAttribute)abstractMappingDefinitionEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -216,7 +226,8 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAbstractMappingDefinition_Mappings() {
+	public EReference getAbstractMappingDefinition_Mappings()
+	{
 		return (EReference)abstractMappingDefinitionEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -225,52 +236,8 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getDiagramMapping() {
-		return diagramMappingEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getDiagramMapping_Imports() {
-		return (EReference)diagramMappingEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getDiagramMapping_TypeGuard() {
-		return (EReference)diagramMappingEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getImport() {
-		return importEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getImport_ImportedNamespace() {
-		return (EAttribute)importEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getAbstractExpressionMapping() {
+	public EClass getAbstractExpressionMapping()
+	{
 		return abstractExpressionMappingEClass;
 	}
 
@@ -279,7 +246,8 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAbstractExpressionMapping_Multi() {
+	public EAttribute getAbstractExpressionMapping_Multi()
+	{
 		return (EAttribute)abstractExpressionMappingEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -288,7 +256,8 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAbstractExpressionMapping_Expression() {
+	public EReference getAbstractExpressionMapping_Expression()
+	{
 		return (EReference)abstractExpressionMappingEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -297,7 +266,18 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAbstractMappingReference() {
+	public EAttribute getAbstractExpressionMapping_Reveal()
+	{
+		return (EAttribute)abstractExpressionMappingEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAbstractMappingReference()
+	{
 		return abstractMappingReferenceEClass;
 	}
 
@@ -306,7 +286,8 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAbstractMappingReference_ReferencedMapping() {
+	public EReference getAbstractMappingReference_ReferencedMapping()
+	{
 		return (EReference)abstractMappingReferenceEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -315,7 +296,58 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getNodeMapping() {
+	public EClass getImport()
+	{
+		return importEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getImport_ImportedNamespace()
+	{
+		return (EAttribute)importEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDiagramMapping()
+	{
+		return diagramMappingEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDiagramMapping_Imports()
+	{
+		return (EReference)diagramMappingEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDiagramMapping_TypeGuard()
+	{
+		return (EReference)diagramMappingEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getNodeMapping()
+	{
 		return nodeMappingEClass;
 	}
 
@@ -324,7 +356,8 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getLabelMapping() {
+	public EClass getLabelMapping()
+	{
 		return labelMappingEClass;
 	}
 
@@ -333,7 +366,8 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getEdgeMapping() {
+	public EClass getEdgeMapping()
+	{
 		return edgeMappingEClass;
 	}
 
@@ -342,7 +376,8 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEdgeMapping_SourceMapping() {
+	public EReference getEdgeMapping_SourceMapping()
+	{
 		return (EReference)edgeMappingEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -351,7 +386,8 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEdgeMapping_TargetMapping() {
+	public EReference getEdgeMapping_TargetMapping()
+	{
 		return (EReference)edgeMappingEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -360,7 +396,8 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getEdgeEndMapping() {
+	public EClass getEdgeEndMapping()
+	{
 		return edgeEndMappingEClass;
 	}
 
@@ -369,7 +406,8 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEdgeEndMapping_Call() {
+	public EAttribute getEdgeEndMapping_Call()
+	{
 		return (EAttribute)edgeEndMappingEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -378,7 +416,8 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getMappingCall() {
+	public EClass getMappingCall()
+	{
 		return mappingCallEClass;
 	}
 
@@ -387,7 +426,8 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GraphViewMappingFactory getGraphViewMappingFactory() {
+	public GraphViewMappingFactory getGraphViewMappingFactory()
+	{
 		return (GraphViewMappingFactory)getEFactoryInstance();
 	}
 
@@ -405,7 +445,8 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void createPackageContents() {
+	public void createPackageContents()
+	{
 		if (isCreated) return;
 		isCreated = true;
 
@@ -420,6 +461,7 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 		abstractExpressionMappingEClass = createEClass(ABSTRACT_EXPRESSION_MAPPING);
 		createEAttribute(abstractExpressionMappingEClass, ABSTRACT_EXPRESSION_MAPPING__MULTI);
 		createEReference(abstractExpressionMappingEClass, ABSTRACT_EXPRESSION_MAPPING__EXPRESSION);
+		createEAttribute(abstractExpressionMappingEClass, ABSTRACT_EXPRESSION_MAPPING__REVEAL);
 
 		abstractMappingReferenceEClass = createEClass(ABSTRACT_MAPPING_REFERENCE);
 		createEReference(abstractMappingReferenceEClass, ABSTRACT_MAPPING_REFERENCE__REFERENCED_MAPPING);
@@ -459,7 +501,8 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void initializePackageContents() {
+	public void initializePackageContents()
+	{
 		if (isInitialized) return;
 		isInitialized = true;
 
@@ -502,6 +545,7 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 		initEClass(abstractExpressionMappingEClass, AbstractExpressionMapping.class, "AbstractExpressionMapping", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAbstractExpressionMapping_Multi(), ecorePackage.getEBoolean(), "multi", null, 0, 1, AbstractExpressionMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAbstractExpressionMapping_Expression(), theXbasePackage.getXExpression(), null, "expression", null, 0, 1, AbstractExpressionMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAbstractExpressionMapping_Reveal(), ecorePackage.getEBoolean(), "reveal", null, 0, 1, AbstractExpressionMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(abstractMappingReferenceEClass, AbstractMappingReference.class, "AbstractMappingReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAbstractMappingReference_ReferencedMapping(), this.getAbstractMappingDefinition(), null, "referencedMapping", null, 0, 1, AbstractMappingReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

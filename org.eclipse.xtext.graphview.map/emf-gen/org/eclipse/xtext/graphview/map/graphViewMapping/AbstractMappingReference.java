@@ -2,7 +2,6 @@
  * <copyright>
  * </copyright>
  *
- * $Id$
  */
 package org.eclipse.xtext.graphview.map.graphViewMapping;
 
@@ -23,7 +22,8 @@ package org.eclipse.xtext.graphview.map.graphViewMapping;
  * @model
  * @generated
  */
-public interface AbstractMappingReference extends AbstractExpressionMapping {
+public interface AbstractMappingReference extends AbstractExpressionMapping
+{
 	/**
 	 * Returns the value of the '<em><b>Referenced Mapping</b></em>' reference.
 	 * <!-- begin-user-doc -->

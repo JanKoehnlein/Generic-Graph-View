@@ -2,13 +2,15 @@
  * <copyright>
  * </copyright>
  *
- * $Id$
  */
 package org.eclipse.xtext.graphview.map.graphViewMapping.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.xtext.graphview.map.graphViewMapping.EdgeEndMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage;
 
@@ -25,7 +27,8 @@ import org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage;
  *
  * @generated
  */
-public class EdgeEndMappingImpl extends AbstractMappingReferenceImpl implements EdgeEndMapping {
+public class EdgeEndMappingImpl extends AbstractMappingReferenceImpl implements EdgeEndMapping
+{
 	/**
 	 * The default value of the '{@link #isCall() <em>Call</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -51,7 +54,8 @@ public class EdgeEndMappingImpl extends AbstractMappingReferenceImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected EdgeEndMappingImpl() {
+	protected EdgeEndMappingImpl()
+	{
 		super();
 	}
 
@@ -61,7 +65,8 @@ public class EdgeEndMappingImpl extends AbstractMappingReferenceImpl implements 
 	 * @generated
 	 */
 	@Override
-	protected EClass eStaticClass() {
+	protected EClass eStaticClass()
+	{
 		return GraphViewMappingPackage.Literals.EDGE_END_MAPPING;
 	}
 
@@ -70,7 +75,8 @@ public class EdgeEndMappingImpl extends AbstractMappingReferenceImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isCall() {
+	public boolean isCall()
+	{
 		return call;
 	}
 
@@ -79,7 +85,8 @@ public class EdgeEndMappingImpl extends AbstractMappingReferenceImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCall(boolean newCall) {
+	public void setCall(boolean newCall)
+	{
 		boolean oldCall = call;
 		call = newCall;
 		if (eNotificationRequired())
@@ -92,8 +99,10 @@ public class EdgeEndMappingImpl extends AbstractMappingReferenceImpl implements 
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+	public Object eGet(int featureID, boolean resolve, boolean coreType)
+	{
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.EDGE_END_MAPPING__CALL:
 				return isCall();
 		}
@@ -106,8 +115,10 @@ public class EdgeEndMappingImpl extends AbstractMappingReferenceImpl implements 
 	 * @generated
 	 */
 	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+	public void eSet(int featureID, Object newValue)
+	{
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.EDGE_END_MAPPING__CALL:
 				setCall((Boolean)newValue);
 				return;
@@ -121,8 +132,10 @@ public class EdgeEndMappingImpl extends AbstractMappingReferenceImpl implements 
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
+	public void eUnset(int featureID)
+	{
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.EDGE_END_MAPPING__CALL:
 				setCall(CALL_EDEFAULT);
 				return;
@@ -136,8 +149,10 @@ public class EdgeEndMappingImpl extends AbstractMappingReferenceImpl implements 
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+	public boolean eIsSet(int featureID)
+	{
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.EDGE_END_MAPPING__CALL:
 				return call != CALL_EDEFAULT;
 		}
@@ -150,7 +165,8 @@ public class EdgeEndMappingImpl extends AbstractMappingReferenceImpl implements 
 	 * @generated
 	 */
 	@Override
-	public String toString() {
+	public String toString()
+	{
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());

@@ -2,7 +2,6 @@
  * <copyright>
  * </copyright>
  *
- * $Id$
  */
 package org.eclipse.xtext.graphview.map.graphViewMapping;
 
@@ -17,6 +16,6 @@ package org.eclipse.xtext.graphview.map.graphViewMapping;
  * @model
  * @generated
  */
-public interface MappingCall extends AbstractMappingReference {
-
+public interface MappingCall extends AbstractMappingReference
+{
 } // MappingCall

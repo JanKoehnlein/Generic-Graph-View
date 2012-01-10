@@ -3,10 +3,10 @@
 */
 package org.eclipse.xtext.graphview.map.parser.antlr;
 
-import org.eclipse.xtext.graphview.map.services.GraphViewMappingGrammarAccess;
-import org.eclipse.xtext.parser.antlr.XtextTokenStream;
-
 import com.google.inject.Inject;
+
+import org.eclipse.xtext.parser.antlr.XtextTokenStream;
+import org.eclipse.xtext.graphview.map.services.GraphViewMappingGrammarAccess;
 
 public class GraphViewMappingParser extends org.eclipse.xtext.parser.antlr.AbstractAntlrParser {
 	

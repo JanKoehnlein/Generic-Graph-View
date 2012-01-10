@@ -2,11 +2,11 @@
  * <copyright>
  * </copyright>
  *
- * $Id$
  */
 package org.eclipse.xtext.graphview.map.graphViewMapping.impl;
 
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage;
 import org.eclipse.xtext.graphview.map.graphViewMapping.MappingCall;
 
@@ -19,13 +19,15 @@ import org.eclipse.xtext.graphview.map.graphViewMapping.MappingCall;
  *
  * @generated
  */
-public class MappingCallImpl extends AbstractMappingReferenceImpl implements MappingCall {
+public class MappingCallImpl extends AbstractMappingReferenceImpl implements MappingCall
+{
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MappingCallImpl() {
+	protected MappingCallImpl()
+	{
 		super();
 	}
 
@@ -35,7 +37,8 @@ public class MappingCallImpl extends AbstractMappingReferenceImpl implements Map
 	 * @generated
 	 */
 	@Override
-	protected EClass eStaticClass() {
+	protected EClass eStaticClass()
+	{
 		return GraphViewMappingPackage.Literals.MAPPING_CALL;
 	}
 

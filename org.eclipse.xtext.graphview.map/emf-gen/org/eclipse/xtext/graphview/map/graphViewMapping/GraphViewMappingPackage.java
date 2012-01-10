@@ -2,7 +2,6 @@
  * <copyright>
  * </copyright>
  *
- * $Id$
  */
 package org.eclipse.xtext.graphview.map.graphViewMapping;
 
@@ -10,6 +9,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
 import org.eclipse.xtext.common.types.TypesPackage;
 
 /**
@@ -27,7 +27,8 @@ import org.eclipse.xtext.common.types.TypesPackage;
  * @model kind="package"
  * @generated
  */
-public interface GraphViewMappingPackage extends EPackage {
+public interface GraphViewMappingPackage extends EPackage
+{
 	/**
 	 * The package name.
 	 * <!-- begin-user-doc -->
@@ -135,26 +136,6 @@ public interface GraphViewMappingPackage extends EPackage {
 	int ABSTRACT_MAPPING_DEFINITION_FEATURE_COUNT = ABSTRACT_MAPPING_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.DiagramMappingImpl <em>Diagram Mapping</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.impl.DiagramMappingImpl
-	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.impl.GraphViewMappingPackageImpl#getDiagramMapping()
-	 * @generated
-	 */
-	int DIAGRAM_MAPPING = 5;
-
-	/**
-	 * The meta object id for the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.ImportImpl <em>Import</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.impl.ImportImpl
-	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.impl.GraphViewMappingPackageImpl#getImport()
-	 * @generated
-	 */
-	int IMPORT = 4;
-
-	/**
 	 * The meta object id for the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.AbstractExpressionMappingImpl <em>Abstract Expression Mapping</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -192,13 +173,22 @@ public interface GraphViewMappingPackage extends EPackage {
 	int ABSTRACT_EXPRESSION_MAPPING__EXPRESSION = ABSTRACT_MAPPING_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Reveal</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_EXPRESSION_MAPPING__REVEAL = ABSTRACT_MAPPING_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Abstract Expression Mapping</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_EXPRESSION_MAPPING_FEATURE_COUNT = ABSTRACT_MAPPING_FEATURE_COUNT + 2;
+	int ABSTRACT_EXPRESSION_MAPPING_FEATURE_COUNT = ABSTRACT_MAPPING_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.AbstractMappingReferenceImpl <em>Abstract Mapping Reference</em>}' class.
@@ -238,6 +228,15 @@ public interface GraphViewMappingPackage extends EPackage {
 	int ABSTRACT_MAPPING_REFERENCE__EXPRESSION = ABSTRACT_EXPRESSION_MAPPING__EXPRESSION;
 
 	/**
+	 * The feature id for the '<em><b>Reveal</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_MAPPING_REFERENCE__REVEAL = ABSTRACT_EXPRESSION_MAPPING__REVEAL;
+
+	/**
 	 * The feature id for the '<em><b>Referenced Mapping</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -256,6 +255,16 @@ public interface GraphViewMappingPackage extends EPackage {
 	int ABSTRACT_MAPPING_REFERENCE_FEATURE_COUNT = ABSTRACT_EXPRESSION_MAPPING_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.ImportImpl <em>Import</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.impl.ImportImpl
+	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.impl.GraphViewMappingPackageImpl#getImport()
+	 * @generated
+	 */
+	int IMPORT = 4;
+
+	/**
 	 * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -272,6 +281,16 @@ public interface GraphViewMappingPackage extends EPackage {
 	 * @ordered
 	 */
 	int IMPORT_FEATURE_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.DiagramMappingImpl <em>Diagram Mapping</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.impl.DiagramMappingImpl
+	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.impl.GraphViewMappingPackageImpl#getDiagramMapping()
+	 * @generated
+	 */
+	int DIAGRAM_MAPPING = 5;
 
 	/**
 	 * The feature id for the '<em><b>Unless Condition</b></em>' containment reference.
@@ -383,13 +402,22 @@ public interface GraphViewMappingPackage extends EPackage {
 	int NODE_MAPPING__EXPRESSION = ABSTRACT_MAPPING_DEFINITION_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Reveal</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NODE_MAPPING__REVEAL = ABSTRACT_MAPPING_DEFINITION_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Node Mapping</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NODE_MAPPING_FEATURE_COUNT = ABSTRACT_MAPPING_DEFINITION_FEATURE_COUNT + 2;
+	int NODE_MAPPING_FEATURE_COUNT = ABSTRACT_MAPPING_DEFINITION_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.LabelMappingImpl <em>Label Mapping</em>}' class.
@@ -447,13 +475,22 @@ public interface GraphViewMappingPackage extends EPackage {
 	int LABEL_MAPPING__EXPRESSION = ABSTRACT_MAPPING_DEFINITION_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Reveal</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LABEL_MAPPING__REVEAL = ABSTRACT_MAPPING_DEFINITION_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Label Mapping</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LABEL_MAPPING_FEATURE_COUNT = ABSTRACT_MAPPING_DEFINITION_FEATURE_COUNT + 2;
+	int LABEL_MAPPING_FEATURE_COUNT = ABSTRACT_MAPPING_DEFINITION_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.EdgeMappingImpl <em>Edge Mapping</em>}' class.
@@ -511,13 +548,22 @@ public interface GraphViewMappingPackage extends EPackage {
 	int EDGE_MAPPING__EXPRESSION = ABSTRACT_MAPPING_DEFINITION_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Reveal</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDGE_MAPPING__REVEAL = ABSTRACT_MAPPING_DEFINITION_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Source Mapping</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EDGE_MAPPING__SOURCE_MAPPING = ABSTRACT_MAPPING_DEFINITION_FEATURE_COUNT + 2;
+	int EDGE_MAPPING__SOURCE_MAPPING = ABSTRACT_MAPPING_DEFINITION_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Target Mapping</b></em>' containment reference.
@@ -526,7 +572,7 @@ public interface GraphViewMappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDGE_MAPPING__TARGET_MAPPING = ABSTRACT_MAPPING_DEFINITION_FEATURE_COUNT + 3;
+	int EDGE_MAPPING__TARGET_MAPPING = ABSTRACT_MAPPING_DEFINITION_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Edge Mapping</em>' class.
@@ -535,7 +581,7 @@ public interface GraphViewMappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDGE_MAPPING_FEATURE_COUNT = ABSTRACT_MAPPING_DEFINITION_FEATURE_COUNT + 4;
+	int EDGE_MAPPING_FEATURE_COUNT = ABSTRACT_MAPPING_DEFINITION_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.EdgeEndMappingImpl <em>Edge End Mapping</em>}' class.
@@ -575,6 +621,15 @@ public interface GraphViewMappingPackage extends EPackage {
 	int EDGE_END_MAPPING__EXPRESSION = ABSTRACT_MAPPING_REFERENCE__EXPRESSION;
 
 	/**
+	 * The feature id for the '<em><b>Reveal</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDGE_END_MAPPING__REVEAL = ABSTRACT_MAPPING_REFERENCE__REVEAL;
+
+	/**
 	 * The feature id for the '<em><b>Referenced Mapping</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -600,7 +655,6 @@ public interface GraphViewMappingPackage extends EPackage {
 	 * @ordered
 	 */
 	int EDGE_END_MAPPING_FEATURE_COUNT = ABSTRACT_MAPPING_REFERENCE_FEATURE_COUNT + 1;
-
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.MappingCallImpl <em>Mapping Call</em>}' class.
@@ -638,6 +692,15 @@ public interface GraphViewMappingPackage extends EPackage {
 	 * @ordered
 	 */
 	int MAPPING_CALL__EXPRESSION = ABSTRACT_MAPPING_REFERENCE__EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Reveal</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING_CALL__REVEAL = ABSTRACT_MAPPING_REFERENCE__REVEAL;
 
 	/**
 	 * The feature id for the '<em><b>Referenced Mapping</b></em>' reference.
@@ -712,59 +775,6 @@ public interface GraphViewMappingPackage extends EPackage {
 	EReference getAbstractMappingDefinition_Mappings();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping <em>Diagram Mapping</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Diagram Mapping</em>'.
-	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping
-	 * @generated
-	 */
-	EClass getDiagramMapping();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping#getImports <em>Imports</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Imports</em>'.
-	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping#getImports()
-	 * @see #getDiagramMapping()
-	 * @generated
-	 */
-	EReference getDiagramMapping_Imports();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping#getTypeGuard <em>Type Guard</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Type Guard</em>'.
-	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping#getTypeGuard()
-	 * @see #getDiagramMapping()
-	 * @generated
-	 */
-	EReference getDiagramMapping_TypeGuard();
-
-	/**
-	 * Returns the meta object for class '{@link org.eclipse.xtext.graphview.map.graphViewMapping.Import <em>Import</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Import</em>'.
-	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.Import
-	 * @generated
-	 */
-	EClass getImport();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.xtext.graphview.map.graphViewMapping.Import#getImportedNamespace <em>Imported Namespace</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Imported Namespace</em>'.
-	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.Import#getImportedNamespace()
-	 * @see #getImport()
-	 * @generated
-	 */
-	EAttribute getImport_ImportedNamespace();
-
-	/**
 	 * Returns the meta object for class '{@link org.eclipse.xtext.graphview.map.graphViewMapping.AbstractExpressionMapping <em>Abstract Expression Mapping</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -797,6 +807,17 @@ public interface GraphViewMappingPackage extends EPackage {
 	EReference getAbstractExpressionMapping_Expression();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.xtext.graphview.map.graphViewMapping.AbstractExpressionMapping#isReveal <em>Reveal</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Reveal</em>'.
+	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.AbstractExpressionMapping#isReveal()
+	 * @see #getAbstractExpressionMapping()
+	 * @generated
+	 */
+	EAttribute getAbstractExpressionMapping_Reveal();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMappingReference <em>Abstract Mapping Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -816,6 +837,59 @@ public interface GraphViewMappingPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAbstractMappingReference_ReferencedMapping();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.xtext.graphview.map.graphViewMapping.Import <em>Import</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Import</em>'.
+	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.Import
+	 * @generated
+	 */
+	EClass getImport();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.xtext.graphview.map.graphViewMapping.Import#getImportedNamespace <em>Imported Namespace</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Imported Namespace</em>'.
+	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.Import#getImportedNamespace()
+	 * @see #getImport()
+	 * @generated
+	 */
+	EAttribute getImport_ImportedNamespace();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping <em>Diagram Mapping</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Diagram Mapping</em>'.
+	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping
+	 * @generated
+	 */
+	EClass getDiagramMapping();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping#getImports <em>Imports</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Imports</em>'.
+	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping#getImports()
+	 * @see #getDiagramMapping()
+	 * @generated
+	 */
+	EReference getDiagramMapping_Imports();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping#getTypeGuard <em>Type Guard</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Type Guard</em>'.
+	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping#getTypeGuard()
+	 * @see #getDiagramMapping()
+	 * @generated
+	 */
+	EReference getDiagramMapping_TypeGuard();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.xtext.graphview.map.graphViewMapping.NodeMapping <em>Node Mapping</em>}'.
@@ -921,7 +995,8 @@ public interface GraphViewMappingPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	interface Literals {
+	interface Literals
+	{
 		/**
 		 * The meta object literal for the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.AbstractMappingImpl <em>Abstract Mapping</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -967,50 +1042,6 @@ public interface GraphViewMappingPackage extends EPackage {
 		EReference ABSTRACT_MAPPING_DEFINITION__MAPPINGS = eINSTANCE.getAbstractMappingDefinition_Mappings();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.DiagramMappingImpl <em>Diagram Mapping</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.eclipse.xtext.graphview.map.graphViewMapping.impl.DiagramMappingImpl
-		 * @see org.eclipse.xtext.graphview.map.graphViewMapping.impl.GraphViewMappingPackageImpl#getDiagramMapping()
-		 * @generated
-		 */
-		EClass DIAGRAM_MAPPING = eINSTANCE.getDiagramMapping();
-
-		/**
-		 * The meta object literal for the '<em><b>Imports</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DIAGRAM_MAPPING__IMPORTS = eINSTANCE.getDiagramMapping_Imports();
-
-		/**
-		 * The meta object literal for the '<em><b>Type Guard</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DIAGRAM_MAPPING__TYPE_GUARD = eINSTANCE.getDiagramMapping_TypeGuard();
-
-		/**
-		 * The meta object literal for the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.ImportImpl <em>Import</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.eclipse.xtext.graphview.map.graphViewMapping.impl.ImportImpl
-		 * @see org.eclipse.xtext.graphview.map.graphViewMapping.impl.GraphViewMappingPackageImpl#getImport()
-		 * @generated
-		 */
-		EClass IMPORT = eINSTANCE.getImport();
-
-		/**
-		 * The meta object literal for the '<em><b>Imported Namespace</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute IMPORT__IMPORTED_NAMESPACE = eINSTANCE.getImport_ImportedNamespace();
-
-		/**
 		 * The meta object literal for the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.AbstractExpressionMappingImpl <em>Abstract Expression Mapping</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1037,6 +1068,14 @@ public interface GraphViewMappingPackage extends EPackage {
 		EReference ABSTRACT_EXPRESSION_MAPPING__EXPRESSION = eINSTANCE.getAbstractExpressionMapping_Expression();
 
 		/**
+		 * The meta object literal for the '<em><b>Reveal</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ABSTRACT_EXPRESSION_MAPPING__REVEAL = eINSTANCE.getAbstractExpressionMapping_Reveal();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.AbstractMappingReferenceImpl <em>Abstract Mapping Reference</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1053,6 +1092,50 @@ public interface GraphViewMappingPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ABSTRACT_MAPPING_REFERENCE__REFERENCED_MAPPING = eINSTANCE.getAbstractMappingReference_ReferencedMapping();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.ImportImpl <em>Import</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.xtext.graphview.map.graphViewMapping.impl.ImportImpl
+		 * @see org.eclipse.xtext.graphview.map.graphViewMapping.impl.GraphViewMappingPackageImpl#getImport()
+		 * @generated
+		 */
+		EClass IMPORT = eINSTANCE.getImport();
+
+		/**
+		 * The meta object literal for the '<em><b>Imported Namespace</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IMPORT__IMPORTED_NAMESPACE = eINSTANCE.getImport_ImportedNamespace();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.DiagramMappingImpl <em>Diagram Mapping</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.xtext.graphview.map.graphViewMapping.impl.DiagramMappingImpl
+		 * @see org.eclipse.xtext.graphview.map.graphViewMapping.impl.GraphViewMappingPackageImpl#getDiagramMapping()
+		 * @generated
+		 */
+		EClass DIAGRAM_MAPPING = eINSTANCE.getDiagramMapping();
+
+		/**
+		 * The meta object literal for the '<em><b>Imports</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DIAGRAM_MAPPING__IMPORTS = eINSTANCE.getDiagramMapping_Imports();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Guard</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DIAGRAM_MAPPING__TYPE_GUARD = eINSTANCE.getDiagramMapping_TypeGuard();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.NodeMappingImpl <em>Node Mapping</em>}' class.

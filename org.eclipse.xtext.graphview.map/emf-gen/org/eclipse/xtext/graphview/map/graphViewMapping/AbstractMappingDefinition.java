@@ -2,7 +2,6 @@
  * <copyright>
  * </copyright>
  *
- * $Id$
  */
 package org.eclipse.xtext.graphview.map.graphViewMapping;
 
@@ -25,7 +24,8 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface AbstractMappingDefinition extends AbstractMapping {
+public interface AbstractMappingDefinition extends AbstractMapping
+{
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

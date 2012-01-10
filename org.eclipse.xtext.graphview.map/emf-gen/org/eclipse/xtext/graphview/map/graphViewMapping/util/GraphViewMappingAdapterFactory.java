@@ -2,27 +2,19 @@
  * <copyright>
  * </copyright>
  *
- * $Id$
  */
 package org.eclipse.xtext.graphview.map.graphViewMapping.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
+
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+
 import org.eclipse.emf.ecore.EObject;
+
 import org.eclipse.xtext.common.types.JvmIdentifiableElement;
-import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractExpressionMapping;
-import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping;
-import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMappingDefinition;
-import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMappingReference;
-import org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping;
-import org.eclipse.xtext.graphview.map.graphViewMapping.EdgeEndMapping;
-import org.eclipse.xtext.graphview.map.graphViewMapping.EdgeMapping;
-import org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage;
-import org.eclipse.xtext.graphview.map.graphViewMapping.Import;
-import org.eclipse.xtext.graphview.map.graphViewMapping.LabelMapping;
-import org.eclipse.xtext.graphview.map.graphViewMapping.MappingCall;
-import org.eclipse.xtext.graphview.map.graphViewMapping.NodeMapping;
+
+import org.eclipse.xtext.graphview.map.graphViewMapping.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,7 +24,8 @@ import org.eclipse.xtext.graphview.map.graphViewMapping.NodeMapping;
  * @see org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage
  * @generated
  */
-public class GraphViewMappingAdapterFactory extends AdapterFactoryImpl {
+public class GraphViewMappingAdapterFactory extends AdapterFactoryImpl
+{
 	/**
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
@@ -47,8 +40,10 @@ public class GraphViewMappingAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GraphViewMappingAdapterFactory() {
-		if (modelPackage == null) {
+	public GraphViewMappingAdapterFactory()
+	{
+		if (modelPackage == null)
+		{
 			modelPackage = GraphViewMappingPackage.eINSTANCE;
 		}
 	}
@@ -62,11 +57,14 @@ public class GraphViewMappingAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	@Override
-	public boolean isFactoryForType(Object object) {
-		if (object == modelPackage) {
+	public boolean isFactoryForType(Object object)
+	{
+		if (object == modelPackage)
+		{
 			return true;
 		}
-		if (object instanceof EObject) {
+		if (object instanceof EObject)
+		{
 			return ((EObject)object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
@@ -79,57 +77,71 @@ public class GraphViewMappingAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	protected GraphViewMappingSwitch<Adapter> modelSwitch =
-		new GraphViewMappingSwitch<Adapter>() {
+		new GraphViewMappingSwitch<Adapter>()
+		{
 			@Override
-			public Adapter caseAbstractMapping(AbstractMapping object) {
+			public Adapter caseAbstractMapping(AbstractMapping object)
+			{
 				return createAbstractMappingAdapter();
 			}
 			@Override
-			public Adapter caseAbstractMappingDefinition(AbstractMappingDefinition object) {
+			public Adapter caseAbstractMappingDefinition(AbstractMappingDefinition object)
+			{
 				return createAbstractMappingDefinitionAdapter();
 			}
 			@Override
-			public Adapter caseAbstractExpressionMapping(AbstractExpressionMapping object) {
+			public Adapter caseAbstractExpressionMapping(AbstractExpressionMapping object)
+			{
 				return createAbstractExpressionMappingAdapter();
 			}
 			@Override
-			public Adapter caseAbstractMappingReference(AbstractMappingReference object) {
+			public Adapter caseAbstractMappingReference(AbstractMappingReference object)
+			{
 				return createAbstractMappingReferenceAdapter();
 			}
 			@Override
-			public Adapter caseImport(Import object) {
+			public Adapter caseImport(Import object)
+			{
 				return createImportAdapter();
 			}
 			@Override
-			public Adapter caseDiagramMapping(DiagramMapping object) {
+			public Adapter caseDiagramMapping(DiagramMapping object)
+			{
 				return createDiagramMappingAdapter();
 			}
 			@Override
-			public Adapter caseNodeMapping(NodeMapping object) {
+			public Adapter caseNodeMapping(NodeMapping object)
+			{
 				return createNodeMappingAdapter();
 			}
 			@Override
-			public Adapter caseLabelMapping(LabelMapping object) {
+			public Adapter caseLabelMapping(LabelMapping object)
+			{
 				return createLabelMappingAdapter();
 			}
 			@Override
-			public Adapter caseEdgeMapping(EdgeMapping object) {
+			public Adapter caseEdgeMapping(EdgeMapping object)
+			{
 				return createEdgeMappingAdapter();
 			}
 			@Override
-			public Adapter caseEdgeEndMapping(EdgeEndMapping object) {
+			public Adapter caseEdgeEndMapping(EdgeEndMapping object)
+			{
 				return createEdgeEndMappingAdapter();
 			}
 			@Override
-			public Adapter caseMappingCall(MappingCall object) {
+			public Adapter caseMappingCall(MappingCall object)
+			{
 				return createMappingCallAdapter();
 			}
 			@Override
-			public Adapter caseJvmIdentifiableElement(JvmIdentifiableElement object) {
+			public Adapter caseJvmIdentifiableElement(JvmIdentifiableElement object)
+			{
 				return createJvmIdentifiableElementAdapter();
 			}
 			@Override
-			public Adapter defaultCase(EObject object) {
+			public Adapter defaultCase(EObject object)
+			{
 				return createEObjectAdapter();
 			}
 		};
@@ -143,7 +155,8 @@ public class GraphViewMappingAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	@Override
-	public Adapter createAdapter(Notifier target) {
+	public Adapter createAdapter(Notifier target)
+	{
 		return modelSwitch.doSwitch((EObject)target);
 	}
 
@@ -158,7 +171,8 @@ public class GraphViewMappingAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping
 	 * @generated
 	 */
-	public Adapter createAbstractMappingAdapter() {
+	public Adapter createAbstractMappingAdapter()
+	{
 		return null;
 	}
 
@@ -172,35 +186,8 @@ public class GraphViewMappingAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMappingDefinition
 	 * @generated
 	 */
-	public Adapter createAbstractMappingDefinitionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping <em>Diagram Mapping</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping
-	 * @generated
-	 */
-	public Adapter createDiagramMappingAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.xtext.graphview.map.graphViewMapping.Import <em>Import</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.Import
-	 * @generated
-	 */
-	public Adapter createImportAdapter() {
+	public Adapter createAbstractMappingDefinitionAdapter()
+	{
 		return null;
 	}
 
@@ -214,7 +201,8 @@ public class GraphViewMappingAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.AbstractExpressionMapping
 	 * @generated
 	 */
-	public Adapter createAbstractExpressionMappingAdapter() {
+	public Adapter createAbstractExpressionMappingAdapter()
+	{
 		return null;
 	}
 
@@ -228,7 +216,38 @@ public class GraphViewMappingAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMappingReference
 	 * @generated
 	 */
-	public Adapter createAbstractMappingReferenceAdapter() {
+	public Adapter createAbstractMappingReferenceAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.xtext.graphview.map.graphViewMapping.Import <em>Import</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.Import
+	 * @generated
+	 */
+	public Adapter createImportAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping <em>Diagram Mapping</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping
+	 * @generated
+	 */
+	public Adapter createDiagramMappingAdapter()
+	{
 		return null;
 	}
 
@@ -242,7 +261,8 @@ public class GraphViewMappingAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.NodeMapping
 	 * @generated
 	 */
-	public Adapter createNodeMappingAdapter() {
+	public Adapter createNodeMappingAdapter()
+	{
 		return null;
 	}
 
@@ -256,7 +276,8 @@ public class GraphViewMappingAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.LabelMapping
 	 * @generated
 	 */
-	public Adapter createLabelMappingAdapter() {
+	public Adapter createLabelMappingAdapter()
+	{
 		return null;
 	}
 
@@ -270,7 +291,8 @@ public class GraphViewMappingAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.EdgeMapping
 	 * @generated
 	 */
-	public Adapter createEdgeMappingAdapter() {
+	public Adapter createEdgeMappingAdapter()
+	{
 		return null;
 	}
 
@@ -284,7 +306,8 @@ public class GraphViewMappingAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.EdgeEndMapping
 	 * @generated
 	 */
-	public Adapter createEdgeEndMappingAdapter() {
+	public Adapter createEdgeEndMappingAdapter()
+	{
 		return null;
 	}
 
@@ -298,7 +321,8 @@ public class GraphViewMappingAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.MappingCall
 	 * @generated
 	 */
-	public Adapter createMappingCallAdapter() {
+	public Adapter createMappingCallAdapter()
+	{
 		return null;
 	}
 
@@ -312,7 +336,8 @@ public class GraphViewMappingAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.eclipse.xtext.common.types.JvmIdentifiableElement
 	 * @generated
 	 */
-	public Adapter createJvmIdentifiableElementAdapter() {
+	public Adapter createJvmIdentifiableElementAdapter()
+	{
 		return null;
 	}
 
@@ -324,7 +349,8 @@ public class GraphViewMappingAdapterFactory extends AdapterFactoryImpl {
 	 * @return the new adapter.
 	 * @generated
 	 */
-	public Adapter createEObjectAdapter() {
+	public Adapter createEObjectAdapter()
+	{
 		return null;
 	}
 

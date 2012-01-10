@@ -2,7 +2,6 @@
  * <copyright>
  * </copyright>
  *
- * $Id$
  */
 package org.eclipse.xtext.graphview.map.graphViewMapping;
 
@@ -23,7 +22,8 @@ package org.eclipse.xtext.graphview.map.graphViewMapping;
  * @model
  * @generated
  */
-public interface EdgeEndMapping extends AbstractMappingReference {
+public interface EdgeEndMapping extends AbstractMappingReference
+{
 	/**
 	 * Returns the value of the '<em><b>Call</b></em>' attribute.
 	 * <!-- begin-user-doc -->

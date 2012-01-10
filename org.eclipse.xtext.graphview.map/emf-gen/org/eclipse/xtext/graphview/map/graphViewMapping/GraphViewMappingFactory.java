@@ -2,7 +2,6 @@
  * <copyright>
  * </copyright>
  *
- * $Id$
  */
 package org.eclipse.xtext.graphview.map.graphViewMapping;
 
@@ -16,7 +15,8 @@ import org.eclipse.emf.ecore.EFactory;
  * @see org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage
  * @generated
  */
-public interface GraphViewMappingFactory extends EFactory {
+public interface GraphViewMappingFactory extends EFactory
+{
 	/**
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
@@ -35,24 +35,6 @@ public interface GraphViewMappingFactory extends EFactory {
 	AbstractMappingDefinition createAbstractMappingDefinition();
 
 	/**
-	 * Returns a new object of class '<em>Diagram Mapping</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Diagram Mapping</em>'.
-	 * @generated
-	 */
-	DiagramMapping createDiagramMapping();
-
-	/**
-	 * Returns a new object of class '<em>Import</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Import</em>'.
-	 * @generated
-	 */
-	Import createImport();
-
-	/**
 	 * Returns a new object of class '<em>Abstract Expression Mapping</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -69,6 +51,24 @@ public interface GraphViewMappingFactory extends EFactory {
 	 * @generated
 	 */
 	AbstractMappingReference createAbstractMappingReference();
+
+	/**
+	 * Returns a new object of class '<em>Import</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Import</em>'.
+	 * @generated
+	 */
+	Import createImport();
+
+	/**
+	 * Returns a new object of class '<em>Diagram Mapping</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Diagram Mapping</em>'.
+	 * @generated
+	 */
+	DiagramMapping createDiagramMapping();
 
 	/**
 	 * Returns a new object of class '<em>Node Mapping</em>'.

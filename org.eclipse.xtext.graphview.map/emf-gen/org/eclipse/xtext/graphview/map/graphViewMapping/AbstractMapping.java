@@ -2,11 +2,11 @@
  * <copyright>
  * </copyright>
  *
- * $Id$
  */
 package org.eclipse.xtext.graphview.map.graphViewMapping;
 
 import org.eclipse.xtext.common.types.JvmIdentifiableElement;
+
 import org.eclipse.xtext.xbase.XExpression;
 
 /**
@@ -25,8 +25,8 @@ import org.eclipse.xtext.xbase.XExpression;
  * @model abstract="true"
  * @generated
  */
-public interface AbstractMapping extends JvmIdentifiableElement {
-
+public interface AbstractMapping extends JvmIdentifiableElement
+{
 	/**
 	 * Returns the value of the '<em><b>Unless Condition</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

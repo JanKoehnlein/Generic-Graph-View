@@ -2,11 +2,11 @@
  * <copyright>
  * </copyright>
  *
- * $Id$
  */
 package org.eclipse.xtext.graphview.map.graphViewMapping;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.xtext.common.types.JvmTypeReference;
 
 /**
@@ -26,7 +26,8 @@ import org.eclipse.xtext.common.types.JvmTypeReference;
  * @model
  * @generated
  */
-public interface DiagramMapping extends AbstractMappingDefinition {
+public interface DiagramMapping extends AbstractMappingDefinition
+{
 	/**
 	 * Returns the value of the '<em><b>Imports</b></em>' containment reference list.
 	 * The list contents are of type {@link org.eclipse.xtext.graphview.map.graphViewMapping.Import}.

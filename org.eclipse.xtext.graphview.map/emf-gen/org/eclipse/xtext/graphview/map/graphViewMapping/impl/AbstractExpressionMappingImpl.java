@@ -2,17 +2,20 @@
  * <copyright>
  * </copyright>
  *
- * $Id$
  */
 package org.eclipse.xtext.graphview.map.graphViewMapping.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractExpressionMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage;
+
 import org.eclipse.xtext.xbase.XExpression;
 
 /**
@@ -24,12 +27,14 @@ import org.eclipse.xtext.xbase.XExpression;
  * <ul>
  *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.AbstractExpressionMappingImpl#isMulti <em>Multi</em>}</li>
  *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.AbstractExpressionMappingImpl#getExpression <em>Expression</em>}</li>
+ *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.AbstractExpressionMappingImpl#isReveal <em>Reveal</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class AbstractExpressionMappingImpl extends AbstractMappingImpl implements AbstractExpressionMapping {
+public class AbstractExpressionMappingImpl extends AbstractMappingImpl implements AbstractExpressionMapping
+{
 	/**
 	 * The default value of the '{@link #isMulti() <em>Multi</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -61,11 +66,32 @@ public class AbstractExpressionMappingImpl extends AbstractMappingImpl implement
 	protected XExpression expression;
 
 	/**
+	 * The default value of the '{@link #isReveal() <em>Reveal</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isReveal()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean REVEAL_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isReveal() <em>Reveal</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isReveal()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean reveal = REVEAL_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AbstractExpressionMappingImpl() {
+	protected AbstractExpressionMappingImpl()
+	{
 		super();
 	}
 
@@ -75,7 +101,8 @@ public class AbstractExpressionMappingImpl extends AbstractMappingImpl implement
 	 * @generated
 	 */
 	@Override
-	protected EClass eStaticClass() {
+	protected EClass eStaticClass()
+	{
 		return GraphViewMappingPackage.Literals.ABSTRACT_EXPRESSION_MAPPING;
 	}
 
@@ -84,7 +111,8 @@ public class AbstractExpressionMappingImpl extends AbstractMappingImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isMulti() {
+	public boolean isMulti()
+	{
 		return multi;
 	}
 
@@ -93,7 +121,8 @@ public class AbstractExpressionMappingImpl extends AbstractMappingImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMulti(boolean newMulti) {
+	public void setMulti(boolean newMulti)
+	{
 		boolean oldMulti = multi;
 		multi = newMulti;
 		if (eNotificationRequired())
@@ -105,7 +134,8 @@ public class AbstractExpressionMappingImpl extends AbstractMappingImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public XExpression getExpression() {
+	public XExpression getExpression()
+	{
 		return expression;
 	}
 
@@ -114,10 +144,12 @@ public class AbstractExpressionMappingImpl extends AbstractMappingImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetExpression(XExpression newExpression, NotificationChain msgs) {
+	public NotificationChain basicSetExpression(XExpression newExpression, NotificationChain msgs)
+	{
 		XExpression oldExpression = expression;
 		expression = newExpression;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__EXPRESSION, oldExpression, newExpression);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -129,8 +161,10 @@ public class AbstractExpressionMappingImpl extends AbstractMappingImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setExpression(XExpression newExpression) {
-		if (newExpression != expression) {
+	public void setExpression(XExpression newExpression)
+	{
+		if (newExpression != expression)
+		{
 			NotificationChain msgs = null;
 			if (expression != null)
 				msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__EXPRESSION, null, msgs);
@@ -148,9 +182,34 @@ public class AbstractExpressionMappingImpl extends AbstractMappingImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isReveal()
+	{
+		return reveal;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setReveal(boolean newReveal)
+	{
+		boolean oldReveal = reveal;
+		reveal = newReveal;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__REVEAL, oldReveal, reveal));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+	{
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__EXPRESSION:
 				return basicSetExpression(null, msgs);
 		}
@@ -163,12 +222,16 @@ public class AbstractExpressionMappingImpl extends AbstractMappingImpl implement
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+	public Object eGet(int featureID, boolean resolve, boolean coreType)
+	{
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__MULTI:
 				return isMulti();
 			case GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__EXPRESSION:
 				return getExpression();
+			case GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__REVEAL:
+				return isReveal();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -179,13 +242,18 @@ public class AbstractExpressionMappingImpl extends AbstractMappingImpl implement
 	 * @generated
 	 */
 	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+	public void eSet(int featureID, Object newValue)
+	{
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__MULTI:
 				setMulti((Boolean)newValue);
 				return;
 			case GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__EXPRESSION:
 				setExpression((XExpression)newValue);
+				return;
+			case GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__REVEAL:
+				setReveal((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -197,13 +265,18 @@ public class AbstractExpressionMappingImpl extends AbstractMappingImpl implement
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
+	public void eUnset(int featureID)
+	{
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__MULTI:
 				setMulti(MULTI_EDEFAULT);
 				return;
 			case GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__EXPRESSION:
 				setExpression((XExpression)null);
+				return;
+			case GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__REVEAL:
+				setReveal(REVEAL_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -215,12 +288,16 @@ public class AbstractExpressionMappingImpl extends AbstractMappingImpl implement
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+	public boolean eIsSet(int featureID)
+	{
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__MULTI:
 				return multi != MULTI_EDEFAULT;
 			case GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__EXPRESSION:
 				return expression != null;
+			case GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__REVEAL:
+				return reveal != REVEAL_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -231,12 +308,15 @@ public class AbstractExpressionMappingImpl extends AbstractMappingImpl implement
 	 * @generated
 	 */
 	@Override
-	public String toString() {
+	public String toString()
+	{
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (multi: ");
 		result.append(multi);
+		result.append(", reveal: ");
+		result.append(reveal);
 		result.append(')');
 		return result.toString();
 	}

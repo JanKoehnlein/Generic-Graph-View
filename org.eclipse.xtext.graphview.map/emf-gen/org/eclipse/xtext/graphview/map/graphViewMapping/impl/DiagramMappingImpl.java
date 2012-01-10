@@ -2,7 +2,6 @@
  * <copyright>
  * </copyright>
  *
- * $Id$
  */
 package org.eclipse.xtext.graphview.map.graphViewMapping.impl;
 
@@ -10,13 +9,19 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.eclipse.xtext.common.types.JvmTypeReference;
+
 import org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage;
 import org.eclipse.xtext.graphview.map.graphViewMapping.Import;
@@ -35,7 +40,8 @@ import org.eclipse.xtext.graphview.map.graphViewMapping.Import;
  *
  * @generated
  */
-public class DiagramMappingImpl extends AbstractMappingDefinitionImpl implements DiagramMapping {
+public class DiagramMappingImpl extends AbstractMappingDefinitionImpl implements DiagramMapping
+{
 	/**
 	 * The cached value of the '{@link #getImports() <em>Imports</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -61,7 +67,8 @@ public class DiagramMappingImpl extends AbstractMappingDefinitionImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DiagramMappingImpl() {
+	protected DiagramMappingImpl()
+	{
 		super();
 	}
 
@@ -71,7 +78,8 @@ public class DiagramMappingImpl extends AbstractMappingDefinitionImpl implements
 	 * @generated
 	 */
 	@Override
-	protected EClass eStaticClass() {
+	protected EClass eStaticClass()
+	{
 		return GraphViewMappingPackage.Literals.DIAGRAM_MAPPING;
 	}
 
@@ -80,8 +88,10 @@ public class DiagramMappingImpl extends AbstractMappingDefinitionImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Import> getImports() {
-		if (imports == null) {
+	public EList<Import> getImports()
+	{
+		if (imports == null)
+		{
 			imports = new EObjectContainmentEList<Import>(Import.class, this, GraphViewMappingPackage.DIAGRAM_MAPPING__IMPORTS);
 		}
 		return imports;
@@ -92,7 +102,8 @@ public class DiagramMappingImpl extends AbstractMappingDefinitionImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public JvmTypeReference getTypeGuard() {
+	public JvmTypeReference getTypeGuard()
+	{
 		return typeGuard;
 	}
 
@@ -101,10 +112,12 @@ public class DiagramMappingImpl extends AbstractMappingDefinitionImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTypeGuard(JvmTypeReference newTypeGuard, NotificationChain msgs) {
+	public NotificationChain basicSetTypeGuard(JvmTypeReference newTypeGuard, NotificationChain msgs)
+	{
 		JvmTypeReference oldTypeGuard = typeGuard;
 		typeGuard = newTypeGuard;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GraphViewMappingPackage.DIAGRAM_MAPPING__TYPE_GUARD, oldTypeGuard, newTypeGuard);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -116,8 +129,10 @@ public class DiagramMappingImpl extends AbstractMappingDefinitionImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTypeGuard(JvmTypeReference newTypeGuard) {
-		if (newTypeGuard != typeGuard) {
+	public void setTypeGuard(JvmTypeReference newTypeGuard)
+	{
+		if (newTypeGuard != typeGuard)
+		{
 			NotificationChain msgs = null;
 			if (typeGuard != null)
 				msgs = ((InternalEObject)typeGuard).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GraphViewMappingPackage.DIAGRAM_MAPPING__TYPE_GUARD, null, msgs);
@@ -136,8 +151,10 @@ public class DiagramMappingImpl extends AbstractMappingDefinitionImpl implements
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+	{
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.DIAGRAM_MAPPING__IMPORTS:
 				return ((InternalEList<?>)getImports()).basicRemove(otherEnd, msgs);
 			case GraphViewMappingPackage.DIAGRAM_MAPPING__TYPE_GUARD:
@@ -152,8 +169,10 @@ public class DiagramMappingImpl extends AbstractMappingDefinitionImpl implements
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+	public Object eGet(int featureID, boolean resolve, boolean coreType)
+	{
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.DIAGRAM_MAPPING__IMPORTS:
 				return getImports();
 			case GraphViewMappingPackage.DIAGRAM_MAPPING__TYPE_GUARD:
@@ -169,8 +188,10 @@ public class DiagramMappingImpl extends AbstractMappingDefinitionImpl implements
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+	public void eSet(int featureID, Object newValue)
+	{
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.DIAGRAM_MAPPING__IMPORTS:
 				getImports().clear();
 				getImports().addAll((Collection<? extends Import>)newValue);
@@ -188,8 +209,10 @@ public class DiagramMappingImpl extends AbstractMappingDefinitionImpl implements
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
+	public void eUnset(int featureID)
+	{
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.DIAGRAM_MAPPING__IMPORTS:
 				getImports().clear();
 				return;
@@ -206,8 +229,10 @@ public class DiagramMappingImpl extends AbstractMappingDefinitionImpl implements
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+	public boolean eIsSet(int featureID)
+	{
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.DIAGRAM_MAPPING__IMPORTS:
 				return imports != null && !imports.isEmpty();
 			case GraphViewMappingPackage.DIAGRAM_MAPPING__TYPE_GUARD:

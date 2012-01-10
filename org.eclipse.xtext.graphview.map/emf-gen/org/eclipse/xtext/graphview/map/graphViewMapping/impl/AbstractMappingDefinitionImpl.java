@@ -2,7 +2,6 @@
  * <copyright>
  * </copyright>
  *
- * $Id$
  */
 package org.eclipse.xtext.graphview.map.graphViewMapping.impl;
 
@@ -10,12 +9,17 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractExpressionMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMappingDefinition;
 import org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage;
@@ -34,7 +38,8 @@ import org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage;
  *
  * @generated
  */
-public class AbstractMappingDefinitionImpl extends AbstractMappingImpl implements AbstractMappingDefinition {
+public class AbstractMappingDefinitionImpl extends AbstractMappingImpl implements AbstractMappingDefinition
+{
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -70,7 +75,8 @@ public class AbstractMappingDefinitionImpl extends AbstractMappingImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AbstractMappingDefinitionImpl() {
+	protected AbstractMappingDefinitionImpl()
+	{
 		super();
 	}
 
@@ -80,7 +86,8 @@ public class AbstractMappingDefinitionImpl extends AbstractMappingImpl implement
 	 * @generated
 	 */
 	@Override
-	protected EClass eStaticClass() {
+	protected EClass eStaticClass()
+	{
 		return GraphViewMappingPackage.Literals.ABSTRACT_MAPPING_DEFINITION;
 	}
 
@@ -89,7 +96,8 @@ public class AbstractMappingDefinitionImpl extends AbstractMappingImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
+	public String getName()
+	{
 		return name;
 	}
 
@@ -98,7 +106,8 @@ public class AbstractMappingDefinitionImpl extends AbstractMappingImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setName(String newName) {
+	public void setName(String newName)
+	{
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
@@ -110,8 +119,10 @@ public class AbstractMappingDefinitionImpl extends AbstractMappingImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<AbstractExpressionMapping> getMappings() {
-		if (mappings == null) {
+	public EList<AbstractExpressionMapping> getMappings()
+	{
+		if (mappings == null)
+		{
 			mappings = new EObjectContainmentEList<AbstractExpressionMapping>(AbstractExpressionMapping.class, this, GraphViewMappingPackage.ABSTRACT_MAPPING_DEFINITION__MAPPINGS);
 		}
 		return mappings;
@@ -123,8 +134,10 @@ public class AbstractMappingDefinitionImpl extends AbstractMappingImpl implement
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+	{
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.ABSTRACT_MAPPING_DEFINITION__MAPPINGS:
 				return ((InternalEList<?>)getMappings()).basicRemove(otherEnd, msgs);
 		}
@@ -137,8 +150,10 @@ public class AbstractMappingDefinitionImpl extends AbstractMappingImpl implement
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+	public Object eGet(int featureID, boolean resolve, boolean coreType)
+	{
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.ABSTRACT_MAPPING_DEFINITION__NAME:
 				return getName();
 			case GraphViewMappingPackage.ABSTRACT_MAPPING_DEFINITION__MAPPINGS:
@@ -154,8 +169,10 @@ public class AbstractMappingDefinitionImpl extends AbstractMappingImpl implement
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+	public void eSet(int featureID, Object newValue)
+	{
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.ABSTRACT_MAPPING_DEFINITION__NAME:
 				setName((String)newValue);
 				return;
@@ -173,8 +190,10 @@ public class AbstractMappingDefinitionImpl extends AbstractMappingImpl implement
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
+	public void eUnset(int featureID)
+	{
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.ABSTRACT_MAPPING_DEFINITION__NAME:
 				setName(NAME_EDEFAULT);
 				return;
@@ -191,8 +210,10 @@ public class AbstractMappingDefinitionImpl extends AbstractMappingImpl implement
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+	public boolean eIsSet(int featureID)
+	{
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.ABSTRACT_MAPPING_DEFINITION__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case GraphViewMappingPackage.ABSTRACT_MAPPING_DEFINITION__MAPPINGS:
@@ -207,7 +228,8 @@ public class AbstractMappingDefinitionImpl extends AbstractMappingImpl implement
 	 * @generated
 	 */
 	@Override
-	public String toString() {
+	public String toString()
+	{
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());

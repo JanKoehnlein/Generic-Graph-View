@@ -75,6 +75,9 @@
         <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/xtext/graphview/map/GraphViewMapping#//NodeMapping"/>
       </type>
       <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" cardinality="?" feature="reveal" operator="?=">
+          <terminal xsi:type="xtext:Keyword" value="reveal"/>
+        </elements>
         <elements xsi:type="xtext:Keyword" value="node"/>
         <elements xsi:type="xtext:Assignment" feature="name" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/2/@rules.11"/>
@@ -104,6 +107,9 @@
         <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/xtext/graphview/map/GraphViewMapping#//LabelMapping"/>
       </type>
       <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" cardinality="?" feature="reveal" operator="?=">
+          <terminal xsi:type="xtext:Keyword" value="reveal"/>
+        </elements>
         <elements xsi:type="xtext:Keyword" value="label"/>
         <elements xsi:type="xtext:Assignment" feature="name" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/2/@rules.11"/>
@@ -128,6 +134,9 @@
         <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/xtext/graphview/map/GraphViewMapping#//EdgeMapping"/>
       </type>
       <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" cardinality="?" feature="reveal" operator="?=">
+          <terminal xsi:type="xtext:Keyword" value="reveal"/>
+        </elements>
         <elements xsi:type="xtext:Keyword" value="edge"/>
         <elements xsi:type="xtext:Assignment" feature="name" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/2/@rules.11"/>
@@ -189,6 +198,9 @@
         <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/xtext/graphview/map/GraphViewMapping#//MappingCall"/>
       </type>
       <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" cardinality="?" feature="reveal" operator="?=">
+          <terminal xsi:type="xtext:Keyword" value="reveal"/>
+        </elements>
         <elements xsi:type="xtext:Keyword" value="call"/>
         <elements xsi:type="xtext:Assignment" feature="referencedMapping" operator="=">
           <terminal xsi:type="xtext:CrossReference">

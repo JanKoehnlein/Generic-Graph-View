@@ -34,6 +34,12 @@ Workflow {
         directory = "${runtimeProject}.ui/src-gen"
     }
 
+
+	component = org.eclipse.emf.mwe2.ecore.EcoreGenerator {
+		genModel = "platform:/resource/org.eclipse.xtext.graphview.map/src/org/eclipse/xtext/graphview/map/GraphViewMapping.genmodel"
+		srcPath = "emf-gen/"
+	} 
+	
     component = Generator {
         pathRtProject = runtimeProject
         pathUiProject = "${runtimeProject}.ui"

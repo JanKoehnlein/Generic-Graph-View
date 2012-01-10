@@ -2,14 +2,16 @@
  * <copyright>
  * </copyright>
  *
- * $Id$
  */
 package org.eclipse.xtext.graphview.map.graphViewMapping.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMappingDefinition;
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMappingReference;
 import org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage;
@@ -27,7 +29,8 @@ import org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage;
  *
  * @generated
  */
-public class AbstractMappingReferenceImpl extends AbstractExpressionMappingImpl implements AbstractMappingReference {
+public class AbstractMappingReferenceImpl extends AbstractExpressionMappingImpl implements AbstractMappingReference
+{
 	/**
 	 * The cached value of the '{@link #getReferencedMapping() <em>Referenced Mapping</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -43,7 +46,8 @@ public class AbstractMappingReferenceImpl extends AbstractExpressionMappingImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AbstractMappingReferenceImpl() {
+	protected AbstractMappingReferenceImpl()
+	{
 		super();
 	}
 
@@ -53,7 +57,8 @@ public class AbstractMappingReferenceImpl extends AbstractExpressionMappingImpl 
 	 * @generated
 	 */
 	@Override
-	protected EClass eStaticClass() {
+	protected EClass eStaticClass()
+	{
 		return GraphViewMappingPackage.Literals.ABSTRACT_MAPPING_REFERENCE;
 	}
 
@@ -62,11 +67,14 @@ public class AbstractMappingReferenceImpl extends AbstractExpressionMappingImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AbstractMappingDefinition getReferencedMapping() {
-		if (referencedMapping != null && referencedMapping.eIsProxy()) {
+	public AbstractMappingDefinition getReferencedMapping()
+	{
+		if (referencedMapping != null && referencedMapping.eIsProxy())
+		{
 			InternalEObject oldReferencedMapping = (InternalEObject)referencedMapping;
 			referencedMapping = (AbstractMappingDefinition)eResolveProxy(oldReferencedMapping);
-			if (referencedMapping != oldReferencedMapping) {
+			if (referencedMapping != oldReferencedMapping)
+			{
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GraphViewMappingPackage.ABSTRACT_MAPPING_REFERENCE__REFERENCED_MAPPING, oldReferencedMapping, referencedMapping));
 			}
@@ -79,7 +87,8 @@ public class AbstractMappingReferenceImpl extends AbstractExpressionMappingImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AbstractMappingDefinition basicGetReferencedMapping() {
+	public AbstractMappingDefinition basicGetReferencedMapping()
+	{
 		return referencedMapping;
 	}
 
@@ -88,7 +97,8 @@ public class AbstractMappingReferenceImpl extends AbstractExpressionMappingImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setReferencedMapping(AbstractMappingDefinition newReferencedMapping) {
+	public void setReferencedMapping(AbstractMappingDefinition newReferencedMapping)
+	{
 		AbstractMappingDefinition oldReferencedMapping = referencedMapping;
 		referencedMapping = newReferencedMapping;
 		if (eNotificationRequired())
@@ -101,8 +111,10 @@ public class AbstractMappingReferenceImpl extends AbstractExpressionMappingImpl 
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+	public Object eGet(int featureID, boolean resolve, boolean coreType)
+	{
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.ABSTRACT_MAPPING_REFERENCE__REFERENCED_MAPPING:
 				if (resolve) return getReferencedMapping();
 				return basicGetReferencedMapping();
@@ -116,8 +128,10 @@ public class AbstractMappingReferenceImpl extends AbstractExpressionMappingImpl 
 	 * @generated
 	 */
 	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+	public void eSet(int featureID, Object newValue)
+	{
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.ABSTRACT_MAPPING_REFERENCE__REFERENCED_MAPPING:
 				setReferencedMapping((AbstractMappingDefinition)newValue);
 				return;
@@ -131,8 +145,10 @@ public class AbstractMappingReferenceImpl extends AbstractExpressionMappingImpl 
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
+	public void eUnset(int featureID)
+	{
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.ABSTRACT_MAPPING_REFERENCE__REFERENCED_MAPPING:
 				setReferencedMapping((AbstractMappingDefinition)null);
 				return;
@@ -146,8 +162,10 @@ public class AbstractMappingReferenceImpl extends AbstractExpressionMappingImpl 
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+	public boolean eIsSet(int featureID)
+	{
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.ABSTRACT_MAPPING_REFERENCE__REFERENCED_MAPPING:
 				return referencedMapping != null;
 		}

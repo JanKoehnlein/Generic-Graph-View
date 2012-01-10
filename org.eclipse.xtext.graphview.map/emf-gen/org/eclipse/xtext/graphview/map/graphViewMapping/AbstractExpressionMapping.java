@@ -2,7 +2,6 @@
  * <copyright>
  * </copyright>
  *
- * $Id$
  */
 package org.eclipse.xtext.graphview.map.graphViewMapping;
 
@@ -18,6 +17,7 @@ import org.eclipse.xtext.xbase.XExpression;
  * <ul>
  *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.AbstractExpressionMapping#isMulti <em>Multi</em>}</li>
  *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.AbstractExpressionMapping#getExpression <em>Expression</em>}</li>
+ *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.AbstractExpressionMapping#isReveal <em>Reveal</em>}</li>
  * </ul>
  * </p>
  *
@@ -25,7 +25,8 @@ import org.eclipse.xtext.xbase.XExpression;
  * @model
  * @generated
  */
-public interface AbstractExpressionMapping extends AbstractMapping {
+public interface AbstractExpressionMapping extends AbstractMapping
+{
 	/**
 	 * Returns the value of the '<em><b>Multi</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -77,5 +78,31 @@ public interface AbstractExpressionMapping extends AbstractMapping {
 	 * @generated
 	 */
 	void setExpression(XExpression value);
+
+	/**
+	 * Returns the value of the '<em><b>Reveal</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Reveal</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Reveal</em>' attribute.
+	 * @see #setReveal(boolean)
+	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage#getAbstractExpressionMapping_Reveal()
+	 * @model
+	 * @generated
+	 */
+	boolean isReveal();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.AbstractExpressionMapping#isReveal <em>Reveal</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Reveal</em>' attribute.
+	 * @see #isReveal()
+	 * @generated
+	 */
+	void setReveal(boolean value);
 
 } // AbstractExpressionMapping
