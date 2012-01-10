@@ -8,7 +8,7 @@
 package org.eclipse.xtext.graphview.shape;
 
 import org.eclipse.draw2d.FreeformLayer;
-import org.eclipse.draw2d.XYLayout;
+import org.eclipse.draw2d.FreeformLayout;
 import org.eclipse.swt.SWT;
 import org.eclipse.xtext.graphview.layout.IAutoLayout;
 import org.eclipse.xtext.graphview.layout.KielerAutoLayout;
@@ -18,7 +18,7 @@ public class DiagramShape extends FreeformLayer { // implements ScalableFigure
 	private IAutoLayout autoLayoutManager;
 
 	public DiagramShape() {
-		setLayoutManager(new XYLayout());
+		setLayoutManager(new FreeformLayout());
 		setFont(FontLiterals.font("Helvetica", 12, SWT.BOLD));
 		setAutoLayoutManager(new KielerAutoLayout());
 	}

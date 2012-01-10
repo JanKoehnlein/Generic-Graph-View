@@ -7,9 +7,13 @@
  *******************************************************************************/
 package org.eclipse.xtext.graphview.editpart;
 
+import org.eclipse.draw2d.FreeformLayeredPane;
+import org.eclipse.draw2d.FreeformViewport;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.Layer;
+import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.gef.EditPolicy;
-import org.eclipse.gef.RootEditPart;
+import org.eclipse.gef.LayerConstants;
 import org.eclipse.xtext.graphview.editpolicy.DiagramLayoutEditPolicy;
 import org.eclipse.xtext.graphview.shape.DiagramShape;
 
@@ -19,9 +23,10 @@ public class DiagramEditPart extends AbstractMappingEditPart {
 
 	@Inject
 	private DiagramLayoutEditPolicy diagramLayoutEditPolicy;
-	
-	@Inject 
-	private VisibilityListener VisibilityListener;
+
+	private IFigure contentPane;
+
+	private FreeformViewport viewport;
 
 	@Override
 	protected void createEditPolicies() {
@@ -29,24 +34,35 @@ public class DiagramEditPart extends AbstractMappingEditPart {
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, diagramLayoutEditPolicy);
 	}
 
+	@Override
+	protected IFigure createFigure() {
+		contentPane = super.createFigure();
+		if(contentPane instanceof Layer) {
+			viewport = new FreeformViewport();
+			FreeformLayeredPane innerLayers = new FreeformLayeredPane();
+			innerLayers.add(contentPane, LayerConstants.PRIMARY_LAYER);
+			viewport.setContents(innerLayers);
+			return viewport;
+		}
+		return contentPane;
+	}
+
 	public IFigure createDefaultFigure() {
 		return new DiagramShape();
 	}
 
 	@Override
-	public void activate() {
-		super.activate();
-		IFigure figure = getFigure();
-		if (figure instanceof DiagramShape) 
-			((DiagramShape) figure).getAutoLayoutManager().layout(figure);
-		if(getParent() instanceof RootEditPart)
-			VisibilityListener.register(this);
+	public IFigure getContentPane() {
+		return contentPane;
 	}
 	
 	@Override
-	public void deactivate() {
-		if(getParent() instanceof RootEditPart)
-			VisibilityListener.deregister(this);
-		super.deactivate();
+	public void activate() {
+		super.activate();
+		IFigure figure = getContentPane();
+		if (figure instanceof DiagramShape) {
+			Dimension size = ((DiagramShape) figure).getAutoLayoutManager().layout(figure);
+			viewport.setSize(size);
+		}
 	}
 }

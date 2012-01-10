@@ -53,7 +53,7 @@ public class EdgeEditPart extends AbstractConnectionEditPart implements
 	
 	@Override
 	protected List<?> getModelChildren() {
-		return helper.getInstanceModel().getChildren();
+		return helper.getVisibleModelChildren();
 	}
 
 	@Override

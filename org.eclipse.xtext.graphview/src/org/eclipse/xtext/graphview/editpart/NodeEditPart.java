@@ -45,12 +45,12 @@ public class NodeEditPart extends AbstractMappingEditPart {
 
 	@Override
 	protected List<EdgeInstance> getModelSourceConnections() {
-		return filterVisible(((NodeInstance)getModel()).getOutgoingEdges());
+		return helper.filterVisible(((NodeInstance)getModel()).getOutgoingEdges());
 	}
 
 	@Override
 	protected List<EdgeInstance> getModelTargetConnections() {
-		return filterVisible(((NodeInstance)getModel()).getIncomingEdges());
+		return helper.filterVisible(((NodeInstance)getModel()).getIncomingEdges());
 	}
 	
 	protected Iterable<EdgeInstance> getModelAllConnections() {

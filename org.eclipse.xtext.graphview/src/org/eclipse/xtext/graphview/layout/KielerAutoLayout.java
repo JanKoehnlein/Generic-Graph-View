@@ -111,7 +111,7 @@ public class KielerAutoLayout extends AbstractAutoLayout {
 		this.layoutName = layoutName;
 	}
 
-	public void layout(IFigure container) {
+	public Dimension layout(IFigure container) {
 		Map<ILayoutNode, KNode> childrenToNodes = Maps.newHashMap();
 		Map<Connection, KEdge> connectionToEdges = Maps.newHashMap();
 		KNode rootNode = createKNode(null);
@@ -171,7 +171,7 @@ public class KielerAutoLayout extends AbstractAutoLayout {
 						gefBendPoints);
 			}
 		}
-		container.setPreferredSize(containerBounds.getSize().expand(16, 16));
+		return containerBounds.getSize().expand(16, 16);
 	}
 
 	protected KEdge createKEdge(KNode sourceNode, KNode targetNode) {

@@ -9,6 +9,7 @@ package org.eclipse.xtext.graphview.editpart;
 
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPartFactory;
+import org.eclipse.gef.RootEditPart;
 import org.eclipse.xtext.graphview.instancemodel.AbstractInstance;
 import org.eclipse.xtext.graphview.instancemodel.DiagramInstance;
 import org.eclipse.xtext.graphview.instancemodel.EdgeInstance;
@@ -23,6 +24,9 @@ import com.google.inject.Provider;
 public class GraphViewEditPartFactory implements EditPartFactory {
 
 	@Inject
+	private Provider<DiagramRootEditPart> diagramRootEditPartProvider;
+
+	@Inject
 	private Provider<DiagramEditPart> diagramEditPartProvider;
 
 	@Inject
@@ -34,12 +38,15 @@ public class GraphViewEditPartFactory implements EditPartFactory {
 	@Inject
 	private Provider<EdgeEditPart> edgeEditPartProvider;
 
-	public EditPart createEditPart(EditPart parent, Object model) {
+	public EditPart createEditPart(final EditPart parent, Object model) {
 		if (model instanceof AbstractInstance) {
 			if (((AbstractInstance) model).getVisibility() != Visibility.HIDDEN) {
 				EditPart editPart = new InstancemodelSwitch<EditPart>() {
 					public EditPart caseDiagramInstance(DiagramInstance object) {
-						return diagramEditPartProvider.get();
+						if(parent == null) 
+							return diagramRootEditPartProvider.get();
+						else
+							return diagramEditPartProvider.get();
 					}
 
 					public EditPart caseNodeInstance(NodeInstance object) {

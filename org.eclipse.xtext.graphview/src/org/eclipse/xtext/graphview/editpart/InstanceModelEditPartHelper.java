@@ -8,6 +8,7 @@
 package org.eclipse.xtext.graphview.editpart;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.eclipse.draw2d.IFigure;
@@ -15,12 +16,14 @@ import org.eclipse.gef.Request;
 import org.eclipse.gef.RequestConstants;
 import org.eclipse.xtext.common.types.JvmTypeReference;
 import org.eclipse.xtext.graphview.instancemodel.AbstractInstance;
+import org.eclipse.xtext.graphview.instancemodel.Visibility;
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping;
 import org.eclipse.xtext.graphview.style.StyleProvider;
 import org.eclipse.xtext.graphview.style.graphViewStyle.Style;
 import org.eclipse.xtext.graphview.view.selection.ElementSelectionConverter;
 import org.eclipse.xtext.util.Strings;
 
+import com.google.common.collect.Lists;
 import com.google.inject.Inject;
 
 public class InstanceModelEditPartHelper {
@@ -54,6 +57,19 @@ public class InstanceModelEditPartHelper {
 		return instanceModel;
 	}
 
+	public <T extends AbstractInstance> List<T> filterVisible(List<T> instances) {
+		List<T> visibleChildren = Lists.newArrayList();
+		for(T child: instances) {
+			if(child.getVisibility() != Visibility.HIDDEN)
+				visibleChildren.add(child);
+		}
+		return visibleChildren;
+	}
+	
+	public List<AbstractInstance> getVisibleModelChildren() {
+		return filterVisible(getInstanceModel().getChildren());
+	}
+
 	public Collection<Style> getStyles() {
 		return styleProvider.getStyles(getMapping());
 	}
@@ -61,7 +77,7 @@ public class InstanceModelEditPartHelper {
 	private static final Logger LOG = Logger
 			.getLogger(InstanceModelEditPartHelper.class);
 
-	protected IFigure createFigure() {
+	public IFigure createFigure() {
 		IFigure figure = null;
 		for(Style style : getStyles()) {
 			if(style.getJavaClass() != null) {

@@ -33,7 +33,7 @@ public class GridAutoLayout extends AbstractAutoLayout {
 		this.offset = offset;
 	}
 	
-	public void layout(IFigure container) {
+	public Dimension layout(IFigure container) {
 		@SuppressWarnings("unchecked")
 		List<IFigure> children = Lists.newArrayList(container.getChildren());
 		for (IFigure child : children) {
@@ -77,7 +77,7 @@ public class GridAutoLayout extends AbstractAutoLayout {
 				}
 			}
 		}
-		container.setPreferredSize(new Dimension(maxX, maxY));
+		return new Dimension(maxX, maxY);
 	}
 
 }

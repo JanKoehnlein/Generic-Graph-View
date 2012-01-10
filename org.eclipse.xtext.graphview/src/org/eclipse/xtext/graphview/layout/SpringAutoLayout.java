@@ -37,7 +37,7 @@ public class SpringAutoLayout extends AbstractAutoLayout {
 
 	private int iterations = 200;
 
-	public void layout(IFigure container) {
+	public Dimension layout(IFigure container) {
 		SpringLayoutAlgorithm layoutAlgorithm = new SpringLayoutAlgorithm(
 				LayoutStyles.NO_LAYOUT_NODE_RESIZING);
 		Map<ILayoutNode, LayoutEntity> childrenToNodes = Maps.newHashMap();
@@ -90,8 +90,10 @@ public class SpringAutoLayout extends AbstractAutoLayout {
 				figure.setBounds(bounds);
 				container.setConstraint((IFigure) figure, bounds);
 			}
+			return estimatedSize;
 		} catch (InvalidLayoutConfiguration e) {
 			LOG.error("Error in layout config", e);
+			return new Dimension();
 		}
 	}
 

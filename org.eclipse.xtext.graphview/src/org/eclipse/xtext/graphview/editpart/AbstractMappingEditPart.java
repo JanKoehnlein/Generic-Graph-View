@@ -20,7 +20,6 @@ import org.eclipse.xtext.graphview.instancemodel.AbstractInstance;
 import org.eclipse.xtext.graphview.instancemodel.Visibility;
 import org.eclipse.xtext.graphview.shape.TransparencyHelper;
 
-import com.google.common.collect.Lists;
 import com.google.inject.Inject;
 
 public abstract class AbstractMappingEditPart extends AbstractGraphicalEditPart
@@ -33,7 +32,7 @@ public abstract class AbstractMappingEditPart extends AbstractGraphicalEditPart
 	protected NonResizableEditPolicy nonResizableEditPolicy;
 	
 	@Inject
-	private TransparencyHelper transparencyHelper;;
+	private TransparencyHelper transparencyHelper;
 
 	@Override
 	protected void createEditPolicies() {
@@ -53,18 +52,9 @@ public abstract class AbstractMappingEditPart extends AbstractGraphicalEditPart
 
 	@Override
 	protected List<?> getModelChildren() {
-		return filterVisible(helper.getInstanceModel().getChildren());
+		return helper.getVisibleModelChildren();
 	}
 
-	protected <T extends AbstractInstance> List<T> filterVisible(List<T> instances) {
-		List<T> visibleChildren = Lists.newArrayList();
-		for(T child: instances) {
-			if(child.getVisibility() != Visibility.HIDDEN)
-				visibleChildren.add(child);
-		}
-		return visibleChildren;
-	}
-	
 	@Override
 	protected IFigure createFigure() {
 		IFigure createFigure = helper.createFigure();
