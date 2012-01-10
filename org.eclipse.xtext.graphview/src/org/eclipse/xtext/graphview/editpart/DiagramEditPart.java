@@ -7,13 +7,14 @@
  *******************************************************************************/
 package org.eclipse.xtext.graphview.editpart;
 
+import org.eclipse.draw2d.FreeformLayer;
 import org.eclipse.draw2d.FreeformLayeredPane;
 import org.eclipse.draw2d.FreeformViewport;
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.Layer;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.LayerConstants;
+import org.eclipse.gef.RootEditPart;
 import org.eclipse.xtext.graphview.editpolicy.DiagramLayoutEditPolicy;
 import org.eclipse.xtext.graphview.shape.DiagramShape;
 
@@ -23,6 +24,9 @@ public class DiagramEditPart extends AbstractMappingEditPart {
 
 	@Inject
 	private DiagramLayoutEditPolicy diagramLayoutEditPolicy;
+
+	@Inject
+	private VisibilityListener visibilityListener;
 
 	private IFigure contentPane;
 
@@ -37,12 +41,18 @@ public class DiagramEditPart extends AbstractMappingEditPart {
 	@Override
 	protected IFigure createFigure() {
 		contentPane = super.createFigure();
-		if(contentPane instanceof Layer) {
-			viewport = new FreeformViewport();
-			FreeformLayeredPane innerLayers = new FreeformLayeredPane();
-			innerLayers.add(contentPane, LayerConstants.PRIMARY_LAYER);
-			viewport.setContents(innerLayers);
-			return viewport;
+		if (contentPane instanceof FreeformLayer) {
+			if (isRootDiagram()) {
+				FreeformLayeredPane freeformLayeredPane = new FreeformLayeredPane();
+				freeformLayeredPane.add(contentPane);
+				return freeformLayeredPane;
+			} else {
+				viewport = new FreeformViewport();
+				FreeformLayeredPane innerLayers = new FreeformLayeredPane();
+				innerLayers.add(contentPane, LayerConstants.PRIMARY_LAYER);
+				viewport.setContents(innerLayers);
+				return viewport;
+			}
 		}
 		return contentPane;
 	}
@@ -52,22 +62,37 @@ public class DiagramEditPart extends AbstractMappingEditPart {
 	}
 
 	@Override
+	public IFigure getContentPane() {
+		return contentPane;
+	}
+
+	@Override
 	protected void refreshVisuals() {
 		helper.style(contentPane);
 	}
 
 	@Override
-	public IFigure getContentPane() {
-		return contentPane;
-	}
-	
-	@Override
 	public void activate() {
 		super.activate();
 		IFigure figure = getContentPane();
 		if (figure instanceof DiagramShape) {
-			Dimension size = ((DiagramShape) figure).getAutoLayoutManager().layout(figure);
-			viewport.setSize(size);
+			Dimension size = ((DiagramShape) figure).getAutoLayoutManager()
+					.layout(figure);
+			if(!isRootDiagram())
+				viewport.setSize(size);
 		}
+		if (isRootDiagram())
+			visibilityListener.register(this);
+	}
+
+	@Override
+	public void deactivate() {
+		if (isRootDiagram())
+			visibilityListener.deregister(this);
+		super.deactivate();
+	}
+
+	protected boolean isRootDiagram() {
+		return getParent() instanceof RootEditPart;
 	}
 }

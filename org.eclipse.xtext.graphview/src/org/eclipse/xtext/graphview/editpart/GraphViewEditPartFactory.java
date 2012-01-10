@@ -23,9 +23,6 @@ import com.google.inject.Provider;
 public class GraphViewEditPartFactory implements EditPartFactory {
 
 	@Inject
-	private Provider<DiagramRootEditPart> diagramRootEditPartProvider;
-
-	@Inject
 	private Provider<DiagramEditPart> diagramEditPartProvider;
 
 	@Inject
@@ -42,10 +39,7 @@ public class GraphViewEditPartFactory implements EditPartFactory {
 			if (((AbstractInstance) model).getVisibility() != Visibility.HIDDEN) {
 				EditPart editPart = new InstancemodelSwitch<EditPart>() {
 					public EditPart caseDiagramInstance(DiagramInstance object) {
-						if(parent == null) 
-							return diagramRootEditPartProvider.get();
-						else
-							return diagramEditPartProvider.get();
+						return diagramEditPartProvider.get();
 					}
 
 					public EditPart caseNodeInstance(NodeInstance object) {
