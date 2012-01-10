@@ -81,13 +81,22 @@ public interface GraphViewMappingPackage extends EPackage
 	int ABSTRACT_MAPPING__UNLESS_CONDITION = TypesPackage.JVM_IDENTIFIABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Reveal</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_MAPPING__REVEAL = TypesPackage.JVM_IDENTIFIABLE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Abstract Mapping</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_MAPPING_FEATURE_COUNT = TypesPackage.JVM_IDENTIFIABLE_ELEMENT_FEATURE_COUNT + 1;
+	int ABSTRACT_MAPPING_FEATURE_COUNT = TypesPackage.JVM_IDENTIFIABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.AbstractMappingDefinitionImpl <em>Abstract Mapping Definition</em>}' class.
@@ -107,6 +116,15 @@ public interface GraphViewMappingPackage extends EPackage
 	 * @ordered
 	 */
 	int ABSTRACT_MAPPING_DEFINITION__UNLESS_CONDITION = ABSTRACT_MAPPING__UNLESS_CONDITION;
+
+	/**
+	 * The feature id for the '<em><b>Reveal</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_MAPPING_DEFINITION__REVEAL = ABSTRACT_MAPPING__REVEAL;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -155,6 +173,15 @@ public interface GraphViewMappingPackage extends EPackage
 	int ABSTRACT_EXPRESSION_MAPPING__UNLESS_CONDITION = ABSTRACT_MAPPING__UNLESS_CONDITION;
 
 	/**
+	 * The feature id for the '<em><b>Reveal</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_EXPRESSION_MAPPING__REVEAL = ABSTRACT_MAPPING__REVEAL;
+
+	/**
 	 * The feature id for the '<em><b>Multi</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -173,22 +200,13 @@ public interface GraphViewMappingPackage extends EPackage
 	int ABSTRACT_EXPRESSION_MAPPING__EXPRESSION = ABSTRACT_MAPPING_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Reveal</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_EXPRESSION_MAPPING__REVEAL = ABSTRACT_MAPPING_FEATURE_COUNT + 2;
-
-	/**
 	 * The number of structural features of the '<em>Abstract Expression Mapping</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_EXPRESSION_MAPPING_FEATURE_COUNT = ABSTRACT_MAPPING_FEATURE_COUNT + 3;
+	int ABSTRACT_EXPRESSION_MAPPING_FEATURE_COUNT = ABSTRACT_MAPPING_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.AbstractMappingReferenceImpl <em>Abstract Mapping Reference</em>}' class.
@@ -210,6 +228,15 @@ public interface GraphViewMappingPackage extends EPackage
 	int ABSTRACT_MAPPING_REFERENCE__UNLESS_CONDITION = ABSTRACT_EXPRESSION_MAPPING__UNLESS_CONDITION;
 
 	/**
+	 * The feature id for the '<em><b>Reveal</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_MAPPING_REFERENCE__REVEAL = ABSTRACT_EXPRESSION_MAPPING__REVEAL;
+
+	/**
 	 * The feature id for the '<em><b>Multi</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -226,15 +253,6 @@ public interface GraphViewMappingPackage extends EPackage
 	 * @ordered
 	 */
 	int ABSTRACT_MAPPING_REFERENCE__EXPRESSION = ABSTRACT_EXPRESSION_MAPPING__EXPRESSION;
-
-	/**
-	 * The feature id for the '<em><b>Reveal</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_MAPPING_REFERENCE__REVEAL = ABSTRACT_EXPRESSION_MAPPING__REVEAL;
 
 	/**
 	 * The feature id for the '<em><b>Referenced Mapping</b></em>' reference.
@@ -302,6 +320,15 @@ public interface GraphViewMappingPackage extends EPackage
 	int DIAGRAM_MAPPING__UNLESS_CONDITION = ABSTRACT_MAPPING_DEFINITION__UNLESS_CONDITION;
 
 	/**
+	 * The feature id for the '<em><b>Reveal</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGRAM_MAPPING__REVEAL = ABSTRACT_MAPPING_DEFINITION__REVEAL;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -366,6 +393,15 @@ public interface GraphViewMappingPackage extends EPackage
 	int NODE_MAPPING__UNLESS_CONDITION = ABSTRACT_MAPPING_DEFINITION__UNLESS_CONDITION;
 
 	/**
+	 * The feature id for the '<em><b>Reveal</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NODE_MAPPING__REVEAL = ABSTRACT_MAPPING_DEFINITION__REVEAL;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -402,22 +438,13 @@ public interface GraphViewMappingPackage extends EPackage
 	int NODE_MAPPING__EXPRESSION = ABSTRACT_MAPPING_DEFINITION_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Reveal</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NODE_MAPPING__REVEAL = ABSTRACT_MAPPING_DEFINITION_FEATURE_COUNT + 2;
-
-	/**
 	 * The number of structural features of the '<em>Node Mapping</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NODE_MAPPING_FEATURE_COUNT = ABSTRACT_MAPPING_DEFINITION_FEATURE_COUNT + 3;
+	int NODE_MAPPING_FEATURE_COUNT = ABSTRACT_MAPPING_DEFINITION_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.LabelMappingImpl <em>Label Mapping</em>}' class.
@@ -437,6 +464,15 @@ public interface GraphViewMappingPackage extends EPackage
 	 * @ordered
 	 */
 	int LABEL_MAPPING__UNLESS_CONDITION = ABSTRACT_MAPPING_DEFINITION__UNLESS_CONDITION;
+
+	/**
+	 * The feature id for the '<em><b>Reveal</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LABEL_MAPPING__REVEAL = ABSTRACT_MAPPING_DEFINITION__REVEAL;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -475,22 +511,13 @@ public interface GraphViewMappingPackage extends EPackage
 	int LABEL_MAPPING__EXPRESSION = ABSTRACT_MAPPING_DEFINITION_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Reveal</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LABEL_MAPPING__REVEAL = ABSTRACT_MAPPING_DEFINITION_FEATURE_COUNT + 2;
-
-	/**
 	 * The number of structural features of the '<em>Label Mapping</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LABEL_MAPPING_FEATURE_COUNT = ABSTRACT_MAPPING_DEFINITION_FEATURE_COUNT + 3;
+	int LABEL_MAPPING_FEATURE_COUNT = ABSTRACT_MAPPING_DEFINITION_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.EdgeMappingImpl <em>Edge Mapping</em>}' class.
@@ -510,6 +537,15 @@ public interface GraphViewMappingPackage extends EPackage
 	 * @ordered
 	 */
 	int EDGE_MAPPING__UNLESS_CONDITION = ABSTRACT_MAPPING_DEFINITION__UNLESS_CONDITION;
+
+	/**
+	 * The feature id for the '<em><b>Reveal</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDGE_MAPPING__REVEAL = ABSTRACT_MAPPING_DEFINITION__REVEAL;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -548,22 +584,13 @@ public interface GraphViewMappingPackage extends EPackage
 	int EDGE_MAPPING__EXPRESSION = ABSTRACT_MAPPING_DEFINITION_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Reveal</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EDGE_MAPPING__REVEAL = ABSTRACT_MAPPING_DEFINITION_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Source Mapping</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EDGE_MAPPING__SOURCE_MAPPING = ABSTRACT_MAPPING_DEFINITION_FEATURE_COUNT + 3;
+	int EDGE_MAPPING__SOURCE_MAPPING = ABSTRACT_MAPPING_DEFINITION_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Target Mapping</b></em>' containment reference.
@@ -572,7 +599,7 @@ public interface GraphViewMappingPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int EDGE_MAPPING__TARGET_MAPPING = ABSTRACT_MAPPING_DEFINITION_FEATURE_COUNT + 4;
+	int EDGE_MAPPING__TARGET_MAPPING = ABSTRACT_MAPPING_DEFINITION_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Edge Mapping</em>' class.
@@ -581,7 +608,7 @@ public interface GraphViewMappingPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int EDGE_MAPPING_FEATURE_COUNT = ABSTRACT_MAPPING_DEFINITION_FEATURE_COUNT + 5;
+	int EDGE_MAPPING_FEATURE_COUNT = ABSTRACT_MAPPING_DEFINITION_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.EdgeEndMappingImpl <em>Edge End Mapping</em>}' class.
@@ -603,6 +630,15 @@ public interface GraphViewMappingPackage extends EPackage
 	int EDGE_END_MAPPING__UNLESS_CONDITION = ABSTRACT_MAPPING_REFERENCE__UNLESS_CONDITION;
 
 	/**
+	 * The feature id for the '<em><b>Reveal</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDGE_END_MAPPING__REVEAL = ABSTRACT_MAPPING_REFERENCE__REVEAL;
+
+	/**
 	 * The feature id for the '<em><b>Multi</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -619,15 +655,6 @@ public interface GraphViewMappingPackage extends EPackage
 	 * @ordered
 	 */
 	int EDGE_END_MAPPING__EXPRESSION = ABSTRACT_MAPPING_REFERENCE__EXPRESSION;
-
-	/**
-	 * The feature id for the '<em><b>Reveal</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EDGE_END_MAPPING__REVEAL = ABSTRACT_MAPPING_REFERENCE__REVEAL;
 
 	/**
 	 * The feature id for the '<em><b>Referenced Mapping</b></em>' reference.
@@ -676,6 +703,15 @@ public interface GraphViewMappingPackage extends EPackage
 	int MAPPING_CALL__UNLESS_CONDITION = ABSTRACT_MAPPING_REFERENCE__UNLESS_CONDITION;
 
 	/**
+	 * The feature id for the '<em><b>Reveal</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING_CALL__REVEAL = ABSTRACT_MAPPING_REFERENCE__REVEAL;
+
+	/**
 	 * The feature id for the '<em><b>Multi</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -692,15 +728,6 @@ public interface GraphViewMappingPackage extends EPackage
 	 * @ordered
 	 */
 	int MAPPING_CALL__EXPRESSION = ABSTRACT_MAPPING_REFERENCE__EXPRESSION;
-
-	/**
-	 * The feature id for the '<em><b>Reveal</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAPPING_CALL__REVEAL = ABSTRACT_MAPPING_REFERENCE__REVEAL;
 
 	/**
 	 * The feature id for the '<em><b>Referenced Mapping</b></em>' reference.
@@ -741,6 +768,17 @@ public interface GraphViewMappingPackage extends EPackage
 	 * @generated
 	 */
 	EReference getAbstractMapping_UnlessCondition();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping#isReveal <em>Reveal</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Reveal</em>'.
+	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping#isReveal()
+	 * @see #getAbstractMapping()
+	 * @generated
+	 */
+	EAttribute getAbstractMapping_Reveal();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMappingDefinition <em>Abstract Mapping Definition</em>}'.
@@ -805,17 +843,6 @@ public interface GraphViewMappingPackage extends EPackage
 	 * @generated
 	 */
 	EReference getAbstractExpressionMapping_Expression();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.xtext.graphview.map.graphViewMapping.AbstractExpressionMapping#isReveal <em>Reveal</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Reveal</em>'.
-	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.AbstractExpressionMapping#isReveal()
-	 * @see #getAbstractExpressionMapping()
-	 * @generated
-	 */
-	EAttribute getAbstractExpressionMapping_Reveal();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMappingReference <em>Abstract Mapping Reference</em>}'.
@@ -1016,6 +1043,14 @@ public interface GraphViewMappingPackage extends EPackage
 		EReference ABSTRACT_MAPPING__UNLESS_CONDITION = eINSTANCE.getAbstractMapping_UnlessCondition();
 
 		/**
+		 * The meta object literal for the '<em><b>Reveal</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ABSTRACT_MAPPING__REVEAL = eINSTANCE.getAbstractMapping_Reveal();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.AbstractMappingDefinitionImpl <em>Abstract Mapping Definition</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1066,14 +1101,6 @@ public interface GraphViewMappingPackage extends EPackage
 		 * @generated
 		 */
 		EReference ABSTRACT_EXPRESSION_MAPPING__EXPRESSION = eINSTANCE.getAbstractExpressionMapping_Expression();
-
-		/**
-		 * The meta object literal for the '<em><b>Reveal</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ABSTRACT_EXPRESSION_MAPPING__REVEAL = eINSTANCE.getAbstractExpressionMapping_Reveal();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.AbstractMappingReferenceImpl <em>Abstract Mapping Reference</em>}' class.

@@ -28,6 +28,7 @@ import org.eclipse.xtext.xbase.XExpression;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.AbstractMappingImpl#getUnlessCondition <em>Unless Condition</em>}</li>
+ *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.AbstractMappingImpl#isReveal <em>Reveal</em>}</li>
  * </ul>
  * </p>
  *
@@ -44,6 +45,26 @@ public abstract class AbstractMappingImpl extends JvmIdentifiableElementImpl imp
 	 * @ordered
 	 */
 	protected XExpression unlessCondition;
+
+	/**
+	 * The default value of the '{@link #isReveal() <em>Reveal</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isReveal()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean REVEAL_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isReveal() <em>Reveal</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isReveal()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean reveal = REVEAL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -119,6 +140,29 @@ public abstract class AbstractMappingImpl extends JvmIdentifiableElementImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isReveal()
+	{
+		return reveal;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setReveal(boolean newReveal)
+	{
+		boolean oldReveal = reveal;
+		reveal = newReveal;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GraphViewMappingPackage.ABSTRACT_MAPPING__REVEAL, oldReveal, reveal));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
@@ -142,6 +186,8 @@ public abstract class AbstractMappingImpl extends JvmIdentifiableElementImpl imp
 		{
 			case GraphViewMappingPackage.ABSTRACT_MAPPING__UNLESS_CONDITION:
 				return getUnlessCondition();
+			case GraphViewMappingPackage.ABSTRACT_MAPPING__REVEAL:
+				return isReveal();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -158,6 +204,9 @@ public abstract class AbstractMappingImpl extends JvmIdentifiableElementImpl imp
 		{
 			case GraphViewMappingPackage.ABSTRACT_MAPPING__UNLESS_CONDITION:
 				setUnlessCondition((XExpression)newValue);
+				return;
+			case GraphViewMappingPackage.ABSTRACT_MAPPING__REVEAL:
+				setReveal((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -176,6 +225,9 @@ public abstract class AbstractMappingImpl extends JvmIdentifiableElementImpl imp
 			case GraphViewMappingPackage.ABSTRACT_MAPPING__UNLESS_CONDITION:
 				setUnlessCondition((XExpression)null);
 				return;
+			case GraphViewMappingPackage.ABSTRACT_MAPPING__REVEAL:
+				setReveal(REVEAL_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -192,8 +244,27 @@ public abstract class AbstractMappingImpl extends JvmIdentifiableElementImpl imp
 		{
 			case GraphViewMappingPackage.ABSTRACT_MAPPING__UNLESS_CONDITION:
 				return unlessCondition != null;
+			case GraphViewMappingPackage.ABSTRACT_MAPPING__REVEAL:
+				return reveal != REVEAL_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString()
+	{
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (reveal: ");
+		result.append(reveal);
+		result.append(')');
+		return result.toString();
 	}
 
 } //AbstractMappingImpl

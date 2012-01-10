@@ -206,6 +206,16 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getAbstractMapping_Reveal()
+	{
+		return (EAttribute)abstractMappingEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getAbstractMappingDefinition()
 	{
 		return abstractMappingDefinitionEClass;
@@ -259,16 +269,6 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 	public EReference getAbstractExpressionMapping_Expression()
 	{
 		return (EReference)abstractExpressionMappingEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAbstractExpressionMapping_Reveal()
-	{
-		return (EAttribute)abstractExpressionMappingEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -453,6 +453,7 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 		// Create classes and their features
 		abstractMappingEClass = createEClass(ABSTRACT_MAPPING);
 		createEReference(abstractMappingEClass, ABSTRACT_MAPPING__UNLESS_CONDITION);
+		createEAttribute(abstractMappingEClass, ABSTRACT_MAPPING__REVEAL);
 
 		abstractMappingDefinitionEClass = createEClass(ABSTRACT_MAPPING_DEFINITION);
 		createEAttribute(abstractMappingDefinitionEClass, ABSTRACT_MAPPING_DEFINITION__NAME);
@@ -461,7 +462,6 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 		abstractExpressionMappingEClass = createEClass(ABSTRACT_EXPRESSION_MAPPING);
 		createEAttribute(abstractExpressionMappingEClass, ABSTRACT_EXPRESSION_MAPPING__MULTI);
 		createEReference(abstractExpressionMappingEClass, ABSTRACT_EXPRESSION_MAPPING__EXPRESSION);
-		createEAttribute(abstractExpressionMappingEClass, ABSTRACT_EXPRESSION_MAPPING__REVEAL);
 
 		abstractMappingReferenceEClass = createEClass(ABSTRACT_MAPPING_REFERENCE);
 		createEReference(abstractMappingReferenceEClass, ABSTRACT_MAPPING_REFERENCE__REFERENCED_MAPPING);
@@ -537,6 +537,7 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 		// Initialize classes and features; add operations and parameters
 		initEClass(abstractMappingEClass, AbstractMapping.class, "AbstractMapping", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAbstractMapping_UnlessCondition(), theXbasePackage.getXExpression(), null, "unlessCondition", null, 0, 1, AbstractMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAbstractMapping_Reveal(), ecorePackage.getEBoolean(), "reveal", null, 0, 1, AbstractMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(abstractMappingDefinitionEClass, AbstractMappingDefinition.class, "AbstractMappingDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAbstractMappingDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, AbstractMappingDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -545,7 +546,6 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 		initEClass(abstractExpressionMappingEClass, AbstractExpressionMapping.class, "AbstractExpressionMapping", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAbstractExpressionMapping_Multi(), ecorePackage.getEBoolean(), "multi", null, 0, 1, AbstractExpressionMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAbstractExpressionMapping_Expression(), theXbasePackage.getXExpression(), null, "expression", null, 0, 1, AbstractExpressionMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAbstractExpressionMapping_Reveal(), ecorePackage.getEBoolean(), "reveal", null, 0, 1, AbstractExpressionMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(abstractMappingReferenceEClass, AbstractMappingReference.class, "AbstractMappingReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAbstractMappingReference_ReferencedMapping(), this.getAbstractMappingDefinition(), null, "referencedMapping", null, 0, 1, AbstractMappingReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

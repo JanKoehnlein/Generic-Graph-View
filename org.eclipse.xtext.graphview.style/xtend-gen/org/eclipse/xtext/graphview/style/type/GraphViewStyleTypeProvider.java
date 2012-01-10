@@ -1,7 +1,7 @@
 package org.eclipse.xtext.graphview.style.type;
 
+import com.google.inject.Singleton;
 import java.util.Arrays;
-
 import org.eclipse.xtext.common.types.JvmTypeReference;
 import org.eclipse.xtext.common.types.util.TypeReferences;
 import org.eclipse.xtext.graphview.style.graphViewStyle.XColorLiteral;
@@ -27,8 +27,6 @@ import org.eclipse.xtext.xbase.XTryCatchFinallyExpression;
 import org.eclipse.xtext.xbase.XTypeLiteral;
 import org.eclipse.xtext.xbase.XVariableDeclaration;
 import org.eclipse.xtext.xbase.typing.XbaseTypeProvider;
-
-import com.google.inject.Singleton;
 
 @SuppressWarnings("all")
 @Singleton

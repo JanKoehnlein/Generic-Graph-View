@@ -28,7 +28,6 @@ import org.eclipse.xtext.xbase.XExpression;
  * <ul>
  *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.LabelMappingImpl#isMulti <em>Multi</em>}</li>
  *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.LabelMappingImpl#getExpression <em>Expression</em>}</li>
- *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.LabelMappingImpl#isReveal <em>Reveal</em>}</li>
  * </ul>
  * </p>
  *
@@ -65,26 +64,6 @@ public class LabelMappingImpl extends AbstractMappingDefinitionImpl implements L
 	 * @ordered
 	 */
 	protected XExpression expression;
-
-	/**
-	 * The default value of the '{@link #isReveal() <em>Reveal</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isReveal()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean REVEAL_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isReveal() <em>Reveal</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isReveal()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean reveal = REVEAL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -183,29 +162,6 @@ public class LabelMappingImpl extends AbstractMappingDefinitionImpl implements L
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isReveal()
-	{
-		return reveal;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setReveal(boolean newReveal)
-	{
-		boolean oldReveal = reveal;
-		reveal = newReveal;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GraphViewMappingPackage.LABEL_MAPPING__REVEAL, oldReveal, reveal));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
@@ -231,8 +187,6 @@ public class LabelMappingImpl extends AbstractMappingDefinitionImpl implements L
 				return isMulti();
 			case GraphViewMappingPackage.LABEL_MAPPING__EXPRESSION:
 				return getExpression();
-			case GraphViewMappingPackage.LABEL_MAPPING__REVEAL:
-				return isReveal();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -252,9 +206,6 @@ public class LabelMappingImpl extends AbstractMappingDefinitionImpl implements L
 				return;
 			case GraphViewMappingPackage.LABEL_MAPPING__EXPRESSION:
 				setExpression((XExpression)newValue);
-				return;
-			case GraphViewMappingPackage.LABEL_MAPPING__REVEAL:
-				setReveal((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -276,9 +227,6 @@ public class LabelMappingImpl extends AbstractMappingDefinitionImpl implements L
 			case GraphViewMappingPackage.LABEL_MAPPING__EXPRESSION:
 				setExpression((XExpression)null);
 				return;
-			case GraphViewMappingPackage.LABEL_MAPPING__REVEAL:
-				setReveal(REVEAL_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -297,8 +245,6 @@ public class LabelMappingImpl extends AbstractMappingDefinitionImpl implements L
 				return multi != MULTI_EDEFAULT;
 			case GraphViewMappingPackage.LABEL_MAPPING__EXPRESSION:
 				return expression != null;
-			case GraphViewMappingPackage.LABEL_MAPPING__REVEAL:
-				return reveal != REVEAL_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -317,7 +263,6 @@ public class LabelMappingImpl extends AbstractMappingDefinitionImpl implements L
 			{
 				case GraphViewMappingPackage.LABEL_MAPPING__MULTI: return GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__MULTI;
 				case GraphViewMappingPackage.LABEL_MAPPING__EXPRESSION: return GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__EXPRESSION;
-				case GraphViewMappingPackage.LABEL_MAPPING__REVEAL: return GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__REVEAL;
 				default: return -1;
 			}
 		}
@@ -338,7 +283,6 @@ public class LabelMappingImpl extends AbstractMappingDefinitionImpl implements L
 			{
 				case GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__MULTI: return GraphViewMappingPackage.LABEL_MAPPING__MULTI;
 				case GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__EXPRESSION: return GraphViewMappingPackage.LABEL_MAPPING__EXPRESSION;
-				case GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__REVEAL: return GraphViewMappingPackage.LABEL_MAPPING__REVEAL;
 				default: return -1;
 			}
 		}
@@ -358,8 +302,6 @@ public class LabelMappingImpl extends AbstractMappingDefinitionImpl implements L
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (multi: ");
 		result.append(multi);
-		result.append(", reveal: ");
-		result.append(reveal);
 		result.append(')');
 		return result.toString();
 	}

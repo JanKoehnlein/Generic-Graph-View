@@ -19,6 +19,7 @@ import org.eclipse.xtext.graphview.instancemodel.DiagramInstance;
 import org.eclipse.xtext.graphview.instancemodel.EdgeInstance;
 import org.eclipse.xtext.graphview.instancemodel.InstancemodelFactory;
 import org.eclipse.xtext.graphview.instancemodel.NodeInstance;
+import org.eclipse.xtext.graphview.instancemodel.Visibility;
 import org.eclipse.xtext.graphview.map.IInstanceMapper;
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractExpressionMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping;
@@ -165,6 +166,9 @@ public class ModelInstantiator {
 			instanceModel.setSemanticElement(semanticElement);
 			instanceModel.setMapping(mapping);
 			instanceModel.setParent(parentInstance);
+			if(mapping.isReveal()) {
+				instanceModel.setVisibility(Visibility.HIDDEN);
+			}
 		}
 		return instanceModel;
 	}

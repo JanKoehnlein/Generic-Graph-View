@@ -28,7 +28,6 @@ import org.eclipse.xtext.xbase.XExpression;
  * <ul>
  *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.NodeMappingImpl#isMulti <em>Multi</em>}</li>
  *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.NodeMappingImpl#getExpression <em>Expression</em>}</li>
- *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.NodeMappingImpl#isReveal <em>Reveal</em>}</li>
  * </ul>
  * </p>
  *
@@ -65,26 +64,6 @@ public class NodeMappingImpl extends AbstractMappingDefinitionImpl implements No
 	 * @ordered
 	 */
 	protected XExpression expression;
-
-	/**
-	 * The default value of the '{@link #isReveal() <em>Reveal</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isReveal()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean REVEAL_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isReveal() <em>Reveal</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isReveal()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean reveal = REVEAL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -183,29 +162,6 @@ public class NodeMappingImpl extends AbstractMappingDefinitionImpl implements No
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isReveal()
-	{
-		return reveal;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setReveal(boolean newReveal)
-	{
-		boolean oldReveal = reveal;
-		reveal = newReveal;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GraphViewMappingPackage.NODE_MAPPING__REVEAL, oldReveal, reveal));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
@@ -231,8 +187,6 @@ public class NodeMappingImpl extends AbstractMappingDefinitionImpl implements No
 				return isMulti();
 			case GraphViewMappingPackage.NODE_MAPPING__EXPRESSION:
 				return getExpression();
-			case GraphViewMappingPackage.NODE_MAPPING__REVEAL:
-				return isReveal();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -252,9 +206,6 @@ public class NodeMappingImpl extends AbstractMappingDefinitionImpl implements No
 				return;
 			case GraphViewMappingPackage.NODE_MAPPING__EXPRESSION:
 				setExpression((XExpression)newValue);
-				return;
-			case GraphViewMappingPackage.NODE_MAPPING__REVEAL:
-				setReveal((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -276,9 +227,6 @@ public class NodeMappingImpl extends AbstractMappingDefinitionImpl implements No
 			case GraphViewMappingPackage.NODE_MAPPING__EXPRESSION:
 				setExpression((XExpression)null);
 				return;
-			case GraphViewMappingPackage.NODE_MAPPING__REVEAL:
-				setReveal(REVEAL_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -297,8 +245,6 @@ public class NodeMappingImpl extends AbstractMappingDefinitionImpl implements No
 				return multi != MULTI_EDEFAULT;
 			case GraphViewMappingPackage.NODE_MAPPING__EXPRESSION:
 				return expression != null;
-			case GraphViewMappingPackage.NODE_MAPPING__REVEAL:
-				return reveal != REVEAL_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -317,7 +263,6 @@ public class NodeMappingImpl extends AbstractMappingDefinitionImpl implements No
 			{
 				case GraphViewMappingPackage.NODE_MAPPING__MULTI: return GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__MULTI;
 				case GraphViewMappingPackage.NODE_MAPPING__EXPRESSION: return GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__EXPRESSION;
-				case GraphViewMappingPackage.NODE_MAPPING__REVEAL: return GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__REVEAL;
 				default: return -1;
 			}
 		}
@@ -338,7 +283,6 @@ public class NodeMappingImpl extends AbstractMappingDefinitionImpl implements No
 			{
 				case GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__MULTI: return GraphViewMappingPackage.NODE_MAPPING__MULTI;
 				case GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__EXPRESSION: return GraphViewMappingPackage.NODE_MAPPING__EXPRESSION;
-				case GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__REVEAL: return GraphViewMappingPackage.NODE_MAPPING__REVEAL;
 				default: return -1;
 			}
 		}
@@ -358,8 +302,6 @@ public class NodeMappingImpl extends AbstractMappingDefinitionImpl implements No
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (multi: ");
 		result.append(multi);
-		result.append(", reveal: ");
-		result.append(reveal);
 		result.append(')');
 		return result.toString();
 	}

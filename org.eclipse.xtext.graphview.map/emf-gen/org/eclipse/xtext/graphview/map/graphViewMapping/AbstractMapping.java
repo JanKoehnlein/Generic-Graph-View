@@ -18,6 +18,7 @@ import org.eclipse.xtext.xbase.XExpression;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping#getUnlessCondition <em>Unless Condition</em>}</li>
+ *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping#isReveal <em>Reveal</em>}</li>
  * </ul>
  * </p>
  *
@@ -52,5 +53,31 @@ public interface AbstractMapping extends JvmIdentifiableElement
 	 * @generated
 	 */
 	void setUnlessCondition(XExpression value);
+
+	/**
+	 * Returns the value of the '<em><b>Reveal</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Reveal</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Reveal</em>' attribute.
+	 * @see #setReveal(boolean)
+	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage#getAbstractMapping_Reveal()
+	 * @model
+	 * @generated
+	 */
+	boolean isReveal();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping#isReveal <em>Reveal</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Reveal</em>' attribute.
+	 * @see #isReveal()
+	 * @generated
+	 */
+	void setReveal(boolean value);
 
 } // AbstractMapping

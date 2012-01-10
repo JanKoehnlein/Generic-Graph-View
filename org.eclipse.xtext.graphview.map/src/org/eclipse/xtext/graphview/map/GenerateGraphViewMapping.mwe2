@@ -31,6 +31,10 @@ Workflow {
     }
 
     component = DirectoryCleaner {
+        directory = "${runtimeProject}/emf-gen"
+    }
+
+    component = DirectoryCleaner {
         directory = "${runtimeProject}.ui/src-gen"
     }
 
