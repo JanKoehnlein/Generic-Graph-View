@@ -9,7 +9,6 @@ package org.eclipse.xtext.graphview.editpart;
 
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPartFactory;
-import org.eclipse.gef.RootEditPart;
 import org.eclipse.xtext.graphview.instancemodel.AbstractInstance;
 import org.eclipse.xtext.graphview.instancemodel.DiagramInstance;
 import org.eclipse.xtext.graphview.instancemodel.EdgeInstance;

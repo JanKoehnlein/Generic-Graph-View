@@ -52,6 +52,11 @@ public class DiagramEditPart extends AbstractMappingEditPart {
 	}
 
 	@Override
+	protected void refreshVisuals() {
+		helper.style(contentPane);
+	}
+
+	@Override
 	public IFigure getContentPane() {
 		return contentPane;
 	}

@@ -42,12 +42,17 @@ public class DiagramRootEditPart extends AbstractMappingEditPart {
 	public IFigure createDefaultFigure() {
 		return new DiagramShape();
 	}
-
+	
 	@Override
 	public IFigure getContentPane() {
 		return contentPane;
 	}
-	
+
+	@Override
+	protected void refreshVisuals() {
+		helper.style(contentPane);
+	}
+
 	@Override
 	public void activate() {
 		super.activate();
