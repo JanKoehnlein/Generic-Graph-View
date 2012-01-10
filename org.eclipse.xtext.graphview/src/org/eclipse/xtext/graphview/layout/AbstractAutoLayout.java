@@ -16,11 +16,19 @@ import org.eclipse.draw2d.ShortestPathConnectionRouter;
 public abstract class AbstractAutoLayout implements IAutoLayout {
 
 	private ConnectionRouter connectionRouter;
-	
+
 	protected Layer getConnectionLayer(IFigure container) {
-		LayeredPane layeredPane = findParentOfType(container, LayeredPane.class);
-		if (layeredPane != null)
-			return layeredPane.getLayer("Connection Layer");
+		if (container != null) {
+			LayeredPane layeredPane = findParentOfType(container,
+					LayeredPane.class);
+			if (layeredPane != null) {
+				Layer layer = layeredPane.getLayer("Connection Layer");
+				if (layer == null)
+					return getConnectionLayer(layeredPane.getParent());
+				else
+					return layer;
+			}
+		}
 		return null;
 	}
 
@@ -32,13 +40,13 @@ public abstract class AbstractAutoLayout implements IAutoLayout {
 			return findParentOfType(figure.getParent(), type);
 		return null;
 	}
-	
-	
+
 	public void setConnectionRouter(ConnectionRouter connectionRouter) {
 		this.connectionRouter = connectionRouter;
 	}
-	
+
 	public ConnectionRouter getConnectionRouter(IFigure container) {
-		return (connectionRouter == null) ? new ShortestPathConnectionRouter(container) : connectionRouter;
+		return (connectionRouter == null) ? new ShortestPathConnectionRouter(
+				container) : connectionRouter;
 	}
 }
