@@ -14,23 +14,25 @@ import org.eclipse.xtext.graphview.editpolicy.HideEditPolicy;
 import org.eclipse.xtext.graphview.editpolicy.RevealEditPolicy;
 import org.eclipse.xtext.graphview.instancemodel.EdgeInstance;
 import org.eclipse.xtext.graphview.instancemodel.NodeInstance;
+import org.eclipse.xtext.graphview.instancemodel.Visibility;
 import org.eclipse.xtext.graphview.rapidbuttons.RapidButtonEditPolicy;
 import org.eclipse.xtext.graphview.shape.RoundedRectangleShape;
 
+import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 import com.google.inject.Inject;
 
 public class NodeEditPart extends AbstractMappingEditPart {
 
-	@Inject 
+	@Inject
 	private RapidButtonEditPolicy rapidButtonEditPolicy;
-	
+
 	@Inject
 	private HideEditPolicy hideEditPolicy;
-	
+
 	@Inject
 	private RevealEditPolicy revealEditPolicy;
-	
+
 	@Override
 	protected void createEditPolicies() {
 		super.createEditPolicies();
@@ -40,20 +42,31 @@ public class NodeEditPart extends AbstractMappingEditPart {
 	}
 
 	public IFigure createDefaultFigure() {
-		return new RoundedRectangleShape();			
+		return new RoundedRectangleShape();
 	}
 
 	@Override
 	protected List<EdgeInstance> getModelSourceConnections() {
-		return helper.filterVisible(((NodeInstance)getModel()).getOutgoingEdges());
+		return helper.filterVisible(((NodeInstance) getModel())
+				.getOutgoingEdges());
 	}
 
 	@Override
 	protected List<EdgeInstance> getModelTargetConnections() {
-		return helper.filterVisible(((NodeInstance)getModel()).getIncomingEdges());
+		return helper.filterVisible(((NodeInstance) getModel())
+				.getIncomingEdges());
 	}
-	
-	protected Iterable<EdgeInstance> getModelAllConnections() {
-		return Iterables.concat(getModelSourceConnections(), getModelTargetConnections());
+
+	@Override
+	public boolean hasHiddenEdge() {
+		NodeInstance model = (NodeInstance) getModel();
+		return Iterables.any(
+				Iterables.concat(model.getOutgoingEdges(),
+						model.getIncomingEdges()),
+				new Predicate<EdgeInstance>() {
+					public boolean apply(EdgeInstance input) {
+						return input.getVisibility() == Visibility.HIDDEN;
+					}
+				});
 	}
 }

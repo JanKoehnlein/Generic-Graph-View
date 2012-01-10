@@ -84,4 +84,8 @@ public abstract class AbstractMappingEditPart extends AbstractGraphicalEditPart
 		if(getModel().getVisibility() == Visibility.TRANSPARENT)
 			setTransparent(true);
 	}
+
+	public boolean hasHiddenEdge() {
+		return false;
+	}
 }

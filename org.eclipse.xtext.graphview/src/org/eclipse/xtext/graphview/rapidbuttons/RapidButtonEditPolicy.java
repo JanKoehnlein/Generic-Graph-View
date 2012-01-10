@@ -62,7 +62,8 @@ public class RapidButtonEditPolicy extends AbstractEditPolicy {
 		if (buttons == null) {
 			locator.init(getHost().getFigure());
 			buttons = Lists.newArrayList();
-			addButton(revealButton);
+			if(getHost().hasHiddenEdge()) 
+				addButton(revealButton);
 			addButton(hideButton);
 		}
 		return buttons;
