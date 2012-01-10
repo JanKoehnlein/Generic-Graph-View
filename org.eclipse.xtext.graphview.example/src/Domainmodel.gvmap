@@ -4,9 +4,8 @@ import org.eclipse.xtext.graphview.model.JvmModelHelper
 import org.eclipse.xtext.common.types.*
 import org.eclipse.xtext.graphview.model.JvmModelHelper
 
-diagram DomainmodelPackageDiagram type PackageDeclaration {
- 	node EntityNode for each elements.filter(typeof (Entity))
- 		  .map[jvmElement(typeof(JvmGenericType))] {
+diagram DomainmodelEntityDiagram type Entity {
+ 	node EntityNode for each jvmElement(typeof(JvmGenericType)) {
 		label Name for this
 		node Attributes for members.filter(typeof(JvmField))
 			.filter[^type.^type.sourceElement(typeof(Entity)) == null] {
@@ -15,16 +14,12 @@ diagram DomainmodelPackageDiagram type PackageDeclaration {
 		node Operations for members.filter(typeof(JvmOperation)) {
 			label Label for each this
 		} 
-		edge Reference for each members.filter(typeof(JvmField))
+		reveal edge Reference for each members.filter(typeof(JvmField))
 			.filter[^type.^type.sourceElement(typeof(Entity)) != null] {
 			=> call EntityNode for ^type.^type		
 		}
-		edge SuperType for extendedClass {
+		reveal edge SuperType for extendedClass {
 			=> call EntityNode for ^type
 		} unless extendedClass.^type.sourceElement(typeof(Entity)) == null
 	} 
-	node InnerPackage for each elements.filter(typeof(Package)) {
-		label PackageLabel for this
-		call DomainmodelPackageDiagram for this
-	}
 }

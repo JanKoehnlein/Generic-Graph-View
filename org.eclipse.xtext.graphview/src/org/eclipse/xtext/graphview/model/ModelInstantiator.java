@@ -218,6 +218,7 @@ public class ModelInstantiator {
 							semanticElement, parentInstance,
 							edgeEndMapping.getReferencedMapping(),
 							instanceCache);
+					edgeEndInstance.setVisibility(edgeInstance.getVisibility());
 					if (edgeEndInstance instanceof NodeInstance)
 						return (NodeInstance) edgeEndInstance;
 				}

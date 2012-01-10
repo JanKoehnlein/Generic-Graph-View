@@ -10,7 +10,8 @@ package org.eclipse.xtext.graphview.editpart;
 import java.util.List;
 
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.xtext.graphview.editpolicy.HideEditPolicy;
+import org.eclipse.gef.EditPolicy;
+import org.eclipse.xtext.graphview.editpolicy.InstanceComponentEditPolicy;
 import org.eclipse.xtext.graphview.editpolicy.RevealEditPolicy;
 import org.eclipse.xtext.graphview.instancemodel.EdgeInstance;
 import org.eclipse.xtext.graphview.instancemodel.NodeInstance;
@@ -28,7 +29,7 @@ public class NodeEditPart extends AbstractMappingEditPart {
 	private RapidButtonEditPolicy rapidButtonEditPolicy;
 
 	@Inject
-	private HideEditPolicy hideEditPolicy;
+	private InstanceComponentEditPolicy componentEditPolicy;
 
 	@Inject
 	private RevealEditPolicy revealEditPolicy;
@@ -37,7 +38,7 @@ public class NodeEditPart extends AbstractMappingEditPart {
 	protected void createEditPolicies() {
 		super.createEditPolicies();
 		installEditPolicy(RapidButtonEditPolicy.ROLE, rapidButtonEditPolicy);
-		installEditPolicy(HideEditPolicy.ROLE, hideEditPolicy);
+		installEditPolicy(EditPolicy.COMPONENT_ROLE, componentEditPolicy);
 		installEditPolicy(RevealEditPolicy.ROLE, revealEditPolicy);
 	}
 

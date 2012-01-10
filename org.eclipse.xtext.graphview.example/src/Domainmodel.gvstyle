@@ -2,11 +2,11 @@ import org.eclipse.xtext.graphview.shape.*
 import org.eclipse.xtext.graphview.layout.*  
 import org.eclipse.draw2d.*
 import org.eclipse.swt.SWT
-import DomainmodelPackageDiagram.*
+import DomainmodelEntityDiagram.*
 
-stylesheet DomainmodelPackageDiagram for DomainmodelPackageDiagram
+stylesheet DomainmodelPackageDiagram for DomainmodelEntityDiagram
 
-style DomainmodelPackageDiagram {
+style DomainmodelEntityDiagram {
 	autoLayoutManager = new KielerAutoLayout() 
 }
 

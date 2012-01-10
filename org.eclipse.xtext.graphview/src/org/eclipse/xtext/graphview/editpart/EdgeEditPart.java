@@ -15,7 +15,7 @@ import org.eclipse.gef.Request;
 import org.eclipse.gef.editparts.AbstractConnectionEditPart;
 import org.eclipse.gef.editpolicies.ConnectionEndpointEditPolicy;
 import org.eclipse.xtext.graphview.editpolicy.EdgeBendpointEditPolicy;
-import org.eclipse.xtext.graphview.editpolicy.HideEditPolicy;
+import org.eclipse.xtext.graphview.editpolicy.EdgeConnectionEditPolicy;
 import org.eclipse.xtext.graphview.instancemodel.AbstractInstance;
 import org.eclipse.xtext.graphview.instancemodel.Visibility;
 import org.eclipse.xtext.graphview.shape.ConnectionShape;
@@ -35,7 +35,7 @@ public class EdgeEditPart extends AbstractConnectionEditPart implements
 	private EdgeBendpointEditPolicy edgeBendpointEditPolicy;
 	
 	@Inject
-	private HideEditPolicy hideEditPolicy;
+	private EdgeConnectionEditPolicy edgeConnectionEditPolicy;
 	
 	@Inject 
 	private TransparencyHelper transparencyHelper;
@@ -62,7 +62,7 @@ public class EdgeEditPart extends AbstractConnectionEditPart implements
 				connectionEndpointEditPolicy);
 		installEditPolicy(EditPolicy.CONNECTION_BENDPOINTS_ROLE,
 				edgeBendpointEditPolicy);
-		installEditPolicy(HideEditPolicy.ROLE, hideEditPolicy);
+		installEditPolicy(EditPolicy.CONNECTION_ROLE, edgeConnectionEditPolicy);
 	}
 
 	@Override

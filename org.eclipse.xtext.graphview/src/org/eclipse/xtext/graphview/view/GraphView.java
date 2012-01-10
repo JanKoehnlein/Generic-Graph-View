@@ -9,13 +9,25 @@ package org.eclipse.xtext.graphview.view;
 
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.gef.GraphicalViewer;
+import org.eclipse.gef.KeyHandler;
+import org.eclipse.gef.KeyStroke;
 import org.eclipse.gef.editparts.ScalableFreeformRootEditPart;
 import org.eclipse.gef.editparts.ZoomManager;
+import org.eclipse.gef.ui.actions.ActionRegistry;
+import org.eclipse.gef.ui.actions.DeleteAction;
+import org.eclipse.gef.ui.actions.RedoAction;
+import org.eclipse.gef.ui.actions.SelectAllAction;
+import org.eclipse.gef.ui.actions.UndoAction;
 import org.eclipse.gef.ui.actions.ZoomComboContributionItem;
+import org.eclipse.gef.ui.parts.GraphicalViewerKeyHandler;
 import org.eclipse.gef.ui.parts.ScrollingGraphicalViewer;
+import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.action.IToolBarManager;
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.actions.ActionFactory;
 import org.eclipse.ui.part.ViewPart;
 import org.eclipse.xtext.graphview.editpart.GraphViewEditDomain;
 import org.eclipse.xtext.graphview.editpart.GraphViewEditPartFactory;
@@ -70,6 +82,8 @@ public class GraphView extends ViewPart {
 
 	private ZoomManager zoomManager;
 
+	private ActionRegistry actionRegistry;
+
 	@Override
 	public void createPartControl(Composite parent) {
 		graphicalViewer = createGraphicalViewer(parent);
@@ -92,11 +106,12 @@ public class GraphView extends ViewPart {
 		toolBarManager.add(refreshAction);
 		toolBarManager.add(exportToFileAction);
 		toolBarManager.add(selectDiagramConfigurationAction);
-		zoomContributionItem = new ZoomComboContributionItem(getSite().getPage(),
-				ZOOM_LEVELS) {
+		actionRegistry = createActionRegistry();
+		zoomContributionItem = new ZoomComboContributionItem(getSite()
+				.getPage(), ZOOM_LEVELS) {
 			@Override
 			public void setZoomManager(ZoomManager zm) {
-				if(zm == null)
+				if (zm == null)
 					return;
 				super.setZoomManager(zm);
 			}
@@ -105,6 +120,42 @@ public class GraphView extends ViewPart {
 		toolBarManager.add(zoomContributionItem);
 		refreshAction.setEnabled(false);
 		exportToFileAction.setEnabled(false);
+		graphicalViewer.setKeyHandler(new GraphicalViewerKeyHandler(
+				graphicalViewer).setParent(createActionKeyHandler()));
+	}
+
+	protected ActionRegistry createActionRegistry() {
+		ActionRegistry registry = new ActionRegistry();
+		IAction action;
+
+		action = new UndoAction(this);
+		registry.registerAction(action);
+
+		action = new RedoAction(this);
+		registry.registerAction(action);
+
+		action = new SelectAllAction(this);
+		registry.registerAction(action);
+
+		action = new DeleteAction((IWorkbenchPart) this);
+		registry.registerAction(action);
+
+		// action = new SaveAction(this);
+		// registry.registerAction(action);
+		//
+		// registry.registerAction(new PrintAction(this));
+		return registry;
+	}
+
+	protected KeyHandler createActionKeyHandler() {
+		KeyHandler actionKeyHandler = new KeyHandler();
+		actionKeyHandler.put(KeyStroke.getPressed(SWT.DEL, 127, 0),
+				actionRegistry.getAction(ActionFactory.DELETE.getId()));
+		actionKeyHandler.put(KeyStroke.getPressed('z', SWT.CTRL),
+				actionRegistry.getAction(ActionFactory.UNDO.getId()));
+		actionKeyHandler.put(KeyStroke.getPressed('z', SWT.SHIFT | SWT.CTRL),
+				actionRegistry.getAction(ActionFactory.REDO.getId()));
+		return actionKeyHandler;
 	}
 
 	protected GraphicalViewer createGraphicalViewer(Composite parent) {
@@ -122,6 +173,8 @@ public class GraphView extends ViewPart {
 
 	@Override
 	public void dispose() {
+		if (actionRegistry != null)
+			actionRegistry.dispose();
 		if (selectionConverter != null)
 			getSite().getWorkbenchWindow().getSelectionService()
 					.addPostSelectionListener(selectionConverter);

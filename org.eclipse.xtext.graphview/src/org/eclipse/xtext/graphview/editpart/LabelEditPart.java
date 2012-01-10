@@ -11,14 +11,22 @@ import java.lang.reflect.Method;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.gef.EditPart;
+import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
+import org.eclipse.xtext.graphview.editpolicy.InstanceComponentEditPolicy;
 import org.eclipse.xtext.graphview.shape.LabelShape;
 
+import com.google.inject.Inject;
+
 public class LabelEditPart extends AbstractMappingEditPart {
+
+	@Inject
+	private InstanceComponentEditPolicy componentEditPolicy;
 
 	@Override
 	protected void createEditPolicies() {
 		super.createEditPolicies();
+		installEditPolicy(EditPolicy.COMPONENT_ROLE, componentEditPolicy);
 	}
 
 	public IFigure createDefaultFigure() {

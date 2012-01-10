@@ -26,7 +26,7 @@ public class RapidButtonEditPolicy extends AbstractEditPolicy {
 	private List<AbstractRapidButton> buttons;
 
 	@Inject
-	private HideButton hideButton;
+	private DeleteButton deleteButton;
 	
 	@Inject
 	private RevealButton revealButton;
@@ -64,7 +64,7 @@ public class RapidButtonEditPolicy extends AbstractEditPolicy {
 			buttons = Lists.newArrayList();
 			if(getHost().hasHiddenEdge()) 
 				addButton(revealButton);
-			addButton(hideButton);
+			addButton(deleteButton);
 		}
 		return buttons;
 	}

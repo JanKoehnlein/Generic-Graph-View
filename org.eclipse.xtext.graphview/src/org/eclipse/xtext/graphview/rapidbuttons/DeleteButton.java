@@ -5,12 +5,13 @@ import java.util.List;
 import org.eclipse.gef.DragTracker;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.Request;
+import org.eclipse.gef.RequestConstants;
+import org.eclipse.gef.requests.GroupRequest;
 import org.eclipse.gef.tools.SimpleDragTracker;
-import org.eclipse.xtext.graphview.editpolicy.request.HideRequest;
 
 import com.google.common.collect.Lists;
 
-public class HideButton extends AbstractRapidButton {
+public class DeleteButton extends AbstractRapidButton {
 
 	@Override
 	protected DragTracker createDragTracker() {
@@ -23,13 +24,14 @@ public class HideButton extends AbstractRapidButton {
 			@SuppressWarnings("unchecked")
 			@Override
 			protected Request createSourceRequest() {
-				HideRequest hideRequest = new HideRequest();
+				GroupRequest deleteRequest = new GroupRequest();
+				deleteRequest.setType(RequestConstants.REQ_DELETE);
 				List<EditPart> editParts = Lists.newArrayList();
 				editParts.add(getEditPolicy().getHost());
 				editParts.addAll(getEditPolicy().getHost().getSourceConnections());
 				editParts.addAll(getEditPolicy().getHost().getTargetConnections());
-				hideRequest.setEditParts(editParts);
-				return hideRequest;
+				deleteRequest.setEditParts(editParts);
+				return deleteRequest;
 			}
 			
 			protected boolean handleButtonDown(int button) {
