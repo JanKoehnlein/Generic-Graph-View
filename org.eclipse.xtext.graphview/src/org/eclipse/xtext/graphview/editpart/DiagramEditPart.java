@@ -79,7 +79,7 @@ public class DiagramEditPart extends AbstractMappingEditPart {
 			Dimension size = ((DiagramShape) figure).getAutoLayoutManager()
 					.layout(figure);
 			if(!isRootDiagram())
-				viewport.setSize(size);
+				viewport.setPreferredSize(size);
 		}
 		if (isRootDiagram())
 			visibilityListener.register(this);

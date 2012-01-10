@@ -145,7 +145,7 @@ public class KielerAutoLayout extends AbstractAutoLayout {
 		AbstractLayoutProvider kielerLayoutProvider = ExtensionPointReader
 				.getLayoutProvider(layoutName);
 		kielerLayoutProvider.doLayout(rootNode, progressMonitor);
-		Rectangle containerBounds = new Rectangle();
+		Rectangle containerBounds = null;
 		for (Map.Entry<ILayoutNode, KNode> entry : childrenToNodes.entrySet()) {
 			KShapeLayout data = entry.getValue().getData(KShapeLayout.class);
 			if (data != null) {
@@ -153,7 +153,10 @@ public class KielerAutoLayout extends AbstractAutoLayout {
 						(int) data.getYpos(), (int) data.getWidth(),
 						(int) data.getHeight());
 				entry.getKey().setBounds(bounds);
-				containerBounds.union(bounds);
+				if(containerBounds == null)
+					containerBounds = bounds.getCopy();
+				else 
+					containerBounds.union(bounds);
 			}
 		}
 		for (Map.Entry<Connection, KEdge> entry : connectionToEdges.entrySet()) {
@@ -164,14 +167,17 @@ public class KielerAutoLayout extends AbstractAutoLayout {
 				for (KPoint bendPoint : edgeLayout.getBendPoints()) {
 					AbsoluteBendpoint gefBendPoint = new AbsoluteBendpoint(
 							(int) bendPoint.getX(), (int) bendPoint.getY());
-					gefBendPoints.add(gefBendPoint);
-					containerBounds.union(gefBendPoint);
+					gefBendPoints.add(gefBendPoint);				
+					if(containerBounds == null)
+						containerBounds = new Rectangle(gefBendPoint, new Dimension(0,0));
+					else 
+						containerBounds.union(gefBendPoint);
 				}
 				getConnectionRouter(container).setConstraint(entry.getKey(),
 						gefBendPoints);
 			}
 		}
-		return containerBounds.getSize().expand(16, 16);
+		return containerBounds.getSize().expand(2*containerBounds.x, 2*containerBounds.y);
 	}
 
 	protected KEdge createKEdge(KNode sourceNode, KNode targetNode) {
