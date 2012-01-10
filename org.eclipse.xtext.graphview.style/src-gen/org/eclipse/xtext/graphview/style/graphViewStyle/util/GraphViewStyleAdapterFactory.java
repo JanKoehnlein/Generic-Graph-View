@@ -7,13 +7,13 @@ package org.eclipse.xtext.graphview.style.graphViewStyle.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
+
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.xtext.graphview.style.graphViewStyle.GraphViewStylePackage;
-import org.eclipse.xtext.graphview.style.graphViewStyle.Import;
-import org.eclipse.xtext.graphview.style.graphViewStyle.Style;
-import org.eclipse.xtext.graphview.style.graphViewStyle.StyleSheet;
-import org.eclipse.xtext.graphview.style.graphViewStyle.XColorLiteral;
+
+import org.eclipse.xtext.graphview.style.graphViewStyle.*;
+
 import org.eclipse.xtext.xbase.XExpression;
 
 /**

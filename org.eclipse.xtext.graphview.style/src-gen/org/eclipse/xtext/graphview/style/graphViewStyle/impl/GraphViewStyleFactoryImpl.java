@@ -8,14 +8,12 @@ package org.eclipse.xtext.graphview.style.graphViewStyle.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.xtext.graphview.style.graphViewStyle.GraphViewStyleFactory;
-import org.eclipse.xtext.graphview.style.graphViewStyle.GraphViewStylePackage;
-import org.eclipse.xtext.graphview.style.graphViewStyle.Import;
-import org.eclipse.xtext.graphview.style.graphViewStyle.Style;
-import org.eclipse.xtext.graphview.style.graphViewStyle.StyleSheet;
-import org.eclipse.xtext.graphview.style.graphViewStyle.XColorLiteral;
+
+import org.eclipse.xtext.graphview.style.graphViewStyle.*;
 
 /**
  * <!-- begin-user-doc -->

@@ -1,5 +1,7 @@
 package org.eclipse.xtext.graphview.style.serializer;
 
+import com.google.inject.Inject;
+import com.google.inject.Provider;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.common.types.JvmFormalParameter;
 import org.eclipse.xtext.common.types.JvmGenericArrayTypeReference;
@@ -55,9 +57,6 @@ import org.eclipse.xtext.xbase.XbasePackage;
 import org.eclipse.xtext.xbase.serializer.XbaseSemanticSequencer;
 import org.eclipse.xtext.xtype.XFunctionTypeRef;
 import org.eclipse.xtext.xtype.XtypePackage;
-
-import com.google.inject.Inject;
-import com.google.inject.Provider;
 
 @SuppressWarnings("restriction")
 public class AbstractGraphViewStyleSemanticSequencer extends AbstractSemanticSequencer {
