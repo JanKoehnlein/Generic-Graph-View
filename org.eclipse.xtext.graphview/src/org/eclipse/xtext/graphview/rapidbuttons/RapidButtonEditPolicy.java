@@ -100,4 +100,13 @@ public class RapidButtonEditPolicy extends AbstractEditPolicy {
 	public AbstractMappingEditPart getHost() {
 		return (AbstractMappingEditPart) super.getHost();
 	}
+
+	@Override
+	public void deactivate() {
+		if (buttons != null) {
+			for (AbstractRapidButton button : getRapidButtons())
+				getHandleLayer().remove(button);
+		}
+		super.deactivate();
+	}
 }

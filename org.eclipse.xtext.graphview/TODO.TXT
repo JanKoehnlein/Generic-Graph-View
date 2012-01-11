@@ -6,7 +6,6 @@ View
 - drill down UI
 - better element selection strategy
 - multiple diagrams
-- reset scrollbars on input change
 - context menu
 
 Mapping DSL
@@ -22,3 +21,4 @@ DONE
 - resize / move elements in subdiagrams
 - relayout button
 - nicer placement of rapid buttons
+- reset scrollbars on input change
