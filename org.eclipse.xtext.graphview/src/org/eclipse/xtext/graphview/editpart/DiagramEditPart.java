@@ -16,6 +16,8 @@ import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.LayerConstants;
 import org.eclipse.gef.RootEditPart;
 import org.eclipse.xtext.graphview.editpolicy.DiagramLayoutEditPolicy;
+import org.eclipse.xtext.graphview.editpolicy.InstanceComponentEditPolicy;
+import org.eclipse.xtext.graphview.rapidbuttons.RapidButtonEditPolicy;
 import org.eclipse.xtext.graphview.shape.DiagramShape;
 
 import com.google.inject.Inject;
@@ -28,6 +30,12 @@ public class DiagramEditPart extends AbstractInstanceEditPart {
 	@Inject
 	private VisibilityListener visibilityListener;
 
+	@Inject
+	private InstanceComponentEditPolicy componentEditPolicy;
+
+	@Inject
+	private RapidButtonEditPolicy rapidButtonEditPolicy;
+	
 	private IFigure contentPane;
 
 	private FreeformViewport viewport;
@@ -36,6 +44,10 @@ public class DiagramEditPart extends AbstractInstanceEditPart {
 	protected void createEditPolicies() {
 		super.createEditPolicies();
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, diagramLayoutEditPolicy);
+		if(!isRootDiagram()) {
+			installEditPolicy(EditPolicy.COMPONENT_ROLE, componentEditPolicy);
+			installEditPolicy(RapidButtonEditPolicy.ROLE, rapidButtonEditPolicy);
+		}
 	}
 
 	@Override
@@ -84,9 +96,10 @@ public class DiagramEditPart extends AbstractInstanceEditPart {
 		if (figure instanceof DiagramShape) {
 			Dimension size = ((DiagramShape) figure).getAutoLayoutManager()
 					.layout(figure);
-			if(!isRootDiagram())
+			if(!isRootDiagram()) {
+				viewport.setMinimumSize(size);
 				viewport.setPreferredSize(size);
-			((DiagramShape) figure).fireExtentChanged();
+			}
 		}
 	}
 
