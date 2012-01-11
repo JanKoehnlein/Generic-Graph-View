@@ -22,7 +22,7 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'diagram'", "'type'", "'{'", "'}'", "'unless'", "'import'", "'.'", "'*'", "'reveal'", "'node'", "'for'", "'each'", "'label'", "'edge'", "'=>'", "'ref'", "'call'", "'='", "'+='", "'||'", "'&&'", "'=='", "'!='", "'instanceof'", "'>='", "'<='", "'>'", "'<'", "'->'", "'..'", "'+'", "'-'", "'**'", "'/'", "'%'", "'!'", "'as'", "'?.'", "'*.'", "','", "'('", "')'", "'['", "'|'", "']'", "';'", "'if'", "'else'", "'switch'", "':'", "'default'", "'case'", "'while'", "'do'", "'var'", "'val'", "'super'", "'::'", "'new'", "'false'", "'true'", "'null'", "'typeof'", "'throw'", "'return'", "'try'", "'finally'", "'catch'", "'?'", "'extends'", "'&'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'diagram'", "'type'", "'{'", "'}'", "'unless'", "'import'", "'.'", "'*'", "'hidden'", "'node'", "'for'", "'each'", "'label'", "'edge'", "'=>'", "'ref'", "'call'", "'='", "'+='", "'||'", "'&&'", "'=='", "'!='", "'instanceof'", "'>='", "'<='", "'>'", "'<'", "'->'", "'..'", "'+'", "'-'", "'**'", "'/'", "'%'", "'!'", "'as'", "'?.'", "'*.'", "','", "'('", "')'", "'['", "'|'", "']'", "';'", "'if'", "'else'", "'switch'", "':'", "'default'", "'case'", "'while'", "'do'", "'var'", "'val'", "'super'", "'::'", "'new'", "'false'", "'true'", "'null'", "'typeof'", "'throw'", "'return'", "'try'", "'finally'", "'catch'", "'?'", "'extends'", "'&'"
     };
     public static final int T__68=68;
     public static final int T__69=69;
@@ -1020,11 +1020,11 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "ruleNodeMapping"
-    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:354:1: ruleNodeMapping returns [EObject current=null] : ( ( (lv_reveal_0_0= 'reveal' ) )? otherlv_1= 'node' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'for' ( (lv_multi_4_0= 'each' ) )? ( (lv_expression_5_0= ruleXExpression ) ) otherlv_6= '{' ( (lv_mappings_7_0= ruleAbstractExpressionMapping ) )* otherlv_8= '}' (otherlv_9= 'unless' ( (lv_unlessCondition_10_0= ruleXExpression ) ) )? ) ;
+    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:354:1: ruleNodeMapping returns [EObject current=null] : ( ( (lv_hidden_0_0= 'hidden' ) )? otherlv_1= 'node' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'for' ( (lv_multi_4_0= 'each' ) )? ( (lv_expression_5_0= ruleXExpression ) ) otherlv_6= '{' ( (lv_mappings_7_0= ruleAbstractExpressionMapping ) )* otherlv_8= '}' (otherlv_9= 'unless' ( (lv_unlessCondition_10_0= ruleXExpression ) ) )? ) ;
     public final EObject ruleNodeMapping() throws RecognitionException {
         EObject current = null;
 
-        Token lv_reveal_0_0=null;
+        Token lv_hidden_0_0=null;
         Token otherlv_1=null;
         Token lv_name_2_0=null;
         Token otherlv_3=null;
@@ -1042,13 +1042,13 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
          enterRule(); 
             
         try {
-            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:357:28: ( ( ( (lv_reveal_0_0= 'reveal' ) )? otherlv_1= 'node' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'for' ( (lv_multi_4_0= 'each' ) )? ( (lv_expression_5_0= ruleXExpression ) ) otherlv_6= '{' ( (lv_mappings_7_0= ruleAbstractExpressionMapping ) )* otherlv_8= '}' (otherlv_9= 'unless' ( (lv_unlessCondition_10_0= ruleXExpression ) ) )? ) )
-            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:358:1: ( ( (lv_reveal_0_0= 'reveal' ) )? otherlv_1= 'node' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'for' ( (lv_multi_4_0= 'each' ) )? ( (lv_expression_5_0= ruleXExpression ) ) otherlv_6= '{' ( (lv_mappings_7_0= ruleAbstractExpressionMapping ) )* otherlv_8= '}' (otherlv_9= 'unless' ( (lv_unlessCondition_10_0= ruleXExpression ) ) )? )
+            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:357:28: ( ( ( (lv_hidden_0_0= 'hidden' ) )? otherlv_1= 'node' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'for' ( (lv_multi_4_0= 'each' ) )? ( (lv_expression_5_0= ruleXExpression ) ) otherlv_6= '{' ( (lv_mappings_7_0= ruleAbstractExpressionMapping ) )* otherlv_8= '}' (otherlv_9= 'unless' ( (lv_unlessCondition_10_0= ruleXExpression ) ) )? ) )
+            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:358:1: ( ( (lv_hidden_0_0= 'hidden' ) )? otherlv_1= 'node' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'for' ( (lv_multi_4_0= 'each' ) )? ( (lv_expression_5_0= ruleXExpression ) ) otherlv_6= '{' ( (lv_mappings_7_0= ruleAbstractExpressionMapping ) )* otherlv_8= '}' (otherlv_9= 'unless' ( (lv_unlessCondition_10_0= ruleXExpression ) ) )? )
             {
-            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:358:1: ( ( (lv_reveal_0_0= 'reveal' ) )? otherlv_1= 'node' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'for' ( (lv_multi_4_0= 'each' ) )? ( (lv_expression_5_0= ruleXExpression ) ) otherlv_6= '{' ( (lv_mappings_7_0= ruleAbstractExpressionMapping ) )* otherlv_8= '}' (otherlv_9= 'unless' ( (lv_unlessCondition_10_0= ruleXExpression ) ) )? )
-            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:358:2: ( (lv_reveal_0_0= 'reveal' ) )? otherlv_1= 'node' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'for' ( (lv_multi_4_0= 'each' ) )? ( (lv_expression_5_0= ruleXExpression ) ) otherlv_6= '{' ( (lv_mappings_7_0= ruleAbstractExpressionMapping ) )* otherlv_8= '}' (otherlv_9= 'unless' ( (lv_unlessCondition_10_0= ruleXExpression ) ) )?
+            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:358:1: ( ( (lv_hidden_0_0= 'hidden' ) )? otherlv_1= 'node' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'for' ( (lv_multi_4_0= 'each' ) )? ( (lv_expression_5_0= ruleXExpression ) ) otherlv_6= '{' ( (lv_mappings_7_0= ruleAbstractExpressionMapping ) )* otherlv_8= '}' (otherlv_9= 'unless' ( (lv_unlessCondition_10_0= ruleXExpression ) ) )? )
+            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:358:2: ( (lv_hidden_0_0= 'hidden' ) )? otherlv_1= 'node' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'for' ( (lv_multi_4_0= 'each' ) )? ( (lv_expression_5_0= ruleXExpression ) ) otherlv_6= '{' ( (lv_mappings_7_0= ruleAbstractExpressionMapping ) )* otherlv_8= '}' (otherlv_9= 'unless' ( (lv_unlessCondition_10_0= ruleXExpression ) ) )?
             {
-            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:358:2: ( (lv_reveal_0_0= 'reveal' ) )?
+            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:358:2: ( (lv_hidden_0_0= 'hidden' ) )?
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -1057,15 +1057,15 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
             }
             switch (alt6) {
                 case 1 :
-                    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:359:1: (lv_reveal_0_0= 'reveal' )
+                    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:359:1: (lv_hidden_0_0= 'hidden' )
                     {
-                    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:359:1: (lv_reveal_0_0= 'reveal' )
-                    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:360:3: lv_reveal_0_0= 'reveal'
+                    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:359:1: (lv_hidden_0_0= 'hidden' )
+                    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:360:3: lv_hidden_0_0= 'hidden'
                     {
-                    lv_reveal_0_0=(Token)match(input,19,FOLLOW_19_in_ruleNodeMapping779); if (state.failed) return current;
+                    lv_hidden_0_0=(Token)match(input,19,FOLLOW_19_in_ruleNodeMapping779); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                              newLeafNode(lv_reveal_0_0, grammarAccess.getNodeMappingAccess().getRevealRevealKeyword_0_0());
+                              newLeafNode(lv_hidden_0_0, grammarAccess.getNodeMappingAccess().getHiddenHiddenKeyword_0_0());
                           
                     }
                     if ( state.backtracking==0 ) {
@@ -1073,7 +1073,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                       	        if (current==null) {
                       	            current = createModelElement(grammarAccess.getNodeMappingRule());
                       	        }
-                             		setWithLastConsumed(current, "reveal", true, "reveal");
+                             		setWithLastConsumed(current, "hidden", true, "hidden");
                       	    
                     }
 
@@ -1385,11 +1385,11 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "ruleLabelMapping"
-    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:497:1: ruleLabelMapping returns [EObject current=null] : ( ( (lv_reveal_0_0= 'reveal' ) )? otherlv_1= 'label' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'for' ( (lv_multi_4_0= 'each' ) )? ( (lv_expression_5_0= ruleXExpression ) ) (otherlv_6= 'unless' ( (lv_unlessCondition_7_0= ruleXExpression ) ) )? ) ;
+    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:497:1: ruleLabelMapping returns [EObject current=null] : ( ( (lv_hidden_0_0= 'hidden' ) )? otherlv_1= 'label' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'for' ( (lv_multi_4_0= 'each' ) )? ( (lv_expression_5_0= ruleXExpression ) ) (otherlv_6= 'unless' ( (lv_unlessCondition_7_0= ruleXExpression ) ) )? ) ;
     public final EObject ruleLabelMapping() throws RecognitionException {
         EObject current = null;
 
-        Token lv_reveal_0_0=null;
+        Token lv_hidden_0_0=null;
         Token otherlv_1=null;
         Token lv_name_2_0=null;
         Token otherlv_3=null;
@@ -1403,13 +1403,13 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
          enterRule(); 
             
         try {
-            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:500:28: ( ( ( (lv_reveal_0_0= 'reveal' ) )? otherlv_1= 'label' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'for' ( (lv_multi_4_0= 'each' ) )? ( (lv_expression_5_0= ruleXExpression ) ) (otherlv_6= 'unless' ( (lv_unlessCondition_7_0= ruleXExpression ) ) )? ) )
-            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:501:1: ( ( (lv_reveal_0_0= 'reveal' ) )? otherlv_1= 'label' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'for' ( (lv_multi_4_0= 'each' ) )? ( (lv_expression_5_0= ruleXExpression ) ) (otherlv_6= 'unless' ( (lv_unlessCondition_7_0= ruleXExpression ) ) )? )
+            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:500:28: ( ( ( (lv_hidden_0_0= 'hidden' ) )? otherlv_1= 'label' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'for' ( (lv_multi_4_0= 'each' ) )? ( (lv_expression_5_0= ruleXExpression ) ) (otherlv_6= 'unless' ( (lv_unlessCondition_7_0= ruleXExpression ) ) )? ) )
+            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:501:1: ( ( (lv_hidden_0_0= 'hidden' ) )? otherlv_1= 'label' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'for' ( (lv_multi_4_0= 'each' ) )? ( (lv_expression_5_0= ruleXExpression ) ) (otherlv_6= 'unless' ( (lv_unlessCondition_7_0= ruleXExpression ) ) )? )
             {
-            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:501:1: ( ( (lv_reveal_0_0= 'reveal' ) )? otherlv_1= 'label' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'for' ( (lv_multi_4_0= 'each' ) )? ( (lv_expression_5_0= ruleXExpression ) ) (otherlv_6= 'unless' ( (lv_unlessCondition_7_0= ruleXExpression ) ) )? )
-            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:501:2: ( (lv_reveal_0_0= 'reveal' ) )? otherlv_1= 'label' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'for' ( (lv_multi_4_0= 'each' ) )? ( (lv_expression_5_0= ruleXExpression ) ) (otherlv_6= 'unless' ( (lv_unlessCondition_7_0= ruleXExpression ) ) )?
+            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:501:1: ( ( (lv_hidden_0_0= 'hidden' ) )? otherlv_1= 'label' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'for' ( (lv_multi_4_0= 'each' ) )? ( (lv_expression_5_0= ruleXExpression ) ) (otherlv_6= 'unless' ( (lv_unlessCondition_7_0= ruleXExpression ) ) )? )
+            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:501:2: ( (lv_hidden_0_0= 'hidden' ) )? otherlv_1= 'label' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'for' ( (lv_multi_4_0= 'each' ) )? ( (lv_expression_5_0= ruleXExpression ) ) (otherlv_6= 'unless' ( (lv_unlessCondition_7_0= ruleXExpression ) ) )?
             {
-            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:501:2: ( (lv_reveal_0_0= 'reveal' ) )?
+            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:501:2: ( (lv_hidden_0_0= 'hidden' ) )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1418,15 +1418,15 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
             }
             switch (alt10) {
                 case 1 :
-                    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:502:1: (lv_reveal_0_0= 'reveal' )
+                    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:502:1: (lv_hidden_0_0= 'hidden' )
                     {
-                    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:502:1: (lv_reveal_0_0= 'reveal' )
-                    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:503:3: lv_reveal_0_0= 'reveal'
+                    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:502:1: (lv_hidden_0_0= 'hidden' )
+                    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:503:3: lv_hidden_0_0= 'hidden'
                     {
-                    lv_reveal_0_0=(Token)match(input,19,FOLLOW_19_in_ruleLabelMapping1063); if (state.failed) return current;
+                    lv_hidden_0_0=(Token)match(input,19,FOLLOW_19_in_ruleLabelMapping1063); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                              newLeafNode(lv_reveal_0_0, grammarAccess.getLabelMappingAccess().getRevealRevealKeyword_0_0());
+                              newLeafNode(lv_hidden_0_0, grammarAccess.getLabelMappingAccess().getHiddenHiddenKeyword_0_0());
                           
                     }
                     if ( state.backtracking==0 ) {
@@ -1434,7 +1434,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                       	        if (current==null) {
                       	            current = createModelElement(grammarAccess.getLabelMappingRule());
                       	        }
-                             		setWithLastConsumed(current, "reveal", true, "reveal");
+                             		setWithLastConsumed(current, "hidden", true, "hidden");
                       	    
                     }
 
@@ -1681,11 +1681,11 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "ruleEdgeMapping"
-    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:614:1: ruleEdgeMapping returns [EObject current=null] : ( ( (lv_reveal_0_0= 'reveal' ) )? otherlv_1= 'edge' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'for' ( (lv_multi_4_0= 'each' ) )? ( (lv_expression_5_0= ruleXExpression ) ) otherlv_6= '{' ( (lv_sourceMapping_7_0= ruleEdgeEndMapping ) )? otherlv_8= '=>' ( (lv_targetMapping_9_0= ruleEdgeEndMapping ) )? ( (lv_mappings_10_0= ruleLabelMapping ) )* otherlv_11= '}' (otherlv_12= 'unless' ( (lv_unlessCondition_13_0= ruleXExpression ) ) )? ) ;
+    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:614:1: ruleEdgeMapping returns [EObject current=null] : ( ( (lv_hidden_0_0= 'hidden' ) )? otherlv_1= 'edge' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'for' ( (lv_multi_4_0= 'each' ) )? ( (lv_expression_5_0= ruleXExpression ) ) otherlv_6= '{' ( (lv_sourceMapping_7_0= ruleEdgeEndMapping ) )? otherlv_8= '=>' ( (lv_targetMapping_9_0= ruleEdgeEndMapping ) )? ( (lv_mappings_10_0= ruleLabelMapping ) )* otherlv_11= '}' (otherlv_12= 'unless' ( (lv_unlessCondition_13_0= ruleXExpression ) ) )? ) ;
     public final EObject ruleEdgeMapping() throws RecognitionException {
         EObject current = null;
 
-        Token lv_reveal_0_0=null;
+        Token lv_hidden_0_0=null;
         Token otherlv_1=null;
         Token lv_name_2_0=null;
         Token otherlv_3=null;
@@ -1708,13 +1708,13 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
          enterRule(); 
             
         try {
-            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:617:28: ( ( ( (lv_reveal_0_0= 'reveal' ) )? otherlv_1= 'edge' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'for' ( (lv_multi_4_0= 'each' ) )? ( (lv_expression_5_0= ruleXExpression ) ) otherlv_6= '{' ( (lv_sourceMapping_7_0= ruleEdgeEndMapping ) )? otherlv_8= '=>' ( (lv_targetMapping_9_0= ruleEdgeEndMapping ) )? ( (lv_mappings_10_0= ruleLabelMapping ) )* otherlv_11= '}' (otherlv_12= 'unless' ( (lv_unlessCondition_13_0= ruleXExpression ) ) )? ) )
-            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:618:1: ( ( (lv_reveal_0_0= 'reveal' ) )? otherlv_1= 'edge' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'for' ( (lv_multi_4_0= 'each' ) )? ( (lv_expression_5_0= ruleXExpression ) ) otherlv_6= '{' ( (lv_sourceMapping_7_0= ruleEdgeEndMapping ) )? otherlv_8= '=>' ( (lv_targetMapping_9_0= ruleEdgeEndMapping ) )? ( (lv_mappings_10_0= ruleLabelMapping ) )* otherlv_11= '}' (otherlv_12= 'unless' ( (lv_unlessCondition_13_0= ruleXExpression ) ) )? )
+            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:617:28: ( ( ( (lv_hidden_0_0= 'hidden' ) )? otherlv_1= 'edge' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'for' ( (lv_multi_4_0= 'each' ) )? ( (lv_expression_5_0= ruleXExpression ) ) otherlv_6= '{' ( (lv_sourceMapping_7_0= ruleEdgeEndMapping ) )? otherlv_8= '=>' ( (lv_targetMapping_9_0= ruleEdgeEndMapping ) )? ( (lv_mappings_10_0= ruleLabelMapping ) )* otherlv_11= '}' (otherlv_12= 'unless' ( (lv_unlessCondition_13_0= ruleXExpression ) ) )? ) )
+            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:618:1: ( ( (lv_hidden_0_0= 'hidden' ) )? otherlv_1= 'edge' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'for' ( (lv_multi_4_0= 'each' ) )? ( (lv_expression_5_0= ruleXExpression ) ) otherlv_6= '{' ( (lv_sourceMapping_7_0= ruleEdgeEndMapping ) )? otherlv_8= '=>' ( (lv_targetMapping_9_0= ruleEdgeEndMapping ) )? ( (lv_mappings_10_0= ruleLabelMapping ) )* otherlv_11= '}' (otherlv_12= 'unless' ( (lv_unlessCondition_13_0= ruleXExpression ) ) )? )
             {
-            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:618:1: ( ( (lv_reveal_0_0= 'reveal' ) )? otherlv_1= 'edge' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'for' ( (lv_multi_4_0= 'each' ) )? ( (lv_expression_5_0= ruleXExpression ) ) otherlv_6= '{' ( (lv_sourceMapping_7_0= ruleEdgeEndMapping ) )? otherlv_8= '=>' ( (lv_targetMapping_9_0= ruleEdgeEndMapping ) )? ( (lv_mappings_10_0= ruleLabelMapping ) )* otherlv_11= '}' (otherlv_12= 'unless' ( (lv_unlessCondition_13_0= ruleXExpression ) ) )? )
-            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:618:2: ( (lv_reveal_0_0= 'reveal' ) )? otherlv_1= 'edge' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'for' ( (lv_multi_4_0= 'each' ) )? ( (lv_expression_5_0= ruleXExpression ) ) otherlv_6= '{' ( (lv_sourceMapping_7_0= ruleEdgeEndMapping ) )? otherlv_8= '=>' ( (lv_targetMapping_9_0= ruleEdgeEndMapping ) )? ( (lv_mappings_10_0= ruleLabelMapping ) )* otherlv_11= '}' (otherlv_12= 'unless' ( (lv_unlessCondition_13_0= ruleXExpression ) ) )?
+            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:618:1: ( ( (lv_hidden_0_0= 'hidden' ) )? otherlv_1= 'edge' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'for' ( (lv_multi_4_0= 'each' ) )? ( (lv_expression_5_0= ruleXExpression ) ) otherlv_6= '{' ( (lv_sourceMapping_7_0= ruleEdgeEndMapping ) )? otherlv_8= '=>' ( (lv_targetMapping_9_0= ruleEdgeEndMapping ) )? ( (lv_mappings_10_0= ruleLabelMapping ) )* otherlv_11= '}' (otherlv_12= 'unless' ( (lv_unlessCondition_13_0= ruleXExpression ) ) )? )
+            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:618:2: ( (lv_hidden_0_0= 'hidden' ) )? otherlv_1= 'edge' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'for' ( (lv_multi_4_0= 'each' ) )? ( (lv_expression_5_0= ruleXExpression ) ) otherlv_6= '{' ( (lv_sourceMapping_7_0= ruleEdgeEndMapping ) )? otherlv_8= '=>' ( (lv_targetMapping_9_0= ruleEdgeEndMapping ) )? ( (lv_mappings_10_0= ruleLabelMapping ) )* otherlv_11= '}' (otherlv_12= 'unless' ( (lv_unlessCondition_13_0= ruleXExpression ) ) )?
             {
-            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:618:2: ( (lv_reveal_0_0= 'reveal' ) )?
+            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:618:2: ( (lv_hidden_0_0= 'hidden' ) )?
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -1723,15 +1723,15 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
             }
             switch (alt13) {
                 case 1 :
-                    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:619:1: (lv_reveal_0_0= 'reveal' )
+                    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:619:1: (lv_hidden_0_0= 'hidden' )
                     {
-                    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:619:1: (lv_reveal_0_0= 'reveal' )
-                    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:620:3: lv_reveal_0_0= 'reveal'
+                    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:619:1: (lv_hidden_0_0= 'hidden' )
+                    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:620:3: lv_hidden_0_0= 'hidden'
                     {
-                    lv_reveal_0_0=(Token)match(input,19,FOLLOW_19_in_ruleEdgeMapping1301); if (state.failed) return current;
+                    lv_hidden_0_0=(Token)match(input,19,FOLLOW_19_in_ruleEdgeMapping1301); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                              newLeafNode(lv_reveal_0_0, grammarAccess.getEdgeMappingAccess().getRevealRevealKeyword_0_0());
+                              newLeafNode(lv_hidden_0_0, grammarAccess.getEdgeMappingAccess().getHiddenHiddenKeyword_0_0());
                           
                     }
                     if ( state.backtracking==0 ) {
@@ -1739,7 +1739,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                       	        if (current==null) {
                       	            current = createModelElement(grammarAccess.getEdgeMappingRule());
                       	        }
-                             		setWithLastConsumed(current, "reveal", true, "reveal");
+                             		setWithLastConsumed(current, "hidden", true, "hidden");
                       	    
                     }
 
@@ -2363,11 +2363,11 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "ruleMappingCall"
-    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:873:1: ruleMappingCall returns [EObject current=null] : ( ( (lv_reveal_0_0= 'reveal' ) )? otherlv_1= 'call' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'for' ( (lv_multi_4_0= 'each' ) )? ( (lv_expression_5_0= ruleXExpression ) ) (otherlv_6= 'unless' ( (lv_unlessCondition_7_0= ruleXExpression ) ) )? ) ;
+    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:873:1: ruleMappingCall returns [EObject current=null] : ( ( (lv_hidden_0_0= 'hidden' ) )? otherlv_1= 'call' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'for' ( (lv_multi_4_0= 'each' ) )? ( (lv_expression_5_0= ruleXExpression ) ) (otherlv_6= 'unless' ( (lv_unlessCondition_7_0= ruleXExpression ) ) )? ) ;
     public final EObject ruleMappingCall() throws RecognitionException {
         EObject current = null;
 
-        Token lv_reveal_0_0=null;
+        Token lv_hidden_0_0=null;
         Token otherlv_1=null;
         Token otherlv_2=null;
         Token otherlv_3=null;
@@ -2381,13 +2381,13 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
          enterRule(); 
             
         try {
-            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:876:28: ( ( ( (lv_reveal_0_0= 'reveal' ) )? otherlv_1= 'call' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'for' ( (lv_multi_4_0= 'each' ) )? ( (lv_expression_5_0= ruleXExpression ) ) (otherlv_6= 'unless' ( (lv_unlessCondition_7_0= ruleXExpression ) ) )? ) )
-            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:877:1: ( ( (lv_reveal_0_0= 'reveal' ) )? otherlv_1= 'call' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'for' ( (lv_multi_4_0= 'each' ) )? ( (lv_expression_5_0= ruleXExpression ) ) (otherlv_6= 'unless' ( (lv_unlessCondition_7_0= ruleXExpression ) ) )? )
+            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:876:28: ( ( ( (lv_hidden_0_0= 'hidden' ) )? otherlv_1= 'call' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'for' ( (lv_multi_4_0= 'each' ) )? ( (lv_expression_5_0= ruleXExpression ) ) (otherlv_6= 'unless' ( (lv_unlessCondition_7_0= ruleXExpression ) ) )? ) )
+            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:877:1: ( ( (lv_hidden_0_0= 'hidden' ) )? otherlv_1= 'call' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'for' ( (lv_multi_4_0= 'each' ) )? ( (lv_expression_5_0= ruleXExpression ) ) (otherlv_6= 'unless' ( (lv_unlessCondition_7_0= ruleXExpression ) ) )? )
             {
-            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:877:1: ( ( (lv_reveal_0_0= 'reveal' ) )? otherlv_1= 'call' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'for' ( (lv_multi_4_0= 'each' ) )? ( (lv_expression_5_0= ruleXExpression ) ) (otherlv_6= 'unless' ( (lv_unlessCondition_7_0= ruleXExpression ) ) )? )
-            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:877:2: ( (lv_reveal_0_0= 'reveal' ) )? otherlv_1= 'call' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'for' ( (lv_multi_4_0= 'each' ) )? ( (lv_expression_5_0= ruleXExpression ) ) (otherlv_6= 'unless' ( (lv_unlessCondition_7_0= ruleXExpression ) ) )?
+            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:877:1: ( ( (lv_hidden_0_0= 'hidden' ) )? otherlv_1= 'call' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'for' ( (lv_multi_4_0= 'each' ) )? ( (lv_expression_5_0= ruleXExpression ) ) (otherlv_6= 'unless' ( (lv_unlessCondition_7_0= ruleXExpression ) ) )? )
+            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:877:2: ( (lv_hidden_0_0= 'hidden' ) )? otherlv_1= 'call' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'for' ( (lv_multi_4_0= 'each' ) )? ( (lv_expression_5_0= ruleXExpression ) ) (otherlv_6= 'unless' ( (lv_unlessCondition_7_0= ruleXExpression ) ) )?
             {
-            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:877:2: ( (lv_reveal_0_0= 'reveal' ) )?
+            // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:877:2: ( (lv_hidden_0_0= 'hidden' ) )?
             int alt20=2;
             int LA20_0 = input.LA(1);
 
@@ -2396,15 +2396,15 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
             }
             switch (alt20) {
                 case 1 :
-                    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:878:1: (lv_reveal_0_0= 'reveal' )
+                    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:878:1: (lv_hidden_0_0= 'hidden' )
                     {
-                    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:878:1: (lv_reveal_0_0= 'reveal' )
-                    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:879:3: lv_reveal_0_0= 'reveal'
+                    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:878:1: (lv_hidden_0_0= 'hidden' )
+                    // ../org.eclipse.xtext.graphview.map/src-gen/org/eclipse/xtext/graphview/map/parser/antlr/internal/InternalGraphViewMapping.g:879:3: lv_hidden_0_0= 'hidden'
                     {
-                    lv_reveal_0_0=(Token)match(input,19,FOLLOW_19_in_ruleMappingCall1816); if (state.failed) return current;
+                    lv_hidden_0_0=(Token)match(input,19,FOLLOW_19_in_ruleMappingCall1816); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                              newLeafNode(lv_reveal_0_0, grammarAccess.getMappingCallAccess().getRevealRevealKeyword_0_0());
+                              newLeafNode(lv_hidden_0_0, grammarAccess.getMappingCallAccess().getHiddenHiddenKeyword_0_0());
                           
                     }
                     if ( state.backtracking==0 ) {
@@ -2412,7 +2412,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalAntlrParser 
                       	        if (current==null) {
                       	            current = createModelElement(grammarAccess.getMappingCallRule());
                       	        }
-                             		setWithLastConsumed(current, "reveal", true, "reveal");
+                             		setWithLastConsumed(current, "hidden", true, "hidden");
                       	    
                     }
 

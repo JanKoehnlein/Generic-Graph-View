@@ -18,4 +18,5 @@ public interface IInstanceModelEditPart extends GraphicalEditPart {
 	AbstractInstance getModel();
 	
 	void setTransparent(boolean isTransparent);
+	
 }

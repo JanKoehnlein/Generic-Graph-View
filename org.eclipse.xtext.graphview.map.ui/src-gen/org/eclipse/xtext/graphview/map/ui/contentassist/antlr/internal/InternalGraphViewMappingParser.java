@@ -23,7 +23,7 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalGraphViewMappingParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'='", "'+='", "'||'", "'&&'", "'ref'", "'=='", "'!='", "'>='", "'<='", "'>'", "'<'", "'->'", "'..'", "'+'", "'-'", "'*'", "'**'", "'/'", "'%'", "'!'", "'.'", "'val'", "'super'", "'false'", "'diagram'", "'type'", "'{'", "'}'", "'unless'", "'import'", "'node'", "'for'", "'label'", "'edge'", "'=>'", "'call'", "'instanceof'", "'as'", "','", "')'", "'['", "']'", "';'", "'('", "'if'", "'else'", "'switch'", "':'", "'default'", "'case'", "'while'", "'do'", "'::'", "'new'", "'null'", "'typeof'", "'throw'", "'return'", "'try'", "'finally'", "'catch'", "'?'", "'extends'", "'&'", "'reveal'", "'each'", "'?.'", "'*.'", "'|'", "'var'", "'true'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'='", "'+='", "'||'", "'&&'", "'ref'", "'=='", "'!='", "'>='", "'<='", "'>'", "'<'", "'->'", "'..'", "'+'", "'-'", "'*'", "'**'", "'/'", "'%'", "'!'", "'.'", "'val'", "'super'", "'false'", "'diagram'", "'type'", "'{'", "'}'", "'unless'", "'import'", "'node'", "'for'", "'label'", "'edge'", "'=>'", "'call'", "'instanceof'", "'as'", "','", "')'", "'['", "']'", "';'", "'('", "'if'", "'else'", "'switch'", "':'", "'default'", "'case'", "'while'", "'do'", "'::'", "'new'", "'null'", "'typeof'", "'throw'", "'return'", "'try'", "'finally'", "'catch'", "'?'", "'extends'", "'&'", "'hidden'", "'each'", "'?.'", "'*.'", "'|'", "'var'", "'true'"
     };
     public static final int T__68=68;
     public static final int T__69=69;
@@ -10839,22 +10839,22 @@ public class InternalGraphViewMappingParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__NodeMapping__Group__0__Impl"
-    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:3395:1: rule__NodeMapping__Group__0__Impl : ( ( rule__NodeMapping__RevealAssignment_0 )? ) ;
+    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:3395:1: rule__NodeMapping__Group__0__Impl : ( ( rule__NodeMapping__HiddenAssignment_0 )? ) ;
     public final void rule__NodeMapping__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:3399:1: ( ( ( rule__NodeMapping__RevealAssignment_0 )? ) )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:3400:1: ( ( rule__NodeMapping__RevealAssignment_0 )? )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:3399:1: ( ( ( rule__NodeMapping__HiddenAssignment_0 )? ) )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:3400:1: ( ( rule__NodeMapping__HiddenAssignment_0 )? )
             {
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:3400:1: ( ( rule__NodeMapping__RevealAssignment_0 )? )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:3401:1: ( rule__NodeMapping__RevealAssignment_0 )?
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:3400:1: ( ( rule__NodeMapping__HiddenAssignment_0 )? )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:3401:1: ( rule__NodeMapping__HiddenAssignment_0 )?
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getNodeMappingAccess().getRevealAssignment_0()); 
+               before(grammarAccess.getNodeMappingAccess().getHiddenAssignment_0()); 
             }
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:3402:1: ( rule__NodeMapping__RevealAssignment_0 )?
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:3402:1: ( rule__NodeMapping__HiddenAssignment_0 )?
             int alt33=2;
             int LA33_0 = input.LA(1);
 
@@ -10863,10 +10863,10 @@ public class InternalGraphViewMappingParser extends AbstractInternalContentAssis
             }
             switch (alt33) {
                 case 1 :
-                    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:3402:2: rule__NodeMapping__RevealAssignment_0
+                    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:3402:2: rule__NodeMapping__HiddenAssignment_0
                     {
-                    pushFollow(FOLLOW_rule__NodeMapping__RevealAssignment_0_in_rule__NodeMapping__Group__0__Impl7253);
-                    rule__NodeMapping__RevealAssignment_0();
+                    pushFollow(FOLLOW_rule__NodeMapping__HiddenAssignment_0_in_rule__NodeMapping__Group__0__Impl7253);
+                    rule__NodeMapping__HiddenAssignment_0();
 
                     state._fsp--;
                     if (state.failed) return ;
@@ -10877,7 +10877,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalContentAssis
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getNodeMappingAccess().getRevealAssignment_0()); 
+               after(grammarAccess.getNodeMappingAccess().getHiddenAssignment_0()); 
             }
 
             }
@@ -11898,22 +11898,22 @@ public class InternalGraphViewMappingParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__LabelMapping__Group__0__Impl"
-    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:3775:1: rule__LabelMapping__Group__0__Impl : ( ( rule__LabelMapping__RevealAssignment_0 )? ) ;
+    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:3775:1: rule__LabelMapping__Group__0__Impl : ( ( rule__LabelMapping__HiddenAssignment_0 )? ) ;
     public final void rule__LabelMapping__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:3779:1: ( ( ( rule__LabelMapping__RevealAssignment_0 )? ) )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:3780:1: ( ( rule__LabelMapping__RevealAssignment_0 )? )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:3779:1: ( ( ( rule__LabelMapping__HiddenAssignment_0 )? ) )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:3780:1: ( ( rule__LabelMapping__HiddenAssignment_0 )? )
             {
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:3780:1: ( ( rule__LabelMapping__RevealAssignment_0 )? )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:3781:1: ( rule__LabelMapping__RevealAssignment_0 )?
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:3780:1: ( ( rule__LabelMapping__HiddenAssignment_0 )? )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:3781:1: ( rule__LabelMapping__HiddenAssignment_0 )?
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getLabelMappingAccess().getRevealAssignment_0()); 
+               before(grammarAccess.getLabelMappingAccess().getHiddenAssignment_0()); 
             }
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:3782:1: ( rule__LabelMapping__RevealAssignment_0 )?
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:3782:1: ( rule__LabelMapping__HiddenAssignment_0 )?
             int alt37=2;
             int LA37_0 = input.LA(1);
 
@@ -11922,10 +11922,10 @@ public class InternalGraphViewMappingParser extends AbstractInternalContentAssis
             }
             switch (alt37) {
                 case 1 :
-                    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:3782:2: rule__LabelMapping__RevealAssignment_0
+                    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:3782:2: rule__LabelMapping__HiddenAssignment_0
                     {
-                    pushFollow(FOLLOW_rule__LabelMapping__RevealAssignment_0_in_rule__LabelMapping__Group__0__Impl8005);
-                    rule__LabelMapping__RevealAssignment_0();
+                    pushFollow(FOLLOW_rule__LabelMapping__HiddenAssignment_0_in_rule__LabelMapping__Group__0__Impl8005);
+                    rule__LabelMapping__HiddenAssignment_0();
 
                     state._fsp--;
                     if (state.failed) return ;
@@ -11936,7 +11936,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalContentAssis
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getLabelMappingAccess().getRevealAssignment_0()); 
+               after(grammarAccess.getLabelMappingAccess().getHiddenAssignment_0()); 
             }
 
             }
@@ -12692,22 +12692,22 @@ public class InternalGraphViewMappingParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__EdgeMapping__Group__0__Impl"
-    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:4058:1: rule__EdgeMapping__Group__0__Impl : ( ( rule__EdgeMapping__RevealAssignment_0 )? ) ;
+    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:4058:1: rule__EdgeMapping__Group__0__Impl : ( ( rule__EdgeMapping__HiddenAssignment_0 )? ) ;
     public final void rule__EdgeMapping__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:4062:1: ( ( ( rule__EdgeMapping__RevealAssignment_0 )? ) )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:4063:1: ( ( rule__EdgeMapping__RevealAssignment_0 )? )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:4062:1: ( ( ( rule__EdgeMapping__HiddenAssignment_0 )? ) )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:4063:1: ( ( rule__EdgeMapping__HiddenAssignment_0 )? )
             {
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:4063:1: ( ( rule__EdgeMapping__RevealAssignment_0 )? )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:4064:1: ( rule__EdgeMapping__RevealAssignment_0 )?
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:4063:1: ( ( rule__EdgeMapping__HiddenAssignment_0 )? )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:4064:1: ( rule__EdgeMapping__HiddenAssignment_0 )?
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getEdgeMappingAccess().getRevealAssignment_0()); 
+               before(grammarAccess.getEdgeMappingAccess().getHiddenAssignment_0()); 
             }
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:4065:1: ( rule__EdgeMapping__RevealAssignment_0 )?
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:4065:1: ( rule__EdgeMapping__HiddenAssignment_0 )?
             int alt40=2;
             int LA40_0 = input.LA(1);
 
@@ -12716,10 +12716,10 @@ public class InternalGraphViewMappingParser extends AbstractInternalContentAssis
             }
             switch (alt40) {
                 case 1 :
-                    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:4065:2: rule__EdgeMapping__RevealAssignment_0
+                    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:4065:2: rule__EdgeMapping__HiddenAssignment_0
                     {
-                    pushFollow(FOLLOW_rule__EdgeMapping__RevealAssignment_0_in_rule__EdgeMapping__Group__0__Impl8566);
-                    rule__EdgeMapping__RevealAssignment_0();
+                    pushFollow(FOLLOW_rule__EdgeMapping__HiddenAssignment_0_in_rule__EdgeMapping__Group__0__Impl8566);
+                    rule__EdgeMapping__HiddenAssignment_0();
 
                     state._fsp--;
                     if (state.failed) return ;
@@ -12730,7 +12730,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalContentAssis
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getEdgeMappingAccess().getRevealAssignment_0()); 
+               after(grammarAccess.getEdgeMappingAccess().getHiddenAssignment_0()); 
             }
 
             }
@@ -14371,22 +14371,22 @@ public class InternalGraphViewMappingParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__MappingCall__Group__0__Impl"
-    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:4658:1: rule__MappingCall__Group__0__Impl : ( ( rule__MappingCall__RevealAssignment_0 )? ) ;
+    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:4658:1: rule__MappingCall__Group__0__Impl : ( ( rule__MappingCall__HiddenAssignment_0 )? ) ;
     public final void rule__MappingCall__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:4662:1: ( ( ( rule__MappingCall__RevealAssignment_0 )? ) )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:4663:1: ( ( rule__MappingCall__RevealAssignment_0 )? )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:4662:1: ( ( ( rule__MappingCall__HiddenAssignment_0 )? ) )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:4663:1: ( ( rule__MappingCall__HiddenAssignment_0 )? )
             {
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:4663:1: ( ( rule__MappingCall__RevealAssignment_0 )? )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:4664:1: ( rule__MappingCall__RevealAssignment_0 )?
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:4663:1: ( ( rule__MappingCall__HiddenAssignment_0 )? )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:4664:1: ( rule__MappingCall__HiddenAssignment_0 )?
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getMappingCallAccess().getRevealAssignment_0()); 
+               before(grammarAccess.getMappingCallAccess().getHiddenAssignment_0()); 
             }
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:4665:1: ( rule__MappingCall__RevealAssignment_0 )?
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:4665:1: ( rule__MappingCall__HiddenAssignment_0 )?
             int alt46=2;
             int LA46_0 = input.LA(1);
 
@@ -14395,10 +14395,10 @@ public class InternalGraphViewMappingParser extends AbstractInternalContentAssis
             }
             switch (alt46) {
                 case 1 :
-                    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:4665:2: rule__MappingCall__RevealAssignment_0
+                    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:4665:2: rule__MappingCall__HiddenAssignment_0
                     {
-                    pushFollow(FOLLOW_rule__MappingCall__RevealAssignment_0_in_rule__MappingCall__Group__0__Impl9755);
-                    rule__MappingCall__RevealAssignment_0();
+                    pushFollow(FOLLOW_rule__MappingCall__HiddenAssignment_0_in_rule__MappingCall__Group__0__Impl9755);
+                    rule__MappingCall__HiddenAssignment_0();
 
                     state._fsp--;
                     if (state.failed) return ;
@@ -14409,7 +14409,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalContentAssis
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getMappingCallAccess().getRevealAssignment_0()); 
+               after(grammarAccess.getMappingCallAccess().getHiddenAssignment_0()); 
             }
 
             }
@@ -42458,37 +42458,37 @@ public class InternalGraphViewMappingParser extends AbstractInternalContentAssis
     // $ANTLR end "rule__Import__ImportedNamespaceAssignment_1"
 
 
-    // $ANTLR start "rule__NodeMapping__RevealAssignment_0"
-    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:14848:1: rule__NodeMapping__RevealAssignment_0 : ( ( 'reveal' ) ) ;
-    public final void rule__NodeMapping__RevealAssignment_0() throws RecognitionException {
+    // $ANTLR start "rule__NodeMapping__HiddenAssignment_0"
+    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:14848:1: rule__NodeMapping__HiddenAssignment_0 : ( ( 'hidden' ) ) ;
+    public final void rule__NodeMapping__HiddenAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:14852:1: ( ( ( 'reveal' ) ) )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:14853:1: ( ( 'reveal' ) )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:14852:1: ( ( ( 'hidden' ) ) )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:14853:1: ( ( 'hidden' ) )
             {
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:14853:1: ( ( 'reveal' ) )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:14854:1: ( 'reveal' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:14853:1: ( ( 'hidden' ) )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:14854:1: ( 'hidden' )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getNodeMappingAccess().getRevealRevealKeyword_0_0()); 
+               before(grammarAccess.getNodeMappingAccess().getHiddenHiddenKeyword_0_0()); 
             }
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:14855:1: ( 'reveal' )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:14856:1: 'reveal'
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:14855:1: ( 'hidden' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:14856:1: 'hidden'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getNodeMappingAccess().getRevealRevealKeyword_0_0()); 
+               before(grammarAccess.getNodeMappingAccess().getHiddenHiddenKeyword_0_0()); 
             }
-            match(input,75,FOLLOW_75_in_rule__NodeMapping__RevealAssignment_029798); if (state.failed) return ;
+            match(input,75,FOLLOW_75_in_rule__NodeMapping__HiddenAssignment_029798); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getNodeMappingAccess().getRevealRevealKeyword_0_0()); 
+               after(grammarAccess.getNodeMappingAccess().getHiddenHiddenKeyword_0_0()); 
             }
 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getNodeMappingAccess().getRevealRevealKeyword_0_0()); 
+               after(grammarAccess.getNodeMappingAccess().getHiddenHiddenKeyword_0_0()); 
             }
 
             }
@@ -42508,7 +42508,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalContentAssis
         }
         return ;
     }
-    // $ANTLR end "rule__NodeMapping__RevealAssignment_0"
+    // $ANTLR end "rule__NodeMapping__HiddenAssignment_0"
 
 
     // $ANTLR start "rule__NodeMapping__NameAssignment_2"
@@ -42740,37 +42740,37 @@ public class InternalGraphViewMappingParser extends AbstractInternalContentAssis
     // $ANTLR end "rule__NodeMapping__UnlessConditionAssignment_9_1"
 
 
-    // $ANTLR start "rule__LabelMapping__RevealAssignment_0"
-    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:14954:1: rule__LabelMapping__RevealAssignment_0 : ( ( 'reveal' ) ) ;
-    public final void rule__LabelMapping__RevealAssignment_0() throws RecognitionException {
+    // $ANTLR start "rule__LabelMapping__HiddenAssignment_0"
+    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:14954:1: rule__LabelMapping__HiddenAssignment_0 : ( ( 'hidden' ) ) ;
+    public final void rule__LabelMapping__HiddenAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:14958:1: ( ( ( 'reveal' ) ) )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:14959:1: ( ( 'reveal' ) )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:14958:1: ( ( ( 'hidden' ) ) )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:14959:1: ( ( 'hidden' ) )
             {
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:14959:1: ( ( 'reveal' ) )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:14960:1: ( 'reveal' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:14959:1: ( ( 'hidden' ) )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:14960:1: ( 'hidden' )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getLabelMappingAccess().getRevealRevealKeyword_0_0()); 
+               before(grammarAccess.getLabelMappingAccess().getHiddenHiddenKeyword_0_0()); 
             }
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:14961:1: ( 'reveal' )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:14962:1: 'reveal'
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:14961:1: ( 'hidden' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:14962:1: 'hidden'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getLabelMappingAccess().getRevealRevealKeyword_0_0()); 
+               before(grammarAccess.getLabelMappingAccess().getHiddenHiddenKeyword_0_0()); 
             }
-            match(input,75,FOLLOW_75_in_rule__LabelMapping__RevealAssignment_030010); if (state.failed) return ;
+            match(input,75,FOLLOW_75_in_rule__LabelMapping__HiddenAssignment_030010); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getLabelMappingAccess().getRevealRevealKeyword_0_0()); 
+               after(grammarAccess.getLabelMappingAccess().getHiddenHiddenKeyword_0_0()); 
             }
 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getLabelMappingAccess().getRevealRevealKeyword_0_0()); 
+               after(grammarAccess.getLabelMappingAccess().getHiddenHiddenKeyword_0_0()); 
             }
 
             }
@@ -42790,7 +42790,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalContentAssis
         }
         return ;
     }
-    // $ANTLR end "rule__LabelMapping__RevealAssignment_0"
+    // $ANTLR end "rule__LabelMapping__HiddenAssignment_0"
 
 
     // $ANTLR start "rule__LabelMapping__NameAssignment_2"
@@ -42977,37 +42977,37 @@ public class InternalGraphViewMappingParser extends AbstractInternalContentAssis
     // $ANTLR end "rule__LabelMapping__UnlessConditionAssignment_6_1"
 
 
-    // $ANTLR start "rule__EdgeMapping__RevealAssignment_0"
-    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:15045:1: rule__EdgeMapping__RevealAssignment_0 : ( ( 'reveal' ) ) ;
-    public final void rule__EdgeMapping__RevealAssignment_0() throws RecognitionException {
+    // $ANTLR start "rule__EdgeMapping__HiddenAssignment_0"
+    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:15045:1: rule__EdgeMapping__HiddenAssignment_0 : ( ( 'hidden' ) ) ;
+    public final void rule__EdgeMapping__HiddenAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:15049:1: ( ( ( 'reveal' ) ) )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:15050:1: ( ( 'reveal' ) )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:15049:1: ( ( ( 'hidden' ) ) )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:15050:1: ( ( 'hidden' ) )
             {
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:15050:1: ( ( 'reveal' ) )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:15051:1: ( 'reveal' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:15050:1: ( ( 'hidden' ) )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:15051:1: ( 'hidden' )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getEdgeMappingAccess().getRevealRevealKeyword_0_0()); 
+               before(grammarAccess.getEdgeMappingAccess().getHiddenHiddenKeyword_0_0()); 
             }
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:15052:1: ( 'reveal' )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:15053:1: 'reveal'
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:15052:1: ( 'hidden' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:15053:1: 'hidden'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getEdgeMappingAccess().getRevealRevealKeyword_0_0()); 
+               before(grammarAccess.getEdgeMappingAccess().getHiddenHiddenKeyword_0_0()); 
             }
-            match(input,75,FOLLOW_75_in_rule__EdgeMapping__RevealAssignment_030191); if (state.failed) return ;
+            match(input,75,FOLLOW_75_in_rule__EdgeMapping__HiddenAssignment_030191); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getEdgeMappingAccess().getRevealRevealKeyword_0_0()); 
+               after(grammarAccess.getEdgeMappingAccess().getHiddenHiddenKeyword_0_0()); 
             }
 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getEdgeMappingAccess().getRevealRevealKeyword_0_0()); 
+               after(grammarAccess.getEdgeMappingAccess().getHiddenHiddenKeyword_0_0()); 
             }
 
             }
@@ -43027,7 +43027,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalContentAssis
         }
         return ;
     }
-    // $ANTLR end "rule__EdgeMapping__RevealAssignment_0"
+    // $ANTLR end "rule__EdgeMapping__HiddenAssignment_0"
 
 
     // $ANTLR start "rule__EdgeMapping__NameAssignment_2"
@@ -43500,37 +43500,37 @@ public class InternalGraphViewMappingParser extends AbstractInternalContentAssis
     // $ANTLR end "rule__EdgeEndMapping__ExpressionAssignment_3"
 
 
-    // $ANTLR start "rule__MappingCall__RevealAssignment_0"
-    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:15238:1: rule__MappingCall__RevealAssignment_0 : ( ( 'reveal' ) ) ;
-    public final void rule__MappingCall__RevealAssignment_0() throws RecognitionException {
+    // $ANTLR start "rule__MappingCall__HiddenAssignment_0"
+    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:15238:1: rule__MappingCall__HiddenAssignment_0 : ( ( 'hidden' ) ) ;
+    public final void rule__MappingCall__HiddenAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:15242:1: ( ( ( 'reveal' ) ) )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:15243:1: ( ( 'reveal' ) )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:15242:1: ( ( ( 'hidden' ) ) )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:15243:1: ( ( 'hidden' ) )
             {
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:15243:1: ( ( 'reveal' ) )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:15244:1: ( 'reveal' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:15243:1: ( ( 'hidden' ) )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:15244:1: ( 'hidden' )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getMappingCallAccess().getRevealRevealKeyword_0_0()); 
+               before(grammarAccess.getMappingCallAccess().getHiddenHiddenKeyword_0_0()); 
             }
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:15245:1: ( 'reveal' )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:15246:1: 'reveal'
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:15245:1: ( 'hidden' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:15246:1: 'hidden'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getMappingCallAccess().getRevealRevealKeyword_0_0()); 
+               before(grammarAccess.getMappingCallAccess().getHiddenHiddenKeyword_0_0()); 
             }
-            match(input,75,FOLLOW_75_in_rule__MappingCall__RevealAssignment_030579); if (state.failed) return ;
+            match(input,75,FOLLOW_75_in_rule__MappingCall__HiddenAssignment_030579); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getMappingCallAccess().getRevealRevealKeyword_0_0()); 
+               after(grammarAccess.getMappingCallAccess().getHiddenHiddenKeyword_0_0()); 
             }
 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getMappingCallAccess().getRevealRevealKeyword_0_0()); 
+               after(grammarAccess.getMappingCallAccess().getHiddenHiddenKeyword_0_0()); 
             }
 
             }
@@ -43550,7 +43550,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalContentAssis
         }
         return ;
     }
-    // $ANTLR end "rule__MappingCall__RevealAssignment_0"
+    // $ANTLR end "rule__MappingCall__HiddenAssignment_0"
 
 
     // $ANTLR start "rule__MappingCall__ReferencedMappingAssignment_2"
@@ -51938,7 +51938,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalContentAssis
     public static final BitSet FOLLOW_26_in_rule__QualifiedNameWithWildcard__Group_1__1__Impl7188 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__NodeMapping__Group__0__Impl_in_rule__NodeMapping__Group__07223 = new BitSet(new long[]{0x0000020000000000L,0x0000000000000800L});
     public static final BitSet FOLLOW_rule__NodeMapping__Group__1_in_rule__NodeMapping__Group__07226 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NodeMapping__RevealAssignment_0_in_rule__NodeMapping__Group__0__Impl7253 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NodeMapping__HiddenAssignment_0_in_rule__NodeMapping__Group__0__Impl7253 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__NodeMapping__Group__1__Impl_in_rule__NodeMapping__Group__17284 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_rule__NodeMapping__Group__2_in_rule__NodeMapping__Group__17287 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_41_in_rule__NodeMapping__Group__1__Impl7315 = new BitSet(new long[]{0x0000000000000002L});
@@ -51972,7 +51972,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalContentAssis
     public static final BitSet FOLLOW_rule__NodeMapping__UnlessConditionAssignment_9_1_in_rule__NodeMapping__Group_9__1__Impl7941 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__LabelMapping__Group__0__Impl_in_rule__LabelMapping__Group__07975 = new BitSet(new long[]{0x0000080000000000L,0x0000000000000800L});
     public static final BitSet FOLLOW_rule__LabelMapping__Group__1_in_rule__LabelMapping__Group__07978 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__LabelMapping__RevealAssignment_0_in_rule__LabelMapping__Group__0__Impl8005 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__LabelMapping__HiddenAssignment_0_in_rule__LabelMapping__Group__0__Impl8005 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__LabelMapping__Group__1__Impl_in_rule__LabelMapping__Group__18036 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_rule__LabelMapping__Group__2_in_rule__LabelMapping__Group__18039 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_43_in_rule__LabelMapping__Group__1__Impl8067 = new BitSet(new long[]{0x0000000000000002L});
@@ -51997,7 +51997,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalContentAssis
     public static final BitSet FOLLOW_rule__LabelMapping__UnlessConditionAssignment_6_1_in_rule__LabelMapping__Group_6__1__Impl8502 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__EdgeMapping__Group__0__Impl_in_rule__EdgeMapping__Group__08536 = new BitSet(new long[]{0x0000100000000000L,0x0000000000000800L});
     public static final BitSet FOLLOW_rule__EdgeMapping__Group__1_in_rule__EdgeMapping__Group__08539 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EdgeMapping__RevealAssignment_0_in_rule__EdgeMapping__Group__0__Impl8566 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EdgeMapping__HiddenAssignment_0_in_rule__EdgeMapping__Group__0__Impl8566 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__EdgeMapping__Group__1__Impl_in_rule__EdgeMapping__Group__18597 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_rule__EdgeMapping__Group__2_in_rule__EdgeMapping__Group__18600 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_44_in_rule__EdgeMapping__Group__1__Impl8628 = new BitSet(new long[]{0x0000000000000002L});
@@ -52051,7 +52051,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalContentAssis
     public static final BitSet FOLLOW_rule__EdgeEndMapping__ExpressionAssignment_3_in_rule__EdgeEndMapping__Group__3__Impl9687 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__MappingCall__Group__0__Impl_in_rule__MappingCall__Group__09725 = new BitSet(new long[]{0x00005A0000000000L,0x0000000000000800L});
     public static final BitSet FOLLOW_rule__MappingCall__Group__1_in_rule__MappingCall__Group__09728 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MappingCall__RevealAssignment_0_in_rule__MappingCall__Group__0__Impl9755 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MappingCall__HiddenAssignment_0_in_rule__MappingCall__Group__0__Impl9755 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__MappingCall__Group__1__Impl_in_rule__MappingCall__Group__19786 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_rule__MappingCall__Group__2_in_rule__MappingCall__Group__19789 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_46_in_rule__MappingCall__Group__1__Impl9817 = new BitSet(new long[]{0x0000000000000002L});
@@ -52860,18 +52860,18 @@ public class InternalGraphViewMappingParser extends AbstractInternalContentAssis
     public static final BitSet FOLLOW_ruleAbstractExpressionMapping_in_rule__DiagramMapping__MappingsAssignment_629700 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXExpression_in_rule__DiagramMapping__UnlessConditionAssignment_8_129731 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleQualifiedNameWithWildcard_in_rule__Import__ImportedNamespaceAssignment_129762 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_75_in_rule__NodeMapping__RevealAssignment_029798 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_75_in_rule__NodeMapping__HiddenAssignment_029798 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__NodeMapping__NameAssignment_229837 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_76_in_rule__NodeMapping__MultiAssignment_429873 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXExpression_in_rule__NodeMapping__ExpressionAssignment_529912 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAbstractExpressionMapping_in_rule__NodeMapping__MappingsAssignment_729943 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXExpression_in_rule__NodeMapping__UnlessConditionAssignment_9_129974 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_75_in_rule__LabelMapping__RevealAssignment_030010 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_75_in_rule__LabelMapping__HiddenAssignment_030010 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__LabelMapping__NameAssignment_230049 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_76_in_rule__LabelMapping__MultiAssignment_430085 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXExpression_in_rule__LabelMapping__ExpressionAssignment_530124 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXExpression_in_rule__LabelMapping__UnlessConditionAssignment_6_130155 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_75_in_rule__EdgeMapping__RevealAssignment_030191 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_75_in_rule__EdgeMapping__HiddenAssignment_030191 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__EdgeMapping__NameAssignment_230230 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_76_in_rule__EdgeMapping__MultiAssignment_430266 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXExpression_in_rule__EdgeMapping__ExpressionAssignment_530305 = new BitSet(new long[]{0x0000000000000002L});
@@ -52882,7 +52882,7 @@ public class InternalGraphViewMappingParser extends AbstractInternalContentAssis
     public static final BitSet FOLLOW_46_in_rule__EdgeEndMapping__CallAssignment_0_130465 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__EdgeEndMapping__ReferencedMappingAssignment_130508 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXExpression_in_rule__EdgeEndMapping__ExpressionAssignment_330543 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_75_in_rule__MappingCall__RevealAssignment_030579 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_75_in_rule__MappingCall__HiddenAssignment_030579 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__MappingCall__ReferencedMappingAssignment_230622 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_76_in_rule__MappingCall__MultiAssignment_430662 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXExpression_in_rule__MappingCall__ExpressionAssignment_530701 = new BitSet(new long[]{0x0000000000000002L});

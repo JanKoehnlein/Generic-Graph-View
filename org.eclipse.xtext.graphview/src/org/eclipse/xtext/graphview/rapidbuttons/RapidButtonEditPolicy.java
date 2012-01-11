@@ -12,10 +12,8 @@ import org.eclipse.gef.Request;
 import org.eclipse.gef.RequestConstants;
 import org.eclipse.gef.editparts.FreeformGraphicalRootEditPart;
 import org.eclipse.gef.editpolicies.AbstractEditPolicy;
-import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.progress.UIJob;
-import org.eclipse.xtext.graphview.editpart.AbstractMappingEditPart;
-import org.eclipse.xtext.ui.PluginImageHelper;
+import org.eclipse.xtext.graphview.editpart.AbstractInstanceEditPart;
 
 import com.google.common.collect.Lists;
 import com.google.inject.Inject;
@@ -31,10 +29,10 @@ public class RapidButtonEditPolicy extends AbstractEditPolicy {
 	private DeleteButton deleteButton;
 
 	@Inject
-	private Provider<RevealButton> revealButtonProvider;
+	private ExpandButton expandButton;
 
 	@Inject
-	private PluginImageHelper imageHelper;
+	private Provider<RevealButton> revealButtonProvider;
 
 	@Override
 	public void showTargetFeedback(Request request) {
@@ -60,17 +58,18 @@ public class RapidButtonEditPolicy extends AbstractEditPolicy {
 	protected List<AbstractRapidButton> getRapidButtons() {
 		if (buttons == null) {
 			buttons = Lists.newArrayList();
-			addButton(revealButtonProvider.get(), PositionConstants.NORTH);
-			addButton(revealButtonProvider.get(), PositionConstants.EAST);
-			addButton(revealButtonProvider.get(), PositionConstants.SOUTH);
-			addButton(revealButtonProvider.get(), PositionConstants.WEST);
-			addButton(deleteButton, PositionConstants.NORTH_EAST);
+			addButton(revealButtonProvider.get(), PositionConstants.NORTH, true);
+			addButton(revealButtonProvider.get(), PositionConstants.EAST, true);
+			addButton(revealButtonProvider.get(), PositionConstants.SOUTH, true);
+			addButton(revealButtonProvider.get(), PositionConstants.WEST, true);
+			addButton(deleteButton, PositionConstants.NORTH_EAST, false);
+			addButton(expandButton, PositionConstants.NORTH_WEST, false);
 		}
 		return buttons;
 	}
 
-	protected void addButton(AbstractRapidButton button, int position) {
-		button.init(this, position);
+	protected void addButton(AbstractRapidButton button, int position, boolean isOutside) {
+		button.init(this, position, isOutside);
 		buttons.add(button);
 		getHandleLayer().add(button);
 	}
@@ -92,13 +91,9 @@ public class RapidButtonEditPolicy extends AbstractEditPolicy {
 				.getLayer(LayerConstants.HANDLE_LAYER);
 	}
 
-	public Image getImage(String path) {
-		return imageHelper.getImage(path);
-	}
-
 	@Override
-	public AbstractMappingEditPart getHost() {
-		return (AbstractMappingEditPart) super.getHost();
+	public AbstractInstanceEditPart getHost() {
+		return (AbstractInstanceEditPart) super.getHost();
 	}
 
 	@Override

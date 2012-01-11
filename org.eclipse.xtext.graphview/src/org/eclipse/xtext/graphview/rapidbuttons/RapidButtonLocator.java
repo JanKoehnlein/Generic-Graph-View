@@ -5,18 +5,25 @@ import org.eclipse.draw2d.RelativeLocator;
 import org.eclipse.draw2d.geometry.Insets;
 import org.eclipse.draw2d.geometry.Rectangle;
 
-public class CompassOutsideBorderLocator extends RelativeLocator {
+public class RapidButtonLocator extends RelativeLocator {
 
 	public static final int OFFSET = 10;
+	private final boolean isOutside;
 
-	public CompassOutsideBorderLocator(IFigure reference, int direction) {
+	public RapidButtonLocator(IFigure reference, int direction,
+			boolean isOutside) {
 		super(reference, direction);
+		this.isOutside = isOutside;
 	}
-	
+
 	@Override
 	protected Rectangle getReferenceBox() {
 		Rectangle box = super.getReferenceBox().getCopy();
-		box.expand(new Insets(OFFSET, OFFSET, OFFSET, OFFSET));
+		Insets insets = new Insets(OFFSET, OFFSET, OFFSET, OFFSET);
+		if (isOutside)
+			box.expand(insets);
+		else
+			box.shrink(insets);
 		return box;
 	}
 }

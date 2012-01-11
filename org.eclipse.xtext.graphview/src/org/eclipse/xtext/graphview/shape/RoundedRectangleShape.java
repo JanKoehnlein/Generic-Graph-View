@@ -10,7 +10,6 @@ package org.eclipse.xtext.graphview.shape;
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RoundedRectangle;
-import org.eclipse.draw2d.ToolbarLayout;
 import org.eclipse.xtext.graphview.layout.ILayoutNode;
 import org.eclipse.xtext.graphview.style.type.ColorLiteral;
 
@@ -22,7 +21,7 @@ public class RoundedRectangleShape extends RoundedRectangle implements ILayoutNo
 		setLineWidth(2);
 		setForegroundColor(ColorConstants.buttonDarkest);
 		setBackgroundColor(ColorLiterals.color(new ColorLiteral("#deedf5")));
-		ToolbarLayout layout = new ToolbarLayout(false);
+		DefaultNodeLayout layout = new DefaultNodeLayout();
 		layout.setSpacing(5);
 		layout.setStretchMinorAxis(true);
 		setLayoutManager(layout);

@@ -18,7 +18,7 @@ import org.eclipse.xtext.xbase.XExpression;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping#getUnlessCondition <em>Unless Condition</em>}</li>
- *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping#isReveal <em>Reveal</em>}</li>
+ *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping#isHidden <em>Hidden</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,29 +55,29 @@ public interface AbstractMapping extends JvmIdentifiableElement
 	void setUnlessCondition(XExpression value);
 
 	/**
-	 * Returns the value of the '<em><b>Reveal</b></em>' attribute.
+	 * Returns the value of the '<em><b>Hidden</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Reveal</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Hidden</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Reveal</em>' attribute.
-	 * @see #setReveal(boolean)
-	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage#getAbstractMapping_Reveal()
+	 * @return the value of the '<em>Hidden</em>' attribute.
+	 * @see #setHidden(boolean)
+	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage#getAbstractMapping_Hidden()
 	 * @model
 	 * @generated
 	 */
-	boolean isReveal();
+	boolean isHidden();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping#isReveal <em>Reveal</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping#isHidden <em>Hidden</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Reveal</em>' attribute.
-	 * @see #isReveal()
+	 * @param value the new value of the '<em>Hidden</em>' attribute.
+	 * @see #isHidden()
 	 * @generated
 	 */
-	void setReveal(boolean value);
+	void setHidden(boolean value);
 
 } // AbstractMapping

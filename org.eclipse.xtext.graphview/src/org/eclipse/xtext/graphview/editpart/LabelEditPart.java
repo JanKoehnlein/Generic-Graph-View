@@ -18,7 +18,7 @@ import org.eclipse.xtext.graphview.shape.LabelShape;
 
 import com.google.inject.Inject;
 
-public class LabelEditPart extends AbstractMappingEditPart {
+public class LabelEditPart extends AbstractInstanceEditPart {
 
 	@Inject
 	private InstanceComponentEditPolicy componentEditPolicy;
@@ -57,8 +57,8 @@ public class LabelEditPart extends AbstractMappingEditPart {
 	}
 
 	protected boolean isDescriptionLabel() {
-		if (getParent() instanceof AbstractMappingEditPart) {
-			return ((AbstractMappingEditPart) getParent()).helper
+		if (getParent() instanceof AbstractInstanceEditPart) {
+			return ((AbstractInstanceEditPart) getParent()).helper
 					.getSemanticElement() == helper.getSemanticElement();
 		}
 		return false;

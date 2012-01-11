@@ -12,31 +12,38 @@ import java.util.List;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.editparts.AbstractGraphicalEditPart;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
+import org.eclipse.xtext.EcoreUtil2;
+import org.eclipse.xtext.graphview.editpolicy.ExpandEditPolicy;
 import org.eclipse.xtext.graphview.instancemodel.AbstractInstance;
 import org.eclipse.xtext.graphview.instancemodel.Visibility;
 import org.eclipse.xtext.graphview.shape.TransparencyHelper;
 
 import com.google.inject.Inject;
 
-public abstract class AbstractMappingEditPart extends AbstractGraphicalEditPart
-		implements IInstanceModelEditPart {
+public abstract class AbstractInstanceEditPart extends
+		AbstractGraphicalEditPart implements IInstanceModelEditPart {
 
 	@Inject
 	protected InstanceModelEditPartHelper helper;
 
 	@Inject
 	protected NonResizableEditPolicy nonResizableEditPolicy;
-	
+
 	@Inject
 	private TransparencyHelper transparencyHelper;
+
+	@Inject
+	private ExpandEditPolicy expandEditPolicy;
 
 	@Override
 	protected void createEditPolicies() {
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, nonResizableEditPolicy);
+		installEditPolicy(ExpandEditPolicy.ROLE, expandEditPolicy);
 	}
 
 	@Override
@@ -51,7 +58,7 @@ public abstract class AbstractMappingEditPart extends AbstractGraphicalEditPart
 	}
 
 	@Override
-	protected List<?> getModelChildren() {
+	protected List<AbstractInstance> getModelChildren() {
 		return helper.getVisibleModelChildren();
 	}
 
@@ -66,26 +73,36 @@ public abstract class AbstractMappingEditPart extends AbstractGraphicalEditPart
 	protected void refreshVisuals() {
 		helper.style(getFigure());
 	}
-	
+
 	@Override
 	public AbstractInstance getModel() {
 		return (AbstractInstance) super.getModel();
 	}
-	
+
 	public void setTransparent(boolean isTransparent) {
 		transparencyHelper.setTransparent(isTransparent);
 	}
-	
+
 	@Override
 	public void activate() {
 		super.activate();
-		Rectangle bounds = new Rectangle(new Point(10,10), getFigure().getPreferredSize());
+		Rectangle bounds = new Rectangle(new Point(10, 10), getFigure()
+				.getPreferredSize());
 		getFigure().setBounds(bounds);
-		if(getModel().getVisibility() == Visibility.TRANSPARENT)
+		if (getModel().getVisibility() == Visibility.TRANSPARENT)
 			setTransparent(true);
 	}
 
 	public boolean hasHiddenEdge() {
+		return false;
+	}
+
+	public boolean hasHiddenChildren() {
+		for (EObject modelChild : EcoreUtil2.eAllContents(getModel())) {
+			if (modelChild instanceof AbstractInstance
+					&& ((AbstractInstance) modelChild).getVisibility() == Visibility.HIDDEN)
+				return true;
+		}
 		return false;
 	}
 }

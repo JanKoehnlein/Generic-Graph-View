@@ -357,16 +357,16 @@ ruleNodeMapping returns [EObject current=null]
     @after { leaveRule(); }:
 ((
 (
-		lv_reveal_0_0=	'reveal' 
+		lv_hidden_0_0=	'hidden' 
     {
-        newLeafNode(lv_reveal_0_0, grammarAccess.getNodeMappingAccess().getRevealRevealKeyword_0_0());
+        newLeafNode(lv_hidden_0_0, grammarAccess.getNodeMappingAccess().getHiddenHiddenKeyword_0_0());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getNodeMappingRule());
 	        }
-       		setWithLastConsumed($current, "reveal", true, "reveal");
+       		setWithLastConsumed($current, "hidden", true, "hidden");
 	    }
 
 )
@@ -500,16 +500,16 @@ ruleLabelMapping returns [EObject current=null]
     @after { leaveRule(); }:
 ((
 (
-		lv_reveal_0_0=	'reveal' 
+		lv_hidden_0_0=	'hidden' 
     {
-        newLeafNode(lv_reveal_0_0, grammarAccess.getLabelMappingAccess().getRevealRevealKeyword_0_0());
+        newLeafNode(lv_hidden_0_0, grammarAccess.getLabelMappingAccess().getHiddenHiddenKeyword_0_0());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getLabelMappingRule());
 	        }
-       		setWithLastConsumed($current, "reveal", true, "reveal");
+       		setWithLastConsumed($current, "hidden", true, "hidden");
 	    }
 
 )
@@ -617,16 +617,16 @@ ruleEdgeMapping returns [EObject current=null]
     @after { leaveRule(); }:
 ((
 (
-		lv_reveal_0_0=	'reveal' 
+		lv_hidden_0_0=	'hidden' 
     {
-        newLeafNode(lv_reveal_0_0, grammarAccess.getEdgeMappingAccess().getRevealRevealKeyword_0_0());
+        newLeafNode(lv_hidden_0_0, grammarAccess.getEdgeMappingAccess().getHiddenHiddenKeyword_0_0());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getEdgeMappingRule());
 	        }
-       		setWithLastConsumed($current, "reveal", true, "reveal");
+       		setWithLastConsumed($current, "hidden", true, "hidden");
 	    }
 
 )
@@ -876,16 +876,16 @@ ruleMappingCall returns [EObject current=null]
     @after { leaveRule(); }:
 ((
 (
-		lv_reveal_0_0=	'reveal' 
+		lv_hidden_0_0=	'hidden' 
     {
-        newLeafNode(lv_reveal_0_0, grammarAccess.getMappingCallAccess().getRevealRevealKeyword_0_0());
+        newLeafNode(lv_hidden_0_0, grammarAccess.getMappingCallAccess().getHiddenHiddenKeyword_0_0());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getMappingCallRule());
 	        }
-       		setWithLastConsumed($current, "reveal", true, "reveal");
+       		setWithLastConsumed($current, "hidden", true, "hidden");
 	    }
 
 )

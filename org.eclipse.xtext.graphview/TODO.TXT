@@ -1,5 +1,6 @@
 RapidButtons
 - nicer gestures
+- nicer appear/remove
 
 View
 - use feedback figures correctly
@@ -7,6 +8,8 @@ View
 - better element selection strategy
 - multiple diagrams
 - context menu
+- save/open diagram
+- use uris instead of direct refs
 
 Mapping DSL
 - validation
@@ -22,3 +25,4 @@ DONE
 - relayout button
 - nicer placement of rapid buttons
 - reset scrollbars on input change
+- expand button

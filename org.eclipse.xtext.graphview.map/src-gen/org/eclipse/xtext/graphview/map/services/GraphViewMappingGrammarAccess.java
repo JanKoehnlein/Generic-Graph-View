@@ -179,8 +179,8 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 	public class NodeMappingElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NodeMapping");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cRevealAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final Keyword cRevealRevealKeyword_0_0 = (Keyword)cRevealAssignment_0.eContents().get(0);
+		private final Assignment cHiddenAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final Keyword cHiddenHiddenKeyword_0_0 = (Keyword)cHiddenAssignment_0.eContents().get(0);
 		private final Keyword cNodeKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
@@ -199,19 +199,19 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 		private final RuleCall cUnlessConditionXExpressionParserRuleCall_9_1_0 = (RuleCall)cUnlessConditionAssignment_9_1.eContents().get(0);
 		
 		//NodeMapping:
-		//	reveal?="reveal"? "node" name=ID "for" multi?="each"? expression=XExpression "{" mappings+=AbstractExpressionMapping*
+		//	^hidden?="hidden"? "node" name=ID "for" multi?="each"? expression=XExpression "{" mappings+=AbstractExpressionMapping*
 		//	"}" ("unless" unlessCondition=XExpression)?;
 		public ParserRule getRule() { return rule; }
 
-		//reveal?="reveal"? "node" name=ID "for" multi?="each"? expression=XExpression "{" mappings+=AbstractExpressionMapping*
+		//^hidden?="hidden"? "node" name=ID "for" multi?="each"? expression=XExpression "{" mappings+=AbstractExpressionMapping*
 		//"}" ("unless" unlessCondition=XExpression)?
 		public Group getGroup() { return cGroup; }
 
-		//reveal?="reveal"?
-		public Assignment getRevealAssignment_0() { return cRevealAssignment_0; }
+		//^hidden?="hidden"?
+		public Assignment getHiddenAssignment_0() { return cHiddenAssignment_0; }
 
-		//"reveal"
-		public Keyword getRevealRevealKeyword_0_0() { return cRevealRevealKeyword_0_0; }
+		//"hidden"
+		public Keyword getHiddenHiddenKeyword_0_0() { return cHiddenHiddenKeyword_0_0; }
 
 		//"node"
 		public Keyword getNodeKeyword_1() { return cNodeKeyword_1; }
@@ -265,8 +265,8 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 	public class LabelMappingElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LabelMapping");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cRevealAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final Keyword cRevealRevealKeyword_0_0 = (Keyword)cRevealAssignment_0.eContents().get(0);
+		private final Assignment cHiddenAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final Keyword cHiddenHiddenKeyword_0_0 = (Keyword)cHiddenAssignment_0.eContents().get(0);
 		private final Keyword cLabelKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
@@ -281,17 +281,18 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 		private final RuleCall cUnlessConditionXExpressionParserRuleCall_6_1_0 = (RuleCall)cUnlessConditionAssignment_6_1.eContents().get(0);
 		
 		//LabelMapping:
-		//	reveal?="reveal"? "label" name=ID "for" multi?="each"? expression=XExpression ("unless" unlessCondition=XExpression)?;
+		//	^hidden?="hidden"? "label" name=ID "for" multi?="each"? expression=XExpression ("unless"
+		//	unlessCondition=XExpression)?;
 		public ParserRule getRule() { return rule; }
 
-		//reveal?="reveal"? "label" name=ID "for" multi?="each"? expression=XExpression ("unless" unlessCondition=XExpression)?
+		//^hidden?="hidden"? "label" name=ID "for" multi?="each"? expression=XExpression ("unless" unlessCondition=XExpression)?
 		public Group getGroup() { return cGroup; }
 
-		//reveal?="reveal"?
-		public Assignment getRevealAssignment_0() { return cRevealAssignment_0; }
+		//^hidden?="hidden"?
+		public Assignment getHiddenAssignment_0() { return cHiddenAssignment_0; }
 
-		//"reveal"
-		public Keyword getRevealRevealKeyword_0_0() { return cRevealRevealKeyword_0_0; }
+		//"hidden"
+		public Keyword getHiddenHiddenKeyword_0_0() { return cHiddenHiddenKeyword_0_0; }
 
 		//"label"
 		public Keyword getLabelKeyword_1() { return cLabelKeyword_1; }
@@ -333,8 +334,8 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 	public class EdgeMappingElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EdgeMapping");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cRevealAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final Keyword cRevealRevealKeyword_0_0 = (Keyword)cRevealAssignment_0.eContents().get(0);
+		private final Assignment cHiddenAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final Keyword cHiddenHiddenKeyword_0_0 = (Keyword)cHiddenAssignment_0.eContents().get(0);
 		private final Keyword cEdgeKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
@@ -358,19 +359,19 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 		private final RuleCall cUnlessConditionXExpressionParserRuleCall_12_1_0 = (RuleCall)cUnlessConditionAssignment_12_1.eContents().get(0);
 		
 		//EdgeMapping:
-		//	reveal?="reveal"? "edge" name=ID "for" multi?="each"? expression=XExpression "{" sourceMapping=EdgeEndMapping? "=>"
+		//	^hidden?="hidden"? "edge" name=ID "for" multi?="each"? expression=XExpression "{" sourceMapping=EdgeEndMapping? "=>"
 		//	targetMapping=EdgeEndMapping? mappings+=LabelMapping* "}" ("unless" unlessCondition=XExpression)?;
 		public ParserRule getRule() { return rule; }
 
-		//reveal?="reveal"? "edge" name=ID "for" multi?="each"? expression=XExpression "{" sourceMapping=EdgeEndMapping? "=>"
+		//^hidden?="hidden"? "edge" name=ID "for" multi?="each"? expression=XExpression "{" sourceMapping=EdgeEndMapping? "=>"
 		//targetMapping=EdgeEndMapping? mappings+=LabelMapping* "}" ("unless" unlessCondition=XExpression)?
 		public Group getGroup() { return cGroup; }
 
-		//reveal?="reveal"?
-		public Assignment getRevealAssignment_0() { return cRevealAssignment_0; }
+		//^hidden?="hidden"?
+		public Assignment getHiddenAssignment_0() { return cHiddenAssignment_0; }
 
-		//"reveal"
-		public Keyword getRevealRevealKeyword_0_0() { return cRevealRevealKeyword_0_0; }
+		//"hidden"
+		public Keyword getHiddenHiddenKeyword_0_0() { return cHiddenHiddenKeyword_0_0; }
 
 		//"edge"
 		public Keyword getEdgeKeyword_1() { return cEdgeKeyword_1; }
@@ -491,8 +492,8 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 	public class MappingCallElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MappingCall");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cRevealAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final Keyword cRevealRevealKeyword_0_0 = (Keyword)cRevealAssignment_0.eContents().get(0);
+		private final Assignment cHiddenAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final Keyword cHiddenHiddenKeyword_0_0 = (Keyword)cHiddenAssignment_0.eContents().get(0);
 		private final Keyword cCallKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cReferencedMappingAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final CrossReference cReferencedMappingAbstractMappingDefinitionCrossReference_2_0 = (CrossReference)cReferencedMappingAssignment_2.eContents().get(0);
@@ -508,19 +509,19 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 		private final RuleCall cUnlessConditionXExpressionParserRuleCall_6_1_0 = (RuleCall)cUnlessConditionAssignment_6_1.eContents().get(0);
 		
 		//MappingCall:
-		//	reveal?="reveal"? "call" referencedMapping=[AbstractMappingDefinition] "for" multi?="each"? expression=XExpression
+		//	^hidden?="hidden"? "call" referencedMapping=[AbstractMappingDefinition] "for" multi?="each"? expression=XExpression
 		//	("unless" unlessCondition=XExpression)?;
 		public ParserRule getRule() { return rule; }
 
-		//reveal?="reveal"? "call" referencedMapping=[AbstractMappingDefinition] "for" multi?="each"? expression=XExpression
+		//^hidden?="hidden"? "call" referencedMapping=[AbstractMappingDefinition] "for" multi?="each"? expression=XExpression
 		//("unless" unlessCondition=XExpression)?
 		public Group getGroup() { return cGroup; }
 
-		//reveal?="reveal"?
-		public Assignment getRevealAssignment_0() { return cRevealAssignment_0; }
+		//^hidden?="hidden"?
+		public Assignment getHiddenAssignment_0() { return cHiddenAssignment_0; }
 
-		//"reveal"
-		public Keyword getRevealRevealKeyword_0_0() { return cRevealRevealKeyword_0_0; }
+		//"hidden"
+		public Keyword getHiddenHiddenKeyword_0_0() { return cHiddenHiddenKeyword_0_0; }
 
 		//"call"
 		public Keyword getCallKeyword_1() { return cCallKeyword_1; }
@@ -636,7 +637,7 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 	}
 
 	//NodeMapping:
-	//	reveal?="reveal"? "node" name=ID "for" multi?="each"? expression=XExpression "{" mappings+=AbstractExpressionMapping*
+	//	^hidden?="hidden"? "node" name=ID "for" multi?="each"? expression=XExpression "{" mappings+=AbstractExpressionMapping*
 	//	"}" ("unless" unlessCondition=XExpression)?;
 	public NodeMappingElements getNodeMappingAccess() {
 		return (pNodeMapping != null) ? pNodeMapping : (pNodeMapping = new NodeMappingElements());
@@ -647,7 +648,8 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 	}
 
 	//LabelMapping:
-	//	reveal?="reveal"? "label" name=ID "for" multi?="each"? expression=XExpression ("unless" unlessCondition=XExpression)?;
+	//	^hidden?="hidden"? "label" name=ID "for" multi?="each"? expression=XExpression ("unless"
+	//	unlessCondition=XExpression)?;
 	public LabelMappingElements getLabelMappingAccess() {
 		return (pLabelMapping != null) ? pLabelMapping : (pLabelMapping = new LabelMappingElements());
 	}
@@ -657,7 +659,7 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 	}
 
 	//EdgeMapping:
-	//	reveal?="reveal"? "edge" name=ID "for" multi?="each"? expression=XExpression "{" sourceMapping=EdgeEndMapping? "=>"
+	//	^hidden?="hidden"? "edge" name=ID "for" multi?="each"? expression=XExpression "{" sourceMapping=EdgeEndMapping? "=>"
 	//	targetMapping=EdgeEndMapping? mappings+=LabelMapping* "}" ("unless" unlessCondition=XExpression)?;
 	public EdgeMappingElements getEdgeMappingAccess() {
 		return (pEdgeMapping != null) ? pEdgeMapping : (pEdgeMapping = new EdgeMappingElements());
@@ -678,7 +680,7 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 	}
 
 	//MappingCall:
-	//	reveal?="reveal"? "call" referencedMapping=[AbstractMappingDefinition] "for" multi?="each"? expression=XExpression
+	//	^hidden?="hidden"? "call" referencedMapping=[AbstractMappingDefinition] "for" multi?="each"? expression=XExpression
 	//	("unless" unlessCondition=XExpression)?;
 	public MappingCallElements getMappingCallAccess() {
 		return (pMappingCall != null) ? pMappingCall : (pMappingCall = new MappingCallElements());

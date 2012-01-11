@@ -206,7 +206,7 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAbstractMapping_Reveal()
+	public EAttribute getAbstractMapping_Hidden()
 	{
 		return (EAttribute)abstractMappingEClass.getEStructuralFeatures().get(1);
 	}
@@ -453,7 +453,7 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 		// Create classes and their features
 		abstractMappingEClass = createEClass(ABSTRACT_MAPPING);
 		createEReference(abstractMappingEClass, ABSTRACT_MAPPING__UNLESS_CONDITION);
-		createEAttribute(abstractMappingEClass, ABSTRACT_MAPPING__REVEAL);
+		createEAttribute(abstractMappingEClass, ABSTRACT_MAPPING__HIDDEN);
 
 		abstractMappingDefinitionEClass = createEClass(ABSTRACT_MAPPING_DEFINITION);
 		createEAttribute(abstractMappingDefinitionEClass, ABSTRACT_MAPPING_DEFINITION__NAME);
@@ -537,7 +537,7 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 		// Initialize classes and features; add operations and parameters
 		initEClass(abstractMappingEClass, AbstractMapping.class, "AbstractMapping", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAbstractMapping_UnlessCondition(), theXbasePackage.getXExpression(), null, "unlessCondition", null, 0, 1, AbstractMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAbstractMapping_Reveal(), ecorePackage.getEBoolean(), "reveal", null, 0, 1, AbstractMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAbstractMapping_Hidden(), ecorePackage.getEBoolean(), "hidden", null, 0, 1, AbstractMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(abstractMappingDefinitionEClass, AbstractMappingDefinition.class, "AbstractMappingDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAbstractMappingDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, AbstractMappingDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

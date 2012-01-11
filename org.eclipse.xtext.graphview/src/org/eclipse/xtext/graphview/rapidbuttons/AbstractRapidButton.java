@@ -10,18 +10,24 @@ public abstract class AbstractRapidButton extends AbstractHandle {
 	
 	private RapidButtonEditPolicy editPolicy;
 	
-	public void init(RapidButtonEditPolicy editPolicy, int position) {
+	public void init(RapidButtonEditPolicy editPolicy, int position, boolean isOutside) {
 		this.editPolicy = editPolicy;
-		image = editPolicy.getImage(getImagePath());
-		setPreferredSize(image.getBounds().width, image.getBounds().height);
+		setPreferredSize(getImage().getBounds().width, getImage().getBounds().height);
 		setOwner(editPolicy.getHost());
+		setLocator(new RapidButtonLocator(editPolicy.getHost().getFigure(), position, isOutside));
 	}
 	
-	abstract protected String getImagePath(); 
+	protected abstract Image createImage();
+	
+	protected Image getImage() {
+		if(image == null) 
+			image = createImage();
+		return image;
+	}
 	
 	@Override
 	public void paintFigure(Graphics g) {
-		g.drawImage(image, getBounds().getLocation());
+		g.drawImage(getImage(), getBounds().getLocation());
 	}
 	
 	protected RapidButtonEditPolicy getEditPolicy() {

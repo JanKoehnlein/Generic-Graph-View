@@ -7,21 +7,26 @@ import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.gef.DragTracker;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.tools.SimpleDragTracker;
-import org.eclipse.xtext.graphview.editpart.AbstractMappingEditPart;
+import org.eclipse.swt.graphics.Image;
+import org.eclipse.xtext.graphview.editpart.AbstractInstanceEditPart;
 import org.eclipse.xtext.graphview.editpolicy.request.RevealRequest;
 import org.eclipse.xtext.graphview.instancemodel.AbstractInstance;
 import org.eclipse.xtext.graphview.instancemodel.EdgeInstance;
 import org.eclipse.xtext.graphview.instancemodel.NodeInstance;
 import org.eclipse.xtext.graphview.instancemodel.Visibility;
+import org.eclipse.xtext.ui.PluginImageHelper;
 
 import com.google.common.collect.Lists;
+import com.google.inject.Inject;
 
 public class RevealButton extends AbstractRapidButton {
 
+	@Inject
+	private PluginImageHelper imageHelper;
+	
 	@Override
-	public void init(RapidButtonEditPolicy editPolicy, int position) {
-		super.init(editPolicy, position);
-		setLocator(new CompassOutsideBorderLocator(editPolicy.getHost().getFigure(), position));
+	protected Image createImage() {
+		return imageHelper.getImage("elcl16/add_16.png");
 	}
 	
 	@Override
@@ -33,7 +38,7 @@ public class RevealButton extends AbstractRapidButton {
 			}
 
 			@Override
-			protected List<AbstractMappingEditPart> createOperationSet() {
+			protected List<AbstractInstanceEditPart> createOperationSet() {
 				return Collections.singletonList(getEditPolicy().getHost());
 			}
 
@@ -94,11 +99,6 @@ public class RevealButton extends AbstractRapidButton {
 				return false;
 			}
 		};
-	}
-
-	@Override
-	protected String getImagePath() {
-		return "elcl16/add_16.png";
 	}
 
 	@Override

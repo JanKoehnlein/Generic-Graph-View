@@ -28,7 +28,7 @@ import org.eclipse.xtext.xbase.XExpression;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.AbstractMappingImpl#getUnlessCondition <em>Unless Condition</em>}</li>
- *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.AbstractMappingImpl#isReveal <em>Reveal</em>}</li>
+ *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.AbstractMappingImpl#isHidden <em>Hidden</em>}</li>
  * </ul>
  * </p>
  *
@@ -47,24 +47,24 @@ public abstract class AbstractMappingImpl extends JvmIdentifiableElementImpl imp
 	protected XExpression unlessCondition;
 
 	/**
-	 * The default value of the '{@link #isReveal() <em>Reveal</em>}' attribute.
+	 * The default value of the '{@link #isHidden() <em>Hidden</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isReveal()
+	 * @see #isHidden()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean REVEAL_EDEFAULT = false;
+	protected static final boolean HIDDEN_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #isReveal() <em>Reveal</em>}' attribute.
+	 * The cached value of the '{@link #isHidden() <em>Hidden</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isReveal()
+	 * @see #isHidden()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean reveal = REVEAL_EDEFAULT;
+	protected boolean hidden = HIDDEN_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -140,9 +140,9 @@ public abstract class AbstractMappingImpl extends JvmIdentifiableElementImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isReveal()
+	public boolean isHidden()
 	{
-		return reveal;
+		return hidden;
 	}
 
 	/**
@@ -150,12 +150,12 @@ public abstract class AbstractMappingImpl extends JvmIdentifiableElementImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setReveal(boolean newReveal)
+	public void setHidden(boolean newHidden)
 	{
-		boolean oldReveal = reveal;
-		reveal = newReveal;
+		boolean oldHidden = hidden;
+		hidden = newHidden;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GraphViewMappingPackage.ABSTRACT_MAPPING__REVEAL, oldReveal, reveal));
+			eNotify(new ENotificationImpl(this, Notification.SET, GraphViewMappingPackage.ABSTRACT_MAPPING__HIDDEN, oldHidden, hidden));
 	}
 
 	/**
@@ -186,8 +186,8 @@ public abstract class AbstractMappingImpl extends JvmIdentifiableElementImpl imp
 		{
 			case GraphViewMappingPackage.ABSTRACT_MAPPING__UNLESS_CONDITION:
 				return getUnlessCondition();
-			case GraphViewMappingPackage.ABSTRACT_MAPPING__REVEAL:
-				return isReveal();
+			case GraphViewMappingPackage.ABSTRACT_MAPPING__HIDDEN:
+				return isHidden();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -205,8 +205,8 @@ public abstract class AbstractMappingImpl extends JvmIdentifiableElementImpl imp
 			case GraphViewMappingPackage.ABSTRACT_MAPPING__UNLESS_CONDITION:
 				setUnlessCondition((XExpression)newValue);
 				return;
-			case GraphViewMappingPackage.ABSTRACT_MAPPING__REVEAL:
-				setReveal((Boolean)newValue);
+			case GraphViewMappingPackage.ABSTRACT_MAPPING__HIDDEN:
+				setHidden((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -225,8 +225,8 @@ public abstract class AbstractMappingImpl extends JvmIdentifiableElementImpl imp
 			case GraphViewMappingPackage.ABSTRACT_MAPPING__UNLESS_CONDITION:
 				setUnlessCondition((XExpression)null);
 				return;
-			case GraphViewMappingPackage.ABSTRACT_MAPPING__REVEAL:
-				setReveal(REVEAL_EDEFAULT);
+			case GraphViewMappingPackage.ABSTRACT_MAPPING__HIDDEN:
+				setHidden(HIDDEN_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -244,8 +244,8 @@ public abstract class AbstractMappingImpl extends JvmIdentifiableElementImpl imp
 		{
 			case GraphViewMappingPackage.ABSTRACT_MAPPING__UNLESS_CONDITION:
 				return unlessCondition != null;
-			case GraphViewMappingPackage.ABSTRACT_MAPPING__REVEAL:
-				return reveal != REVEAL_EDEFAULT;
+			case GraphViewMappingPackage.ABSTRACT_MAPPING__HIDDEN:
+				return hidden != HIDDEN_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -261,8 +261,8 @@ public abstract class AbstractMappingImpl extends JvmIdentifiableElementImpl imp
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (reveal: ");
-		result.append(reveal);
+		result.append(" (hidden: ");
+		result.append(hidden);
 		result.append(')');
 		return result.toString();
 	}

@@ -81,13 +81,13 @@ public interface GraphViewMappingPackage extends EPackage
 	int ABSTRACT_MAPPING__UNLESS_CONDITION = TypesPackage.JVM_IDENTIFIABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Reveal</b></em>' attribute.
+	 * The feature id for the '<em><b>Hidden</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_MAPPING__REVEAL = TypesPackage.JVM_IDENTIFIABLE_ELEMENT_FEATURE_COUNT + 1;
+	int ABSTRACT_MAPPING__HIDDEN = TypesPackage.JVM_IDENTIFIABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Abstract Mapping</em>' class.
@@ -118,13 +118,13 @@ public interface GraphViewMappingPackage extends EPackage
 	int ABSTRACT_MAPPING_DEFINITION__UNLESS_CONDITION = ABSTRACT_MAPPING__UNLESS_CONDITION;
 
 	/**
-	 * The feature id for the '<em><b>Reveal</b></em>' attribute.
+	 * The feature id for the '<em><b>Hidden</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_MAPPING_DEFINITION__REVEAL = ABSTRACT_MAPPING__REVEAL;
+	int ABSTRACT_MAPPING_DEFINITION__HIDDEN = ABSTRACT_MAPPING__HIDDEN;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -173,13 +173,13 @@ public interface GraphViewMappingPackage extends EPackage
 	int ABSTRACT_EXPRESSION_MAPPING__UNLESS_CONDITION = ABSTRACT_MAPPING__UNLESS_CONDITION;
 
 	/**
-	 * The feature id for the '<em><b>Reveal</b></em>' attribute.
+	 * The feature id for the '<em><b>Hidden</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_EXPRESSION_MAPPING__REVEAL = ABSTRACT_MAPPING__REVEAL;
+	int ABSTRACT_EXPRESSION_MAPPING__HIDDEN = ABSTRACT_MAPPING__HIDDEN;
 
 	/**
 	 * The feature id for the '<em><b>Multi</b></em>' attribute.
@@ -228,13 +228,13 @@ public interface GraphViewMappingPackage extends EPackage
 	int ABSTRACT_MAPPING_REFERENCE__UNLESS_CONDITION = ABSTRACT_EXPRESSION_MAPPING__UNLESS_CONDITION;
 
 	/**
-	 * The feature id for the '<em><b>Reveal</b></em>' attribute.
+	 * The feature id for the '<em><b>Hidden</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_MAPPING_REFERENCE__REVEAL = ABSTRACT_EXPRESSION_MAPPING__REVEAL;
+	int ABSTRACT_MAPPING_REFERENCE__HIDDEN = ABSTRACT_EXPRESSION_MAPPING__HIDDEN;
 
 	/**
 	 * The feature id for the '<em><b>Multi</b></em>' attribute.
@@ -320,13 +320,13 @@ public interface GraphViewMappingPackage extends EPackage
 	int DIAGRAM_MAPPING__UNLESS_CONDITION = ABSTRACT_MAPPING_DEFINITION__UNLESS_CONDITION;
 
 	/**
-	 * The feature id for the '<em><b>Reveal</b></em>' attribute.
+	 * The feature id for the '<em><b>Hidden</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM_MAPPING__REVEAL = ABSTRACT_MAPPING_DEFINITION__REVEAL;
+	int DIAGRAM_MAPPING__HIDDEN = ABSTRACT_MAPPING_DEFINITION__HIDDEN;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -393,13 +393,13 @@ public interface GraphViewMappingPackage extends EPackage
 	int NODE_MAPPING__UNLESS_CONDITION = ABSTRACT_MAPPING_DEFINITION__UNLESS_CONDITION;
 
 	/**
-	 * The feature id for the '<em><b>Reveal</b></em>' attribute.
+	 * The feature id for the '<em><b>Hidden</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NODE_MAPPING__REVEAL = ABSTRACT_MAPPING_DEFINITION__REVEAL;
+	int NODE_MAPPING__HIDDEN = ABSTRACT_MAPPING_DEFINITION__HIDDEN;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -466,13 +466,13 @@ public interface GraphViewMappingPackage extends EPackage
 	int LABEL_MAPPING__UNLESS_CONDITION = ABSTRACT_MAPPING_DEFINITION__UNLESS_CONDITION;
 
 	/**
-	 * The feature id for the '<em><b>Reveal</b></em>' attribute.
+	 * The feature id for the '<em><b>Hidden</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LABEL_MAPPING__REVEAL = ABSTRACT_MAPPING_DEFINITION__REVEAL;
+	int LABEL_MAPPING__HIDDEN = ABSTRACT_MAPPING_DEFINITION__HIDDEN;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -539,13 +539,13 @@ public interface GraphViewMappingPackage extends EPackage
 	int EDGE_MAPPING__UNLESS_CONDITION = ABSTRACT_MAPPING_DEFINITION__UNLESS_CONDITION;
 
 	/**
-	 * The feature id for the '<em><b>Reveal</b></em>' attribute.
+	 * The feature id for the '<em><b>Hidden</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EDGE_MAPPING__REVEAL = ABSTRACT_MAPPING_DEFINITION__REVEAL;
+	int EDGE_MAPPING__HIDDEN = ABSTRACT_MAPPING_DEFINITION__HIDDEN;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -630,13 +630,13 @@ public interface GraphViewMappingPackage extends EPackage
 	int EDGE_END_MAPPING__UNLESS_CONDITION = ABSTRACT_MAPPING_REFERENCE__UNLESS_CONDITION;
 
 	/**
-	 * The feature id for the '<em><b>Reveal</b></em>' attribute.
+	 * The feature id for the '<em><b>Hidden</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EDGE_END_MAPPING__REVEAL = ABSTRACT_MAPPING_REFERENCE__REVEAL;
+	int EDGE_END_MAPPING__HIDDEN = ABSTRACT_MAPPING_REFERENCE__HIDDEN;
 
 	/**
 	 * The feature id for the '<em><b>Multi</b></em>' attribute.
@@ -703,13 +703,13 @@ public interface GraphViewMappingPackage extends EPackage
 	int MAPPING_CALL__UNLESS_CONDITION = ABSTRACT_MAPPING_REFERENCE__UNLESS_CONDITION;
 
 	/**
-	 * The feature id for the '<em><b>Reveal</b></em>' attribute.
+	 * The feature id for the '<em><b>Hidden</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAPPING_CALL__REVEAL = ABSTRACT_MAPPING_REFERENCE__REVEAL;
+	int MAPPING_CALL__HIDDEN = ABSTRACT_MAPPING_REFERENCE__HIDDEN;
 
 	/**
 	 * The feature id for the '<em><b>Multi</b></em>' attribute.
@@ -770,15 +770,15 @@ public interface GraphViewMappingPackage extends EPackage
 	EReference getAbstractMapping_UnlessCondition();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping#isReveal <em>Reveal</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping#isHidden <em>Hidden</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Reveal</em>'.
-	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping#isReveal()
+	 * @return the meta object for the attribute '<em>Hidden</em>'.
+	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping#isHidden()
 	 * @see #getAbstractMapping()
 	 * @generated
 	 */
-	EAttribute getAbstractMapping_Reveal();
+	EAttribute getAbstractMapping_Hidden();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMappingDefinition <em>Abstract Mapping Definition</em>}'.
@@ -1043,12 +1043,12 @@ public interface GraphViewMappingPackage extends EPackage
 		EReference ABSTRACT_MAPPING__UNLESS_CONDITION = eINSTANCE.getAbstractMapping_UnlessCondition();
 
 		/**
-		 * The meta object literal for the '<em><b>Reveal</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Hidden</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ABSTRACT_MAPPING__REVEAL = eINSTANCE.getAbstractMapping_Reveal();
+		EAttribute ABSTRACT_MAPPING__HIDDEN = eINSTANCE.getAbstractMapping_Hidden();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.AbstractMappingDefinitionImpl <em>Abstract Mapping Definition</em>}' class.

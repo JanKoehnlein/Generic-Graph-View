@@ -1022,7 +1022,7 @@ public class AbstractGraphViewMappingSemanticSequencer extends AbstractSemanticS
 	/**
 	 * Constraint:
 	 *     (
-	 *         reveal?='reveal'? 
+	 *         hidden?='hidden'? 
 	 *         name=ID 
 	 *         multi?='each'? 
 	 *         expression=XExpression 
@@ -1136,7 +1136,7 @@ public class AbstractGraphViewMappingSemanticSequencer extends AbstractSemanticS
 	
 	/**
 	 * Constraint:
-	 *     (reveal?='reveal'? name=ID multi?='each'? expression=XExpression unlessCondition=XExpression?)
+	 *     (hidden?='hidden'? name=ID multi?='each'? expression=XExpression unlessCondition=XExpression?)
 	 */
 	protected void sequence_LabelMapping(EObject context, LabelMapping semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1145,7 +1145,7 @@ public class AbstractGraphViewMappingSemanticSequencer extends AbstractSemanticS
 	
 	/**
 	 * Constraint:
-	 *     (reveal?='reveal'? referencedMapping=[AbstractMappingDefinition|ID] multi?='each'? expression=XExpression unlessCondition=XExpression?)
+	 *     (hidden?='hidden'? referencedMapping=[AbstractMappingDefinition|ID] multi?='each'? expression=XExpression unlessCondition=XExpression?)
 	 */
 	protected void sequence_MappingCall(EObject context, MappingCall semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1155,7 +1155,7 @@ public class AbstractGraphViewMappingSemanticSequencer extends AbstractSemanticS
 	/**
 	 * Constraint:
 	 *     (
-	 *         reveal?='reveal'? 
+	 *         hidden?='hidden'? 
 	 *         name=ID 
 	 *         multi?='each'? 
 	 *         expression=XExpression 

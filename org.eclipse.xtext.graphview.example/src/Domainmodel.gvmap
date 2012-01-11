@@ -16,12 +16,12 @@ diagram DomainmodelEntityDiagram type Entity {
 			] {
 			label Label for each this
 		} 
-		reveal edge Reference for each members.filter(typeof(JvmField))
+		hidden edge Reference for each members.filter(typeof(JvmField))
 			.filter[it.^type.^type instanceof JvmGenericType 
 				&& it.^type.identifier!="java.lang.String"] {
 			=> call EntityNode for ^type.^type		
 		}
-		reveal edge SuperType for extendedClass {
+		hidden edge SuperType for extendedClass {
 			=> call EntityNode for ^type
 		} unless extendedClass.^type.sourceElement(typeof(Entity)) == null
 	} 

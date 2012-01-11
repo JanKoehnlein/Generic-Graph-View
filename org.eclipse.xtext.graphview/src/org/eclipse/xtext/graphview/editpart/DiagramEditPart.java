@@ -20,7 +20,7 @@ import org.eclipse.xtext.graphview.shape.DiagramShape;
 
 import com.google.inject.Inject;
 
-public class DiagramEditPart extends AbstractMappingEditPart {
+public class DiagramEditPart extends AbstractInstanceEditPart {
 
 	@Inject
 	private DiagramLayoutEditPolicy diagramLayoutEditPolicy;

@@ -26,15 +26,15 @@ AbstractExpressionMapping:
 	NodeMapping | LabelMapping | EdgeMapping | MappingCall;
 
 NodeMapping:
-	reveal?='reveal'? 'node' name=ID 'for' multi?='each'? expression=XExpression '{'
+	^hidden?='hidden'? 'node' name=ID 'for' multi?='each'? expression=XExpression '{'
 	mappings+=AbstractExpressionMapping*
 	'}' ('unless' unlessCondition=XExpression)?;
 
 LabelMapping:
-	reveal?='reveal'? 'label' name=ID 'for' multi?='each'? expression=XExpression ('unless' unlessCondition=XExpression)?;
+	^hidden?='hidden'? 'label' name=ID 'for' multi?='each'? expression=XExpression ('unless' unlessCondition=XExpression)?;
 
 EdgeMapping:
-	reveal?='reveal'? 'edge' name=ID 'for' multi?='each'? expression=XExpression '{'
+	^hidden?='hidden'? 'edge' name=ID 'for' multi?='each'? expression=XExpression '{'
 	sourceMapping=EdgeEndMapping?
 	'=>'
 	targetMapping=EdgeEndMapping?
@@ -45,6 +45,6 @@ EdgeEndMapping:
 	('ref' | call?='call') referencedMapping=[AbstractMappingDefinition] 'for' expression=XExpression;
 
 MappingCall:
-	reveal?='reveal'? 'call' referencedMapping=[AbstractMappingDefinition] 'for' multi?='each'? expression=XExpression
+	^hidden?='hidden'? 'call' referencedMapping=[AbstractMappingDefinition] 'for' multi?='each'? expression=XExpression
 	('unless' unlessCondition=XExpression)?;
 

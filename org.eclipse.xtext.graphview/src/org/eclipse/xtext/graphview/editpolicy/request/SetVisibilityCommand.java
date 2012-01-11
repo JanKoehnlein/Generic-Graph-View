@@ -53,7 +53,10 @@ public class SetVisibilityCommand extends Command {
 
 	protected void memorizeAndSetVisibility(AbstractInstance instance, Visibility newVisibility) {
 		if(newVisibility != instance.getVisibility()) {
-			stateMemento.put(instance, instance.getVisibility());
+			Visibility oldVisibility = instance.getVisibility();
+			if(oldVisibility == Visibility.TRANSPARENT)
+				oldVisibility = Visibility.HIDDEN;
+			stateMemento.put(instance, oldVisibility);
 			instance.setVisibility(newVisibility);
 		}
 	}

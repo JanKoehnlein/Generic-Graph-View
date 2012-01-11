@@ -23,7 +23,7 @@ import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 import com.google.inject.Inject;
 
-public class NodeEditPart extends AbstractMappingEditPart {
+public class NodeEditPart extends AbstractInstanceEditPart {
 
 	@Inject
 	private RapidButtonEditPolicy rapidButtonEditPolicy;
