@@ -10,6 +10,9 @@ package org.eclipse.xtext.graphview.view;
 import java.util.Iterator;
 
 import org.eclipse.draw2d.ColorConstants;
+import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.Viewport;
+import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.GraphicalViewer;
 import org.eclipse.gef.KeyHandler;
 import org.eclipse.gef.KeyStroke;
@@ -34,6 +37,7 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.actions.ActionFactory;
 import org.eclipse.ui.part.ViewPart;
+import org.eclipse.xtext.graphview.editpart.DiagramEditPart;
 import org.eclipse.xtext.graphview.editpart.GraphViewEditDomain;
 import org.eclipse.xtext.graphview.editpart.GraphViewEditPartFactory;
 import org.eclipse.xtext.graphview.instancemodel.DiagramInstance;
@@ -60,7 +64,10 @@ public class GraphView extends ViewPart {
 	private ModelInstantiator modelInstantiator;
 
 	@Inject
-	private RefreshAction refreshAction;
+	private ResetAction resetAction;
+
+	@Inject
+	private RelayoutAction relayoutAction;
 
 	@Inject
 	private ExportToFileAction exportToFileAction;
@@ -110,7 +117,8 @@ public class GraphView extends ViewPart {
 				.addPostSelectionListener(selectionConverter);
 		IToolBarManager toolBarManager = getViewSite().getActionBars()
 				.getToolBarManager();
-		toolBarManager.add(refreshAction);
+		toolBarManager.add(resetAction);
+		toolBarManager.add(relayoutAction);
 		toolBarManager.add(exportToFileAction);
 		toolBarManager.add(selectDiagramConfigurationAction);
 		actionRegistry = createActionRegistry();
@@ -125,7 +133,8 @@ public class GraphView extends ViewPart {
 		};
 		zoomContributionItem.setZoomManager(zoomManager);
 		toolBarManager.add(zoomContributionItem);
-		refreshAction.setEnabled(false);
+		resetAction.setEnabled(false);
+		relayoutAction.setEnabled(false);
 		exportToFileAction.setEnabled(false);
 		actionUpdater = new ISelectionChangedListener() {
 			public void selectionChanged(SelectionChangedEvent event) {
@@ -233,10 +242,24 @@ public class GraphView extends ViewPart {
 				}
 			}
 		}
+		IFigure rootFigure = ((GraphicalEditPart) graphicalViewer.getRootEditPart()).getFigure();
+		if(rootFigure instanceof Viewport) {
+			((Viewport) rootFigure).setViewLocation(0,0);
+		}
 		exportToFileAction.setEnabled(currentContents != null);
-		refreshAction.setEnabled(currentContents != null);
+		resetAction.setEnabled(currentContents != null);
+		relayoutAction.setEnabled(currentContents != null);
 		zoomContributionItem.setZoomManager(zoomManager);
 		return hasContent;
+	}
+
+	public void relayout() {
+		if(graphicalViewer.getContents() != null) {
+			Object diagramEditPart = graphicalViewer.getEditPartRegistry().get(graphicalViewer.getContents().getModel());
+			if (diagramEditPart instanceof DiagramEditPart) {
+				((DiagramEditPart) diagramEditPart).performAutoLayout();
+			}
+		}
 	}
 
 	protected GraphicalViewer getGraphicalViewer() {

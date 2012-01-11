@@ -74,15 +74,20 @@ public class DiagramEditPart extends AbstractMappingEditPart {
 	@Override
 	public void activate() {
 		super.activate();
+		performAutoLayout();
+		if (isRootDiagram())
+			visibilityListener.register(this);
+	}
+
+	public void performAutoLayout() {
 		IFigure figure = getContentPane();
 		if (figure instanceof DiagramShape) {
 			Dimension size = ((DiagramShape) figure).getAutoLayoutManager()
 					.layout(figure);
 			if(!isRootDiagram())
 				viewport.setPreferredSize(size);
+			((DiagramShape) figure).fireExtentChanged();
 		}
-		if (isRootDiagram())
-			visibilityListener.register(this);
 	}
 
 	@Override

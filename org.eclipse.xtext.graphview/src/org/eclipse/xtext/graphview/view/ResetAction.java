@@ -13,15 +13,15 @@ import org.eclipse.xtext.ui.PluginImageHelper;
 
 import com.google.inject.Inject;
 
-public class RefreshAction extends Action {
+public class ResetAction extends Action {
 
 	@Inject
 	private GraphView graphView;
 
-	public RefreshAction() {
+	public ResetAction() {
 		super();
-		setText("Redraw");
-		setToolTipText("Redraw this diagram");
+		setText("Reset");
+		setToolTipText("Reset this diagram");
 	}
 	
 	@Inject 
@@ -29,7 +29,7 @@ public class RefreshAction extends Action {
 		setImageDescriptor(ImageDescriptor.createFromImage(imageHelper
 				.getImage("elcl16/refresh_nav.gif")));
 		setDisabledImageDescriptor(ImageDescriptor.createFromImage(imageHelper
-				.getImage("elcl16/refresh_nav.gif")));
+				.getImage("dlcl16/refresh_nav.gif")));
 	}
 
 	@Override
