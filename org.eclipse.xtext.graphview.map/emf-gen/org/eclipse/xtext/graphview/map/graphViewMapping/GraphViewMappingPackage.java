@@ -264,13 +264,22 @@ public interface GraphViewMappingPackage extends EPackage
 	int ABSTRACT_MAPPING_REFERENCE__REFERENCED_MAPPING = ABSTRACT_EXPRESSION_MAPPING_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Call</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_MAPPING_REFERENCE__CALL = ABSTRACT_EXPRESSION_MAPPING_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Abstract Mapping Reference</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_MAPPING_REFERENCE_FEATURE_COUNT = ABSTRACT_EXPRESSION_MAPPING_FEATURE_COUNT + 1;
+	int ABSTRACT_MAPPING_REFERENCE_FEATURE_COUNT = ABSTRACT_EXPRESSION_MAPPING_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.ImportImpl <em>Import</em>}' class.
@@ -672,7 +681,7 @@ public interface GraphViewMappingPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int EDGE_END_MAPPING__CALL = ABSTRACT_MAPPING_REFERENCE_FEATURE_COUNT + 0;
+	int EDGE_END_MAPPING__CALL = ABSTRACT_MAPPING_REFERENCE__CALL;
 
 	/**
 	 * The number of structural features of the '<em>Edge End Mapping</em>' class.
@@ -681,7 +690,7 @@ public interface GraphViewMappingPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int EDGE_END_MAPPING_FEATURE_COUNT = ABSTRACT_MAPPING_REFERENCE_FEATURE_COUNT + 1;
+	int EDGE_END_MAPPING_FEATURE_COUNT = ABSTRACT_MAPPING_REFERENCE_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.MappingCallImpl <em>Mapping Call</em>}' class.
@@ -737,6 +746,15 @@ public interface GraphViewMappingPackage extends EPackage
 	 * @ordered
 	 */
 	int MAPPING_CALL__REFERENCED_MAPPING = ABSTRACT_MAPPING_REFERENCE__REFERENCED_MAPPING;
+
+	/**
+	 * The feature id for the '<em><b>Call</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING_CALL__CALL = ABSTRACT_MAPPING_REFERENCE__CALL;
 
 	/**
 	 * The number of structural features of the '<em>Mapping Call</em>' class.
@@ -866,6 +884,17 @@ public interface GraphViewMappingPackage extends EPackage
 	EReference getAbstractMappingReference_ReferencedMapping();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMappingReference#isCall <em>Call</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Call</em>'.
+	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMappingReference#isCall()
+	 * @see #getAbstractMappingReference()
+	 * @generated
+	 */
+	EAttribute getAbstractMappingReference_Call();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.xtext.graphview.map.graphViewMapping.Import <em>Import</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -979,17 +1008,6 @@ public interface GraphViewMappingPackage extends EPackage
 	 * @generated
 	 */
 	EClass getEdgeEndMapping();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.xtext.graphview.map.graphViewMapping.EdgeEndMapping#isCall <em>Call</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Call</em>'.
-	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.EdgeEndMapping#isCall()
-	 * @see #getEdgeEndMapping()
-	 * @generated
-	 */
-	EAttribute getEdgeEndMapping_Call();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.xtext.graphview.map.graphViewMapping.MappingCall <em>Mapping Call</em>}'.
@@ -1121,6 +1139,14 @@ public interface GraphViewMappingPackage extends EPackage
 		EReference ABSTRACT_MAPPING_REFERENCE__REFERENCED_MAPPING = eINSTANCE.getAbstractMappingReference_ReferencedMapping();
 
 		/**
+		 * The meta object literal for the '<em><b>Call</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ABSTRACT_MAPPING_REFERENCE__CALL = eINSTANCE.getAbstractMappingReference_Call();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.ImportImpl <em>Import</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1219,14 +1245,6 @@ public interface GraphViewMappingPackage extends EPackage
 		 * @generated
 		 */
 		EClass EDGE_END_MAPPING = eINSTANCE.getEdgeEndMapping();
-
-		/**
-		 * The meta object literal for the '<em><b>Call</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute EDGE_END_MAPPING__CALL = eINSTANCE.getEdgeEndMapping_Call();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.MappingCallImpl <em>Mapping Call</em>}' class.

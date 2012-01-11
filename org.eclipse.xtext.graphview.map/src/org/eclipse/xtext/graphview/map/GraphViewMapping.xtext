@@ -45,6 +45,6 @@ EdgeEndMapping:
 	('ref' | call?='call') referencedMapping=[AbstractMappingDefinition] 'for' expression=XExpression;
 
 MappingCall:
-	^hidden?='hidden'? 'call' referencedMapping=[AbstractMappingDefinition] 'for' multi?='each'? expression=XExpression
+	(^hidden?='hidden'? call?='call' | 'open') referencedMapping=[AbstractMappingDefinition] 'for' multi?='each'? expression=XExpression
 	('unless' unlessCondition=XExpression)?;
 

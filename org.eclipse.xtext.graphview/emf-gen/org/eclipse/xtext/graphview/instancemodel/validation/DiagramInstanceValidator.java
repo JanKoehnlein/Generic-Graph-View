@@ -21,4 +21,6 @@ public interface DiagramInstanceValidator {
 
 	boolean validateEdges(EList<EdgeInstance> value);
 
+	boolean validateOpenNewDiagram(boolean value);
+
 }

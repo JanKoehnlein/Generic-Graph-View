@@ -30,6 +30,9 @@ public class RapidButtonEditPolicy extends AbstractEditPolicy {
 
 	@Inject
 	private ExpandButton expandButton;
+	
+	@Inject 
+	private OpenDiagramButton openDiagramButton;
 
 	@Inject
 	private Provider<RevealButton> revealButtonProvider;
@@ -62,8 +65,9 @@ public class RapidButtonEditPolicy extends AbstractEditPolicy {
 			addButton(revealButtonProvider.get(), PositionConstants.EAST, true);
 			addButton(revealButtonProvider.get(), PositionConstants.SOUTH, true);
 			addButton(revealButtonProvider.get(), PositionConstants.WEST, true);
-			addButton(deleteButton, PositionConstants.NORTH_EAST, false);
 			addButton(expandButton, PositionConstants.NORTH_WEST, false);
+			addButton(openDiagramButton, PositionConstants.NORTH, false);
+			addButton(deleteButton, PositionConstants.NORTH_EAST, false);
 		}
 		return buttons;
 	}

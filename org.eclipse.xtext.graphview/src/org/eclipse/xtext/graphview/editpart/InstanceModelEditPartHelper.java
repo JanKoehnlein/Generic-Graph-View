@@ -16,6 +16,7 @@ import org.eclipse.gef.Request;
 import org.eclipse.gef.RequestConstants;
 import org.eclipse.xtext.common.types.JvmTypeReference;
 import org.eclipse.xtext.graphview.instancemodel.AbstractInstance;
+import org.eclipse.xtext.graphview.instancemodel.DiagramInstance;
 import org.eclipse.xtext.graphview.instancemodel.Visibility;
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping;
 import org.eclipse.xtext.graphview.style.StyleProvider;
@@ -30,13 +31,13 @@ public class InstanceModelEditPartHelper {
 
 	@Inject
 	private StyleProvider styleProvider;
-	
-	@Inject 
+
+	@Inject
 	private ElementSelectionConverter selectionConverter;
-	
+
 	private AbstractInstance instanceModel;
 
-	private IInstanceModelEditPart host; 
+	private IInstanceModelEditPart host;
 
 	public void initialize(IInstanceModelEditPart host) {
 		this.host = host;
@@ -44,7 +45,7 @@ public class InstanceModelEditPartHelper {
 			throw new RuntimeException("Model must be an AbstractInstance");
 		this.instanceModel = (AbstractInstance) host.getModel();
 	}
-		
+
 	public Object getSemanticElement() {
 		return getInstanceModel().getSemanticElement();
 	}
@@ -59,13 +60,15 @@ public class InstanceModelEditPartHelper {
 
 	public <T extends AbstractInstance> List<T> filterVisible(List<T> instances) {
 		List<T> visibleChildren = Lists.newArrayList();
-		for(T child: instances) {
-			if(child.getVisibility() != Visibility.HIDDEN)
+		for (T child : instances) {
+			if (child.getVisibility() != Visibility.HIDDEN
+					&& !(child instanceof DiagramInstance && ((DiagramInstance) child)
+							.isOpenNewDiagram()))
 				visibleChildren.add(child);
 		}
 		return visibleChildren;
 	}
-	
+
 	public List<AbstractInstance> getVisibleModelChildren() {
 		return filterVisible(getInstanceModel().getChildren());
 	}
@@ -79,8 +82,8 @@ public class InstanceModelEditPartHelper {
 
 	public IFigure createFigure() {
 		IFigure figure = null;
-		for(Style style : getStyles()) {
-			if(style.getJavaClass() != null) {
+		for (Style style : getStyles()) {
+			if (style.getJavaClass() != null) {
 				figure = createShape(style);
 			}
 		}
@@ -104,20 +107,20 @@ public class InstanceModelEditPartHelper {
 		}
 		return null;
 	}
-	
+
 	protected GraphViewEditDomain getEditDomain() {
 		return (GraphViewEditDomain) host.getViewer().getEditDomain();
 	}
-	
+
 	public void style(IFigure figure) {
 		styleProvider.setClassLoader(getEditDomain().getClassLoader());
-		for(Style style: getStyles())
+		for (Style style : getStyles())
 			styleProvider.style(figure, getSemanticElement(), style);
 	}
-	
+
 	public void performRequest(Request request) {
-		if(RequestConstants.REQ_OPEN.equals(request.getType()))
+		if (RequestConstants.REQ_OPEN.equals(request.getType()))
 			selectionConverter.select(getSemanticElement());
 	}
-	
+
 }

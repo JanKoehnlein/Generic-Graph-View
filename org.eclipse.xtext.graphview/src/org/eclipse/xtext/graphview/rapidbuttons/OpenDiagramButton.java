@@ -1,27 +1,25 @@
 package org.eclipse.xtext.graphview.rapidbuttons;
 
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.DragTracker;
 import org.eclipse.gef.Request;
+import org.eclipse.gef.RequestConstants;
 import org.eclipse.swt.graphics.Image;
-import org.eclipse.xtext.EcoreUtil2;
-import org.eclipse.xtext.graphview.editpolicy.ExpandEditPolicy;
 import org.eclipse.xtext.graphview.instancemodel.AbstractInstance;
-import org.eclipse.xtext.graphview.instancemodel.Visibility;
+import org.eclipse.xtext.graphview.instancemodel.DiagramInstance;
 import org.eclipse.xtext.ui.PluginImageHelper;
 
 import com.google.inject.Inject;
 
-public class ExpandButton extends AbstractRapidButton {
+public class OpenDiagramButton extends AbstractRapidButton {
 
 	@Inject
 	private PluginImageHelper imageHelper;
-	
+
 	@Override
 	protected Image createImage() {
-		return imageHelper.getImage("elcl16/expandall.gif");
+		return imageHelper.getImage("elcl16/opendiagram.gif");
 	}
-	
+
 	@Override
 	protected DragTracker createDragTracker() {
 		return new AbstractRapidButtonDragTracker(getEditPolicy().getHost()) {
@@ -29,24 +27,22 @@ public class ExpandButton extends AbstractRapidButton {
 			protected String getCommandName() {
 				return "Hide element";
 			}
-			
+
 			@Override
 			protected Request createSourceRequest() {
-				Request expandRequest = new Request(ExpandEditPolicy.REQ_EXPAND);
-				return expandRequest;
+				return new Request(RequestConstants.REQ_OPEN);
 			}
 		};
 	}
 
 	@Override
 	public void setVisible(boolean visible) {
-		super.setVisible(visible && hasHiddenChildren());
+		super.setVisible(visible && hasOpenDiagram());
 	}
-	
-	protected boolean hasHiddenChildren() {
-		for (EObject modelChild : EcoreUtil2.eAllContents(getEditPolicy().getHost().getModel())) {
-			if (modelChild instanceof AbstractInstance
-					&& ((AbstractInstance) modelChild).getVisibility() == Visibility.HIDDEN)
+
+	protected boolean hasOpenDiagram() {
+		for(AbstractInstance child: getEditPolicy().getHost().getModel().getChildren()) {
+			if(child instanceof DiagramInstance && ((DiagramInstance) child).isOpenNewDiagram())
 				return true;
 		}
 		return false;

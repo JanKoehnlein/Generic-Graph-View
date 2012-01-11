@@ -15,6 +15,7 @@ package org.eclipse.xtext.graphview.map.graphViewMapping;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMappingReference#getReferencedMapping <em>Referenced Mapping</em>}</li>
+ *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMappingReference#isCall <em>Call</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,5 +50,31 @@ public interface AbstractMappingReference extends AbstractExpressionMapping
 	 * @generated
 	 */
 	void setReferencedMapping(AbstractMappingDefinition value);
+
+	/**
+	 * Returns the value of the '<em><b>Call</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Call</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Call</em>' attribute.
+	 * @see #setCall(boolean)
+	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage#getAbstractMappingReference_Call()
+	 * @model
+	 * @generated
+	 */
+	boolean isCall();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMappingReference#isCall <em>Call</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Call</em>' attribute.
+	 * @see #isCall()
+	 * @generated
+	 */
+	void setCall(boolean value);
 
 } // AbstractMappingReference

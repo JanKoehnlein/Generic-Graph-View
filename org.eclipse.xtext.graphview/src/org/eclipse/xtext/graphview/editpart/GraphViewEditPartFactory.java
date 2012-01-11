@@ -39,7 +39,10 @@ public class GraphViewEditPartFactory implements EditPartFactory {
 			if (((AbstractInstance) model).getVisibility() != Visibility.HIDDEN) {
 				EditPart editPart = new InstancemodelSwitch<EditPart>() {
 					public EditPart caseDiagramInstance(DiagramInstance object) {
-						return diagramEditPartProvider.get();
+						if(object.isOpenNewDiagram() && parent != null)
+							return null;
+						else 
+							return diagramEditPartProvider.get();
 					}
 
 					public EditPart caseNodeInstance(NodeInstance object) {

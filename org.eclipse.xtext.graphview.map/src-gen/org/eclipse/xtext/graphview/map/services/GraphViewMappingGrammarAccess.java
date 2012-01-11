@@ -492,75 +492,91 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 	public class MappingCallElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MappingCall");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cHiddenAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final Keyword cHiddenHiddenKeyword_0_0 = (Keyword)cHiddenAssignment_0.eContents().get(0);
-		private final Keyword cCallKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cReferencedMappingAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final CrossReference cReferencedMappingAbstractMappingDefinitionCrossReference_2_0 = (CrossReference)cReferencedMappingAssignment_2.eContents().get(0);
-		private final RuleCall cReferencedMappingAbstractMappingDefinitionIDTerminalRuleCall_2_0_1 = (RuleCall)cReferencedMappingAbstractMappingDefinitionCrossReference_2_0.eContents().get(1);
-		private final Keyword cForKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cMultiAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final Keyword cMultiEachKeyword_4_0 = (Keyword)cMultiAssignment_4.eContents().get(0);
-		private final Assignment cExpressionAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cExpressionXExpressionParserRuleCall_5_0 = (RuleCall)cExpressionAssignment_5.eContents().get(0);
-		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cUnlessKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Assignment cUnlessConditionAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final RuleCall cUnlessConditionXExpressionParserRuleCall_6_1_0 = (RuleCall)cUnlessConditionAssignment_6_1.eContents().get(0);
+		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
+		private final Group cGroup_0_0 = (Group)cAlternatives_0.eContents().get(0);
+		private final Assignment cHiddenAssignment_0_0_0 = (Assignment)cGroup_0_0.eContents().get(0);
+		private final Keyword cHiddenHiddenKeyword_0_0_0_0 = (Keyword)cHiddenAssignment_0_0_0.eContents().get(0);
+		private final Assignment cCallAssignment_0_0_1 = (Assignment)cGroup_0_0.eContents().get(1);
+		private final Keyword cCallCallKeyword_0_0_1_0 = (Keyword)cCallAssignment_0_0_1.eContents().get(0);
+		private final Keyword cOpenKeyword_0_1 = (Keyword)cAlternatives_0.eContents().get(1);
+		private final Assignment cReferencedMappingAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cReferencedMappingAbstractMappingDefinitionCrossReference_1_0 = (CrossReference)cReferencedMappingAssignment_1.eContents().get(0);
+		private final RuleCall cReferencedMappingAbstractMappingDefinitionIDTerminalRuleCall_1_0_1 = (RuleCall)cReferencedMappingAbstractMappingDefinitionCrossReference_1_0.eContents().get(1);
+		private final Keyword cForKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cMultiAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final Keyword cMultiEachKeyword_3_0 = (Keyword)cMultiAssignment_3.eContents().get(0);
+		private final Assignment cExpressionAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cExpressionXExpressionParserRuleCall_4_0 = (RuleCall)cExpressionAssignment_4.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cUnlessKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cUnlessConditionAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cUnlessConditionXExpressionParserRuleCall_5_1_0 = (RuleCall)cUnlessConditionAssignment_5_1.eContents().get(0);
 		
 		//MappingCall:
-		//	^hidden?="hidden"? "call" referencedMapping=[AbstractMappingDefinition] "for" multi?="each"? expression=XExpression
-		//	("unless" unlessCondition=XExpression)?;
+		//	(^hidden?="hidden"? call?="call" | "open") referencedMapping=[AbstractMappingDefinition] "for" multi?="each"?
+		//	expression=XExpression ("unless" unlessCondition=XExpression)?;
 		public ParserRule getRule() { return rule; }
 
-		//^hidden?="hidden"? "call" referencedMapping=[AbstractMappingDefinition] "for" multi?="each"? expression=XExpression
-		//("unless" unlessCondition=XExpression)?
+		//(^hidden?="hidden"? call?="call" | "open") referencedMapping=[AbstractMappingDefinition] "for" multi?="each"?
+		//expression=XExpression ("unless" unlessCondition=XExpression)?
 		public Group getGroup() { return cGroup; }
 
+		//^hidden?="hidden"? call?="call" | "open"
+		public Alternatives getAlternatives_0() { return cAlternatives_0; }
+
+		//^hidden?="hidden"? call?="call"
+		public Group getGroup_0_0() { return cGroup_0_0; }
+
 		//^hidden?="hidden"?
-		public Assignment getHiddenAssignment_0() { return cHiddenAssignment_0; }
+		public Assignment getHiddenAssignment_0_0_0() { return cHiddenAssignment_0_0_0; }
 
 		//"hidden"
-		public Keyword getHiddenHiddenKeyword_0_0() { return cHiddenHiddenKeyword_0_0; }
+		public Keyword getHiddenHiddenKeyword_0_0_0_0() { return cHiddenHiddenKeyword_0_0_0_0; }
+
+		//call?="call"
+		public Assignment getCallAssignment_0_0_1() { return cCallAssignment_0_0_1; }
 
 		//"call"
-		public Keyword getCallKeyword_1() { return cCallKeyword_1; }
+		public Keyword getCallCallKeyword_0_0_1_0() { return cCallCallKeyword_0_0_1_0; }
+
+		//"open"
+		public Keyword getOpenKeyword_0_1() { return cOpenKeyword_0_1; }
 
 		//referencedMapping=[AbstractMappingDefinition]
-		public Assignment getReferencedMappingAssignment_2() { return cReferencedMappingAssignment_2; }
+		public Assignment getReferencedMappingAssignment_1() { return cReferencedMappingAssignment_1; }
 
 		//[AbstractMappingDefinition]
-		public CrossReference getReferencedMappingAbstractMappingDefinitionCrossReference_2_0() { return cReferencedMappingAbstractMappingDefinitionCrossReference_2_0; }
+		public CrossReference getReferencedMappingAbstractMappingDefinitionCrossReference_1_0() { return cReferencedMappingAbstractMappingDefinitionCrossReference_1_0; }
 
 		//ID
-		public RuleCall getReferencedMappingAbstractMappingDefinitionIDTerminalRuleCall_2_0_1() { return cReferencedMappingAbstractMappingDefinitionIDTerminalRuleCall_2_0_1; }
+		public RuleCall getReferencedMappingAbstractMappingDefinitionIDTerminalRuleCall_1_0_1() { return cReferencedMappingAbstractMappingDefinitionIDTerminalRuleCall_1_0_1; }
 
 		//"for"
-		public Keyword getForKeyword_3() { return cForKeyword_3; }
+		public Keyword getForKeyword_2() { return cForKeyword_2; }
 
 		//multi?="each"?
-		public Assignment getMultiAssignment_4() { return cMultiAssignment_4; }
+		public Assignment getMultiAssignment_3() { return cMultiAssignment_3; }
 
 		//"each"
-		public Keyword getMultiEachKeyword_4_0() { return cMultiEachKeyword_4_0; }
+		public Keyword getMultiEachKeyword_3_0() { return cMultiEachKeyword_3_0; }
 
 		//expression=XExpression
-		public Assignment getExpressionAssignment_5() { return cExpressionAssignment_5; }
+		public Assignment getExpressionAssignment_4() { return cExpressionAssignment_4; }
 
 		//XExpression
-		public RuleCall getExpressionXExpressionParserRuleCall_5_0() { return cExpressionXExpressionParserRuleCall_5_0; }
+		public RuleCall getExpressionXExpressionParserRuleCall_4_0() { return cExpressionXExpressionParserRuleCall_4_0; }
 
 		//("unless" unlessCondition=XExpression)?
-		public Group getGroup_6() { return cGroup_6; }
+		public Group getGroup_5() { return cGroup_5; }
 
 		//"unless"
-		public Keyword getUnlessKeyword_6_0() { return cUnlessKeyword_6_0; }
+		public Keyword getUnlessKeyword_5_0() { return cUnlessKeyword_5_0; }
 
 		//unlessCondition=XExpression
-		public Assignment getUnlessConditionAssignment_6_1() { return cUnlessConditionAssignment_6_1; }
+		public Assignment getUnlessConditionAssignment_5_1() { return cUnlessConditionAssignment_5_1; }
 
 		//XExpression
-		public RuleCall getUnlessConditionXExpressionParserRuleCall_6_1_0() { return cUnlessConditionXExpressionParserRuleCall_6_1_0; }
+		public RuleCall getUnlessConditionXExpressionParserRuleCall_5_1_0() { return cUnlessConditionXExpressionParserRuleCall_5_1_0; }
 	}
 	
 	
@@ -680,8 +696,8 @@ public class GraphViewMappingGrammarAccess extends AbstractGrammarElementFinder 
 	}
 
 	//MappingCall:
-	//	^hidden?="hidden"? "call" referencedMapping=[AbstractMappingDefinition] "for" multi?="each"? expression=XExpression
-	//	("unless" unlessCondition=XExpression)?;
+	//	(^hidden?="hidden"? call?="call" | "open") referencedMapping=[AbstractMappingDefinition] "for" multi?="each"?
+	//	expression=XExpression ("unless" unlessCondition=XExpression)?;
 	public MappingCallElements getMappingCallAccess() {
 		return (pMappingCall != null) ? pMappingCall : (pMappingCall = new MappingCallElements());
 	}

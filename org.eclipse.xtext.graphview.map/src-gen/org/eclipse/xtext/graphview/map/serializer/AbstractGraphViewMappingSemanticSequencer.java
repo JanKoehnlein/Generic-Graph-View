@@ -1145,7 +1145,13 @@ public class AbstractGraphViewMappingSemanticSequencer extends AbstractSemanticS
 	
 	/**
 	 * Constraint:
-	 *     (hidden?='hidden'? referencedMapping=[AbstractMappingDefinition|ID] multi?='each'? expression=XExpression unlessCondition=XExpression?)
+	 *     (
+	 *         (hidden?='hidden'? call?='call')? 
+	 *         referencedMapping=[AbstractMappingDefinition|ID] 
+	 *         multi?='each'? 
+	 *         expression=XExpression 
+	 *         unlessCondition=XExpression?
+	 *     )
 	 */
 	protected void sequence_MappingCall(EObject context, MappingCall semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

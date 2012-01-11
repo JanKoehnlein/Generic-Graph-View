@@ -8,10 +8,12 @@ package org.eclipse.xtext.graphview.instancemodel.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.xtext.graphview.instancemodel.DiagramInstance;
@@ -26,6 +28,7 @@ import org.eclipse.xtext.graphview.instancemodel.InstancemodelPackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.eclipse.xtext.graphview.instancemodel.impl.DiagramInstanceImpl#getEdges <em>Edges</em>}</li>
+ *   <li>{@link org.eclipse.xtext.graphview.instancemodel.impl.DiagramInstanceImpl#isOpenNewDiagram <em>Open New Diagram</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,6 +44,25 @@ public class DiagramInstanceImpl extends AbstractInstanceImpl implements Diagram
 	 * @ordered
 	 */
 	protected EList<EdgeInstance> edges;
+
+	/**
+	 * The default value of the '{@link #isOpenNewDiagram() <em>Open New Diagram</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOpenNewDiagram()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean OPEN_NEW_DIAGRAM_EDEFAULT = false;
+	/**
+	 * The cached value of the '{@link #isOpenNewDiagram() <em>Open New Diagram</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOpenNewDiagram()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean openNewDiagram = OPEN_NEW_DIAGRAM_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -78,6 +100,27 @@ public class DiagramInstanceImpl extends AbstractInstanceImpl implements Diagram
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isOpenNewDiagram() {
+		return openNewDiagram;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOpenNewDiagram(boolean newOpenNewDiagram) {
+		boolean oldOpenNewDiagram = openNewDiagram;
+		openNewDiagram = newOpenNewDiagram;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InstancemodelPackage.DIAGRAM_INSTANCE__OPEN_NEW_DIAGRAM, oldOpenNewDiagram, openNewDiagram));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -97,6 +140,8 @@ public class DiagramInstanceImpl extends AbstractInstanceImpl implements Diagram
 		switch (featureID) {
 			case InstancemodelPackage.DIAGRAM_INSTANCE__EDGES:
 				return getEdges();
+			case InstancemodelPackage.DIAGRAM_INSTANCE__OPEN_NEW_DIAGRAM:
+				return isOpenNewDiagram();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -114,6 +159,9 @@ public class DiagramInstanceImpl extends AbstractInstanceImpl implements Diagram
 				getEdges().clear();
 				getEdges().addAll((Collection<? extends EdgeInstance>)newValue);
 				return;
+			case InstancemodelPackage.DIAGRAM_INSTANCE__OPEN_NEW_DIAGRAM:
+				setOpenNewDiagram((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -129,6 +177,9 @@ public class DiagramInstanceImpl extends AbstractInstanceImpl implements Diagram
 			case InstancemodelPackage.DIAGRAM_INSTANCE__EDGES:
 				getEdges().clear();
 				return;
+			case InstancemodelPackage.DIAGRAM_INSTANCE__OPEN_NEW_DIAGRAM:
+				setOpenNewDiagram(OPEN_NEW_DIAGRAM_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -143,8 +194,26 @@ public class DiagramInstanceImpl extends AbstractInstanceImpl implements Diagram
 		switch (featureID) {
 			case InstancemodelPackage.DIAGRAM_INSTANCE__EDGES:
 				return edges != null && !edges.isEmpty();
+			case InstancemodelPackage.DIAGRAM_INSTANCE__OPEN_NEW_DIAGRAM:
+				return openNewDiagram != OPEN_NEW_DIAGRAM_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (openNewDiagram: ");
+		result.append(openNewDiagram);
+		result.append(')');
+		return result.toString();
 	}
 
 } //DiagramInstanceImpl

@@ -121,7 +121,6 @@ public class InstancemodelPackageImpl extends EPackageImpl implements Instancemo
 
 		// Initialize simple dependencies
 		GraphViewMappingPackage.eINSTANCE.eClass();
-		XbasePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theInstancemodelPackage.createPackageContents();
@@ -208,6 +207,15 @@ public class InstancemodelPackageImpl extends EPackageImpl implements Instancemo
 	 */
 	public EReference getDiagramInstance_Edges() {
 		return (EReference)diagramInstanceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDiagramInstance_OpenNewDiagram() {
+		return (EAttribute)diagramInstanceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -319,6 +327,7 @@ public class InstancemodelPackageImpl extends EPackageImpl implements Instancemo
 
 		diagramInstanceEClass = createEClass(DIAGRAM_INSTANCE);
 		createEReference(diagramInstanceEClass, DIAGRAM_INSTANCE__EDGES);
+		createEAttribute(diagramInstanceEClass, DIAGRAM_INSTANCE__OPEN_NEW_DIAGRAM);
 
 		nodeInstanceEClass = createEClass(NODE_INSTANCE);
 		createEReference(nodeInstanceEClass, NODE_INSTANCE__OUTGOING_EDGES);
@@ -380,6 +389,7 @@ public class InstancemodelPackageImpl extends EPackageImpl implements Instancemo
 
 		initEClass(diagramInstanceEClass, DiagramInstance.class, "DiagramInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDiagramInstance_Edges(), this.getEdgeInstance(), null, "edges", null, 0, -1, DiagramInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDiagramInstance_OpenNewDiagram(), ecorePackage.getEBoolean(), "openNewDiagram", null, 0, 1, DiagramInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(nodeInstanceEClass, NodeInstance.class, "NodeInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getNodeInstance_OutgoingEdges(), this.getEdgeInstance(), this.getEdgeInstance_Source(), "outgoingEdges", null, 0, -1, NodeInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

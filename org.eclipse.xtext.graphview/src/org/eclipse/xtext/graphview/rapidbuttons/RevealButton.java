@@ -16,6 +16,8 @@ import org.eclipse.xtext.graphview.instancemodel.NodeInstance;
 import org.eclipse.xtext.graphview.instancemodel.Visibility;
 import org.eclipse.xtext.ui.PluginImageHelper;
 
+import com.google.common.base.Predicate;
+import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.inject.Inject;
 
@@ -23,12 +25,12 @@ public class RevealButton extends AbstractRapidButton {
 
 	@Inject
 	private PluginImageHelper imageHelper;
-	
+
 	@Override
 	protected Image createImage() {
 		return imageHelper.getImage("elcl16/add_16.png");
 	}
-	
+
 	@Override
 	protected DragTracker createDragTracker() {
 		return new SimpleDragTracker() {
@@ -61,16 +63,19 @@ public class RevealButton extends AbstractRapidButton {
 						}
 					}
 					return new RevealRequest(toBeRevealed);
+				} else {
+					return null;
 				}
-				return null;
 			}
 
 			protected boolean handleButtonDown(int button) {
-				if(stateTransition(STATE_INITIAL, STATE_DRAG)) {
-					((RevealRequest) getSourceRequest()).setRevealSingle(button!=1);
+				if (stateTransition(STATE_INITIAL, STATE_DRAG)) {
+					((RevealRequest) getSourceRequest())
+							.setRevealSingle(button != 1);
 					return true;
+				} else {
+					return false;
 				}
-				return false;
 			}
 
 			@Override
@@ -80,12 +85,15 @@ public class RevealButton extends AbstractRapidButton {
 
 			@Override
 			protected boolean handleDragInProgress() {
-				stateTransition(STATE_DRAG, STATE_DRAG_IN_PROGRESS);
-				Point mouseLocation = getCurrentInput(). 
-					getMouseLocation();
-				((RevealRequest) getSourceRequest()).setCurrentMouseLocation(mouseLocation);
-				showSourceFeedback();
-				return true;
+				if (stateTransition(STATE_DRAG, STATE_DRAG_IN_PROGRESS)) {
+					Point mouseLocation = getCurrentInput().getMouseLocation();
+					((RevealRequest) getSourceRequest())
+							.setCurrentMouseLocation(mouseLocation);
+					showSourceFeedback();
+					return true;
+				} else {
+					return false;
+				}
 			}
 
 			protected boolean handleButtonUp(int button) {
@@ -95,14 +103,32 @@ public class RevealButton extends AbstractRapidButton {
 							getSourceRequest()));
 					executeCurrentCommand();
 					return true;
+				} else {
+					return false;
 				}
-				return false;
 			}
 		};
 	}
 
 	@Override
 	public void setVisible(boolean visible) {
-		super.setVisible(visible && getEditPolicy().getHost().hasHiddenEdge());
+		super.setVisible(visible && hasHiddenEdge());
+	}
+
+	protected boolean hasHiddenEdge() {
+		AbstractInstance model = getEditPolicy().getHost().getModel();
+		if (model instanceof NodeInstance) {
+			NodeInstance node = (NodeInstance) model;
+			return Iterables.any(
+					Iterables.concat(node.getOutgoingEdges(),
+							node.getIncomingEdges()),
+					new Predicate<EdgeInstance>() {
+						public boolean apply(EdgeInstance input) {
+							return input.getVisibility() == Visibility.HIDDEN;
+						}
+					});
+		} else {
+			return false;
+		}
 	}
 }

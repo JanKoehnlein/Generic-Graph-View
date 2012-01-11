@@ -12,13 +12,12 @@ import java.util.List;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.editparts.AbstractGraphicalEditPart;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
-import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.graphview.editpolicy.ExpandEditPolicy;
+import org.eclipse.xtext.graphview.editpolicy.OpenNewDiagramEditPolicy;
 import org.eclipse.xtext.graphview.instancemodel.AbstractInstance;
 import org.eclipse.xtext.graphview.instancemodel.Visibility;
 import org.eclipse.xtext.graphview.shape.TransparencyHelper;
@@ -40,10 +39,14 @@ public abstract class AbstractInstanceEditPart extends
 	@Inject
 	private ExpandEditPolicy expandEditPolicy;
 
+	@Inject
+	private OpenNewDiagramEditPolicy openNewDiagramEditPolicy;
+	
 	@Override
 	protected void createEditPolicies() {
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, nonResizableEditPolicy);
 		installEditPolicy(ExpandEditPolicy.ROLE, expandEditPolicy);
+		installEditPolicy(OpenNewDiagramEditPolicy.ROLE, openNewDiagramEditPolicy);
 	}
 
 	@Override
@@ -93,16 +96,4 @@ public abstract class AbstractInstanceEditPart extends
 			setTransparent(true);
 	}
 
-	public boolean hasHiddenEdge() {
-		return false;
-	}
-
-	public boolean hasHiddenChildren() {
-		for (EObject modelChild : EcoreUtil2.eAllContents(getModel())) {
-			if (modelChild instanceof AbstractInstance
-					&& ((AbstractInstance) modelChild).getVisibility() == Visibility.HIDDEN)
-				return true;
-		}
-		return false;
-	}
 }

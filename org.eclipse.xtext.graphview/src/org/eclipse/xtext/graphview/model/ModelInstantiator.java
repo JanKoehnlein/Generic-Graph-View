@@ -97,9 +97,13 @@ public class ModelInstantiator {
 			final Object semanticElement, AbstractInstance parentInstance,
 			AbstractMapping mapping, final InstanceCache instanceCache, boolean isHiddenCaller) {
 		if (mapping instanceof MappingCall) {
-			return internalCreateInstance(semanticElement, parentInstance,
+			AbstractInstance referencedInstance = internalCreateInstance(semanticElement, parentInstance,
 					((MappingCall) mapping).getReferencedMapping(),
 					instanceCache, mapping.isHidden() || isHiddenCaller);
+			if(!((MappingCall) mapping).isCall() && referencedInstance instanceof DiagramInstance) {
+				((DiagramInstance) referencedInstance).setOpenNewDiagram(true);
+			}
+			return referencedInstance;
 		}
 		AbstractInstance cachedInstance = instanceCache.get(semanticElement,
 				parentInstance, mapping);

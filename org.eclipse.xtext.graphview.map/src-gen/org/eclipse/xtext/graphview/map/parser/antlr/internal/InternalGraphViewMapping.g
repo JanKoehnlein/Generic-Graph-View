@@ -874,11 +874,11 @@ ruleMappingCall returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((
+((((
 (
 		lv_hidden_0_0=	'hidden' 
     {
-        newLeafNode(lv_hidden_0_0, grammarAccess.getMappingCallAccess().getHiddenHiddenKeyword_0_0());
+        newLeafNode(lv_hidden_0_0, grammarAccess.getMappingCallAccess().getHiddenHiddenKeyword_0_0_0_0());
     }
  
 	    {
@@ -889,32 +889,48 @@ ruleMappingCall returns [EObject current=null]
 	    }
 
 )
-)?	otherlv_1='call' 
-    {
-    	newLeafNode(otherlv_1, grammarAccess.getMappingCallAccess().getCallKeyword_1());
-    }
+)?(
 (
+		lv_call_1_0=	'call' 
+    {
+        newLeafNode(lv_call_1_0, grammarAccess.getMappingCallAccess().getCallCallKeyword_0_0_1_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getMappingCallRule());
+	        }
+       		setWithLastConsumed($current, "call", true, "call");
+	    }
+
+)
+))
+    |	otherlv_2='open' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getMappingCallAccess().getOpenKeyword_0_1());
+    }
+)(
 (
 		{
 			if ($current==null) {
 	            $current = createModelElement(grammarAccess.getMappingCallRule());
 	        }
         }
-	otherlv_2=RULE_ID
+	otherlv_3=RULE_ID
 	{
-		newLeafNode(otherlv_2, grammarAccess.getMappingCallAccess().getReferencedMappingAbstractMappingDefinitionCrossReference_2_0()); 
+		newLeafNode(otherlv_3, grammarAccess.getMappingCallAccess().getReferencedMappingAbstractMappingDefinitionCrossReference_1_0()); 
 	}
 
 )
-)	otherlv_3='for' 
+)	otherlv_4='for' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getMappingCallAccess().getForKeyword_3());
+    	newLeafNode(otherlv_4, grammarAccess.getMappingCallAccess().getForKeyword_2());
     }
 (
 (
-		lv_multi_4_0=	'each' 
+		lv_multi_5_0=	'each' 
     {
-        newLeafNode(lv_multi_4_0, grammarAccess.getMappingCallAccess().getMultiEachKeyword_4_0());
+        newLeafNode(lv_multi_5_0, grammarAccess.getMappingCallAccess().getMultiEachKeyword_3_0());
     }
  
 	    {
@@ -928,38 +944,38 @@ ruleMappingCall returns [EObject current=null]
 )?(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getMappingCallAccess().getExpressionXExpressionParserRuleCall_5_0()); 
+	        newCompositeNode(grammarAccess.getMappingCallAccess().getExpressionXExpressionParserRuleCall_4_0()); 
 	    }
-		lv_expression_5_0=ruleXExpression		{
+		lv_expression_6_0=ruleXExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getMappingCallRule());
 	        }
        		set(
        			$current, 
        			"expression",
-        		lv_expression_5_0, 
+        		lv_expression_6_0, 
         		"XExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)(	otherlv_6='unless' 
+)(	otherlv_7='unless' 
     {
-    	newLeafNode(otherlv_6, grammarAccess.getMappingCallAccess().getUnlessKeyword_6_0());
+    	newLeafNode(otherlv_7, grammarAccess.getMappingCallAccess().getUnlessKeyword_5_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getMappingCallAccess().getUnlessConditionXExpressionParserRuleCall_6_1_0()); 
+	        newCompositeNode(grammarAccess.getMappingCallAccess().getUnlessConditionXExpressionParserRuleCall_5_1_0()); 
 	    }
-		lv_unlessCondition_7_0=ruleXExpression		{
+		lv_unlessCondition_8_0=ruleXExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getMappingCallRule());
 	        }
        		set(
        			$current, 
        			"unlessCondition",
-        		lv_unlessCondition_7_0, 
+        		lv_unlessCondition_8_0, 
         		"XExpression");
 	        afterParserOrEnumRuleCall();
 	    }

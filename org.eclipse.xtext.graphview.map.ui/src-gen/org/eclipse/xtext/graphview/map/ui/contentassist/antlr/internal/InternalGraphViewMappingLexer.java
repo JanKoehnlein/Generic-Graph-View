@@ -64,6 +64,7 @@ public class InternalGraphViewMappingLexer extends Lexer {
     public static final int T__47=47;
     public static final int T__81=81;
     public static final int T__44=44;
+    public static final int T__82=82;
     public static final int T__45=45;
     public static final int T__48=48;
     public static final int T__49=49;
@@ -214,10 +215,10 @@ public class InternalGraphViewMappingLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:16:7: ( '==' )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:16:9: '=='
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:16:7: ( 'open' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:16:9: 'open'
             {
-            match("=="); 
+            match("open"); 
 
 
             }
@@ -235,10 +236,10 @@ public class InternalGraphViewMappingLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17:7: ( '!=' )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17:9: '!='
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17:7: ( '==' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17:9: '=='
             {
-            match("!="); 
+            match("=="); 
 
 
             }
@@ -256,10 +257,10 @@ public class InternalGraphViewMappingLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:18:7: ( '>=' )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:18:9: '>='
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:18:7: ( '!=' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:18:9: '!='
             {
-            match(">="); 
+            match("!="); 
 
 
             }
@@ -277,10 +278,10 @@ public class InternalGraphViewMappingLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:19:7: ( '<=' )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:19:9: '<='
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:19:7: ( '>=' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:19:9: '>='
             {
-            match("<="); 
+            match(">="); 
 
 
             }
@@ -298,10 +299,11 @@ public class InternalGraphViewMappingLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:20:7: ( '>' )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:20:9: '>'
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:20:7: ( '<=' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:20:9: '<='
             {
-            match('>'); 
+            match("<="); 
+
 
             }
 
@@ -318,10 +320,10 @@ public class InternalGraphViewMappingLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:21:7: ( '<' )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:21:9: '<'
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:21:7: ( '>' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:21:9: '>'
             {
-            match('<'); 
+            match('>'); 
 
             }
 
@@ -338,11 +340,10 @@ public class InternalGraphViewMappingLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:22:7: ( '->' )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:22:9: '->'
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:22:7: ( '<' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:22:9: '<'
             {
-            match("->"); 
-
+            match('<'); 
 
             }
 
@@ -359,10 +360,10 @@ public class InternalGraphViewMappingLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:23:7: ( '..' )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:23:9: '..'
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:23:7: ( '->' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:23:9: '->'
             {
-            match(".."); 
+            match("->"); 
 
 
             }
@@ -380,10 +381,11 @@ public class InternalGraphViewMappingLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:24:7: ( '+' )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:24:9: '+'
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:24:7: ( '..' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:24:9: '..'
             {
-            match('+'); 
+            match(".."); 
+
 
             }
 
@@ -400,10 +402,10 @@ public class InternalGraphViewMappingLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:25:7: ( '-' )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:25:9: '-'
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:25:7: ( '+' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:25:9: '+'
             {
-            match('-'); 
+            match('+'); 
 
             }
 
@@ -420,10 +422,10 @@ public class InternalGraphViewMappingLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:26:7: ( '*' )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:26:9: '*'
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:26:7: ( '-' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:26:9: '-'
             {
-            match('*'); 
+            match('-'); 
 
             }
 
@@ -440,11 +442,10 @@ public class InternalGraphViewMappingLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:27:7: ( '**' )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:27:9: '**'
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:27:7: ( '*' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:27:9: '*'
             {
-            match("**"); 
-
+            match('*'); 
 
             }
 
@@ -461,10 +462,11 @@ public class InternalGraphViewMappingLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:28:7: ( '/' )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:28:9: '/'
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:28:7: ( '**' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:28:9: '**'
             {
-            match('/'); 
+            match("**"); 
+
 
             }
 
@@ -481,10 +483,10 @@ public class InternalGraphViewMappingLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:29:7: ( '%' )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:29:9: '%'
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:29:7: ( '/' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:29:9: '/'
             {
-            match('%'); 
+            match('/'); 
 
             }
 
@@ -501,10 +503,10 @@ public class InternalGraphViewMappingLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:30:7: ( '!' )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:30:9: '!'
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:30:7: ( '%' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:30:9: '%'
             {
-            match('!'); 
+            match('%'); 
 
             }
 
@@ -521,10 +523,10 @@ public class InternalGraphViewMappingLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:31:7: ( '.' )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:31:9: '.'
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:31:7: ( '!' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:31:9: '!'
             {
-            match('.'); 
+            match('!'); 
 
             }
 
@@ -541,11 +543,10 @@ public class InternalGraphViewMappingLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:32:7: ( 'val' )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:32:9: 'val'
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:32:7: ( '.' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:32:9: '.'
             {
-            match("val"); 
-
+            match('.'); 
 
             }
 
@@ -562,10 +563,10 @@ public class InternalGraphViewMappingLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:33:7: ( 'super' )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:33:9: 'super'
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:33:7: ( 'val' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:33:9: 'val'
             {
-            match("super"); 
+            match("val"); 
 
 
             }
@@ -583,10 +584,10 @@ public class InternalGraphViewMappingLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:34:7: ( 'false' )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:34:9: 'false'
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:34:7: ( 'super' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:34:9: 'super'
             {
-            match("false"); 
+            match("super"); 
 
 
             }
@@ -604,10 +605,10 @@ public class InternalGraphViewMappingLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:35:7: ( 'diagram' )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:35:9: 'diagram'
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:35:7: ( 'false' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:35:9: 'false'
             {
-            match("diagram"); 
+            match("false"); 
 
 
             }
@@ -625,10 +626,10 @@ public class InternalGraphViewMappingLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:36:7: ( 'type' )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:36:9: 'type'
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:36:7: ( 'diagram' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:36:9: 'diagram'
             {
-            match("type"); 
+            match("diagram"); 
 
 
             }
@@ -646,10 +647,11 @@ public class InternalGraphViewMappingLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:37:7: ( '{' )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:37:9: '{'
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:37:7: ( 'type' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:37:9: 'type'
             {
-            match('{'); 
+            match("type"); 
+
 
             }
 
@@ -666,10 +668,10 @@ public class InternalGraphViewMappingLexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:38:7: ( '}' )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:38:9: '}'
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:38:7: ( '{' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:38:9: '{'
             {
-            match('}'); 
+            match('{'); 
 
             }
 
@@ -686,11 +688,10 @@ public class InternalGraphViewMappingLexer extends Lexer {
         try {
             int _type = T__39;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:39:7: ( 'unless' )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:39:9: 'unless'
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:39:7: ( '}' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:39:9: '}'
             {
-            match("unless"); 
-
+            match('}'); 
 
             }
 
@@ -707,10 +708,10 @@ public class InternalGraphViewMappingLexer extends Lexer {
         try {
             int _type = T__40;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:40:7: ( 'import' )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:40:9: 'import'
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:40:7: ( 'unless' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:40:9: 'unless'
             {
-            match("import"); 
+            match("unless"); 
 
 
             }
@@ -728,10 +729,10 @@ public class InternalGraphViewMappingLexer extends Lexer {
         try {
             int _type = T__41;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:41:7: ( 'node' )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:41:9: 'node'
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:41:7: ( 'import' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:41:9: 'import'
             {
-            match("node"); 
+            match("import"); 
 
 
             }
@@ -749,10 +750,10 @@ public class InternalGraphViewMappingLexer extends Lexer {
         try {
             int _type = T__42;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:42:7: ( 'for' )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:42:9: 'for'
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:42:7: ( 'node' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:42:9: 'node'
             {
-            match("for"); 
+            match("node"); 
 
 
             }
@@ -770,10 +771,10 @@ public class InternalGraphViewMappingLexer extends Lexer {
         try {
             int _type = T__43;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:43:7: ( 'label' )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:43:9: 'label'
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:43:7: ( 'for' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:43:9: 'for'
             {
-            match("label"); 
+            match("for"); 
 
 
             }
@@ -791,10 +792,10 @@ public class InternalGraphViewMappingLexer extends Lexer {
         try {
             int _type = T__44;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:44:7: ( 'edge' )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:44:9: 'edge'
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:44:7: ( 'label' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:44:9: 'label'
             {
-            match("edge"); 
+            match("label"); 
 
 
             }
@@ -812,10 +813,10 @@ public class InternalGraphViewMappingLexer extends Lexer {
         try {
             int _type = T__45;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:45:7: ( '=>' )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:45:9: '=>'
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:45:7: ( 'edge' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:45:9: 'edge'
             {
-            match("=>"); 
+            match("edge"); 
 
 
             }
@@ -833,10 +834,10 @@ public class InternalGraphViewMappingLexer extends Lexer {
         try {
             int _type = T__46;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:46:7: ( 'call' )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:46:9: 'call'
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:46:7: ( '=>' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:46:9: '=>'
             {
-            match("call"); 
+            match("=>"); 
 
 
             }
@@ -1475,10 +1476,10 @@ public class InternalGraphViewMappingLexer extends Lexer {
         try {
             int _type = T__77;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:77:7: ( '?.' )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:77:9: '?.'
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:77:7: ( 'call' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:77:9: 'call'
             {
-            match("?."); 
+            match("call"); 
 
 
             }
@@ -1496,10 +1497,10 @@ public class InternalGraphViewMappingLexer extends Lexer {
         try {
             int _type = T__78;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:78:7: ( '*.' )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:78:9: '*.'
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:78:7: ( '?.' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:78:9: '?.'
             {
-            match("*."); 
+            match("?."); 
 
 
             }
@@ -1517,10 +1518,11 @@ public class InternalGraphViewMappingLexer extends Lexer {
         try {
             int _type = T__79;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:79:7: ( '|' )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:79:9: '|'
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:79:7: ( '*.' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:79:9: '*.'
             {
-            match('|'); 
+            match("*."); 
+
 
             }
 
@@ -1537,11 +1539,10 @@ public class InternalGraphViewMappingLexer extends Lexer {
         try {
             int _type = T__80;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:80:7: ( 'var' )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:80:9: 'var'
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:80:7: ( '|' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:80:9: '|'
             {
-            match("var"); 
-
+            match('|'); 
 
             }
 
@@ -1558,10 +1559,10 @@ public class InternalGraphViewMappingLexer extends Lexer {
         try {
             int _type = T__81;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:81:7: ( 'true' )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:81:9: 'true'
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:81:7: ( 'var' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:81:9: 'var'
             {
-            match("true"); 
+            match("var"); 
 
 
             }
@@ -1574,15 +1575,36 @@ public class InternalGraphViewMappingLexer extends Lexer {
     }
     // $ANTLR end "T__81"
 
+    // $ANTLR start "T__82"
+    public final void mT__82() throws RecognitionException {
+        try {
+            int _type = T__82;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:82:7: ( 'true' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:82:9: 'true'
+            {
+            match("true"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__82"
+
     // $ANTLR start "RULE_ID"
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17109:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17109:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17184:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17184:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             {
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17109:11: ( '^' )?
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17184:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1591,7 +1613,7 @@ public class InternalGraphViewMappingLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17109:11: '^'
+                    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17184:11: '^'
                     {
                     match('^'); 
 
@@ -1609,7 +1631,7 @@ public class InternalGraphViewMappingLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17109:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17184:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -1658,10 +1680,10 @@ public class InternalGraphViewMappingLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17111:10: ( ( '0' .. '9' )+ )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17111:12: ( '0' .. '9' )+
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17186:10: ( ( '0' .. '9' )+ )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17186:12: ( '0' .. '9' )+
             {
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17111:12: ( '0' .. '9' )+
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17186:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -1675,7 +1697,7 @@ public class InternalGraphViewMappingLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17111:13: '0' .. '9'
+            	    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17186:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1707,10 +1729,10 @@ public class InternalGraphViewMappingLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17113:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17113:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17188:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17188:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17113:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17188:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -1728,10 +1750,10 @@ public class InternalGraphViewMappingLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17113:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17188:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17113:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17188:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -1747,7 +1769,7 @@ public class InternalGraphViewMappingLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17113:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17188:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -1763,7 +1785,7 @@ public class InternalGraphViewMappingLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17113:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17188:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1788,10 +1810,10 @@ public class InternalGraphViewMappingLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17113:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17188:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17113:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17188:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -1807,7 +1829,7 @@ public class InternalGraphViewMappingLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17113:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17188:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -1823,7 +1845,7 @@ public class InternalGraphViewMappingLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17113:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17188:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1866,12 +1888,12 @@ public class InternalGraphViewMappingLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17115:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17115:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17190:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17190:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17115:24: ( options {greedy=false; } : . )*
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17190:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -1896,7 +1918,7 @@ public class InternalGraphViewMappingLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17115:52: .
+            	    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17190:52: .
             	    {
             	    matchAny(); 
 
@@ -1926,12 +1948,12 @@ public class InternalGraphViewMappingLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17117:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17117:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17192:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17192:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17117:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17192:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -1944,7 +1966,7 @@ public class InternalGraphViewMappingLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17117:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17192:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1964,7 +1986,7 @@ public class InternalGraphViewMappingLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17117:40: ( ( '\\r' )? '\\n' )?
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17192:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1973,9 +1995,9 @@ public class InternalGraphViewMappingLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17117:41: ( '\\r' )? '\\n'
+                    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17192:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17117:41: ( '\\r' )?
+                    // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17192:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -1984,7 +2006,7 @@ public class InternalGraphViewMappingLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17117:41: '\\r'
+                            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17192:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2016,10 +2038,10 @@ public class InternalGraphViewMappingLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17119:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17119:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17194:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17194:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17119:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17194:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -2073,8 +2095,8 @@ public class InternalGraphViewMappingLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17121:16: ( . )
-            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17121:18: .
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17196:16: ( . )
+            // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:17196:18: .
             {
             matchAny(); 
 
@@ -2089,8 +2111,8 @@ public class InternalGraphViewMappingLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt12=78;
+        // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt12=79;
         alt12 = dfa12.predict(input);
         switch (alt12) {
             case 1 :
@@ -2591,49 +2613,56 @@ public class InternalGraphViewMappingLexer extends Lexer {
                 }
                 break;
             case 72 :
-                // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:1:436: RULE_ID
+                // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:1:436: T__82
+                {
+                mT__82(); 
+
+                }
+                break;
+            case 73 :
+                // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:1:442: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 73 :
-                // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:1:444: RULE_INT
+            case 74 :
+                // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:1:450: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 74 :
-                // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:1:453: RULE_STRING
+            case 75 :
+                // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:1:459: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 75 :
-                // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:1:465: RULE_ML_COMMENT
+            case 76 :
+                // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:1:471: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 76 :
-                // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:1:481: RULE_SL_COMMENT
+            case 77 :
+                // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:1:487: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 77 :
-                // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:1:497: RULE_WS
+            case 78 :
+                // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:1:503: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 78 :
-                // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:1:505: RULE_ANY_OTHER
+            case 79 :
+                // ../org.eclipse.xtext.graphview.map.ui/src-gen/org/eclipse/xtext/graphview/map/ui/contentassist/antlr/internal/InternalGraphViewMapping.g:1:511: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -2647,132 +2676,124 @@ public class InternalGraphViewMappingLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\1\57\1\61\1\63\1\65\1\67\1\71\1\73\1\75\1\77\1\101\1\104"+
-        "\1\107\1\uffff\5\67\2\uffff\7\67\6\uffff\1\154\1\67\1\157\1\67\1"+
-        "\54\2\uffff\2\54\13\uffff\1\67\22\uffff\10\67\1\177\3\67\2\uffff"+
-        "\3\67\1\u0087\11\67\1\u0093\10\uffff\1\67\2\uffff\1\67\3\uffff\1"+
-        "\u0096\1\67\1\u0098\1\u0099\3\67\1\u009d\3\67\1\uffff\2\67\1\u00a3"+
-        "\4\67\1\uffff\1\67\1\u00a9\11\67\1\uffff\2\67\1\uffff\1\67\2\uffff"+
-        "\3\67\1\uffff\3\67\1\u00bd\1\67\1\uffff\1\u00bf\3\67\1\u00c3\1\uffff"+
-        "\1\u00c4\1\67\1\u00c6\1\u00c7\1\67\1\u00c9\1\u00ca\1\u00cb\4\67"+
-        "\1\u00d0\1\67\1\u00d2\4\67\1\uffff\1\u00d7\1\uffff\3\67\2\uffff"+
-        "\1\u00db\2\uffff\1\67\3\uffff\1\u00dd\1\u00de\1\67\1\u00e0\1\uffff"+
-        "\1\u00e1\1\uffff\3\67\1\u00e5\1\uffff\1\u00e6\1\u00e7\1\67\1\uffff"+
-        "\1\67\2\uffff\1\u00ea\2\uffff\1\u00eb\1\u00ec\1\u00ed\3\uffff\1"+
-        "\67\1\u00ef\4\uffff\1\67\1\uffff\1\67\1\u00f2\1\uffff";
+        "\1\uffff\1\60\1\62\1\64\1\66\2\70\1\73\1\75\1\77\1\101\1\103\1\106"+
+        "\1\111\1\uffff\5\70\2\uffff\6\70\6\uffff\1\155\2\70\1\161\1\70\1"+
+        "\55\2\uffff\2\55\13\uffff\1\70\1\uffff\1\70\21\uffff\10\70\1\u0082"+
+        "\3\70\2\uffff\3\70\1\u008a\10\70\1\u0093\10\uffff\2\70\2\uffff\1"+
+        "\70\3\uffff\1\u0099\2\70\1\u009c\1\u009d\3\70\1\u00a1\3\70\1\uffff"+
+        "\2\70\1\u00a7\4\70\1\uffff\1\70\1\u00ad\6\70\1\uffff\5\70\1\uffff"+
+        "\1\70\1\u00ba\2\uffff\3\70\1\uffff\3\70\1\u00c2\1\70\1\uffff\1\u00c4"+
+        "\3\70\1\u00c8\1\uffff\1\u00c9\1\70\1\u00cb\1\u00cc\1\70\1\u00ce"+
+        "\1\u00cf\1\70\1\u00d1\3\70\1\uffff\1\u00d5\1\70\1\u00d7\4\70\1\uffff"+
+        "\1\u00dc\1\uffff\3\70\2\uffff\1\u00e0\2\uffff\1\70\2\uffff\1\u00e2"+
+        "\1\uffff\1\u00e3\1\70\1\u00e5\1\uffff\1\u00e6\1\uffff\3\70\1\u00ea"+
+        "\1\uffff\1\u00eb\1\u00ec\1\70\1\uffff\1\70\2\uffff\1\u00ef\2\uffff"+
+        "\1\u00f0\1\u00f1\1\u00f2\3\uffff\1\70\1\u00f4\4\uffff\1\70\1\uffff"+
+        "\1\70\1\u00f7\1\uffff";
     static final String DFA12_eofS =
-        "\u00f3\uffff";
+        "\u00f8\uffff";
     static final String DFA12_minS =
-        "\1\0\2\75\1\174\1\46\1\145\3\75\1\76\1\56\2\52\1\uffff\1\141\1\165"+
-        "\1\141\1\145\1\150\2\uffff\1\156\1\146\1\145\3\141\1\163\6\uffff"+
-        "\1\72\1\150\1\56\1\151\1\44\2\uffff\2\0\13\uffff\1\146\22\uffff"+
-        "\1\154\1\160\1\151\1\154\1\162\1\156\1\141\1\146\1\44\1\160\1\162"+
-        "\1\165\2\uffff\1\154\1\160\1\163\1\44\1\144\1\167\1\154\1\142\1"+
-        "\147\1\163\1\164\1\143\1\154\1\44\10\uffff\1\151\2\uffff\1\144\3"+
-        "\uffff\1\44\1\165\2\44\1\145\1\164\1\163\1\44\1\141\1\147\1\141"+
-        "\1\uffff\1\145\1\157\1\44\2\145\1\157\1\164\1\uffff\1\145\1\44\1"+
-        "\154\4\145\1\150\1\154\1\145\1\143\1\uffff\1\154\1\144\1\uffff\1"+
-        "\162\2\uffff\1\162\1\143\1\145\1\uffff\1\154\1\162\1\165\1\44\1"+
-        "\167\1\uffff\1\44\1\163\1\162\1\141\1\44\1\uffff\1\44\1\154\2\44"+
-        "\1\156\3\44\1\150\2\145\1\156\1\44\1\150\1\44\1\154\1\141\1\154"+
-        "\1\146\1\uffff\1\44\1\uffff\1\163\1\164\1\156\2\uffff\1\44\2\uffff"+
-        "\1\144\3\uffff\2\44\1\156\1\44\1\uffff\1\44\1\uffff\1\171\1\155"+
-        "\1\164\1\44\1\uffff\2\44\1\143\1\uffff\1\163\2\uffff\1\44\2\uffff"+
-        "\3\44\3\uffff\1\145\1\44\4\uffff\1\157\1\uffff\1\146\1\44\1\uffff";
+        "\1\0\2\75\1\174\1\46\1\145\1\160\3\75\1\76\1\56\2\52\1\uffff\1\141"+
+        "\1\165\1\141\1\145\1\150\2\uffff\1\156\1\146\1\145\2\141\1\163\6"+
+        "\uffff\1\72\1\141\1\150\1\56\1\151\1\44\2\uffff\2\0\13\uffff\1\146"+
+        "\1\uffff\1\145\21\uffff\1\154\1\160\1\151\1\154\1\162\1\156\1\141"+
+        "\1\146\1\44\1\160\1\162\1\165\2\uffff\1\154\1\160\1\163\1\44\1\144"+
+        "\1\167\1\154\1\142\1\147\1\163\1\164\1\143\1\44\10\uffff\1\154\1"+
+        "\151\2\uffff\1\144\3\uffff\1\44\1\165\1\156\2\44\1\145\1\164\1\163"+
+        "\1\44\1\141\1\147\1\141\1\uffff\1\145\1\157\1\44\2\145\1\157\1\164"+
+        "\1\uffff\1\145\1\44\1\154\4\145\1\150\1\uffff\1\145\1\143\2\154"+
+        "\1\144\1\uffff\1\162\1\44\2\uffff\1\162\1\143\1\145\1\uffff\1\154"+
+        "\1\162\1\165\1\44\1\167\1\uffff\1\44\1\163\1\162\1\141\1\44\1\uffff"+
+        "\1\44\1\154\2\44\1\156\2\44\1\150\1\44\2\145\1\156\1\uffff\1\44"+
+        "\1\150\1\44\1\154\1\141\1\154\1\146\1\uffff\1\44\1\uffff\1\163\1"+
+        "\164\1\156\2\uffff\1\44\2\uffff\1\144\2\uffff\1\44\1\uffff\1\44"+
+        "\1\156\1\44\1\uffff\1\44\1\uffff\1\171\1\155\1\164\1\44\1\uffff"+
+        "\2\44\1\143\1\uffff\1\163\2\uffff\1\44\2\uffff\3\44\3\uffff\1\145"+
+        "\1\44\4\uffff\1\157\1\uffff\1\146\1\44\1\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\1\76\1\75\1\174\1\46\1\145\3\75\1\76\2\56\1\57\1\uffff"+
-        "\1\141\1\167\2\157\1\171\2\uffff\2\156\1\165\1\141\1\170\1\141\1"+
-        "\163\6\uffff\1\72\1\150\1\56\1\151\1\172\2\uffff\2\uffff\13\uffff"+
-        "\1\164\22\uffff\1\162\1\160\1\151\1\154\1\162\1\156\1\141\1\146"+
-        "\1\172\1\160\1\162\1\171\2\uffff\1\154\1\160\1\163\1\172\1\144\1"+
-        "\167\1\154\1\142\1\147\1\163\1\164\1\143\1\164\1\172\10\uffff\1"+
-        "\151\2\uffff\1\144\3\uffff\1\172\1\165\2\172\1\145\1\164\1\163\1"+
-        "\172\1\141\1\147\1\141\1\uffff\1\145\1\157\1\172\2\145\1\157\1\164"+
-        "\1\uffff\1\145\1\172\1\154\4\145\1\150\1\154\1\145\1\143\1\uffff"+
-        "\1\154\1\144\1\uffff\1\162\2\uffff\1\162\1\143\1\145\1\uffff\1\154"+
-        "\1\162\1\165\1\172\1\167\1\uffff\1\172\1\163\1\162\1\141\1\172\1"+
-        "\uffff\1\172\1\154\2\172\1\156\3\172\1\150\2\145\1\156\1\172\1\150"+
-        "\1\172\1\154\1\141\1\154\1\146\1\uffff\1\172\1\uffff\1\163\1\164"+
-        "\1\156\2\uffff\1\172\2\uffff\1\144\3\uffff\2\172\1\156\1\172\1\uffff"+
-        "\1\172\1\uffff\1\171\1\155\1\164\1\172\1\uffff\2\172\1\143\1\uffff"+
-        "\1\163\2\uffff\1\172\2\uffff\3\172\3\uffff\1\145\1\172\4\uffff\1"+
-        "\157\1\uffff\1\146\1\172\1\uffff";
+        "\1\uffff\1\76\1\75\1\174\1\46\1\145\1\160\3\75\1\76\2\56\1\57\1"+
+        "\uffff\1\141\1\167\2\157\1\171\2\uffff\2\156\1\165\1\141\1\170\1"+
+        "\163\6\uffff\1\72\1\141\1\150\1\56\1\151\1\172\2\uffff\2\uffff\13"+
+        "\uffff\1\164\1\uffff\1\145\21\uffff\1\162\1\160\1\151\1\154\1\162"+
+        "\1\156\1\141\1\146\1\172\1\160\1\162\1\171\2\uffff\1\154\1\160\1"+
+        "\163\1\172\1\144\1\167\1\154\1\142\1\147\1\163\1\164\1\143\1\172"+
+        "\10\uffff\1\164\1\151\2\uffff\1\144\3\uffff\1\172\1\165\1\156\2"+
+        "\172\1\145\1\164\1\163\1\172\1\141\1\147\1\141\1\uffff\1\145\1\157"+
+        "\1\172\2\145\1\157\1\164\1\uffff\1\145\1\172\1\154\4\145\1\150\1"+
+        "\uffff\1\145\1\143\2\154\1\144\1\uffff\1\162\1\172\2\uffff\1\162"+
+        "\1\143\1\145\1\uffff\1\154\1\162\1\165\1\172\1\167\1\uffff\1\172"+
+        "\1\163\1\162\1\141\1\172\1\uffff\1\172\1\154\2\172\1\156\2\172\1"+
+        "\150\1\172\2\145\1\156\1\uffff\1\172\1\150\1\172\1\154\1\141\1\154"+
+        "\1\146\1\uffff\1\172\1\uffff\1\163\1\164\1\156\2\uffff\1\172\2\uffff"+
+        "\1\144\2\uffff\1\172\1\uffff\1\172\1\156\1\172\1\uffff\1\172\1\uffff"+
+        "\1\171\1\155\1\164\1\172\1\uffff\2\172\1\143\1\uffff\1\163\2\uffff"+
+        "\1\172\2\uffff\3\172\3\uffff\1\145\1\172\4\uffff\1\157\1\uffff\1"+
+        "\146\1\172\1\uffff";
     static final String DFA12_acceptS =
-        "\15\uffff\1\23\5\uffff\1\33\1\34\7\uffff\1\47\1\50\1\51\1\52\1\53"+
-        "\1\54\5\uffff\1\110\1\111\2\uffff\1\115\1\116\1\6\1\43\1\1\1\2\1"+
-        "\16\1\3\1\105\1\4\1\100\1\uffff\1\110\1\7\1\24\1\10\1\12\1\11\1"+
-        "\13\1\14\1\17\1\15\1\25\1\21\1\104\1\20\1\113\1\114\1\22\1\23\14"+
-        "\uffff\1\33\1\34\16\uffff\1\47\1\50\1\51\1\52\1\53\1\54\1\65\1\60"+
-        "\1\uffff\1\103\1\76\1\uffff\1\111\1\112\1\115\13\uffff\1\64\7\uffff"+
-        "\1\55\13\uffff\1\46\2\uffff\1\5\1\uffff\1\26\1\106\3\uffff\1\40"+
-        "\5\uffff\1\73\5\uffff\1\66\23\uffff\1\32\1\uffff\1\107\3\uffff\1"+
-        "\37\1\67\1\uffff\1\42\1\56\1\uffff\1\102\1\44\1\62\4\uffff\1\27"+
-        "\1\uffff\1\30\4\uffff\1\71\3\uffff\1\41\1\uffff\1\75\1\63\1\uffff"+
-        "\1\72\1\57\3\uffff\1\70\1\35\1\36\2\uffff\1\101\1\74\1\31\1\61\1"+
-        "\uffff\1\77\2\uffff\1\45";
+        "\16\uffff\1\24\5\uffff\1\34\1\35\6\uffff\1\47\1\50\1\51\1\52\1\53"+
+        "\1\54\6\uffff\1\111\1\112\2\uffff\1\116\1\117\1\7\1\44\1\1\1\2\1"+
+        "\17\1\3\1\106\1\4\1\100\1\uffff\1\111\1\uffff\1\10\1\25\1\11\1\13"+
+        "\1\12\1\14\1\15\1\20\1\16\1\26\1\22\1\105\1\21\1\114\1\115\1\23"+
+        "\1\24\14\uffff\1\34\1\35\15\uffff\1\47\1\50\1\51\1\52\1\53\1\54"+
+        "\1\65\1\60\2\uffff\1\104\1\76\1\uffff\1\112\1\113\1\116\14\uffff"+
+        "\1\64\7\uffff\1\55\10\uffff\1\46\5\uffff\1\5\2\uffff\1\27\1\107"+
+        "\3\uffff\1\41\5\uffff\1\73\5\uffff\1\66\14\uffff\1\6\7\uffff\1\33"+
+        "\1\uffff\1\110\3\uffff\1\40\1\67\1\uffff\1\43\1\56\1\uffff\1\102"+
+        "\1\62\1\uffff\1\103\3\uffff\1\30\1\uffff\1\31\4\uffff\1\71\3\uffff"+
+        "\1\42\1\uffff\1\75\1\63\1\uffff\1\72\1\57\3\uffff\1\70\1\36\1\37"+
+        "\2\uffff\1\101\1\74\1\32\1\61\1\uffff\1\77\2\uffff\1\45";
     static final String DFA12_specialS =
-        "\1\2\50\uffff\1\1\1\0\u00c8\uffff}>";
+        "\1\1\51\uffff\1\2\1\0\u00cc\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\11\54\2\53\2\54\1\53\22\54\1\53\1\6\1\51\1\54\1\47\1\15\1\4"+
-            "\1\52\1\41\1\35\1\13\1\2\1\34\1\11\1\12\1\14\12\50\1\42\1\40"+
-            "\1\10\1\1\1\7\1\44\1\54\32\47\1\36\1\54\1\37\1\46\1\47\1\54"+
-            "\1\33\1\47\1\32\1\21\1\31\1\20\1\47\1\45\1\26\2\47\1\30\1\47"+
-            "\1\27\3\47\1\5\1\17\1\22\1\25\1\16\1\43\3\47\1\23\1\3\1\24\uff82"+
-            "\54",
-            "\1\55\1\56",
-            "\1\60",
-            "\1\62",
-            "\1\64",
-            "\1\66",
-            "\1\70",
+            "\11\55\2\54\2\55\1\54\22\55\1\54\1\7\1\52\1\55\1\50\1\16\1\4"+
+            "\1\53\1\41\1\35\1\14\1\2\1\34\1\12\1\13\1\15\12\51\1\42\1\40"+
+            "\1\11\1\1\1\10\1\45\1\55\32\50\1\36\1\55\1\37\1\47\1\50\1\55"+
+            "\1\33\1\50\1\43\1\22\1\32\1\21\1\50\1\46\1\27\2\50\1\31\1\50"+
+            "\1\30\1\6\2\50\1\5\1\20\1\23\1\26\1\17\1\44\3\50\1\24\1\3\1"+
+            "\25\uff82\55",
+            "\1\56\1\57",
+            "\1\61",
+            "\1\63",
+            "\1\65",
+            "\1\67",
+            "\1\71",
             "\1\72",
             "\1\74",
             "\1\76",
             "\1\100",
-            "\1\102\3\uffff\1\103",
-            "\1\105\4\uffff\1\106",
+            "\1\102",
+            "\1\104\3\uffff\1\105",
+            "\1\107\4\uffff\1\110",
             "",
-            "\1\111",
-            "\1\112\1\uffff\1\113",
-            "\1\114\7\uffff\1\116\5\uffff\1\115",
-            "\1\120\3\uffff\1\117\5\uffff\1\121",
-            "\1\123\11\uffff\1\124\6\uffff\1\122",
-            "",
-            "",
-            "\1\127",
-            "\1\132\6\uffff\1\130\1\131",
-            "\1\134\11\uffff\1\133\5\uffff\1\135",
-            "\1\136",
-            "\1\142\2\uffff\1\137\7\uffff\1\140\13\uffff\1\141",
-            "\1\143",
-            "\1\144",
+            "\1\113",
+            "\1\114\1\uffff\1\115",
+            "\1\116\7\uffff\1\120\5\uffff\1\117",
+            "\1\122\3\uffff\1\121\5\uffff\1\123",
+            "\1\125\11\uffff\1\126\6\uffff\1\124",
             "",
             "",
+            "\1\131",
+            "\1\134\6\uffff\1\132\1\133",
+            "\1\136\11\uffff\1\135\5\uffff\1\137",
+            "\1\140",
+            "\1\144\2\uffff\1\141\7\uffff\1\142\13\uffff\1\143",
+            "\1\145",
             "",
             "",
             "",
             "",
-            "\1\153",
-            "\1\155",
+            "",
+            "",
+            "\1\154",
             "\1\156",
+            "\1\157",
             "\1\160",
-            "\1\67\34\uffff\32\67\4\uffff\1\67\1\uffff\32\67",
+            "\1\162",
+            "\1\70\34\uffff\32\70\4\uffff\1\70\1\uffff\32\70",
             "",
             "",
-            "\0\162",
-            "\0\162",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\164\15\uffff\1\165",
+            "\0\164",
+            "\0\164",
             "",
             "",
             "",
@@ -2784,44 +2805,56 @@ public class InternalGraphViewMappingLexer extends Lexer {
             "",
             "",
             "",
+            "\1\166\15\uffff\1\167",
             "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\166\5\uffff\1\167",
             "\1\170",
-            "\1\171",
-            "\1\172",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\171\5\uffff\1\172",
             "\1\173",
             "\1\174",
             "\1\175",
             "\1\176",
-            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
-            "\67",
+            "\1\177",
             "\1\u0080",
             "\1\u0081",
-            "\1\u0083\3\uffff\1\u0082",
-            "",
-            "",
+            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
+            "\70",
+            "\1\u0083",
             "\1\u0084",
-            "\1\u0085",
-            "\1\u0086",
-            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
-            "\67",
+            "\1\u0086\3\uffff\1\u0085",
+            "",
+            "",
+            "\1\u0087",
             "\1\u0088",
             "\1\u0089",
-            "\1\u008a",
+            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
+            "\70",
             "\1\u008b",
             "\1\u008c",
             "\1\u008d",
             "\1\u008e",
             "\1\u008f",
-            "\1\u0090\6\uffff\1\u0091\1\u0092",
-            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
-            "\67",
+            "\1\u0090",
+            "\1\u0091",
+            "\1\u0092",
+            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
+            "\70",
             "",
             "",
             "",
@@ -2830,171 +2863,176 @@ public class InternalGraphViewMappingLexer extends Lexer {
             "",
             "",
             "",
-            "\1\u0094",
-            "",
-            "",
-            "\1\u0095",
-            "",
-            "",
-            "",
-            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
-            "\67",
+            "\1\u0096\6\uffff\1\u0094\1\u0095",
             "\1\u0097",
-            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
-            "\67",
-            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
-            "\67",
+            "",
+            "",
+            "\1\u0098",
+            "",
+            "",
+            "",
+            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
+            "\70",
             "\1\u009a",
             "\1\u009b",
-            "\1\u009c",
-            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
-            "\67",
+            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
+            "\70",
+            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
+            "\70",
             "\1\u009e",
             "\1\u009f",
             "\1\u00a0",
-            "",
-            "\1\u00a1",
+            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
+            "\70",
             "\1\u00a2",
-            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
-            "\67",
+            "\1\u00a3",
             "\1\u00a4",
+            "",
             "\1\u00a5",
             "\1\u00a6",
-            "\1\u00a7",
-            "",
+            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
+            "\70",
             "\1\u00a8",
-            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
-            "\67",
+            "\1\u00a9",
             "\1\u00aa",
             "\1\u00ab",
+            "",
             "\1\u00ac",
-            "\1\u00ad",
+            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
+            "\70",
             "\1\u00ae",
             "\1\u00af",
             "\1\u00b0",
             "\1\u00b1",
             "\1\u00b2",
-            "",
             "\1\u00b3",
+            "",
             "\1\u00b4",
-            "",
             "\1\u00b5",
-            "",
-            "",
             "\1\u00b6",
             "\1\u00b7",
             "\1\u00b8",
             "",
             "\1\u00b9",
-            "\1\u00ba",
+            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
+            "\70",
+            "",
+            "",
             "\1\u00bb",
-            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\16"+
-            "\67\1\u00bc\13\67",
+            "\1\u00bc",
+            "\1\u00bd",
+            "",
             "\1\u00be",
-            "",
-            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
-            "\67",
+            "\1\u00bf",
             "\1\u00c0",
-            "\1\u00c1",
-            "\1\u00c2",
-            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
-            "\67",
+            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\16"+
+            "\70\1\u00c1\13\70",
+            "\1\u00c3",
             "",
-            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
-            "\67",
+            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
+            "\70",
             "\1\u00c5",
-            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
-            "\67",
-            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
-            "\67",
-            "\1\u00c8",
-            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
-            "\67",
-            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
-            "\67",
-            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
-            "\67",
-            "\1\u00cc",
+            "\1\u00c6",
+            "\1\u00c7",
+            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
+            "\70",
+            "",
+            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
+            "\70",
+            "\1\u00ca",
+            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
+            "\70",
+            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
+            "\70",
             "\1\u00cd",
-            "\1\u00ce",
-            "\1\u00cf",
-            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
-            "\67",
-            "\1\u00d1",
-            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
-            "\67",
+            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
+            "\70",
+            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
+            "\70",
+            "\1\u00d0",
+            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
+            "\70",
+            "\1\u00d2",
             "\1\u00d3",
             "\1\u00d4",
-            "\1\u00d5",
+            "",
+            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
+            "\70",
             "\1\u00d6",
-            "",
-            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
-            "\67",
-            "",
+            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
+            "\70",
             "\1\u00d8",
             "\1\u00d9",
             "\1\u00da",
+            "\1\u00db",
             "",
+            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
+            "\70",
             "",
-            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
-            "\67",
-            "",
-            "",
-            "\1\u00dc",
-            "",
-            "",
-            "",
-            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
-            "\67",
-            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
-            "\67",
+            "\1\u00dd",
+            "\1\u00de",
             "\1\u00df",
-            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
-            "\67",
             "",
-            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
-            "\67",
             "",
-            "\1\u00e2",
-            "\1\u00e3",
+            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
+            "\70",
+            "",
+            "",
+            "\1\u00e1",
+            "",
+            "",
+            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
+            "\70",
+            "",
+            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
+            "\70",
             "\1\u00e4",
-            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
-            "\67",
+            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
+            "\70",
             "",
-            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
-            "\67",
-            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
-            "\67",
+            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
+            "\70",
+            "",
+            "\1\u00e7",
             "\1\u00e8",
-            "",
             "\1\u00e9",
+            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
+            "\70",
             "",
-            "",
-            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
-            "\67",
-            "",
-            "",
-            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
-            "\67",
-            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
-            "\67",
-            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
-            "\67",
-            "",
-            "",
+            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
+            "\70",
+            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
+            "\70",
+            "\1\u00ed",
             "",
             "\1\u00ee",
-            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
-            "\67",
+            "",
+            "",
+            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
+            "\70",
+            "",
+            "",
+            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
+            "\70",
+            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
+            "\70",
+            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
+            "\70",
+            "",
+            "",
+            "",
+            "\1\u00f3",
+            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
+            "\70",
             "",
             "",
             "",
             "",
-            "\1\u00f0",
+            "\1\u00f5",
             "",
-            "\1\u00f1",
-            "\1\67\13\uffff\12\67\7\uffff\32\67\4\uffff\1\67\1\uffff\32"+
-            "\67",
+            "\1\u00f6",
+            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
+            "\70",
             ""
     };
 
@@ -3028,33 +3066,23 @@ public class InternalGraphViewMappingLexer extends Lexer {
             this.transition = DFA12_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA12_42 = input.LA(1);
+                        int LA12_43 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_42>='\u0000' && LA12_42<='\uFFFF')) ) {s = 114;}
+                        if ( ((LA12_43>='\u0000' && LA12_43<='\uFFFF')) ) {s = 116;}
 
-                        else s = 44;
+                        else s = 45;
 
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA12_41 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA12_41>='\u0000' && LA12_41<='\uFFFF')) ) {s = 114;}
-
-                        else s = 44;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
                         int LA12_0 = input.LA(1);
 
                         s = -1;
@@ -3068,47 +3096,47 @@ public class InternalGraphViewMappingLexer extends Lexer {
 
                         else if ( (LA12_0=='r') ) {s = 5;}
 
-                        else if ( (LA12_0=='!') ) {s = 6;}
+                        else if ( (LA12_0=='o') ) {s = 6;}
 
-                        else if ( (LA12_0=='>') ) {s = 7;}
+                        else if ( (LA12_0=='!') ) {s = 7;}
 
-                        else if ( (LA12_0=='<') ) {s = 8;}
+                        else if ( (LA12_0=='>') ) {s = 8;}
 
-                        else if ( (LA12_0=='-') ) {s = 9;}
+                        else if ( (LA12_0=='<') ) {s = 9;}
 
-                        else if ( (LA12_0=='.') ) {s = 10;}
+                        else if ( (LA12_0=='-') ) {s = 10;}
 
-                        else if ( (LA12_0=='*') ) {s = 11;}
+                        else if ( (LA12_0=='.') ) {s = 11;}
 
-                        else if ( (LA12_0=='/') ) {s = 12;}
+                        else if ( (LA12_0=='*') ) {s = 12;}
 
-                        else if ( (LA12_0=='%') ) {s = 13;}
+                        else if ( (LA12_0=='/') ) {s = 13;}
 
-                        else if ( (LA12_0=='v') ) {s = 14;}
+                        else if ( (LA12_0=='%') ) {s = 14;}
 
-                        else if ( (LA12_0=='s') ) {s = 15;}
+                        else if ( (LA12_0=='v') ) {s = 15;}
 
-                        else if ( (LA12_0=='f') ) {s = 16;}
+                        else if ( (LA12_0=='s') ) {s = 16;}
 
-                        else if ( (LA12_0=='d') ) {s = 17;}
+                        else if ( (LA12_0=='f') ) {s = 17;}
 
-                        else if ( (LA12_0=='t') ) {s = 18;}
+                        else if ( (LA12_0=='d') ) {s = 18;}
 
-                        else if ( (LA12_0=='{') ) {s = 19;}
+                        else if ( (LA12_0=='t') ) {s = 19;}
 
-                        else if ( (LA12_0=='}') ) {s = 20;}
+                        else if ( (LA12_0=='{') ) {s = 20;}
 
-                        else if ( (LA12_0=='u') ) {s = 21;}
+                        else if ( (LA12_0=='}') ) {s = 21;}
 
-                        else if ( (LA12_0=='i') ) {s = 22;}
+                        else if ( (LA12_0=='u') ) {s = 22;}
 
-                        else if ( (LA12_0=='n') ) {s = 23;}
+                        else if ( (LA12_0=='i') ) {s = 23;}
 
-                        else if ( (LA12_0=='l') ) {s = 24;}
+                        else if ( (LA12_0=='n') ) {s = 24;}
 
-                        else if ( (LA12_0=='e') ) {s = 25;}
+                        else if ( (LA12_0=='l') ) {s = 25;}
 
-                        else if ( (LA12_0=='c') ) {s = 26;}
+                        else if ( (LA12_0=='e') ) {s = 26;}
 
                         else if ( (LA12_0=='a') ) {s = 27;}
 
@@ -3126,25 +3154,37 @@ public class InternalGraphViewMappingLexer extends Lexer {
 
                         else if ( (LA12_0==':') ) {s = 34;}
 
-                        else if ( (LA12_0=='w') ) {s = 35;}
+                        else if ( (LA12_0=='c') ) {s = 35;}
 
-                        else if ( (LA12_0=='?') ) {s = 36;}
+                        else if ( (LA12_0=='w') ) {s = 36;}
 
-                        else if ( (LA12_0=='h') ) {s = 37;}
+                        else if ( (LA12_0=='?') ) {s = 37;}
 
-                        else if ( (LA12_0=='^') ) {s = 38;}
+                        else if ( (LA12_0=='h') ) {s = 38;}
 
-                        else if ( (LA12_0=='$'||(LA12_0>='A' && LA12_0<='Z')||LA12_0=='_'||LA12_0=='b'||LA12_0=='g'||(LA12_0>='j' && LA12_0<='k')||LA12_0=='m'||(LA12_0>='o' && LA12_0<='q')||(LA12_0>='x' && LA12_0<='z')) ) {s = 39;}
+                        else if ( (LA12_0=='^') ) {s = 39;}
 
-                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 40;}
+                        else if ( (LA12_0=='$'||(LA12_0>='A' && LA12_0<='Z')||LA12_0=='_'||LA12_0=='b'||LA12_0=='g'||(LA12_0>='j' && LA12_0<='k')||LA12_0=='m'||(LA12_0>='p' && LA12_0<='q')||(LA12_0>='x' && LA12_0<='z')) ) {s = 40;}
 
-                        else if ( (LA12_0=='\"') ) {s = 41;}
+                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 41;}
 
-                        else if ( (LA12_0=='\'') ) {s = 42;}
+                        else if ( (LA12_0=='\"') ) {s = 42;}
 
-                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 43;}
+                        else if ( (LA12_0=='\'') ) {s = 43;}
 
-                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='#'||LA12_0=='@'||LA12_0=='\\'||LA12_0=='`'||(LA12_0>='~' && LA12_0<='\uFFFF')) ) {s = 44;}
+                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 44;}
+
+                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='#'||LA12_0=='@'||LA12_0=='\\'||LA12_0=='`'||(LA12_0>='~' && LA12_0<='\uFFFF')) ) {s = 45;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
+                        int LA12_42 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA12_42>='\u0000' && LA12_42<='\uFFFF')) ) {s = 116;}
+
+                        else s = 45;
 
                         if ( s>=0 ) return s;
                         break;

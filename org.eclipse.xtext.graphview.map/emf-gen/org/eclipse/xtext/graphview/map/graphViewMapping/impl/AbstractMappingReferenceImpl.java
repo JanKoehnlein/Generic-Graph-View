@@ -24,6 +24,7 @@ import org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.AbstractMappingReferenceImpl#getReferencedMapping <em>Referenced Mapping</em>}</li>
+ *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.AbstractMappingReferenceImpl#isCall <em>Call</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,6 +41,26 @@ public class AbstractMappingReferenceImpl extends AbstractExpressionMappingImpl 
 	 * @ordered
 	 */
 	protected AbstractMappingDefinition referencedMapping;
+
+	/**
+	 * The default value of the '{@link #isCall() <em>Call</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCall()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean CALL_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isCall() <em>Call</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCall()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean call = CALL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -110,6 +131,29 @@ public class AbstractMappingReferenceImpl extends AbstractExpressionMappingImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isCall()
+	{
+		return call;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCall(boolean newCall)
+	{
+		boolean oldCall = call;
+		call = newCall;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GraphViewMappingPackage.ABSTRACT_MAPPING_REFERENCE__CALL, oldCall, call));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
@@ -118,6 +162,8 @@ public class AbstractMappingReferenceImpl extends AbstractExpressionMappingImpl 
 			case GraphViewMappingPackage.ABSTRACT_MAPPING_REFERENCE__REFERENCED_MAPPING:
 				if (resolve) return getReferencedMapping();
 				return basicGetReferencedMapping();
+			case GraphViewMappingPackage.ABSTRACT_MAPPING_REFERENCE__CALL:
+				return isCall();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -134,6 +180,9 @@ public class AbstractMappingReferenceImpl extends AbstractExpressionMappingImpl 
 		{
 			case GraphViewMappingPackage.ABSTRACT_MAPPING_REFERENCE__REFERENCED_MAPPING:
 				setReferencedMapping((AbstractMappingDefinition)newValue);
+				return;
+			case GraphViewMappingPackage.ABSTRACT_MAPPING_REFERENCE__CALL:
+				setCall((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -152,6 +201,9 @@ public class AbstractMappingReferenceImpl extends AbstractExpressionMappingImpl 
 			case GraphViewMappingPackage.ABSTRACT_MAPPING_REFERENCE__REFERENCED_MAPPING:
 				setReferencedMapping((AbstractMappingDefinition)null);
 				return;
+			case GraphViewMappingPackage.ABSTRACT_MAPPING_REFERENCE__CALL:
+				setCall(CALL_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -168,8 +220,27 @@ public class AbstractMappingReferenceImpl extends AbstractExpressionMappingImpl 
 		{
 			case GraphViewMappingPackage.ABSTRACT_MAPPING_REFERENCE__REFERENCED_MAPPING:
 				return referencedMapping != null;
+			case GraphViewMappingPackage.ABSTRACT_MAPPING_REFERENCE__CALL:
+				return call != CALL_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString()
+	{
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (call: ");
+		result.append(call);
+		result.append(')');
+		return result.toString();
 	}
 
 } //AbstractMappingReferenceImpl

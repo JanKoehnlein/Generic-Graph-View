@@ -15,12 +15,9 @@ import org.eclipse.xtext.graphview.editpolicy.InstanceComponentEditPolicy;
 import org.eclipse.xtext.graphview.editpolicy.RevealEditPolicy;
 import org.eclipse.xtext.graphview.instancemodel.EdgeInstance;
 import org.eclipse.xtext.graphview.instancemodel.NodeInstance;
-import org.eclipse.xtext.graphview.instancemodel.Visibility;
 import org.eclipse.xtext.graphview.rapidbuttons.RapidButtonEditPolicy;
 import org.eclipse.xtext.graphview.shape.RoundedRectangleShape;
 
-import com.google.common.base.Predicate;
-import com.google.common.collect.Iterables;
 import com.google.inject.Inject;
 
 public class NodeEditPart extends AbstractInstanceEditPart {
@@ -56,18 +53,5 @@ public class NodeEditPart extends AbstractInstanceEditPart {
 	protected List<EdgeInstance> getModelTargetConnections() {
 		return helper.filterVisible(((NodeInstance) getModel())
 				.getIncomingEdges());
-	}
-
-	@Override
-	public boolean hasHiddenEdge() {
-		NodeInstance model = (NodeInstance) getModel();
-		return Iterables.any(
-				Iterables.concat(model.getOutgoingEdges(),
-						model.getIncomingEdges()),
-				new Predicate<EdgeInstance>() {
-					public boolean apply(EdgeInstance input) {
-						return input.getVisibility() == Visibility.HIDDEN;
-					}
-				});
 	}
 }

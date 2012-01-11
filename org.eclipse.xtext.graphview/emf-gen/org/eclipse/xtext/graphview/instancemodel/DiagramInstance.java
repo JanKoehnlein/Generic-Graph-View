@@ -18,6 +18,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.eclipse.xtext.graphview.instancemodel.DiagramInstance#getEdges <em>Edges</em>}</li>
+ *   <li>{@link org.eclipse.xtext.graphview.instancemodel.DiagramInstance#isOpenNewDiagram <em>Open New Diagram</em>}</li>
  * </ul>
  * </p>
  *
@@ -42,4 +43,30 @@ public interface DiagramInstance extends AbstractInstance {
 	 * @generated
 	 */
 	EList<EdgeInstance> getEdges();
+
+	/**
+	 * Returns the value of the '<em><b>Open New Diagram</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Open New Diagram</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Open New Diagram</em>' attribute.
+	 * @see #setOpenNewDiagram(boolean)
+	 * @see org.eclipse.xtext.graphview.instancemodel.InstancemodelPackage#getDiagramInstance_OpenNewDiagram()
+	 * @model
+	 * @generated
+	 */
+	boolean isOpenNewDiagram();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.xtext.graphview.instancemodel.DiagramInstance#isOpenNewDiagram <em>Open New Diagram</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Open New Diagram</em>' attribute.
+	 * @see #isOpenNewDiagram()
+	 * @generated
+	 */
+	void setOpenNewDiagram(boolean value);
 } // DiagramInstance

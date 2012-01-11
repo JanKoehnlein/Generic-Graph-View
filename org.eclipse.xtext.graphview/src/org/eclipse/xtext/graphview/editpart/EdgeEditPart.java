@@ -33,13 +33,13 @@ public class EdgeEditPart extends AbstractConnectionEditPart implements
 
 	@Inject
 	private EdgeBendpointEditPolicy edgeBendpointEditPolicy;
-	
+
 	@Inject
 	private EdgeConnectionEditPolicy edgeConnectionEditPolicy;
-	
-	@Inject 
+
+	@Inject
 	private TransparencyHelper transparencyHelper;
-	
+
 	@Override
 	public void setModel(Object model) {
 		super.setModel(model);
@@ -50,7 +50,7 @@ public class EdgeEditPart extends AbstractConnectionEditPart implements
 	public AbstractInstance getModel() {
 		return (AbstractInstance) super.getModel();
 	}
-	
+
 	@Override
 	protected List<?> getModelChildren() {
 		return helper.getVisibleModelChildren();
@@ -69,7 +69,7 @@ public class EdgeEditPart extends AbstractConnectionEditPart implements
 	public void performRequest(Request request) {
 		helper.performRequest(request);
 	}
-	
+
 	@Override
 	protected IFigure createFigure() {
 		IFigure createFigure = helper.createFigure();
@@ -85,15 +85,15 @@ public class EdgeEditPart extends AbstractConnectionEditPart implements
 	protected void refreshVisuals() {
 		helper.style(getFigure());
 	}
-	
+
 	public void setTransparent(boolean isTransparent) {
 		transparencyHelper.setTransparent(isTransparent);
 	}
-	
+
 	@Override
 	public void activate() {
 		super.activate();
-		if(getModel().getVisibility() == Visibility.TRANSPARENT)
+		if (getModel().getVisibility() == Visibility.TRANSPARENT)
 			setTransparent(true);
 	}
 

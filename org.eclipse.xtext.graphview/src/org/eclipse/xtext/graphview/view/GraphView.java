@@ -12,6 +12,7 @@ import java.util.Iterator;
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Viewport;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.GraphicalViewer;
 import org.eclipse.gef.KeyHandler;
@@ -37,6 +38,7 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.actions.ActionFactory;
 import org.eclipse.ui.part.ViewPart;
+import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.graphview.editpart.DiagramEditPart;
 import org.eclipse.xtext.graphview.editpart.GraphViewEditDomain;
 import org.eclipse.xtext.graphview.editpart.GraphViewEditPartFactory;
@@ -138,7 +140,7 @@ public class GraphView extends ViewPart {
 		exportToFileAction.setEnabled(false);
 		actionUpdater = new ISelectionChangedListener() {
 			public void selectionChanged(SelectionChangedEvent event) {
-				for(Iterator<?> i = actionRegistry.getActions(); i.hasNext();) {
+				for (Iterator<?> i = actionRegistry.getActions(); i.hasNext();) {
 					Object action = i.next();
 					if (action instanceof UpdateAction) {
 						((UpdateAction) action).update();
@@ -173,13 +175,15 @@ public class GraphView extends ViewPart {
 				actionRegistry.getAction(ActionFactory.DELETE.getId()));
 		actionKeyHandler.put(KeyStroke.getPressed('z', 0x7a, SWT.COMMAND),
 				actionRegistry.getAction(ActionFactory.UNDO.getId()));
-		actionKeyHandler.put(KeyStroke.getPressed('z', 0x7a, SWT.COMMAND | SWT.SHIFT),
+		actionKeyHandler.put(
+				KeyStroke.getPressed('z', 0x7a, SWT.COMMAND | SWT.SHIFT),
 				actionRegistry.getAction(ActionFactory.REDO.getId()));
 		actionKeyHandler.put(KeyStroke.getPressed('a', 0x61, SWT.COMMAND),
 				actionRegistry.getAction(ActionFactory.SELECT_ALL.getId()));
 		actionKeyHandler.put(KeyStroke.getPressed('z', 0x7a, SWT.CTRL),
 				actionRegistry.getAction(ActionFactory.UNDO.getId()));
-		actionKeyHandler.put(KeyStroke.getPressed('z', 0x7a, SWT.CTRL | SWT.SHIFT),
+		actionKeyHandler.put(
+				KeyStroke.getPressed('z', 0x7a, SWT.CTRL | SWT.SHIFT),
 				actionRegistry.getAction(ActionFactory.REDO.getId()));
 		actionKeyHandler.put(KeyStroke.getPressed('a', 0x61, SWT.CTRL),
 				actionRegistry.getAction(ActionFactory.SELECT_ALL.getId()));
@@ -203,7 +207,7 @@ public class GraphView extends ViewPart {
 	public void dispose() {
 		if (actionRegistry != null)
 			actionRegistry.dispose();
-		if (actionUpdater != null) 
+		if (actionUpdater != null)
 			graphicalViewer.removeSelectionChangedListener(actionUpdater);
 		if (selectionConverter != null)
 			getSite().getWorkbenchWindow().getSelectionService()
@@ -242,10 +246,7 @@ public class GraphView extends ViewPart {
 				}
 			}
 		}
-		IFigure rootFigure = ((GraphicalEditPart) graphicalViewer.getRootEditPart()).getFigure();
-		if(rootFigure instanceof Viewport) {
-			((Viewport) rootFigure).setViewLocation(0,0);
-		}
+		resetViewport();
 		exportToFileAction.setEnabled(currentContents != null);
 		resetAction.setEnabled(currentContents != null);
 		relayoutAction.setEnabled(currentContents != null);
@@ -253,9 +254,42 @@ public class GraphView extends ViewPart {
 		return hasContent;
 	}
 
+	private void resetViewport() {
+		IFigure rootFigure = ((GraphicalEditPart) graphicalViewer
+				.getRootEditPart()).getFigure();
+		if (rootFigure instanceof Viewport) {
+			((Viewport) rootFigure).setViewLocation(0, 0);
+		}
+	}
+
+	public void drillDown(DiagramInstance diagram) {
+		if (diagram != null && currentContents != null) {
+			graphicalViewer.setContents(diagram);
+			resetViewport();
+		}
+	}
+
+	public void drillUp() {
+		if (currentContents != null) {
+			EObject rootModel = (EObject) graphicalViewer.getRootEditPart()
+					.getContents().getModel();
+			if (rootModel.eContainer() != null) {
+				DiagramInstance containerDiagram = EcoreUtil2
+						.getContainerOfType(rootModel.eContainer(),
+								DiagramInstance.class);
+				if (containerDiagram != null) {
+					graphicalViewer.setContents(containerDiagram);
+					resetViewport();
+				}
+			}
+			resetViewport();
+		}
+	}
+
 	public void relayout() {
-		if(graphicalViewer.getContents() != null) {
-			Object diagramEditPart = graphicalViewer.getEditPartRegistry().get(graphicalViewer.getContents().getModel());
+		if (graphicalViewer.getContents() != null) {
+			Object diagramEditPart = graphicalViewer.getEditPartRegistry().get(
+					graphicalViewer.getContents().getModel());
 			if (diagramEditPart instanceof DiagramEditPart) {
 				((DiagramEditPart) diagramEditPart).performAutoLayout();
 			}
@@ -278,9 +312,9 @@ public class GraphView extends ViewPart {
 	@SuppressWarnings("rawtypes")
 	@Override
 	public Object getAdapter(Class adapter) {
-		if(adapter == CommandStack.class) {
+		if (adapter == CommandStack.class) {
 			return getGraphicalViewer().getEditDomain().getCommandStack();
-		} else if(adapter == GraphicalViewer.class) {
+		} else if (adapter == GraphicalViewer.class) {
 			return graphicalViewer;
 		}
 		return super.getAdapter(adapter);

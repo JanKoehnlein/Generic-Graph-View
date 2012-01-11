@@ -16,6 +16,7 @@ Package instancemodel <http://www.xtext.org/graphView/instancemodel>
 
   Class DiagramInstance -> AbstractInstance
     Reference edges : EdgeInstance<<0..*>>
+    Attribute openNewDiagram : EBoolean
 
   Class NodeInstance -> AbstractInstance
     Reference outgoingEdges : EdgeInstance<<0..*>>

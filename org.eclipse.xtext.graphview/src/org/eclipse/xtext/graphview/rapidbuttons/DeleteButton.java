@@ -7,7 +7,6 @@ import org.eclipse.gef.EditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.RequestConstants;
 import org.eclipse.gef.requests.GroupRequest;
-import org.eclipse.gef.tools.SimpleDragTracker;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.ISharedImages;
 import org.eclipse.ui.IWorkbench;
@@ -27,7 +26,7 @@ public class DeleteButton extends AbstractRapidButton {
 	
 	@Override
 	protected DragTracker createDragTracker() {
-		return new SimpleDragTracker() { 
+		return new AbstractRapidButtonDragTracker(getEditPolicy().getHost()) {
 			@Override
 			protected String getCommandName() {
 				return "Hide element";
@@ -39,24 +38,11 @@ public class DeleteButton extends AbstractRapidButton {
 				GroupRequest deleteRequest = new GroupRequest();
 				deleteRequest.setType(RequestConstants.REQ_DELETE);
 				List<EditPart> editParts = Lists.newArrayList();
-				editParts.add(getEditPolicy().getHost());
-				editParts.addAll(getEditPolicy().getHost().getSourceConnections());
-				editParts.addAll(getEditPolicy().getHost().getTargetConnections());
+				editParts.add(getHostEditPart());
+				editParts.addAll(getHostEditPart().getSourceConnections());
+				editParts.addAll(getHostEditPart().getTargetConnections());
 				deleteRequest.setEditParts(editParts);
 				return deleteRequest;
-			}
-			
-			protected boolean handleButtonDown(int button) {
-				stateTransition(STATE_INITIAL, STATE_DRAG_IN_PROGRESS);
-				setCurrentCommand(getEditPolicy().getHost().getCommand(getSourceRequest()));
-				return true;
-			}
-
-			protected boolean handleButtonUp(int button) {
-				if (stateTransition(STATE_DRAG_IN_PROGRESS, STATE_TERMINAL)) {
-					executeCurrentCommand();
-				}
-				return true;
 			}
 		};
 	}

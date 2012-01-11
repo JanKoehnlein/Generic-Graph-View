@@ -296,6 +296,16 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getAbstractMappingReference_Call()
+	{
+		return (EAttribute)abstractMappingReferenceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getImport()
 	{
 		return importEClass;
@@ -406,16 +416,6 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEdgeEndMapping_Call()
-	{
-		return (EAttribute)edgeEndMappingEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getMappingCall()
 	{
 		return mappingCallEClass;
@@ -465,6 +465,7 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 
 		abstractMappingReferenceEClass = createEClass(ABSTRACT_MAPPING_REFERENCE);
 		createEReference(abstractMappingReferenceEClass, ABSTRACT_MAPPING_REFERENCE__REFERENCED_MAPPING);
+		createEAttribute(abstractMappingReferenceEClass, ABSTRACT_MAPPING_REFERENCE__CALL);
 
 		importEClass = createEClass(IMPORT);
 		createEAttribute(importEClass, IMPORT__IMPORTED_NAMESPACE);
@@ -482,7 +483,6 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 		createEReference(edgeMappingEClass, EDGE_MAPPING__TARGET_MAPPING);
 
 		edgeEndMappingEClass = createEClass(EDGE_END_MAPPING);
-		createEAttribute(edgeEndMappingEClass, EDGE_END_MAPPING__CALL);
 
 		mappingCallEClass = createEClass(MAPPING_CALL);
 	}
@@ -549,6 +549,7 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 
 		initEClass(abstractMappingReferenceEClass, AbstractMappingReference.class, "AbstractMappingReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAbstractMappingReference_ReferencedMapping(), this.getAbstractMappingDefinition(), null, "referencedMapping", null, 0, 1, AbstractMappingReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAbstractMappingReference_Call(), ecorePackage.getEBoolean(), "call", null, 0, 1, AbstractMappingReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getImport_ImportedNamespace(), ecorePackage.getEString(), "importedNamespace", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -566,7 +567,6 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 		initEReference(getEdgeMapping_TargetMapping(), this.getEdgeEndMapping(), null, "targetMapping", null, 0, 1, EdgeMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(edgeEndMappingEClass, EdgeEndMapping.class, "EdgeEndMapping", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEdgeEndMapping_Call(), ecorePackage.getEBoolean(), "call", null, 0, 1, EdgeEndMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(mappingCallEClass, MappingCall.class, "MappingCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

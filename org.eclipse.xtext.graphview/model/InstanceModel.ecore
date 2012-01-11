@@ -15,6 +15,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="DiagramInstance" eSuperTypes="#//AbstractInstance">
     <eStructuralFeatures xsi:type="ecore:EReference" name="edges" upperBound="-1"
         eType="#//EdgeInstance" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="openNewDiagram" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NodeInstance" eSuperTypes="#//AbstractInstance">
     <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingEdges" upperBound="-1"

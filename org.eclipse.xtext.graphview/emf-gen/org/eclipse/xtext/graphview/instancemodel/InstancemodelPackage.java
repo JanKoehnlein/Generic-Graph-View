@@ -189,13 +189,22 @@ public interface InstancemodelPackage extends EPackage {
 	int DIAGRAM_INSTANCE__EDGES = ABSTRACT_INSTANCE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Open New Diagram</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGRAM_INSTANCE__OPEN_NEW_DIAGRAM = ABSTRACT_INSTANCE_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Diagram Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM_INSTANCE_FEATURE_COUNT = ABSTRACT_INSTANCE_FEATURE_COUNT + 1;
+	int DIAGRAM_INSTANCE_FEATURE_COUNT = ABSTRACT_INSTANCE_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.xtext.graphview.instancemodel.impl.NodeInstanceImpl <em>Node Instance</em>}' class.
@@ -523,6 +532,17 @@ public interface InstancemodelPackage extends EPackage {
 	EReference getDiagramInstance_Edges();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.xtext.graphview.instancemodel.DiagramInstance#isOpenNewDiagram <em>Open New Diagram</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Open New Diagram</em>'.
+	 * @see org.eclipse.xtext.graphview.instancemodel.DiagramInstance#isOpenNewDiagram()
+	 * @see #getDiagramInstance()
+	 * @generated
+	 */
+	EAttribute getDiagramInstance_OpenNewDiagram();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.xtext.graphview.instancemodel.NodeInstance <em>Node Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -695,6 +715,14 @@ public interface InstancemodelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DIAGRAM_INSTANCE__EDGES = eINSTANCE.getDiagramInstance_Edges();
+
+		/**
+		 * The meta object literal for the '<em><b>Open New Diagram</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DIAGRAM_INSTANCE__OPEN_NEW_DIAGRAM = eINSTANCE.getDiagramInstance_OpenNewDiagram();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.xtext.graphview.instancemodel.impl.NodeInstanceImpl <em>Node Instance</em>}' class.
