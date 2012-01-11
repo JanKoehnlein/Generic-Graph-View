@@ -19,6 +19,12 @@ import com.google.common.collect.Lists;
 public class RevealButton extends AbstractRapidButton {
 
 	@Override
+	public void init(RapidButtonEditPolicy editPolicy, int position) {
+		super.init(editPolicy, position);
+		setLocator(new CompassOutsideBorderLocator(editPolicy.getHost().getFigure(), position));
+	}
+	
+	@Override
 	protected DragTracker createDragTracker() {
 		return new SimpleDragTracker() {
 			@Override
@@ -95,4 +101,8 @@ public class RevealButton extends AbstractRapidButton {
 		return "elcl16/add_16.png";
 	}
 
+	@Override
+	public void setVisible(boolean visible) {
+		super.setVisible(visible && getEditPolicy().getHost().hasHiddenEdge());
+	}
 }

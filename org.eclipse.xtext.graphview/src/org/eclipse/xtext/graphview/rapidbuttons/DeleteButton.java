@@ -2,6 +2,7 @@ package org.eclipse.xtext.graphview.rapidbuttons;
 
 import java.util.List;
 
+import org.eclipse.draw2d.RelativeLocator;
 import org.eclipse.gef.DragTracker;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.Request;
@@ -13,6 +14,13 @@ import com.google.common.collect.Lists;
 
 public class DeleteButton extends AbstractRapidButton {
 
+	@Override
+	public void init(RapidButtonEditPolicy editPolicy, int position) {
+		super.init(editPolicy, position);
+		RelativeLocator locator = new RelativeLocator(editPolicy.getHost().getFigure(), position);
+		setLocator(locator);
+	}
+	
 	@Override
 	protected DragTracker createDragTracker() {
 		return new SimpleDragTracker() { 
