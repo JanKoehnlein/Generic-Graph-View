@@ -11,6 +11,7 @@ import java.util.List;
 
 import org.eclipse.draw2d.AbsoluteBendpoint;
 import org.eclipse.draw2d.PolylineConnection;
+import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.BendpointEditPolicy;
 import org.eclipse.gef.requests.BendpointRequest;
@@ -47,7 +48,9 @@ public class EdgeBendpointEditPolicy extends BendpointEditPolicy {
 		return new AbstractBendpointCommand(request) {
 			@Override
 			public void execute() {
-				getBendPoints().add(request.getIndex(), new AbsoluteBendpoint(request.getLocation()));
+				Point location = request.getLocation();
+				request.getSource().getFigure().translateToRelative(location);
+				getBendPoints().add(request.getIndex(), new AbsoluteBendpoint(location));
 			}
 			
 			@Override
@@ -83,7 +86,9 @@ public class EdgeBendpointEditPolicy extends BendpointEditPolicy {
 			public void execute() {
 				List<AbsoluteBendpoint> bendPoints = getBendPoints();
 				original = bendPoints.get(request.getIndex());
-				bendPoints.set(request.getIndex(), new AbsoluteBendpoint(request.getLocation()));
+				Point location = request.getLocation().getCopy();
+				request.getSource().getFigure().translateToRelative(location);
+				bendPoints.set(request.getIndex(), new AbsoluteBendpoint(location));
 			}
 			
 			@Override
