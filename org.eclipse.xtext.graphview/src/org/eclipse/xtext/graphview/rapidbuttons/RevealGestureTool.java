@@ -61,7 +61,7 @@ public class RevealGestureTool extends AbstractTool implements IGestureHandler, 
 	@Override
 	public void mouseWheelScrolled(Event event, EditPartViewer viewer) {
 		if(event.type == SWT.MouseVerticalWheel || event.type == SWT.MouseHorizontalWheel) {
-			swipeAnimationJob.add(event.count / 5000.);
+			swipeAnimationJob.add(event.count / 20000.);
 			event.doit = false;
 		}
 		super.mouseWheelScrolled(event, viewer);
@@ -71,20 +71,17 @@ public class RevealGestureTool extends AbstractTool implements IGestureHandler, 
 		RevealRequest sourceRequest = getSourceRequest();
 		switch (gestureEvent.detail) {
 		case SWT.GESTURE_MAGNIFY:
-			System.out.println("Magnify:" + gestureEvent.magnification);
 			swipeAnimationJob.stop();
 			sourceRequest.setMouseDistance(initialDistance
 					* gestureEvent.magnification);
 			break;
 		case SWT.GESTURE_ROTATE:
-			System.out.println("Rotate:" + gestureEvent.rotation);
 			swipeAnimationJob.stop();
 			sourceRequest.setMouseAngle(initialAngle
 					+ gestureEvent.rotation * Math.PI / 180.);
 			break;
 		case SWT.GESTURE_SWIPE:
 		case SWT.GESTURE_PAN:
-			System.out.println("Swipe:" + gestureEvent.time);
 			swipeAnimationJob.add(gestureEvent.xDirection);
 			break;
 		case SWT.GESTURE_END:
@@ -171,8 +168,8 @@ public class RevealGestureTool extends AbstractTool implements IGestureHandler, 
 				double angle = getSourceRequest().getMouseAngle() + timeDelta * Math.min(0.01, speed);
 				getSourceRequest().setMouseAngle(angle);
 				showSourceFeedback();
-				speed /= 2;
-				if(Math.abs(speed) > 0.01)
+				speed /= 1.8;
+				if(Math.abs(speed) > 0.001)
 					schedule(RESCEDULE_INTERVAL);
 			}
 			lastTime = (isStop) ? -1 : currentTime;
