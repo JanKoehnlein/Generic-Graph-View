@@ -1,13 +1,9 @@
 package org.eclipse.xtext.graphview.rapidbuttons;
 
-import org.eclipse.gef.EditPartViewer;
 import org.eclipse.gef.tools.SimpleDragTracker;
-import org.eclipse.swt.events.GestureEvent;
 import org.eclipse.xtext.graphview.editpart.IInstanceModelEditPart;
-import org.eclipse.xtext.graphview.gestures.IGestureHandler;
-import org.eclipse.xtext.graphview.gestures.IViewerGestureListener;
 
-public abstract class AbstractRapidButtonDragTracker extends SimpleDragTracker implements IGestureHandler, IViewerGestureListener {
+public abstract class AbstractRapidButtonDragTracker extends SimpleDragTracker {
 
 	private final IInstanceModelEditPart hostEditPart;
 
@@ -37,11 +33,4 @@ public abstract class AbstractRapidButtonDragTracker extends SimpleDragTracker i
 		}
 	}
 	
-	public void gesture(GestureEvent gestureEvent, EditPartViewer viewer) {
-		handleGesture(gestureEvent);
-	}
-	
-	public boolean handleGesture(GestureEvent gestureEvent) {
-		return false;
-	}
 }

@@ -45,7 +45,7 @@ public class GraphViewRootEditPart extends ScalableFreeformRootEditPart {
 					gestureEvent.doit = false;
 					break;
 				default:
-					gestureEvent.doit = false;
+					gestureEvent.doit = true;
 				}
 			}
 		});

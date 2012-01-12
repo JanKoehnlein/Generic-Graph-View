@@ -22,4 +22,5 @@ public class GestureSelectionTool extends SelectionTool implements IViewerGestur
 		if (handler != null)
 			handler.gesture(gestureEvent, viewer);
 	}
+	
 }

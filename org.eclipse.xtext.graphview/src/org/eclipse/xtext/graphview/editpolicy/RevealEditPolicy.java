@@ -4,6 +4,7 @@ import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
+import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.CompoundCommand;
@@ -69,6 +70,8 @@ public class RevealEditPolicy extends AbstractEditPolicy {
 	public void eraseSourceFeedback(Request request) {
 		if (request instanceof RevealRequest) {
 			RevealRequest revealRequest = (RevealRequest) request;
+//			for(AbstractInstance toBeRevealed: revealRequest.getToBeRevealed()) 
+//				toBeRevealed.setVisibility(Visibility.HIDDEN);
 			revealRequest.setRevealedEditPartMap(null);
 			revealRequest.setSingleSelection(null);
 		}
@@ -110,25 +113,14 @@ public class RevealEditPolicy extends AbstractEditPolicy {
 	protected void showFeedback(RevealRequest revealRequest, RevealedEditPartMap revealedEditPartMap) {
 		Iterable<IInstanceModelEditPart> layoutables = revealedEditPartMap.getLayoutables();
 		if (!Iterables.isEmpty(layoutables)) {
-			Point currentMouseLocation = revealRequest
-					.getCurrentMouseLocation();
-			IFigure hostFigure = ((IInstanceModelEditPart) getHost())
-					.getFigure();
-			Point center = hostFigure.getBounds().getCenter();
-			if (hostFigure.getParent() != null)
-				hostFigure.getParent().translateToAbsolute(center);
-			Dimension dragDifference = currentMouseLocation
-					.getDifference(center);
-			double dist = diameter(dragDifference);
-			double mouseAngle = Math.atan2(dragDifference.preciseHeight(),
-					dragDifference.preciseWidth());
-			double angle = (revealRequest.isRevealSingle()) ? 0 : mouseAngle;
+			double angle = (revealRequest.isRevealSingle()) ? 0 : revealRequest.getMouseAngle();
 			double deltaAngle = 2 * Math.PI / Iterables.size(layoutables);
+			Point center = ((GraphicalEditPart) getHost()).getFigure().getBounds().getCenter();
 			for (IInstanceModelEditPart layoutable : layoutables) {
 				IFigure figure = layoutable.getFigure();
 				Point newCenter = new Point(center);
 				Dimension figureSize = figure.getSize();
-				double centerDist = dist;
+				double centerDist = revealRequest.getMouseDistance();
 				newCenter.translate((int) (Math.cos(angle) * centerDist),
 						(int) (Math.sin(angle) * centerDist));
 				newCenter.translate(-figureSize.width / 2,
@@ -141,7 +133,7 @@ public class RevealEditPolicy extends AbstractEditPolicy {
 				angle += deltaAngle;
 			}
 			if (revealRequest.isRevealSingle()) {
-				int revealIndex = (int) (((mouseAngle + 0.5 * deltaAngle + 2 * Math.PI) % (2 * Math.PI)) / deltaAngle);
+				int revealIndex = (int) (((revealRequest.getMouseAngle() + 0.5 * deltaAngle + 2 * Math.PI) % (2 * Math.PI)) / deltaAngle);
 				int i = 0;
 				for (IInstanceModelEditPart layoutable : layoutables) {
 					if(i == revealIndex) 
@@ -156,8 +148,4 @@ public class RevealEditPolicy extends AbstractEditPolicy {
 		}
 	}
 
-	protected double diameter(Dimension dimension) {
-		return Math.sqrt(dimension.width * dimension.width + dimension.height
-				* dimension.height);
-	}
 }

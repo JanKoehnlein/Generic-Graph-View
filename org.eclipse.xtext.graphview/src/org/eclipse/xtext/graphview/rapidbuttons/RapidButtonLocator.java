@@ -8,7 +8,8 @@ import org.eclipse.draw2d.geometry.Rectangle;
 public class RapidButtonLocator extends RelativeLocator {
 
 	public static final int OFFSET = 10;
-	private final boolean isOutside;
+	
+	private boolean isOutside;
 
 	public RapidButtonLocator(IFigure reference, int direction,
 			boolean isOutside) {
@@ -26,4 +27,5 @@ public class RapidButtonLocator extends RelativeLocator {
 			box.shrink(insets);
 		return box;
 	}
+
 }

@@ -6,6 +6,8 @@ package company {
 		op fullName (String x) : String { firstName + " " + lastName }
 		address : Address
 		phone: Phone
+		boss: Boss
+		friend: Employee
 	}
 
 	entity Phone {

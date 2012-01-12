@@ -2,7 +2,6 @@ package org.eclipse.xtext.graphview.editpolicy.request;
 
 import java.util.List;
 
-import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.gef.Request;
 import org.eclipse.xtext.graphview.editpart.IInstanceModelEditPart;
 import org.eclipse.xtext.graphview.editpolicy.RevealedEditPartMap;
@@ -12,13 +11,15 @@ public class RevealRequest extends Request {
 
 	private final List<AbstractInstance> toBeRevealed;
 
-	private Point currentMouseLocation;
-	
 	private boolean isRevealSingle;
-	
+
 	private IInstanceModelEditPart singleSelection;
 	
 	private RevealedEditPartMap revealedEditPartMap;
+
+	private double mouseAngle;
+	
+	private double mouseDistance;
 	
 	public RevealRequest(List<AbstractInstance> toBeRevealed) {
 		this.toBeRevealed = toBeRevealed;
@@ -33,14 +34,22 @@ public class RevealRequest extends Request {
 		return toBeRevealed;
 	}
 	
-	public Point getCurrentMouseLocation() {
-		return currentMouseLocation;
+	public double getMouseDistance() {
+		return mouseDistance;
+	}
+	
+	public void setMouseDistance(double mouseDistance) {
+		this.mouseDistance = mouseDistance;
+	}
+	
+	public double getMouseAngle() {
+		return mouseAngle;
 	}
 
-	public void setCurrentMouseLocation(Point currentMouseLocation) {
-		this.currentMouseLocation = currentMouseLocation;
+	public void setMouseAngle(double mouseAngle) {
+		this.mouseAngle = mouseAngle;
 	}
-
+	
 	public boolean isRevealSingle() {
 		return isRevealSingle;
 	}
