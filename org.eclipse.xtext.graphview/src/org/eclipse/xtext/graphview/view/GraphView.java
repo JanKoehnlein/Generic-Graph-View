@@ -28,7 +28,6 @@ import org.eclipse.gef.ui.actions.UndoAction;
 import org.eclipse.gef.ui.actions.UpdateAction;
 import org.eclipse.gef.ui.actions.ZoomComboContributionItem;
 import org.eclipse.gef.ui.parts.GraphicalViewerKeyHandler;
-import org.eclipse.gef.ui.parts.ScrollingGraphicalViewer;
 import org.eclipse.jface.action.IToolBarManager;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
@@ -42,6 +41,8 @@ import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.graphview.editpart.DiagramEditPart;
 import org.eclipse.xtext.graphview.editpart.GraphViewEditDomain;
 import org.eclipse.xtext.graphview.editpart.GraphViewEditPartFactory;
+import org.eclipse.xtext.graphview.editpart.GraphViewRootEditPart;
+import org.eclipse.xtext.graphview.gestures.GestureGraphicalViewer;
 import org.eclipse.xtext.graphview.instancemodel.DiagramInstance;
 import org.eclipse.xtext.graphview.model.ModelInstantiator;
 import org.eclipse.xtext.graphview.view.config.IDiagramConfigurationProvider;
@@ -191,9 +192,9 @@ public class GraphView extends ViewPart {
 	}
 
 	protected GraphicalViewer createGraphicalViewer(Composite parent) {
-		GraphicalViewer graphicalViewer = new ScrollingGraphicalViewer();
+		GraphicalViewer graphicalViewer = new GestureGraphicalViewer();
 		graphicalViewer.createControl(parent);
-		ScalableFreeformRootEditPart rootEditPart = new ScalableFreeformRootEditPart();
+		ScalableFreeformRootEditPart rootEditPart = new GraphViewRootEditPart();
 		zoomManager = rootEditPart.getZoomManager();
 		zoomManager.setZoomLevelContributions(Lists.newArrayList(ZOOM_LEVELS));
 		graphicalViewer.setRootEditPart(rootEditPart);

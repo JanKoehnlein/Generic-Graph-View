@@ -53,7 +53,7 @@ public class RapidButtonEditPolicy extends AbstractEditPolicy {
 					hideButtons();
 					return Status.OK_STATUS;
 				}
-			}.schedule(1000);
+			}.schedule(5000);
 		}
 		super.eraseTargetFeedback(request);
 	}

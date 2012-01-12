@@ -7,9 +7,9 @@
  *******************************************************************************/
 package org.eclipse.xtext.graphview.editpart;
 
-import org.eclipse.gef.DefaultEditDomain;
+import org.eclipse.xtext.graphview.gestures.GestureEditDomain;
 
-public class GraphViewEditDomain extends DefaultEditDomain {
+public class GraphViewEditDomain extends GestureEditDomain {
 
 	private ClassLoader classLoader;
 	

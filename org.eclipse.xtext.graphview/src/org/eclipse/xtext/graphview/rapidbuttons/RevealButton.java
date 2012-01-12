@@ -6,9 +6,9 @@ import java.util.List;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.gef.DragTracker;
 import org.eclipse.gef.Request;
-import org.eclipse.gef.tools.SimpleDragTracker;
+import org.eclipse.swt.events.GestureEvent;
 import org.eclipse.swt.graphics.Image;
-import org.eclipse.xtext.graphview.editpart.AbstractInstanceEditPart;
+import org.eclipse.xtext.graphview.editpart.IInstanceModelEditPart;
 import org.eclipse.xtext.graphview.editpolicy.request.RevealRequest;
 import org.eclipse.xtext.graphview.instancemodel.AbstractInstance;
 import org.eclipse.xtext.graphview.instancemodel.EdgeInstance;
@@ -33,20 +33,21 @@ public class RevealButton extends AbstractRapidButton {
 
 	@Override
 	protected DragTracker createDragTracker() {
-		return new SimpleDragTracker() {
+		return new AbstractRapidButtonDragTracker(getEditPolicy().getHost()) {
+
 			@Override
 			protected String getCommandName() {
 				return "Add element";
 			}
 
 			@Override
-			protected List<AbstractInstanceEditPart> createOperationSet() {
-				return Collections.singletonList(getEditPolicy().getHost());
+			protected List<IInstanceModelEditPart> createOperationSet() {
+				return Collections.singletonList(getHostEditPart());
 			}
 
 			@Override
 			protected Request createSourceRequest() {
-				AbstractInstance model = getEditPolicy().getHost().getModel();
+				AbstractInstance model = getHostEditPart().getModel();
 				if (model instanceof NodeInstance) {
 					NodeInstance node = (NodeInstance) model;
 					List<AbstractInstance> toBeRevealed = Lists.newArrayList();
@@ -84,28 +85,37 @@ public class RevealButton extends AbstractRapidButton {
 			}
 
 			@Override
+			protected boolean stateTransition(int start, int end) {
+				System.out.println(start + " -> " + end);
+				return super.stateTransition(start, end);
+			}
+
+			@Override
 			protected boolean handleDragInProgress() {
-				if (stateTransition(STATE_DRAG, STATE_DRAG_IN_PROGRESS)) {
-					Point mouseLocation = getCurrentInput().getMouseLocation();
-					((RevealRequest) getSourceRequest())
-							.setCurrentMouseLocation(mouseLocation);
-					showSourceFeedback();
-					return true;
-				} else {
-					return false;
-				}
+				stateTransition(STATE_DRAG, STATE_DRAG_IN_PROGRESS);
+				Point mouseLocation = getCurrentInput().getMouseLocation();
+				((RevealRequest) getSourceRequest())
+						.setCurrentMouseLocation(mouseLocation);
+				showSourceFeedback();
+				return true;
 			}
 
 			protected boolean handleButtonUp(int button) {
 				if (stateTransition(STATE_DRAG_IN_PROGRESS, STATE_TERMINAL)) {
 					eraseSourceFeedback();
-					setCurrentCommand(getEditPolicy().getHost().getCommand(
+					setCurrentCommand(getHostEditPart().getCommand(
 							getSourceRequest()));
 					executeCurrentCommand();
 					return true;
 				} else {
 					return false;
 				}
+			}
+
+			@Override
+			public boolean handleGesture(GestureEvent gestureEvent) {
+				System.out.println(gestureEvent.detail);
+				return super.handleGesture(gestureEvent);
 			}
 		};
 	}
