@@ -22,21 +22,17 @@ public class DiagramLayoutEditPolicy extends XYLayoutEditPolicy {
 	protected Command getCreateCommand(CreateRequest request) {
 		return null;
 	}
-	
+
 	@Override
-	protected Command createChangeConstraintCommand(
-			final ChangeBoundsRequest request, final EditPart child, Object constraint) {
+	protected Command createChangeConstraintCommand(final ChangeBoundsRequest request, final EditPart child, Object constraint) {
 		return new ChangeBoundsCommand(request, (GraphicalEditPart) child);
 	}
 
-	
 	@Override
-	protected Command createAddCommand(ChangeBoundsRequest request,
-			EditPart child, Object constraint) {
-		if(child.getModel() instanceof AbstractInstance 
-				&& ((AbstractInstance) child.getModel()).eContainer() == getHost().getModel()) 
+	protected Command createAddCommand(ChangeBoundsRequest request, EditPart child, Object constraint) {
+		if (child.getModel() instanceof AbstractInstance && ((AbstractInstance) child.getModel()).eContainer() == getHost().getModel())
 			return createChangeConstraintCommand(request, child, constraint);
-		else 
+		else
 			return super.createAddCommand(request, child, constraint);
 	}
 }

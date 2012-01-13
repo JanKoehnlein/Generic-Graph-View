@@ -17,7 +17,7 @@ public class RectangleShape extends RectangleFigure implements ILayoutNode {
 
 	public RectangleShape() {
 		// some reasonable defaults
-		setSize(200,100);
+		setSize(200, 100);
 		setLineWidth(2);
 		setForegroundColor(ColorConstants.buttonDarkest);
 		setBackgroundColor(ColorLiterals.color(new ColorLiteral("#ffeedd")));
@@ -27,5 +27,5 @@ public class RectangleShape extends RectangleFigure implements ILayoutNode {
 		setLayoutManager(layout);
 		setBorder(new MarginBorder(5, 5, 5, 5));
 	}
-	
+
 }

@@ -16,38 +16,31 @@ public class JvmModelAssociationExtensions {
 
 	private static IResourceServiceProvider.Registry registry = IResourceServiceProvider.Registry.INSTANCE;
 
-	public static <T extends JvmIdentifiableElement> T jvmElement(
-			EObject sourceElement, Class<T> type) {
+	public static <T extends JvmIdentifiableElement> T jvmElement(EObject sourceElement, Class<T> type) {
 		IJvmModelAssociations associations = getAssociations(sourceElement);
 		if (associations != null) {
-			Set<EObject> jvmElements = associations
-					.getJvmElements(sourceElement);
-			Iterator<T> matchingElements = Iterables.filter(jvmElements, type)
-					.iterator();
+			Set<EObject> jvmElements = associations.getJvmElements(sourceElement);
+			Iterator<T> matchingElements = Iterables.filter(jvmElements, type).iterator();
 			if (matchingElements.hasNext())
 				return matchingElements.next();
 		}
 		return null;
 	}
 
-	public static <T extends EObject> T sourceElement(
-			EObject jvmElement, Class<T> type) {
+	public static <T extends EObject> T sourceElement(EObject jvmElement, Class<T> type) {
 		IJvmModelAssociations associations = getAssociations(jvmElement);
 		if (associations != null) {
-			Set<EObject> sourceElements = associations
-					.getSourceElements(jvmElement);
-			Iterator<T> matchingElements = Iterables.filter(sourceElements,
-					type).iterator();
+			Set<EObject> sourceElements = associations.getSourceElements(jvmElement);
+			Iterator<T> matchingElements = Iterables.filter(sourceElements, type).iterator();
 			if (matchingElements.hasNext())
 				return matchingElements.next();
 		}
 		return null;
 	}
-	
+
 	protected static IJvmModelAssociations getAssociations(EObject element) {
 		URI uri = element.eResource().getURI();
-		IResourceServiceProvider resourceServiceProvider = registry
-				.getResourceServiceProvider(uri);
+		IResourceServiceProvider resourceServiceProvider = registry.getResourceServiceProvider(uri);
 		if (resourceServiceProvider != null)
 			return resourceServiceProvider.get(IJvmModelAssociations.class);
 		else

@@ -13,7 +13,7 @@ import org.eclipse.swt.SWT;
 import org.eclipse.xtext.graphview.layout.IAutoLayout;
 import org.eclipse.xtext.graphview.layout.KielerAutoLayout;
 
-public class DiagramShape extends FreeformLayer { 
+public class DiagramShape extends FreeformLayer {
 
 	private IAutoLayout autoLayoutManager;
 

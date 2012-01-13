@@ -10,7 +10,7 @@ public class TransparencyHelper {
 	private IFigure figure;
 
 	public static final int WHITENING_DELTA = 100;
-	
+
 	public void setFigure(IFigure figure) {
 		this.figure = figure;
 	}
@@ -38,8 +38,8 @@ public class TransparencyHelper {
 	}
 
 	protected Color makeTransparent(Color c) {
-		if(c.getRed() == c.getGreen() && c.getGreen() == c.getBlue()) {
-			int newValue =127+c.getRed()/2;
+		if (c.getRed() == c.getGreen() && c.getGreen() == c.getBlue()) {
+			int newValue = 127 + c.getRed() / 2;
 			return ColorLiterals.color(newValue, newValue, newValue);
 		}
 		int red = c.getRed() + WHITENING_DELTA;

@@ -16,9 +16,8 @@ public class FontLiterals {
 	public static Font font(String fontName, int height, int style) {
 		FontData fontData = new FontData(fontName, height, style);
 		String symbolicName = fontData.toString();
-		if(!JFaceResources.getFontRegistry().hasValueFor(symbolicName)) {
-			JFaceResources.getFontRegistry().put(symbolicName,
-					new FontData[] { fontData });
+		if (!JFaceResources.getFontRegistry().hasValueFor(symbolicName)) {
+			JFaceResources.getFontRegistry().put(symbolicName, new FontData[] { fontData });
 		}
 		Font font = JFaceResources.getFontRegistry().get(symbolicName);
 		return font;

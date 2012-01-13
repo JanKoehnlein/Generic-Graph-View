@@ -12,7 +12,7 @@ import org.eclipse.xtext.graphview.gestures.GestureEditDomain;
 public class GraphViewEditDomain extends GestureEditDomain {
 
 	private ClassLoader classLoader;
-	
+
 	public GraphViewEditDomain() {
 		super(null);
 	}
@@ -20,9 +20,9 @@ public class GraphViewEditDomain extends GestureEditDomain {
 	public ClassLoader getClassLoader() {
 		return classLoader;
 	}
-	
+
 	public void setClassLoader(ClassLoader classLoader) {
 		this.classLoader = classLoader;
 	}
-	
+
 }

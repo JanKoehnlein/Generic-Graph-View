@@ -41,8 +41,7 @@ public class KielerAutoLayout extends AbstractAutoLayout {
 
 		private static final String KIML_CLASS = "class";
 
-		private static final Logger LOG = Logger
-				.getLogger(KielerAutoLayout.class);
+		private static final Logger LOG = Logger.getLogger(KielerAutoLayout.class);
 
 		private static final String KIML_PARAMETER = "parameter";
 
@@ -51,42 +50,33 @@ public class KielerAutoLayout extends AbstractAutoLayout {
 		private static final String KIML_LAYOUT_PROVIDERS = "de.cau.cs.kieler.kiml.layoutProviders";
 
 		static {
-			for (IConfigurationElement layoutProviderConfig : Platform
-					.getExtensionRegistry().getConfigurationElementsFor(
-							KIML_LAYOUT_PROVIDERS)) {
-				String layoutAlgorithmName = layoutProviderConfig
-						.getAttribute(KIML_NAME);
+			for (IConfigurationElement layoutProviderConfig : Platform.getExtensionRegistry().getConfigurationElementsFor(
+					KIML_LAYOUT_PROVIDERS)) {
+				String layoutAlgorithmName = layoutProviderConfig.getAttribute(KIML_NAME);
 				if (layoutProviderConfig.getAttribute(KIML_CLASS) != null)
 					System.out.println(layoutAlgorithmName);
 			}
 		}
 
-		protected static AbstractLayoutProvider getLayoutProvider(
-				String layoutName) {
-			for (IConfigurationElement layoutProviderConfig : Platform
-					.getExtensionRegistry().getConfigurationElementsFor(
-							KIML_LAYOUT_PROVIDERS)) {
-				String layoutAlgorithmName = layoutProviderConfig
-						.getAttribute(KIML_NAME);
+		protected static AbstractLayoutProvider getLayoutProvider(String layoutName) {
+			for (IConfigurationElement layoutProviderConfig : Platform.getExtensionRegistry().getConfigurationElementsFor(
+					KIML_LAYOUT_PROVIDERS)) {
+				String layoutAlgorithmName = layoutProviderConfig.getAttribute(KIML_NAME);
 				if (Strings.equal(layoutName, layoutAlgorithmName)) {
 					AbstractLayoutProvider layoutProvider;
 					try {
 						if (layoutProviderConfig.getAttribute(KIML_CLASS) != null) {
-							layoutProvider = (AbstractLayoutProvider) layoutProviderConfig
-									.createExecutableExtension(KIML_CLASS);
-							String layoutAlgorithmParameter = layoutProviderConfig
-									.getAttribute(KIML_PARAMETER);
+							layoutProvider = (AbstractLayoutProvider) layoutProviderConfig.createExecutableExtension(KIML_CLASS);
+							String layoutAlgorithmParameter = layoutProviderConfig.getAttribute(KIML_PARAMETER);
 							layoutProvider.initialize(layoutAlgorithmParameter);
 							return layoutProvider;
 						}
 					} catch (CoreException e) {
-						LOG.error("Error instantiating KIELER layout provider "
-								+ Strings.notNull(layoutName), e);
+						LOG.error("Error instantiating KIELER layout provider " + Strings.notNull(layoutName), e);
 					}
 				}
 			}
-			LOG.warn("No KIELER layout provider named '"
-					+ Strings.notNull(layoutName) + "' found. Using default.");
+			LOG.warn("No KIELER layout provider named '" + Strings.notNull(layoutName) + "' found. Using default.");
 			return new BoxLayoutProvider();
 		}
 	}
@@ -128,12 +118,9 @@ public class KielerAutoLayout extends AbstractAutoLayout {
 			for (Object child : connectionLayer.getChildren()) {
 				if (child instanceof Connection) {
 					Connection connection = (Connection) child;
-					connection
-							.setConnectionRouter(getConnectionRouter(container));
-					KNode sourceNode = childrenToNodes.get(connection
-							.getSourceAnchor().getOwner());
-					KNode targetNode = childrenToNodes.get(connection
-							.getTargetAnchor().getOwner());
+					connection.setConnectionRouter(getConnectionRouter(container));
+					KNode sourceNode = childrenToNodes.get(connection.getSourceAnchor().getOwner());
+					KNode targetNode = childrenToNodes.get(connection.getTargetAnchor().getOwner());
 					if (targetNode != null && sourceNode != null) {
 						KEdge graphEdge = createKEdge(sourceNode, targetNode);
 						connectionToEdges.put(connection, graphEdge);
@@ -142,16 +129,13 @@ public class KielerAutoLayout extends AbstractAutoLayout {
 			}
 		}
 		IKielerProgressMonitor progressMonitor = new BasicProgressMonitor();
-		AbstractLayoutProvider kielerLayoutProvider = ExtensionPointReader
-				.getLayoutProvider(layoutName);
+		AbstractLayoutProvider kielerLayoutProvider = ExtensionPointReader.getLayoutProvider(layoutName);
 		kielerLayoutProvider.doLayout(rootNode, progressMonitor);
 		Rectangle containerBounds = null;
 		for (Map.Entry<ILayoutNode, KNode> entry : childrenToNodes.entrySet()) {
 			KShapeLayout data = entry.getValue().getData(KShapeLayout.class);
 			if (data != null) {
-				Rectangle bounds = new Rectangle((int) data.getXpos(),
-						(int) data.getYpos(), (int) data.getWidth(),
-						(int) data.getHeight());
+				Rectangle bounds = new Rectangle((int) data.getXpos(), (int) data.getYpos(), (int) data.getWidth(), (int) data.getHeight());
 				entry.getKey().setBounds(bounds);
 				if (containerBounds == null)
 					containerBounds = bounds.getCopy();
@@ -160,26 +144,21 @@ public class KielerAutoLayout extends AbstractAutoLayout {
 			}
 		}
 		for (Map.Entry<Connection, KEdge> entry : connectionToEdges.entrySet()) {
-			KEdgeLayout edgeLayout = entry.getValue()
-					.getData(KEdgeLayout.class);
+			KEdgeLayout edgeLayout = entry.getValue().getData(KEdgeLayout.class);
 			if (edgeLayout != null && !edgeLayout.getBendPoints().isEmpty()) {
 				List<Bendpoint> gefBendPoints = Lists.newArrayList();
 				for (KPoint bendPoint : edgeLayout.getBendPoints()) {
-					AbsoluteBendpoint gefBendPoint = new AbsoluteBendpoint(
-							(int) bendPoint.getX(), (int) bendPoint.getY());
+					AbsoluteBendpoint gefBendPoint = new AbsoluteBendpoint((int) bendPoint.getX(), (int) bendPoint.getY());
 					gefBendPoints.add(gefBendPoint);
 					if (containerBounds == null)
-						containerBounds = new Rectangle(gefBendPoint,
-								new Dimension(0, 0));
+						containerBounds = new Rectangle(gefBendPoint, new Dimension(0, 0));
 					else
 						containerBounds.union(gefBendPoint);
 				}
-				getConnectionRouter(container).setConstraint(entry.getKey(),
-						gefBendPoints);
+				getConnectionRouter(container).setConstraint(entry.getKey(), gefBendPoints);
 			}
 		}
-		return (containerBounds == null) ? new Dimension() : containerBounds
-				.getSize().expand(2 * containerBounds.x, 2 * containerBounds.y);
+		return (containerBounds == null) ? new Dimension() : containerBounds.getSize().expand(2 * containerBounds.x, 2 * containerBounds.y);
 	}
 
 	protected KEdge createKEdge(KNode sourceNode, KNode targetNode) {

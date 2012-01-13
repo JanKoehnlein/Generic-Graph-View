@@ -16,12 +16,12 @@ public class ExpandButton extends AbstractRapidButton {
 
 	@Inject
 	private PluginImageHelper imageHelper;
-	
+
 	@Override
 	protected Image createImage() {
 		return imageHelper.getImage("elcl16/expandall.gif");
 	}
-	
+
 	@Override
 	protected DragTracker createDragTracker() {
 		return new AbstractRapidButtonDragTracker(getEditPolicy().getHost()) {
@@ -29,7 +29,7 @@ public class ExpandButton extends AbstractRapidButton {
 			protected String getCommandName() {
 				return "Hide element";
 			}
-			
+
 			@Override
 			protected Request createSourceRequest() {
 				Request expandRequest = new Request(ExpandEditPolicy.REQ_EXPAND);
@@ -42,11 +42,10 @@ public class ExpandButton extends AbstractRapidButton {
 	public void setVisible(boolean visible) {
 		super.setVisible(visible && hasHiddenChildren());
 	}
-	
+
 	protected boolean hasHiddenChildren() {
 		for (EObject modelChild : EcoreUtil2.eAllContents(getEditPolicy().getHost().getModel())) {
-			if (modelChild instanceof AbstractInstance
-					&& ((AbstractInstance) modelChild).getVisibility() == Visibility.HIDDEN)
+			if (modelChild instanceof AbstractInstance && ((AbstractInstance) modelChild).getVisibility() == Visibility.HIDDEN)
 				return true;
 		}
 		return false;

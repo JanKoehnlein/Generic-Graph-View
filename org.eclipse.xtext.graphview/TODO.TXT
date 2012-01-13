@@ -1,7 +1,3 @@
-RapidButtons
-- nicer gestures
-- nicer appear/remove
-
 View
 - use feedback figures correctly
 - drill down UI
@@ -13,7 +9,6 @@ View
 
 Mapping DSL
 - validation
-- drill down
 
 Styling DSL:
 - default imports
@@ -26,3 +21,6 @@ DONE
 - nicer placement of rapid buttons
 - reset scrollbars on input change
 - expand button
+- nicer gestures
+- nicer appear/remove
+- drill down

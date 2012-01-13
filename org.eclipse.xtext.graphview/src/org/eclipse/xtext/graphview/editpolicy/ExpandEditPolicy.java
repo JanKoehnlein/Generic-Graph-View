@@ -21,12 +21,9 @@ public class ExpandEditPolicy extends AbstractEditPolicy {
 	public Command getCommand(Request request) {
 		if (request.getType() == REQ_EXPAND) {
 			CompoundCommand command = new CompoundCommand();
-			for (EObject modelChild : EcoreUtil2.eAllContents(getHost()
-					.getModel())) {
-				if (modelChild instanceof AbstractInstance
-						&& ((AbstractInstance) modelChild).getVisibility() == Visibility.HIDDEN)
-					command.add(new SetVisibilityCommand(
-							(AbstractInstance) modelChild, Visibility.VISIBLE));
+			for (EObject modelChild : EcoreUtil2.eAllContents(getHost().getModel())) {
+				if (modelChild instanceof AbstractInstance && ((AbstractInstance) modelChild).getVisibility() == Visibility.HIDDEN)
+					command.add(new SetVisibilityCommand((AbstractInstance) modelChild, Visibility.VISIBLE));
 			}
 			return command;
 		}

@@ -45,13 +45,11 @@ public class NodeEditPart extends AbstractInstanceEditPart {
 
 	@Override
 	protected List<EdgeInstance> getModelSourceConnections() {
-		return helper.filterVisible(((NodeInstance) getModel())
-				.getOutgoingEdges());
+		return helper.filterVisible(((NodeInstance) getModel()).getOutgoingEdges());
 	}
 
 	@Override
 	protected List<EdgeInstance> getModelTargetConnections() {
-		return helper.filterVisible(((NodeInstance) getModel())
-				.getIncomingEdges());
+		return helper.filterVisible(((NodeInstance) getModel()).getIncomingEdges());
 	}
 }

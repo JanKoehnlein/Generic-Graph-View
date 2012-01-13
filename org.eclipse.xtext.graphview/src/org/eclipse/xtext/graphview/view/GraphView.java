@@ -12,7 +12,6 @@ import java.util.Iterator;
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Viewport;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.GraphicalViewer;
 import org.eclipse.gef.KeyHandler;
@@ -37,11 +36,9 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.actions.ActionFactory;
 import org.eclipse.ui.part.ViewPart;
-import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.graphview.editpart.DiagramEditPart;
 import org.eclipse.xtext.graphview.editpart.GraphViewEditDomain;
 import org.eclipse.xtext.graphview.editpart.GraphViewEditPartFactory;
-import org.eclipse.xtext.graphview.editpart.GraphViewRootEditPart;
 import org.eclipse.xtext.graphview.gestures.GestureGraphicalViewer;
 import org.eclipse.xtext.graphview.instancemodel.DiagramInstance;
 import org.eclipse.xtext.graphview.model.ModelInstantiator;
@@ -90,8 +87,7 @@ public class GraphView extends ViewPart {
 
 	private Listener configurationListener;
 
-	private static final String[] ZOOM_LEVELS = new String[] {
-			ZoomManager.FIT_ALL, ZoomManager.FIT_HEIGHT, ZoomManager.FIT_WIDTH };
+	private static final String[] ZOOM_LEVELS = new String[] { ZoomManager.FIT_ALL, ZoomManager.FIT_HEIGHT, ZoomManager.FIT_WIDTH };
 
 	private ZoomComboContributionItem zoomContributionItem;
 
@@ -114,19 +110,15 @@ public class GraphView extends ViewPart {
 				});
 			}
 		};
-		diagramConfigurationProvider
-				.addConfigurationListener(configurationListener);
-		getSite().getWorkbenchWindow().getSelectionService()
-				.addPostSelectionListener(selectionConverter);
-		IToolBarManager toolBarManager = getViewSite().getActionBars()
-				.getToolBarManager();
+		diagramConfigurationProvider.addConfigurationListener(configurationListener);
+		getSite().getWorkbenchWindow().getSelectionService().addPostSelectionListener(selectionConverter);
+		IToolBarManager toolBarManager = getViewSite().getActionBars().getToolBarManager();
 		toolBarManager.add(resetAction);
 		toolBarManager.add(relayoutAction);
 		toolBarManager.add(exportToFileAction);
 		toolBarManager.add(selectDiagramConfigurationAction);
 		actionRegistry = createActionRegistry();
-		zoomContributionItem = new ZoomComboContributionItem(getSite()
-				.getPage(), ZOOM_LEVELS) {
+		zoomContributionItem = new ZoomComboContributionItem(getSite().getPage(), ZOOM_LEVELS) {
 			@Override
 			public void setZoomManager(ZoomManager zm) {
 				if (zm == null)
@@ -150,8 +142,7 @@ public class GraphView extends ViewPart {
 			}
 		};
 		getGraphicalViewer().addSelectionChangedListener(actionUpdater);
-		graphicalViewer.setKeyHandler(new GraphicalViewerKeyHandler(
-				graphicalViewer).setParent(createActionKeyHandler()));
+		graphicalViewer.setKeyHandler(new GraphicalViewerKeyHandler(graphicalViewer).setParent(createActionKeyHandler()));
 	}
 
 	protected ActionRegistry createActionRegistry() {
@@ -170,37 +161,27 @@ public class GraphView extends ViewPart {
 
 	protected KeyHandler createActionKeyHandler() {
 		KeyHandler actionKeyHandler = new KeyHandler();
-		actionKeyHandler.put(KeyStroke.getPressed(SWT.DEL, 127, 0),
-				actionRegistry.getAction(ActionFactory.DELETE.getId()));
-		actionKeyHandler.put(KeyStroke.getPressed(SWT.BS, 0x8, 0),
-				actionRegistry.getAction(ActionFactory.DELETE.getId()));
-		actionKeyHandler.put(KeyStroke.getPressed('z', 0x7a, SWT.COMMAND),
-				actionRegistry.getAction(ActionFactory.UNDO.getId()));
-		actionKeyHandler.put(
-				KeyStroke.getPressed('z', 0x7a, SWT.COMMAND | SWT.SHIFT),
-				actionRegistry.getAction(ActionFactory.REDO.getId()));
-		actionKeyHandler.put(KeyStroke.getPressed('a', 0x61, SWT.COMMAND),
-				actionRegistry.getAction(ActionFactory.SELECT_ALL.getId()));
-		actionKeyHandler.put(KeyStroke.getPressed('z', 0x7a, SWT.CTRL),
-				actionRegistry.getAction(ActionFactory.UNDO.getId()));
-		actionKeyHandler.put(
-				KeyStroke.getPressed('z', 0x7a, SWT.CTRL | SWT.SHIFT),
-				actionRegistry.getAction(ActionFactory.REDO.getId()));
-		actionKeyHandler.put(KeyStroke.getPressed('a', 0x61, SWT.CTRL),
-				actionRegistry.getAction(ActionFactory.SELECT_ALL.getId()));
+		actionKeyHandler.put(KeyStroke.getPressed(SWT.DEL, 127, 0), actionRegistry.getAction(ActionFactory.DELETE.getId()));
+		actionKeyHandler.put(KeyStroke.getPressed(SWT.BS, 0x8, 0), actionRegistry.getAction(ActionFactory.DELETE.getId()));
+		actionKeyHandler.put(KeyStroke.getPressed('z', 0x7a, SWT.COMMAND), actionRegistry.getAction(ActionFactory.UNDO.getId()));
+		actionKeyHandler
+				.put(KeyStroke.getPressed('z', 0x7a, SWT.COMMAND | SWT.SHIFT), actionRegistry.getAction(ActionFactory.REDO.getId()));
+		actionKeyHandler.put(KeyStroke.getPressed('a', 0x61, SWT.COMMAND), actionRegistry.getAction(ActionFactory.SELECT_ALL.getId()));
+		actionKeyHandler.put(KeyStroke.getPressed('z', 0x7a, SWT.CTRL), actionRegistry.getAction(ActionFactory.UNDO.getId()));
+		actionKeyHandler.put(KeyStroke.getPressed('z', 0x7a, SWT.CTRL | SWT.SHIFT), actionRegistry.getAction(ActionFactory.REDO.getId()));
+		actionKeyHandler.put(KeyStroke.getPressed('a', 0x61, SWT.CTRL), actionRegistry.getAction(ActionFactory.SELECT_ALL.getId()));
 		return actionKeyHandler;
 	}
 
 	protected GraphicalViewer createGraphicalViewer(Composite parent) {
 		GraphicalViewer graphicalViewer = new GestureGraphicalViewer();
 		graphicalViewer.createControl(parent);
-		ScalableFreeformRootEditPart rootEditPart = new GraphViewRootEditPart();
+		ScalableFreeformRootEditPart rootEditPart = editPartFactory.createRoot();
 		zoomManager = rootEditPart.getZoomManager();
 		zoomManager.setZoomLevelContributions(Lists.newArrayList(ZOOM_LEVELS));
 		graphicalViewer.setRootEditPart(rootEditPart);
 		graphicalViewer.setEditPartFactory(editPartFactory);
-		graphicalViewer.getControl().setBackground(
-				ColorConstants.listBackground);
+		graphicalViewer.getControl().setBackground(ColorConstants.listBackground);
 		return graphicalViewer;
 	}
 
@@ -211,10 +192,8 @@ public class GraphView extends ViewPart {
 		if (actionUpdater != null)
 			graphicalViewer.removeSelectionChangedListener(actionUpdater);
 		if (selectionConverter != null)
-			getSite().getWorkbenchWindow().getSelectionService()
-					.addPostSelectionListener(selectionConverter);
-		diagramConfigurationProvider
-				.removeConfigurationListener(configurationListener);
+			getSite().getWorkbenchWindow().getSelectionService().addPostSelectionListener(selectionConverter);
+		diagramConfigurationProvider.removeConfigurationListener(configurationListener);
 		currentContents = null;
 		super.dispose();
 	}
@@ -225,8 +204,7 @@ public class GraphView extends ViewPart {
 		setViewerContents(contents, editDomain.getClassLoader(), false);
 	}
 
-	public boolean setViewerContents(Object contents, ClassLoader classLoader,
-			boolean force) {
+	public boolean setViewerContents(Object contents, ClassLoader classLoader, boolean force) {
 		boolean hasContent = false;
 		if (contents == null) {
 			if (force) {
@@ -234,11 +212,9 @@ public class GraphView extends ViewPart {
 				graphicalViewer.setContents(null);
 			}
 		} else {
-			if ((force || contents != currentContents)
-					&& diagramConfigurationProvider.getDiagramMapping() != null) {
-				DiagramInstance instanceModel = modelInstantiator
-						.createInstance(diagramConfigurationProvider
-								.getDiagramMapping(), contents, classLoader);
+			if ((force || contents != currentContents) && diagramConfigurationProvider.getDiagramMapping() != null) {
+				DiagramInstance instanceModel = modelInstantiator.createInstance(diagramConfigurationProvider.getDiagramMapping(),
+						contents, classLoader);
 				if (instanceModel != null) {
 					currentContents = contents;
 					editDomain.setClassLoader(classLoader);
@@ -256,41 +232,22 @@ public class GraphView extends ViewPart {
 	}
 
 	private void resetViewport() {
-		IFigure rootFigure = ((GraphicalEditPart) graphicalViewer
-				.getRootEditPart()).getFigure();
+		IFigure rootFigure = ((GraphicalEditPart) graphicalViewer.getRootEditPart()).getFigure();
 		if (rootFigure instanceof Viewport) {
 			((Viewport) rootFigure).setViewLocation(0, 0);
 		}
 	}
 
-	public void drillDown(DiagramInstance diagram) {
+	public void gotoDiagram(DiagramInstance diagram) {
 		if (diagram != null && currentContents != null) {
 			graphicalViewer.setContents(diagram);
 			resetViewport();
 		}
 	}
 
-	public void drillUp() {
-		if (currentContents != null) {
-			EObject rootModel = (EObject) graphicalViewer.getRootEditPart()
-					.getContents().getModel();
-			if (rootModel.eContainer() != null) {
-				DiagramInstance containerDiagram = EcoreUtil2
-						.getContainerOfType(rootModel.eContainer(),
-								DiagramInstance.class);
-				if (containerDiagram != null) {
-					graphicalViewer.setContents(containerDiagram);
-					resetViewport();
-				}
-			}
-			resetViewport();
-		}
-	}
-
 	public void relayout() {
 		if (graphicalViewer.getContents() != null) {
-			Object diagramEditPart = graphicalViewer.getEditPartRegistry().get(
-					graphicalViewer.getContents().getModel());
+			Object diagramEditPart = graphicalViewer.getEditPartRegistry().get(graphicalViewer.getContents().getModel());
 			if (diagramEditPart instanceof DiagramEditPart) {
 				((DiagramEditPart) diagramEditPart).performAutoLayout();
 			}

@@ -23,32 +23,28 @@ public class StyleProvider {
 
 	@Inject
 	private IStyler styler;
-	
+
 	private Multimap<AbstractMapping, Style> mapping2style = HashMultimap.create();
 
 	public void setClassLoader(ClassLoader classLoader) {
 		styler.setClassLoader(classLoader);
 	}
-	
+
 	@Inject
-	public void setGraphViewDefinitionProvider(
-			final IDiagramConfigurationProvider graphViewDefinitionProvider) {
-		graphViewDefinitionProvider
-				.addConfigurationListener(new IDiagramConfigurationProvider.Listener() {
-					public void graphViewDefinitionChanged() {
-						mapping2style = loadStyles(graphViewDefinitionProvider);
-					}
-				});
+	public void setGraphViewDefinitionProvider(final IDiagramConfigurationProvider graphViewDefinitionProvider) {
+		graphViewDefinitionProvider.addConfigurationListener(new IDiagramConfigurationProvider.Listener() {
+			public void graphViewDefinitionChanged() {
+				mapping2style = loadStyles(graphViewDefinitionProvider);
+			}
+		});
 		mapping2style = loadStyles(graphViewDefinitionProvider);
 	}
 
-	protected Multimap<AbstractMapping, Style> loadStyles(
-			IDiagramConfigurationProvider graphViewDefinitionProvider) {
+	protected Multimap<AbstractMapping, Style> loadStyles(IDiagramConfigurationProvider graphViewDefinitionProvider) {
 		Multimap<AbstractMapping, Style> mapping2style = HashMultimap.create();
 		if (graphViewDefinitionProvider.getStyleSheet() != null) {
-			for (Style style : graphViewDefinitionProvider.getStyleSheet()
-					.getStyles()) {
-				for (AbstractMapping mapping: style.getMappings())
+			for (Style style : graphViewDefinitionProvider.getStyleSheet().getStyles()) {
+				for (AbstractMapping mapping : style.getMappings())
 					mapping2style.put(mapping, style);
 			}
 		}

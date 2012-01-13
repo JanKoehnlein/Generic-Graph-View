@@ -19,7 +19,7 @@ import com.google.common.collect.Maps;
 public class InstanceCache {
 
 	private Map<Triple<Object, AbstractInstance, AbstractMapping>, AbstractInstance> map = Maps.newHashMap();
-	
+
 	public AbstractInstance put(Object semanticElement, AbstractInstance parentInstance, AbstractMapping mapping, AbstractInstance instance) {
 		return map.put(getKey(semanticElement, parentInstance, mapping), instance);
 	}
@@ -27,11 +27,10 @@ public class InstanceCache {
 	public AbstractInstance get(Object semanticElement, AbstractInstance parentInstance, AbstractMapping mapping) {
 		return map.get(getKey(semanticElement, parentInstance, mapping));
 	}
-	
-	protected Triple<Object, AbstractInstance, AbstractMapping> getKey(
-			Object semanticElement, AbstractInstance parentInstance,
+
+	protected Triple<Object, AbstractInstance, AbstractMapping> getKey(Object semanticElement, AbstractInstance parentInstance,
 			AbstractMapping mapping) {
 		return Tuples.create(semanticElement, parentInstance, mapping);
 	}
-	
+
 }

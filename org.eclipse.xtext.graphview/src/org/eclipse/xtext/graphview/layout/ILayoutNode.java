@@ -14,8 +14,8 @@ import org.eclipse.draw2d.geometry.Rectangle;
 public interface ILayoutNode {
 
 	public Dimension getPreferredSize();
-	
+
 	public void setLocation(Point position);
-	
+
 	public void setBounds(Rectangle bounds);
 }

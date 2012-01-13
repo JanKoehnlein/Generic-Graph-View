@@ -38,15 +38,13 @@ import com.google.inject.Singleton;
 
 @SuppressWarnings("restriction")
 @Singleton
-public class DefaultDiagramConfigurationProvider implements
-		IDiagramConfigurationProvider {
+public class DefaultDiagramConfigurationProvider implements IDiagramConfigurationProvider {
 
 	private static final String CURRENT_MAPPING_URI_PROPERTY = "currentMapping";
 
 	private static final String CURRENT_STYLE_SHEET_URI_PROPERTY = "currentStyleSheet";
 
-	private static final Logger LOG = Logger
-			.getLogger(DefaultDiagramConfigurationProvider.class);
+	private static final Logger LOG = Logger.getLogger(DefaultDiagramConfigurationProvider.class);
 
 	@Inject
 	private IResourceSetProvider resourceSetProvider;
@@ -74,8 +72,7 @@ public class DefaultDiagramConfigurationProvider implements
 
 	private ResourceSet resourceSet;
 
-	protected void setModels(IEObjectDescription mappingModel,
-			IEObjectDescription styleSheetModel) {
+	protected void setModels(IEObjectDescription mappingModel, IEObjectDescription styleSheetModel) {
 		currentProject = null;
 		styleSheet = (StyleSheet) load(styleSheetModel);
 		if (styleSheet != null)
@@ -97,11 +94,9 @@ public class DefaultDiagramConfigurationProvider implements
 							}
 						}
 						if (diagramMapping != null)
-							diagramMapping = (DiagramMapping) EcoreUtil
-									.resolve(diagramMapping, resourceSet);
+							diagramMapping = (DiagramMapping) EcoreUtil.resolve(diagramMapping, resourceSet);
 						if (styleSheet != null)
-							styleSheet = (StyleSheet) EcoreUtil.resolve(
-									styleSheet, resourceSet);
+							styleSheet = (StyleSheet) EcoreUtil.resolve(styleSheet, resourceSet);
 						fireModelChanged();
 						return;
 					}
@@ -115,8 +110,7 @@ public class DefaultDiagramConfigurationProvider implements
 	}
 
 	protected void storePreference(String property, EObject model) {
-		getPreferenceStore().setValue(property,
-				(model != null) ? EcoreUtil.getURI(model).toString() : "");
+		getPreferenceStore().setValue(property, (model != null) ? EcoreUtil.getURI(model).toString() : "");
 	}
 
 	protected IPreferenceStore getPreferenceStore() {
@@ -157,8 +151,7 @@ public class DefaultDiagramConfigurationProvider implements
 	}
 
 	protected EObject load(IEObjectDescription eObjectDescription) {
-		return (eObjectDescription == null) ? null : load(eObjectDescription
-				.getEObjectURI());
+		return (eObjectDescription == null) ? null : load(eObjectDescription.getEObjectURI());
 	}
 
 	protected EObject load(String uriProperty) {
@@ -181,8 +174,7 @@ public class DefaultDiagramConfigurationProvider implements
 			currentProject = project;
 			typeProviderFactory.createTypeProvider(resourceSet);
 		} else if (!currentProject.equals(project)) {
-			throw new IllegalArgumentException(
-					"GraphView diagram definition files must reside in the same project");
+			throw new IllegalArgumentException("GraphView diagram definition files must reside in the same project");
 		}
 		modelFiles.add(projectUtil.findFileStorage(eObjectURI, false));
 		return resourceSet.getEObject(eObjectURI, true);

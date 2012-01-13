@@ -19,30 +19,30 @@ public class RevealRequest extends Request {
 	private RevealedEditPartMap revealedEditPartMap;
 
 	private double mouseAngle;
-	
+
 	private double mouseDistance;
-	
+
 	public RevealRequest(List<AbstractInstance> toBeRevealed) {
 		this.toBeRevealed = toBeRevealed;
 	}
-	
+
 	@Override
 	public Object getType() {
 		return "Show connected";
 	}
-	
+
 	public List<AbstractInstance> getToBeRevealed() {
 		return toBeRevealed;
 	}
-	
+
 	public double getMouseDistance() {
 		return mouseDistance;
 	}
-	
+
 	public void setMouseDistance(double mouseDistance) {
 		this.mouseDistance = mouseDistance;
 	}
-	
+
 	public double getMouseAngle() {
 		return mouseAngle;
 	}
@@ -50,7 +50,7 @@ public class RevealRequest extends Request {
 	public void setMouseAngle(double mouseAngle) {
 		this.mouseAngle = mouseAngle;
 	}
-	
+
 	public RevealedEditPartMap getRevealedEditPartMap() {
 		return revealedEditPartMap;
 	}
@@ -58,28 +58,28 @@ public class RevealRequest extends Request {
 	public void setRevealedEditPartMap(RevealedEditPartMap revealedEditPartMap) {
 		this.revealedEditPartMap = revealedEditPartMap;
 	}
-	
-	private Set<IInstanceModelEditPart> selection = Sets.newHashSet(); 
-	
+
+	private Set<IInstanceModelEditPart> selection = Sets.newHashSet();
+
 	public Set<IInstanceModelEditPart> getSelection() {
 		return selection;
 	}
-	
+
 	public boolean addToSelection(EditPart selectedEditPart) {
-		if(!(selectedEditPart instanceof IInstanceModelEditPart))
+		if (!(selectedEditPart instanceof IInstanceModelEditPart))
 			return false;
-		else if(Iterables.contains(revealedEditPartMap.getLayoutables(), selectedEditPart)) 
+		else if (Iterables.contains(revealedEditPartMap.getLayoutables(), selectedEditPart))
 			return selection.add((IInstanceModelEditPart) selectedEditPart);
-		else 
+		else
 			return addToSelection(selectedEditPart.getParent());
 	}
 
 	public boolean removeFromSelection(IInstanceModelEditPart selectedEditPart) {
-		if(!(selectedEditPart instanceof IInstanceModelEditPart))
+		if (!(selectedEditPart instanceof IInstanceModelEditPart))
 			return false;
-		else if(Iterables.contains(revealedEditPartMap.getLayoutables(), selectedEditPart)) 
+		else if (Iterables.contains(revealedEditPartMap.getLayoutables(), selectedEditPart))
 			return selection.remove((IInstanceModelEditPart) selectedEditPart);
-		else 
+		else
 			return addToSelection(selectedEditPart.getParent());
 	}
 }

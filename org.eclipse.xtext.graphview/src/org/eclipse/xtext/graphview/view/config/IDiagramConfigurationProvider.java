@@ -18,12 +18,12 @@ public interface IDiagramConfigurationProvider {
 	interface Listener {
 		public void graphViewDefinitionChanged();
 	}
-	
+
 	DiagramMapping getDiagramMapping();
-	
+
 	StyleSheet getStyleSheet();
-	
+
 	public void addConfigurationListener(Listener listener);
-	
+
 	public void removeConfigurationListener(Listener listener);
 }

@@ -12,8 +12,7 @@ import org.osgi.framework.Bundle;
 
 import com.google.inject.Injector;
 
-public class GraphViewExecutableExtensionFactory extends
-		AbstractGuiceAwareExecutableExtensionFactory {
+public class GraphViewExecutableExtensionFactory extends AbstractGuiceAwareExecutableExtensionFactory {
 
 	@Override
 	protected Bundle getBundle() {

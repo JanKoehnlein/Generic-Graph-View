@@ -10,23 +10,23 @@ public class DefaultNodeLayout extends ToolbarLayout {
 	public DefaultNodeLayout() {
 		super(false);
 	}
-	
+
 	@Override
 	public void layout(IFigure parent) {
 		super.layout(parent);
 		Rectangle bounds = null;
-		for(Object child: parent.getChildren()) {
+		for (Object child : parent.getChildren()) {
 			if (child instanceof IFigure) {
-				if(bounds == null) 
+				if (bounds == null)
 					bounds = ((IFigure) child).getBounds().getCopy();
-				else 
+				else
 					bounds.union(((IFigure) child).getBounds());
 			}
 		}
-		if(bounds == null)
+		if (bounds == null)
 			return;
 		Insets insets = parent.getInsets();
-		if(insets != null)
+		if (insets != null)
 			bounds.expand(insets);
 		preferredSize = bounds.getSize();
 		parent.setSize(preferredSize);

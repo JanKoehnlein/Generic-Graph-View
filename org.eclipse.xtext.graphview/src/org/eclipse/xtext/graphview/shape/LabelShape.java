@@ -40,7 +40,7 @@ public class LabelShape extends Label implements IConnectionChild {
 	public void setConnectionAlignment(int connectionAlignment) {
 		this.connectionAlignment = connectionAlignment;
 	}
-	
+
 	@Override
 	public void setParent(IFigure parent) {
 		super.setParent(parent);

@@ -25,7 +25,7 @@ public class ChangeBoundsCommand extends Command {
 		figure.setBounds(request.getTransformedRectangle(originalBounds));
 		figure.validate();
 	}
-	
+
 	@Override
 	public void undo() {
 		IFigure figure = child.getFigure();

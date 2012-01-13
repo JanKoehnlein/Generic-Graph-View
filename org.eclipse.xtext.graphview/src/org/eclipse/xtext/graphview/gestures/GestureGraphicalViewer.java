@@ -3,9 +3,9 @@ package org.eclipse.xtext.graphview.gestures;
 import org.eclipse.draw2d.LightweightSystem;
 import org.eclipse.gef.EditDomain;
 import org.eclipse.gef.ui.parts.DomainEventDispatcher;
-import org.eclipse.gef.ui.parts.GraphicalViewerImpl;
+import org.eclipse.gef.ui.parts.ScrollingGraphicalViewer;
 
-public class GestureGraphicalViewer extends GraphicalViewerImpl { // ScalabeGraphicalViewer
+public class GestureGraphicalViewer extends ScrollingGraphicalViewer {
 	@Override
 	protected LightweightSystem createLightweightSystem() {
 		return new GestureLightweightSystem();
@@ -16,10 +16,7 @@ public class GestureGraphicalViewer extends GraphicalViewerImpl { // ScalabeGrap
 		super.setEditDomain(domain);
 		// there is no way to avoid the super implementation to create a
 		// dangling event dispatcher
-		getLightweightSystem()
-				.setEventDispatcher(
-						eventDispatcher = new GestureDomainEventDispatcher(
-								domain, this));
+		getLightweightSystem().setEventDispatcher(eventDispatcher = new GestureDomainEventDispatcher(domain, this));
 	}
 
 	// super.eventDispatcher is private

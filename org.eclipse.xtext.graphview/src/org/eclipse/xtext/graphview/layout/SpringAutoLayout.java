@@ -38,17 +38,14 @@ public class SpringAutoLayout extends AbstractAutoLayout {
 	private int iterations = 200;
 
 	public Dimension layout(IFigure container) {
-		SpringLayoutAlgorithm layoutAlgorithm = new SpringLayoutAlgorithm(
-				LayoutStyles.NO_LAYOUT_NODE_RESIZING);
+		SpringLayoutAlgorithm layoutAlgorithm = new SpringLayoutAlgorithm(LayoutStyles.NO_LAYOUT_NODE_RESIZING);
 		Map<ILayoutNode, LayoutEntity> childrenToNodes = Maps.newHashMap();
-		Map<Connection, LayoutRelationship> connectionToEdges = Maps
-				.newHashMap();
+		Map<Connection, LayoutRelationship> connectionToEdges = Maps.newHashMap();
 		for (Object child : container.getChildren()) {
 			if (child instanceof ILayoutNode) {
 				ILayoutNode childFigure = (ILayoutNode) child;
 				Dimension childPreferredSize = childFigure.getPreferredSize();
-				SimpleNode graphNode = new SimpleNode(childFigure, 0, 0,
-						childPreferredSize.width, childPreferredSize.height);
+				SimpleNode graphNode = new SimpleNode(childFigure, 0, 0, childPreferredSize.width, childPreferredSize.height);
 				childrenToNodes.put(childFigure, graphNode);
 			}
 		}
@@ -59,13 +56,10 @@ public class SpringAutoLayout extends AbstractAutoLayout {
 				if (child instanceof Connection) {
 					Connection connection = (Connection) child;
 					connection.setConnectionRouter(connectionRouter);
-					LayoutEntity sourceNode = childrenToNodes.get(connection
-							.getSourceAnchor().getOwner());
-					LayoutEntity targetNode = childrenToNodes.get(connection
-							.getSourceAnchor().getOwner());
+					LayoutEntity sourceNode = childrenToNodes.get(connection.getSourceAnchor().getOwner());
+					LayoutEntity targetNode = childrenToNodes.get(connection.getSourceAnchor().getOwner());
 					if (targetNode != null && sourceNode != null) {
-						SimpleRelationship edge = new SimpleRelationship(
-								sourceNode, targetNode, false);
+						SimpleRelationship edge = new SimpleRelationship(sourceNode, targetNode, false);
 						connectionToEdges.put(connection, edge);
 					}
 				}
@@ -74,18 +68,13 @@ public class SpringAutoLayout extends AbstractAutoLayout {
 		try {
 			Dimension estimatedSize = getPeferredSize(container);
 			layoutAlgorithm.setIterations(getIterations());
-			layoutAlgorithm.applyLayout(Iterables.toArray(
-					childrenToNodes.values(), LayoutEntity.class), Iterables
-					.toArray(connectionToEdges.values(),
-							LayoutRelationship.class), 0, 0,
-					estimatedSize.width, estimatedSize.height, false, false);
-			for (Map.Entry<ILayoutNode, LayoutEntity> entry : childrenToNodes
-					.entrySet()) {
+			layoutAlgorithm.applyLayout(Iterables.toArray(childrenToNodes.values(), LayoutEntity.class),
+					Iterables.toArray(connectionToEdges.values(), LayoutRelationship.class), 0, 0, estimatedSize.width,
+					estimatedSize.height, false, false);
+			for (Map.Entry<ILayoutNode, LayoutEntity> entry : childrenToNodes.entrySet()) {
 				LayoutEntity node = entry.getValue();
 				ILayoutNode figure = entry.getKey();
-				Rectangle bounds = new Rectangle((int) node.getXInLayout(),
-						(int) node.getYInLayout(),
-						(int) node.getWidthInLayout(),
+				Rectangle bounds = new Rectangle((int) node.getXInLayout(), (int) node.getYInLayout(), (int) node.getWidthInLayout(),
 						(int) node.getHeightInLayout());
 				figure.setBounds(bounds);
 				container.setConstraint((IFigure) figure, bounds);
@@ -106,8 +95,7 @@ public class SpringAutoLayout extends AbstractAutoLayout {
 			}
 		}
 		double completeArea = getBlankToNodeAreaRatio() * area;
-		return new Dimension((int) Math.sqrt(completeArea * getAspectRatio()),
-				(int) Math.sqrt(completeArea / getAspectRatio()));
+		return new Dimension((int) Math.sqrt(completeArea * getAspectRatio()), (int) Math.sqrt(completeArea / getAspectRatio()));
 	}
 
 	public double getAspectRatio() {

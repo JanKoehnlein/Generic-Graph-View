@@ -62,8 +62,7 @@ public class InstanceModelEditPartHelper {
 		List<T> visibleChildren = Lists.newArrayList();
 		for (T child : instances) {
 			if (child.getVisibility() != Visibility.HIDDEN
-					&& !(child instanceof DiagramInstance && ((DiagramInstance) child)
-							.isOpenNewDiagram()))
+					&& !(child instanceof DiagramInstance && ((DiagramInstance) child).isOpenNewDiagram()))
 				visibleChildren.add(child);
 		}
 		return visibleChildren;
@@ -77,8 +76,7 @@ public class InstanceModelEditPartHelper {
 		return styleProvider.getStyles(getMapping());
 	}
 
-	private static final Logger LOG = Logger
-			.getLogger(InstanceModelEditPartHelper.class);
+	private static final Logger LOG = Logger.getLogger(InstanceModelEditPartHelper.class);
 
 	public IFigure createFigure() {
 		IFigure figure = null;
@@ -94,14 +92,10 @@ public class InstanceModelEditPartHelper {
 		JvmTypeReference javaClass = style.getJavaClass();
 		if (javaClass != null) {
 			try {
-				Class<?> figure = Class.forName(javaClass.getType()
-						.getIdentifier());
+				Class<?> figure = Class.forName(javaClass.getType().getIdentifier());
 				return (IFigure) figure.newInstance();
 			} catch (Exception e) {
-				LOG.error(
-						"Error instantiating figure "
-								+ Strings.notNull(style.getJavaClass()
-										.getSimpleName()), e);
+				LOG.error("Error instantiating figure " + Strings.notNull(style.getJavaClass().getSimpleName()), e);
 				LOG.error("Using default figure instead.");
 			}
 		}

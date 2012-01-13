@@ -47,8 +47,7 @@ public class LabelEditPart extends AbstractInstanceEditPart {
 			return semanticElement.toString();
 		}
 		try {
-			Method method = semanticElement.getClass().getMethod("getName",
-					new Class<?>[0]);
+			Method method = semanticElement.getClass().getMethod("getName", new Class<?>[0]);
 			return method.invoke(semanticElement, new Object[0]).toString();
 		} catch (Exception e) {
 			// ignore
@@ -58,8 +57,7 @@ public class LabelEditPart extends AbstractInstanceEditPart {
 
 	protected boolean isDescriptionLabel() {
 		if (getParent() instanceof AbstractInstanceEditPart) {
-			return ((AbstractInstanceEditPart) getParent()).helper
-					.getSemanticElement() == helper.getSemanticElement();
+			return ((AbstractInstanceEditPart) getParent()).helper.getSemanticElement() == helper.getSemanticElement();
 		}
 		return false;
 	}
@@ -69,6 +67,6 @@ public class LabelEditPart extends AbstractInstanceEditPart {
 		if (isDescriptionLabel())
 			return getParent().getTargetEditPart(request);
 		else
-			 return super.getTargetEditPart(request);
+			return super.getTargetEditPart(request);
 	}
 }

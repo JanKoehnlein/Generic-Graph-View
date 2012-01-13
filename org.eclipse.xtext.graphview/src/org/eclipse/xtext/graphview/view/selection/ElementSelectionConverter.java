@@ -27,8 +27,7 @@ import com.google.inject.Singleton;
 @Singleton
 public class ElementSelectionConverter implements ISelectionListener {
 
-	private static final Logger LOG = Logger
-			.getLogger(ElementSelectionConverter.class);
+	private static final Logger LOG = Logger.getLogger(ElementSelectionConverter.class);
 
 	@Inject
 	private GraphView graphView;
@@ -50,17 +49,14 @@ public class ElementSelectionConverter implements ISelectionListener {
 		for (IConfigurationElement configurationElement : extensionRegistry
 				.getConfigurationElementsFor("org.eclipse.xtext.graphview.selectionStrategy")) {
 			try {
-				contributions
-						.add((IElementSelectionStrategy) configurationElement
-								.createExecutableExtension("class"));
+				contributions.add((IElementSelectionStrategy) configurationElement.createExecutableExtension("class"));
 			} catch (CoreException e) {
 				LOG.error("Error instantiating selection strategy", e);
 			}
 		}
 	}
 
-	protected IElementSelectionStrategy findElementSelectionStrategy(
-			IEditorPart editor) {
+	protected IElementSelectionStrategy findElementSelectionStrategy(IEditorPart editor) {
 		for (IElementSelectionStrategy elementSelectionStrategy : contributions) {
 			if (elementSelectionStrategy.isStrategyFor(editor))
 				return elementSelectionStrategy;
@@ -99,8 +95,7 @@ public class ElementSelectionConverter implements ISelectionListener {
 			if (myEditor != null) {
 				myEditor.getEditorSite().getPage().bringToTop(myEditor);
 				IElementSelectionStrategy elementSelectionStrategy = findElementSelectionStrategy(myEditor);
-				ISelection selection = elementSelectionStrategy
-						.viewSelectionChanged(selectedElement);
+				ISelection selection = elementSelectionStrategy.viewSelectionChanged(selectedElement);
 				if (selection != null) {
 					mySelection = selection;
 				}

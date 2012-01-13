@@ -23,13 +23,11 @@ public class ResetAction extends Action {
 		setText("Reset");
 		setToolTipText("Reset this diagram");
 	}
-	
-	@Inject 
+
+	@Inject
 	protected void setImages(PluginImageHelper imageHelper) {
-		setImageDescriptor(ImageDescriptor.createFromImage(imageHelper
-				.getImage("elcl16/refresh_nav.gif")));
-		setDisabledImageDescriptor(ImageDescriptor.createFromImage(imageHelper
-				.getImage("dlcl16/refresh_nav.gif")));
+		setImageDescriptor(ImageDescriptor.createFromImage(imageHelper.getImage("elcl16/refresh_nav.gif")));
+		setDisabledImageDescriptor(ImageDescriptor.createFromImage(imageHelper.getImage("dlcl16/refresh_nav.gif")));
 	}
 
 	@Override

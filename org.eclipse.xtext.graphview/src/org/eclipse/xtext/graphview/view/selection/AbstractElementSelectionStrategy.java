@@ -10,8 +10,7 @@ package org.eclipse.xtext.graphview.view.selection;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.xtext.graphview.view.GraphView;
 
-public abstract class AbstractElementSelectionStrategy implements
-		IElementSelectionStrategy {
+public abstract class AbstractElementSelectionStrategy implements IElementSelectionStrategy {
 
 	private IEditorPart editor;
 
@@ -40,7 +39,6 @@ public abstract class AbstractElementSelectionStrategy implements
 	}
 
 	protected Object refreshView() {
-		return editorSelectionChanged(editor.getSite().getSelectionProvider()
-				.getSelection(), true);
+		return editorSelectionChanged(editor.getSite().getSelectionProvider().getSelection(), true);
 	}
 }

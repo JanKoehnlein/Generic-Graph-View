@@ -31,26 +31,19 @@ public class GraphViewModule extends AbstractModule {
 
 	@Override
 	protected void configure() {
-		bind(IResourceDescriptions.class).toProvider(
-				Access.getIResourceDescriptions());
+		bind(IResourceDescriptions.class).toProvider(Access.getIResourceDescriptions());
 		bind(IJvmTypeProvider.Factory.class).to(JdtTypeProviderFactory.class);
 		bind(IResourceSetProvider.class).to(XtextResourceSetProvider.class);
 
 		bind(IInstanceMapper.class).toProvider(new Provider<IInstanceMapper>() {
 			public IInstanceMapper get() {
-				return GraphViewMappingActivator
-						.getInstance()
-						.getInjector(
-								"org.eclipse.xtext.graphview.map.GraphViewMapping")
+				return GraphViewMappingActivator.getInstance().getInjector("org.eclipse.xtext.graphview.map.GraphViewMapping")
 						.getInstance(IInstanceMapper.class);
 			}
 		});
 		bind(IStyler.class).toProvider(new Provider<IStyler>() {
 			public IStyler get() {
-				return GraphViewStyleActivator
-						.getInstance()
-						.getInjector(
-								"org.eclipse.xtext.graphview.style.GraphViewStyle")
+				return GraphViewStyleActivator.getInstance().getInjector("org.eclipse.xtext.graphview.style.GraphViewStyle")
 						.getInstance(IStyler.class);
 			}
 		});

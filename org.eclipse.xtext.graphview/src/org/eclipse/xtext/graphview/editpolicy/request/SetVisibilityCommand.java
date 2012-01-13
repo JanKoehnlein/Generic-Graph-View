@@ -13,8 +13,7 @@ import com.google.common.collect.Maps;
 public class SetVisibilityCommand extends Command {
 
 	public static class Provider {
-		public SetVisibilityCommand get(AbstractInstance instanceModel,
-				Visibility newVisibility) {
+		public SetVisibilityCommand get(AbstractInstance instanceModel, Visibility newVisibility) {
 			return new SetVisibilityCommand(instanceModel, newVisibility);
 		}
 	}
@@ -25,8 +24,7 @@ public class SetVisibilityCommand extends Command {
 
 	private Visibility newVisibility;
 
-	public SetVisibilityCommand(AbstractInstance instanceModel,
-			Visibility newVisibility) {
+	public SetVisibilityCommand(AbstractInstance instanceModel, Visibility newVisibility) {
 		this.instanceModel = instanceModel;
 		this.newVisibility = newVisibility;
 	}
@@ -34,12 +32,10 @@ public class SetVisibilityCommand extends Command {
 	public void execute() {
 		stateMemento = Maps.newHashMap();
 		if (instanceModel instanceof NodeInstance) {
-			for (EdgeInstance edge : ((NodeInstance) instanceModel)
-					.getIncomingEdges()) {
+			for (EdgeInstance edge : ((NodeInstance) instanceModel).getIncomingEdges()) {
 				handleEdge(edge, edge.getSource());
 			}
-			for (EdgeInstance edge : ((NodeInstance) instanceModel)
-					.getOutgoingEdges()) {
+			for (EdgeInstance edge : ((NodeInstance) instanceModel).getOutgoingEdges()) {
 				handleEdge(edge, edge.getTarget());
 			}
 		}
@@ -47,22 +43,22 @@ public class SetVisibilityCommand extends Command {
 	}
 
 	protected void handleEdge(EdgeInstance edge, AbstractInstance otherEnd) {
-		if(newVisibility == Visibility.HIDDEN || otherEnd.getVisibility() != Visibility.HIDDEN)
-			memorizeAndSetVisibility(edge, newVisibility); 
+		if (newVisibility == Visibility.HIDDEN || otherEnd.getVisibility() != Visibility.HIDDEN)
+			memorizeAndSetVisibility(edge, newVisibility);
 	}
 
 	protected void memorizeAndSetVisibility(AbstractInstance instance, Visibility newVisibility) {
-		if(newVisibility != instance.getVisibility()) {
+		if (newVisibility != instance.getVisibility()) {
 			Visibility oldVisibility = instance.getVisibility();
-			if(oldVisibility == Visibility.TRANSPARENT)
+			if (oldVisibility == Visibility.TRANSPARENT)
 				oldVisibility = Visibility.HIDDEN;
 			stateMemento.put(instance, oldVisibility);
 			instance.setVisibility(newVisibility);
 		}
 	}
-	
+
 	public void undo() {
-		for(Map.Entry<AbstractInstance, Visibility> entry: stateMemento.entrySet()) 
+		for (Map.Entry<AbstractInstance, Visibility> entry : stateMemento.entrySet())
 			entry.getKey().setVisibility(entry.getValue());
 	}
 }

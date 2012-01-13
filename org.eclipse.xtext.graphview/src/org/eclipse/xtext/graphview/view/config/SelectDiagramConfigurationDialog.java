@@ -72,25 +72,20 @@ public class SelectDiagramConfigurationDialog extends Dialog {
 		Composite composite = (Composite) super.createDialogArea(parent);
 		Label mappingLabel = new Label(composite, SWT.NONE);
 		mappingLabel.setText("Select mapping model:");
-		mappingLabel.setLayoutData(new GridData(SWT.FILL, SWT.FILL, false,
-				false));
+		mappingLabel.setLayoutData(new GridData(SWT.FILL, SWT.FILL, false, false));
 		mappingCombo = new Combo(composite, SWT.DROP_DOWN);
-		mappingCombo.setLayoutData(new GridData(GridData.GRAB_HORIZONTAL
-				| GridData.HORIZONTAL_ALIGN_FILL));
+		mappingCombo.setLayoutData(new GridData(GridData.GRAB_HORIZONTAL | GridData.HORIZONTAL_ALIGN_FILL));
 		Label styleLabel = new Label(composite, SWT.NONE);
 		styleLabel.setText("Select style sheet:");
-		styleLabel
-				.setLayoutData(new GridData(SWT.FILL, SWT.FILL, false, false));
+		styleLabel.setLayoutData(new GridData(SWT.FILL, SWT.FILL, false, false));
 		styleCombo = new Combo(composite, SWT.DROP_DOWN);
-		styleCombo.setLayoutData(new GridData(GridData.GRAB_HORIZONTAL
-				| GridData.HORIZONTAL_ALIGN_FILL));
+		styleCombo.setLayoutData(new GridData(GridData.GRAB_HORIZONTAL | GridData.HORIZONTAL_ALIGN_FILL));
 		mappingCombo.addSelectionListener(new SelectionListener() {
 			public void widgetSelected(SelectionEvent e) {
 				Display.getDefault().asyncExec(new Runnable() {
 					public void run() {
 						int index = mappingCombo.getSelectionIndex();
-						IEObjectDescription selectedMapping = (index == -1) ? null
-								: sortedMappings.get(index);
+						IEObjectDescription selectedMapping = (index == -1) ? null : sortedMappings.get(index);
 						populateStyleCombo(selectedMapping);
 					}
 				});
@@ -111,14 +106,11 @@ public class SelectDiagramConfigurationDialog extends Dialog {
 
 	@Override
 	protected void okPressed() {
-		diagramConfigurationProvider.setModels(
-				getSelection(mappingCombo, sortedMappings),
-				getSelection(styleCombo, sortedStyles));
+		diagramConfigurationProvider.setModels(getSelection(mappingCombo, sortedMappings), getSelection(styleCombo, sortedStyles));
 		super.okPressed();
 	}
 
-	protected IEObjectDescription getSelection(Combo combo,
-			List<IEObjectDescription> data) {
+	protected IEObjectDescription getSelection(Combo combo, List<IEObjectDescription> data) {
 		int selectionIndex = combo.getSelectionIndex();
 		IEObjectDescription selection = null;
 		if (selectionIndex != -1)
@@ -130,16 +122,14 @@ public class SelectDiagramConfigurationDialog extends Dialog {
 
 	protected void populateMappingCombo() {
 		mappingCombo.removeAll();
-		Iterable<IEObjectDescription> mappings = index
-				.getExportedObjectsByType(GraphViewMappingPackage.Literals.DIAGRAM_MAPPING);
+		Iterable<IEObjectDescription> mappings = index.getExportedObjectsByType(GraphViewMappingPackage.Literals.DIAGRAM_MAPPING);
 		sortedMappings = sortByName(mappings);
 		sortedMappings.add(nullSelection);
 		for (IEObjectDescription mapping : sortedMappings) {
 			mappingCombo.add(mapping.getName().toString());
 		}
 		if (!sortedMappings.isEmpty()) {
-			int selectedIndex = findIndex(sortedMappings,
-					diagramConfigurationProvider.getDiagramMapping());
+			int selectedIndex = findIndex(sortedMappings, diagramConfigurationProvider.getDiagramMapping());
 			mappingCombo.select(selectedIndex);
 			populateStyleCombo(sortedMappings.get(selectedIndex));
 		}
@@ -157,12 +147,9 @@ public class SelectDiagramConfigurationDialog extends Dialog {
 					references.add(reference);
 				}
 			};
-			referenceFinder.findIndexedReferences(new ReferenceQueryData(
-					selectedMapping.getEObjectURI()), referenceAcceptor, null);
+			referenceFinder.findIndexedReferences(new ReferenceQueryData(selectedMapping.getEObjectURI()), referenceAcceptor, null);
 			for (IReferenceDescription reference : references) {
-				IResourceDescription referringResource = index
-						.getResourceDescription(reference.getSourceEObjectUri()
-								.trimFragment());
+				IResourceDescription referringResource = index.getResourceDescription(reference.getSourceEObjectUri().trimFragment());
 				for (IEObjectDescription styleSheet : referringResource
 						.getExportedObjectsByType(GraphViewStylePackage.Literals.STYLE_SHEET)) {
 					styleSheets.add(styleSheet);
@@ -174,12 +161,10 @@ public class SelectDiagramConfigurationDialog extends Dialog {
 		for (IEObjectDescription styleSheet : sortedStyles)
 			styleCombo.add(styleSheet.getName().toString());
 		if (!sortedStyles.isEmpty())
-			styleCombo.select(findIndex(sortedStyles,
-					diagramConfigurationProvider.getStyleSheet()));
+			styleCombo.select(findIndex(sortedStyles, diagramConfigurationProvider.getStyleSheet()));
 	}
 
-	protected int findIndex(List<IEObjectDescription> descriptions,
-			EObject element) {
+	protected int findIndex(List<IEObjectDescription> descriptions, EObject element) {
 		if (element != null) {
 			URI uri = EcoreUtil.getURI(element);
 			if (uri != null) {
@@ -192,16 +177,14 @@ public class SelectDiagramConfigurationDialog extends Dialog {
 			}
 			return 0;
 		}
-		return descriptions.size()-1;
+		return descriptions.size() - 1;
 	}
 
-	protected List<IEObjectDescription> sortByName(
-			Iterable<IEObjectDescription> iterable) {
+	protected List<IEObjectDescription> sortByName(Iterable<IEObjectDescription> iterable) {
 		List<IEObjectDescription> list = Lists.newArrayList(iterable);
 		Collections.sort(list, new Comparator<IEObjectDescription>() {
 			public int compare(IEObjectDescription o1, IEObjectDescription o2) {
-				return o1.getName().toString()
-						.compareTo(o2.getName().toString());
+				return o1.getName().toString().compareTo(o2.getName().toString());
 			}
 		});
 		return list;

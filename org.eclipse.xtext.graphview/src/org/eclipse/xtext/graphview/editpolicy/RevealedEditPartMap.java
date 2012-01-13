@@ -9,11 +9,9 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 
 public class RevealedEditPartMap {
-	private Map<IInstanceModelEditPart, List<IInstanceModelEditPart>> map = Maps
-			.newLinkedHashMap();
+	private Map<IInstanceModelEditPart, List<IInstanceModelEditPart>> map = Maps.newLinkedHashMap();
 
-	protected List<IInstanceModelEditPart> addLayoutable(
-			IInstanceModelEditPart layoutable) {
+	protected List<IInstanceModelEditPart> addLayoutable(IInstanceModelEditPart layoutable) {
 		List<IInstanceModelEditPart> connections = map.get(layoutable);
 		if (connections == null) {
 			connections = Lists.newArrayList();
@@ -22,8 +20,7 @@ public class RevealedEditPartMap {
 		return connections;
 	}
 
-	protected void addSecondary(IInstanceModelEditPart layoutable,
-			IInstanceModelEditPart secondary) {
+	protected void addSecondary(IInstanceModelEditPart layoutable, IInstanceModelEditPart secondary) {
 		addLayoutable(layoutable).add(secondary);
 	}
 
@@ -31,9 +28,8 @@ public class RevealedEditPartMap {
 		return map.keySet();
 	}
 
-	public List<IInstanceModelEditPart> getSecondaries(
-			IInstanceModelEditPart primary) {
+	public List<IInstanceModelEditPart> getSecondaries(IInstanceModelEditPart primary) {
 		return map.get(primary);
 	}
-	
+
 }

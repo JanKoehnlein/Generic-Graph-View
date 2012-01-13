@@ -32,8 +32,7 @@ import org.eclipse.xtext.util.concurrent.IUnitOfWork;
 import com.google.inject.Inject;
 import com.google.inject.name.Named;
 
-public class XtextEditorSelectionStrategy extends
-		AbstractElementSelectionStrategy implements IXtextModelListener {
+public class XtextEditorSelectionStrategy extends AbstractElementSelectionStrategy implements IXtextModelListener {
 
 	@Inject
 	private EObjectAtOffsetHelper eObjectAtOffsetHelper;
@@ -49,47 +48,34 @@ public class XtextEditorSelectionStrategy extends
 	private AbstractUIPlugin plugin;
 
 	public boolean isStrategyFor(IEditorPart editor) {
-		return editor instanceof XtextEditor
-				&& Strings.equal(editor.getSite().getId(), languageName);
+		return editor instanceof XtextEditor && Strings.equal(editor.getSite().getId(), languageName);
 	}
 
 	public Object editorSelectionChanged(final ISelection selection, final boolean force) {
 		if (selection instanceof ITextSelection) {
-			return ((XtextEditor) getEditor()).getDocument().readOnly(
-					new IUnitOfWork<URI, XtextResource>() {
-						public URI exec(XtextResource state) throws Exception {
-							EObject selectedElement = eObjectAtOffsetHelper
-									.resolveElementAt(state,
-											((ITextSelection) selection)
-													.getOffset());
-							if (selectedElement != null) {
-								getGraphView().setViewerContents(
-										selectedElement, getClassLoader(),
-										force);
-								return EcoreUtil.getURI(selectedElement);
-							}
-							return null;
-						}
-					});
+			return ((XtextEditor) getEditor()).getDocument().readOnly(new IUnitOfWork<URI, XtextResource>() {
+				public URI exec(XtextResource state) throws Exception {
+					EObject selectedElement = eObjectAtOffsetHelper.resolveElementAt(state, ((ITextSelection) selection).getOffset());
+					if (selectedElement != null) {
+						getGraphView().setViewerContents(selectedElement, getClassLoader(), force);
+						return EcoreUtil.getURI(selectedElement);
+					}
+					return null;
+				}
+			});
 		}
 		return null;
 	}
 
 	public ISelection viewSelectionChanged(final Object selectedElement) {
 		if (selectedElement instanceof EObject) {
-			return ((XtextEditor) getEditor()).getDocument().readOnly(
-					new IUnitOfWork<ITextSelection, XtextResource>() {
-						public ITextSelection exec(XtextResource state)
-								throws Exception {
-							ITextRegion textRegion = locationInFileProvider
-									.getSignificantTextRegion((EObject) selectedElement);
-							((XtextEditor) getEditor()).selectAndReveal(
-									textRegion.getOffset(),
-									textRegion.getLength());
-							return new TextSelection(textRegion.getOffset(),
-									textRegion.getLength());
-						}
-					});
+			return ((XtextEditor) getEditor()).getDocument().readOnly(new IUnitOfWork<ITextSelection, XtextResource>() {
+				public ITextSelection exec(XtextResource state) throws Exception {
+					ITextRegion textRegion = locationInFileProvider.getSignificantTextRegion((EObject) selectedElement);
+					((XtextEditor) getEditor()).selectAndReveal(textRegion.getOffset(), textRegion.getLength());
+					return new TextSelection(textRegion.getOffset(), textRegion.getLength());
+				}
+			});
 		}
 		return StructuredSelection.EMPTY;
 	}
@@ -101,13 +87,13 @@ public class XtextEditorSelectionStrategy extends
 	public void register(IEditorPart editor, GraphView graphView) {
 		super.register(editor, graphView);
 		IXtextDocument document = ((XtextEditor) editor).getDocument();
-		if(document != null)
+		if (document != null)
 			document.addModelListener(this);
 	}
 
 	public void deregister(IEditorPart editor, GraphView graphView) {
 		IXtextDocument document = ((XtextEditor) editor).getDocument();
-		if(document != null)
+		if (document != null)
 			document.removeModelListener(this);
 		super.deregister(editor, graphView);
 	}

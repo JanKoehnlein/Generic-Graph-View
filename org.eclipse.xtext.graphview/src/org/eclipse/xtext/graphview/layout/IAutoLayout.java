@@ -18,5 +18,5 @@ public interface IAutoLayout {
 	ConnectionRouter getConnectionRouter(IFigure container);
 
 	void setConnectionRouter(ConnectionRouter connectionRouter);
-	
+
 }

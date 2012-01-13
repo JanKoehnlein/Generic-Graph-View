@@ -32,5 +32,5 @@ public abstract class AbstractRapidButtonDragTracker extends SimpleDragTracker {
 			return false;
 		}
 	}
-	
+
 }

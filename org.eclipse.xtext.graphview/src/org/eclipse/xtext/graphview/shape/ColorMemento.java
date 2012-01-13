@@ -32,10 +32,10 @@ public class ColorMemento {
 	}
 
 	public void restore() {
-		for(Map.Entry<IFigure, Color> entry: fgColors.entrySet())
+		for (Map.Entry<IFigure, Color> entry : fgColors.entrySet())
 			entry.getKey().setForegroundColor(entry.getValue());
-		for(Map.Entry<IFigure, Color> entry: bgColors.entrySet())
+		for (Map.Entry<IFigure, Color> entry : bgColors.entrySet())
 			entry.getKey().setBackgroundColor(entry.getValue());
 	}
-	
+
 }

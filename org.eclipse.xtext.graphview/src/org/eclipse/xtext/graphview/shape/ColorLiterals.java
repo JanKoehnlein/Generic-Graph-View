@@ -17,13 +17,13 @@ public class ColorLiterals {
 
 	public static Color color(ColorLiteral literal) {
 		String symbolicName = literal.toString();
-		if(!JFaceResources.getColorRegistry().hasValueFor(symbolicName)) {
+		if (!JFaceResources.getColorRegistry().hasValueFor(symbolicName)) {
 			RGB rgb = new RGB(literal.getRed(), literal.getGreen(), literal.getBlue());
 			JFaceResources.getColorRegistry().put(symbolicName, rgb);
 		}
 		return JFaceResources.getColorRegistry().getColorDescriptor(symbolicName).createColor(Display.getDefault());
 	}
-	
+
 	public static Color color(int red, int green, int blue) {
 		return color(new ColorLiteral(red, green, blue));
 	}

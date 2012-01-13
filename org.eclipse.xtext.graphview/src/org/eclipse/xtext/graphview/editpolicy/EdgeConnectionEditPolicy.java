@@ -13,7 +13,7 @@ public class EdgeConnectionEditPolicy extends ConnectionEditPolicy {
 
 	@Inject
 	private SetVisibilityCommand.Provider visibilityCommandProvider;
-	
+
 	@Override
 	protected Command getDeleteCommand(GroupRequest request) {
 		return visibilityCommandProvider.get((AbstractInstance) getHost().getModel(), Visibility.HIDDEN);

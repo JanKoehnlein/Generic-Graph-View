@@ -41,8 +41,8 @@ public class OpenDiagramButton extends AbstractRapidButton {
 	}
 
 	protected boolean hasOpenDiagram() {
-		for(AbstractInstance child: getEditPolicy().getHost().getModel().getChildren()) {
-			if(child instanceof DiagramInstance && ((DiagramInstance) child).isOpenNewDiagram())
+		for (AbstractInstance child : getEditPolicy().getHost().getModel().getChildren()) {
+			if (child instanceof DiagramInstance && ((DiagramInstance) child).isOpenNewDiagram())
 				return true;
 		}
 		return false;

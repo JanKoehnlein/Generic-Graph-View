@@ -7,13 +7,12 @@ import org.eclipse.swt.events.GestureEvent;
 
 public class GestureDomainEventDispatcher extends DomainEventDispatcher {
 
-	
 	public GestureDomainEventDispatcher(EditDomain d, EditPartViewer v) {
 		super(d, v);
 	}
 
 	public void dispatchGesture(GestureEvent event) {
-		if(okToDispatch() && domain instanceof IViewerGestureListener) 
+		if (okToDispatch() && domain instanceof IViewerGestureListener)
 			((IViewerGestureListener) domain).gesture(event, viewer);
 	}
 

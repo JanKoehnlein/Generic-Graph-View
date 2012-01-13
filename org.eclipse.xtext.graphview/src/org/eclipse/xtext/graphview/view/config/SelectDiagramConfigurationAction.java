@@ -19,7 +19,6 @@ public class SelectDiagramConfigurationAction extends Action {
 	@Inject
 	private Provider<SelectDiagramConfigurationDialog> configurationDialogProvider;
 
-
 	public SelectDiagramConfigurationAction() {
 		setText("Config");
 		setToolTipText("Select diagram configuration");
@@ -27,14 +26,12 @@ public class SelectDiagramConfigurationAction extends Action {
 
 	@Inject
 	protected void setImages(PluginImageHelper pluginImageHelper) {
-		setImageDescriptor(ImageDescriptor.createFromImage(pluginImageHelper
-				.getImage("elcl16/configure.gif")));
+		setImageDescriptor(ImageDescriptor.createFromImage(pluginImageHelper.getImage("elcl16/configure.gif")));
 	}
 
 	@Override
 	public void run() {
-		SelectDiagramConfigurationDialog configurationDialog = configurationDialogProvider
-				.get();
+		SelectDiagramConfigurationDialog configurationDialog = configurationDialogProvider.get();
 		configurationDialog.open();
 	}
 }

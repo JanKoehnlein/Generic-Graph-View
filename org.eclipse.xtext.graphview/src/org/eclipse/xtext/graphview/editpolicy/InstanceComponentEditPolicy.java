@@ -13,7 +13,7 @@ public class InstanceComponentEditPolicy extends ComponentEditPolicy {
 
 	@Inject
 	private SetVisibilityCommand.Provider visibilityCommandProvider;
-	
+
 	@Override
 	protected Command createDeleteCommand(GroupRequest deleteRequest) {
 		return visibilityCommandProvider.get((AbstractInstance) getHost().getModel(), Visibility.HIDDEN);

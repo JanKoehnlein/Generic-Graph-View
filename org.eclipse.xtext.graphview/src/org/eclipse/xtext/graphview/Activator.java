@@ -25,9 +25,9 @@ public class Activator extends AbstractUIPlugin {
 
 	// The shared instance
 	private static Activator plugin;
-	
+
 	private Injector injector;
-	
+
 	/**
 	 * The constructor
 	 */
@@ -46,15 +46,15 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * Returns the shared instance
-	 *
+	 * 
 	 * @return the shared instance
 	 */
 	public static Activator getDefault() {
 		return plugin;
 	}
-	
+
 	public synchronized Injector getInjector() {
-		if(injector == null) 
+		if (injector == null)
 			injector = Guice.createInjector(Modules.override(new SharedStateModule()).with(new GraphViewModule()));
 		return injector;
 	}

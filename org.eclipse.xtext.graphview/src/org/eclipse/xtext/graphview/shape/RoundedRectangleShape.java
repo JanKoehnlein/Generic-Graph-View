@@ -17,7 +17,7 @@ public class RoundedRectangleShape extends RoundedRectangle implements ILayoutNo
 
 	public RoundedRectangleShape() {
 		// some reasonable defaults
-		setSize(200,100);
+		setSize(200, 100);
 		setLineWidth(2);
 		setForegroundColor(ColorConstants.buttonDarkest);
 		setBackgroundColor(ColorLiterals.color(new ColorLiteral("#deedf5")));

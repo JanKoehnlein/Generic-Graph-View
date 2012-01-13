@@ -16,14 +16,14 @@ import com.google.inject.Inject;
 
 public class DeleteButton extends AbstractRapidButton {
 
-	@Inject 
+	@Inject
 	private IWorkbench workbench;
-	
+
 	@Override
 	protected Image createImage() {
 		return workbench.getSharedImages().getImage(ISharedImages.IMG_ETOOL_DELETE);
 	}
-	
+
 	@Override
 	protected DragTracker createDragTracker() {
 		return new AbstractRapidButtonDragTracker(getEditPolicy().getHost()) {
@@ -31,7 +31,7 @@ public class DeleteButton extends AbstractRapidButton {
 			protected String getCommandName() {
 				return "Hide element";
 			}
-			
+
 			@SuppressWarnings("unchecked")
 			@Override
 			protected Request createSourceRequest() {

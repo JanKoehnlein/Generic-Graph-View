@@ -15,8 +15,7 @@ public class VisibilityListener extends EContentAdapter {
 	public void notifyChanged(Notification notification) {
 		if (notification.getFeature() == InstancemodelPackage.Literals.ABSTRACT_INSTANCE__VISIBILITY
 				&& notification.getEventType() == Notification.SET) {
-			AbstractInstance instanceModel = (AbstractInstance) notification
-					.getNotifier();
+			AbstractInstance instanceModel = (AbstractInstance) notification.getNotifier();
 			IInstanceModelEditPart editPart = findEditPart(instanceModel);
 			if (editPart != null) {
 				if (notification.getOldValue() == Visibility.TRANSPARENT)
@@ -35,8 +34,7 @@ public class VisibilityListener extends EContentAdapter {
 	}
 
 	private void refreshEditPart(EObject instanceModel) {
-		if (instanceModel instanceof AbstractInstance
-				&& ((AbstractInstance) instanceModel).getVisibility() != Visibility.HIDDEN) {
+		if (instanceModel instanceof AbstractInstance && ((AbstractInstance) instanceModel).getVisibility() != Visibility.HIDDEN) {
 			IInstanceModelEditPart editPart = findEditPart(instanceModel);
 			if (editPart != null)
 				editPart.refresh();
@@ -44,8 +42,7 @@ public class VisibilityListener extends EContentAdapter {
 	}
 
 	protected IInstanceModelEditPart findEditPart(EObject instanceModel) {
-		return (IInstanceModelEditPart) editPart.getViewer()
-				.getEditPartRegistry().get(instanceModel);
+		return (IInstanceModelEditPart) editPart.getViewer().getEditPartRegistry().get(instanceModel);
 	}
 
 	public void register(IInstanceModelEditPart editPart) {

@@ -26,8 +26,7 @@ public class GestureLightweightSystem extends LightweightSystem {
 	public class GestureHandler implements GestureListener {
 		public void gesture(GestureEvent e) {
 			if (getEventDispatcher() instanceof GestureDomainEventDispatcher) {
-				((GestureDomainEventDispatcher) getEventDispatcher())
-						.dispatchGesture(e);
+				((GestureDomainEventDispatcher) getEventDispatcher()).dispatchGesture(e);
 			}
 		}
 	}

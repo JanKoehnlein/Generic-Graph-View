@@ -19,8 +19,7 @@ public abstract class AbstractAutoLayout implements IAutoLayout {
 
 	protected Layer getConnectionLayer(IFigure container) {
 		if (container != null) {
-			LayeredPane layeredPane = findParentOfType(container,
-					LayeredPane.class);
+			LayeredPane layeredPane = findParentOfType(container, LayeredPane.class);
 			if (layeredPane != null) {
 				Layer layer = layeredPane.getLayer("Connection Layer");
 				if (layer == null)
@@ -46,7 +45,6 @@ public abstract class AbstractAutoLayout implements IAutoLayout {
 	}
 
 	public ConnectionRouter getConnectionRouter(IFigure container) {
-		return (connectionRouter == null) ? new ShortestPathConnectionRouter(
-				container) : connectionRouter;
+		return (connectionRouter == null) ? new ShortestPathConnectionRouter(container) : connectionRouter;
 	}
 }

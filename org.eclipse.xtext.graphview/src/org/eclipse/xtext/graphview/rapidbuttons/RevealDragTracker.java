@@ -110,14 +110,12 @@ public class RevealDragTracker extends AbstractRapidButtonDragTracker {
 			hostFigure.getParent().translateToAbsolute(center);
 		Dimension dragDifference = currentMouseLocation.getDifference(center);
 		double dist = diameter(dragDifference);
-		double angle = Math.atan2(dragDifference.preciseHeight(),
-				dragDifference.preciseWidth());
+		double angle = Math.atan2(dragDifference.preciseHeight(), dragDifference.preciseWidth());
 		getSourceRequest().setMouseDistance(dist);
 		getSourceRequest().setMouseAngle(angle);
 	}
 
 	protected double diameter(Dimension dimension) {
-		return Math.sqrt(dimension.width * dimension.width + dimension.height
-				* dimension.height);
+		return Math.sqrt(dimension.width * dimension.width + dimension.height * dimension.height);
 	}
 }

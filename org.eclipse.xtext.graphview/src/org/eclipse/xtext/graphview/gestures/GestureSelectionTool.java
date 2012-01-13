@@ -15,12 +15,10 @@ public class GestureSelectionTool extends SelectionTool implements IViewerGestur
 			performViewerGesture(gestureEvent, viewer);
 	}
 
-	protected void performViewerGesture(GestureEvent gestureEvent,
-			EditPartViewer viewer) {
-		IViewerGestureListener handler = (IViewerGestureListener) viewer
-				.getProperty(IViewerGestureListener.KEY);
+	protected void performViewerGesture(GestureEvent gestureEvent, EditPartViewer viewer) {
+		IViewerGestureListener handler = (IViewerGestureListener) viewer.getProperty(IViewerGestureListener.KEY);
 		if (handler != null)
 			handler.gesture(gestureEvent, viewer);
 	}
-	
+
 }

@@ -26,23 +26,23 @@ public class EdgeBendpointEditPolicy extends BendpointEditPolicy {
 		protected AbstractBendpointCommand(BendpointRequest request) {
 			this.request = request;
 		}
-		
+
 		@SuppressWarnings("unchecked")
 		protected List<AbsoluteBendpoint> getBendPoints() {
 			PolylineConnection connection = getConnection();
 			List<AbsoluteBendpoint> routingConstraint = (List<AbsoluteBendpoint>) connection.getRoutingConstraint();
-			if(routingConstraint == null) {
+			if (routingConstraint == null) {
 				routingConstraint = Lists.newArrayList();
 				connection.getConnectionRouter().setConstraint(connection, routingConstraint);
 			}
 			return routingConstraint;
 		}
-		
+
 		protected PolylineConnection getConnection() {
 			return (PolylineConnection) request.getSource().getFigure();
 		}
 	}
-	
+
 	@Override
 	protected Command getCreateBendpointCommand(BendpointRequest request) {
 		return new AbstractBendpointCommand(request) {
@@ -52,7 +52,7 @@ public class EdgeBendpointEditPolicy extends BendpointEditPolicy {
 				request.getSource().getFigure().translateToRelative(location);
 				getBendPoints().add(request.getIndex(), new AbsoluteBendpoint(location));
 			}
-			
+
 			@Override
 			public void undo() {
 				getBendPoints().remove(request.getIndex());
@@ -69,7 +69,7 @@ public class EdgeBendpointEditPolicy extends BendpointEditPolicy {
 			public void execute() {
 				removed = getBendPoints().remove(request.getIndex());
 			}
-			
+
 			@Override
 			public void undo() {
 				getBendPoints().add(request.getIndex(), removed);
@@ -90,7 +90,7 @@ public class EdgeBendpointEditPolicy extends BendpointEditPolicy {
 				request.getSource().getFigure().translateToRelative(location);
 				bendPoints.set(request.getIndex(), new AbsoluteBendpoint(location));
 			}
-			
+
 			@Override
 			public void undo() {
 				List<AbsoluteBendpoint> bendPoints = getBendPoints();

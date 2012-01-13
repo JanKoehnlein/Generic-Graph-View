@@ -35,7 +35,7 @@ public class DiagramEditPart extends AbstractInstanceEditPart {
 
 	@Inject
 	private RapidButtonEditPolicy rapidButtonEditPolicy;
-	
+
 	private IFigure contentPane;
 
 	private FreeformViewport viewport;
@@ -44,7 +44,7 @@ public class DiagramEditPart extends AbstractInstanceEditPart {
 	protected void createEditPolicies() {
 		super.createEditPolicies();
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, diagramLayoutEditPolicy);
-		if(!isRootDiagram()) {
+		if (!isRootDiagram()) {
 			installEditPolicy(EditPolicy.COMPONENT_ROLE, componentEditPolicy);
 			installEditPolicy(RapidButtonEditPolicy.ROLE, rapidButtonEditPolicy);
 		}
@@ -94,9 +94,8 @@ public class DiagramEditPart extends AbstractInstanceEditPart {
 	public void performAutoLayout() {
 		IFigure figure = getContentPane();
 		if (figure instanceof DiagramShape) {
-			Dimension size = ((DiagramShape) figure).getAutoLayoutManager()
-					.layout(figure);
-			if(!isRootDiagram()) {
+			Dimension size = ((DiagramShape) figure).getAutoLayoutManager().layout(figure);
+			if (!isRootDiagram()) {
 				viewport.setMinimumSize(size);
 				viewport.setPreferredSize(size);
 			}

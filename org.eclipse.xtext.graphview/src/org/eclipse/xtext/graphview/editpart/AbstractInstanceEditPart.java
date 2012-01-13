@@ -12,6 +12,7 @@ import java.util.List;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
+import org.eclipse.gef.DragTracker;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.editparts.AbstractGraphicalEditPart;
@@ -24,11 +25,13 @@ import org.eclipse.xtext.graphview.shape.TransparencyHelper;
 
 import com.google.inject.Inject;
 
-public abstract class AbstractInstanceEditPart extends
-		AbstractGraphicalEditPart implements IInstanceModelEditPart {
+public abstract class AbstractInstanceEditPart extends AbstractGraphicalEditPart implements IInstanceModelEditPart {
 
 	@Inject
 	protected InstanceModelEditPartHelper helper;
+	
+	@Inject
+	protected DrillingHelper drillingHelper;
 
 	@Inject
 	protected NonResizableEditPolicy nonResizableEditPolicy;
@@ -41,12 +44,17 @@ public abstract class AbstractInstanceEditPart extends
 
 	@Inject
 	private OpenNewDiagramEditPolicy openNewDiagramEditPolicy;
-	
+
 	@Override
 	protected void createEditPolicies() {
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, nonResizableEditPolicy);
 		installEditPolicy(ExpandEditPolicy.ROLE, expandEditPolicy);
 		installEditPolicy(OpenNewDiagramEditPolicy.ROLE, openNewDiagramEditPolicy);
+	}
+	
+	@Override
+	public DragTracker getDragTracker(Request request) {
+		return drillingHelper.newDragTracker(this, request);
 	}
 
 	@Override
@@ -89,8 +97,7 @@ public abstract class AbstractInstanceEditPart extends
 	@Override
 	public void activate() {
 		super.activate();
-		Rectangle bounds = new Rectangle(new Point(10, 10), getFigure()
-				.getPreferredSize());
+		Rectangle bounds = new Rectangle(new Point(10, 10), getFigure().getPreferredSize());
 		getFigure().setBounds(bounds);
 		if (getModel().getVisibility() == Visibility.TRANSPARENT)
 			setTransparent(true);

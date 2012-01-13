@@ -23,13 +23,11 @@ public class RelayoutAction extends Action {
 		setText("Relayout");
 		setToolTipText("Relayout this diagram");
 	}
-	
-	@Inject 
+
+	@Inject
 	protected void setImages(PluginImageHelper imageHelper) {
-		setImageDescriptor(ImageDescriptor.createFromImage(imageHelper
-				.getImage("elcl16/arrangeall.gif")));
-		setDisabledImageDescriptor(ImageDescriptor.createFromImage(imageHelper
-				.getImage("dlcl16/arrangeall.gif")));
+		setImageDescriptor(ImageDescriptor.createFromImage(imageHelper.getImage("elcl16/arrangeall.gif")));
+		setDisabledImageDescriptor(ImageDescriptor.createFromImage(imageHelper.getImage("dlcl16/arrangeall.gif")));
 	}
 
 	@Override

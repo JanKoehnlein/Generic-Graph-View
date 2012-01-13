@@ -6,7 +6,7 @@ import org.eclipse.gef.Tool;
 import org.eclipse.swt.events.GestureEvent;
 import org.eclipse.ui.IEditorPart;
 
-public class GestureEditDomain extends DefaultEditDomain implements IViewerGestureListener  {
+public class GestureEditDomain extends DefaultEditDomain implements IViewerGestureListener {
 
 	public GestureEditDomain(IEditorPart editorPart) {
 		super(editorPart);
@@ -17,13 +17,13 @@ public class GestureEditDomain extends DefaultEditDomain implements IViewerGestu
 		if (tool instanceof IViewerGestureListener)
 			((IViewerGestureListener) tool).gesture(event, viewer);
 	}
-	
+
 	// super.defaultTool is private
 	private Tool defaultTool;
 
 	@Override
 	public Tool getDefaultTool() {
-		if(defaultTool == null) {
+		if (defaultTool == null) {
 			defaultTool = new GestureSelectionTool();
 			super.setDefaultTool(defaultTool);
 		}

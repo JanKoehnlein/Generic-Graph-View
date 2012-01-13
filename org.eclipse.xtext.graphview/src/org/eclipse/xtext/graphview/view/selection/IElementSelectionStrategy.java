@@ -14,12 +14,12 @@ import org.eclipse.xtext.graphview.view.GraphView;
 public interface IElementSelectionStrategy {
 
 	boolean isStrategyFor(IEditorPart editor);
-	
+
 	Object editorSelectionChanged(ISelection selection, boolean force);
-	
+
 	ISelection viewSelectionChanged(Object selectedElement);
-	
+
 	void register(IEditorPart editor, GraphView graphView);
-	
+
 	void deregister(IEditorPart editor, GraphView graphView);
 }

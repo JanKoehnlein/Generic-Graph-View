@@ -23,8 +23,7 @@ import org.eclipse.xtext.graphview.shape.TransparencyHelper;
 
 import com.google.inject.Inject;
 
-public class EdgeEditPart extends AbstractConnectionEditPart implements
-		IInstanceModelEditPart {
+public class EdgeEditPart extends AbstractConnectionEditPart implements IInstanceModelEditPart {
 	@Inject
 	private InstanceModelEditPartHelper helper;
 
@@ -58,10 +57,8 @@ public class EdgeEditPart extends AbstractConnectionEditPart implements
 
 	@Override
 	protected void createEditPolicies() {
-		installEditPolicy(EditPolicy.CONNECTION_ENDPOINTS_ROLE,
-				connectionEndpointEditPolicy);
-		installEditPolicy(EditPolicy.CONNECTION_BENDPOINTS_ROLE,
-				edgeBendpointEditPolicy);
+		installEditPolicy(EditPolicy.CONNECTION_ENDPOINTS_ROLE, connectionEndpointEditPolicy);
+		installEditPolicy(EditPolicy.CONNECTION_BENDPOINTS_ROLE, edgeBendpointEditPolicy);
 		installEditPolicy(EditPolicy.CONNECTION_ROLE, edgeConnectionEditPolicy);
 	}
 

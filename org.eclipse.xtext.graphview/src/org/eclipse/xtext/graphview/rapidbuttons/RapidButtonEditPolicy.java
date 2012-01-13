@@ -30,8 +30,8 @@ public class RapidButtonEditPolicy extends AbstractEditPolicy {
 
 	@Inject
 	private ExpandButton expandButton;
-	
-	@Inject 
+
+	@Inject
 	private OpenDiagramButton openDiagramButton;
 
 	@Inject
@@ -91,8 +91,7 @@ public class RapidButtonEditPolicy extends AbstractEditPolicy {
 	}
 
 	private IFigure getHandleLayer() {
-		return ((FreeformGraphicalRootEditPart) getHost().getRoot())
-				.getLayer(LayerConstants.HANDLE_LAYER);
+		return ((FreeformGraphicalRootEditPart) getHost().getRoot()).getLayer(LayerConstants.HANDLE_LAYER);
 	}
 
 	@Override
