@@ -2,6 +2,7 @@ package org.eclipse.xtext.graphview.editpart;
 
 import org.eclipse.draw2d.ScalableFigure;
 import org.eclipse.draw2d.Viewport;
+import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.gef.EditPartViewer;
 import org.eclipse.gef.editparts.ScalableFreeformRootEditPart;
 import org.eclipse.gef.editparts.ZoomManager;
@@ -44,6 +45,14 @@ public class GraphViewRootEditPart extends ScalableFreeformRootEditPart {
 					getZoomManager().setZoom(initialScale * gestureEvent.magnification);
 					gestureEvent.doit = false;
 					break;
+				case SWT.GESTURE_PAN: 
+					if(getFigure() instanceof Viewport) {
+						Viewport viewport = (Viewport) getFigure();
+						Point viewLocation = viewport.getViewLocation();
+						viewLocation.translate(gestureEvent.xDirection, gestureEvent.yDirection);
+						viewport.setViewLocation(viewLocation);
+						gestureEvent.doit = false;
+					}
 				default:
 					gestureEvent.doit = true;
 				}

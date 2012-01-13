@@ -3,9 +3,9 @@ package org.eclipse.xtext.graphview.gestures;
 import org.eclipse.draw2d.LightweightSystem;
 import org.eclipse.gef.EditDomain;
 import org.eclipse.gef.ui.parts.DomainEventDispatcher;
-import org.eclipse.gef.ui.parts.ScrollingGraphicalViewer;
+import org.eclipse.gef.ui.parts.GraphicalViewerImpl;
 
-public class GestureGraphicalViewer extends ScrollingGraphicalViewer {
+public class GestureGraphicalViewer extends GraphicalViewerImpl { // ScalabeGraphicalViewer
 	@Override
 	protected LightweightSystem createLightweightSystem() {
 		return new GestureLightweightSystem();
