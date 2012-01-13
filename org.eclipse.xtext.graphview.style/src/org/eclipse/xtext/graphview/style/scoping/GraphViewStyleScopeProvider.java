@@ -34,20 +34,20 @@ import com.google.inject.Inject;
 /**
  * This class contains custom scoping description.
  * 
- * see : http://www.eclipse.org/Xtext/documentation/latest/xtext.html#scoping
- * on how and when to use it 
- *
+ * see : http://www.eclipse.org/Xtext/documentation/latest/xtext.html#scoping on
+ * how and when to use it
+ * 
  */
 @SuppressWarnings("restriction")
 public class GraphViewStyleScopeProvider extends XbaseScopeProvider {
 
 	public static final QualifiedName SEMANTIC_ELEMENT = QualifiedName.create("element");
-	
+
 	@Inject
 	private TypeReferences typeReferences;
-	
+
 	private ITypeProvider mappingTypeProvider;
-	
+
 	private TypeConformanceComputer mappingTypeConformanceComputer;
 
 	@Inject
@@ -58,48 +58,47 @@ public class GraphViewStyleScopeProvider extends XbaseScopeProvider {
 	}
 
 	@Override
-	protected IScope createLocalVarScope(IScope parentScope,
-			LocalVariableScopeContext scopeContext) {
+	protected IScope createLocalVarScope(IScope parentScope, LocalVariableScopeContext scopeContext) {
 		EObject context = scopeContext.getContext();
-		if(context instanceof Style) {
+		if (context instanceof Style) {
 			List<IEObjectDescription> localVars = Lists.newArrayList();
 			localVars.add(EObjectDescription.create(XbaseScopeProvider.THIS, getFigureType((Style) context)));
 			List<JvmTypeReference> mappingTypes = Lists.newArrayList();
-			for(AbstractMapping mapping : ((Style) context).getMappings()) {
+			for (AbstractMapping mapping : ((Style) context).getMappings()) {
 				JvmTypeReference mappingType = mappingTypeProvider.getTypeForIdentifiable(mapping);
-				if(mappingType != null)
+				if (mappingType != null)
 					mappingTypes.add(mappingType);
 			}
-			if(!mappingTypes.isEmpty()) { 
+			if (!mappingTypes.isEmpty()) {
 				JvmTypeReference commonSuperType = mappingTypeConformanceComputer.getCommonSuperType(mappingTypes);
-				if(commonSuperType != null && commonSuperType.getType() != null) {
+				if (commonSuperType != null && commonSuperType.getType() != null) {
 					localVars.add(EObjectDescription.create(SEMANTIC_ELEMENT, commonSuperType.getType()));
 				}
-			}	
-			if(!localVars.isEmpty()) 
-				return new SimpleScope(parentScope, localVars); 
+			}
+			if (!localVars.isEmpty())
+				return new SimpleScope(parentScope, localVars);
 		}
 		return super.createLocalVarScope(parentScope, scopeContext);
 	}
-	
+
 	protected JvmType getFigureType(Style style) {
 		JvmTypeReference clazz = style.getJavaClass();
-		if(clazz != null && clazz.getType() != null) {
+		if (clazz != null && clazz.getType() != null) {
 			return clazz.getType();
 		} else {
 			String currentFigureTypeName = null;
-			for(AbstractMapping mapping: style.getMappings()) {
+			for (AbstractMapping mapping : style.getMappings()) {
 				String mappingFigureTypeName = getDefaultFigureTypeName(mapping);
-				if(mappingFigureTypeName != null) {
-					if(currentFigureTypeName != null) {
+				if (mappingFigureTypeName != null) {
+					if (currentFigureTypeName != null) {
 						currentFigureTypeName = "org.eclipse.draw2d.IFigure";
 						break;
-					} else { 
+					} else {
 						currentFigureTypeName = mappingFigureTypeName;
 					}
 				}
 			}
-			if(currentFigureTypeName == null)
+			if (currentFigureTypeName == null)
 				currentFigureTypeName = "org.eclipse.draw2d.IFigure";
 			JvmType figureType = typeReferences.findDeclaredType(currentFigureTypeName, style);
 			return figureType;
@@ -108,7 +107,7 @@ public class GraphViewStyleScopeProvider extends XbaseScopeProvider {
 	}
 
 	private String getDefaultFigureTypeName(AbstractMapping mapping) {
-		switch(mapping.eClass().getClassifierID()) {
+		switch (mapping.eClass().getClassifierID()) {
 		case GraphViewMappingPackage.LABEL_MAPPING:
 			return "org.eclipse.xtext.graphview.shape.LabelShape";
 		case GraphViewMappingPackage.EDGE_MAPPING:

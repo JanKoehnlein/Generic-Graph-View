@@ -19,11 +19,9 @@ import org.eclipse.xtext.graphview.view.selection.AbstractElementSelectionStrate
 import org.eclipse.xtext.util.PolymorphicDispatcher;
 
 @SuppressWarnings("restriction")
-public class JavaEditorSelectionStrategy extends
-		AbstractElementSelectionStrategy {
+public class JavaEditorSelectionStrategy extends AbstractElementSelectionStrategy {
 
-	private static Logger LOG = Logger
-			.getLogger(JavaEditorSelectionStrategy.class);
+	private static Logger LOG = Logger.getLogger(JavaEditorSelectionStrategy.class);
 
 	public boolean isStrategyFor(IEditorPart editor) {
 		return editor instanceof JavaEditor;
@@ -31,8 +29,7 @@ public class JavaEditorSelectionStrategy extends
 
 	public Object editorSelectionChanged(ISelection selection, boolean force) {
 		if (selection instanceof ITextSelection) {
-			Object element = PolymorphicDispatcher.createForSingleTarget(
-					"getElementAt", 1, 1, getEditor()).invoke(
+			Object element = PolymorphicDispatcher.createForSingleTarget("getElementAt", 1, 1, getEditor()).invoke(
 					((ITextSelection) selection).getOffset());
 			getGraphView().setViewerContents(element, getClassLoader(), force);
 			return element;

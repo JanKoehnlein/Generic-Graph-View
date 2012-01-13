@@ -17,20 +17,21 @@ import org.eclipse.xtext.xbase.scoping.featurecalls.StaticImplicitMethodsFeature
 import org.eclipse.xtext.xbase.typing.ITypeProvider;
 
 /**
- * Use this class to register components to be used at runtime / without the Equinox extension registry.
+ * Use this class to register components to be used at runtime / without the
+ * Equinox extension registry.
  */
 @SuppressWarnings("restriction")
 public class GraphViewStyleRuntimeModule extends org.eclipse.xtext.graphview.style.AbstractGraphViewStyleRuntimeModule {
-	
+
 	@Override
 	public Class<? extends ITypeProvider> bindITypeProvider() {
 		return GraphViewStyleTypeProvider.class;
 	}
-	
+
 	public Class<? extends StaticImplicitMethodsFeatureForTypeProvider.ExtensionClassNameProvider> bindExtensionClassNameProvider() {
 		return GVSExtensionClassNameProvider.class;
 	}
-	
+
 	public Class<? extends XbaseInterpreter> bindXbaseInterpreter() {
 		return GraphViewStyleInterpreter.class;
 	}

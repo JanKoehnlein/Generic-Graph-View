@@ -20,12 +20,12 @@ public class GraphViewMappingUiModule extends org.eclipse.xtext.graphview.map.ui
 	public GraphViewMappingUiModule(AbstractUIPlugin plugin) {
 		super(plugin);
 	}
-	
+
 	@Override
 	public Class<? extends ISemanticHighlightingCalculator> bindISemanticHighlightingCalculator() {
 		return GVMHighlightingCalculator.class;
 	}
-	
+
 	public Class<? extends IHighlightingConfiguration> bindIHighlightingConfiguration() {
 		return GVMHighlightingConfiguration.class;
 	}

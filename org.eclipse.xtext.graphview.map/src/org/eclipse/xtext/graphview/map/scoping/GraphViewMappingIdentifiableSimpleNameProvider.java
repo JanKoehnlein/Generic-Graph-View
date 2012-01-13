@@ -12,8 +12,7 @@ import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping;
 import org.eclipse.xtext.xbase.featurecalls.IdentifiableSimpleNameProvider;
 
 @SuppressWarnings("restriction")
-public class GraphViewMappingIdentifiableSimpleNameProvider extends
-		IdentifiableSimpleNameProvider {
+public class GraphViewMappingIdentifiableSimpleNameProvider extends IdentifiableSimpleNameProvider {
 
 	@Override
 	public String getSimpleName(JvmIdentifiableElement element) {

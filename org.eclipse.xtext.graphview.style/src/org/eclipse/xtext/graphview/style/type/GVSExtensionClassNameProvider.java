@@ -20,21 +20,13 @@ import com.google.common.collect.ImmutableSet;
 public class GVSExtensionClassNameProvider extends ExtensionClassNameProvider {
 	@Override
 	protected Map<String, Collection<String>> computeExtensionClassNames() {
-		return ImmutableMap
-				.<String, Collection<String>> builder()
-				.putAll(super.computeExtensionClassNames())
-				.put("org.eclipse.draw2d.IFigure",
-						Collections
-								.singletonList("org.eclipse.xtext.graphview.shape.FigureExtensions"))
-				.build();
+		return ImmutableMap.<String, Collection<String>> builder().putAll(super.computeExtensionClassNames())
+				.put("org.eclipse.draw2d.IFigure", Collections.singletonList("org.eclipse.xtext.graphview.shape.FigureExtensions")).build();
 	}
 
 	@Override
 	protected Collection<String> computeLiteralClassNames() {
-		return ImmutableSet.<String>builder()
-				.addAll(super.computeLiteralClassNames())
-				.add("org.eclipse.xtext.graphview.shape.ColorLiterals")
-				.add("org.eclipse.xtext.graphview.shape.FontLiterals")
-				.build();
+		return ImmutableSet.<String> builder().addAll(super.computeLiteralClassNames())
+				.add("org.eclipse.xtext.graphview.shape.ColorLiterals").add("org.eclipse.xtext.graphview.shape.FontLiterals").build();
 	}
 }

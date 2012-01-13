@@ -38,11 +38,11 @@ public class InstanceMapper implements IInstanceMapper {
 	public void setClassLoader(ClassLoader classLoader) {
 		this.classLoader = classLoader;
 	}
-	
+
 	public Object map(AbstractExpressionMapping mapping, Object thisElement) {
-		if(mapping.getUnlessCondition() != null) {
+		if (mapping.getUnlessCondition() != null) {
 			Object unless = evaluate(mapping.getUnlessCondition(), thisElement);
-			if(unless instanceof Boolean && ((Boolean) unless).booleanValue()) {
+			if (unless instanceof Boolean && ((Boolean) unless).booleanValue()) {
 				return null;
 			}
 		}
@@ -50,8 +50,8 @@ public class InstanceMapper implements IInstanceMapper {
 		if (mapping.isMulti()) {
 			if (value == null) {
 				return Collections.EMPTY_LIST;
-			} else if(value.getClass().isArray()) {
-				return Lists.newArrayList((Object[])value);
+			} else if (value.getClass().isArray()) {
+				return Lists.newArrayList((Object[]) value);
 			} else if (!(value instanceof Iterable<?>)) {
 				return Collections.singletonList(value);
 			}
@@ -63,8 +63,7 @@ public class InstanceMapper implements IInstanceMapper {
 		xbaseInterpreter.setClassLoader(classLoader);
 		IEvaluationContext evaluationContext = contextProvider.get();
 		evaluationContext.newValue(XbaseScopeProvider.THIS, thisElement);
-		IEvaluationResult result = xbaseInterpreter.evaluate(expression,
-				evaluationContext, CancelIndicator.NullImpl);
+		IEvaluationResult result = xbaseInterpreter.evaluate(expression, evaluationContext, CancelIndicator.NullImpl);
 		if (result.getException() != null) {
 			LOG.error("Error applying mapping", result.getException());
 			return null;

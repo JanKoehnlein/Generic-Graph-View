@@ -29,18 +29,13 @@ import org.eclipse.xtext.xbase.scoping.XbaseScopeProvider;
 public class GraphViewMappingScopeProvider extends XbaseScopeProvider {
 
 	@Override
-	protected IScope createLocalVarScope(IScope parentScope,
-			LocalVariableScopeContext scopeContext) {
+	protected IScope createLocalVarScope(IScope parentScope, LocalVariableScopeContext scopeContext) {
 		EObject context = scopeContext.getContext();
 		if (context instanceof DiagramMapping) {
-			return new SimpleScope(parentScope,
-					Collections.singleton(EObjectDescription.create(
-							XbaseScopeProvider.THIS, context)));
+			return new SimpleScope(parentScope, Collections.singleton(EObjectDescription.create(XbaseScopeProvider.THIS, context)));
 		} else if (context instanceof AbstractExpressionMapping) {
 			EObject parent = context.eContainer();
-			return new SimpleScope(parentScope,
-					Collections.singleton(EObjectDescription.create(
-							XbaseScopeProvider.THIS, parent)));
+			return new SimpleScope(parentScope, Collections.singleton(EObjectDescription.create(XbaseScopeProvider.THIS, parent)));
 		}
 		return super.createLocalVarScope(parentScope, scopeContext);
 	}

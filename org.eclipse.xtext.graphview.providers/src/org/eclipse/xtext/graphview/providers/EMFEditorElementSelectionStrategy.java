@@ -23,7 +23,7 @@ import org.eclipse.xtext.util.PolymorphicDispatcher;
 public class EMFEditorElementSelectionStrategy extends AbstractElementSelectionStrategy {
 
 	private Adapter adapter;
-	
+
 	public boolean isStrategyFor(IEditorPart editor) {
 		return editor instanceof IEditingDomainProvider;
 	}
@@ -32,18 +32,16 @@ public class EMFEditorElementSelectionStrategy extends AbstractElementSelectionS
 		PolymorphicDispatcher.createForSingleTarget("setSelectionToViewer", getEditor()).invoke(Collections.singleton(selectedElement));
 		return getEditor().getEditorSite().getSelectionProvider().getSelection();
 	}
-	
+
 	public Object editorSelectionChanged(ISelection selection, boolean force) {
 		if (selection instanceof IStructuredSelection) {
-			Object selectedElement = ((IStructuredSelection) selection)
-					.getFirstElement();
-			getGraphView().setViewerContents(selectedElement, getClassLoader(),
-					force);
+			Object selectedElement = ((IStructuredSelection) selection).getFirstElement();
+			getGraphView().setViewerContents(selectedElement, getClassLoader(), force);
 			return selectedElement;
 		} else
 			return null;
 	}
-	
+
 	@Override
 	public void register(IEditorPart editor, GraphView graphView) {
 		super.register(editor, graphView);
@@ -51,10 +49,10 @@ public class EMFEditorElementSelectionStrategy extends AbstractElementSelectionS
 		EditingDomain editingDomain = ((IEditingDomainProvider) editor).getEditingDomain();
 		editingDomain.getResourceSet().eAdapters().add(adapter);
 	}
-	
+
 	@Override
 	public void deregister(IEditorPart editor, GraphView graphView) {
-		if(adapter != null) {
+		if (adapter != null) {
 			adapter.getTarget().eAdapters().remove(adapter);
 		}
 		super.deregister(editor, graphView);
@@ -62,13 +60,13 @@ public class EMFEditorElementSelectionStrategy extends AbstractElementSelectionS
 
 	protected static class Adapter extends EContentAdapter {
 		private final EMFEditorElementSelectionStrategy strategy;
-		
+
 		public Adapter(EMFEditorElementSelectionStrategy strategy) {
 			this.strategy = strategy;
 		}
-		
+
 		public void notifyChanged(Notification notification) {
-			if(!notification.isTouch())
+			if (!notification.isTouch())
 				strategy.refreshView();
 		}
 	}

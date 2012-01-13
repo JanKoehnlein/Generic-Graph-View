@@ -36,22 +36,15 @@ public class ColorHyperlink implements IHyperlink {
 
 	public void open() {
 		try {
-			String currentColorString = document.get(region.getOffset(),
-					region.getLength());
-			ColorLiteral currentColorLiteral = new ColorLiteral(
-					currentColorString);
-			RGB currentRGB = new RGB(currentColorLiteral.getRed(),
-					currentColorLiteral.getGreen(),
-					currentColorLiteral.getBlue());
-			ColorDialog colorDialog = new ColorDialog(Display.getDefault()
-					.getActiveShell());
+			String currentColorString = document.get(region.getOffset(), region.getLength());
+			ColorLiteral currentColorLiteral = new ColorLiteral(currentColorString);
+			RGB currentRGB = new RGB(currentColorLiteral.getRed(), currentColorLiteral.getGreen(), currentColorLiteral.getBlue());
+			ColorDialog colorDialog = new ColorDialog(Display.getDefault().getActiveShell());
 			colorDialog.setRGB(currentRGB);
 			RGB newRGB = colorDialog.open();
 			if (newRGB != null) {
-				ColorLiteral newColorLiteral = new ColorLiteral(newRGB.red, newRGB.green,
-						newRGB.blue);
-				ReplaceEdit replaceEdit = new ReplaceEdit(region.getOffset(),
-						region.getLength(), newColorLiteral.toString());
+				ColorLiteral newColorLiteral = new ColorLiteral(newRGB.red, newRGB.green, newRGB.blue);
+				ReplaceEdit replaceEdit = new ReplaceEdit(region.getOffset(), region.getLength(), newColorLiteral.toString());
 				replaceEdit.apply(document);
 			}
 		} catch (Exception e) {

@@ -18,16 +18,15 @@ import org.eclipse.xtext.xbase.interpreter.impl.XbaseInterpreter;
 
 @SuppressWarnings("restriction")
 public class GraphViewStyleInterpreter extends XbaseInterpreter {
-	
-	protected Object _evaluateColorLiteral(XColorLiteral literal,
-			IEvaluationContext context, CancelIndicator indicator) {
+
+	protected Object _evaluateColorLiteral(XColorLiteral literal, IEvaluationContext context, CancelIndicator indicator) {
 		return new ColorLiteral(literal.getColor());
 	}
-	
+
 	protected Object _featureCallJvmIdentifyableElement(JvmIdentifiableElement identifiable, XFeatureCall featureCall, Object receiver,
 			IEvaluationContext context, CancelIndicator indicator) {
 		Object value = context.getValue(QualifiedName.create(featureCall.getConcreteSyntaxFeatureName()));
-		if(value == null) { 
+		if (value == null) {
 			super._featureCallJvmIdentifyableElement(identifiable, featureCall, receiver, context, indicator);
 		}
 		return value;

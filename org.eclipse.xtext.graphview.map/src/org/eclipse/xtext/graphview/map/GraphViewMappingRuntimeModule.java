@@ -17,7 +17,8 @@ import org.eclipse.xtext.xbase.scoping.featurecalls.StaticImplicitMethodsFeature
 import org.eclipse.xtext.xbase.typing.ITypeProvider;
 
 /**
- * Use this class to register components to be used at runtime / without the Equinox extension registry.
+ * Use this class to register components to be used at runtime / without the
+ * Equinox extension registry.
  */
 @SuppressWarnings("restriction")
 public class GraphViewMappingRuntimeModule extends org.eclipse.xtext.graphview.map.AbstractGraphViewMappingRuntimeModule {
@@ -26,16 +27,16 @@ public class GraphViewMappingRuntimeModule extends org.eclipse.xtext.graphview.m
 	public Class<? extends ITypeProvider> bindITypeProvider() {
 		return GraphViewMappingTypeProvider.class;
 	}
-	
+
 	@Override
 	public Class<? extends IdentifiableSimpleNameProvider> bindIdentifiableSimpleNameProvider() {
 		return GraphViewMappingIdentifiableSimpleNameProvider.class;
 	}
-	
+
 	public Class<? extends XbaseScopeProvider> bindXbaseScopeProvider() {
 		return GraphViewMappingScopeProvider.class;
 	}
-	
+
 	public Class<? extends StaticImplicitMethodsFeatureForTypeProvider.ExtensionClassNameProvider> bindExtensionClassNameProvider() {
 		return GVMExtensionClassNameProvider.class;
 	}

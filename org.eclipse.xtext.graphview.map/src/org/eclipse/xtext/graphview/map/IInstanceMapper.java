@@ -15,7 +15,7 @@ import com.google.inject.ImplementedBy;
 public interface IInstanceMapper {
 
 	void setClassLoader(ClassLoader classLoader);
-	
+
 	Object map(AbstractExpressionMapping mapping, Object thisElement);
 
 }

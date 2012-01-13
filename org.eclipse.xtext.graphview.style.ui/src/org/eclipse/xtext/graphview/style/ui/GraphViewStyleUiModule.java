@@ -24,21 +24,21 @@ public class GraphViewStyleUiModule extends org.eclipse.xtext.graphview.style.ui
 	public GraphViewStyleUiModule(AbstractUIPlugin plugin) {
 		super(plugin);
 	}
-	
+
 	@Override
 	public Class<? extends AbstractAntlrTokenToAttributeIdMapper> bindAbstractAntlrTokenToAttributeIdMapper() {
 		return GVSTokenToAttributeIdMapper.class;
 	}
-	
+
 	@Override
 	public Class<? extends ISemanticHighlightingCalculator> bindISemanticHighlightingCalculator() {
 		return GVSHighlightingCalculator.class;
 	}
-	
+
 	public Class<? extends IHighlightingConfiguration> bindIHighlightingConfiguration() {
 		return GVSHighlightingConfiguration.class;
 	}
-	
+
 	public Class<? extends IHyperlinkDetector> bindIHyperlinkDetector() {
 		return GVSHyperlinkDetector.class;
 	}

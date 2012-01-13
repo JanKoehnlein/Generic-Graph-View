@@ -16,11 +16,10 @@ import org.eclipse.xtext.util.concurrent.IUnitOfWork;
 public class GVSHyperlinkDetector extends DefaultHyperlinkDetector {
 
 	@Override
-	public IHyperlink[] detectHyperlinks(ITextViewer textViewer,
-			final IRegion region, boolean canShowMultipleHyperlinks) {
+	public IHyperlink[] detectHyperlinks(ITextViewer textViewer, final IRegion region, boolean canShowMultipleHyperlinks) {
 		IHyperlink[] detectHyperlinks = super.detectHyperlinks(textViewer, region, canShowMultipleHyperlinks);
-		if(!canShowMultipleHyperlinks && detectHyperlinks != null && detectHyperlinks.length != 0) {
-			return detectHyperlinks;			
+		if (!canShowMultipleHyperlinks && detectHyperlinks != null && detectHyperlinks.length != 0) {
+			return detectHyperlinks;
 		}
 		final IXtextDocument xtextDocument = (IXtextDocument) textViewer.getDocument();
 		IHyperlink additionalHyperlink = xtextDocument.readOnly(new IUnitOfWork<IHyperlink, XtextResource>() {
@@ -28,22 +27,22 @@ public class GVSHyperlinkDetector extends DefaultHyperlinkDetector {
 				return createColorHyperLink(xtextDocument, state, region.getOffset());
 			}
 		});
-		if(additionalHyperlink == null) {
+		if (additionalHyperlink == null) {
 			return detectHyperlinks;
 		} else {
-			if(detectHyperlinks == null) {
+			if (detectHyperlinks == null) {
 				return new IHyperlink[] { additionalHyperlink };
 			} else {
-			IHyperlink[] hyperlinks = new IHyperlink[detectHyperlinks.length + 1];
-			System.arraycopy(detectHyperlinks, 0, hyperlinks, 1, detectHyperlinks.length);
-			hyperlinks[0] = additionalHyperlink;
-			return hyperlinks;}
+				IHyperlink[] hyperlinks = new IHyperlink[detectHyperlinks.length + 1];
+				System.arraycopy(detectHyperlinks, 0, hyperlinks, 1, detectHyperlinks.length);
+				hyperlinks[0] = additionalHyperlink;
+				return hyperlinks;
+			}
 		}
 	}
-	
+
 	public IHyperlink createColorHyperLink(IXtextDocument document, XtextResource resource, int offset) {
-		if (resource.getParseResult() != null
-				&& resource.getParseResult().getRootNode() != null) {
+		if (resource.getParseResult() != null && resource.getParseResult().getRootNode() != null) {
 			ILeafNode leafNode = NodeModelUtils.findLeafNodeAtOffset(resource.getParseResult().getRootNode(), offset);
 			EObject element = NodeModelUtils.findActualSemanticObjectFor(leafNode);
 			if (element instanceof XColorLiteral) {

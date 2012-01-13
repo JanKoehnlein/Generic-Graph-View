@@ -23,8 +23,6 @@ public class GVMExtensionClassNameProvider extends ExtensionClassNameProvider {
 				.<String, Collection<String>> builder()
 				.putAll(super.computeExtensionClassNames())
 				.put("org.eclipse.emf.ecore.EObject",
-						Collections
-								.singletonList("org.eclipse.xtext.graphview.model.JvmModelAssociationExtensions"))
-				.build();
+						Collections.singletonList("org.eclipse.xtext.graphview.model.JvmModelAssociationExtensions")).build();
 	}
 }

@@ -15,7 +15,7 @@ import com.google.inject.ImplementedBy;
 public interface IStyler {
 
 	void setClassLoader(ClassLoader classLoader);
-	
+
 	boolean style(Object figure, Object semanticElement, Style style);
 
 }

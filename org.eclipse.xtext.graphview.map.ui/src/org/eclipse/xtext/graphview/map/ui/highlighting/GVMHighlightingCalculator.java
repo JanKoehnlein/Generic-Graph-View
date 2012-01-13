@@ -23,31 +23,23 @@ import org.eclipse.xtext.util.Strings;
 
 import com.google.inject.Inject;
 
-public class GVMHighlightingCalculator implements
-		ISemanticHighlightingCalculator {
+public class GVMHighlightingCalculator implements ISemanticHighlightingCalculator {
 
 	@Inject
 	private ILocationInFileProvider locationInFileProvider;
 
-	public void provideHighlightingFor(XtextResource resource,
-			IHighlightedPositionAcceptor acceptor) {
+	public void provideHighlightingFor(XtextResource resource, IHighlightedPositionAcceptor acceptor) {
 		if (resource != null && !resource.getContents().isEmpty()) {
-			for (TreeIterator<EObject> i = resource.getAllContents(); i
-					.hasNext();) {
+			for (TreeIterator<EObject> i = resource.getAllContents(); i.hasNext();) {
 				EObject eObject = i.next();
-				if (eObject instanceof AbstractMappingDefinition
-						&& !Strings.isEmpty(((AbstractMappingDefinition) eObject)
-								.getName())) {
-					ITextRegion nameRegion = locationInFileProvider
-							.getSignificantTextRegion(eObject);
-					acceptor.addPosition(nameRegion.getOffset(),
-							nameRegion.getLength(),
-							GVMHighlightingConfiguration.MAPPING_NAME_ID);
+				if (eObject instanceof AbstractMappingDefinition && !Strings.isEmpty(((AbstractMappingDefinition) eObject).getName())) {
+					ITextRegion nameRegion = locationInFileProvider.getSignificantTextRegion(eObject);
+					acceptor.addPosition(nameRegion.getOffset(), nameRegion.getLength(), GVMHighlightingConfiguration.MAPPING_NAME_ID);
 				}
-				if(eObject instanceof AbstractMappingReference) {
-					for(INode crossRefNode : NodeModelUtils.findNodesForFeature(eObject, GraphViewMappingPackage.Literals.ABSTRACT_MAPPING_REFERENCE__REFERENCED_MAPPING)) {
-						acceptor.addPosition(crossRefNode.getOffset(),
-								crossRefNode.getLength(),
+				if (eObject instanceof AbstractMappingReference) {
+					for (INode crossRefNode : NodeModelUtils.findNodesForFeature(eObject,
+							GraphViewMappingPackage.Literals.ABSTRACT_MAPPING_REFERENCE__REFERENCED_MAPPING)) {
+						acceptor.addPosition(crossRefNode.getOffset(), crossRefNode.getLength(),
 								GVMHighlightingConfiguration.MAPPING_NAME_ID);
 					}
 				}

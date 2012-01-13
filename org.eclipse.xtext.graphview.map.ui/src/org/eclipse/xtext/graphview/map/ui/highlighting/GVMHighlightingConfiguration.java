@@ -12,8 +12,7 @@ import org.eclipse.xtext.ui.editor.syntaxcoloring.DefaultHighlightingConfigurati
 import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightingConfigurationAcceptor;
 import org.eclipse.xtext.ui.editor.utils.TextStyle;
 
-public class GVMHighlightingConfiguration extends
-		DefaultHighlightingConfiguration {
+public class GVMHighlightingConfiguration extends DefaultHighlightingConfiguration {
 
 	public static final String MAPPING_NAME_ID = "mapping name";
 
@@ -21,7 +20,7 @@ public class GVMHighlightingConfiguration extends
 		super.configure(acceptor);
 		acceptor.acceptDefaultHighlighting(MAPPING_NAME_ID, "Mapping Name", mappingTextStyle());
 	}
-	
+
 	public TextStyle mappingTextStyle() {
 		TextStyle textStyle = defaultTextStyle().copy();
 		textStyle.setStyle(SWT.ITALIC);
