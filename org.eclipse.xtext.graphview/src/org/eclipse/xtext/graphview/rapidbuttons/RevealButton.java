@@ -1,8 +1,5 @@
 package org.eclipse.xtext.graphview.rapidbuttons;
 
-import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.geometry.Dimension;
-import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.gef.DragTracker;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.xtext.graphview.instancemodel.AbstractInstance;
@@ -27,20 +24,9 @@ public class RevealButton extends AbstractRapidButton {
 
 	@Override
 	protected DragTracker createDragTracker() {
-		return new RevealDragTracker(getEditPolicy().getHost(), getRelativeLocation());
+		return new RevealDragTracker(getEditPolicy().getHost());
 	}
 	
-	protected Dimension getRelativeLocation() {
-		Point center = getBounds().getCenter();
-		if(getParent() != null)
-			getParent().translateToAbsolute(center);
-		IFigure hostFigure = getEditPolicy().getHost().getFigure();
-		Point hostCenter = hostFigure.getBounds().getCenter();
-		if(hostFigure.getParent() != null)
-			hostFigure.getParent().translateToAbsolute(hostCenter);
-		return center.getDifference(hostCenter);
-	}
-
 	@Override
 	public void setVisible(boolean visible) {
 		super.setVisible(visible && hasHiddenEdge());

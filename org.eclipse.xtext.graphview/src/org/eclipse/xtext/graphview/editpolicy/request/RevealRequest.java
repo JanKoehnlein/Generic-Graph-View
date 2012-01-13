@@ -1,11 +1,16 @@
 package org.eclipse.xtext.graphview.editpolicy.request;
 
 import java.util.List;
+import java.util.Set;
 
+import org.eclipse.gef.EditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.xtext.graphview.editpart.IInstanceModelEditPart;
 import org.eclipse.xtext.graphview.editpolicy.RevealedEditPartMap;
 import org.eclipse.xtext.graphview.instancemodel.AbstractInstance;
+
+import com.google.common.collect.Iterables;
+import com.google.common.collect.Sets;
 
 public class RevealRequest extends Request {
 
@@ -17,12 +22,6 @@ public class RevealRequest extends Request {
 	
 	private double mouseDistance;
 	
-	private boolean isRevealSingle;
-
-	private double selectAngle;
-	
-	private IInstanceModelEditPart singleSelection;
-
 	public RevealRequest(List<AbstractInstance> toBeRevealed) {
 		this.toBeRevealed = toBeRevealed;
 	}
@@ -52,22 +51,6 @@ public class RevealRequest extends Request {
 		this.mouseAngle = mouseAngle;
 	}
 	
-	public boolean isRevealSingle() {
-		return isRevealSingle;
-	}
-
-	public void setRevealSingle(boolean isRevealSingle) {
-		this.isRevealSingle = isRevealSingle;
-	}
-
-	public double getSelectAngle() {
-		return selectAngle;
-	}
-
-	public void setRevealAngle(double revealAngle) {
-		this.selectAngle = revealAngle;
-	}
-
 	public RevealedEditPartMap getRevealedEditPartMap() {
 		return revealedEditPartMap;
 	}
@@ -75,13 +58,28 @@ public class RevealRequest extends Request {
 	public void setRevealedEditPartMap(RevealedEditPartMap revealedEditPartMap) {
 		this.revealedEditPartMap = revealedEditPartMap;
 	}
-
-	public IInstanceModelEditPart getSingleSelection() {
-		return singleSelection;
+	
+	private Set<IInstanceModelEditPart> selection = Sets.newHashSet(); 
+	
+	public Set<IInstanceModelEditPart> getSelection() {
+		return selection;
+	}
+	
+	public boolean addToSelection(EditPart selectedEditPart) {
+		if(!(selectedEditPart instanceof IInstanceModelEditPart))
+			return false;
+		else if(Iterables.contains(revealedEditPartMap.getLayoutables(), selectedEditPart)) 
+			return selection.add((IInstanceModelEditPart) selectedEditPart);
+		else 
+			return addToSelection(selectedEditPart.getParent());
 	}
 
-	public void setSingleSelection(IInstanceModelEditPart singleSelection) {
-		this.singleSelection = singleSelection;
+	public boolean removeFromSelection(IInstanceModelEditPart selectedEditPart) {
+		if(!(selectedEditPart instanceof IInstanceModelEditPart))
+			return false;
+		else if(Iterables.contains(revealedEditPartMap.getLayoutables(), selectedEditPart)) 
+			return selection.remove((IInstanceModelEditPart) selectedEditPart);
+		else 
+			return addToSelection(selectedEditPart.getParent());
 	}
-
 }

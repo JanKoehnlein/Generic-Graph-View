@@ -13,17 +13,13 @@ import org.eclipse.xtext.graphview.instancemodel.AbstractInstance;
 import org.eclipse.xtext.graphview.instancemodel.EdgeInstance;
 import org.eclipse.xtext.graphview.instancemodel.NodeInstance;
 import org.eclipse.xtext.graphview.instancemodel.Visibility;
-import org.eclipse.xtext.graphview.rapidbuttons.RevealGestureTool;
 
 import com.google.common.collect.Lists;
 
 public class RevealDragTracker extends AbstractRapidButtonDragTracker {
 
-	private double selectAngle;
-	
-	protected RevealDragTracker(IInstanceModelEditPart hostEditPart, Dimension relativeButtonLocation) {
+	protected RevealDragTracker(IInstanceModelEditPart hostEditPart) {
 		super(hostEditPart);
-		selectAngle = Math.atan2(relativeButtonLocation.height, relativeButtonLocation.width);
 	}
 
 	public static final int STATE_ACTIVATED = 64;
@@ -57,7 +53,6 @@ public class RevealDragTracker extends AbstractRapidButtonDragTracker {
 				}
 			}
 			RevealRequest revealRequest = new RevealRequest(toBeRevealed);
-			revealRequest.setRevealAngle(selectAngle);
 			return revealRequest;
 		} else {
 			return null;
@@ -71,8 +66,6 @@ public class RevealDragTracker extends AbstractRapidButtonDragTracker {
 
 	protected boolean handleButtonDown(int button) {
 		if (stateTransition(STATE_INITIAL, STATE_ACTIVATED)) {
-			boolean isRevealSingle = button != 1;
-			((RevealRequest) getSourceRequest()).setRevealSingle(isRevealSingle);
 			updateMouseLocation();
 			showSourceFeedback();
 			return true;

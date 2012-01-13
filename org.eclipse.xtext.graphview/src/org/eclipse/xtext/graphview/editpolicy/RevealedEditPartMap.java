@@ -35,4 +35,5 @@ public class RevealedEditPartMap {
 			IInstanceModelEditPart primary) {
 		return map.get(primary);
 	}
+	
 }

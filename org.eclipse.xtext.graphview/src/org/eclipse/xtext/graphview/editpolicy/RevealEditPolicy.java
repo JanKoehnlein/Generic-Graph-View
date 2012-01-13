@@ -35,8 +35,7 @@ public class RevealEditPolicy extends AbstractEditPolicy {
 			showFeedback(revealRequest, revealedEditPartMap);
 			for (IInstanceModelEditPart layoutable : revealedEditPartMap
 					.getLayoutables()) {
-				if (revealRequest.isRevealSingle()
-						&& revealRequest.getSingleSelection() != layoutable) {
+				if (!revealRequest.getSelection().contains(layoutable)) {
 					layoutable.getModel().setVisibility(Visibility.HIDDEN);
 					for (IInstanceModelEditPart secondary : revealRequest
 							.getRevealedEditPartMap()
@@ -75,7 +74,6 @@ public class RevealEditPolicy extends AbstractEditPolicy {
 			// revealRequest.getToBeRevealed())
 			// toBeRevealed.setVisibility(Visibility.HIDDEN);
 			revealRequest.setRevealedEditPartMap(null);
-			revealRequest.setSingleSelection(null);
 		}
 		super.eraseSourceFeedback(request);
 	}
@@ -140,22 +138,13 @@ public class RevealEditPolicy extends AbstractEditPolicy {
 						figureSize.width, figureSize.height));
 				angle += deltaAngle;
 			}
-			if (revealRequest.isRevealSingle()) {
-				int revealIndex = (int) (((revealRequest.getSelectAngle()
-						- revealRequest.getMouseAngle()) / deltaAngle + 0.5)
-						% numElements);
-				if (revealIndex < 0)
-					revealIndex += numElements;
-				int i = 0;
-				for (IInstanceModelEditPart layoutable : layoutables) {
-					if (i == revealIndex)
-						revealRequest.setSingleSelection(layoutable);
-					layoutable.setTransparent(i != revealIndex);
-					for (IInstanceModelEditPart secondary : revealedEditPartMap
-							.getSecondaries(layoutable))
-						secondary.setTransparent(i != revealIndex);
-					++i;
-				}
+			for (IInstanceModelEditPart layoutable : layoutables) {
+				boolean isSelected = revealRequest.getSelection().contains(
+						layoutable);
+				layoutable.setTransparent(!isSelected);
+				for (IInstanceModelEditPart secondary : revealedEditPartMap
+						.getSecondaries(layoutable))
+					secondary.setTransparent(!isSelected);
 			}
 		}
 	}

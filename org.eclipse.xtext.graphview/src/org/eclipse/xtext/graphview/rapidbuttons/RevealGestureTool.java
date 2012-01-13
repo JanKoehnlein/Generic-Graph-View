@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPartViewer;
 import org.eclipse.gef.tools.AbstractTool;
 import org.eclipse.swt.SWT;
@@ -113,12 +114,35 @@ public class RevealGestureTool extends AbstractTool implements IGestureHandler,
 	@Override
 	protected boolean handleButtonDown(int button) {
 		swipeAnimationJob.stop();
+		if (button != 1) {
+			EditPart selectedEditPart = getHostEditPart().getViewer()
+					.findObjectAt(getCurrentInput().getMouseLocation());
+			if (selectedEditPart instanceof IInstanceModelEditPart) {
+				if (!getSourceRequest().addToSelection(
+						(IInstanceModelEditPart) selectedEditPart))
+					getSourceRequest().removeFromSelection(
+							(IInstanceModelEditPart) selectedEditPart);
+				showSourceFeedback();
+				return true;
+			}
+		} 
 		return super.handleButtonDown(button);
 	}
 
 	@Override
 	protected boolean handleButtonUp(int button) {
-		if (stateTransition(STATE_INITIAL, STATE_TERMINAL)) {
+		if(button == 1 && stateTransition(STATE_INITIAL, STATE_TERMINAL)) {
+			EditPart selectedEditPart = getHostEditPart().getViewer()
+					.findObjectAt(getCurrentInput().getMouseLocation());
+			if (selectedEditPart instanceof IInstanceModelEditPart) {
+				getSourceRequest().addToSelection(
+						(IInstanceModelEditPart) selectedEditPart);
+			} else {
+				if(getSourceRequest().getSelection().isEmpty()) {
+					for(IInstanceModelEditPart selected: getSourceRequest().getRevealedEditPartMap().getLayoutables()) 
+						getSourceRequest().addToSelection(selected);
+				}
+			}
 			setCurrentCommand(getHostEditPart().getCommand(getSourceRequest()));
 			eraseSourceFeedback();
 			executeCommand(getHostEditPart().getCommand(getSourceRequest()));
