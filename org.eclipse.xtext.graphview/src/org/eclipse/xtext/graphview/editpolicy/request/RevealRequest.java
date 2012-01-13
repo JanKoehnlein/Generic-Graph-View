@@ -11,16 +11,18 @@ public class RevealRequest extends Request {
 
 	private final List<AbstractInstance> toBeRevealed;
 
-	private boolean isRevealSingle;
-
-	private IInstanceModelEditPart singleSelection;
-	
 	private RevealedEditPartMap revealedEditPartMap;
 
 	private double mouseAngle;
 	
 	private double mouseDistance;
 	
+	private boolean isRevealSingle;
+
+	private double selectAngle;
+	
+	private IInstanceModelEditPart singleSelection;
+
 	public RevealRequest(List<AbstractInstance> toBeRevealed) {
 		this.toBeRevealed = toBeRevealed;
 	}
@@ -56,6 +58,14 @@ public class RevealRequest extends Request {
 
 	public void setRevealSingle(boolean isRevealSingle) {
 		this.isRevealSingle = isRevealSingle;
+	}
+
+	public double getSelectAngle() {
+		return selectAngle;
+	}
+
+	public void setRevealAngle(double revealAngle) {
+		this.selectAngle = revealAngle;
 	}
 
 	public RevealedEditPartMap getRevealedEditPartMap() {

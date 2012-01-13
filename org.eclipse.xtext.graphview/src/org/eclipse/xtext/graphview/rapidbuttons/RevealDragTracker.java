@@ -19,8 +19,11 @@ import com.google.common.collect.Lists;
 
 public class RevealDragTracker extends AbstractRapidButtonDragTracker {
 
-	protected RevealDragTracker(IInstanceModelEditPart hostEditPart) {
+	private double selectAngle;
+	
+	protected RevealDragTracker(IInstanceModelEditPart hostEditPart, Dimension relativeButtonLocation) {
 		super(hostEditPart);
+		selectAngle = Math.atan2(relativeButtonLocation.height, relativeButtonLocation.width);
 	}
 
 	public static final int STATE_ACTIVATED = 64;
@@ -53,7 +56,9 @@ public class RevealDragTracker extends AbstractRapidButtonDragTracker {
 					toBeRevealed.add(edge.getTarget());
 				}
 			}
-			return new RevealRequest(toBeRevealed);
+			RevealRequest revealRequest = new RevealRequest(toBeRevealed);
+			revealRequest.setRevealAngle(selectAngle);
+			return revealRequest;
 		} else {
 			return null;
 		}
@@ -66,7 +71,8 @@ public class RevealDragTracker extends AbstractRapidButtonDragTracker {
 
 	protected boolean handleButtonDown(int button) {
 		if (stateTransition(STATE_INITIAL, STATE_ACTIVATED)) {
-			((RevealRequest) getSourceRequest()).setRevealSingle(button != 1);
+			boolean isRevealSingle = button != 1;
+			((RevealRequest) getSourceRequest()).setRevealSingle(isRevealSingle);
 			updateMouseLocation();
 			showSourceFeedback();
 			return true;

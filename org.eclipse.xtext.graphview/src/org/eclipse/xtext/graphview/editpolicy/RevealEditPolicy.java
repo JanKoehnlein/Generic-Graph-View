@@ -33,7 +33,8 @@ public class RevealEditPolicy extends AbstractEditPolicy {
 			RevealRequest revealRequest = (RevealRequest) request;
 			RevealedEditPartMap revealedEditPartMap = calculateRevealedEditPartMap(revealRequest);
 			showFeedback(revealRequest, revealedEditPartMap);
-			for (IInstanceModelEditPart layoutable : revealedEditPartMap.getLayoutables()) {
+			for (IInstanceModelEditPart layoutable : revealedEditPartMap
+					.getLayoutables()) {
 				if (revealRequest.isRevealSingle()
 						&& revealRequest.getSingleSelection() != layoutable) {
 					layoutable.getModel().setVisibility(Visibility.HIDDEN);
@@ -70,15 +71,17 @@ public class RevealEditPolicy extends AbstractEditPolicy {
 	public void eraseSourceFeedback(Request request) {
 		if (request instanceof RevealRequest) {
 			RevealRequest revealRequest = (RevealRequest) request;
-//			for(AbstractInstance toBeRevealed: revealRequest.getToBeRevealed()) 
-//				toBeRevealed.setVisibility(Visibility.HIDDEN);
+			// for(AbstractInstance toBeRevealed:
+			// revealRequest.getToBeRevealed())
+			// toBeRevealed.setVisibility(Visibility.HIDDEN);
 			revealRequest.setRevealedEditPartMap(null);
 			revealRequest.setSingleSelection(null);
 		}
 		super.eraseSourceFeedback(request);
 	}
-	
-	protected RevealedEditPartMap calculateRevealedEditPartMap(RevealRequest revealRequest) {
+
+	protected RevealedEditPartMap calculateRevealedEditPartMap(
+			RevealRequest revealRequest) {
 		if (revealRequest.getRevealedEditPartMap() == null) {
 			for (AbstractInstance toBeRevealed : revealRequest
 					.getToBeRevealed()) {
@@ -88,8 +91,7 @@ public class RevealEditPolicy extends AbstractEditPolicy {
 			for (AbstractInstance toBeRevealed : revealRequest
 					.getToBeRevealed()) {
 				IInstanceModelEditPart editPart = (IInstanceModelEditPart) getHost()
-						.getViewer().getEditPartRegistry()
-						.get(toBeRevealed);
+						.getViewer().getEditPartRegistry().get(toBeRevealed);
 				if (editPart instanceof EdgeEditPart) {
 					EdgeEditPart edgeEditPart = (EdgeEditPart) editPart;
 					if (edgeEditPart.getSource() == getHost()) {
@@ -110,12 +112,18 @@ public class RevealEditPolicy extends AbstractEditPolicy {
 		return revealRequest.getRevealedEditPartMap();
 	}
 
-	protected void showFeedback(RevealRequest revealRequest, RevealedEditPartMap revealedEditPartMap) {
-		Iterable<IInstanceModelEditPart> layoutables = revealedEditPartMap.getLayoutables();
+	protected void showFeedback(RevealRequest revealRequest,
+			RevealedEditPartMap revealedEditPartMap) {
+		Iterable<IInstanceModelEditPart> layoutables = revealedEditPartMap
+				.getLayoutables();
 		if (!Iterables.isEmpty(layoutables)) {
-			double angle = (revealRequest.isRevealSingle()) ? 0 : revealRequest.getMouseAngle();
-			double deltaAngle = 2 * Math.PI / Iterables.size(layoutables);
-			Point center = ((GraphicalEditPart) getHost()).getFigure().getBounds().getCenter();
+			double angle = revealRequest.getMouseAngle();
+			int numElements = Iterables.size(layoutables);
+			double deltaAngle = 2 * Math.PI / numElements;
+			IFigure hostFigure = ((GraphicalEditPart) getHost()).getFigure();
+			Point center = hostFigure.getBounds().getCenter();
+			if (hostFigure.getParent() != null)
+				hostFigure.getParent().translateToAbsolute(center);
 			for (IInstanceModelEditPart layoutable : layoutables) {
 				IFigure figure = layoutable.getFigure();
 				Point newCenter = new Point(center);
@@ -133,10 +141,14 @@ public class RevealEditPolicy extends AbstractEditPolicy {
 				angle += deltaAngle;
 			}
 			if (revealRequest.isRevealSingle()) {
-				int revealIndex = (int) (((revealRequest.getMouseAngle() + 0.5 * deltaAngle + 2 * Math.PI) % (2 * Math.PI)) / deltaAngle);
+				int revealIndex = (int) (((revealRequest.getSelectAngle()
+						- revealRequest.getMouseAngle()) / deltaAngle + 0.5)
+						% numElements);
+				if (revealIndex < 0)
+					revealIndex += numElements;
 				int i = 0;
 				for (IInstanceModelEditPart layoutable : layoutables) {
-					if(i == revealIndex) 
+					if (i == revealIndex)
 						revealRequest.setSingleSelection(layoutable);
 					layoutable.setTransparent(i != revealIndex);
 					for (IInstanceModelEditPart secondary : revealedEditPartMap

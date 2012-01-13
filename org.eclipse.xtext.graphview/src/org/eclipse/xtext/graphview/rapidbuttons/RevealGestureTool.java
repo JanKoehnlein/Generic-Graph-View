@@ -1,5 +1,6 @@
 package org.eclipse.xtext.graphview.rapidbuttons;
 
+import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
@@ -15,7 +16,10 @@ import org.eclipse.xtext.graphview.editpolicy.request.RevealRequest;
 import org.eclipse.xtext.graphview.gestures.IGestureHandler;
 import org.eclipse.xtext.graphview.gestures.IViewerGestureListener;
 
-public class RevealGestureTool extends AbstractTool implements IGestureHandler, IViewerGestureListener {
+public class RevealGestureTool extends AbstractTool implements IGestureHandler,
+		IViewerGestureListener {
+
+	private static final Logger LOG = Logger.getLogger(RevealGestureTool.class);
 
 	private RevealRequest sourceRequest;
 
@@ -24,14 +28,14 @@ public class RevealGestureTool extends AbstractTool implements IGestureHandler, 
 	private double initialDistance;
 
 	private double initialAngle;
-	
+
 	private SwipeAnimationJob swipeAnimationJob;
-	
+
 	public RevealGestureTool(RevealDragTracker initiator) {
 		hostEditPart = initiator.getHostEditPart();
 		sourceRequest = initiator.getSourceRequest();
-		initialDistance = sourceRequest.getMouseDistance(); 
-		initialAngle = sourceRequest.getMouseAngle(); 
+		initialDistance = sourceRequest.getMouseDistance();
+		initialAngle = sourceRequest.getMouseAngle();
 		swipeAnimationJob = new SwipeAnimationJob();
 	}
 
@@ -40,7 +44,15 @@ public class RevealGestureTool extends AbstractTool implements IGestureHandler, 
 		super.activate();
 		showSourceFeedback();
 	}
-	
+
+	@Override
+	public void deactivate() {
+		if (swipeAnimationJob != null)
+			swipeAnimationJob.stop();
+		eraseSourceFeedback();
+		super.deactivate();
+	}
+
 	protected RevealRequest getSourceRequest() {
 		return sourceRequest;
 	}
@@ -49,24 +61,27 @@ public class RevealGestureTool extends AbstractTool implements IGestureHandler, 
 	protected String getCommandName() {
 		return "Add element";
 	}
-	
+
 	@Override
 	protected boolean handleKeyDown(KeyEvent e) {
 		swipeAnimationJob.stop();
-		if(e.character == SWT.ESC)
+		if (e.character == SWT.ESC)
 			eraseSourceFeedback();
 		return super.handleKeyDown(e);
 	}
-	
+
 	@Override
 	public void mouseWheelScrolled(Event event, EditPartViewer viewer) {
-		if(event.type == SWT.MouseVerticalWheel || event.type == SWT.MouseHorizontalWheel) {
-			swipeAnimationJob.add(event.count / 20000.);
+		// poor man's PAN gesture: FigureCanvas eats all PAN gestures and
+		// converts them to far less precise mouse wheel events
+		if (event.type == SWT.MouseVerticalWheel
+				|| event.type == SWT.MouseHorizontalWheel) {
+			swipeAnimationJob.add(event.count / 5000.);
 			event.doit = false;
 		}
 		super.mouseWheelScrolled(event, viewer);
 	}
-	
+
 	public boolean handleGesture(GestureEvent gestureEvent) {
 		RevealRequest sourceRequest = getSourceRequest();
 		switch (gestureEvent.detail) {
@@ -77,16 +92,16 @@ public class RevealGestureTool extends AbstractTool implements IGestureHandler, 
 			break;
 		case SWT.GESTURE_ROTATE:
 			swipeAnimationJob.stop();
-			sourceRequest.setMouseAngle(initialAngle
-					+ gestureEvent.rotation * Math.PI / 180.);
+			sourceRequest.setMouseAngle(initialAngle + gestureEvent.rotation
+					* Math.PI / 180.);
 			break;
 		case SWT.GESTURE_SWIPE:
 		case SWT.GESTURE_PAN:
-			swipeAnimationJob.add(gestureEvent.xDirection);
+			swipeAnimationJob.add(gestureEvent.xDirection / 5000.);
 			break;
 		case SWT.GESTURE_END:
-			initialDistance = sourceRequest.getMouseDistance(); 
-			initialAngle = sourceRequest.getMouseAngle(); 
+			initialDistance = sourceRequest.getMouseDistance();
+			initialAngle = sourceRequest.getMouseAngle();
 			break;
 		default:
 			return false;
@@ -94,7 +109,7 @@ public class RevealGestureTool extends AbstractTool implements IGestureHandler, 
 		showSourceFeedback();
 		return true;
 	}
-	
+
 	@Override
 	protected boolean handleButtonDown(int button) {
 		swipeAnimationJob.stop();
@@ -117,59 +132,61 @@ public class RevealGestureTool extends AbstractTool implements IGestureHandler, 
 	public void gesture(GestureEvent gestureEvent, EditPartViewer viewer) {
 		handleGesture(gestureEvent);
 	}
-	
+
 	protected IInstanceModelEditPart getHostEditPart() {
 		return hostEditPart;
 	}
-	
+
 	protected void eraseSourceFeedback() {
 		getHostEditPart().eraseSourceFeedback(getSourceRequest());
 	}
-	
+
 	protected void showSourceFeedback() {
 		getHostEditPart().showSourceFeedback(getSourceRequest());
 	}
 
-	
 	protected class SwipeAnimationJob extends UIJob {
 
 		private static final int RESCEDULE_INTERVAL = 10;
 
 		private volatile boolean isStop = false;
-		
+
 		private volatile double speed;
 
 		private long lastTime = -1l;
-		
+
 		public SwipeAnimationJob() {
 			super("Swipe Animation Job");
 		}
-		
+
 		public void add(double delta) {
 			this.speed += delta;
 			isStop = false;
 			schedule();
 		}
-		
+
 		public void stop() {
 			try {
 				isStop = true;
 				this.join();
 			} catch (InterruptedException e) {
+				LOG.error("Error stopping animation job", e);
 			}
 		}
 
 		@Override
 		public IStatus runInUIThread(IProgressMonitor monitor) {
 			long currentTime = System.currentTimeMillis();
-			if(!isStop) {
-				long timeDelta = (lastTime != -1) ? currentTime - lastTime : RESCEDULE_INTERVAL;
+			if (!isStop) {
+				long timeDelta = (lastTime != -1) ? currentTime - lastTime
+						: RESCEDULE_INTERVAL;
 				lastTime = currentTime;
-				double angle = getSourceRequest().getMouseAngle() + timeDelta * Math.min(0.01, speed);
+				double angle = getSourceRequest().getMouseAngle() + timeDelta
+						* Math.min(0.01, speed);
 				getSourceRequest().setMouseAngle(angle);
 				showSourceFeedback();
-				speed /= 1.8;
-				if(Math.abs(speed) > 0.001)
+				speed /= 1.2;
+				if (Math.abs(speed) > 0.001)
 					schedule(RESCEDULE_INTERVAL);
 			}
 			lastTime = (isStop) ? -1 : currentTime;
