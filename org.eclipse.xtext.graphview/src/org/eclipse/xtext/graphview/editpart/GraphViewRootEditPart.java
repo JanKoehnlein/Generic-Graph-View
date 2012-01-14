@@ -34,20 +34,16 @@ public class GraphViewRootEditPart extends ScalableFreeformRootEditPart {
 		private GraphViewRootEditPart host;
 
 		private double initialScale;
-		private Point initialCursorLocation;
-		private Point initialViewLocation;
 		
 		public void initialize(GraphViewRootEditPart host) {
 			this.host = host;
 		}
 		
-		public void gesture(GestureEvent gestureEvent, EditPartViewer viewer) {
+		public void gesturePerformed(GestureEvent gestureEvent, EditPartViewer viewer) {
 			Viewport viewport = (Viewport) host.getFigure();
 			switch (gestureEvent.detail) {
 			case SWT.GESTURE_BEGIN:
 				initialScale = host.getZoomManager().getZoom();
-				initialCursorLocation = new Point(gestureEvent.x, gestureEvent.y);
-				initialViewLocation = viewport.getViewLocation();
 				break;
 			case SWT.GESTURE_MAGNIFY: {
 				if(initialScale == 0)
@@ -71,17 +67,15 @@ public class GraphViewRootEditPart extends ScalableFreeformRootEditPart {
 						return; 
 					}
 				}
-				Point relCursorLocation = initialCursorLocation.getCopy();
-				host.getScaledLayers().translateToRelative(relCursorLocation);
-				host.getScaledLayers().translateFromParent(relCursorLocation);
+				
+				Point viewLocation = viewport.getViewLocation();
+				Point mouseLocation = new Point(gestureEvent.x, gestureEvent.y).translate(viewLocation);
+				double prevZoom = host.getZoomManager().getZoom();
 				host.getZoomManager().setZoom(zoom);
-				Point newCursorLocation = relCursorLocation.getCopy();
-				host.getScaledLayers().translateToParent(newCursorLocation);
-				host.getScaledLayers().translateToAbsolute(newCursorLocation);
-				Dimension delta = newCursorLocation.getDifference(initialCursorLocation);
-				Point newViewLocation = initialViewLocation.getCopy().translate(delta);
-				viewport.setViewLocation(newViewLocation);
-				gestureEvent.doit = false;
+				Point mouseLocationAfterZoom = mouseLocation.getCopy().scale(zoom / prevZoom);
+				Dimension mouseDelta = mouseLocationAfterZoom.getDifference(mouseLocation);
+				viewLocation.translate(mouseDelta);
+				viewport.setViewLocation(viewLocation);
 				break;
 			}
 			case SWT.GESTURE_PAN:
@@ -98,8 +92,6 @@ public class GraphViewRootEditPart extends ScalableFreeformRootEditPart {
 		
 		protected void consumeEventAndResetView(GestureEvent gestureEvent) {
 			initialScale = 0.;
-			initialCursorLocation.setLocation(0, 0);
-			initialViewLocation.setLocation(0, 0);
 			host.getZoomManager().setZoom(1.);			
 			gestureEvent.doit = false;
 		}
