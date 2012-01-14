@@ -39,6 +39,9 @@ public class RapidButtonEditPolicy extends AbstractEditPolicy {
 	private ExpandButton expandButton;
 
 	@Inject
+	private DrillDownButton drillDownButton;
+
+	@Inject
 	private Provider<RevealButton> revealButtonProvider;
 
 	@Override
@@ -71,6 +74,7 @@ public class RapidButtonEditPolicy extends AbstractEditPolicy {
 			addButton(revealButtonProvider.get(), PositionConstants.SOUTH, true);
 			addButton(revealButtonProvider.get(), PositionConstants.WEST, true);
 			addButton(expandButton, PositionConstants.NORTH_WEST, false);
+			addButton(drillDownButton, PositionConstants.NORTH, false);
 			addButton(deleteButton, PositionConstants.NORTH_EAST, false);
 		}
 		return buttons;

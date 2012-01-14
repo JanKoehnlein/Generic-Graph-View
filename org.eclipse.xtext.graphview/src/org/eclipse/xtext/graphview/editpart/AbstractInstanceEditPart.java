@@ -39,13 +39,13 @@ public abstract class AbstractInstanceEditPart extends AbstractGraphicalEditPart
 	private ExpandEditPolicy expandEditPolicy;
 
 	@Inject
-	private DrillDownEditPolicy openNewDiagramEditPolicy;
+	private DrillDownEditPolicy drillDownEditPolicy;
 
 	@Override
 	protected void createEditPolicies() {
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, nonResizableEditPolicy);
 		installEditPolicy(ExpandEditPolicy.ROLE, expandEditPolicy);
-		installEditPolicy(DrillDownEditPolicy.ROLE, openNewDiagramEditPolicy);
+		installEditPolicy(DrillDownEditPolicy.ROLE, drillDownEditPolicy);
 	}
 	
 	@Override
