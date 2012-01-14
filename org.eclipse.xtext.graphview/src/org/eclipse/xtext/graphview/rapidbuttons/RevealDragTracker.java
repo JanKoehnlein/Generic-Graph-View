@@ -98,6 +98,7 @@ public class RevealDragTracker extends AbstractRapidButtonDragTracker {
 	protected boolean handleButtonUp(int button) {
 		EditDomain editDomain = getHostEditPart().getViewer().getEditDomain();
 		if (stateTransition(STATE_DRAG_IN_PROGRESS, STATE_TERMINAL)) {
+			getSourceRequest().selectAll();
 			setCurrentCommand(getHostEditPart().getCommand(getSourceRequest()));
 			commitDrag();
 			return true;

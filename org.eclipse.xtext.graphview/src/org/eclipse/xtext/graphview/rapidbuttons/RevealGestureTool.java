@@ -132,14 +132,10 @@ public class RevealGestureTool extends AbstractTool implements IGestureHandler, 
 	protected boolean handleButtonUp(int button) {
 		if (button == 1 && stateTransition(STATE_INITIAL, STATE_TERMINAL)) {
 			EditPart selectedEditPart = getHostEditPart().getViewer().findObjectAt(getCurrentInput().getMouseLocation());
-			if (selectedEditPart instanceof IInstanceModelEditPart) {
+			if (selectedEditPart instanceof IInstanceModelEditPart) 
 				getSourceRequest().addToSelection((IInstanceModelEditPart) selectedEditPart);
-			} else {
-				if (getSourceRequest().getSelection().isEmpty()) {
-					for (IInstanceModelEditPart selected : getSourceRequest().getRevealedEditPartMap().getLayoutables())
-						getSourceRequest().addToSelection(selected);
-				}
-			}
+			else 
+				getSourceRequest().selectAll();
 			setCurrentCommand(getHostEditPart().getCommand(getSourceRequest()));
 			eraseSourceFeedback();
 			executeCommand(getHostEditPart().getCommand(getSourceRequest()));

@@ -13,7 +13,6 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.AbstractEditPolicy;
 import org.eclipse.xtext.graphview.editpart.DrillingHelper;
 import org.eclipse.xtext.graphview.instancemodel.AbstractInstance;
-import org.eclipse.xtext.ui.PluginImageHelper;
 
 import com.google.inject.Inject;
 

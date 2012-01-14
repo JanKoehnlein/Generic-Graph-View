@@ -89,4 +89,9 @@ public class RevealRequest extends Request {
 		else
 			return addToSelection(selectedEditPart.getParent());
 	}
+	
+	public void selectAll() {
+		for(IInstanceModelEditPart selected: revealedEditPartMap.getLayoutables()) 
+			selection.add(selected);
+	}
 }
