@@ -146,7 +146,7 @@ public class RevealGestureTool extends AbstractTool implements IGestureHandler, 
 		return false;
 	}
 
-	public void gesture(GestureEvent gestureEvent, EditPartViewer viewer) {
+	public void gesturePerformed(GestureEvent gestureEvent, EditPartViewer viewer) {
 		handleGesture(gestureEvent);
 	}
 

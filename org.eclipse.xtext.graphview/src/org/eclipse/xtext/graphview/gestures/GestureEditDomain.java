@@ -19,10 +19,10 @@ public class GestureEditDomain extends DefaultEditDomain implements IViewerGestu
 		super(editorPart);
 	}
 
-	public void gesture(GestureEvent event, EditPartViewer viewer) {
+	public void gesturePerformed(GestureEvent event, EditPartViewer viewer) {
 		Tool tool = getActiveTool();
 		if (tool instanceof IViewerGestureListener)
-			((IViewerGestureListener) tool).gesture(event, viewer);
+			((IViewerGestureListener) tool).gesturePerformed(event, viewer);
 	}
 
 	// super.defaultTool is private

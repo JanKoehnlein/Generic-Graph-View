@@ -20,7 +20,7 @@ public class GestureDomainEventDispatcher extends DomainEventDispatcher {
 
 	public void dispatchGesture(GestureEvent event) {
 		if (okToDispatch() && domain instanceof IViewerGestureListener)
-			((IViewerGestureListener) domain).gesture(event, viewer);
+			((IViewerGestureListener) domain).gesturePerformed(event, viewer);
 	}
 
 	// super.okToDispatch is private

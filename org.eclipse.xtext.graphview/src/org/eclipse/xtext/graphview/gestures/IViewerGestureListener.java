@@ -14,5 +14,5 @@ public interface IViewerGestureListener {
 
 	public static final String KEY = IViewerGestureListener.class.getName();
 
-	public void gesture(GestureEvent gestureEvent, EditPartViewer viewer);
+	public void gesturePerformed(GestureEvent gestureEvent, EditPartViewer viewer);
 }

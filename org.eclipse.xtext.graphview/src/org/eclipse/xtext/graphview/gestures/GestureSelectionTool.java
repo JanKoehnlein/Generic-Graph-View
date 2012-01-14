@@ -13,9 +13,9 @@ import org.eclipse.swt.events.GestureEvent;
 
 public class GestureSelectionTool extends SelectionTool implements IViewerGestureListener {
 
-	public void gesture(GestureEvent gestureEvent, EditPartViewer viewer) {
+	public void gesturePerformed(GestureEvent gestureEvent, EditPartViewer viewer) {
 		if (getDragTracker() instanceof IViewerGestureListener) {
-			((IViewerGestureListener) getDragTracker()).gesture(gestureEvent, viewer);
+			((IViewerGestureListener) getDragTracker()).gesturePerformed(gestureEvent, viewer);
 			gestureEvent.doit = false;
 		}
 		if (isInState(STATE_INITIAL))
@@ -25,7 +25,7 @@ public class GestureSelectionTool extends SelectionTool implements IViewerGestur
 	protected void performViewerGesture(GestureEvent gestureEvent, EditPartViewer viewer) {
 		IViewerGestureListener handler = (IViewerGestureListener) viewer.getProperty(IViewerGestureListener.KEY);
 		if (handler != null)
-			handler.gesture(gestureEvent, viewer);
+			handler.gesturePerformed(gestureEvent, viewer);
 	}
 
 }
