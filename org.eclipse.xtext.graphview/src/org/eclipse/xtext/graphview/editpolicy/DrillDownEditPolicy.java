@@ -16,9 +16,9 @@ import org.eclipse.xtext.graphview.instancemodel.AbstractInstance;
 
 import com.google.inject.Inject;
 
-public class OpenNewDiagramEditPolicy extends AbstractEditPolicy {
+public class DrillDownEditPolicy extends AbstractEditPolicy {
 
-	public static final String ROLE = "Open new diagram role";
+	public static final String ROLE = "Drill down role";
 
 	@Inject
 	private DrillingHelper drillingHelper;

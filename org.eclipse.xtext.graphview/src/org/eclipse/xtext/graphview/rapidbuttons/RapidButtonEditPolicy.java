@@ -39,9 +39,6 @@ public class RapidButtonEditPolicy extends AbstractEditPolicy {
 	private ExpandButton expandButton;
 
 	@Inject
-	private OpenDiagramButton openDiagramButton;
-
-	@Inject
 	private Provider<RevealButton> revealButtonProvider;
 
 	@Override
@@ -57,7 +54,8 @@ public class RapidButtonEditPolicy extends AbstractEditPolicy {
 			new UIJob("Hide buttons") {
 				@Override
 				public IStatus runInUIThread(IProgressMonitor monitor) {
-					hideButtons();
+					if (getHost().isActive())
+						hideButtons();
 					return Status.OK_STATUS;
 				}
 			}.schedule(5000);
@@ -73,7 +71,6 @@ public class RapidButtonEditPolicy extends AbstractEditPolicy {
 			addButton(revealButtonProvider.get(), PositionConstants.SOUTH, true);
 			addButton(revealButtonProvider.get(), PositionConstants.WEST, true);
 			addButton(expandButton, PositionConstants.NORTH_WEST, false);
-			addButton(openDiagramButton, PositionConstants.NORTH, false);
 			addButton(deleteButton, PositionConstants.NORTH_EAST, false);
 		}
 		return buttons;

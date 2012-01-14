@@ -12,13 +12,12 @@ import java.util.List;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
-import org.eclipse.gef.DragTracker;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.editparts.AbstractGraphicalEditPart;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.xtext.graphview.editpolicy.ExpandEditPolicy;
-import org.eclipse.xtext.graphview.editpolicy.OpenNewDiagramEditPolicy;
+import org.eclipse.xtext.graphview.editpolicy.DrillDownEditPolicy;
 import org.eclipse.xtext.graphview.instancemodel.AbstractInstance;
 import org.eclipse.xtext.graphview.instancemodel.Visibility;
 import org.eclipse.xtext.graphview.shape.TransparencyHelper;
@@ -31,9 +30,6 @@ public abstract class AbstractInstanceEditPart extends AbstractGraphicalEditPart
 	protected InstanceModelEditPartHelper helper;
 	
 	@Inject
-	protected DrillingHelper drillingHelper;
-
-	@Inject
 	protected NonResizableEditPolicy nonResizableEditPolicy;
 
 	@Inject
@@ -43,20 +39,15 @@ public abstract class AbstractInstanceEditPart extends AbstractGraphicalEditPart
 	private ExpandEditPolicy expandEditPolicy;
 
 	@Inject
-	private OpenNewDiagramEditPolicy openNewDiagramEditPolicy;
+	private DrillDownEditPolicy openNewDiagramEditPolicy;
 
 	@Override
 	protected void createEditPolicies() {
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, nonResizableEditPolicy);
 		installEditPolicy(ExpandEditPolicy.ROLE, expandEditPolicy);
-		installEditPolicy(OpenNewDiagramEditPolicy.ROLE, openNewDiagramEditPolicy);
+		installEditPolicy(DrillDownEditPolicy.ROLE, openNewDiagramEditPolicy);
 	}
 	
-	@Override
-	public DragTracker getDragTracker(Request request) {
-		return drillingHelper.newDragTracker(this, request);
-	}
-
 	@Override
 	public void performRequest(Request request) {
 		helper.performRequest(request);
