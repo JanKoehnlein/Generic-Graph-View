@@ -8,6 +8,8 @@
 package org.eclipse.xtext.graphview.editpolicy.request;
 
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.commands.Command;
@@ -29,6 +31,10 @@ public class ChangeBoundsCommand extends Command {
 	public void execute() {
 		IFigure figure = child.getFigure();
 		originalBounds = figure.getBounds();
+		Dimension moveDelta = new Dimension(request.getMoveDelta().x, request.getMoveDelta().y);
+		figure.getParent().translateToRelative(moveDelta);
+		request.setMoveDelta(new Point(moveDelta.width, moveDelta.height));
+		figure.getParent().translateToRelative(request.getSizeDelta());
 		figure.setBounds(request.getTransformedRectangle(originalBounds));
 		figure.validate();
 	}
