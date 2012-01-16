@@ -9,18 +9,22 @@ package org.eclipse.xtext.graphview.editpart;
 
 import java.util.List;
 
+import org.eclipse.draw2d.ConnectionAnchor;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.gef.ConnectionEditPart;
 import org.eclipse.gef.EditPolicy;
+import org.eclipse.gef.Request;
 import org.eclipse.xtext.graphview.editpolicy.InstanceComponentEditPolicy;
 import org.eclipse.xtext.graphview.editpolicy.RevealEditPolicy;
 import org.eclipse.xtext.graphview.instancemodel.EdgeInstance;
 import org.eclipse.xtext.graphview.instancemodel.NodeInstance;
 import org.eclipse.xtext.graphview.rapidbuttons.RapidButtonEditPolicy;
 import org.eclipse.xtext.graphview.shape.RoundedRectangleShape;
+import org.eclipse.xtext.graphview.shape.ShapeAnchor;
 
 import com.google.inject.Inject;
 
-public class NodeEditPart extends AbstractInstanceEditPart {
+public class NodeEditPart extends AbstractInstanceEditPart implements org.eclipse.gef.NodeEditPart {
 
 	@Inject
 	private RapidButtonEditPolicy rapidButtonEditPolicy;
@@ -52,4 +56,21 @@ public class NodeEditPart extends AbstractInstanceEditPart {
 	protected List<EdgeInstance> getModelTargetConnections() {
 		return helper.filterVisible(((NodeInstance) getModel()).getIncomingEdges());
 	}
+
+	public ConnectionAnchor getSourceConnectionAnchor(ConnectionEditPart connection) {
+		return new ShapeAnchor(getFigure());
+	}
+
+	public ConnectionAnchor getTargetConnectionAnchor(ConnectionEditPart connection) {
+		return new ShapeAnchor(getFigure());
+	}
+
+	public ConnectionAnchor getSourceConnectionAnchor(Request request) {
+		return new ShapeAnchor(getFigure());
+	}
+
+	public ConnectionAnchor getTargetConnectionAnchor(Request request) {
+		return new ShapeAnchor(getFigure());
+	}
+
 }

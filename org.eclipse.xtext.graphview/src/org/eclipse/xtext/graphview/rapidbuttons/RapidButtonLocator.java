@@ -9,6 +9,8 @@ package org.eclipse.xtext.graphview.rapidbuttons;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.RelativeLocator;
+import org.eclipse.draw2d.Shape;
+import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Insets;
 import org.eclipse.draw2d.geometry.Rectangle;
 
@@ -26,7 +28,17 @@ public class RapidButtonLocator extends RelativeLocator {
 	@Override
 	protected Rectangle getReferenceBox() {
 		Rectangle box = super.getReferenceBox().getCopy();
-		Insets insets = new Insets(OFFSET, OFFSET, OFFSET, OFFSET);
+		Dimension dimension;
+		if(isOutside)
+			dimension = new Dimension(OFFSET, OFFSET +  2);
+		else if(getReferenceFigure() instanceof Shape) {
+			Shape shape = (Shape)getReferenceFigure();
+			int lineWidth = shape.getLineWidth();
+			dimension = new Dimension(OFFSET + lineWidth, OFFSET + lineWidth - 1);
+		} else 
+			dimension = new Dimension(OFFSET, OFFSET);
+		getReferenceFigure().translateToRelative(dimension);
+		Insets insets = new Insets(dimension.width, dimension.width, dimension.height, dimension.height);
 		if (isOutside)
 			box.expand(insets);
 		else
