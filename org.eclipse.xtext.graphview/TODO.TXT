@@ -1,11 +1,16 @@
 View
-- use feedback figures correctly
-- drill down UI
-- better element selection strategy
 - multiple diagrams
 - context menu
 - save/open diagram
 - use uris instead of direct refs
+- reset should reload config
+- edge routing
+
+Examples
+- JVM model hasSourceElement/getSourceElement
+- Domainmodel packages
+- iterable unwrap
+- index aware naviation
 
 Mapping DSL
 - validation
@@ -24,3 +29,6 @@ DONE
 - nicer gestures
 - nicer appear/remove
 - drill down
+- use feedback figures correctly
+- drill down UI
+- better element selection strategy

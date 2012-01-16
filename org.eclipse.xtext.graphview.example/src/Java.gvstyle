@@ -6,7 +6,6 @@ import org.eclipse.swt.SWT
 
 stylesheet JavaInheritanceStyle for JavaInheritanceDiagram
 
-
 style JavaInheritanceDiagram as DiagramShape {
 	autoLayoutManager = new KielerAutoLayout("Dot")
 }
@@ -21,10 +20,11 @@ style TypeNode.NameLabel as LabelShape {
 style TypeNode as RectangleShape {
 }
 
-style TypeNode.ExtendsEdge, TypeNode.ImplementsEdge as ConnectionShape {
+style TypeNode.ExtendsEdge, TypeNode.ImplementsEdge as SplineConnectionShape {
+	lineWidth = 1
 	val targetDeco = new org.eclipse.draw2d.PolygonDecoration()
 	targetDeco.setScale(8,8)
-	targetDeco.lineWidth = 2
+	targetDeco.lineWidth = 1
 	if(element.interface) targetDeco.backgroundColor = color(#ffffff) 
 	this.setTargetDecoration(targetDeco)
 }

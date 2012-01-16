@@ -3,10 +3,10 @@ import org.eclipse.jdt.core.*
 diagram JavaInheritanceDiagram type IType {
 	node TypeNode for this {
 		label NameLabel for this	
-		edge ImplementsEdge for each superInterfaceNames.map[javaProject.findType(it)] {
+		hidden edge ImplementsEdge for each superInterfaceNames.map[javaProject.findType(it)] {
 			=> call TypeNode for this
 		} 
-		edge ExtendsEdge for javaProject.findType(superclassName) {
+		hidden edge ExtendsEdge for javaProject.findType(superclassName) {
 			=> call TypeNode for this
 		}  unless superclassName == null || superclassName == "java.lang.Object"
 	}
