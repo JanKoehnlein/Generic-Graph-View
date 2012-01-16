@@ -24,6 +24,7 @@ package company {
 	}
 
 	entity Employee extends Person {
+		boss: Boss
 	}
 }
 
