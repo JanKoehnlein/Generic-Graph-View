@@ -1,4 +1,4 @@
-import company.*
+import base.*
 import java.util.*
 
 package business {

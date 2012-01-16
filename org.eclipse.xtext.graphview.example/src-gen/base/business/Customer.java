@@ -1,7 +1,7 @@
-package business;
+package base.business;
 
-import business.Order;
-import company.Person;
+import base.Person;
+import base.business.Order;
 import java.util.ArrayList;
 import java.util.List;
 import org.eclipse.xtext.xbase.lib.CollectionExtensions;

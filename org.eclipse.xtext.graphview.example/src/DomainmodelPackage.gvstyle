@@ -1,0 +1,21 @@
+import org.eclipse.xtext.graphview.shape.*
+import org.eclipse.xtext.graphview.layout.*  
+import org.eclipse.draw2d.*
+import org.eclipse.swt.SWT
+import DomainmodelPackageDiagram.*
+import org.eclipse.xtext.common.types.JvmVisibility
+
+stylesheet DomainmodelPackageDiagram for DomainmodelPackageDiagram
+
+style DomainmodelPackageDiagram {
+	autoLayoutManager = new KielerAutoLayout() 
+}
+
+style PackageNode as RectangleShape {
+	lineStyle = SWT::LINE_DASH
+	lineWidth = 2
+	foregroundColor = color(#8a8a8a)
+}
+
+style EntityNode {
+}

@@ -1,4 +1,4 @@
-package company;
+package base;
 
 public class Address {
   private String street;

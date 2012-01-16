@@ -24,6 +24,6 @@ diagram EPackageDiagram type EPackage {
 	} 
 	node InnerPackage for each ESubpackages {
 		label PackageLabel for this
-		call EPackageDiagram for this
+		open EPackageDiagram for this
 	}
 }

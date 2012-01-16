@@ -1,13 +1,14 @@
+import java.util.*
 
-package company {
+package base {
 	entity Person {
-		firstName : String
-		lastName : String
-		op fullName (String x) : String { firstName + " " + lastName }
-		address : Address
+		firstName: String
+		lastName: String
+		op fullName(String x): String { 
+			firstName + " " + lastName
+		}
+		address: List<Address>
 		phone: Phone
-		boss: Boss
-		friend: Employee
 	}
 
 	entity Phone {
@@ -15,16 +16,33 @@ package company {
 	}
 
 	entity Address {
-		street : String
-		city : String
-		country : String
-	}
-	
-	entity Boss extends Person {
+		street: String
+		city: String
+		country: String
 	}
 
-	entity Employee extends Person {
-		boss: Boss
+	package company {
+		entity Boss extends Person { 
+		}
+
+		entity Employee extends Person {
+			boss: Boss
+		}
+	}
+
+	package business {
+		entity Customer extends Person {
+			orders: List<Order>
+			op placeOrder(Order order): boolean { 
+				if (orders==null) 
+					orders = newArrayList() 
+					orders += order
+				} 
+			} 
+		
+		entity Order {
+			orderID: long
+		}
 	}
 }
 

@@ -1,8 +1,8 @@
 import org.eclipse.emf.ecore.*
 import org.eclipse.xtext.example.domainmodel.domainmodel.*
-import org.eclipse.xtext.graphview.model.JvmModelHelper
 import org.eclipse.xtext.common.types.*
 import org.eclipse.xtext.graphview.model.JvmModelHelper
+import org.eclipse.xtext.EcoreUtil2
 
 diagram DomainmodelEntityDiagram type Entity {
  	node EntityNode for each jvmElement(typeof(JvmGenericType)) {
@@ -17,12 +17,16 @@ diagram DomainmodelEntityDiagram type Entity {
 			label Label for each this
 		} 
 		hidden edge Reference for each members.filter(typeof(JvmField))
-			.filter[it.^type.^type instanceof JvmGenericType 
-				&& it.^type.identifier!="java.lang.String"] {
-			=> call EntityNode for ^type.^type		
+			.map[it?.^type.allRawTypes]
+			.flatten
+			.filter[it.^type instanceof JvmGenericType 
+				&& !it.isPrimitive(this) && !it.isIterable(this)
+			] {
+			=> call EntityNode for ^type
+			label ReferenceLabel for EcoreUtil2::getContainerOfType(this, typeof(JvmField))
 		}
 		hidden edge SuperType for extendedClass {
 			=> call EntityNode for ^type
-		} unless extendedClass.^type.sourceElement(typeof(Entity)) == null
+		} unless extendedClass?.^type?.sourceElement(typeof(Entity)) == null
 	} 
 }

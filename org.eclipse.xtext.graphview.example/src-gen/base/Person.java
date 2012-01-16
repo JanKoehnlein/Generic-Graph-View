@@ -1,9 +1,8 @@
-package company;
+package base;
 
-import company.Address;
-import company.Boss;
-import company.Employee;
-import company.Phone;
+import base.Address;
+import base.Phone;
+import java.util.List;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
 
 public class Person {
@@ -33,13 +32,13 @@ public class Person {
     return _operator_plus_1;
   }
   
-  private Address address;
+  private List<Address> address;
   
-  public Address getAddress() {
+  public List<Address> getAddress() {
     return this.address;
   }
   
-  public void setAddress(final Address address) {
+  public void setAddress(final List<Address> address) {
     this.address = address;
   }
   
@@ -51,25 +50,5 @@ public class Person {
   
   public void setPhone(final Phone phone) {
     this.phone = phone;
-  }
-  
-  private Boss boss;
-  
-  public Boss getBoss() {
-    return this.boss;
-  }
-  
-  public void setBoss(final Boss boss) {
-    this.boss = boss;
-  }
-  
-  private Employee friend;
-  
-  public Employee getFriend() {
-    return this.friend;
-  }
-  
-  public void setFriend(final Employee friend) {
-    this.friend = friend;
   }
 }

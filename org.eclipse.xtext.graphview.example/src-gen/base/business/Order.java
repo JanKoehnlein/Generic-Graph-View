@@ -1,4 +1,4 @@
-package business;
+package base.business;
 
 public class Order {
   private long orderID;
