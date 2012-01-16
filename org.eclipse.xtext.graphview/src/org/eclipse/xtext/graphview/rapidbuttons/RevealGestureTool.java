@@ -134,7 +134,7 @@ public class RevealGestureTool extends AbstractTool implements IGestureHandler, 
 			EditPart selectedEditPart = getHostEditPart().getViewer().findObjectAt(getCurrentInput().getMouseLocation());
 			if (selectedEditPart instanceof IInstanceModelEditPart) 
 				getSourceRequest().addToSelection((IInstanceModelEditPart) selectedEditPart);
-			else 
+			else if(getSourceRequest().getSelection().isEmpty())
 				getSourceRequest().selectAll();
 			setCurrentCommand(getHostEditPart().getCommand(getSourceRequest()));
 			eraseSourceFeedback();
@@ -203,6 +203,8 @@ public class RevealGestureTool extends AbstractTool implements IGestureHandler, 
 				speed /= slowdown;
 				if (Math.abs(speed) > 0.001)
 					schedule(RESCEDULE_INTERVAL);
+				else 
+					speed = 0.;
 			}
 			lastTime = (isStop) ? -1 : currentTime;
 			return Status.OK_STATUS;
