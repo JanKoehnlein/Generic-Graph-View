@@ -22,6 +22,7 @@ import org.eclipse.draw2d.ConnectionRouter;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Layer;
 import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.draw2d.geometry.PrecisionPoint;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.xtext.util.Strings;
 
@@ -155,7 +156,7 @@ public class KielerAutoLayout extends AbstractAutoLayout {
 			if (edgeLayout != null && !edgeLayout.getBendPoints().isEmpty()) {
 				List<Bendpoint> gefBendPoints = Lists.newArrayList();
 				for (KPoint bendPoint : edgeLayout.getBendPoints()) {
-					AbsoluteBendpoint gefBendPoint = new AbsoluteBendpoint((int) bendPoint.getX(), (int) bendPoint.getY());
+					AbsoluteBendpoint gefBendPoint = new AbsoluteBendpoint(new PrecisionPoint(bendPoint.getX(), bendPoint.getY()));
 					gefBendPoints.add(gefBendPoint);
 					if (containerBounds == null)
 						containerBounds = new Rectangle(gefBendPoint, new Dimension(0, 0));

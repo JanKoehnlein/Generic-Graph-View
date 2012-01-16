@@ -25,5 +25,5 @@ public class ConnectionShape extends PolylineConnection {
 		target.setLineWidth(2);
 		setTargetDecoration(target);
 	}
-
+	
 }
