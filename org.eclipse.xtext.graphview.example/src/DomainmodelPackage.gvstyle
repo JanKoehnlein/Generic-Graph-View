@@ -15,7 +15,6 @@ style PackageNode as RectangleShape {
 	lineStyle = SWT::LINE_DASH
 	lineWidth = 2
 	foregroundColor = color(#8a8a8a)
+	border = new MarginBorder(16,16,16,16)
 }
 
-style EntityNode {
-}
