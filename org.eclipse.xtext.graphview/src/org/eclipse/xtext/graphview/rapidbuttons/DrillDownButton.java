@@ -9,10 +9,9 @@ package org.eclipse.xtext.graphview.rapidbuttons;
 
 import org.eclipse.gef.DragTracker;
 import org.eclipse.gef.Request;
-import org.eclipse.gef.RequestConstants;
 import org.eclipse.swt.graphics.Image;
-import org.eclipse.xtext.graphview.instancemodel.AbstractInstance;
-import org.eclipse.xtext.graphview.instancemodel.DiagramInstance;
+import org.eclipse.xtext.graphview.editpart.DrillingHelper;
+import org.eclipse.xtext.graphview.editpolicy.DrillingEditPolicy;
 import org.eclipse.xtext.ui.PluginImageHelper;
 
 import com.google.inject.Inject;
@@ -22,6 +21,9 @@ public class DrillDownButton extends AbstractRapidButton {
 	@Inject
 	private PluginImageHelper imageHelper;
 
+	@Inject
+	private DrillingHelper drillingHelper;
+	
 	@Override
 	protected Image createImage() {
 		return imageHelper.getImage("elcl16/zoom_in.png");
@@ -29,29 +31,21 @@ public class DrillDownButton extends AbstractRapidButton {
 
 	@Override
 	protected DragTracker createDragTracker() {
-		return new AbstractRapidButtonDragTracker(getEditPolicy().getHost()) {
+		return new AbstractRapidButtonDragTracker(getHost()) {
 			@Override
 			protected String getCommandName() {
-				return "Hide element";
+				return "Open diagram";
 			}
 
 			@Override
 			protected Request createSourceRequest() {
-				return new Request(RequestConstants.REQ_OPEN);
+				return new Request(DrillingEditPolicy.REQ_DRILL_DOWN);
 			}
 		};
 	}
 
 	@Override
 	public void setVisible(boolean visible) {
-		super.setVisible(visible && hasOpenDiagram());
-	}
-
-	protected boolean hasOpenDiagram() {
-		for (AbstractInstance child : getEditPolicy().getHost().getModel().getChildren()) {
-			if (child instanceof DiagramInstance && ((DiagramInstance) child).isOpenNewDiagram())
-				return true;
-		}
-		return false;
+		super.setVisible(visible && drillingHelper.canDrillDown(getHost().getModel()));
 	}
 }

@@ -29,13 +29,13 @@ public class DiagramEditPart extends AbstractInstanceEditPart {
 
 	@Inject
 	private VisibilityListener visibilityListener;
-
+	
 	@Inject
 	private InstanceComponentEditPolicy componentEditPolicy;
 
 	@Inject
 	private RapidButtonEditPolicy rapidButtonEditPolicy;
-
+	
 	private IFigure contentPane;
 
 	private FreeformViewport viewport;
@@ -87,8 +87,9 @@ public class DiagramEditPart extends AbstractInstanceEditPart {
 	public void activate() {
 		super.activate();
 		performAutoLayout();
-		if (isRootDiagram())
+		if (isRootDiagram()) {
 			visibilityListener.register(this);
+		}
 	}
 
 	public void performAutoLayout() {
@@ -104,8 +105,9 @@ public class DiagramEditPart extends AbstractInstanceEditPart {
 
 	@Override
 	public void deactivate() {
-		if (isRootDiagram())
+		if (isRootDiagram()) {
 			visibilityListener.deregister(this);
+		}
 		super.deactivate();
 	}
 

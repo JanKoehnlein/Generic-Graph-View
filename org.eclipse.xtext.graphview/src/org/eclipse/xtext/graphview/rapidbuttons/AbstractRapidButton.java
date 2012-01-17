@@ -8,20 +8,22 @@
 package org.eclipse.xtext.graphview.rapidbuttons;
 
 import org.eclipse.draw2d.Graphics;
+import org.eclipse.draw2d.Locator;
 import org.eclipse.gef.handles.AbstractHandle;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.xtext.graphview.editpart.AbstractInstanceEditPart;
 
 public abstract class AbstractRapidButton extends AbstractHandle {
 
 	private Image image;
 
-	private RapidButtonEditPolicy editPolicy;
+	private AbstractInstanceEditPart host;
 
-	public void init(RapidButtonEditPolicy editPolicy, int position, boolean isOutside) {
-		this.editPolicy = editPolicy;
+	public void init(AbstractInstanceEditPart host, Locator locator) {
+		this.host = host;
 		setPreferredSize(getImage().getBounds().width, getImage().getBounds().height);
-		setOwner(editPolicy.getHost());
-		setLocator(new RapidButtonLocator(editPolicy.getHost().getFigure(), position, isOutside));
+		setOwner(host);
+		setLocator(locator);
 	}
 
 	protected abstract Image createImage();
@@ -37,8 +39,8 @@ public abstract class AbstractRapidButton extends AbstractHandle {
 		g.drawImage(getImage(), getBounds().getLocation());
 	}
 
-	protected RapidButtonEditPolicy getEditPolicy() {
-		return editPolicy;
+	protected AbstractInstanceEditPart getHost() {
+		return host;
 	}
 
 }

@@ -31,7 +31,7 @@ public class ExpandButton extends AbstractRapidButton {
 
 	@Override
 	protected DragTracker createDragTracker() {
-		return new AbstractRapidButtonDragTracker(getEditPolicy().getHost()) {
+		return new AbstractRapidButtonDragTracker(getHost()) {
 			@Override
 			protected String getCommandName() {
 				return "Hide element";
@@ -51,7 +51,7 @@ public class ExpandButton extends AbstractRapidButton {
 	}
 
 	protected boolean hasHiddenChildren() {
-		for (EObject modelChild : EcoreUtil2.eAllContents(getEditPolicy().getHost().getModel())) {
+		for (EObject modelChild : EcoreUtil2.eAllContents(getHost().getModel())) {
 			if (modelChild instanceof AbstractInstance && ((AbstractInstance) modelChild).getVisibility() == Visibility.HIDDEN)
 				return true;
 		}

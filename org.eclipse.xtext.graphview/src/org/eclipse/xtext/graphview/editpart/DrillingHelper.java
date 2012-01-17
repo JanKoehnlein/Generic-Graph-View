@@ -19,6 +19,23 @@ public class DrillingHelper {
 	@Inject
 	private GraphView graphView;
 
+	public boolean canDrillUp(AbstractInstance model) {
+		if (model.eContainer() != null) {
+			DiagramInstance containerDiagram = EcoreUtil2.getContainerOfType(model.eContainer(), DiagramInstance.class);
+			return containerDiagram != null;
+		}
+		return false;
+	}
+	
+	public boolean canDrillDown(AbstractInstance model) {
+		for (AbstractInstance child : model.getChildren()) {
+			if (child instanceof DiagramInstance && ((DiagramInstance) child).isOpenNewDiagram()) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
 	public boolean drillUp(AbstractInstance model) {
 		if (model.eContainer() != null) {
 			DiagramInstance containerDiagram = EcoreUtil2.getContainerOfType(model.eContainer(), DiagramInstance.class);

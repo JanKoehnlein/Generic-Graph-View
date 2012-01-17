@@ -16,8 +16,8 @@ import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.editparts.AbstractGraphicalEditPart;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
+import org.eclipse.xtext.graphview.editpolicy.DrillingEditPolicy;
 import org.eclipse.xtext.graphview.editpolicy.ExpandEditPolicy;
-import org.eclipse.xtext.graphview.editpolicy.DrillDownEditPolicy;
 import org.eclipse.xtext.graphview.instancemodel.AbstractInstance;
 import org.eclipse.xtext.graphview.instancemodel.Visibility;
 import org.eclipse.xtext.graphview.shape.TransparencyHelper;
@@ -39,13 +39,13 @@ public abstract class AbstractInstanceEditPart extends AbstractGraphicalEditPart
 	private ExpandEditPolicy expandEditPolicy;
 
 	@Inject
-	private DrillDownEditPolicy drillDownEditPolicy;
+	private DrillingEditPolicy drillingEditPolicy;
 
 	@Override
 	protected void createEditPolicies() {
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, nonResizableEditPolicy);
 		installEditPolicy(ExpandEditPolicy.ROLE, expandEditPolicy);
-		installEditPolicy(DrillDownEditPolicy.ROLE, drillDownEditPolicy);
+		installEditPolicy(DrillingEditPolicy.ROLE, drillingEditPolicy);
 	}
 	
 	@Override

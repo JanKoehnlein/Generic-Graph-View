@@ -31,7 +31,7 @@ public class RevealButton extends AbstractRapidButton {
 
 	@Override
 	protected DragTracker createDragTracker() {
-		return new RevealDragTracker(getEditPolicy().getHost());
+		return new RevealDragTracker(getHost());
 	}
 
 	@Override
@@ -40,7 +40,7 @@ public class RevealButton extends AbstractRapidButton {
 	}
 
 	protected boolean hasHiddenEdge() {
-		AbstractInstance model = getEditPolicy().getHost().getModel();
+		AbstractInstance model = getHost().getModel();
 		if (model instanceof NodeInstance) {
 			NodeInstance node = (NodeInstance) model;
 			return Iterables.any(Iterables.concat(node.getOutgoingEdges(), node.getIncomingEdges()), new Predicate<EdgeInstance>() {

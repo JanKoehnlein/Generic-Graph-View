@@ -7,28 +7,26 @@
  *******************************************************************************/
 package org.eclipse.xtext.graphview.rapidbuttons;
 
-import java.util.List;
-
 import org.eclipse.gef.DragTracker;
-import org.eclipse.gef.EditPart;
 import org.eclipse.gef.Request;
-import org.eclipse.gef.RequestConstants;
-import org.eclipse.gef.requests.GroupRequest;
 import org.eclipse.swt.graphics.Image;
-import org.eclipse.ui.ISharedImages;
-import org.eclipse.ui.IWorkbench;
+import org.eclipse.xtext.graphview.editpart.DrillingHelper;
+import org.eclipse.xtext.graphview.editpolicy.DrillingEditPolicy;
+import org.eclipse.xtext.ui.PluginImageHelper;
 
-import com.google.common.collect.Lists;
 import com.google.inject.Inject;
 
-public class DeleteButton extends AbstractRapidButton {
+public class DrillUpButton extends AbstractRapidButton {
 
 	@Inject
-	private IWorkbench workbench;
+	private PluginImageHelper imageHelper;
 
+	@Inject
+	private DrillingHelper drillingHelper;
+	
 	@Override
 	protected Image createImage() {
-		return workbench.getSharedImages().getImage(ISharedImages.IMG_ETOOL_DELETE);
+		return imageHelper.getImage("elcl16/zoom_out.png");
 	}
 
 	@Override
@@ -36,21 +34,18 @@ public class DeleteButton extends AbstractRapidButton {
 		return new AbstractRapidButtonDragTracker(getHost()) {
 			@Override
 			protected String getCommandName() {
-				return "Hide element";
+				return "Go to to parent digram";
 			}
 
-			@SuppressWarnings("unchecked")
 			@Override
 			protected Request createSourceRequest() {
-				GroupRequest deleteRequest = new GroupRequest();
-				deleteRequest.setType(RequestConstants.REQ_DELETE);
-				List<EditPart> editParts = Lists.newArrayList();
-				editParts.add(getHostEditPart());
-				editParts.addAll(getHostEditPart().getSourceConnections());
-				editParts.addAll(getHostEditPart().getTargetConnections());
-				deleteRequest.setEditParts(editParts);
-				return deleteRequest;
+				return new Request(DrillingEditPolicy.REQ_DRILL_UP);
 			}
 		};
+	}
+
+	@Override
+	public void setVisible(boolean visible) {
+		super.setVisible(visible && drillingHelper.canDrillUp(getHost().getModel()));
 	}
 }

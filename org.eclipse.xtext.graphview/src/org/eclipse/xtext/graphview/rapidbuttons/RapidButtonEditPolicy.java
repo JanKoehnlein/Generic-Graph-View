@@ -61,7 +61,7 @@ public class RapidButtonEditPolicy extends AbstractEditPolicy {
 						hideButtons();
 					return Status.OK_STATUS;
 				}
-			}.schedule(5000);
+			}.schedule(3000);
 		}
 		super.eraseTargetFeedback(request);
 	}
@@ -74,14 +74,14 @@ public class RapidButtonEditPolicy extends AbstractEditPolicy {
 			addButton(revealButtonProvider.get(), PositionConstants.SOUTH, true);
 			addButton(revealButtonProvider.get(), PositionConstants.WEST, true);
 			addButton(expandButton, PositionConstants.NORTH_WEST, false);
-			addButton(drillDownButton, PositionConstants.NORTH, false);
+			addButton(drillDownButton, PositionConstants.NORTH_WEST, false);
 			addButton(deleteButton, PositionConstants.NORTH_EAST, false);
 		}
 		return buttons;
 	}
 
 	protected void addButton(AbstractRapidButton button, int position, boolean isOutside) {
-		button.init(this, position, isOutside);
+		button.init(getHost(), new RapidButtonLocator(getHost().getFigure(), position, isOutside));
 		buttons.add(button);
 		getHandleLayer().add(button);
 	}
