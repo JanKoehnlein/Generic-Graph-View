@@ -47,6 +47,7 @@ import org.eclipse.xtext.graphview.view.config.IDiagramConfigurationProvider.Lis
 import org.eclipse.xtext.graphview.view.config.SelectDiagramConfigurationAction;
 import org.eclipse.xtext.graphview.view.selection.ElementSelectionConverter;
 
+import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
@@ -223,6 +224,7 @@ public class GraphView extends ViewPart {
 				}
 			}
 		}
+		editDomain.loadDefaultTool();
 		resetViewport();
 		exportToFileAction.setEnabled(currentContents != null);
 		resetAction.setEnabled(currentContents != null);
@@ -231,8 +233,9 @@ public class GraphView extends ViewPart {
 		return hasContent;
 	}
 
-	private void resetViewport() {
+	protected void resetViewport() {
 		IFigure rootFigure = ((GraphicalEditPart) graphicalViewer.getRootEditPart()).getFigure();
+		zoomManager.setZoom(1.);
 		if (rootFigure instanceof Viewport) {
 			((Viewport) rootFigure).setViewLocation(0, 0);
 		}
@@ -247,10 +250,8 @@ public class GraphView extends ViewPart {
 
 	public void relayout() {
 		if (graphicalViewer.getContents() != null) {
-			Object diagramEditPart = graphicalViewer.getEditPartRegistry().get(graphicalViewer.getContents().getModel());
-			if (diagramEditPart instanceof DiagramEditPart) {
-				((DiagramEditPart) diagramEditPart).performAutoLayout();
-			}
+			for (DiagramEditPart diagramEditPart : Iterables.filter(graphicalViewer.getEditPartRegistry().values(), DiagramEditPart.class))
+				diagramEditPart.performAutoLayout();
 		}
 	}
 
