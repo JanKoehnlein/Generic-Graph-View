@@ -1,7 +1,7 @@
 import JavaInheritanceDiagram.*
 import org.eclipse.xtext.graphview.shape.*
 import org.eclipse.draw2d.* 
-import org.eclipse.xtext.graphview.layout.*
+import org.eclipse.xtext.graphview.behavior.layout.*
 import org.eclipse.swt.SWT
 
 stylesheet JavaInheritanceStyle for JavaInheritanceDiagram

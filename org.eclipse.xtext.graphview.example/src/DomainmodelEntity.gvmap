@@ -1,7 +1,6 @@
 import org.eclipse.emf.ecore.*
 import org.eclipse.xtext.example.domainmodel.domainmodel.*
 import org.eclipse.xtext.common.types.*
-import org.eclipse.xtext.graphview.model.JvmModelHelper
 import org.eclipse.xtext.EcoreUtil2
 
 diagram DomainmodelEntityDiagram type Entity {
