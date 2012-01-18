@@ -93,7 +93,7 @@ public class RevealGestureTool extends AbstractTool implements IGestureHandler, 
 			break;
 		case SWT.GESTURE_ROTATE:
 			swipeAnimationJob.stop();
-			sourceRequest.setMouseAngle(initialAngle + gestureEvent.rotation * Math.PI / 180.);
+			sourceRequest.setMouseAngle(initialAngle - gestureEvent.rotation * Math.PI / 180.);
 			break;
 		case SWT.GESTURE_SWIPE:
 			swipeAnimationJob.add((gestureEvent.xDirection + gestureEvent.yDirection) / 50., 1.03);
