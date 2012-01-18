@@ -11,8 +11,7 @@ diagram DomainmodelEntityDiagram type Entity {
 		} 
 		node Operations for members.filter(typeof(JvmOperation))
 			.filter[it.declaringType.sourceElement(typeof(Entity)) == null 
-				|| it.sourceElement(typeof(Operation)) != null
-			] {
+				|| it.sourceElement(typeof(Operation)) != null] {
 			label Label for each this
 		} 
 		hidden edge Reference for each members.filter(typeof(JvmField))
@@ -26,6 +25,6 @@ diagram DomainmodelEntityDiagram type Entity {
 		}
 		hidden edge SuperType for extendedClass {
 			=> call EntityNode for ^type
-		} unless extendedClass?.^type?.sourceElement(typeof(Entity)) == null
+		} unless extendedClass?.^type.sourceElement(typeof(Entity)) == null
 	} 
 }
