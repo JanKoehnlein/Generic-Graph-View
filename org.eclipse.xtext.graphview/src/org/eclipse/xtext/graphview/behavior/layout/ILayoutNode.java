@@ -5,24 +5,17 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
-package org.eclipse.xtext.graphview.editpart;
+package org.eclipse.xtext.graphview.behavior.layout;
 
-import org.eclipse.xtext.graphview.behavior.gestures.GestureEditDomain;
+import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.draw2d.geometry.Point;
+import org.eclipse.draw2d.geometry.Rectangle;
 
-public class GraphViewEditDomain extends GestureEditDomain {
+public interface ILayoutNode {
 
-	private ClassLoader classLoader;
+	public Dimension getPreferredSize();
 
-	public GraphViewEditDomain() {
-		super(null);
-	}
+	public void setLocation(Point position);
 
-	public ClassLoader getClassLoader() {
-		return classLoader;
-	}
-
-	public void setClassLoader(ClassLoader classLoader) {
-		this.classLoader = classLoader;
-	}
-
+	public void setBounds(Rectangle bounds);
 }

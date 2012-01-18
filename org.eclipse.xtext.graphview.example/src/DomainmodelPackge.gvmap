@@ -7,14 +7,15 @@ import org.eclipse.xtext.EcoreUtil2
 diagram DomainmodelPackageDiagram type PackageDeclaration {
 	node EntityNode for each elements.filter(typeof(Entity)) {
 		label Name for this
-		/* 
-		edge SuperEdge for superType?.^type.sourceElement(typeof(Entity)) {
-			=> call EntityNode for this
-		} unless superType?.^type.sourceElement(typeof(Entity)) == null
-		*/
+		node Properties for this {
+			label Property for each features.filter(typeof(Property))
+		} unless features.filter(typeof(Property)).empty
+		node Operations for this {
+			label Operation for each features.filter(typeof(Operation))
+		} unless features.filter(typeof(Operation)).empty
 	}
 	node PackageNode for each elements.filter(typeof(PackageDeclaration)) {
 		label Name for this
-		open DomainmodelPackageDiagram for this 
+		open DomainmodelPackageDiagram for this
 	} 
 }

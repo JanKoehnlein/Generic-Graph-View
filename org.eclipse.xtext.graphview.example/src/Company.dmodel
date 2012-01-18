@@ -4,44 +4,37 @@ package base {
 	entity Person {
 		firstName: String
 		lastName: String
-		op fullName(String x): String { 
+		op fullName(): String { 
 			firstName + " " + lastName
 		}
 		address: List<Address>
 		phone: Phone
 	}
-
 	entity Phone {
 		number: String
 	}
-
 	entity Address {
 		street: String
 		city: String
 		country: String
 	}
-
 	package company {
 		entity Boss extends Person { 
 		}
-
 		entity Employee extends Person {
 			boss: Boss
 		}
-	}
-
-	package business {
-		entity Customer extends Person {
-			orders: List<Order>
-			op placeOrder(Order order): boolean { 
-				if (orders==null) 
-					orders = newArrayList() 
-					orders += order
+		package business {
+			entity Customer extends Person {
+				orders : List < Order >
+				op placeOrder ( Order order ) : boolean { 
+					if ( orders == null ) orders = newArrayList ( ) orders += order
 				} 
-			} 
-		
-		entity Order {
-			orderID: long
+				
+			} 		
+			entity Order {
+				orderID : long
+			}
 		}
 	}
 }

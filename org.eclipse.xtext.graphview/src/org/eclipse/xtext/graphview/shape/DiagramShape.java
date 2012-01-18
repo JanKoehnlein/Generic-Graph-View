@@ -10,8 +10,8 @@ package org.eclipse.xtext.graphview.shape;
 import org.eclipse.draw2d.FreeformLayer;
 import org.eclipse.draw2d.FreeformLayout;
 import org.eclipse.swt.SWT;
-import org.eclipse.xtext.graphview.layout.IAutoLayout;
-import org.eclipse.xtext.graphview.layout.KielerAutoLayout;
+import org.eclipse.xtext.graphview.behavior.layout.IAutoLayout;
+import org.eclipse.xtext.graphview.behavior.layout.KielerAutoLayout;
 
 public class DiagramShape extends FreeformLayer {
 

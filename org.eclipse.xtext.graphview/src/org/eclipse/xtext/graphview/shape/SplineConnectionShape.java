@@ -88,7 +88,7 @@ public class SplineConnectionShape extends ConnectionShape {
 		PrecisionPoint midPoint = p(controlPoints, segment, tMid);
 		double distance = distanceSqr(segmentStart, segmentEnd, midPoint, tolerance);
 		points.insertPoint(new Point((int) Math.round(midPoint.preciseX()), (int) Math.round(midPoint.preciseY())), endIndex);
-		if (distance > tolerance) {
+		if (distance > 3) {
 			calculateMiddlePoints(controlPoints, segment, tMid, midPoint, tEnd, segmentEnd, endIndex + 1, points, tolerance);
 			calculateMiddlePoints(controlPoints, segment, tStart, segmentStart, tMid, midPoint, endIndex, points, tolerance);
 		}

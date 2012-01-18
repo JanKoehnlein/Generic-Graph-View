@@ -10,7 +10,7 @@ package org.eclipse.xtext.graphview.shape;
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RoundedRectangle;
-import org.eclipse.xtext.graphview.layout.ILayoutNode;
+import org.eclipse.xtext.graphview.behavior.layout.ILayoutNode;
 import org.eclipse.xtext.graphview.style.type.ColorLiteral;
 
 public class RoundedRectangleShape extends RoundedRectangle implements ILayoutNode {

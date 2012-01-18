@@ -19,7 +19,8 @@ import org.eclipse.gef.editparts.ScalableFreeformRootEditPart;
 import org.eclipse.gef.editparts.ZoomManager;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.GestureEvent;
-import org.eclipse.xtext.graphview.gestures.IViewerGestureListener;
+import org.eclipse.xtext.graphview.behavior.drilling.DrillingHelper;
+import org.eclipse.xtext.graphview.behavior.gestures.IViewerGestureListener;
 
 import com.google.common.collect.Iterables;
 import com.google.inject.Inject;

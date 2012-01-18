@@ -5,24 +5,18 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
-package org.eclipse.xtext.graphview.editpart;
+package org.eclipse.xtext.graphview.behavior.layout;
 
-import org.eclipse.xtext.graphview.behavior.gestures.GestureEditDomain;
+import org.eclipse.draw2d.ConnectionRouter;
+import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.geometry.Dimension;
 
-public class GraphViewEditDomain extends GestureEditDomain {
+public interface IAutoLayout {
 
-	private ClassLoader classLoader;
+	Dimension layout(IFigure container);
 
-	public GraphViewEditDomain() {
-		super(null);
-	}
+	ConnectionRouter getConnectionRouter(IFigure container);
 
-	public ClassLoader getClassLoader() {
-		return classLoader;
-	}
-
-	public void setClassLoader(ClassLoader classLoader) {
-		this.classLoader = classLoader;
-	}
+	void setConnectionRouter(ConnectionRouter connectionRouter);
 
 }

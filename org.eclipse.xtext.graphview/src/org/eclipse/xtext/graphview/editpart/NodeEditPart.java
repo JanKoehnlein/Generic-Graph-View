@@ -14,11 +14,11 @@ import org.eclipse.draw2d.IFigure;
 import org.eclipse.gef.ConnectionEditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
-import org.eclipse.xtext.graphview.editpolicy.InstanceComponentEditPolicy;
-import org.eclipse.xtext.graphview.editpolicy.RevealEditPolicy;
+import org.eclipse.xtext.graphview.behavior.buttons.RapidButtonEditPolicy;
+import org.eclipse.xtext.graphview.behavior.visibility.InstanceComponentEditPolicy;
+import org.eclipse.xtext.graphview.behavior.visibility.RevealEditPolicy;
 import org.eclipse.xtext.graphview.instancemodel.EdgeInstance;
 import org.eclipse.xtext.graphview.instancemodel.NodeInstance;
-import org.eclipse.xtext.graphview.rapidbuttons.RapidButtonEditPolicy;
 import org.eclipse.xtext.graphview.shape.RoundedRectangleShape;
 import org.eclipse.xtext.graphview.shape.ShapeAnchor;
 

@@ -9,6 +9,7 @@ stylesheet DomainmodelPackageDiagram for DomainmodelPackageDiagram
 
 style DomainmodelPackageDiagram {
 	autoLayoutManager = new KielerAutoLayout() 
+	font = font("Helvetica", 14, SWT::BOLD)
 }
 
 style PackageNode as RectangleShape {
@@ -18,3 +19,20 @@ style PackageNode as RectangleShape {
 	border = new MarginBorder(16,16,16,16)
 }
 
+style EntityNode.Properties, EntityNode.Operations as RectangleShape {
+	outline = false
+	backgroundColor = color(#ffffff)
+}
+
+style EntityNode.Properties.Property, EntityNode.Operations.Operation {
+	font = font("Helvetica", 12, 0)
+	border = null
+}
+
+style EntityNode.Properties.Property {
+	text = element.name + ": " + element.type.simpleName
+}
+
+style EntityNode.Operations.Operation {
+	text = element.name + "(" + element.params.map[it.simpleName + ": " + it.parameterType.simpleName].join(", ")+  "): " + element.type.simpleName 
+}

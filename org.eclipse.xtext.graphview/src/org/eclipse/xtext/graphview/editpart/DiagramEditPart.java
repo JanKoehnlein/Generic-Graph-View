@@ -15,9 +15,10 @@ import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.LayerConstants;
 import org.eclipse.gef.RootEditPart;
-import org.eclipse.xtext.graphview.editpolicy.DiagramLayoutEditPolicy;
-import org.eclipse.xtext.graphview.editpolicy.InstanceComponentEditPolicy;
-import org.eclipse.xtext.graphview.rapidbuttons.RapidButtonEditPolicy;
+import org.eclipse.xtext.graphview.behavior.buttons.RapidButtonEditPolicy;
+import org.eclipse.xtext.graphview.behavior.layout.DiagramLayoutEditPolicy;
+import org.eclipse.xtext.graphview.behavior.visibility.InstanceComponentEditPolicy;
+import org.eclipse.xtext.graphview.behavior.visibility.VisibilityListener;
 import org.eclipse.xtext.graphview.shape.DiagramShape;
 
 import com.google.inject.Inject;
