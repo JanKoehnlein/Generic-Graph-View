@@ -72,5 +72,15 @@ public class NodeEditPart extends AbstractInstanceEditPart implements org.eclips
 	public ConnectionAnchor getTargetConnectionAnchor(Request request) {
 		return new ShapeAnchor(getFigure());
 	}
-
+	
+	@Override
+	public void showTargetFeedback(Request request) {
+		if(getParent() instanceof DiagramEditPart && request.getType() == REQ_SELECTION) {
+			IFigure figure = getFigure();
+			IFigure parent = figure.getParent();
+			parent.remove(figure);
+			parent.add(figure);
+		}
+		super.showTargetFeedback(request);
+	}
 }

@@ -9,6 +9,7 @@ package org.eclipse.xtext.graphview.shape;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.ToolbarLayout;
+import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Insets;
 import org.eclipse.draw2d.geometry.Rectangle;
 
@@ -37,5 +38,12 @@ public class DefaultNodeLayout extends ToolbarLayout {
 			bounds.expand(insets);
 		preferredSize = bounds.getSize();
 		parent.setSize(preferredSize);
+		parent.setMinimumSize(preferredSize);
+		parent.setPreferredSize(preferredSize);
+	}
+	
+	@Override
+	protected Dimension calculateMinimumSize(IFigure container, int wHint, int hHint) {
+		return calculatePreferredSize(container, -1, -1);
 	}
 }
