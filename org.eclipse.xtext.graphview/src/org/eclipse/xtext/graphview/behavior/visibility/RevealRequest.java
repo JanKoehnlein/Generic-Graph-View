@@ -89,6 +89,10 @@ public class RevealRequest extends Request {
 			return addToSelection(selectedEditPart.getParent());
 	}
 	
+	public boolean isSelected(IInstanceModelEditPart editPart) {
+		return selection.contains(editPart);
+	}
+	
 	public void selectAll() {
 		for(IInstanceModelEditPart selected: revealedEditPartMap.getLayoutables()) 
 			selection.add(selected);

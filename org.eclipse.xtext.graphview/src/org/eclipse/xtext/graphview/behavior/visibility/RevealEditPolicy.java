@@ -39,7 +39,7 @@ public class RevealEditPolicy extends AbstractEditPolicy {
 			RevealedEditPartMap revealedEditPartMap = calculateRevealedEditPartMap(revealRequest);
 			showFeedback(revealRequest, revealedEditPartMap);
 			for (IInstanceModelEditPart layoutable : revealedEditPartMap.getLayoutables()) {
-				if (!revealRequest.getSelection().contains(layoutable)) {
+				if (!revealRequest.isSelected(layoutable)) {
 					layoutable.getModel().setVisibility(Visibility.HIDDEN);
 					for (IInstanceModelEditPart secondary : revealRequest.getRevealedEditPartMap().getSecondaries(layoutable))
 						secondary.getModel().setVisibility(Visibility.HIDDEN);
@@ -111,20 +111,22 @@ public class RevealEditPolicy extends AbstractEditPolicy {
 			if (hostFigure.getParent() != null)
 				hostFigure.getParent().translateToAbsolute(center);
 			for (IInstanceModelEditPart layoutable : layoutables) {
-				IFigure figure = layoutable.getFigure();
-				Point newCenter = new Point(center);
-				Dimension figureSize = figure.getSize();
-				double centerDist = revealRequest.getMouseDistance();
-				newCenter.translate((int) (Math.cos(angle) * centerDist), (int) (Math.sin(angle) * centerDist));
-				newCenter.translate(-figureSize.width / 2, -figureSize.height / 2);
-				if (figure.getParent() != null) {
-					figure.getParent().translateToRelative(newCenter);
+				if (!revealRequest.isSelected(layoutable)) {
+					IFigure figure = layoutable.getFigure();
+					Point newCenter = new Point(center);
+					Dimension figureSize = figure.getSize();
+					double centerDist = revealRequest.getMouseDistance();
+					newCenter.translate((int) (Math.cos(angle) * centerDist), (int) (Math.sin(angle) * centerDist));
+					newCenter.translate(-figureSize.width / 2, -figureSize.height / 2);
+					if (figure.getParent() != null) {
+						figure.getParent().translateToRelative(newCenter);
+					}
+					figure.setBounds(new Rectangle(newCenter.x, newCenter.y, figureSize.width, figureSize.height));
+					angle += deltaAngle;
 				}
-				figure.setBounds(new Rectangle(newCenter.x, newCenter.y, figureSize.width, figureSize.height));
-				angle += deltaAngle;
 			}
 			for (IInstanceModelEditPart layoutable : layoutables) {
-				boolean isSelected = revealRequest.getSelection().contains(layoutable);
+				boolean isSelected = revealRequest.isSelected(layoutable);
 				layoutable.setTransparent(!isSelected);
 				for (IInstanceModelEditPart secondary : revealedEditPartMap.getSecondaries(layoutable))
 					secondary.setTransparent(!isSelected);
