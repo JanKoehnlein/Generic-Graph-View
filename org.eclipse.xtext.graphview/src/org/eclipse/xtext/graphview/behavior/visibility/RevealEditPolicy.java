@@ -122,8 +122,8 @@ public class RevealEditPolicy extends AbstractEditPolicy {
 						figure.getParent().translateToRelative(newCenter);
 					}
 					figure.setBounds(new Rectangle(newCenter.x, newCenter.y, figureSize.width, figureSize.height));
-					angle += deltaAngle;
 				}
+				angle += deltaAngle;
 			}
 			for (IInstanceModelEditPart layoutable : layoutables) {
 				boolean isSelected = revealRequest.isSelected(layoutable);
