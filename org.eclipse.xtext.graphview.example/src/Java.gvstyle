@@ -8,24 +8,43 @@ stylesheet JavaInheritanceStyle for JavaInheritanceDiagram
 
 style JavaInheritanceDiagram as DiagramShape {
 	autoLayoutManager = new KielerAutoLayout("Dot")
+	font = font("Helvetica", 14, 1) 
 }
 
 style TypeNode.NameLabel as LabelShape {
-	font = font("Helvetica", 12, 
+	font = font("Helvetica", 14, 
 		SWT::BOLD + if(element.interface) SWT::ITALIC else SWT::NONE
 	)
 	text = element.elementName
+	border = new MarginBorder(16,16,16,16)
 }
 
 style TypeNode as RectangleShape {
 }
 
 style TypeNode.ExtendsEdge, TypeNode.ImplementsEdge as SplineConnectionShape {
-	lineWidth = 1
+	lineWidth = 2
 	val targetDeco = new org.eclipse.draw2d.PolygonDecoration()
 	targetDeco.setScale(8,8)
-	targetDeco.lineWidth = 1
+	targetDeco.lineWidth = 2
 	if(element.interface) targetDeco.backgroundColor = color(#ffffff) 
 	this.setTargetDecoration(targetDeco)
 }
 
+style TypeNode.Methods, TypeNode.Fields as RectangleShape {
+	outline = false
+	backgroundColor = color(#ffffff);
+}
+
+style TypeNode.Methods.Method, TypeNode.Fields.Field {
+	font = font("Helvetica", 12, 0);
+	border = null
+}
+
+style TypeNode.Fields.Field {
+	text = element.elementName 
+}
+
+style TypeNode.Methods.Method {
+	text = element.elementName + "()"
+}
