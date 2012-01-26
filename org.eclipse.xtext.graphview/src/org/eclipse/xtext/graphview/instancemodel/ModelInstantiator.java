@@ -112,8 +112,13 @@ public class ModelInstantiator {
 					Object mapResult = instanceMapper.map(childMapping, semanticElement);
 					if (mapResult != null) {
 						if (((AbstractExpressionMapping) childMapping).isMulti()) {
-							for (Object semanticChild : (Iterable<?>) mapResult) {
-								internalCreateInstance(semanticChild, instanceModel, childMapping, instanceCache, childMapping.isHidden());
+							try {
+								for (Object semanticChild : (Iterable<?>) mapResult) 
+									internalCreateInstance(semanticChild, instanceModel, childMapping, instanceCache,
+											childMapping.isHidden());
+							} catch (NullPointerException npe) {
+								// Iterator.next can throw an NPE likely due to a broken mapping or model
+								// ignore
 							}
 						} else {
 							internalCreateInstance(mapResult, instanceModel, childMapping, instanceCache, childMapping.isHidden());
