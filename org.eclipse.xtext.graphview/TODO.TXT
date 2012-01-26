@@ -4,23 +4,30 @@ View
 - save/open diagram
 - use uris instead of direct refs
 - reset should reload config
-- edge routing
+- save bound and bendpoints in instance model
+- reveal tool erase target feedback on ESC
+
 
 Examples
 - JVM model hasSourceElement/getSourceElement
-- Domainmodel packages
-- iterable unwrap
-- index aware naviation
+- index aware navigation
+
 
 Mapping DSL
+- auto imports
 - validation
+- allow diagram inside node
+
 
 Styling DSL:
+- auto imports
 - default imports
 - typeProvider / simplenameforidentifiableprovider for mapping ref
 
 
 DONE
+- Domainmodel packages
+- iterable unwrap
 - resize / move elements in subdiagrams
 - relayout button
 - nicer placement of rapid buttons
