@@ -7,14 +7,17 @@
  *******************************************************************************/
 package org.eclipse.xtext.graphview.map;
 
+import org.eclipse.xtext.graphview.map.names.GVMQualifiedNameProvider;
 import org.eclipse.xtext.graphview.map.scoping.GraphViewMappingIdentifiableSimpleNameProvider;
 import org.eclipse.xtext.graphview.map.scoping.GraphViewMappingScopeProvider;
 import org.eclipse.xtext.graphview.map.types.GVMExtensionClassNameProvider;
 import org.eclipse.xtext.graphview.map.types.GraphViewMappingTypeProvider;
+import org.eclipse.xtext.naming.IQualifiedNameProvider;
 import org.eclipse.xtext.xbase.featurecalls.IdentifiableSimpleNameProvider;
 import org.eclipse.xtext.xbase.scoping.XbaseScopeProvider;
 import org.eclipse.xtext.xbase.scoping.featurecalls.StaticImplicitMethodsFeatureForTypeProvider;
 import org.eclipse.xtext.xbase.typing.ITypeProvider;
+import org.eclipse.xtext.xbase.typing.XbaseTypeProvider;
 
 /**
  * Use this class to register components to be used at runtime / without the
@@ -23,8 +26,7 @@ import org.eclipse.xtext.xbase.typing.ITypeProvider;
 @SuppressWarnings("restriction")
 public class GraphViewMappingRuntimeModule extends org.eclipse.xtext.graphview.map.AbstractGraphViewMappingRuntimeModule {
 
-	@Override
-	public Class<? extends ITypeProvider> bindITypeProvider() {
+	public Class<? extends XbaseTypeProvider> bindXbaseTypeProvider() {
 		return GraphViewMappingTypeProvider.class;
 	}
 
@@ -39,5 +41,10 @@ public class GraphViewMappingRuntimeModule extends org.eclipse.xtext.graphview.m
 
 	public Class<? extends StaticImplicitMethodsFeatureForTypeProvider.ExtensionClassNameProvider> bindExtensionClassNameProvider() {
 		return GVMExtensionClassNameProvider.class;
+	}
+	
+	@Override
+	public Class<? extends IQualifiedNameProvider> bindIQualifiedNameProvider() {
+		return GVMQualifiedNameProvider.class;
 	}
 }

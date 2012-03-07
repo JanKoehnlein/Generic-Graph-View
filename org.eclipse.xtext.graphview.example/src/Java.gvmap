@@ -10,7 +10,7 @@ diagram JavaInheritanceDiagram type IType {
 			label Method for each methods
 		}
 		hidden edge ImplementsEdge for each 
-			superInterfaceNames.map[javaProject.findType(it)] {
+			superInterfaceNames.map[javaProject.findType(it)]  {
 			=> call TypeNode for this
 		} 
 		hidden edge ExtendsEdge for 

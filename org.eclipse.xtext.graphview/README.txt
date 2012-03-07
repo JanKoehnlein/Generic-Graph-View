@@ -45,5 +45,5 @@ To use layouts from the KIELER project
    http://rtsys.informatik.uni-kiel.de/trac/kieler
 you have to checkout some plug-ins from the KIELER repository. Use the 
    KIELER_projectSet.psf 
-for a minimal configuration using OGDF layouts.
+for a minimal configuration using OGDF and Dot layouts (need Graphviz installed).
 

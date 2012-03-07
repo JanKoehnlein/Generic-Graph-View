@@ -12,7 +12,7 @@ style JavaInheritanceDiagram as DiagramShape {
 }
 
 style TypeNode.NameLabel as LabelShape {
-	font = font("Helvetica", 14, 
+	font = font("Helvetica", 16, 
 		SWT::BOLD + if(element.interface) SWT::ITALIC else SWT::NONE
 	)
 	text = element.elementName

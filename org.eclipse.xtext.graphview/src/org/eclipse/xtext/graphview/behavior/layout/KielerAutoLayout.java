@@ -189,6 +189,7 @@ public class KielerAutoLayout extends AbstractAutoLayout {
 		KLabel graphLabel = graphFactory.createKLabel();
 		KShapeLayout labelLayoutData = layoutDataFactory.createKShapeLayout();
 		graphLabel.getData().add(labelLayoutData);
+		graphLabel.setText("");
 		graphNode.getLabels().add(graphLabel);
 		KInsets insets = layoutDataFactory.createKInsets();
 		layoutData.setInsets(insets);

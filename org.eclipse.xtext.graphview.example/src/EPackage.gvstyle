@@ -7,13 +7,13 @@ import EPackageDiagram.*
 stylesheet EPackageDiagram for EPackageDiagram
 
 style EPackageDiagram {
-	autoLayoutManager = new KielerAutoLayout() 
+	autoLayoutManager = new KielerAutoLayout("Dot") 
 }
 
 style EDataTypeNode as RectangleShape { 
 }
 
-style EClassNode.Name { 
+style EClassNode.Name {  
 	font = font("Helvetica", 13, SWT::BOLD + 
 		(if (element.abstract) SWT::ITALIC else SWT::NONE)
 	)

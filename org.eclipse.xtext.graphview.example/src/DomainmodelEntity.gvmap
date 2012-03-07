@@ -10,15 +10,15 @@ diagram DomainmodelEntityDiagram type Entity {
 			label Label for each this		
 		} 
 		node Operations for members.filter(typeof(JvmOperation))
-			.filter[it.declaringType.sourceElement(typeof(Entity)) == null 
-				|| it.sourceElement(typeof(Operation)) != null] {
+			.filter[declaringType.sourceElement(typeof(Entity)) == null 
+				|| sourceElement(typeof(Operation)) != null] {
 			label Label for each this
-		} 
+		}
 		hidden edge Reference for each members.filter(typeof(JvmField))
 			.map[it?.^type.allRawTypes]
 			.flatten
-			.filter[it.^type instanceof JvmGenericType 
-				&& !it.isPrimitive(this) && !it.isIterable(this)
+			.filter[^type instanceof JvmGenericType 
+				&& !isPrimitive(this) && !isIterable(this)
 			] {
 			=> call EntityNode for ^type
 			label ReferenceLabel for EcoreUtil2::getContainerOfType(this, typeof(JvmField))

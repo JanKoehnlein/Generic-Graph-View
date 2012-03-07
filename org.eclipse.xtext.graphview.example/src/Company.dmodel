@@ -4,7 +4,7 @@ package base {
 	entity Person {
 		firstName: String
 		lastName: String
-		op fullName(): String { 
+		op fullName(String it, int it): String { 
 			firstName + " " + lastName
 		}
 		address: List<Address>

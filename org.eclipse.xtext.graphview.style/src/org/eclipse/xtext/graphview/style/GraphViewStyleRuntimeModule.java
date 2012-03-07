@@ -15,6 +15,7 @@ import org.eclipse.xtext.xbase.interpreter.impl.XbaseInterpreter;
 import org.eclipse.xtext.xbase.scoping.XbaseScopeProvider;
 import org.eclipse.xtext.xbase.scoping.featurecalls.StaticImplicitMethodsFeatureForTypeProvider;
 import org.eclipse.xtext.xbase.typing.ITypeProvider;
+import org.eclipse.xtext.xbase.typing.XbaseTypeProvider;
 
 /**
  * Use this class to register components to be used at runtime / without the
@@ -23,8 +24,7 @@ import org.eclipse.xtext.xbase.typing.ITypeProvider;
 @SuppressWarnings("restriction")
 public class GraphViewStyleRuntimeModule extends org.eclipse.xtext.graphview.style.AbstractGraphViewStyleRuntimeModule {
 
-	@Override
-	public Class<? extends ITypeProvider> bindITypeProvider() {
+	public Class<? extends XbaseTypeProvider> bindXbaseTypeProvider() {
 		return GraphViewStyleTypeProvider.class;
 	}
 

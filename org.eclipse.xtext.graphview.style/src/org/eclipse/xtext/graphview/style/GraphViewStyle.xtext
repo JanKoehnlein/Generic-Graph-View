@@ -32,7 +32,7 @@ Style:
 XLiteral returns xbase::XExpression:
 	XClosure |
 	XBooleanLiteral |
-	XIntLiteral |
+	XNumberLiteral |
 	XNullLiteral |
 	XStringLiteral |
 	XTypeLiteral |

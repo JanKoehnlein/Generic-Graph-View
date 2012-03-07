@@ -8,6 +8,8 @@ import org.osgi.framework.Bundle;
 
 import com.google.inject.Injector;
 
+import org.eclipse.xtext.graphview.map.ui.internal.GraphViewMappingActivator;
+
 /**
  * This class was generated. Customizations should only happen in a newly
  * introduced subclass. 
@@ -16,12 +18,12 @@ public class GraphViewMappingExecutableExtensionFactory extends AbstractGuiceAwa
 
 	@Override
 	protected Bundle getBundle() {
-		return org.eclipse.xtext.graphview.map.ui.internal.GraphViewMappingActivator.getInstance().getBundle();
+		return GraphViewMappingActivator.getInstance().getBundle();
 	}
 	
 	@Override
 	protected Injector getInjector() {
-		return org.eclipse.xtext.graphview.map.ui.internal.GraphViewMappingActivator.getInstance().getInjector("org.eclipse.xtext.graphview.map.GraphViewMapping");
+		return GraphViewMappingActivator.getInstance().getInjector(GraphViewMappingActivator.ORG_ECLIPSE_XTEXT_GRAPHVIEW_MAP_GRAPHVIEWMAPPING);
 	}
 	
 }

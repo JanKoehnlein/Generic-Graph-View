@@ -14,7 +14,7 @@ diagram EPackageDiagram type EPackage {
 		edge ReferenceEdge for each EReferences {
 			=> ref EClassNode for EType
 			label EdgeLabel for name   
-		} unless true
+		} 
 		edge SuperclassEdge for each ESuperTypes {
 			=> ref EClassNode for this   
 		} 
