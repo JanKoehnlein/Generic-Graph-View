@@ -1,5 +1,6 @@
 package org.eclipse.xtext.graphview.map.types;
 
+import com.google.common.base.Objects;
 import com.google.inject.Singleton;
 import java.util.Arrays;
 import org.eclipse.emf.common.util.EList;
@@ -38,9 +39,7 @@ import org.eclipse.xtext.xbase.XSwitchExpression;
 import org.eclipse.xtext.xbase.XThrowExpression;
 import org.eclipse.xtext.xbase.XTryCatchFinallyExpression;
 import org.eclipse.xtext.xbase.XVariableDeclaration;
-import org.eclipse.xtext.xbase.lib.BooleanExtensions;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
-import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.typing.XbaseTypeProvider;
 
 @SuppressWarnings("all")
@@ -55,31 +54,28 @@ public class GraphViewMappingTypeProvider extends XbaseTypeProvider {
     JvmTypeReference _xblockexpression = null;
     {
       XExpression _expression = it.getExpression();
-      JvmTypeReference _type = this.type(_expression, null, rawType);
-      final JvmTypeReference expressionType = _type;
+      final JvmTypeReference expressionType = this.type(_expression, null, rawType);
       boolean _isMulti = it.isMulti();
       if (_isMulti) {
-        boolean matched = false;
-        if (!matched) {
+        boolean _matched = false;
+        if (!_matched) {
           if (expressionType instanceof JvmParameterizedTypeReference) {
             final JvmParameterizedTypeReference _jvmParameterizedTypeReference = (JvmParameterizedTypeReference)expressionType;
             EList<JvmTypeReference> _arguments = _jvmParameterizedTypeReference.getArguments();
             boolean _isEmpty = _arguments.isEmpty();
-            boolean _operator_not = BooleanExtensions.operator_not(_isEmpty);
-            if (_operator_not) {
-              matched=true;
+            boolean _not = (!_isEmpty);
+            if (_not) {
+              _matched=true;
               EList<JvmTypeReference> _arguments_1 = _jvmParameterizedTypeReference.getArguments();
-              JvmTypeReference _head = IterableExtensions.<JvmTypeReference>head(_arguments_1);
-              return _head;
+              return IterableExtensions.<JvmTypeReference>head(_arguments_1);
             }
           }
         }
-        if (!matched) {
+        if (!_matched) {
           if (expressionType instanceof JvmGenericArrayTypeReference) {
             final JvmGenericArrayTypeReference _jvmGenericArrayTypeReference = (JvmGenericArrayTypeReference)expressionType;
-            matched=true;
-            JvmTypeReference _componentType = _jvmGenericArrayTypeReference.getComponentType();
-            return _componentType;
+            _matched=true;
+            return _jvmGenericArrayTypeReference.getComponentType();
           }
         }
       }
@@ -90,8 +86,8 @@ public class GraphViewMappingTypeProvider extends XbaseTypeProvider {
   
   protected JvmTypeReference _expectedType(final AbstractMapping mapping, final EReference reference, final int index, final boolean rawType) {
     JvmTypeReference _xifexpression = null;
-    boolean _operator_equals = ObjectExtensions.operator_equals(reference, Literals.ABSTRACT_MAPPING__UNLESS_CONDITION);
-    if (_operator_equals) {
+    boolean _equals = Objects.equal(reference, Literals.ABSTRACT_MAPPING__UNLESS_CONDITION);
+    if (_equals) {
       TypeReferences _typeReferences = this.getTypeReferences();
       JvmTypeReference _typeForName = _typeReferences.getTypeForName(Boolean.TYPE, mapping);
       _xifexpression = _typeForName;

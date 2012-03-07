@@ -7,7 +7,7 @@ import org.eclipse.swt.SWT
 stylesheet JavaInheritanceStyle for JavaInheritanceDiagram
 
 style JavaInheritanceDiagram as DiagramShape {
-	autoLayoutManager = new KielerAutoLayout("Dot")
+	autoLayoutManager = new KielerAutoLayout()
 	font = font("Helvetica", 14, 1) 
 }
 
