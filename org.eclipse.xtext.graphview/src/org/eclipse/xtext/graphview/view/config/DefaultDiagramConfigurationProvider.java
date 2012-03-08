@@ -12,10 +12,13 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IMarker;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IResourceChangeEvent;
 import org.eclipse.core.resources.IResourceChangeListener;
 import org.eclipse.core.resources.IWorkspace;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.ListenerList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -176,7 +179,16 @@ public class DefaultDiagramConfigurationProvider implements IDiagramConfiguratio
 		} else if (!currentProject.equals(project)) {
 			throw new IllegalArgumentException("GraphView diagram definition files must reside in the same project");
 		}
-		modelFiles.add(projectUtil.findFileStorage(eObjectURI, false));
-		return resourceSet.getEObject(eObjectURI, true);
+		IFile modelFile = projectUtil.findFileStorage(eObjectURI, false);
+		try {
+			if(modelFile.findMaxProblemSeverity(null, true, IResource.DEPTH_INFINITE) == IMarker.SEVERITY_ERROR)
+				return null;
+		} catch(CoreException e) {
+			LOG.error("Error getting markers", e);
+			return null;
+		}
+		modelFiles.add(modelFile);
+		EObject eObject = resourceSet.getEObject(eObjectURI, true);
+		return eObject;
 	}
 }
