@@ -10,6 +10,7 @@ package org.eclipse.xtext.graphview.editpart;
 import java.lang.reflect.Method;
 
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.Label;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
@@ -35,7 +36,7 @@ public class LabelEditPart extends AbstractInstanceEditPart {
 
 	@Override
 	protected void refreshVisuals() {
-		((LabelShape) getFigure()).setText(calculateText());
+		((Label) getFigure()).setText(calculateText());
 		super.refreshVisuals();
 	}
 
