@@ -127,6 +127,10 @@ public class KielerAutoLayout extends AbstractAutoLayout {
 		setProperty(LayoutOptions.ASPECT_RATIO_ID, aspectRatio);
 	}
 	
+	public void setRandomSeed(int randomSeed) {
+		setProperty(LayoutOptions.RANDOM_SEED_ID, randomSeed);
+	}
+	
 	public Dimension layout(IFigure container) {
 		Map<ILayoutNode, KNode> childrenToNodes = Maps.newHashMap();
 		Map<Connection, KEdge> connectionToEdges = Maps.newHashMap();
