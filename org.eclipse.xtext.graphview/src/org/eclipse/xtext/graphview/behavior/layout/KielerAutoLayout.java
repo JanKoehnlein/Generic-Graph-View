@@ -34,13 +34,17 @@ import de.cau.cs.kieler.core.alg.IKielerProgressMonitor;
 import de.cau.cs.kieler.core.kgraph.KEdge;
 import de.cau.cs.kieler.core.kgraph.KGraphFactory;
 import de.cau.cs.kieler.core.kgraph.KLabel;
+import de.cau.cs.kieler.core.kgraph.KLabeledGraphElement;
 import de.cau.cs.kieler.core.kgraph.KNode;
+import de.cau.cs.kieler.core.properties.IProperty;
+import de.cau.cs.kieler.core.properties.Property;
 import de.cau.cs.kieler.kiml.AbstractLayoutProvider;
 import de.cau.cs.kieler.kiml.klayoutdata.KEdgeLayout;
 import de.cau.cs.kieler.kiml.klayoutdata.KInsets;
 import de.cau.cs.kieler.kiml.klayoutdata.KLayoutDataFactory;
 import de.cau.cs.kieler.kiml.klayoutdata.KPoint;
 import de.cau.cs.kieler.kiml.klayoutdata.KShapeLayout;
+import de.cau.cs.kieler.kiml.options.LayoutOptions;
 import de.cau.cs.kieler.kiml.util.BoxLayoutProvider;
 
 public class KielerAutoLayout extends AbstractAutoLayout {
@@ -88,7 +92,7 @@ public class KielerAutoLayout extends AbstractAutoLayout {
 			return new BoxLayoutProvider();
 		}
 	}
-
+	
 	private KGraphFactory graphFactory = KGraphFactory.eINSTANCE;
 
 	private KLayoutDataFactory layoutDataFactory = KLayoutDataFactory.eINSTANCE;
@@ -96,6 +100,8 @@ public class KielerAutoLayout extends AbstractAutoLayout {
 	private BendpointConnectionRouter connectionRouter = new BendpointConnectionRouter();
 
 	private String layoutName;
+	
+	private List<IProperty<?>> properties = Lists.newArrayList(); 
 
 	public KielerAutoLayout() {
 		this("Sugiyama");
@@ -109,10 +115,24 @@ public class KielerAutoLayout extends AbstractAutoLayout {
 		this.layoutName = layoutName;
 	}
 
+	public <T> void setProperty(String id, T value) {
+		properties.add(new Property<T>(id,value));
+	}
+	
+	public void setSpacing(float spacing) {
+		setProperty(LayoutOptions.SPACING_ID, spacing);
+	}
+	
+	public void setAspectRatio(float aspectRatio) {
+		setProperty(LayoutOptions.ASPECT_RATIO_ID, aspectRatio);
+	}
+	
 	public Dimension layout(IFigure container) {
 		Map<ILayoutNode, KNode> childrenToNodes = Maps.newHashMap();
 		Map<Connection, KEdge> connectionToEdges = Maps.newHashMap();
 		KNode rootNode = createKNode(null);
+		for(IProperty<?> property: properties)
+			rootNode.getData(KShapeLayout.class).setProperty(property, property.getDefault());
 		for (Object child : container.getChildren()) {
 			if (child instanceof ILayoutNode) {
 				ILayoutNode childFigure = (ILayoutNode) child;
@@ -180,17 +200,22 @@ public class KielerAutoLayout extends AbstractAutoLayout {
 		return graphEdge;
 	}
 
+	protected KLabel createKLabel(KLabeledGraphElement parent) {
+		KLabel graphLabel = graphFactory.createKLabel();
+		KShapeLayout labelLayoutData = layoutDataFactory.createKShapeLayout();
+		graphLabel.getData().add(labelLayoutData);
+		graphLabel.setText("");
+		parent.getLabels().add(graphLabel);
+		return graphLabel;
+	}
+
 	protected KNode createKNode(Dimension preferredSize) {
 		KNode graphNode = graphFactory.createKNode();
 		KShapeLayout layoutData = layoutDataFactory.createKShapeLayout();
 		if (preferredSize != null) {
 			layoutData.setSize(preferredSize.width, preferredSize.height);
 		}
-		KLabel graphLabel = graphFactory.createKLabel();
-		KShapeLayout labelLayoutData = layoutDataFactory.createKShapeLayout();
-		graphLabel.getData().add(labelLayoutData);
-		graphLabel.setText("");
-		graphNode.getLabels().add(graphLabel);
+		createKLabel(graphNode);
 		KInsets insets = layoutDataFactory.createKInsets();
 		layoutData.setInsets(insets);
 		graphNode.getData().add(layoutData);

@@ -7,7 +7,9 @@ import EPackageDiagram.*
 stylesheet EPackageDiagram for EPackageDiagram
 
 style EPackageDiagram {
-	autoLayoutManager = new KielerAutoLayout("Dot") 
+	val kieler = new KielerAutoLayout()
+	kieler.spacing = 57f
+	autoLayoutManager =  kieler
 }
 
 style EDataTypeNode as RectangleShape { 
@@ -24,12 +26,27 @@ style EClassNode.Attributes, EClassNode.Operations as RectangleShape {
 	backgroundColor = color(#ffffff)
 }
 
+style EClassNode.ReferenceEdge as SplineConnectionShape {
+	if(element.containment) {
+		val	diamond = new PolygonDecoration()
+		val points = new geometry.PointList()
+		points.addPoint(-2, 0) 
+		points.addPoint(-1, -1) 
+		points.addPoint(0, 0) 
+		points.addPoint(-1, 1) 
+		diamond.template = points
+		diamond.setScale(6,6)
+		targetDecoration = diamond
+	} 
+}
+
 style EClassNode.ReferenceEdge.EdgeLabel {
 	connectionAlignment = ConnectionLocator::TARGET
+	opaque = true
 }
 
 style EClassNode.SuperclassEdge {
-	var arrow = new PolygonDecoration()
+	val arrow = new PolygonDecoration()
 	arrow.setScale(10,8)
 	arrow.backgroundColor = color(#ffffff)
 	arrow.lineWidth = 2
