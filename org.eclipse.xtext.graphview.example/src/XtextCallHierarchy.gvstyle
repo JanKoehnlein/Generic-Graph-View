@@ -1,4 +1,5 @@
 import org.eclipse.xtext.graphview.layout.*
+import org.eclipse.xtext.graphview.shape.*
 import org.eclipse.xtext.*
 import org.eclipse.emf.ecore.*
 
@@ -10,4 +11,7 @@ style XtextCallHierarchy.RuleNode {
 			backgroundColor = color(#ffe3e3) 
 		else
 			backgroundColor = color(#ffffee)
+}
+
+style XtextCallHierarchy.RuleNode.callsEdge as SplineConnectionShape {
 }
