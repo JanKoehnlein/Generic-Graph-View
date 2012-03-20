@@ -1,0 +1,47 @@
+import org.eclipse.emf.ecore.*
+import org.eclipse.xtext.xbase.lib.Pair
+import org.eclipse.xtext.util.SimpleAttributeResolver
+
+diagram EObjectDiagram type EObject {
+	node EObjectNode for this {
+		label ClassName for this
+		label Name for this unless SimpleAttributeResolver::NAME_RESOLVER.apply(this) == null
+		node Attributes for this {
+			label AttributeSetting for each eClass
+				.EAllAttributes
+				.filter[eIsSet(it)]
+				.map[it->this]
+		} unless eClass.EAllAttributes.filter[eIsSet(it)].empty
+		hidden edge Containment for each eClass
+			.EAllContainments
+			.filter[eIsSet(it)]
+			.map[
+				val reference = it;
+				(if(it.many)
+					this.eGet(it) as Iterable
+				 else 
+					newArrayList(this.eGet(it))
+				).map[reference->it]
+			]
+			.flatten {
+				=> call EObjectNode for value
+				label Name for key 
+		} 
+		hidden edge CrossReference for each eClass
+			.EAllReferences
+			.filter[!container && !containment && eIsSet(it)]
+			.map[
+				val reference = it;
+				(if(it.many)
+					this.eGet(it) as Iterable
+				 else 
+					newArrayList(this.eGet(it))
+				).map[reference->it]
+			]
+			.flatten {
+				=> ref EObjectNode for value
+				label Name for key 
+		}
+	}
+	hidden call EObjectNode for each eResource.contents
+}
