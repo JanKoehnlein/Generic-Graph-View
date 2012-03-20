@@ -23,7 +23,7 @@ import com.google.common.collect.Lists;
 
 public class GridAutoLayout extends AbstractAutoLayout {
 
-	private int offset = 40;
+	private int offset = 20;
 
 	public int getOffset() {
 		return offset;
@@ -33,7 +33,7 @@ public class GridAutoLayout extends AbstractAutoLayout {
 		this.offset = offset;
 	}
 
-	public Dimension layout(IFigure container) {
+	public Rectangle layout(IFigure container) {
 		@SuppressWarnings("unchecked")
 		List<IFigure> children = Lists.newArrayList(container.getChildren());
 		for (IFigure child : children) {
@@ -72,7 +72,7 @@ public class GridAutoLayout extends AbstractAutoLayout {
 				}
 			}
 		}
-		return new Dimension(maxX, maxY);
+		return new Rectangle(0, 0, maxX, maxY);
 	}
 
 }

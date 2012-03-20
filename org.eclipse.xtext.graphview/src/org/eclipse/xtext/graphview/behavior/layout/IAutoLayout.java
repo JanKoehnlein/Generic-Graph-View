@@ -9,11 +9,11 @@ package org.eclipse.xtext.graphview.behavior.layout;
 
 import org.eclipse.draw2d.ConnectionRouter;
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.draw2d.geometry.Rectangle;
 
 public interface IAutoLayout {
 
-	Dimension layout(IFigure container);
+	Rectangle layout(IFigure container);
 
 	ConnectionRouter getConnectionRouter(IFigure container);
 

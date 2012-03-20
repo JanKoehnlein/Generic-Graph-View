@@ -101,7 +101,7 @@ public class KielerAutoLayout extends AbstractAutoLayout {
 
 	private String layoutName;
 	
-	private List<IProperty<?>> properties = Lists.newArrayList(); 
+	private Map<String, IProperty<?>> properties = Maps.newHashMap(); 
 
 	public KielerAutoLayout() {
 		this("Sugiyama");
@@ -109,6 +109,7 @@ public class KielerAutoLayout extends AbstractAutoLayout {
 
 	public KielerAutoLayout(String layoutName) {
 		setLayoutName(layoutName);
+		setSpacing(15);
 	}
 
 	public void setLayoutName(String layoutName) {
@@ -116,11 +117,15 @@ public class KielerAutoLayout extends AbstractAutoLayout {
 	}
 
 	public <T> void setProperty(String id, T value) {
-		properties.add(new Property<T>(id,value));
+		properties.put(id, new Property<T>(id,value));
 	}
 	
-	public void setSpacing(float spacing) {
-		setProperty(LayoutOptions.SPACING_ID, spacing);
+	public void setSpacing(double spacing) {
+		setProperty(LayoutOptions.SPACING_ID, (float) spacing);
+	}
+	
+	public double getSpacing() {
+		return ((Float) properties.get(LayoutOptions.SPACING_ID).getDefault()).doubleValue();
 	}
 	
 	public void setAspectRatio(float aspectRatio) {
@@ -131,11 +136,11 @@ public class KielerAutoLayout extends AbstractAutoLayout {
 		setProperty(LayoutOptions.RANDOM_SEED_ID, randomSeed);
 	}
 	
-	public Dimension layout(IFigure container) {
+	public Rectangle layout(IFigure container) {
 		Map<ILayoutNode, KNode> childrenToNodes = Maps.newHashMap();
 		Map<Connection, KEdge> connectionToEdges = Maps.newHashMap();
 		KNode rootNode = createKNode(null);
-		for(IProperty<?> property: properties)
+		for(IProperty<?> property: properties.values())
 			rootNode.getData(KShapeLayout.class).setProperty(property, property.getDefault());
 		for (Object child : container.getChildren()) {
 			if (child instanceof ILayoutNode) {
@@ -190,7 +195,7 @@ public class KielerAutoLayout extends AbstractAutoLayout {
 				getConnectionRouter(container).setConstraint(entry.getKey(), gefBendPoints);
 			}
 		}
-		return (containerBounds == null) ? new Dimension() : containerBounds.getSize().expand(2 * containerBounds.x, 2 * containerBounds.y);
+		return (containerBounds == null) ? new Rectangle() : containerBounds;
 	}
 
 	protected KEdge createKEdge(KNode sourceNode, KNode targetNode) {

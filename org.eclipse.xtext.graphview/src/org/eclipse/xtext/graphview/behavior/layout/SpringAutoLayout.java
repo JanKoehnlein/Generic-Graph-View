@@ -37,7 +37,7 @@ public class SpringAutoLayout extends AbstractAutoLayout {
 
 	private int iterations = 200;
 
-	public Dimension layout(IFigure container) {
+	public Rectangle layout(IFigure container) {
 		SpringLayoutAlgorithm layoutAlgorithm = new SpringLayoutAlgorithm(LayoutStyles.NO_LAYOUT_NODE_RESIZING);
 		Map<ILayoutNode, LayoutEntity> childrenToNodes = Maps.newHashMap();
 		Map<Connection, LayoutRelationship> connectionToEdges = Maps.newHashMap();
@@ -68,6 +68,7 @@ public class SpringAutoLayout extends AbstractAutoLayout {
 		try {
 			Dimension estimatedSize = getPeferredSize(container);
 			layoutAlgorithm.setIterations(getIterations());
+			layoutAlgorithm.setRandom(false);
 			layoutAlgorithm.applyLayout(Iterables.toArray(childrenToNodes.values(), LayoutEntity.class),
 					Iterables.toArray(connectionToEdges.values(), LayoutRelationship.class), 0, 0, estimatedSize.width,
 					estimatedSize.height, false, false);
@@ -79,10 +80,10 @@ public class SpringAutoLayout extends AbstractAutoLayout {
 				figure.setBounds(bounds);
 				container.setConstraint((IFigure) figure, bounds);
 			}
-			return estimatedSize;
+			return new Rectangle(0, 0, estimatedSize.width, estimatedSize.height);
 		} catch (InvalidLayoutConfiguration e) {
 			LOG.error("Error in layout config", e);
-			return new Dimension();
+			return new Rectangle();
 		}
 	}
 
