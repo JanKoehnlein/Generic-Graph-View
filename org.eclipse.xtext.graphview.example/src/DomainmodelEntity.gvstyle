@@ -7,7 +7,7 @@ import DomainmodelEntityDiagram.*
 stylesheet DomainmodelEntityDiagram for DomainmodelEntityDiagram
 
 style DomainmodelEntityDiagram {
-	autoLayoutManager = new KielerAutoLayout() 
+	autoLayoutManager = new KielerAutoLayout
 }
 
 style EntityNode.Name { 
@@ -40,10 +40,8 @@ style EntityNode.Attributes.Label, EntityNode.Operations.Label {
 }
 
 style EntityNode.SuperType {
-	var arrow = new PolygonDecoration()
-	arrow.setScale(8,8)
+	var arrow = new DiamondDecoration
 	arrow.backgroundColor = color(#ffffff)
-	arrow.lineWidth = 2
 	targetDecoration = arrow 
 }
 

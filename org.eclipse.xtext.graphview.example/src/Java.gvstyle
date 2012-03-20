@@ -7,7 +7,7 @@ import org.eclipse.swt.SWT
 stylesheet JavaInheritanceStyle for JavaInheritanceDiagram
 
 style JavaInheritanceDiagram as DiagramShape {
-	autoLayoutManager = new KielerAutoLayout()
+	autoLayoutManager = new KielerAutoLayout
 	font = font("Helvetica", 14, 1) 
 }
 
@@ -23,12 +23,9 @@ style TypeNode as RectangleShape {
 }
 
 style TypeNode.ExtendsEdge, TypeNode.ImplementsEdge as SplineConnectionShape {
-	lineWidth = 2
-	val targetDeco = new org.eclipse.draw2d.PolygonDecoration()
-	targetDeco.setScale(8,8)
-	targetDeco.lineWidth = 2
+	val targetDeco = new ClosedArrowDecoration
 	if(element.interface) targetDeco.backgroundColor = color(#ffffff) 
-	this.setTargetDecoration(targetDeco)
+	targetDecoration = targetDeco
 }
 
 style TypeNode.Methods, TypeNode.Fields as RectangleShape {

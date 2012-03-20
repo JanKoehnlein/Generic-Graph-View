@@ -7,7 +7,7 @@ import EClassHierarchy.*
 stylesheet EClassHierarchy for EClassHierarchy
 
 style EClassHierarchy {
-	autoLayoutManager = new KielerAutoLayout() 
+	autoLayoutManager = new KielerAutoLayout
 }
 
 style EClassNode.SuperType {
