@@ -118,8 +118,7 @@ public class AbstractMappingDefinitionImpl extends AbstractMappingImpl implement
 	 */
 	public EList<AbstractExpressionMapping> getMappings()
 	{
-		if (mappings == null)
-		{
+		if (mappings == null) {
 			mappings = new EObjectContainmentEList<AbstractExpressionMapping>(AbstractExpressionMapping.class, this, GraphViewMappingPackage.ABSTRACT_MAPPING_DEFINITION__MAPPINGS);
 		}
 		return mappings;
@@ -133,8 +132,7 @@ public class AbstractMappingDefinitionImpl extends AbstractMappingImpl implement
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
-		switch (featureID)
-		{
+		switch (featureID) {
 			case GraphViewMappingPackage.ABSTRACT_MAPPING_DEFINITION__MAPPINGS:
 				return ((InternalEList<?>)getMappings()).basicRemove(otherEnd, msgs);
 		}
@@ -149,8 +147,7 @@ public class AbstractMappingDefinitionImpl extends AbstractMappingImpl implement
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID)
-		{
+		switch (featureID) {
 			case GraphViewMappingPackage.ABSTRACT_MAPPING_DEFINITION__NAME:
 				return getName();
 			case GraphViewMappingPackage.ABSTRACT_MAPPING_DEFINITION__MAPPINGS:
@@ -168,8 +165,7 @@ public class AbstractMappingDefinitionImpl extends AbstractMappingImpl implement
 	@Override
 	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID)
-		{
+		switch (featureID) {
 			case GraphViewMappingPackage.ABSTRACT_MAPPING_DEFINITION__NAME:
 				setName((String)newValue);
 				return;
@@ -189,8 +185,7 @@ public class AbstractMappingDefinitionImpl extends AbstractMappingImpl implement
 	@Override
 	public void eUnset(int featureID)
 	{
-		switch (featureID)
-		{
+		switch (featureID) {
 			case GraphViewMappingPackage.ABSTRACT_MAPPING_DEFINITION__NAME:
 				setName(NAME_EDEFAULT);
 				return;
@@ -209,8 +204,7 @@ public class AbstractMappingDefinitionImpl extends AbstractMappingImpl implement
 	@Override
 	public boolean eIsSet(int featureID)
 	{
-		switch (featureID)
-		{
+		switch (featureID) {
 			case GraphViewMappingPackage.ABSTRACT_MAPPING_DEFINITION__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case GraphViewMappingPackage.ABSTRACT_MAPPING_DEFINITION__MAPPINGS:

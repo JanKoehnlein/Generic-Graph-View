@@ -42,8 +42,7 @@ public class GraphViewMappingSwitch<T> extends Switch<T>
 	 */
 	public GraphViewMappingSwitch()
 	{
-		if (modelPackage == null)
-		{
+		if (modelPackage == null) {
 			modelPackage = GraphViewMappingPackage.eINSTANCE;
 		}
 	}
@@ -72,18 +71,15 @@ public class GraphViewMappingSwitch<T> extends Switch<T>
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject)
 	{
-		switch (classifierID)
-		{
-			case GraphViewMappingPackage.ABSTRACT_MAPPING:
-			{
+		switch (classifierID) {
+			case GraphViewMappingPackage.ABSTRACT_MAPPING: {
 				AbstractMapping abstractMapping = (AbstractMapping)theEObject;
 				T result = caseAbstractMapping(abstractMapping);
 				if (result == null) result = caseJvmIdentifiableElement(abstractMapping);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GraphViewMappingPackage.ABSTRACT_MAPPING_DEFINITION:
-			{
+			case GraphViewMappingPackage.ABSTRACT_MAPPING_DEFINITION: {
 				AbstractMappingDefinition abstractMappingDefinition = (AbstractMappingDefinition)theEObject;
 				T result = caseAbstractMappingDefinition(abstractMappingDefinition);
 				if (result == null) result = caseAbstractMapping(abstractMappingDefinition);
@@ -91,8 +87,7 @@ public class GraphViewMappingSwitch<T> extends Switch<T>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING:
-			{
+			case GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING: {
 				AbstractExpressionMapping abstractExpressionMapping = (AbstractExpressionMapping)theEObject;
 				T result = caseAbstractExpressionMapping(abstractExpressionMapping);
 				if (result == null) result = caseAbstractMapping(abstractExpressionMapping);
@@ -100,8 +95,7 @@ public class GraphViewMappingSwitch<T> extends Switch<T>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GraphViewMappingPackage.ABSTRACT_MAPPING_REFERENCE:
-			{
+			case GraphViewMappingPackage.ABSTRACT_MAPPING_REFERENCE: {
 				AbstractMappingReference abstractMappingReference = (AbstractMappingReference)theEObject;
 				T result = caseAbstractMappingReference(abstractMappingReference);
 				if (result == null) result = caseAbstractExpressionMapping(abstractMappingReference);
@@ -110,15 +104,13 @@ public class GraphViewMappingSwitch<T> extends Switch<T>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GraphViewMappingPackage.IMPORT:
-			{
+			case GraphViewMappingPackage.IMPORT: {
 				Import import_ = (Import)theEObject;
 				T result = caseImport(import_);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GraphViewMappingPackage.DIAGRAM_MAPPING:
-			{
+			case GraphViewMappingPackage.DIAGRAM_MAPPING: {
 				DiagramMapping diagramMapping = (DiagramMapping)theEObject;
 				T result = caseDiagramMapping(diagramMapping);
 				if (result == null) result = caseAbstractMappingDefinition(diagramMapping);
@@ -127,8 +119,7 @@ public class GraphViewMappingSwitch<T> extends Switch<T>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GraphViewMappingPackage.NODE_MAPPING:
-			{
+			case GraphViewMappingPackage.NODE_MAPPING: {
 				NodeMapping nodeMapping = (NodeMapping)theEObject;
 				T result = caseNodeMapping(nodeMapping);
 				if (result == null) result = caseAbstractMappingDefinition(nodeMapping);
@@ -138,8 +129,7 @@ public class GraphViewMappingSwitch<T> extends Switch<T>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GraphViewMappingPackage.LABEL_MAPPING:
-			{
+			case GraphViewMappingPackage.LABEL_MAPPING: {
 				LabelMapping labelMapping = (LabelMapping)theEObject;
 				T result = caseLabelMapping(labelMapping);
 				if (result == null) result = caseAbstractMappingDefinition(labelMapping);
@@ -149,8 +139,7 @@ public class GraphViewMappingSwitch<T> extends Switch<T>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GraphViewMappingPackage.EDGE_MAPPING:
-			{
+			case GraphViewMappingPackage.EDGE_MAPPING: {
 				EdgeMapping edgeMapping = (EdgeMapping)theEObject;
 				T result = caseEdgeMapping(edgeMapping);
 				if (result == null) result = caseAbstractMappingDefinition(edgeMapping);
@@ -160,8 +149,7 @@ public class GraphViewMappingSwitch<T> extends Switch<T>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GraphViewMappingPackage.EDGE_END_MAPPING:
-			{
+			case GraphViewMappingPackage.EDGE_END_MAPPING: {
 				EdgeEndMapping edgeEndMapping = (EdgeEndMapping)theEObject;
 				T result = caseEdgeEndMapping(edgeEndMapping);
 				if (result == null) result = caseAbstractMappingReference(edgeEndMapping);
@@ -171,8 +159,7 @@ public class GraphViewMappingSwitch<T> extends Switch<T>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GraphViewMappingPackage.MAPPING_CALL:
-			{
+			case GraphViewMappingPackage.MAPPING_CALL: {
 				MappingCall mappingCall = (MappingCall)theEObject;
 				T result = caseMappingCall(mappingCall);
 				if (result == null) result = caseAbstractMappingReference(mappingCall);

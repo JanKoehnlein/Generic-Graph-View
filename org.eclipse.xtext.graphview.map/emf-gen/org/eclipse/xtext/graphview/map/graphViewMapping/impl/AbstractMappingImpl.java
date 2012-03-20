@@ -103,8 +103,7 @@ public abstract class AbstractMappingImpl extends JvmIdentifiableElementImpl imp
 	{
 		XExpression oldUnlessCondition = unlessCondition;
 		unlessCondition = newUnlessCondition;
-		if (eNotificationRequired())
-		{
+		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GraphViewMappingPackage.ABSTRACT_MAPPING__UNLESS_CONDITION, oldUnlessCondition, newUnlessCondition);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -118,8 +117,7 @@ public abstract class AbstractMappingImpl extends JvmIdentifiableElementImpl imp
 	 */
 	public void setUnlessCondition(XExpression newUnlessCondition)
 	{
-		if (newUnlessCondition != unlessCondition)
-		{
+		if (newUnlessCondition != unlessCondition) {
 			NotificationChain msgs = null;
 			if (unlessCondition != null)
 				msgs = ((InternalEObject)unlessCondition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GraphViewMappingPackage.ABSTRACT_MAPPING__UNLESS_CONDITION, null, msgs);
@@ -163,8 +161,7 @@ public abstract class AbstractMappingImpl extends JvmIdentifiableElementImpl imp
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
-		switch (featureID)
-		{
+		switch (featureID) {
 			case GraphViewMappingPackage.ABSTRACT_MAPPING__UNLESS_CONDITION:
 				return basicSetUnlessCondition(null, msgs);
 		}
@@ -179,8 +176,7 @@ public abstract class AbstractMappingImpl extends JvmIdentifiableElementImpl imp
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID)
-		{
+		switch (featureID) {
 			case GraphViewMappingPackage.ABSTRACT_MAPPING__UNLESS_CONDITION:
 				return getUnlessCondition();
 			case GraphViewMappingPackage.ABSTRACT_MAPPING__HIDDEN:
@@ -197,8 +193,7 @@ public abstract class AbstractMappingImpl extends JvmIdentifiableElementImpl imp
 	@Override
 	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID)
-		{
+		switch (featureID) {
 			case GraphViewMappingPackage.ABSTRACT_MAPPING__UNLESS_CONDITION:
 				setUnlessCondition((XExpression)newValue);
 				return;
@@ -217,8 +212,7 @@ public abstract class AbstractMappingImpl extends JvmIdentifiableElementImpl imp
 	@Override
 	public void eUnset(int featureID)
 	{
-		switch (featureID)
-		{
+		switch (featureID) {
 			case GraphViewMappingPackage.ABSTRACT_MAPPING__UNLESS_CONDITION:
 				setUnlessCondition((XExpression)null);
 				return;
@@ -237,8 +231,7 @@ public abstract class AbstractMappingImpl extends JvmIdentifiableElementImpl imp
 	@Override
 	public boolean eIsSet(int featureID)
 	{
-		switch (featureID)
-		{
+		switch (featureID) {
 			case GraphViewMappingPackage.ABSTRACT_MAPPING__UNLESS_CONDITION:
 				return unlessCondition != null;
 			case GraphViewMappingPackage.ABSTRACT_MAPPING__HIDDEN:

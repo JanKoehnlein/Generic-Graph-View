@@ -125,8 +125,7 @@ public class LabelMappingImpl extends AbstractMappingDefinitionImpl implements L
 	{
 		XExpression oldExpression = expression;
 		expression = newExpression;
-		if (eNotificationRequired())
-		{
+		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GraphViewMappingPackage.LABEL_MAPPING__EXPRESSION, oldExpression, newExpression);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -140,8 +139,7 @@ public class LabelMappingImpl extends AbstractMappingDefinitionImpl implements L
 	 */
 	public void setExpression(XExpression newExpression)
 	{
-		if (newExpression != expression)
-		{
+		if (newExpression != expression) {
 			NotificationChain msgs = null;
 			if (expression != null)
 				msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GraphViewMappingPackage.LABEL_MAPPING__EXPRESSION, null, msgs);
@@ -162,8 +160,7 @@ public class LabelMappingImpl extends AbstractMappingDefinitionImpl implements L
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
-		switch (featureID)
-		{
+		switch (featureID) {
 			case GraphViewMappingPackage.LABEL_MAPPING__EXPRESSION:
 				return basicSetExpression(null, msgs);
 		}
@@ -178,8 +175,7 @@ public class LabelMappingImpl extends AbstractMappingDefinitionImpl implements L
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID)
-		{
+		switch (featureID) {
 			case GraphViewMappingPackage.LABEL_MAPPING__MULTI:
 				return isMulti();
 			case GraphViewMappingPackage.LABEL_MAPPING__EXPRESSION:
@@ -196,8 +192,7 @@ public class LabelMappingImpl extends AbstractMappingDefinitionImpl implements L
 	@Override
 	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID)
-		{
+		switch (featureID) {
 			case GraphViewMappingPackage.LABEL_MAPPING__MULTI:
 				setMulti((Boolean)newValue);
 				return;
@@ -216,8 +211,7 @@ public class LabelMappingImpl extends AbstractMappingDefinitionImpl implements L
 	@Override
 	public void eUnset(int featureID)
 	{
-		switch (featureID)
-		{
+		switch (featureID) {
 			case GraphViewMappingPackage.LABEL_MAPPING__MULTI:
 				setMulti(MULTI_EDEFAULT);
 				return;
@@ -236,8 +230,7 @@ public class LabelMappingImpl extends AbstractMappingDefinitionImpl implements L
 	@Override
 	public boolean eIsSet(int featureID)
 	{
-		switch (featureID)
-		{
+		switch (featureID) {
 			case GraphViewMappingPackage.LABEL_MAPPING__MULTI:
 				return multi != MULTI_EDEFAULT;
 			case GraphViewMappingPackage.LABEL_MAPPING__EXPRESSION:
@@ -254,10 +247,8 @@ public class LabelMappingImpl extends AbstractMappingDefinitionImpl implements L
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
 	{
-		if (baseClass == AbstractExpressionMapping.class)
-		{
-			switch (derivedFeatureID)
-			{
+		if (baseClass == AbstractExpressionMapping.class) {
+			switch (derivedFeatureID) {
 				case GraphViewMappingPackage.LABEL_MAPPING__MULTI: return GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__MULTI;
 				case GraphViewMappingPackage.LABEL_MAPPING__EXPRESSION: return GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__EXPRESSION;
 				default: return -1;
@@ -274,10 +265,8 @@ public class LabelMappingImpl extends AbstractMappingDefinitionImpl implements L
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
 	{
-		if (baseClass == AbstractExpressionMapping.class)
-		{
-			switch (baseFeatureID)
-			{
+		if (baseClass == AbstractExpressionMapping.class) {
+			switch (baseFeatureID) {
 				case GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__MULTI: return GraphViewMappingPackage.LABEL_MAPPING__MULTI;
 				case GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__EXPRESSION: return GraphViewMappingPackage.LABEL_MAPPING__EXPRESSION;
 				default: return -1;

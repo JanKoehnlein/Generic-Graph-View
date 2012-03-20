@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<genmodel:GenModel xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.xtext.graphview.map/emf-gen"
-    editDirectory="/org.eclipse.xtext.graphview.map.edit/src" editorDirectory="/org.eclipse.xtext.graphview.map.editor/src"
-    modelPluginID="org.eclipse.xtext.graphview.map" forceOverwrite="true" modelName="GraphViewMapping"
-    updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.xtext.graphview.map/emf-gen" editDirectory="/org.eclipse.xtext.graphview.map.edit/src"
+    editorDirectory="/org.eclipse.xtext.graphview.map.editor/src" modelPluginID="org.eclipse.xtext.graphview.map"
+    forceOverwrite="true" modelName="GraphViewMapping" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
     editPluginID="org.eclipse.xtext.graphview.map.edit" editorPluginID="org.eclipse.xtext.graphview.map.editor"
     usedGenPackages="../../../../../../../org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types ../../../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase">
@@ -13,6 +11,7 @@
       disposableProviderFactory="true" ecorePackage="GraphViewMapping.ecore#/">
     <genClasses image="false" ecoreClass="GraphViewMapping.ecore#//AbstractMapping">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GraphViewMapping.ecore#//AbstractMapping/unlessCondition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GraphViewMapping.ecore#//AbstractMapping/hidden"/>
     </genClasses>
     <genClasses ecoreClass="GraphViewMapping.ecore#//AbstractMappingDefinition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GraphViewMapping.ecore#//AbstractMappingDefinition/name"/>
@@ -24,6 +23,7 @@
     </genClasses>
     <genClasses ecoreClass="GraphViewMapping.ecore#//AbstractMappingReference">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GraphViewMapping.ecore#//AbstractMappingReference/referencedMapping"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GraphViewMapping.ecore#//AbstractMappingReference/call"/>
     </genClasses>
     <genClasses ecoreClass="GraphViewMapping.ecore#//Import">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GraphViewMapping.ecore#//Import/importedNamespace"/>
@@ -38,9 +38,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GraphViewMapping.ecore#//EdgeMapping/sourceMapping"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GraphViewMapping.ecore#//EdgeMapping/targetMapping"/>
     </genClasses>
-    <genClasses ecoreClass="GraphViewMapping.ecore#//EdgeEndMapping">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GraphViewMapping.ecore#//EdgeEndMapping/call"/>
-    </genClasses>
+    <genClasses ecoreClass="GraphViewMapping.ecore#//EdgeEndMapping"/>
     <genClasses ecoreClass="GraphViewMapping.ecore#//MappingCall"/>
   </genPackages>
 </genmodel:GenModel>

@@ -9,7 +9,6 @@ grammar org.eclipse.xtext.graphview.style.GraphViewStyle with org.eclipse.xtext.
 
 generate graphViewStyle "http://www.xtext.org/graphview/style/GraphViewStyle"
 import "http://www.eclipse.org/xtext/xbase/Xbase" as xbase
-import "http://www.eclipse.org/xtext/common/JavaVMTypes" as jvmTypes
 import "http://www.eclipse.org/xtext/graphview/map/GraphViewMapping" as gvmapping
 import "http://www.eclipse.org/emf/2002/Ecore"
 

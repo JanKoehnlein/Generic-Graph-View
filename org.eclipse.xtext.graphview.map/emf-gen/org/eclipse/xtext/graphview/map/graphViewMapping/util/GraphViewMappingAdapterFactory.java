@@ -39,8 +39,7 @@ public class GraphViewMappingAdapterFactory extends AdapterFactoryImpl
 	 */
 	public GraphViewMappingAdapterFactory()
 	{
-		if (modelPackage == null)
-		{
+		if (modelPackage == null) {
 			modelPackage = GraphViewMappingPackage.eINSTANCE;
 		}
 	}
@@ -56,12 +55,10 @@ public class GraphViewMappingAdapterFactory extends AdapterFactoryImpl
 	@Override
 	public boolean isFactoryForType(Object object)
 	{
-		if (object == modelPackage)
-		{
+		if (object == modelPackage) {
 			return true;
 		}
-		if (object instanceof EObject)
-		{
+		if (object instanceof EObject) {
 			return ((EObject)object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
@@ -74,71 +71,57 @@ public class GraphViewMappingAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	protected GraphViewMappingSwitch<Adapter> modelSwitch =
-		new GraphViewMappingSwitch<Adapter>()
-		{
+		new GraphViewMappingSwitch<Adapter>() {
 			@Override
-			public Adapter caseAbstractMapping(AbstractMapping object)
-			{
+			public Adapter caseAbstractMapping(AbstractMapping object) {
 				return createAbstractMappingAdapter();
 			}
 			@Override
-			public Adapter caseAbstractMappingDefinition(AbstractMappingDefinition object)
-			{
+			public Adapter caseAbstractMappingDefinition(AbstractMappingDefinition object) {
 				return createAbstractMappingDefinitionAdapter();
 			}
 			@Override
-			public Adapter caseAbstractExpressionMapping(AbstractExpressionMapping object)
-			{
+			public Adapter caseAbstractExpressionMapping(AbstractExpressionMapping object) {
 				return createAbstractExpressionMappingAdapter();
 			}
 			@Override
-			public Adapter caseAbstractMappingReference(AbstractMappingReference object)
-			{
+			public Adapter caseAbstractMappingReference(AbstractMappingReference object) {
 				return createAbstractMappingReferenceAdapter();
 			}
 			@Override
-			public Adapter caseImport(Import object)
-			{
+			public Adapter caseImport(Import object) {
 				return createImportAdapter();
 			}
 			@Override
-			public Adapter caseDiagramMapping(DiagramMapping object)
-			{
+			public Adapter caseDiagramMapping(DiagramMapping object) {
 				return createDiagramMappingAdapter();
 			}
 			@Override
-			public Adapter caseNodeMapping(NodeMapping object)
-			{
+			public Adapter caseNodeMapping(NodeMapping object) {
 				return createNodeMappingAdapter();
 			}
 			@Override
-			public Adapter caseLabelMapping(LabelMapping object)
-			{
+			public Adapter caseLabelMapping(LabelMapping object) {
 				return createLabelMappingAdapter();
 			}
 			@Override
-			public Adapter caseEdgeMapping(EdgeMapping object)
-			{
+			public Adapter caseEdgeMapping(EdgeMapping object) {
 				return createEdgeMappingAdapter();
 			}
 			@Override
-			public Adapter caseEdgeEndMapping(EdgeEndMapping object)
-			{
+			public Adapter caseEdgeEndMapping(EdgeEndMapping object) {
 				return createEdgeEndMappingAdapter();
 			}
 			@Override
-			public Adapter caseMappingCall(MappingCall object)
-			{
+			public Adapter caseMappingCall(MappingCall object) {
 				return createMappingCallAdapter();
 			}
 			@Override
-			public Adapter caseJvmIdentifiableElement(JvmIdentifiableElement object)
-			{
+			public Adapter caseJvmIdentifiableElement(JvmIdentifiableElement object) {
 				return createJvmIdentifiableElementAdapter();
 			}
 			@Override
-			public Adapter defaultCase(EObject object)
-			{
+			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
 		};
