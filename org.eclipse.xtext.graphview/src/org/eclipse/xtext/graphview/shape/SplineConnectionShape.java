@@ -47,12 +47,13 @@ public class SplineConnectionShape extends ConnectionShape {
 
 	protected PointList getControlPoints(double tolerance) {
 		PointList controlPoints = new PointList();
-		Point previousPoint = getPoints().getFirstPoint();
+		PointList bendPoints = getPoints().getCopy();
+		Point previousPoint = bendPoints.getFirstPoint();
 		controlPoints.addPoint(previousPoint);
 		controlPoints.addPoint(previousPoint);
 		controlPoints.addPoint(previousPoint);
-		for (int i = 1; i < getPoints().size(); ++i) {
-			Point nextPoint = getPoints().getPoint(i);
+		for (int i = 1; i < bendPoints.size(); ++i) {
+			Point nextPoint = bendPoints.getPoint(i);
 			double deltaX = nextPoint.preciseX() - previousPoint.preciseX();
 			double deltaY = nextPoint.preciseY() - previousPoint.preciseY();
 			if (deltaX * deltaX + deltaY * deltaY > tolerance) {
