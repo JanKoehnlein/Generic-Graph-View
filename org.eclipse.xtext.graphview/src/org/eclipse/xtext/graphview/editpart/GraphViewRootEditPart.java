@@ -36,22 +36,26 @@ public class GraphViewRootEditPart extends ScalableFreeformRootEditPart {
 
 		private double initialScale;
 		
+		private double initialSpacing;
+		
 		public void initialize(GraphViewRootEditPart host) {
 			this.host = host;
 		}
 		
 		public void gesturePerformed(GestureEvent gestureEvent, EditPartViewer viewer) {
 			Viewport viewport = (Viewport) host.getFigure();
+			DiagramEditPart diagramEditPart = getContainerDiagramEditPart();
 			switch (gestureEvent.detail) {
 			case SWT.GESTURE_BEGIN:
 				initialScale = host.getZoomManager().getZoom();
+				if(diagramEditPart != null)
+					initialSpacing = diagramEditPart.getSpacing();
 				break;
 			case SWT.GESTURE_MAGNIFY: {
 				if(initialScale == 0)
 					return;
 				double zoom = initialScale * gestureEvent.magnification;
 				if(zoom < host.getZoomManager().getMinZoom()) {
-					DiagramEditPart diagramEditPart = getContainerDiagramEditPart();
 					if(diagramEditPart != null) {
 						if(drillingHelper.drillUp(diagramEditPart.getModel())) {
 							consumeEventAndResetView(gestureEvent);
@@ -77,8 +81,15 @@ public class GraphViewRootEditPart extends ScalableFreeformRootEditPart {
 				Dimension mouseDelta = mouseLocationAfterZoom.getDifference(mouseLocation);
 				viewLocation.translate(mouseDelta);
 				viewport.setViewLocation(viewLocation);
+				diagramEditPart.getFigure().invalidate();
 				break;
 			}
+			case SWT.GESTURE_ROTATE:
+				if(diagramEditPart != null) {
+					diagramEditPart.setSpacing(initialSpacing + gestureEvent.rotation * 0.1);
+					gestureEvent.doit = false;
+				}
+				break;
 			case SWT.GESTURE_PAN:
 				// only fired when not consumed by some parent scrollable as a FigureCanvas
 				Point viewLocation = viewport.getViewLocation();
