@@ -64,7 +64,7 @@ public class GraphViewRootEditPart extends ScalableFreeformRootEditPart {
 					}
 				}
 				List<?> currentSelection = host.getViewer().getSelectedEditParts();
-				if(gestureEvent.magnification > 1.1 
+				if(gestureEvent.magnification > 1.5 
 						&& currentSelection.size() == 1 
 						&& currentSelection.get(0) instanceof IInstanceModelEditPart) {
 					if(drillingHelper.drillDown(((IInstanceModelEditPart) currentSelection.get(0)).getModel())) {

@@ -110,12 +110,12 @@ public class RevealEditPolicy extends AbstractEditPolicy {
 			Point center = hostFigure.getBounds().getCenter();
 			if (hostFigure.getParent() != null)
 				hostFigure.getParent().translateToAbsolute(center);
+			double centerDist = revealRequest.getMouseDistance();
 			for (IInstanceModelEditPart layoutable : layoutables) {
 				if (!revealRequest.isSelected(layoutable)) {
 					IFigure figure = layoutable.getFigure();
 					Point newCenter = new Point(center);
 					Dimension figureSize = figure.getSize();
-					double centerDist = revealRequest.getMouseDistance();
 					newCenter.translate((int) (Math.cos(angle) * centerDist), (int) (Math.sin(angle) * centerDist));
 					newCenter.translate(-figureSize.width / 2, -figureSize.height / 2);
 					if (figure.getParent() != null) {
