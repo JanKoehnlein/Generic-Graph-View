@@ -9,6 +9,11 @@ package org.eclipse.xtext.graphview.shape;
 
 import org.eclipse.draw2d.FreeformLayer;
 import org.eclipse.draw2d.FreeformLayout;
+import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.Viewport;
+import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.draw2d.geometry.Insets;
+import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.swt.SWT;
 import org.eclipse.xtext.graphview.behavior.layout.IAutoLayout;
 import org.eclipse.xtext.graphview.behavior.layout.KielerAutoLayout;
@@ -29,5 +34,29 @@ public class DiagramShape extends FreeformLayer {
 
 	public void setAutoLayoutManager(IAutoLayout autoLayoutManager) {
 		this.autoLayoutManager = autoLayoutManager;
+	}
+
+	@Override
+	public Rectangle getFreeformExtent() {
+		Rectangle freeformExtent = super.getFreeformExtent();
+		Viewport parentViewport = getParentViewport();
+		if (parentViewport != null ) {
+			Dimension viewDimension = parentViewport.getBounds().getSize();
+			parentViewport.translateToAbsolute(viewDimension);
+			translateToRelative(viewDimension);
+			viewDimension.shrink(freeformExtent.getSize());
+			viewDimension.width = Math.max(0,  viewDimension.width);
+			viewDimension.height = Math.max(0,  viewDimension.height);
+			return freeformExtent.getExpanded(new Insets(viewDimension.height, viewDimension.width, viewDimension.height,
+					viewDimension.width));
+		}
+		return freeformExtent;
+	}
+
+	protected Viewport getParentViewport() {
+		IFigure currentParent = getParent();
+		while (!(currentParent instanceof Viewport) && currentParent != null)
+			currentParent = currentParent.getParent();
+		return (Viewport) currentParent;
 	}
 }

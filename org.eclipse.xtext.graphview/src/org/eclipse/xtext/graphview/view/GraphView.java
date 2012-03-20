@@ -10,9 +10,6 @@ package org.eclipse.xtext.graphview.view;
 import java.util.Iterator;
 
 import org.eclipse.draw2d.ColorConstants;
-import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.Viewport;
-import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.GraphicalViewer;
 import org.eclipse.gef.KeyHandler;
 import org.eclipse.gef.KeyStroke;
@@ -234,11 +231,7 @@ public class GraphView extends ViewPart {
 	}
 
 	protected void resetViewport() {
-		IFigure rootFigure = ((GraphicalEditPart) graphicalViewer.getRootEditPart()).getFigure();
 		zoomManager.setZoom(1.);
-		if (rootFigure instanceof Viewport) {
-			((Viewport) rootFigure).setViewLocation(0, 0);
-		}
 	}
 
 	public void gotoDiagram(DiagramInstance diagram) {
@@ -250,7 +243,9 @@ public class GraphView extends ViewPart {
 
 	public void relayout() {
 		if (graphicalViewer.getContents() != null) {
-			for (DiagramEditPart diagramEditPart : Iterables.filter(graphicalViewer.getEditPartRegistry().values(), DiagramEditPart.class))
+			for (DiagramEditPart diagramEditPart : 
+				Iterables.filter(graphicalViewer.getEditPartRegistry().values(), 
+					DiagramEditPart.class))
 				diagramEditPart.performAutoLayout();
 		}
 	}
