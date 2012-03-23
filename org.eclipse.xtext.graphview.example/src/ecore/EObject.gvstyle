@@ -34,8 +34,8 @@ style Attributes.AttributeSetting {
 }
 
 style Containment {
-	sourceDecoration = new DiamondDecoration
-	targetDecoration = null
+	//sourceDecoration = new DiamondDecoration
+	//targetDecoration = null
 }
 
 style CrossReference, Containment as SplineConnectionShape {

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ASCII"?>
+<tree:Node xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:tree="http://www.xtext.org/eclipscon2012/examples/tree"
+    xsi:schemaLocation="http://www.xtext.org/eclipscon2012/examples/tree Tree.ecore"
+    name="A">
+  <children
+      name="B"/>
+</tree:Node>
