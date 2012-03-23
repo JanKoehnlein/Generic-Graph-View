@@ -1,9 +1,14 @@
 package org.eclipse.xtext.graphview.behavior.layout;
 
+import java.util.List;
+
+import org.eclipse.draw2d.AbsoluteBendpoint;
 import org.eclipse.draw2d.Connection;
+import org.eclipse.draw2d.ConnectionRouter;
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.geometry.PointList;
+import org.eclipse.draw2d.Layer;
 import org.eclipse.draw2d.geometry.Rectangle;
+import org.eclipse.xtext.graphview.shape.FigureUtil;
 
 public class SpacingManager {
 
@@ -19,10 +24,6 @@ public class SpacingManager {
 	
 	public void respaceChildren(IFigure parent) {
 		for(Object child: parent.getChildren()) {
-			if (child instanceof Connection) {
-				PointList points = ((Connection) child).getPoints();
-				points.performScale(scale);
-			}  
 			if(child instanceof IFigure) {
 				Rectangle bounds = ((IFigure) child).getBounds();
  				bounds.x *= scale;
@@ -31,8 +32,23 @@ public class SpacingManager {
 			}
 		}
 		for(Object child: parent.getChildren()) {
-			if (child instanceof IFigure) {
-				((IFigure) child).revalidate();
+			if(child instanceof IFigure) ((IFigure) child).revalidate();
+		}
+		Layer connectionLayer = FigureUtil.getConnectionLayer(parent);
+		if(connectionLayer != null) {
+			for(Object child: connectionLayer.getChildren()) {
+				if (child instanceof Connection) {
+					Connection connection = (Connection) child;
+					ConnectionRouter connectionRouter = connection.getConnectionRouter();
+					Object constraint = connectionRouter.getConstraint(connection);
+					if(constraint instanceof List<?>) {
+						for(Object bendpoint: (List<?>) constraint) {
+							if (bendpoint instanceof AbsoluteBendpoint) {
+								((AbsoluteBendpoint) bendpoint).scale(scale);
+							}
+						}
+					}
+				}
 			}
 		}
 	}

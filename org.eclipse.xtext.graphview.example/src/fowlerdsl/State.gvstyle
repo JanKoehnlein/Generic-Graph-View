@@ -9,7 +9,7 @@ import StateMachineDiagram.StateNode.*
 stylesheet StateMachineStyle for StateMachineDiagram 
 
 style StateMachineDiagram {
-	autoLayoutManager = new KielerAutoLayout("Fruchterman-Reingold")
+	autoLayoutManager = new KielerAutoLayout()
 }
 	
 style Transition.EventName {
