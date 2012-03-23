@@ -16,6 +16,7 @@ import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Layer;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Rectangle;
+import org.eclipse.xtext.graphview.shape.FigureUtil;
 import org.eclipse.zest.layouts.InvalidLayoutConfiguration;
 import org.eclipse.zest.layouts.LayoutEntity;
 import org.eclipse.zest.layouts.LayoutRelationship;
@@ -49,7 +50,7 @@ public class SpringAutoLayout extends AbstractAutoLayout {
 				childrenToNodes.put(childFigure, graphNode);
 			}
 		}
-		Layer connectionLayer = getConnectionLayer(container);
+		Layer connectionLayer = FigureUtil.getConnectionLayer(container);
 		ConnectionRouter connectionRouter = getConnectionRouter(container);
 		if (connectionLayer != null) {
 			for (Object child : connectionLayer.getChildren()) {

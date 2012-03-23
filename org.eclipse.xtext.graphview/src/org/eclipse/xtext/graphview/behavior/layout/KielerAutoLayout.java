@@ -24,6 +24,7 @@ import org.eclipse.draw2d.Layer;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.PrecisionPoint;
 import org.eclipse.draw2d.geometry.Rectangle;
+import org.eclipse.xtext.graphview.shape.FigureUtil;
 import org.eclipse.xtext.util.Strings;
 
 import com.google.common.collect.Lists;
@@ -150,7 +151,7 @@ public class KielerAutoLayout extends AbstractAutoLayout {
 				childrenToNodes.put(childFigure, graphNode);
 			}
 		}
-		Layer connectionLayer = getConnectionLayer(container);
+		Layer connectionLayer = FigureUtil.getConnectionLayer(container);
 		if (connectionLayer != null) {
 			for (Object child : connectionLayer.getChildren()) {
 				if (child instanceof Connection) {

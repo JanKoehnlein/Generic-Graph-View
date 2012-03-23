@@ -9,7 +9,6 @@ package org.eclipse.xtext.graphview.shape;
 
 import org.eclipse.draw2d.FreeformLayer;
 import org.eclipse.draw2d.FreeformLayout;
-import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Viewport;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Insets;
@@ -39,7 +38,7 @@ public class DiagramShape extends FreeformLayer {
 	@Override
 	public Rectangle getFreeformExtent() {
 		Rectangle freeformExtent = super.getFreeformExtent();
-		Viewport parentViewport = getParentViewport();
+		Viewport parentViewport = FigureUtil.findParentOfType(this, Viewport.class);
 		if (parentViewport != null ) {
 			Dimension viewDimension = parentViewport.getBounds().getSize();
 			parentViewport.translateToAbsolute(viewDimension);
@@ -51,12 +50,5 @@ public class DiagramShape extends FreeformLayer {
 					viewDimension.width));
 		}
 		return freeformExtent;
-	}
-
-	protected Viewport getParentViewport() {
-		IFigure currentParent = getParent();
-		while (!(currentParent instanceof Viewport) && currentParent != null)
-			currentParent = currentParent.getParent();
-		return (Viewport) currentParent;
 	}
 }

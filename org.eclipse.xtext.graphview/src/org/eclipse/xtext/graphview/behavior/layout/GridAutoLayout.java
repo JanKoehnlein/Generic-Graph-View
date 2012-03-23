@@ -18,6 +18,7 @@ import org.eclipse.draw2d.Layer;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
+import org.eclipse.xtext.graphview.shape.FigureUtil;
 
 import com.google.common.collect.Lists;
 
@@ -32,7 +33,7 @@ public class GridAutoLayout extends AbstractAutoLayout {
 	public void setOffset(int offset) {
 		this.offset = offset;
 	}
-
+	
 	public Rectangle layout(IFigure container) {
 		@SuppressWarnings("unchecked")
 		List<IFigure> children = Lists.newArrayList(container.getChildren());
@@ -63,7 +64,7 @@ public class GridAutoLayout extends AbstractAutoLayout {
 			currentY += currentRowHeight + getOffset();
 		}
 		int maxY = currentY;
-		Layer connectionLayer = getConnectionLayer(container);
+		Layer connectionLayer = FigureUtil.getConnectionLayer(container);
 		ConnectionRouter connectionRouter = getConnectionRouter(container);
 		if (connectionLayer != null && connectionRouter != null) {
 			for (Object child : connectionLayer.getChildren()) {
