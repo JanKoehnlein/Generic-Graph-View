@@ -4,7 +4,8 @@
     editorDirectory="/org.eclipse.xtext.graphview.style.editor/src" modelPluginID="org.eclipse.xtext.graphview.style"
     forceOverwrite="true" modelName="GraphViewStyle" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="5.0" copyrightFields="false" editPluginID="org.eclipse.xtext.graphview.style.edit"
-    editorPluginID="org.eclipse.xtext.graphview.style.editor" usedGenPackages="../../../../../../../org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types ../../../../../../../org.eclipse.xtext.graphview.map/src/org/eclipse/xtext/graphview/map/GraphViewMapping.genmodel#//graphViewMapping ../../../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase">
+    editorPluginID="org.eclipse.xtext.graphview.style.editor" runtimeVersion="2.8"
+    usedGenPackages="../../../../../../../org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types ../../../../../../../org.eclipse.xtext.graphview.map/src/org/eclipse/xtext/graphview/map/GraphViewMapping.genmodel#//graphViewMapping ../../../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase">
   <genPackages prefix="GraphViewStyle" basePackage="org.eclipse.xtext.graphview.style"
       disposableProviderFactory="true" ecorePackage="GraphViewStyle.ecore#/">
     <genClasses ecoreClass="GraphViewStyle.ecore#//StyleSheet">

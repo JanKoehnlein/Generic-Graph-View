@@ -87,7 +87,8 @@ public class DiagramMappingImpl extends AbstractMappingDefinitionImpl implements
 	 */
 	public EList<Import> getImports()
 	{
-		if (imports == null) {
+		if (imports == null)
+		{
 			imports = new EObjectContainmentEList<Import>(Import.class, this, GraphViewMappingPackage.DIAGRAM_MAPPING__IMPORTS);
 		}
 		return imports;
@@ -112,7 +113,8 @@ public class DiagramMappingImpl extends AbstractMappingDefinitionImpl implements
 	{
 		JvmTypeReference oldTypeGuard = typeGuard;
 		typeGuard = newTypeGuard;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GraphViewMappingPackage.DIAGRAM_MAPPING__TYPE_GUARD, oldTypeGuard, newTypeGuard);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -126,7 +128,8 @@ public class DiagramMappingImpl extends AbstractMappingDefinitionImpl implements
 	 */
 	public void setTypeGuard(JvmTypeReference newTypeGuard)
 	{
-		if (newTypeGuard != typeGuard) {
+		if (newTypeGuard != typeGuard)
+		{
 			NotificationChain msgs = null;
 			if (typeGuard != null)
 				msgs = ((InternalEObject)typeGuard).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GraphViewMappingPackage.DIAGRAM_MAPPING__TYPE_GUARD, null, msgs);
@@ -147,7 +150,8 @@ public class DiagramMappingImpl extends AbstractMappingDefinitionImpl implements
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.DIAGRAM_MAPPING__IMPORTS:
 				return ((InternalEList<?>)getImports()).basicRemove(otherEnd, msgs);
 			case GraphViewMappingPackage.DIAGRAM_MAPPING__TYPE_GUARD:
@@ -164,7 +168,8 @@ public class DiagramMappingImpl extends AbstractMappingDefinitionImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.DIAGRAM_MAPPING__IMPORTS:
 				return getImports();
 			case GraphViewMappingPackage.DIAGRAM_MAPPING__TYPE_GUARD:
@@ -182,7 +187,8 @@ public class DiagramMappingImpl extends AbstractMappingDefinitionImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.DIAGRAM_MAPPING__IMPORTS:
 				getImports().clear();
 				getImports().addAll((Collection<? extends Import>)newValue);
@@ -202,7 +208,8 @@ public class DiagramMappingImpl extends AbstractMappingDefinitionImpl implements
 	@Override
 	public void eUnset(int featureID)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.DIAGRAM_MAPPING__IMPORTS:
 				getImports().clear();
 				return;
@@ -221,7 +228,8 @@ public class DiagramMappingImpl extends AbstractMappingDefinitionImpl implements
 	@Override
 	public boolean eIsSet(int featureID)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.DIAGRAM_MAPPING__IMPORTS:
 				return imports != null && !imports.isEmpty();
 			case GraphViewMappingPackage.DIAGRAM_MAPPING__TYPE_GUARD:

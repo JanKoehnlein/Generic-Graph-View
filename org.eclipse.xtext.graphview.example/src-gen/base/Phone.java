@@ -1,6 +1,7 @@
 package base;
 
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
+import org.eclipse.xtext.xbase.lib.util.ToStringHelper;
 
 public class Phone {
   public Phone() {
@@ -20,11 +21,9 @@ public class Phone {
     this.number = number;
   }
   
+  @Override
   public String toString() {
-    StringBuilder result = new StringBuilder("\nPhone {");
-    result.append("\n  number = ").append(String.valueOf(number).replace("\n","\n  "));
-    result.append("\n}");
-    return result.toString();
-    
+    String result = new ToStringHelper().toString(this);
+    return result;
   }
 }

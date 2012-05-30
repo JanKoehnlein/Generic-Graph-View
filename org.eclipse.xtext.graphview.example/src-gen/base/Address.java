@@ -1,6 +1,7 @@
 package base;
 
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
+import org.eclipse.xtext.xbase.lib.util.ToStringHelper;
 
 public class Address {
   public Address() {
@@ -40,13 +41,9 @@ public class Address {
     this.country = country;
   }
   
+  @Override
   public String toString() {
-    StringBuilder result = new StringBuilder("\nAddress {");
-    result.append("\n  street = ").append(String.valueOf(street).replace("\n","\n  "));
-    result.append("\n  city = ").append(String.valueOf(city).replace("\n","\n  "));
-    result.append("\n  country = ").append(String.valueOf(country).replace("\n","\n  "));
-    result.append("\n}");
-    return result.toString();
-    
+    String result = new ToStringHelper().toString(this);
+    return result;
   }
 }

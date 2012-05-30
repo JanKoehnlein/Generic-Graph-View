@@ -4,6 +4,7 @@ import base.Address;
 import base.Phone;
 import java.util.List;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
+import org.eclipse.xtext.xbase.lib.util.ToStringHelper;
 
 public class Person {
   public Person() {
@@ -59,14 +60,9 @@ public class Person {
     this.phone = phone;
   }
   
+  @Override
   public String toString() {
-    StringBuilder result = new StringBuilder("\nPerson {");
-    result.append("\n  firstName = ").append(String.valueOf(firstName).replace("\n","\n  "));
-    result.append("\n  lastName = ").append(String.valueOf(lastName).replace("\n","\n  "));
-    result.append("\n  address = ").append(String.valueOf(address).replace("\n","\n  "));
-    result.append("\n  phone = ").append(String.valueOf(phone).replace("\n","\n  "));
-    result.append("\n}");
-    return result.toString();
-    
+    String result = new ToStringHelper().toString(this);
+    return result;
   }
 }

@@ -1,6 +1,7 @@
 package base.company.business;
 
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
+import org.eclipse.xtext.xbase.lib.util.ToStringHelper;
 
 public class Order {
   public Order() {
@@ -20,11 +21,9 @@ public class Order {
     this.orderID = orderID;
   }
   
+  @Override
   public String toString() {
-    StringBuilder result = new StringBuilder("\nOrder {");
-    result.append("\n  orderID = ").append(String.valueOf(orderID).replace("\n","\n  "));
-    result.append("\n}");
-    return result.toString();
-    
+    String result = new ToStringHelper().toString(this);
+    return result;
   }
 }

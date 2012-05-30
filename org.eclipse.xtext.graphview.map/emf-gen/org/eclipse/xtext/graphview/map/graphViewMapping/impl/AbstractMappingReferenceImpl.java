@@ -87,10 +87,12 @@ public class AbstractMappingReferenceImpl extends AbstractExpressionMappingImpl 
 	 */
 	public AbstractMappingDefinition getReferencedMapping()
 	{
-		if (referencedMapping != null && referencedMapping.eIsProxy()) {
+		if (referencedMapping != null && referencedMapping.eIsProxy())
+		{
 			InternalEObject oldReferencedMapping = (InternalEObject)referencedMapping;
 			referencedMapping = (AbstractMappingDefinition)eResolveProxy(oldReferencedMapping);
-			if (referencedMapping != oldReferencedMapping) {
+			if (referencedMapping != oldReferencedMapping)
+			{
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GraphViewMappingPackage.ABSTRACT_MAPPING_REFERENCE__REFERENCED_MAPPING, oldReferencedMapping, referencedMapping));
 			}
@@ -152,7 +154,8 @@ public class AbstractMappingReferenceImpl extends AbstractExpressionMappingImpl 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.ABSTRACT_MAPPING_REFERENCE__REFERENCED_MAPPING:
 				if (resolve) return getReferencedMapping();
 				return basicGetReferencedMapping();
@@ -170,7 +173,8 @@ public class AbstractMappingReferenceImpl extends AbstractExpressionMappingImpl 
 	@Override
 	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.ABSTRACT_MAPPING_REFERENCE__REFERENCED_MAPPING:
 				setReferencedMapping((AbstractMappingDefinition)newValue);
 				return;
@@ -189,7 +193,8 @@ public class AbstractMappingReferenceImpl extends AbstractExpressionMappingImpl 
 	@Override
 	public void eUnset(int featureID)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.ABSTRACT_MAPPING_REFERENCE__REFERENCED_MAPPING:
 				setReferencedMapping((AbstractMappingDefinition)null);
 				return;
@@ -208,7 +213,8 @@ public class AbstractMappingReferenceImpl extends AbstractExpressionMappingImpl 
 	@Override
 	public boolean eIsSet(int featureID)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.ABSTRACT_MAPPING_REFERENCE__REFERENCED_MAPPING:
 				return referencedMapping != null;
 			case GraphViewMappingPackage.ABSTRACT_MAPPING_REFERENCE__CALL:

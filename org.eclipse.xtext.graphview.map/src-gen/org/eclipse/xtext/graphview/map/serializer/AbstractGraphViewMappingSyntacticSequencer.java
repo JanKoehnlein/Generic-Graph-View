@@ -14,8 +14,8 @@ import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISyn
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 
-@SuppressWarnings("restriction")
-public class AbstractGraphViewMappingSyntacticSequencer extends AbstractSyntacticSequencer {
+@SuppressWarnings("all")
+public abstract class AbstractGraphViewMappingSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected GraphViewMappingGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_XBlockExpression_SemicolonKeyword_2_1_q;
@@ -43,6 +43,11 @@ public class AbstractGraphViewMappingSyntacticSequencer extends AbstractSyntacti
 		return "";
 	}
 	
+	/**
+	 * OpSingleAssign:
+	 * 	'='
+	 * ;
+	 */
 	protected String getOpSingleAssignToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
 			return getTokenText(node);

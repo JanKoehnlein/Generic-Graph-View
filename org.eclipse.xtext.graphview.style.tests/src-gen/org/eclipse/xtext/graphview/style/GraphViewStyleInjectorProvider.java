@@ -24,10 +24,14 @@ public class GraphViewStyleInjectorProvider implements IInjectorProvider, IRegis
 	{
 		if (injector == null) {
 			stateBeforeInjectorCreation = GlobalRegistries.makeCopyOfGlobalState();
-			this.injector = new GraphViewStyleStandaloneSetup().createInjectorAndDoEMFRegistration();
+			this.injector = internalCreateInjector();
 			stateAfterInjectorCreation = GlobalRegistries.makeCopyOfGlobalState();
 		}
 		return injector;
+	}
+	
+	protected Injector internalCreateInjector() {
+	    return new GraphViewStyleStandaloneSetup().createInjectorAndDoEMFRegistration();
 	}
 
 	public void restoreRegistry() {

@@ -38,9 +38,9 @@ XLiteral returns xbase::XExpression:
 	XColorLiteral;
 
 XColorLiteral:
-	color=Color;
+	color=COLOR;
 
-terminal Color:
+terminal COLOR:
 	'#' ('0'..'9'|'a'..'f'|'A'..'F')
 	('0'..'9'|'a'..'f'|'A'..'F')
 	('0'..'9'|'a'..'f'|'A'..'F')

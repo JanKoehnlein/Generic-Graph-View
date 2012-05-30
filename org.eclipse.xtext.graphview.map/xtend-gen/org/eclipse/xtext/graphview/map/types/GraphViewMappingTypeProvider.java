@@ -42,8 +42,8 @@ import org.eclipse.xtext.xbase.XVariableDeclaration;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.typing.XbaseTypeProvider;
 
-@SuppressWarnings("all")
 @Singleton
+@SuppressWarnings("all")
 public class GraphViewMappingTypeProvider extends XbaseTypeProvider {
   protected JvmTypeReference _typeForIdentifiable(final DiagramMapping it, final boolean rawType) {
     JvmTypeReference _typeGuard = it.getTypeGuard();

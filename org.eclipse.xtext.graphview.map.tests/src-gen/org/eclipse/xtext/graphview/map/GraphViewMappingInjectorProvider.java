@@ -24,10 +24,14 @@ public class GraphViewMappingInjectorProvider implements IInjectorProvider, IReg
 	{
 		if (injector == null) {
 			stateBeforeInjectorCreation = GlobalRegistries.makeCopyOfGlobalState();
-			this.injector = new GraphViewMappingStandaloneSetup().createInjectorAndDoEMFRegistration();
+			this.injector = internalCreateInjector();
 			stateAfterInjectorCreation = GlobalRegistries.makeCopyOfGlobalState();
 		}
 		return injector;
+	}
+	
+	protected Injector internalCreateInjector() {
+	    return new GraphViewMappingStandaloneSetup().createInjectorAndDoEMFRegistration();
 	}
 
 	public void restoreRegistry() {

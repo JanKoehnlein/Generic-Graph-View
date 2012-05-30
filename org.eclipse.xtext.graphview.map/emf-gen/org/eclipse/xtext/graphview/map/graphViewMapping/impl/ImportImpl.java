@@ -99,7 +99,8 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.IMPORT__IMPORTED_NAMESPACE:
 				return getImportedNamespace();
 		}
@@ -114,7 +115,8 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
 	@Override
 	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.IMPORT__IMPORTED_NAMESPACE:
 				setImportedNamespace((String)newValue);
 				return;
@@ -130,7 +132,8 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
 	@Override
 	public void eUnset(int featureID)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.IMPORT__IMPORTED_NAMESPACE:
 				setImportedNamespace(IMPORTED_NAMESPACE_EDEFAULT);
 				return;
@@ -146,7 +149,8 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
 	@Override
 	public boolean eIsSet(int featureID)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.IMPORT__IMPORTED_NAMESPACE:
 				return IMPORTED_NAMESPACE_EDEFAULT == null ? importedNamespace != null : !IMPORTED_NAMESPACE_EDEFAULT.equals(importedNamespace);
 		}

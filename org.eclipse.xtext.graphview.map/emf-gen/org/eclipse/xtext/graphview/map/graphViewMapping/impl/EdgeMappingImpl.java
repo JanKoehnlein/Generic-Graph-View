@@ -148,7 +148,8 @@ public class EdgeMappingImpl extends AbstractMappingDefinitionImpl implements Ed
 	{
 		XExpression oldExpression = expression;
 		expression = newExpression;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GraphViewMappingPackage.EDGE_MAPPING__EXPRESSION, oldExpression, newExpression);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -162,7 +163,8 @@ public class EdgeMappingImpl extends AbstractMappingDefinitionImpl implements Ed
 	 */
 	public void setExpression(XExpression newExpression)
 	{
-		if (newExpression != expression) {
+		if (newExpression != expression)
+		{
 			NotificationChain msgs = null;
 			if (expression != null)
 				msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GraphViewMappingPackage.EDGE_MAPPING__EXPRESSION, null, msgs);
@@ -194,7 +196,8 @@ public class EdgeMappingImpl extends AbstractMappingDefinitionImpl implements Ed
 	{
 		EdgeEndMapping oldSourceMapping = sourceMapping;
 		sourceMapping = newSourceMapping;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GraphViewMappingPackage.EDGE_MAPPING__SOURCE_MAPPING, oldSourceMapping, newSourceMapping);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -208,7 +211,8 @@ public class EdgeMappingImpl extends AbstractMappingDefinitionImpl implements Ed
 	 */
 	public void setSourceMapping(EdgeEndMapping newSourceMapping)
 	{
-		if (newSourceMapping != sourceMapping) {
+		if (newSourceMapping != sourceMapping)
+		{
 			NotificationChain msgs = null;
 			if (sourceMapping != null)
 				msgs = ((InternalEObject)sourceMapping).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GraphViewMappingPackage.EDGE_MAPPING__SOURCE_MAPPING, null, msgs);
@@ -240,7 +244,8 @@ public class EdgeMappingImpl extends AbstractMappingDefinitionImpl implements Ed
 	{
 		EdgeEndMapping oldTargetMapping = targetMapping;
 		targetMapping = newTargetMapping;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GraphViewMappingPackage.EDGE_MAPPING__TARGET_MAPPING, oldTargetMapping, newTargetMapping);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -254,7 +259,8 @@ public class EdgeMappingImpl extends AbstractMappingDefinitionImpl implements Ed
 	 */
 	public void setTargetMapping(EdgeEndMapping newTargetMapping)
 	{
-		if (newTargetMapping != targetMapping) {
+		if (newTargetMapping != targetMapping)
+		{
 			NotificationChain msgs = null;
 			if (targetMapping != null)
 				msgs = ((InternalEObject)targetMapping).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GraphViewMappingPackage.EDGE_MAPPING__TARGET_MAPPING, null, msgs);
@@ -275,7 +281,8 @@ public class EdgeMappingImpl extends AbstractMappingDefinitionImpl implements Ed
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.EDGE_MAPPING__EXPRESSION:
 				return basicSetExpression(null, msgs);
 			case GraphViewMappingPackage.EDGE_MAPPING__SOURCE_MAPPING:
@@ -294,7 +301,8 @@ public class EdgeMappingImpl extends AbstractMappingDefinitionImpl implements Ed
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.EDGE_MAPPING__MULTI:
 				return isMulti();
 			case GraphViewMappingPackage.EDGE_MAPPING__EXPRESSION:
@@ -315,7 +323,8 @@ public class EdgeMappingImpl extends AbstractMappingDefinitionImpl implements Ed
 	@Override
 	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.EDGE_MAPPING__MULTI:
 				setMulti((Boolean)newValue);
 				return;
@@ -340,7 +349,8 @@ public class EdgeMappingImpl extends AbstractMappingDefinitionImpl implements Ed
 	@Override
 	public void eUnset(int featureID)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.EDGE_MAPPING__MULTI:
 				setMulti(MULTI_EDEFAULT);
 				return;
@@ -365,7 +375,8 @@ public class EdgeMappingImpl extends AbstractMappingDefinitionImpl implements Ed
 	@Override
 	public boolean eIsSet(int featureID)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.EDGE_MAPPING__MULTI:
 				return multi != MULTI_EDEFAULT;
 			case GraphViewMappingPackage.EDGE_MAPPING__EXPRESSION:
@@ -386,8 +397,10 @@ public class EdgeMappingImpl extends AbstractMappingDefinitionImpl implements Ed
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
 	{
-		if (baseClass == AbstractExpressionMapping.class) {
-			switch (derivedFeatureID) {
+		if (baseClass == AbstractExpressionMapping.class)
+		{
+			switch (derivedFeatureID)
+			{
 				case GraphViewMappingPackage.EDGE_MAPPING__MULTI: return GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__MULTI;
 				case GraphViewMappingPackage.EDGE_MAPPING__EXPRESSION: return GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__EXPRESSION;
 				default: return -1;
@@ -404,8 +417,10 @@ public class EdgeMappingImpl extends AbstractMappingDefinitionImpl implements Ed
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
 	{
-		if (baseClass == AbstractExpressionMapping.class) {
-			switch (baseFeatureID) {
+		if (baseClass == AbstractExpressionMapping.class)
+		{
+			switch (baseFeatureID)
+			{
 				case GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__MULTI: return GraphViewMappingPackage.EDGE_MAPPING__MULTI;
 				case GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__EXPRESSION: return GraphViewMappingPackage.EDGE_MAPPING__EXPRESSION;
 				default: return -1;

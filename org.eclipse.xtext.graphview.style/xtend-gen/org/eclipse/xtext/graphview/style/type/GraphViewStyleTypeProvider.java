@@ -29,8 +29,8 @@ import org.eclipse.xtext.xbase.XTypeLiteral;
 import org.eclipse.xtext.xbase.XVariableDeclaration;
 import org.eclipse.xtext.xbase.typing.XbaseTypeProvider;
 
-@SuppressWarnings("all")
 @Singleton
+@SuppressWarnings("all")
 public class GraphViewStyleTypeProvider extends XbaseTypeProvider {
   protected JvmTypeReference _type(final XColorLiteral colorLiteral, final JvmTypeReference rawExpectation, final boolean rawType) {
     TypeReferences _typeReferences = this.getTypeReferences();

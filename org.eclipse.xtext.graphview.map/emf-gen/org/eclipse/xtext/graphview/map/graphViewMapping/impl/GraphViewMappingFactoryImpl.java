@@ -28,13 +28,16 @@ public class GraphViewMappingFactoryImpl extends EFactoryImpl implements GraphVi
 	 */
 	public static GraphViewMappingFactory init()
 	{
-		try {
+		try
+		{
 			GraphViewMappingFactory theGraphViewMappingFactory = (GraphViewMappingFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.eclipse.org/xtext/graphview/map/GraphViewMapping"); 
-			if (theGraphViewMappingFactory != null) {
+			if (theGraphViewMappingFactory != null)
+			{
 				return theGraphViewMappingFactory;
 			}
 		}
-		catch (Exception exception) {
+		catch (Exception exception)
+		{
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new GraphViewMappingFactoryImpl();
@@ -59,7 +62,8 @@ public class GraphViewMappingFactoryImpl extends EFactoryImpl implements GraphVi
 	@Override
 	public EObject create(EClass eClass)
 	{
-		switch (eClass.getClassifierID()) {
+		switch (eClass.getClassifierID())
+		{
 			case GraphViewMappingPackage.ABSTRACT_MAPPING_DEFINITION: return createAbstractMappingDefinition();
 			case GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING: return createAbstractExpressionMapping();
 			case GraphViewMappingPackage.ABSTRACT_MAPPING_REFERENCE: return createAbstractMappingReference();

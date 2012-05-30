@@ -124,7 +124,8 @@ public class AbstractExpressionMappingImpl extends AbstractMappingImpl implement
 	{
 		XExpression oldExpression = expression;
 		expression = newExpression;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__EXPRESSION, oldExpression, newExpression);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -138,7 +139,8 @@ public class AbstractExpressionMappingImpl extends AbstractMappingImpl implement
 	 */
 	public void setExpression(XExpression newExpression)
 	{
-		if (newExpression != expression) {
+		if (newExpression != expression)
+		{
 			NotificationChain msgs = null;
 			if (expression != null)
 				msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__EXPRESSION, null, msgs);
@@ -159,7 +161,8 @@ public class AbstractExpressionMappingImpl extends AbstractMappingImpl implement
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__EXPRESSION:
 				return basicSetExpression(null, msgs);
 		}
@@ -174,7 +177,8 @@ public class AbstractExpressionMappingImpl extends AbstractMappingImpl implement
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__MULTI:
 				return isMulti();
 			case GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__EXPRESSION:
@@ -191,7 +195,8 @@ public class AbstractExpressionMappingImpl extends AbstractMappingImpl implement
 	@Override
 	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__MULTI:
 				setMulti((Boolean)newValue);
 				return;
@@ -210,7 +215,8 @@ public class AbstractExpressionMappingImpl extends AbstractMappingImpl implement
 	@Override
 	public void eUnset(int featureID)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__MULTI:
 				setMulti(MULTI_EDEFAULT);
 				return;
@@ -229,7 +235,8 @@ public class AbstractExpressionMappingImpl extends AbstractMappingImpl implement
 	@Override
 	public boolean eIsSet(int featureID)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__MULTI:
 				return multi != MULTI_EDEFAULT;
 			case GraphViewMappingPackage.ABSTRACT_EXPRESSION_MAPPING__EXPRESSION:
