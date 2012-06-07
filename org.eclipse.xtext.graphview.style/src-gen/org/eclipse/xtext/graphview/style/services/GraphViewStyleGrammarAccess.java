@@ -248,17 +248,17 @@ public class GraphViewStyleGrammarAccess extends AbstractGrammarElementFinder {
 	public class XColorLiteralElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "XColorLiteral");
 		private final Assignment cColorAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cColorColorTerminalRuleCall_0 = (RuleCall)cColorAssignment.eContents().get(0);
+		private final RuleCall cColorCOLORTerminalRuleCall_0 = (RuleCall)cColorAssignment.eContents().get(0);
 		
 		//XColorLiteral:
-		//	color=Color;
+		//	color=COLOR;
 		public ParserRule getRule() { return rule; }
 
-		//color=Color
+		//color=COLOR
 		public Assignment getColorAssignment() { return cColorAssignment; }
 
-		//Color
-		public RuleCall getColorColorTerminalRuleCall_0() { return cColorColorTerminalRuleCall_0; }
+		//COLOR
+		public RuleCall getColorCOLORTerminalRuleCall_0() { return cColorCOLORTerminalRuleCall_0; }
 	}
 	
 	
@@ -268,7 +268,7 @@ public class GraphViewStyleGrammarAccess extends AbstractGrammarElementFinder {
 	private StyleElements pStyle;
 	private XLiteralElements pXLiteral;
 	private XColorLiteralElements pXColorLiteral;
-	private TerminalRule tColor;
+	private TerminalRule tCOLOR;
 	
 	private final Grammar grammar;
 
@@ -362,7 +362,7 @@ public class GraphViewStyleGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XColorLiteral:
-	//	color=Color;
+	//	color=COLOR;
 	public XColorLiteralElements getXColorLiteralAccess() {
 		return (pXColorLiteral != null) ? pXColorLiteral : (pXColorLiteral = new XColorLiteralElements());
 	}
@@ -371,11 +371,11 @@ public class GraphViewStyleGrammarAccess extends AbstractGrammarElementFinder {
 		return getXColorLiteralAccess().getRule();
 	}
 
-	//terminal Color:
+	//terminal COLOR:
 	//	"#" ("0".."9" | "a".."f" | "A".."F") ("0".."9" | "a".."f" | "A".."F") ("0".."9" | "a".."f" | "A".."F") ("0".."9" |
 	//	"a".."f" | "A".."F") ("0".."9" | "a".."f" | "A".."F") ("0".."9" | "a".."f" | "A".."F");
-	public TerminalRule getColorRule() {
-		return (tColor != null) ? tColor : (tColor = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "Color"));
+	public TerminalRule getCOLORRule() {
+		return (tCOLOR != null) ? tCOLOR : (tCOLOR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "COLOR"));
 	} 
 
 	//XExpression:
@@ -517,7 +517,7 @@ public class GraphViewStyleGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//OpOther:
-	//	"->" | ".." | "=>" | ">" ">" => ">"? | "<" "<" => "<"? | "<" ">" | "?:" | "<=>";
+	//	"->" | ".." | "=>" | ">" (=> (">" ">") | ">") | "<" (=> ("<" "<") | "<") | "<>" | "?:" | "<=>";
 	public XbaseGrammarAccess.OpOtherElements getOpOtherAccess() {
 		return gaXbase.getOpOtherAccess();
 	}
@@ -603,7 +603,7 @@ public class GraphViewStyleGrammarAccess extends AbstractGrammarElementFinder {
 	//	OpSingleAssign) value=XAssignment | => ({XMemberFeatureCall.memberCallTarget=current} ("." | nullSafe?="?." |
 	//	spreading?="*.")) ("<" typeArguments+=JvmArgumentTypeReference ("," typeArguments+=JvmArgumentTypeReference)* ">")?
 	//	feature=[types::JvmIdentifiableElement|ValidID] (=> explicitOperationCall?="(" (memberCallArguments+=XShortClosure |
-	//	memberCallArguments+=XExpression ("," memberCallArguments+=XExpression)*)? ")")? => memberCallArguments+=XClosure?)*;
+	//	memberCallArguments+=XExpression ("," memberCallArguments+=XExpression)*)? ")")? memberCallArguments+=XClosure?)*;
 	public XbaseGrammarAccess.XMemberFeatureCallElements getXMemberFeatureCallAccess() {
 		return gaXbase.getXMemberFeatureCallAccess();
 	}
@@ -625,8 +625,8 @@ public class GraphViewStyleGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XClosure returns XExpression:
-	//	{XClosure} "[" => ((declaredFormalParameters+=JvmFormalParameter ("," declaredFormalParameters+=JvmFormalParameter)*)?
-	//	explicitSyntax?="|")? expression=XExpressionInClosure "]";
+	//	=> ({XClosure} "[") => ((declaredFormalParameters+=JvmFormalParameter (","
+	//	declaredFormalParameters+=JvmFormalParameter)*)? explicitSyntax?="|")? expression=XExpressionInClosure "]";
 	public XbaseGrammarAccess.XClosureElements getXClosureAccess() {
 		return gaXbase.getXClosureAccess();
 	}
@@ -783,7 +783,7 @@ public class GraphViewStyleGrammarAccess extends AbstractGrammarElementFinder {
 	//	{XFeatureCall} declaringType=[types::JvmDeclaredType|StaticQualifier]? ("<" typeArguments+=JvmArgumentTypeReference
 	//	("," typeArguments+=JvmArgumentTypeReference)* ">")? feature=[types::JvmIdentifiableElement|IdOrSuper] (=>
 	//	explicitOperationCall?="(" (featureCallArguments+=XShortClosure | featureCallArguments+=XExpression (","
-	//	featureCallArguments+=XExpression)*)? ")")? => featureCallArguments+=XClosure?;
+	//	featureCallArguments+=XExpression)*)? ")")? featureCallArguments+=XClosure?;
 	public XbaseGrammarAccess.XFeatureCallElements getXFeatureCallAccess() {
 		return gaXbase.getXFeatureCallAccess();
 	}
@@ -818,7 +818,7 @@ public class GraphViewStyleGrammarAccess extends AbstractGrammarElementFinder {
 	//XConstructorCall returns XExpression:
 	//	{XConstructorCall} "new" constructor=[types::JvmConstructor|QualifiedName] ("<"
 	//	typeArguments+=JvmArgumentTypeReference ("," typeArguments+=JvmArgumentTypeReference)* ">")? ("("
-	//	(arguments+=XShortClosure | arguments+=XExpression ("," arguments+=XExpression)*)? ")")? => arguments+=XClosure?;
+	//	(arguments+=XShortClosure | arguments+=XExpression ("," arguments+=XExpression)*)? ")")? arguments+=XClosure?;
 	public XbaseGrammarAccess.XConstructorCallElements getXConstructorCallAccess() {
 		return gaXbase.getXConstructorCallAccess();
 	}
