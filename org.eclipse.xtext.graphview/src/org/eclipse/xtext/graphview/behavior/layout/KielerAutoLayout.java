@@ -169,6 +169,7 @@ public class KielerAutoLayout extends AbstractAutoLayout {
 		IKielerProgressMonitor progressMonitor = new BasicProgressMonitor();
 		AbstractLayoutProvider kielerLayoutProvider = ExtensionPointReader.getLayoutProvider(layoutName);
 		kielerLayoutProvider.doLayout(rootNode, progressMonitor);
+		kielerLayoutProvider.dispose();
 		Rectangle containerBounds = null;
 		for (Map.Entry<ILayoutNode, KNode> entry : childrenToNodes.entrySet()) {
 			KShapeLayout data = entry.getValue().getData(KShapeLayout.class);
