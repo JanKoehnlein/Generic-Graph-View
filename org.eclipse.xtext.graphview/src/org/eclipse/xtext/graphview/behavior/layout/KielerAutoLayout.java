@@ -38,7 +38,6 @@ import de.cau.cs.kieler.core.kgraph.KLabel;
 import de.cau.cs.kieler.core.kgraph.KLabeledGraphElement;
 import de.cau.cs.kieler.core.kgraph.KNode;
 import de.cau.cs.kieler.core.properties.IProperty;
-import de.cau.cs.kieler.core.properties.Property;
 import de.cau.cs.kieler.kiml.AbstractLayoutProvider;
 import de.cau.cs.kieler.kiml.klayoutdata.KEdgeLayout;
 import de.cau.cs.kieler.kiml.klayoutdata.KInsets;
@@ -102,7 +101,7 @@ public class KielerAutoLayout extends AbstractAutoLayout {
 
 	private String layoutName;
 	
-	private Map<String, IProperty<?>> properties = Maps.newHashMap(); 
+	private Map<IProperty<?>, Object> properties = Maps.newHashMap(); 
 
 	public KielerAutoLayout() {
 		this("Sugiyama");
@@ -117,32 +116,28 @@ public class KielerAutoLayout extends AbstractAutoLayout {
 		this.layoutName = layoutName;
 	}
 
-	public <T> void setProperty(String id, T value) {
-		properties.put(id, new Property<T>(id,value));
-	}
-	
 	public void setSpacing(double spacing) {
-		setProperty(LayoutOptions.SPACING_ID, (float) spacing);
+		properties.put(LayoutOptions.SPACING, new Float(spacing));
 	}
 	
 	public double getSpacing() {
-		return ((Float) properties.get(LayoutOptions.SPACING_ID).getDefault()).doubleValue();
+		return ((Float) properties.get(LayoutOptions.SPACING)).doubleValue();
 	}
 	
 	public void setAspectRatio(float aspectRatio) {
-		setProperty(LayoutOptions.ASPECT_RATIO_ID, aspectRatio);
+		properties.put(LayoutOptions.ASPECT_RATIO, aspectRatio);
 	}
 	
 	public void setRandomSeed(int randomSeed) {
-		setProperty(LayoutOptions.RANDOM_SEED_ID, randomSeed);
+		properties.put(LayoutOptions.RANDOM_SEED, randomSeed);
 	}
 	
 	public Rectangle layout(IFigure container) {
 		Map<ILayoutNode, KNode> childrenToNodes = Maps.newHashMap();
 		Map<Connection, KEdge> connectionToEdges = Maps.newHashMap();
 		KNode rootNode = createKNode(null);
-		for(IProperty<?> property: properties.values())
-			rootNode.getData(KShapeLayout.class).setProperty(property, property.getDefault());
+		for(Map.Entry<IProperty<?>,Object> property: properties.entrySet())
+			rootNode.getData(KShapeLayout.class).setProperty(property.getKey(), property.getValue());
 		for (Object child : container.getChildren()) {
 			if (child instanceof ILayoutNode) {
 				ILayoutNode childFigure = (ILayoutNode) child;
