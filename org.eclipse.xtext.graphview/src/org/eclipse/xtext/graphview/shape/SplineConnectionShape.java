@@ -76,7 +76,7 @@ public class SplineConnectionShape extends ConnectionShape {
 		polylinePoints.addPoint(segmentStart);
 		for (int i = 2; i < controlPoints.size() - 1; i++) {
 			PrecisionPoint segmentEnd = p(controlPoints, i, 1.);
-			polylinePoints.addPoint((int) Math.round(segmentEnd.preciseX()), (int) Math.round(segmentEnd.preciseY()));
+			polylinePoints.addPoint((int) Math.floor(segmentEnd.preciseX()), (int) Math.floor(segmentEnd.preciseY()));
 			calculateMiddlePoints(controlPoints, i, 0., segmentStart, 1., segmentEnd, polylinePoints.size() - 1, polylinePoints, tolerance);
 			segmentStart = segmentEnd;
 		}
@@ -88,7 +88,7 @@ public class SplineConnectionShape extends ConnectionShape {
 		double tMid = (tStart + tEnd) / 2.;
 		PrecisionPoint midPoint = p(controlPoints, segment, tMid);
 		double distance = distanceSqr(segmentStart, segmentEnd, midPoint, tolerance);
-		points.insertPoint(new Point((int) Math.round(midPoint.preciseX()), (int) Math.round(midPoint.preciseY())), endIndex);
+		points.insertPoint(new Point((int) Math.floor(midPoint.preciseX()), (int) Math.floor(midPoint.preciseY())), endIndex);
 		if (distance > 3) {
 			calculateMiddlePoints(controlPoints, segment, tMid, midPoint, tEnd, segmentEnd, endIndex + 1, points, tolerance);
 			calculateMiddlePoints(controlPoints, segment, tStart, segmentStart, tMid, midPoint, endIndex, points, tolerance);
