@@ -7,22 +7,16 @@
  *******************************************************************************/
 grammar org.eclipse.xtext.graphview.style.GraphViewStyle with org.eclipse.xtext.xbase.Xbase
 
-generate graphViewStyle "http://www.xtext.org/graphview/style/GraphViewStyle"
+import "http://www.xtext.org/graphview/style/GraphViewStyle"
 import "http://www.eclipse.org/xtext/xbase/Xbase" as xbase
 import "http://www.eclipse.org/xtext/graphview/map/GraphViewMapping" as gvmapping
 import "http://www.eclipse.org/emf/2002/Ecore"
 
 StyleSheet:
-	imports+=Import*
+	importSection=XImportSection
 	'stylesheet' name=QualifiedName 'for' diagramMapping=[gvmapping::DiagramMapping|QualifiedName]
 	styles+=Style*;
 	
-Import:
-	'import' importedNamespace=QualifiedNameWithWildcard;
-
-QualifiedNameWithWildcard:
-	QualifiedName ('.' '*')?;
-	 
 Style:
 	'style' mappings+=[gvmapping::AbstractMapping|QualifiedName] (',' mappings+=[gvmapping::AbstractMapping|QualifiedName])* 
 	('as' javaClass=JvmTypeReference)?

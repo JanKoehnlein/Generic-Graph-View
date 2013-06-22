@@ -11,16 +11,10 @@ import "http://www.eclipse.org/xtext/graphview/map/GraphViewMapping"
 import "http://www.eclipse.org/emf/2002/Ecore"
 
 DiagramMapping:
-	imports+=Import*
+	importSection=XImportSection?
 	'diagram' name=QualifiedName 'type' typeGuard=JvmTypeReference '{'
 	mappings+=AbstractExpressionMapping*
 	'}' ('unless' unlessCondition=XExpression)?;
-
-Import:
-	'import' importedNamespace=QualifiedNameWithWildcard;
- 
-QualifiedNameWithWildcard:
-	QualifiedName ('.' '*')?;
 
 AbstractExpressionMapping:
 	NodeMapping | LabelMapping | EdgeMapping | MappingCall;

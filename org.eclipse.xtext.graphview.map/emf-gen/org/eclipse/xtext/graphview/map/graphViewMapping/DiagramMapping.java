@@ -2,9 +2,8 @@
  */
 package org.eclipse.xtext.graphview.map.graphViewMapping;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.xtext.common.types.JvmTypeReference;
+import org.eclipse.xtext.xtype.XImportSection;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,7 +13,7 @@ import org.eclipse.xtext.common.types.JvmTypeReference;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping#getImports <em>Imports</em>}</li>
+ *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping#getImportSection <em>Import Section</em>}</li>
  *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping#getTypeGuard <em>Type Guard</em>}</li>
  * </ul>
  * </p>
@@ -26,20 +25,30 @@ import org.eclipse.xtext.common.types.JvmTypeReference;
 public interface DiagramMapping extends AbstractMappingDefinition
 {
 	/**
-	 * Returns the value of the '<em><b>Imports</b></em>' containment reference list.
-	 * The list contents are of type {@link org.eclipse.xtext.graphview.map.graphViewMapping.Import}.
+	 * Returns the value of the '<em><b>Import Section</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Imports</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Import Section</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Imports</em>' containment reference list.
-	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage#getDiagramMapping_Imports()
+	 * @return the value of the '<em>Import Section</em>' containment reference.
+	 * @see #setImportSection(XImportSection)
+	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage#getDiagramMapping_ImportSection()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Import> getImports();
+	XImportSection getImportSection();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping#getImportSection <em>Import Section</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Import Section</em>' containment reference.
+	 * @see #getImportSection()
+	 * @generated
+	 */
+	void setImportSection(XImportSection value);
 
 	/**
 	 * Returns the value of the '<em><b>Type Guard</b></em>' containment reference.

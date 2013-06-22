@@ -1,5 +1,5 @@
-import org.eclipse.xtext.graphview.shape.*
-import org.eclipse.xtext.graphview.behavior.layout.*  
+import org.eclipse.xtext.graphview.lib.shape.*
+import org.eclipse.xtext.graphview.lib.layout.*  
 import org.eclipse.draw2d.*
 import org.eclipse.swt.SWT
 import EPackageDiagram.*
@@ -7,53 +7,53 @@ import EPackageDiagram.*
 stylesheet EPackageDiagram for EPackageDiagram
 
 style EPackageDiagram {
-	autoLayoutManager = new KielerAutoLayout
+	autoLayoutManager = new KielerAutoLayout("Neato")
 }
 
-style EDataTypeNode as RectangleShape { 
+style EPackageDiagram.EDataTypeNode as RectangleShape { 
 }
 
-style EClassNode.Name {  
+style EPackageDiagram.EClassNode.Name {  
 	font = font("Helvetica", 13, SWT::BOLD + 
 		(if (element.abstract) SWT::ITALIC else SWT::NONE)
 	)
 }
 
-style EClassNode.Attributes, EClassNode.Operations as RectangleShape {
+style EPackageDiagram.EClassNode.Attributes, EPackageDiagram.EClassNode.Operations as RectangleShape {
 	outline = false
 	backgroundColor = color(#ffffff)
 }
 
-style EClassNode.ReferenceEdge as SplineConnectionShape {
+style EPackageDiagram.EClassNode.ReferenceEdge as SplineConnectionShape {
 	if(element.containment) 
 		targetDecoration = new DiamondDecoration()
 }
 
-style EClassNode.ReferenceEdge.EdgeLabel {
+style EPackageDiagram.EClassNode.ReferenceEdge.EdgeLabel {
 	connectionAlignment = ConnectionLocator::TARGET
 	opaque = true
 }
 
-style EClassNode.SuperclassEdge {
+style EPackageDiagram.EClassNode.SuperclassEdge {
 	val arrow = new ClosedArrowDecoration()
 	arrow.backgroundColor = color(#ffffff)
 	targetDecoration = arrow 
 }
 
-style EClassNode {
+style EPackageDiagram.EClassNode {
 	backgroundColor = color(#deedf5)
 }
 
-style EClassNode.Attributes.Label, EClassNode.Operations.Label {
+style EPackageDiagram.EClassNode.Attributes.Label, EPackageDiagram.EClassNode.Operations.Label {
 	font = font("Helvetica", 11, SWT::NONE)
 	border = null
 }
 
-style EClassNode.Attributes.Label {
+style EPackageDiagram.EClassNode.Attributes.Label {
 	text = element.name + ": " + element.EType.name
 }
 
-style EClassNode.Operations.Label {
+style EPackageDiagram.EClassNode.Operations.Label {
 	text = element.name + "(" 
 					+ element.EParameters.map(p|p.EType.name).join(", ") 
 					+ "): " 

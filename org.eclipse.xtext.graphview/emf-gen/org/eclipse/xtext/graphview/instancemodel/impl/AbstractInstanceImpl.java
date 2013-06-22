@@ -21,7 +21,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.xtext.graphview.instancemodel.AbstractInstance;
 import org.eclipse.xtext.graphview.instancemodel.InstancemodelPackage;
 import org.eclipse.xtext.graphview.instancemodel.Visibility;
-import org.eclipse.xtext.graphview.instancemodel.ViewState;
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping;
 
 /**

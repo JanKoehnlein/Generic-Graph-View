@@ -2,26 +2,15 @@
  */
 package org.eclipse.xtext.graphview.map.graphViewMapping.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.xtext.common.types.JvmTypeReference;
-
 import org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage;
-import org.eclipse.xtext.graphview.map.graphViewMapping.Import;
+import org.eclipse.xtext.xtype.XImportSection;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,7 +19,7 @@ import org.eclipse.xtext.graphview.map.graphViewMapping.Import;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.DiagramMappingImpl#getImports <em>Imports</em>}</li>
+ *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.DiagramMappingImpl#getImportSection <em>Import Section</em>}</li>
  *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.DiagramMappingImpl#getTypeGuard <em>Type Guard</em>}</li>
  * </ul>
  * </p>
@@ -40,14 +29,14 @@ import org.eclipse.xtext.graphview.map.graphViewMapping.Import;
 public class DiagramMappingImpl extends AbstractMappingDefinitionImpl implements DiagramMapping
 {
 	/**
-	 * The cached value of the '{@link #getImports() <em>Imports</em>}' containment reference list.
+	 * The cached value of the '{@link #getImportSection() <em>Import Section</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getImports()
+	 * @see #getImportSection()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Import> imports;
+	protected XImportSection importSection;
 
 	/**
 	 * The cached value of the '{@link #getTypeGuard() <em>Type Guard</em>}' containment reference.
@@ -85,13 +74,47 @@ public class DiagramMappingImpl extends AbstractMappingDefinitionImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Import> getImports()
+	public XImportSection getImportSection()
 	{
-		if (imports == null)
+		return importSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetImportSection(XImportSection newImportSection, NotificationChain msgs)
+	{
+		XImportSection oldImportSection = importSection;
+		importSection = newImportSection;
+		if (eNotificationRequired())
 		{
-			imports = new EObjectContainmentEList<Import>(Import.class, this, GraphViewMappingPackage.DIAGRAM_MAPPING__IMPORTS);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GraphViewMappingPackage.DIAGRAM_MAPPING__IMPORT_SECTION, oldImportSection, newImportSection);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
-		return imports;
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setImportSection(XImportSection newImportSection)
+	{
+		if (newImportSection != importSection)
+		{
+			NotificationChain msgs = null;
+			if (importSection != null)
+				msgs = ((InternalEObject)importSection).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GraphViewMappingPackage.DIAGRAM_MAPPING__IMPORT_SECTION, null, msgs);
+			if (newImportSection != null)
+				msgs = ((InternalEObject)newImportSection).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GraphViewMappingPackage.DIAGRAM_MAPPING__IMPORT_SECTION, null, msgs);
+			msgs = basicSetImportSection(newImportSection, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GraphViewMappingPackage.DIAGRAM_MAPPING__IMPORT_SECTION, newImportSection, newImportSection));
 	}
 
 	/**
@@ -152,8 +175,8 @@ public class DiagramMappingImpl extends AbstractMappingDefinitionImpl implements
 	{
 		switch (featureID)
 		{
-			case GraphViewMappingPackage.DIAGRAM_MAPPING__IMPORTS:
-				return ((InternalEList<?>)getImports()).basicRemove(otherEnd, msgs);
+			case GraphViewMappingPackage.DIAGRAM_MAPPING__IMPORT_SECTION:
+				return basicSetImportSection(null, msgs);
 			case GraphViewMappingPackage.DIAGRAM_MAPPING__TYPE_GUARD:
 				return basicSetTypeGuard(null, msgs);
 		}
@@ -170,8 +193,8 @@ public class DiagramMappingImpl extends AbstractMappingDefinitionImpl implements
 	{
 		switch (featureID)
 		{
-			case GraphViewMappingPackage.DIAGRAM_MAPPING__IMPORTS:
-				return getImports();
+			case GraphViewMappingPackage.DIAGRAM_MAPPING__IMPORT_SECTION:
+				return getImportSection();
 			case GraphViewMappingPackage.DIAGRAM_MAPPING__TYPE_GUARD:
 				return getTypeGuard();
 		}
@@ -183,15 +206,13 @@ public class DiagramMappingImpl extends AbstractMappingDefinitionImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue)
 	{
 		switch (featureID)
 		{
-			case GraphViewMappingPackage.DIAGRAM_MAPPING__IMPORTS:
-				getImports().clear();
-				getImports().addAll((Collection<? extends Import>)newValue);
+			case GraphViewMappingPackage.DIAGRAM_MAPPING__IMPORT_SECTION:
+				setImportSection((XImportSection)newValue);
 				return;
 			case GraphViewMappingPackage.DIAGRAM_MAPPING__TYPE_GUARD:
 				setTypeGuard((JvmTypeReference)newValue);
@@ -210,8 +231,8 @@ public class DiagramMappingImpl extends AbstractMappingDefinitionImpl implements
 	{
 		switch (featureID)
 		{
-			case GraphViewMappingPackage.DIAGRAM_MAPPING__IMPORTS:
-				getImports().clear();
+			case GraphViewMappingPackage.DIAGRAM_MAPPING__IMPORT_SECTION:
+				setImportSection((XImportSection)null);
 				return;
 			case GraphViewMappingPackage.DIAGRAM_MAPPING__TYPE_GUARD:
 				setTypeGuard((JvmTypeReference)null);
@@ -230,8 +251,8 @@ public class DiagramMappingImpl extends AbstractMappingDefinitionImpl implements
 	{
 		switch (featureID)
 		{
-			case GraphViewMappingPackage.DIAGRAM_MAPPING__IMPORTS:
-				return imports != null && !imports.isEmpty();
+			case GraphViewMappingPackage.DIAGRAM_MAPPING__IMPORT_SECTION:
+				return importSection != null;
 			case GraphViewMappingPackage.DIAGRAM_MAPPING__TYPE_GUARD:
 				return typeGuard != null;
 		}

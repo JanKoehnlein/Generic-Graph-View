@@ -1,9 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Graphview
+Bundle-Name: Graphview Xtext Example
 Bundle-SymbolicName: org.eclipse.xtext.xtext.ui.graphview;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-Vendor: Eclipse Modeling Project
 Fragment-Host: org.eclipse.xtext.xtext.ui;bundle-version="2.3.0"
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Require-Bundle: org.eclipse.xtext.graphview;bundle-version="1.0.0"
+Require-Bundle: org.eclipse.xtext.graphview.providers;bundle-version="1.0.0"

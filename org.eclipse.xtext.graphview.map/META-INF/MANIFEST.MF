@@ -18,7 +18,9 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.eclipse.emf.common,
  org.antlr.runtime,
  org.eclipse.core.runtime,
- org.eclipse.xtext.xbase.lib
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.xtext.common.types,
+ org.eclipse.xtext.graphview.lib;bundle-version="1.0.0"
 Import-Package: org.apache.log4j,
  org.apache.commons.logging,
  org.eclipse.xtext.xbase.lib
@@ -30,7 +32,6 @@ Export-Package: org.eclipse.xtext.graphview.map,
  org.eclipse.xtext.graphview.map.graphViewMapping.util,
  org.eclipse.xtext.graphview.map.parser.antlr,
  org.eclipse.xtext.graphview.map.parser.antlr.internal,
- org.eclipse.xtext.graphview.map.scoping,
  org.eclipse.xtext.graphview.map.serializer,
  org.eclipse.xtext.graphview.map.services,
  org.eclipse.xtext.graphview.map.types,

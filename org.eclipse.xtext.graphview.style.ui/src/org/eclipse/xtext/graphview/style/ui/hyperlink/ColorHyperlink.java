@@ -15,7 +15,7 @@ import org.eclipse.swt.graphics.RGB;
 import org.eclipse.swt.widgets.ColorDialog;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.text.edits.ReplaceEdit;
-import org.eclipse.xtext.graphview.style.type.ColorLiteral;
+import org.eclipse.xtext.graphview.lib.literals.ColorLiteral;
 
 public class ColorHyperlink implements IHyperlink {
 

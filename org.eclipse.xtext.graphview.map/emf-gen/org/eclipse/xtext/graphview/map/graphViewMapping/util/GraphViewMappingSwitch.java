@@ -4,12 +4,19 @@ package org.eclipse.xtext.graphview.map.graphViewMapping.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
 import org.eclipse.xtext.common.types.JvmIdentifiableElement;
-
-import org.eclipse.xtext.graphview.map.graphViewMapping.*;
+import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractExpressionMapping;
+import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping;
+import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMappingDefinition;
+import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMappingReference;
+import org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping;
+import org.eclipse.xtext.graphview.map.graphViewMapping.EdgeEndMapping;
+import org.eclipse.xtext.graphview.map.graphViewMapping.EdgeMapping;
+import org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage;
+import org.eclipse.xtext.graphview.map.graphViewMapping.LabelMapping;
+import org.eclipse.xtext.graphview.map.graphViewMapping.MappingCall;
+import org.eclipse.xtext.graphview.map.graphViewMapping.NodeMapping;
 
 /**
  * <!-- begin-user-doc -->
@@ -107,13 +114,6 @@ public class GraphViewMappingSwitch<T> extends Switch<T>
 				if (result == null) result = caseAbstractExpressionMapping(abstractMappingReference);
 				if (result == null) result = caseAbstractMapping(abstractMappingReference);
 				if (result == null) result = caseJvmIdentifiableElement(abstractMappingReference);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case GraphViewMappingPackage.IMPORT:
-			{
-				Import import_ = (Import)theEObject;
-				T result = caseImport(import_);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -246,22 +246,6 @@ public class GraphViewMappingSwitch<T> extends Switch<T>
 	 * @generated
 	 */
 	public T caseAbstractMappingReference(AbstractMappingReference object)
-	{
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Import</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Import</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseImport(Import object)
 	{
 		return null;
 	}

@@ -1,16 +1,13 @@
-import org.eclipse.xtext.graphview.shape.*
-import org.eclipse.xtext.graphview.behavior.layout.*
+import org.eclipse.xtext.graphview.lib.layout.*
 import org.eclipse.draw2d.* 
   
-import EClassHierarchy.*
-
 stylesheet EClassHierarchy for EClassHierarchy
 
 style EClassHierarchy {
 	autoLayoutManager = new KielerAutoLayout
 }
 
-style EClassNode.SuperType {
+style EClassHierarchy.EClassNode.SuperType {
 	var arrow = new PolygonDecoration()
 	arrow.setScale(8,8)
 	arrow.backgroundColor = color(#ffffff)

@@ -24,6 +24,8 @@ Workflow {
         registerGenModelFile = "platform:/resource/org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel"
         registerGenModelFile = "platform:/resource/org.eclipse.xtext.graphview.map/src/org/eclipse/xtext/graphview/map/GraphViewMapping.genmodel"
         registerGeneratedEPackage = "org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage"
+        registerGenModelFile = "platform:/resource/org.eclipse.xtext.graphview.style/src/org/eclipse/xtext/graphview/style/GraphViewStyle.genmodel"
+        registerGeneratedEPackage = "org.eclipse.xtext.graphview.style.graphViewStyle.GraphViewStylePackage"
     }
 
     component = DirectoryCleaner {
@@ -31,8 +33,17 @@ Workflow {
     }
 
     component = DirectoryCleaner {
+        directory = "${runtimeProject}./emf-gen"
+    }
+
+    component = DirectoryCleaner {
         directory = "${runtimeProject}.ui/src-gen"
     }
+
+	component = org.eclipse.emf.mwe2.ecore.EcoreGenerator {
+		genModel = "platform:/resource/org.eclipse.xtext.graphview.style/src/org/eclipse/xtext/graphview/style/GraphViewStyle.genmodel"
+		srcPath = "emf-gen/"
+	} 
 
     component = Generator {
         pathRtProject = runtimeProject

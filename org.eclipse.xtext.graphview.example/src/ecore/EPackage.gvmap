@@ -1,18 +1,20 @@
-import org.eclipse.emf.ecore.*
+import org.eclipse.emf.ecore.EPackage
+import org.eclipse.emf.ecore.EClass
+import org.eclipse.emf.ecore.EDataType
 
 diagram EPackageDiagram type EPackage {
  	node EClassNode for each EClassifiers.filter(typeof (EClass)) {  
 		label Name for this
 		node Attributes for EAttributes {
 			label Label for each this		
-		} unless EAttributes.empty
-		node Operations for EOperations {
+		} unless EAttributes.empty 
+		node Operations for EOperations { 
 			label Label for each this
 		}  unless EOperations.empty
 		edge ReferenceEdge for each EReferences {
 			=> ref EClassNode for EType
 			label EdgeLabel for name   
-		} unless true
+		} //unless true 
 		edge SuperclassEdge for each ESuperTypes {
 			=> ref EClassNode for this   
 		} 

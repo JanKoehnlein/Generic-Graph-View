@@ -4,14 +4,20 @@ package org.eclipse.xtext.graphview.map.graphViewMapping.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.xtext.common.types.JvmIdentifiableElement;
-
-import org.eclipse.xtext.graphview.map.graphViewMapping.*;
+import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractExpressionMapping;
+import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping;
+import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMappingDefinition;
+import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMappingReference;
+import org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping;
+import org.eclipse.xtext.graphview.map.graphViewMapping.EdgeEndMapping;
+import org.eclipse.xtext.graphview.map.graphViewMapping.EdgeMapping;
+import org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage;
+import org.eclipse.xtext.graphview.map.graphViewMapping.LabelMapping;
+import org.eclipse.xtext.graphview.map.graphViewMapping.MappingCall;
+import org.eclipse.xtext.graphview.map.graphViewMapping.NodeMapping;
 
 /**
  * <!-- begin-user-doc -->
@@ -95,11 +101,6 @@ public class GraphViewMappingAdapterFactory extends AdapterFactoryImpl
 			public Adapter caseAbstractMappingReference(AbstractMappingReference object)
 			{
 				return createAbstractMappingReferenceAdapter();
-			}
-			@Override
-			public Adapter caseImport(Import object)
-			{
-				return createImportAdapter();
 			}
 			@Override
 			public Adapter caseDiagramMapping(DiagramMapping object)
@@ -214,21 +215,6 @@ public class GraphViewMappingAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	public Adapter createAbstractMappingReferenceAdapter()
-	{
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.xtext.graphview.map.graphViewMapping.Import <em>Import</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.Import
-	 * @generated
-	 */
-	public Adapter createImportAdapter()
 	{
 		return null;
 	}

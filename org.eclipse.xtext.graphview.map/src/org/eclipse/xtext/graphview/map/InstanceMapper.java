@@ -16,13 +16,12 @@ import org.eclipse.xtext.xbase.XExpression;
 import org.eclipse.xtext.xbase.interpreter.IEvaluationContext;
 import org.eclipse.xtext.xbase.interpreter.IEvaluationResult;
 import org.eclipse.xtext.xbase.interpreter.impl.XbaseInterpreter;
-import org.eclipse.xtext.xbase.scoping.XbaseScopeProvider;
+import org.eclipse.xtext.xbase.scoping.batch.IFeatureNames;
 
 import com.google.common.collect.Lists;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 
-@SuppressWarnings("restriction")
 public class InstanceMapper implements IInstanceMapper {
 
 	private static final Logger LOG = Logger.getLogger(InstanceMapper.class);
@@ -62,7 +61,7 @@ public class InstanceMapper implements IInstanceMapper {
 	protected Object evaluate(XExpression expression, Object thisElement) {
 		xbaseInterpreter.setClassLoader(classLoader);
 		IEvaluationContext evaluationContext = contextProvider.get();
-		evaluationContext.newValue(XbaseScopeProvider.THIS, thisElement);
+		evaluationContext.newValue(IFeatureNames.THIS, thisElement);
 		IEvaluationResult result = xbaseInterpreter.evaluate(expression, evaluationContext, CancelIndicator.NullImpl);
 		if (result.getException() != null) {
 			LOG.error("Error applying mapping", result.getException());

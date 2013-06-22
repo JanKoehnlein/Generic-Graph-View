@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <psf version="2.0">
-<provider id="org.eclipse.team.svn.core.svnnature">
-<project reference="1.0.1,http://rtsys.informatik.uni-kiel.de/svn/kieler/trunk/plugins/de.cau.cs.kieler.core,de.cau.cs.kieler.core,a0a47d54a3f0001f1e08a6bcea8bff31;http://rtsys.informatik.uni-kiel.de/svn/kieler/trunk/plugins/;http://rtsys.informatik.uni-kiel.de/svn/kieler/trunk/plugins/;branches;tags;trunk;true;6debc4e9-3993-48f0-b640-80cb21cd30b6;http://rtsys.informatik.uni-kiel.de/svn/kieler/trunk/plugins/;;false;;;0"/>
-<project reference="1.0.1,http://rtsys.informatik.uni-kiel.de/svn/kieler/trunk/plugins/de.cau.cs.kieler.core.kgraph,de.cau.cs.kieler.core.kgraph,a0a47d54a3f0001f1e08a6bcea8bff31;http://rtsys.informatik.uni-kiel.de/svn/kieler/trunk/plugins/;http://rtsys.informatik.uni-kiel.de/svn/kieler/trunk/plugins/;branches;tags;trunk;true;6debc4e9-3993-48f0-b640-80cb21cd30b6;http://rtsys.informatik.uni-kiel.de/svn/kieler/trunk/plugins/;;false;;;0"/>
-<project reference="1.0.1,http://rtsys.informatik.uni-kiel.de/svn/kieler/trunk/plugins/de.cau.cs.kieler.kiml,de.cau.cs.kieler.kiml,a0a47d54a3f0001f1e08a6bcea8bff31;http://rtsys.informatik.uni-kiel.de/svn/kieler/trunk/plugins/;http://rtsys.informatik.uni-kiel.de/svn/kieler/trunk/plugins/;branches;tags;trunk;true;6debc4e9-3993-48f0-b640-80cb21cd30b6;http://rtsys.informatik.uni-kiel.de/svn/kieler/trunk/plugins/;;false;;;0"/>
-<project reference="1.0.1,http://rtsys.informatik.uni-kiel.de/svn/kieler/trunk/plugins/de.cau.cs.kieler.kiml.graphviz.dot,de.cau.cs.kieler.kiml.graphviz.dot,a0a47d54a3f0001f1e08a6bcea8bff31;http://rtsys.informatik.uni-kiel.de/svn/kieler/trunk/plugins/;http://rtsys.informatik.uni-kiel.de/svn/kieler/trunk/plugins/;branches;tags;trunk;true;6debc4e9-3993-48f0-b640-80cb21cd30b6;http://rtsys.informatik.uni-kiel.de/svn/kieler/trunk/plugins/;;false;;;0"/>
-<project reference="1.0.1,http://rtsys.informatik.uni-kiel.de/svn/kieler/trunk/plugins/de.cau.cs.kieler.kiml.graphviz.layouter,de.cau.cs.kieler.kiml.graphviz.layouter,a0a47d54a3f0001f1e08a6bcea8bff31;http://rtsys.informatik.uni-kiel.de/svn/kieler/trunk/plugins/;http://rtsys.informatik.uni-kiel.de/svn/kieler/trunk/plugins/;branches;tags;trunk;true;6debc4e9-3993-48f0-b640-80cb21cd30b6;http://rtsys.informatik.uni-kiel.de/svn/kieler/trunk/plugins/;;false;;;0"/>
-<project reference="1.0.1,http://rtsys.informatik.uni-kiel.de/svn/kieler/trunk/plugins/de.cau.cs.kieler.kiml.ogdf,de.cau.cs.kieler.kiml.ogdf,a0a47d54a3f0001f1e08a6bcea8bff31;http://rtsys.informatik.uni-kiel.de/svn/kieler/trunk/plugins/;http://rtsys.informatik.uni-kiel.de/svn/kieler/trunk/plugins/;branches;tags;trunk;true;6debc4e9-3993-48f0-b640-80cb21cd30b6;http://rtsys.informatik.uni-kiel.de/svn/kieler/trunk/plugins/;;false;;;0"/>
-<project reference="1.0.1,http://rtsys.informatik.uni-kiel.de/svn/kieler/trunk/plugins/de.cau.cs.kieler.kiml.service,de.cau.cs.kieler.kiml.service,a0a47d54a3f0001f1e08a6bcea8bff31;http://rtsys.informatik.uni-kiel.de/svn/kieler/trunk/plugins/;http://rtsys.informatik.uni-kiel.de/svn/kieler/trunk/plugins/;branches;tags;trunk;true;6debc4e9-3993-48f0-b640-80cb21cd30b6;http://rtsys.informatik.uni-kiel.de/svn/kieler/trunk/plugins/;;false;;;0"/>
-<project reference="1.0.1,http://rtsys.informatik.uni-kiel.de/svn/kieler/trunk/plugins/net.ogdf.bin,net.ogdf.bin,a0a47d54a3f0001f1e08a6bcea8bff31;http://rtsys.informatik.uni-kiel.de/svn/kieler/trunk/plugins/;http://rtsys.informatik.uni-kiel.de/svn/kieler/trunk/plugins/;branches;tags;trunk;true;6debc4e9-3993-48f0-b640-80cb21cd30b6;http://rtsys.informatik.uni-kiel.de/svn/kieler/trunk/plugins/;;false;;;0"/>
-<project reference="1.0.1,http://rtsys.informatik.uni-kiel.de/svn/kieler/trunk/plugins/net.ogdf.ogml,net.ogdf.ogml,a0a47d54a3f0001f1e08a6bcea8bff31;http://rtsys.informatik.uni-kiel.de/svn/kieler/trunk/plugins/;http://rtsys.informatik.uni-kiel.de/svn/kieler/trunk/plugins/;branches;tags;trunk;true;6debc4e9-3993-48f0-b640-80cb21cd30b6;http://rtsys.informatik.uni-kiel.de/svn/kieler/trunk/plugins/;;false;;;0"/>
+<provider id="org.eclipse.egit.core.GitProvider">
+<project reference="1.0,http://git.rtsys.informatik.uni-kiel.de/scm/kieler/pragmatics.git,master,plugins/de.cau.cs.kieler.core"/>
+<project reference="1.0,http://git.rtsys.informatik.uni-kiel.de/scm/kieler/pragmatics.git,master,plugins/de.cau.cs.kieler.core.kgraph"/>
+<project reference="1.0,http://git.rtsys.informatik.uni-kiel.de/scm/kieler/pragmatics.git,master,plugins/de.cau.cs.kieler.kiml"/>
+<project reference="1.0,http://git.rtsys.informatik.uni-kiel.de/scm/kieler/pragmatics.git,master,plugins/de.cau.cs.kieler.kiml.graphviz.dot"/>
+<project reference="1.0,http://git.rtsys.informatik.uni-kiel.de/scm/kieler/pragmatics.git,master,plugins/de.cau.cs.kieler.kiml.graphviz.layouter"/>
+<project reference="1.0,http://git.rtsys.informatik.uni-kiel.de/scm/kieler/pragmatics.git,master,plugins/de.cau.cs.kieler.kiml.ogdf"/>
+<project reference="1.0,http://git.rtsys.informatik.uni-kiel.de/scm/kieler/pragmatics.git,master,plugins/de.cau.cs.kieler.kiml.service"/>
+<project reference="1.0,http://git.rtsys.informatik.uni-kiel.de/scm/kieler/pragmatics.git,master,plugins/net.ogdf.bin"/>
+<project reference="1.0,http://git.rtsys.informatik.uni-kiel.de/scm/kieler/pragmatics.git,master,plugins/net.ogdf.ogml"/>
 </provider>
-<workingSets editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" id="1312890590115_2" label="KIELER" name="KIELER">
-<item elementID="=de.cau.cs.kieler.kiml.ogdf" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=de.cau.cs.kieler.core.kgraph" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<workingSets editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" id="1371907038409_4" label="Kieler" name="Kieler">
 <item elementID="=de.cau.cs.kieler.core" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=net.ogdf.ogml" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=net.ogdf.bin" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=de.cau.cs.kieler.core.kgraph" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=de.cau.cs.kieler.kiml" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=de.cau.cs.kieler.kiml.graphviz.dot" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=de.cau.cs.kieler.kiml.graphviz.layouter" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=de.cau.cs.kieler.kiml.ogdf" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=de.cau.cs.kieler.kiml.service" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=net.ogdf.bin" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=net.ogdf.ogml" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 </workingSets>
 </psf>

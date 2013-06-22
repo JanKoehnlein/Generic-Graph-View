@@ -10,17 +10,16 @@ package org.eclipse.xtext.graphview.style;
 import org.apache.log4j.Logger;
 import org.eclipse.xtext.common.types.JvmTypeReference;
 import org.eclipse.xtext.graphview.style.graphViewStyle.Style;
-import org.eclipse.xtext.graphview.style.scoping.GraphViewStyleScopeProvider;
+import org.eclipse.xtext.graphview.style.type.GVSTypeResolver;
 import org.eclipse.xtext.util.CancelIndicator;
 import org.eclipse.xtext.util.Strings;
 import org.eclipse.xtext.xbase.interpreter.IEvaluationContext;
 import org.eclipse.xtext.xbase.interpreter.impl.XbaseInterpreter;
-import org.eclipse.xtext.xbase.scoping.XbaseScopeProvider;
+import org.eclipse.xtext.xbase.scoping.batch.IFeatureNames;
 
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 
-@SuppressWarnings("restriction")
 public class Styler implements IStyler {
 
 	private static final Logger LOG = Logger.getLogger(Styler.class);
@@ -45,8 +44,8 @@ public class Styler implements IStyler {
 			if (javaClass == null || Strings.equal(javaClass.getIdentifier(), figure.getClass().getCanonicalName())) {
 				xbaseInterpreter.setClassLoader(classLoader);
 				IEvaluationContext context = contextProvider.get();
-				context.newValue(XbaseScopeProvider.THIS, figure);
-				context.newValue(GraphViewStyleScopeProvider.SEMANTIC_ELEMENT, semanticElement);
+				context.newValue(IFeatureNames.THIS, figure);
+				context.newValue(GVSTypeResolver.SEMANTIC_ELEMENT, semanticElement);
 				xbaseInterpreter.evaluate(style.getExpression(), context, CancelIndicator.NullImpl);
 				return true;
 			}

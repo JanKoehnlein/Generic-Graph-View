@@ -1,5 +1,4 @@
-import org.eclipse.xtext.graphview.layout.*
-import org.eclipse.xtext.graphview.shape.*
+import org.eclipse.xtext.graphview.lib.shape.*
 import org.eclipse.xtext.*
 import org.eclipse.emf.ecore.*
 

@@ -7,7 +7,6 @@ Bundle-Activator: org.eclipse.xtext.graphview.providers.Activator
 Bundle-Vendor: Eclipse Modeling Project
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- org.eclipse.xtext.graphview;bundle-version="1.0.0",
  org.eclipse.jdt.ui;bundle-version="3.7.0",
  org.eclipse.jdt.core;bundle-version="3.7.0",
  org.eclipse.ui.editors;bundle-version="3.7.0",
@@ -18,6 +17,10 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.xtext.graphview.style;bundle-version="1.0.0",
  org.eclipse.core.resources;bundle-version="3.7.100",
  org.eclipse.ui.ide;bundle-version="3.7.0",
- org.eclipse.emf.edit;bundle-version="2.6.0"
+ org.eclipse.emf.edit;bundle-version="2.6.0",
+ org.eclipse.xtext.graphview.lib;bundle-version="1.0.0";visibility:=reexport,
+ org.eclipse.xtext.graphview;bundle-version="1.0.0",
+ org.eclipse.xtext.ui;bundle-version="2.4.2"
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ActivationPolicy: lazy
+Export-Package: org.eclipse.xtext.graphview.providers

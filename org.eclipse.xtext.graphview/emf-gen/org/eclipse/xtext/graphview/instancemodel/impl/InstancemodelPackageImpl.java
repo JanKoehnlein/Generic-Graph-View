@@ -20,9 +20,7 @@ import org.eclipse.xtext.graphview.instancemodel.InstancemodelPackage;
 import org.eclipse.xtext.graphview.instancemodel.LabelInstance;
 import org.eclipse.xtext.graphview.instancemodel.NodeInstance;
 import org.eclipse.xtext.graphview.instancemodel.Visibility;
-import org.eclipse.xtext.graphview.instancemodel.ViewState;
 import org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage;
-import org.eclipse.xtext.xbase.XbasePackage;
 
 /**
  * <!-- begin-user-doc -->

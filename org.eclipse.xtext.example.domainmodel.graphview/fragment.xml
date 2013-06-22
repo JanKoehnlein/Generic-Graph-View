@@ -4,7 +4,7 @@
    <extension
          point="org.eclipse.xtext.graphview.selectionStrategy">
       <strategy
-            class="org.eclipse.xtext.example.domainmodel.ui.DomainmodelExecutableExtensionFactory:org.eclipse.xtext.graphview.view.selection.XtextEditorSelectionStrategy">
+            class="org.eclipse.xtext.example.domainmodel.ui.DomainmodelExecutableExtensionFactory:org.eclipse.xtext.graphview.providers.XtextEditorSelectionStrategy">
       </strategy>
    </extension>
 </fragment>

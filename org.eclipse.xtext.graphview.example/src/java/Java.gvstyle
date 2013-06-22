@@ -1,7 +1,7 @@
 import JavaInheritanceDiagram.*
-import org.eclipse.xtext.graphview.shape.*
+import org.eclipse.xtext.graphview.lib.shape.*
 import org.eclipse.draw2d.* 
-import org.eclipse.xtext.graphview.behavior.layout.*
+import org.eclipse.xtext.graphview.lib.layout.*
 import org.eclipse.swt.SWT
 
 stylesheet JavaInheritanceStyle for JavaInheritanceDiagram
@@ -11,7 +11,7 @@ style JavaInheritanceDiagram as DiagramShape {
 	font = font("Helvetica", 14, 1) 
 }
 
-style TypeNode.NameLabel as LabelShape {
+style JavaInheritanceDiagram.TypeNode.NameLabel as LabelShape {
 	font = font("Helvetica", 16, 
 		SWT::BOLD + if(element.interface) SWT::ITALIC else SWT::NONE
 	)
@@ -19,29 +19,29 @@ style TypeNode.NameLabel as LabelShape {
 	border = new MarginBorder(16,16,16,16)
 }
 
-style TypeNode as RectangleShape {
+style JavaInheritanceDiagram.TypeNode as RectangleShape {
 }
 
-style TypeNode.ExtendsEdge, TypeNode.ImplementsEdge as SplineConnectionShape {
+style JavaInheritanceDiagram.TypeNode.ExtendsEdge, JavaInheritanceDiagram.TypeNode.ImplementsEdge as SplineConnectionShape {
 	val targetDeco = new ClosedArrowDecoration
 	if(element.interface) targetDeco.backgroundColor = color(#ffffff) 
 	targetDecoration = targetDeco
 }
 
-style TypeNode.Methods, TypeNode.Fields as RectangleShape {
+style JavaInheritanceDiagram.TypeNode.Methods, JavaInheritanceDiagram.TypeNode.Fields as RectangleShape {
 	outline = false
 	backgroundColor = color(#ffffff);
 }
 
-style TypeNode.Methods.Method, TypeNode.Fields.Field {
+style JavaInheritanceDiagram.TypeNode.Methods.Method, JavaInheritanceDiagram.TypeNode.Fields.Field {
 	font = font("Helvetica", 12, 0);
 	border = null
 }
 
-style TypeNode.Fields.Field {
+style JavaInheritanceDiagram.TypeNode.Fields.Field {
 	text = element.elementName 
 }
 
-style TypeNode.Methods.Method {
+style JavaInheritanceDiagram.TypeNode.Methods.Method {
 	text = element.elementName + "()"
 }

@@ -8,8 +8,6 @@
 package org.eclipse.xtext.graphview.style.validation;
 
 import org.eclipse.xtext.common.types.JvmTypeReference;
-import org.eclipse.xtext.common.types.util.TypeConformanceComputer;
-import org.eclipse.xtext.common.types.util.TypeReferences;
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.EdgeMapping;
@@ -17,17 +15,16 @@ import org.eclipse.xtext.graphview.map.graphViewMapping.LabelMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.NodeMapping;
 import org.eclipse.xtext.graphview.style.graphViewStyle.Style;
 import org.eclipse.xtext.validation.Check;
+import org.eclipse.xtext.xbase.typesystem.legacy.StandardTypeReferenceOwner;
+import org.eclipse.xtext.xbase.typesystem.references.OwnedConverter;
+import org.eclipse.xtext.xbase.typesystem.util.CommonTypeComputationServices;
 
 import com.google.inject.Inject;
 
-@SuppressWarnings("restriction")
 public class GraphViewStyleJavaValidator extends AbstractGraphViewStyleJavaValidator {
 
 	@Inject
-	private TypeConformanceComputer typeConformanceComputer;
-	
-	@Inject
-	private TypeReferences typeReferences;
+	private CommonTypeComputationServices services;
 	
 	@Check
 	public void checkFigureClass(Style s) {
@@ -48,8 +45,10 @@ public class GraphViewStyleJavaValidator extends AbstractGraphViewStyleJavaValid
 	}
 	
 	protected void assertTypeConformance(String left, JvmTypeReference rightType, AbstractMapping mapping) {
-		JvmTypeReference leftType = typeReferences.getTypeForName(left, rightType);
-		if(!typeConformanceComputer.isConformant(leftType, rightType)) {
+		OwnedConverter ownedConverter = new OwnedConverter(new StandardTypeReferenceOwner(services, mapping));
+		JvmTypeReference leftType = services.getTypeReferences().getTypeForName(left, rightType);
+		if(!services.getTypeConformanceComputer().isConformant(ownedConverter.apply(leftType), 
+				ownedConverter.apply(rightType))) {
 			error("The figure of a " + mapping.eClass().getName() + " must be compatible with '" 
 					+ left + "'", rightType, null, 0);
 		}

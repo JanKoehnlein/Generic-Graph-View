@@ -1,5 +1,5 @@
-import org.eclipse.xtext.graphview.shape.*
-import org.eclipse.xtext.graphview.behavior.layout.*  
+import org.eclipse.xtext.graphview.lib.shape.*
+import org.eclipse.xtext.graphview.lib.layout.*  
 import org.eclipse.draw2d.*
 import org.eclipse.swt.SWT
 import DomainmodelPackageDiagram.*
@@ -7,31 +7,35 @@ import DomainmodelPackageDiagram.*
 stylesheet DomainmodelPackageDiagram for DomainmodelPackageDiagram
 
 style DomainmodelPackageDiagram {
-	autoLayoutManager = new KielerAutoLayout
+	autoLayoutManager = 
+		if(element.eContainer instanceof org.eclipse.xtext.example.domainmodel.domainmodel.PackageDeclaration) 
+			new KielerAutoLayout
+		else 
+			new GridAutoLayout
 	font = font("Helvetica", 14, SWT::BOLD)
 }
 
-style PackageNode as RectangleShape {
+style DomainmodelPackageDiagram.PackageNode as RectangleShape {
 	lineStyle = SWT::LINE_DASH
 	lineWidth = 2
 	foregroundColor = color(#8a8a8a)
 	border = new MarginBorder(16,16,16,16)
 }
 
-style EntityNode.Properties, EntityNode.Operations as RectangleShape {
+style DomainmodelPackageDiagram.EntityNode.Properties, DomainmodelPackageDiagram.EntityNode.Operations as RectangleShape {
 	outline = false
 	backgroundColor = color(#ffffff)
 }
 
-style EntityNode.Properties.Property, EntityNode.Operations.Operation {
+style DomainmodelPackageDiagram.EntityNode.Properties.Property, DomainmodelPackageDiagram.EntityNode.Operations.Operation {
 	font = font("Helvetica", 12, 0)
 	border = null
 }
 
-style EntityNode.Properties.Property {
+style DomainmodelPackageDiagram.EntityNode.Properties.Property {
 	text = element.name + ": " + element.type.simpleName
 }
 
-style EntityNode.Operations.Operation {
+style DomainmodelPackageDiagram.EntityNode.Operations.Operation {
 	text = element.name + "(" + element.params.map[it.simpleName + ": " + it.parameterType.simpleName].join(", ")+  "): " + element.type.simpleName 
 }

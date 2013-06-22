@@ -8,26 +8,21 @@
 package org.eclipse.xtext.graphview.style.tests;
 
 import org.eclipse.xtext.graphview.style.GraphViewStyleInjectorProvider;
-import org.eclipse.xtext.graphview.style.Styler;
-import org.eclipse.xtext.graphview.style.graphViewStyle.StyleSheet;
 import org.eclipse.xtext.junit4.InjectWith;
 import org.eclipse.xtext.junit4.XtextRunner;
-import org.eclipse.xtext.junit4.util.ParseHelper;
 import org.junit.runner.RunWith;
-
-import com.google.inject.Inject;
 
 @RunWith(XtextRunner.class)
 @InjectWith(GraphViewStyleInjectorProvider.class)
 public class StylerTest {
 
+	/*
 	@Inject
 	private ParseHelper<StyleSheet> parseHelper;
 	
 	@Inject
 	private Styler styler;
 	
-	/*
 	@Test
 	public void testStylerSimple() throws Exception {
 		StyleSheet styleSheet = parseHelper.parse("stylesheet s style myStyle as javax.swing.JButton { text = 'hugo' }");

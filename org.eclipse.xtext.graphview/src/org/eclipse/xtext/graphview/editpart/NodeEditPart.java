@@ -19,7 +19,7 @@ import org.eclipse.xtext.graphview.behavior.visibility.InstanceComponentEditPoli
 import org.eclipse.xtext.graphview.behavior.visibility.RevealEditPolicy;
 import org.eclipse.xtext.graphview.instancemodel.EdgeInstance;
 import org.eclipse.xtext.graphview.instancemodel.NodeInstance;
-import org.eclipse.xtext.graphview.shape.RoundedRectangleShape;
+import org.eclipse.xtext.graphview.lib.shape.RoundedRectangleShape;
 import org.eclipse.xtext.graphview.shape.ShapeAnchor;
 
 import com.google.inject.Inject;

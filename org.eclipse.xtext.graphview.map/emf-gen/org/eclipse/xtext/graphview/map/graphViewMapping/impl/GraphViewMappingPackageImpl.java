@@ -6,11 +6,8 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.xtext.common.types.TypesPackage;
-
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractExpressionMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMappingDefinition;
@@ -20,12 +17,11 @@ import org.eclipse.xtext.graphview.map.graphViewMapping.EdgeEndMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.EdgeMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingFactory;
 import org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage;
-import org.eclipse.xtext.graphview.map.graphViewMapping.Import;
 import org.eclipse.xtext.graphview.map.graphViewMapping.LabelMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.MappingCall;
 import org.eclipse.xtext.graphview.map.graphViewMapping.NodeMapping;
-
 import org.eclipse.xtext.xbase.XbasePackage;
+import org.eclipse.xtext.xtype.XtypePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -62,13 +58,6 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 	 * @generated
 	 */
 	private EClass abstractMappingReferenceEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass importEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -162,6 +151,7 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 
 		// Initialize simple dependencies
 		XbasePackage.eINSTANCE.eClass();
+		XtypePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theGraphViewMappingPackage.createPackageContents();
@@ -303,26 +293,6 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getImport()
-	{
-		return importEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getImport_ImportedNamespace()
-	{
-		return (EAttribute)importEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getDiagramMapping()
 	{
 		return diagramMappingEClass;
@@ -333,7 +303,7 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDiagramMapping_Imports()
+	public EReference getDiagramMapping_ImportSection()
 	{
 		return (EReference)diagramMappingEClass.getEStructuralFeatures().get(0);
 	}
@@ -464,11 +434,8 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 		createEReference(abstractMappingReferenceEClass, ABSTRACT_MAPPING_REFERENCE__REFERENCED_MAPPING);
 		createEAttribute(abstractMappingReferenceEClass, ABSTRACT_MAPPING_REFERENCE__CALL);
 
-		importEClass = createEClass(IMPORT);
-		createEAttribute(importEClass, IMPORT__IMPORTED_NAMESPACE);
-
 		diagramMappingEClass = createEClass(DIAGRAM_MAPPING);
-		createEReference(diagramMappingEClass, DIAGRAM_MAPPING__IMPORTS);
+		createEReference(diagramMappingEClass, DIAGRAM_MAPPING__IMPORT_SECTION);
 		createEReference(diagramMappingEClass, DIAGRAM_MAPPING__TYPE_GUARD);
 
 		nodeMappingEClass = createEClass(NODE_MAPPING);
@@ -511,6 +478,7 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 		// Obtain other dependent packages
 		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
 		XbasePackage theXbasePackage = (XbasePackage)EPackage.Registry.INSTANCE.getEPackage(XbasePackage.eNS_URI);
+		XtypePackage theXtypePackage = (XtypePackage)EPackage.Registry.INSTANCE.getEPackage(XtypePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -548,11 +516,8 @@ public class GraphViewMappingPackageImpl extends EPackageImpl implements GraphVi
 		initEReference(getAbstractMappingReference_ReferencedMapping(), this.getAbstractMappingDefinition(), null, "referencedMapping", null, 0, 1, AbstractMappingReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAbstractMappingReference_Call(), ecorePackage.getEBoolean(), "call", null, 0, 1, AbstractMappingReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getImport_ImportedNamespace(), ecorePackage.getEString(), "importedNamespace", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(diagramMappingEClass, DiagramMapping.class, "DiagramMapping", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDiagramMapping_Imports(), this.getImport(), null, "imports", null, 0, -1, DiagramMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDiagramMapping_ImportSection(), theXtypePackage.getXImportSection(), null, "importSection", null, 0, 1, DiagramMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDiagramMapping_TypeGuard(), theTypesPackage.getJvmTypeReference(), null, "typeGuard", null, 0, 1, DiagramMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(nodeMappingEClass, NodeMapping.class, "NodeMapping", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

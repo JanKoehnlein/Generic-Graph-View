@@ -18,7 +18,7 @@ import org.eclipse.xtext.graphview.behavior.bounds.EdgeBendpointEditPolicy;
 import org.eclipse.xtext.graphview.behavior.visibility.EdgeConnectionEditPolicy;
 import org.eclipse.xtext.graphview.instancemodel.AbstractInstance;
 import org.eclipse.xtext.graphview.instancemodel.Visibility;
-import org.eclipse.xtext.graphview.shape.ConnectionShape;
+import org.eclipse.xtext.graphview.lib.shape.ConnectionShape;
 import org.eclipse.xtext.graphview.shape.TransparencyHelper;
 
 import com.google.inject.Inject;

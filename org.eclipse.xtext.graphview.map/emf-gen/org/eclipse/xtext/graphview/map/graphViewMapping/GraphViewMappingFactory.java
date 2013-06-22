@@ -50,15 +50,6 @@ public interface GraphViewMappingFactory extends EFactory
 	AbstractMappingReference createAbstractMappingReference();
 
 	/**
-	 * Returns a new object of class '<em>Import</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Import</em>'.
-	 * @generated
-	 */
-	Import createImport();
-
-	/**
 	 * Returns a new object of class '<em>Diagram Mapping</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

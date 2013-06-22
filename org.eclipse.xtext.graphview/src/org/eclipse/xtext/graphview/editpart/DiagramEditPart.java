@@ -24,7 +24,7 @@ import org.eclipse.xtext.graphview.behavior.layout.DiagramLayoutEditPolicy;
 import org.eclipse.xtext.graphview.behavior.layout.SpacingManager;
 import org.eclipse.xtext.graphview.behavior.visibility.InstanceComponentEditPolicy;
 import org.eclipse.xtext.graphview.behavior.visibility.VisibilityListener;
-import org.eclipse.xtext.graphview.shape.DiagramShape;
+import org.eclipse.xtext.graphview.lib.shape.DiagramShape;
 
 import com.google.inject.Inject;
 

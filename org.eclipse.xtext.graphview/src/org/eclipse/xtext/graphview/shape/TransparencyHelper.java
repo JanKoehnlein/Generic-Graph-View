@@ -9,6 +9,7 @@ package org.eclipse.xtext.graphview.shape;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.xtext.graphview.lib.literals.ColorLiterals;
 
 public class TransparencyHelper {
 

@@ -22,5 +22,6 @@ Import-Package: org.apache.log4j,
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.eclipse.xtext.graphview.map.ui.contentassist.antlr,
  org.eclipse.xtext.graphview.map.ui.internal,
- org.eclipse.xtext.graphview.map.ui.contentassist
+ org.eclipse.xtext.graphview.map.ui.contentassist,
+ org.eclipse.xtext.graphview.map.ui.quickfix
 Bundle-Activator: org.eclipse.xtext.graphview.map.ui.internal.GraphViewMappingActivator

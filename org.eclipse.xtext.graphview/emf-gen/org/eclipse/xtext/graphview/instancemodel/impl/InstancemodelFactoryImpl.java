@@ -12,14 +12,13 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.xtext.graphview.instancemodel.*;
 import org.eclipse.xtext.graphview.instancemodel.DiagramInstance;
 import org.eclipse.xtext.graphview.instancemodel.EdgeInstance;
 import org.eclipse.xtext.graphview.instancemodel.InstancemodelFactory;
 import org.eclipse.xtext.graphview.instancemodel.InstancemodelPackage;
 import org.eclipse.xtext.graphview.instancemodel.LabelInstance;
 import org.eclipse.xtext.graphview.instancemodel.NodeInstance;
-import org.eclipse.xtext.graphview.instancemodel.ViewState;
+import org.eclipse.xtext.graphview.instancemodel.Visibility;
 
 /**
  * <!-- begin-user-doc -->

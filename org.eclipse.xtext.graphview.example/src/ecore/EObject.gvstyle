@@ -1,28 +1,27 @@
 import org.eclipse.emf.ecore.*
-import org.eclipse.xtext.graphview.shape.*
+import org.eclipse.xtext.graphview.lib.shape.*
 import org.eclipse.xtext.util.SimpleAttributeResolver
-import EObjectDiagram.EObjectNode.*
 import org.eclipse.draw2d.*
 
 stylesheet EObjectStyles for EObjectDiagram
 
-style ClassName {
+style EObjectDiagram.EObjectNode.ClassName { 
 	text = '\u00ab' + element.eClass.name + '\u00bb'
 	border = new MarginBorder(0,5,0,5)
 }
 
-style Name {
+style EObjectDiagram.EObjectNode.Name {
 	text = SimpleAttributeResolver::NAME_RESOLVER.apply(element)
 	border = new MarginBorder(0,5,0,5)
 }
 
-style Attributes as RectangleShape {
+style EObjectDiagram.EObjectNode.Attributes as RectangleShape {
 	backgroundColor = color(#ffffff) 
 	outline = false
 	font = font("Helvetica", 11, 0)
 }
 
-style Attributes.AttributeSetting {
+style EObjectDiagram.EObjectNode.Attributes.AttributeSetting {
 	val attr = element.key as EAttribute;
 	val eObject = element.value as EObject
 	text = attr.name + " = " +
@@ -33,14 +32,14 @@ style Attributes.AttributeSetting {
 	border = null
 }
 
-style Containment {
+style EObjectDiagram.EObjectNode.Containment {
 	//sourceDecoration = new DiamondDecoration
 	//targetDecoration = null
 }
 
-style CrossReference, Containment as SplineConnectionShape {
+style EObjectDiagram.EObjectNode.CrossReference, EObjectDiagram.EObjectNode.Containment as SplineConnectionShape {
 }
 
-style Containment.Name, CrossReference.Name  {
+style EObjectDiagram.EObjectNode.Containment.Name, EObjectDiagram.EObjectNode.CrossReference.Name  {
 	opaque = true
 }

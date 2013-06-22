@@ -4,6 +4,7 @@ import base.Person;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.eclipse.xtext.xbase.lib.util.ToStringHelper;
 
+@SuppressWarnings("all")
 public class Boss extends Person {
   public Boss() {
   }

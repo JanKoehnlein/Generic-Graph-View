@@ -1,4 +1,5 @@
-import java.util.*
+import base.Person
+import java.util.List
 
 package base {
 	entity Person {

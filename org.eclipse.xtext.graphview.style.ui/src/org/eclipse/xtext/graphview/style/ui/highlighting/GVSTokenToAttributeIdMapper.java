@@ -7,11 +7,10 @@
  *******************************************************************************/
 package org.eclipse.xtext.graphview.style.ui.highlighting;
 
+import org.eclipse.xtext.ui.editor.syntaxcoloring.DefaultAntlrTokenToAttributeIdMapper;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.DefaultHighlightingConfiguration;
-import org.eclipse.xtext.xbase.ui.syntaxcoloring.XbaseTokenToAttributeIdMapper;
 
-@SuppressWarnings("restriction")
-public class GVSTokenToAttributeIdMapper extends XbaseTokenToAttributeIdMapper {
+public class GVSTokenToAttributeIdMapper extends DefaultAntlrTokenToAttributeIdMapper {
 
 	@Override
 	protected String calculateId(String tokenName, int tokenType) {

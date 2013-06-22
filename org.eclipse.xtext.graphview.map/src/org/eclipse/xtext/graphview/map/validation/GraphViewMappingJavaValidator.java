@@ -9,9 +9,4 @@ package org.eclipse.xtext.graphview.map.validation;
 
 public class GraphViewMappingJavaValidator extends AbstractGraphViewMappingJavaValidator {
 
-	@Override
-	protected boolean supportsCheckedExceptions() {
-		return false;
-	}
-
 }

@@ -19,12 +19,15 @@ import org.eclipse.xtext.graphview.map.ui.internal.GraphViewMappingActivator;
 import org.eclipse.xtext.graphview.style.IStyler;
 import org.eclipse.xtext.graphview.style.ui.internal.GraphViewStyleActivator;
 import org.eclipse.xtext.resource.IResourceDescriptions;
+import org.eclipse.xtext.resource.impl.LiveShadowedResourceDescriptions;
+import org.eclipse.xtext.resource.impl.ResourceDescriptionsProvider;
 import org.eclipse.xtext.ui.resource.IResourceSetProvider;
 import org.eclipse.xtext.ui.resource.XtextResourceSetProvider;
 import org.eclipse.xtext.ui.shared.Access;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.Provider;
+import com.google.inject.name.Names;
 
 @SuppressWarnings("restriction")
 public class GraphViewModule extends AbstractModule {
@@ -32,6 +35,9 @@ public class GraphViewModule extends AbstractModule {
 	@Override
 	protected void configure() {
 		bind(IResourceDescriptions.class).toProvider(Access.getIResourceDescriptions());
+		bind(IResourceDescriptions.class).annotatedWith(Names.named(ResourceDescriptionsProvider.LIVE_SCOPE)).to(LiveShadowedResourceDescriptions.class);
+		bind(IResourceDescriptions.class).annotatedWith(Names.named(ResourceDescriptionsProvider.NAMED_BUILDER_SCOPE)).toProvider(Access.getIResourceDescriptions());
+
 		bind(IJvmTypeProvider.Factory.class).to(JdtTypeProviderFactory.class);
 		bind(IResourceSetProvider.class).to(XtextResourceSetProvider.class);
 

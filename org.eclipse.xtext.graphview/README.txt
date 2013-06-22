@@ -23,12 +23,12 @@ used in a runtime workbench.
 
 XTEXT INTEGRATION: 
 To create views for your Xtext-based language, you have to 
- - add a dependency to org.eclipse.xtext.graphview in th UI plugin of your 
+ - add a dependency to org.eclipse.xtext.graphview.providers in the UI plugin of your 
    language
  - add the following entry in the plugin.xml of the UI plug-in of your language
    <extension point="org.eclipse.xtext.graphview.selectionStrategy">
       <strategy
-           class="<<your language's full name>>ExtensionFactory:org.eclipse.xtext.graphview.view.selection.XtextEditorSelectionStrategy">
+           class="<<your language's full name>>ExtensionFactory:org.eclipse.xtext.graphview.providers.XtextEditorSelectionStrategy">
       </strategy>
    </extension>
  - add a dependency to your language's infrastructure plug-in in the runtime 

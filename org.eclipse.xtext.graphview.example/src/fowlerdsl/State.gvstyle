@@ -1,6 +1,6 @@
 import org.eclipse.draw2d.*
-import org.eclipse.xtext.graphview.shape.*
-import org.eclipse.xtext.graphview.behavior.layout.*
+import org.eclipse.xtext.graphview.lib.shape.*
+import org.eclipse.xtext.graphview.lib.layout.*
 import org.eclipse.xtext.example.fowlerdsl.statemachine.*
 import org.eclipse.swt.SWT
 
@@ -12,18 +12,18 @@ style StateMachineDiagram {
 	autoLayoutManager = new KielerAutoLayout()
 }
 	
-style Transition.EventName {
+style StateMachineDiagram.StateNode.Transition.EventName {
 	opaque = true
 	if((element.eContainer as Statemachine).resetEvents.contains(element)) 
 		foregroundColor = color(#ff2222)
 }
 
-style ActionCompartment as RectangleShape {
+style StateMachineDiagram.StateNode.ActionCompartment as RectangleShape {
 	outline = false
 	backgroundColor = color(#ffffff)
 }
 
-style ActionCompartment.ActionName {
+style StateMachineDiagram.StateNode.ActionCompartment.ActionName {
 	border = null
 	font = font("Helvetica", 11, SWT::NONE)
 }

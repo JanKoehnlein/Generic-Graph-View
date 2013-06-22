@@ -8,4 +8,6 @@ Require-Bundle: org.eclipse.emf.ecore;bundle-version="2.6.1",
  org.eclipse.xtext.xbase.lib;bundle-version="2.0.0",
  org.eclipse.xtext.example.fowlerdsl;bundle-version="1.0.0",
  org.eclipse.xtext.example.domainmodel;bundle-version="2.2.0",
- org.eclipse.xtext.graphview;bundle-version="1.0.0"
+ org.eclipse.xtext.graphview.lib;bundle-version="1.0.0",
+ org.eclipse.xtext.common.types;bundle-version="2.4.2"
+Bundle-RequiredExecutionEnvironment: J2SE-1.5

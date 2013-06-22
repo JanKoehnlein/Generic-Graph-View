@@ -1,5 +1,5 @@
-import org.eclipse.xtext.graphview.shape.*
-import org.eclipse.xtext.graphview.behavior.layout.*  
+import org.eclipse.xtext.graphview.lib.shape.*
+import org.eclipse.xtext.graphview.lib.layout.*  
 import org.eclipse.draw2d.*
 import org.eclipse.swt.SWT
 import DomainmodelEntityDiagram.*
@@ -10,12 +10,12 @@ style DomainmodelEntityDiagram {
 	autoLayoutManager = new KielerAutoLayout
 }
 
-style EntityNode.Name { 
+style DomainmodelEntityDiagram.EntityNode.Name { 
 	font = font("Helvetica", 13, SWT::BOLD) 
 	text = element.simpleName
 }
 
-style EntityNode.Operations.Label { 
+style DomainmodelEntityDiagram.EntityNode.Operations.Label { 
 	text = (element.simpleName 
 		+ '('
 		+ element.parameters.map[it.parameterType.simpleName].join(', ') + ') : ' 
@@ -24,22 +24,22 @@ style EntityNode.Operations.Label {
 		  else '')
 }
 
-style EntityNode.Attributes.Label { 
+style DomainmodelEntityDiagram.EntityNode.Attributes.Label { 
 	text = element.simpleName + ' : ' + element.type.simpleName
 }
 
 
-style EntityNode.Attributes, EntityNode.Operations as RectangleShape {
+style DomainmodelEntityDiagram.EntityNode.Attributes, DomainmodelEntityDiagram.EntityNode.Operations as RectangleShape {
 	outline = false
 	backgroundColor = color(#ffffff)
 }
 
-style EntityNode.Attributes.Label, EntityNode.Operations.Label {
+style DomainmodelEntityDiagram.EntityNode.Attributes.Label, DomainmodelEntityDiagram.EntityNode.Operations.Label {
 	font = font("Helvetica", 11, SWT::NONE)
 	border = null
 }
 
-style EntityNode.SuperType {
+style DomainmodelEntityDiagram.EntityNode.SuperType {
 	var arrow = new DiamondDecoration
 	arrow.backgroundColor = color(#ffffff)
 	targetDecoration = arrow 

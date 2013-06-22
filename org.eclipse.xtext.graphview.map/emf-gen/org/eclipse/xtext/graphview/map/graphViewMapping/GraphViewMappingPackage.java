@@ -6,7 +6,6 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.xtext.common.types.TypesPackage;
 
 /**
@@ -279,34 +278,6 @@ public interface GraphViewMappingPackage extends EPackage
 	int ABSTRACT_MAPPING_REFERENCE_FEATURE_COUNT = ABSTRACT_EXPRESSION_MAPPING_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.ImportImpl <em>Import</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.impl.ImportImpl
-	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.impl.GraphViewMappingPackageImpl#getImport()
-	 * @generated
-	 */
-	int IMPORT = 4;
-
-	/**
-	 * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMPORT__IMPORTED_NAMESPACE = 0;
-
-	/**
-	 * The number of structural features of the '<em>Import</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMPORT_FEATURE_COUNT = 1;
-
-	/**
 	 * The meta object id for the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.DiagramMappingImpl <em>Diagram Mapping</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -314,7 +285,7 @@ public interface GraphViewMappingPackage extends EPackage
 	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.impl.GraphViewMappingPackageImpl#getDiagramMapping()
 	 * @generated
 	 */
-	int DIAGRAM_MAPPING = 5;
+	int DIAGRAM_MAPPING = 4;
 
 	/**
 	 * The feature id for the '<em><b>Unless Condition</b></em>' containment reference.
@@ -353,13 +324,13 @@ public interface GraphViewMappingPackage extends EPackage
 	int DIAGRAM_MAPPING__MAPPINGS = ABSTRACT_MAPPING_DEFINITION__MAPPINGS;
 
 	/**
-	 * The feature id for the '<em><b>Imports</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Import Section</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM_MAPPING__IMPORTS = ABSTRACT_MAPPING_DEFINITION_FEATURE_COUNT + 0;
+	int DIAGRAM_MAPPING__IMPORT_SECTION = ABSTRACT_MAPPING_DEFINITION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type Guard</b></em>' containment reference.
@@ -387,7 +358,7 @@ public interface GraphViewMappingPackage extends EPackage
 	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.impl.GraphViewMappingPackageImpl#getNodeMapping()
 	 * @generated
 	 */
-	int NODE_MAPPING = 6;
+	int NODE_MAPPING = 5;
 
 	/**
 	 * The feature id for the '<em><b>Unless Condition</b></em>' containment reference.
@@ -460,7 +431,7 @@ public interface GraphViewMappingPackage extends EPackage
 	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.impl.GraphViewMappingPackageImpl#getLabelMapping()
 	 * @generated
 	 */
-	int LABEL_MAPPING = 7;
+	int LABEL_MAPPING = 6;
 
 	/**
 	 * The feature id for the '<em><b>Unless Condition</b></em>' containment reference.
@@ -533,7 +504,7 @@ public interface GraphViewMappingPackage extends EPackage
 	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.impl.GraphViewMappingPackageImpl#getEdgeMapping()
 	 * @generated
 	 */
-	int EDGE_MAPPING = 8;
+	int EDGE_MAPPING = 7;
 
 	/**
 	 * The feature id for the '<em><b>Unless Condition</b></em>' containment reference.
@@ -624,7 +595,7 @@ public interface GraphViewMappingPackage extends EPackage
 	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.impl.GraphViewMappingPackageImpl#getEdgeEndMapping()
 	 * @generated
 	 */
-	int EDGE_END_MAPPING = 9;
+	int EDGE_END_MAPPING = 8;
 
 	/**
 	 * The feature id for the '<em><b>Unless Condition</b></em>' containment reference.
@@ -697,7 +668,7 @@ public interface GraphViewMappingPackage extends EPackage
 	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.impl.GraphViewMappingPackageImpl#getMappingCall()
 	 * @generated
 	 */
-	int MAPPING_CALL = 10;
+	int MAPPING_CALL = 9;
 
 	/**
 	 * The feature id for the '<em><b>Unless Condition</b></em>' containment reference.
@@ -892,27 +863,6 @@ public interface GraphViewMappingPackage extends EPackage
 	EAttribute getAbstractMappingReference_Call();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.xtext.graphview.map.graphViewMapping.Import <em>Import</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Import</em>'.
-	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.Import
-	 * @generated
-	 */
-	EClass getImport();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.xtext.graphview.map.graphViewMapping.Import#getImportedNamespace <em>Imported Namespace</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Imported Namespace</em>'.
-	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.Import#getImportedNamespace()
-	 * @see #getImport()
-	 * @generated
-	 */
-	EAttribute getImport_ImportedNamespace();
-
-	/**
 	 * Returns the meta object for class '{@link org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping <em>Diagram Mapping</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -923,15 +873,15 @@ public interface GraphViewMappingPackage extends EPackage
 	EClass getDiagramMapping();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping#getImports <em>Imports</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping#getImportSection <em>Import Section</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Imports</em>'.
-	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping#getImports()
+	 * @return the meta object for the containment reference '<em>Import Section</em>'.
+	 * @see org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping#getImportSection()
 	 * @see #getDiagramMapping()
 	 * @generated
 	 */
-	EReference getDiagramMapping_Imports();
+	EReference getDiagramMapping_ImportSection();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping#getTypeGuard <em>Type Guard</em>}'.
@@ -1144,24 +1094,6 @@ public interface GraphViewMappingPackage extends EPackage
 		EAttribute ABSTRACT_MAPPING_REFERENCE__CALL = eINSTANCE.getAbstractMappingReference_Call();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.ImportImpl <em>Import</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.eclipse.xtext.graphview.map.graphViewMapping.impl.ImportImpl
-		 * @see org.eclipse.xtext.graphview.map.graphViewMapping.impl.GraphViewMappingPackageImpl#getImport()
-		 * @generated
-		 */
-		EClass IMPORT = eINSTANCE.getImport();
-
-		/**
-		 * The meta object literal for the '<em><b>Imported Namespace</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute IMPORT__IMPORTED_NAMESPACE = eINSTANCE.getImport_ImportedNamespace();
-
-		/**
 		 * The meta object literal for the '{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.DiagramMappingImpl <em>Diagram Mapping</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1172,12 +1104,12 @@ public interface GraphViewMappingPackage extends EPackage
 		EClass DIAGRAM_MAPPING = eINSTANCE.getDiagramMapping();
 
 		/**
-		 * The meta object literal for the '<em><b>Imports</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Import Section</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DIAGRAM_MAPPING__IMPORTS = eINSTANCE.getDiagramMapping_Imports();
+		EReference DIAGRAM_MAPPING__IMPORT_SECTION = eINSTANCE.getDiagramMapping_ImportSection();
 
 		/**
 		 * The meta object literal for the '<em><b>Type Guard</b></em>' containment reference feature.
