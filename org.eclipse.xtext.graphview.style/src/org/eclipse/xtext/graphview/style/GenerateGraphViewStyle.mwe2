@@ -22,9 +22,9 @@ Workflow {
         platformUri = "${runtimeProject}/.."
         registerGenModelFile = "platform:/resource/org.eclipse.xtext.xbase/model/Xbase.genmodel"
         registerGenModelFile = "platform:/resource/org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel"
-        registerGenModelFile = "platform:/resource/org.eclipse.xtext.graphview.map/src/org/eclipse/xtext/graphview/map/GraphViewMapping.genmodel"
+        registerGenModelFile = "platform:/resource/org.eclipse.xtext.graphview.map/model/GraphViewMapping.genmodel"
         registerGeneratedEPackage = "org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage"
-        registerGenModelFile = "platform:/resource/org.eclipse.xtext.graphview.style/src/org/eclipse/xtext/graphview/style/GraphViewStyle.genmodel"
+        registerGenModelFile = "platform:/resource/org.eclipse.xtext.graphview.style/model/GraphViewStyle.genmodel"
         registerGeneratedEPackage = "org.eclipse.xtext.graphview.style.graphViewStyle.GraphViewStylePackage"
     }
 
@@ -41,7 +41,7 @@ Workflow {
     }
 
 	component = org.eclipse.emf.mwe2.ecore.EcoreGenerator {
-		genModel = "platform:/resource/org.eclipse.xtext.graphview.style/src/org/eclipse/xtext/graphview/style/GraphViewStyle.genmodel"
+		genModel = "platform:/resource/org.eclipse.xtext.graphview.style/model/GraphViewStyle.genmodel"
 		srcPath = "emf-gen/"
 	} 
 

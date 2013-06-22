@@ -5,19 +5,12 @@ package org.eclipse.xtext.graphview.map.graphViewMapping.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractExpressionMapping;
-import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMappingDefinition;
-import org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMappingReference;
-import org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping;
-import org.eclipse.xtext.graphview.map.graphViewMapping.EdgeEndMapping;
-import org.eclipse.xtext.graphview.map.graphViewMapping.EdgeMapping;
-import org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingFactory;
-import org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage;
-import org.eclipse.xtext.graphview.map.graphViewMapping.LabelMapping;
-import org.eclipse.xtext.graphview.map.graphViewMapping.MappingCall;
-import org.eclipse.xtext.graphview.map.graphViewMapping.NodeMapping;
+
+import org.eclipse.xtext.graphview.map.graphViewMapping.*;
 
 /**
  * <!-- begin-user-doc -->

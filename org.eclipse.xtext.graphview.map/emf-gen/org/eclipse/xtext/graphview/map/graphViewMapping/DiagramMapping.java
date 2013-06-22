@@ -3,6 +3,7 @@
 package org.eclipse.xtext.graphview.map.graphViewMapping;
 
 import org.eclipse.xtext.common.types.JvmTypeReference;
+
 import org.eclipse.xtext.xtype.XImportSection;
 
 /**

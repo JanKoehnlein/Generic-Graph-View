@@ -59,8 +59,8 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
     public static final int T__51=51;
     public static final int T__15=15;
     public static final int T__52=52;
-    public static final int T__18=18;
     public static final int T__53=53;
+    public static final int T__18=18;
     public static final int T__54=54;
     public static final int T__17=17;
     public static final int T__14=14;
@@ -50392,20 +50392,6 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
         state.failed=false;
         return success;
     }
-    public final boolean synpred79_InternalGraphViewStyle() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred79_InternalGraphViewStyle_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
     public final boolean synpred127_InternalGraphViewStyle() {
         state.backtracking++;
         int start = input.mark();
@@ -50420,11 +50406,11 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
         state.failed=false;
         return success;
     }
-    public final boolean synpred84_InternalGraphViewStyle() {
+    public final boolean synpred79_InternalGraphViewStyle() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred84_InternalGraphViewStyle_fragment(); // can never throw exception
+            synpred79_InternalGraphViewStyle_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -50439,6 +50425,20 @@ public class InternalGraphViewStyleParser extends AbstractInternalContentAssistP
         int start = input.mark();
         try {
             synpred78_InternalGraphViewStyle_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred84_InternalGraphViewStyle() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred84_InternalGraphViewStyle_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
