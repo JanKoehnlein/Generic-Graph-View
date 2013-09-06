@@ -78,16 +78,17 @@ public class MrsGrantsSecretCompartments {
 			}
 			if (currentState.equals("unlockedPanel")) {
 				if (executeActions) {
-					doUnlockPanel();
-					doLockDoor();
 					executeActions = false;
 				}
-				System.out.println("Your are now in state 'unlockedPanel'. Possible events are [panelClosed].");
+				System.out.println("Your are now in state 'unlockedPanel'. Possible events are [].");
 				lastEvent = receiveEvent();
-				if ("panelClosed".equals(lastEvent)) {
-					currentState = "idle";
-					executeActions = true;
+			}
+			if (currentState.equals("foo")) {
+				if (executeActions) {
+					executeActions = false;
 				}
+				System.out.println("Your are now in state 'foo'. Possible events are [].");
+				lastEvent = receiveEvent();
 			}
 			if ("doorClosed".equals(lastEvent)) {
 				System.out.println("Resetting state machine.");
