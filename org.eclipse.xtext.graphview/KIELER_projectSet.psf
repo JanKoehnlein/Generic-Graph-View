@@ -4,6 +4,7 @@
 <project reference="1.0,http://git.rtsys.informatik.uni-kiel.de/scm/kieler/pragmatics.git,master,plugins/de.cau.cs.kieler.core"/>
 <project reference="1.0,http://git.rtsys.informatik.uni-kiel.de/scm/kieler/pragmatics.git,master,plugins/de.cau.cs.kieler.core.kgraph"/>
 <project reference="1.0,http://git.rtsys.informatik.uni-kiel.de/scm/kieler/pragmatics.git,master,plugins/de.cau.cs.kieler.kiml"/>
+<project reference="1.0,http://git.rtsys.informatik.uni-kiel.de/scm/kieler/pragmatics.git,master,plugins/de.cau.cs.kieler.kiml.formats"/>
 <project reference="1.0,http://git.rtsys.informatik.uni-kiel.de/scm/kieler/pragmatics.git,master,plugins/de.cau.cs.kieler.kiml.graphviz.dot"/>
 <project reference="1.0,http://git.rtsys.informatik.uni-kiel.de/scm/kieler/pragmatics.git,master,plugins/de.cau.cs.kieler.kiml.graphviz.layouter"/>
 <project reference="1.0,http://git.rtsys.informatik.uni-kiel.de/scm/kieler/pragmatics.git,master,plugins/de.cau.cs.kieler.kiml.ogdf"/>
@@ -12,14 +13,15 @@
 <project reference="1.0,http://git.rtsys.informatik.uni-kiel.de/scm/kieler/pragmatics.git,master,plugins/net.ogdf.ogml"/>
 </provider>
 <workingSets editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" id="1371907038409_4" label="Kieler" name="Kieler">
-<item elementID="=de.cau.cs.kieler.core" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=de.cau.cs.kieler.core.kgraph" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=de.cau.cs.kieler.kiml" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=de.cau.cs.kieler.kiml.graphviz.dot" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=de.cau.cs.kieler.kiml.graphviz.layouter" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=de.cau.cs.kieler.kiml.ogdf" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=de.cau.cs.kieler.kiml.service" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=net.ogdf.bin" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=net.ogdf.ogml" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=de.cau.cs.kieler.core" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=de.cau.cs.kieler.kiml.graphviz.dot" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=de.cau.cs.kieler.core.kgraph" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=de.cau.cs.kieler.kiml.service" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=de.cau.cs.kieler.kiml.ogdf" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=de.cau.cs.kieler.kiml.graphviz.layouter" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=de.cau.cs.kieler.kiml" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=de.cau.cs.kieler.kiml.formats" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 </workingSets>
 </psf>

@@ -36,9 +36,7 @@ public class Person {
   }
   
   public String fullName(final String it, final int it_1) {
-    String _plus = (this.firstName + " ");
-    String _plus_1 = (_plus + this.lastName);
-    return _plus_1;
+    return ((this.firstName + " ") + this.lastName);
   }
   
   private List<Address> address;

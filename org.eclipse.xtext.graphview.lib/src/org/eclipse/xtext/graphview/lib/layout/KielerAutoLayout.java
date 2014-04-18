@@ -132,12 +132,17 @@ public class KielerAutoLayout extends AbstractAutoLayout {
 		properties.put(LayoutOptions.RANDOM_SEED, randomSeed);
 	}
 	
+	@SuppressWarnings("unchecked")
+	private <T> void setLayoutProperty(KNode node, IProperty<?> key, T value) {
+		node.getData(KShapeLayout.class).setProperty((IProperty<T>)key, value);
+	}
+	
 	public Rectangle layout(IFigure container) {
 		Map<ILayoutNode, KNode> childrenToNodes = Maps.newHashMap();
 		Map<Connection, KEdge> connectionToEdges = Maps.newHashMap();
 		KNode rootNode = createKNode(null);
 		for(Map.Entry<IProperty<?>,Object> property: properties.entrySet())
-			rootNode.getData(KShapeLayout.class).setProperty(property.getKey(), property.getValue());
+			setLayoutProperty(rootNode, property.getKey(), property.getValue());
 		for (Object child : container.getChildren()) {
 			if (child instanceof ILayoutNode) {
 				ILayoutNode childFigure = (ILayoutNode) child;

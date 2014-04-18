@@ -36,8 +36,7 @@ public class Customer extends Person {
         ArrayList<Order> _newArrayList = CollectionLiterals.<Order>newArrayList();
         this.orders = _newArrayList;
       }
-      boolean _add = this.orders.add(order);
-      _xblockexpression = (_add);
+      _xblockexpression = this.orders.add(order);
     }
     return _xblockexpression;
   }

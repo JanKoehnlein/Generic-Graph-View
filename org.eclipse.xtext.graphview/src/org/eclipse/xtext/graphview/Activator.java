@@ -8,7 +8,6 @@
 package org.eclipse.xtext.graphview;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
-import org.eclipse.xtext.graphview.kieler.EclipseTransformationService;
 import org.eclipse.xtext.ui.shared.SharedStateModule;
 import org.osgi.framework.BundleContext;
 
@@ -37,7 +36,7 @@ public class Activator extends AbstractUIPlugin {
 
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
-		EclipseTransformationService.create();
+//		EclipseTransformationService.create();
 		plugin = this;
 	}
 
