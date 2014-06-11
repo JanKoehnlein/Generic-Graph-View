@@ -100,7 +100,7 @@ public class GVSTypeResolver extends DefaultReentrantTypeResolver {
 		IResourceServiceProvider resourceServiceProvider = resourceServiceProviderRegistry.getResourceServiceProvider(EcoreUtil
 				.getURI(mapping));
 		IBatchTypeResolver typeResolver = resourceServiceProvider.get(IBatchTypeResolver.class);
-		IResolvedTypes resolvedTypes = typeResolver.getResolvedTypesInContextOf(mapping);
+		IResolvedTypes resolvedTypes = typeResolver.resolveTypes(mapping);
 		return resolvedTypes.getActualType(mapping);
 	}
 }

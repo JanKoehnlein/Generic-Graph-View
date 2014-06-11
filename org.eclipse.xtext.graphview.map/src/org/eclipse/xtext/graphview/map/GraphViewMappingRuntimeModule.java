@@ -10,12 +10,12 @@ package org.eclipse.xtext.graphview.map;
 import org.eclipse.xtext.graphview.map.imports.GVMImportsConfiguration;
 import org.eclipse.xtext.graphview.map.names.GVMIdentifiableSimpleNameProvider;
 import org.eclipse.xtext.graphview.map.names.GVMQualifiedNameProvider;
-import org.eclipse.xtext.graphview.map.types.GVMImplicitlyImportedTypes;
+import org.eclipse.xtext.graphview.map.types.GVMImplicitlyImportedFeatures;
 import org.eclipse.xtext.graphview.map.types.GVMTypeResolver;
 import org.eclipse.xtext.naming.IQualifiedNameProvider;
 import org.eclipse.xtext.xbase.featurecalls.IdentifiableSimpleNameProvider;
 import org.eclipse.xtext.xbase.imports.IImportsConfiguration;
-import org.eclipse.xtext.xbase.scoping.batch.ImplicitlyImportedTypes;
+import org.eclipse.xtext.xbase.scoping.batch.ImplicitlyImportedFeatures;
 import org.eclipse.xtext.xbase.typesystem.internal.DefaultReentrantTypeResolver;
 
 /**
@@ -37,8 +37,8 @@ public class GraphViewMappingRuntimeModule extends org.eclipse.xtext.graphview.m
 		return GVMTypeResolver.class;
 	}
 	
-	public Class<? extends ImplicitlyImportedTypes> bindImplicitlyImportedTypes() {
-		return GVMImplicitlyImportedTypes.class;
+	public Class<? extends ImplicitlyImportedFeatures> bindImplicitlyImportedFeatures() {
+		return GVMImplicitlyImportedFeatures.class;
 	}
 	
 	public Class<? extends IImportsConfiguration> bindIImportsConfiguration() {

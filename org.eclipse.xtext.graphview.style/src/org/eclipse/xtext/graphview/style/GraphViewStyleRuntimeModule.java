@@ -10,13 +10,13 @@ package org.eclipse.xtext.graphview.style;
 import org.eclipse.xtext.graphview.style.imports.GVSImportsConfiguration;
 import org.eclipse.xtext.graphview.style.interpreter.GraphViewStyleInterpreter;
 import org.eclipse.xtext.graphview.style.names.GVSIdentifiableSimpleNameProvider;
-import org.eclipse.xtext.graphview.style.type.GVSImplicitlyImportedTypes;
+import org.eclipse.xtext.graphview.style.type.GVSImplicitlyImportedFeatures;
 import org.eclipse.xtext.graphview.style.type.GVSTypeComputer;
 import org.eclipse.xtext.graphview.style.type.GVSTypeResolver;
 import org.eclipse.xtext.xbase.featurecalls.IdentifiableSimpleNameProvider;
 import org.eclipse.xtext.xbase.imports.IImportsConfiguration;
 import org.eclipse.xtext.xbase.interpreter.impl.XbaseInterpreter;
-import org.eclipse.xtext.xbase.scoping.batch.ImplicitlyImportedTypes;
+import org.eclipse.xtext.xbase.scoping.batch.ImplicitlyImportedFeatures;
 import org.eclipse.xtext.xbase.typesystem.computation.ITypeComputer;
 import org.eclipse.xtext.xbase.typesystem.internal.DefaultReentrantTypeResolver;
 
@@ -43,8 +43,8 @@ public class GraphViewStyleRuntimeModule extends org.eclipse.xtext.graphview.sty
 		return GVSTypeComputer.class;
 	}
 	
-	public Class<? extends ImplicitlyImportedTypes> bindImplicitlyImportedTypes() {
-		return GVSImplicitlyImportedTypes.class;
+	public Class<? extends ImplicitlyImportedFeatures> bindImplicitlyImportedFeatures() {
+		return GVSImplicitlyImportedFeatures.class;
 	}
 	
 	public Class<? extends IImportsConfiguration> bindIImportsConfiguration() {

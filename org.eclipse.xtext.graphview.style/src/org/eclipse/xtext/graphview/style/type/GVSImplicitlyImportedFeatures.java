@@ -12,9 +12,9 @@ import java.util.List;
 import org.eclipse.xtext.graphview.lib.extensions.FigureExtensions;
 import org.eclipse.xtext.graphview.lib.literals.ColorLiterals;
 import org.eclipse.xtext.graphview.lib.literals.FontLiterals;
-import org.eclipse.xtext.xbase.scoping.batch.ImplicitlyImportedTypes;
+import org.eclipse.xtext.xbase.scoping.batch.ImplicitlyImportedFeatures;
 
-public class GVSImplicitlyImportedTypes extends ImplicitlyImportedTypes {
+public class GVSImplicitlyImportedFeatures extends ImplicitlyImportedFeatures {
 
 	@Override
 	protected List<Class<?>> getExtensionClasses() {

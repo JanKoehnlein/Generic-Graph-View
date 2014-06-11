@@ -37,6 +37,7 @@ public class GraphViewModule extends AbstractModule {
 		bind(IResourceDescriptions.class).toProvider(Access.getIResourceDescriptions());
 		bind(IResourceDescriptions.class).annotatedWith(Names.named(ResourceDescriptionsProvider.LIVE_SCOPE)).to(LiveShadowedResourceDescriptions.class);
 		bind(IResourceDescriptions.class).annotatedWith(Names.named(ResourceDescriptionsProvider.NAMED_BUILDER_SCOPE)).toProvider(Access.getIResourceDescriptions());
+		bind(IResourceDescriptions.class).annotatedWith(Names.named(ResourceDescriptionsProvider.PERSISTED_DESCRIPTIONS)).toProvider(Access.getIResourceDescriptions());
 
 		bind(IJvmTypeProvider.Factory.class).to(JdtTypeProviderFactory.class);
 		bind(IResourceSetProvider.class).to(XtextResourceSetProvider.class);

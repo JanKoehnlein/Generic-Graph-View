@@ -10,9 +10,9 @@ package org.eclipse.xtext.graphview.map.types;
 import java.util.List;
 
 import org.eclipse.xtext.graphview.lib.extensions.JvmModelExtensions;
-import org.eclipse.xtext.xbase.scoping.batch.ImplicitlyImportedTypes;
+import org.eclipse.xtext.xbase.scoping.batch.ImplicitlyImportedFeatures;
 
-public class GVMImplicitlyImportedTypes extends ImplicitlyImportedTypes {
+public class GVMImplicitlyImportedFeatures extends ImplicitlyImportedFeatures {
 
 	@Override
 	protected List<Class<?>> getExtensionClasses() {
