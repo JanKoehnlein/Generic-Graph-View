@@ -26,7 +26,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.xtext.graphview.lib;bundle-version="1.0.0",
  de.cau.cs.kieler.kiml.service;bundle-version="0.4.0"
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.eclipse.xtext.graphview,
  org.eclipse.xtext.graphview.behavior.bounds,
  org.eclipse.xtext.graphview.behavior.buttons,
