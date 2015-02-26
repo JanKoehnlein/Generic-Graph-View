@@ -18,7 +18,6 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.xtext.graphview.view.selection.AbstractElementSelectionStrategy;
 import org.eclipse.xtext.util.PolymorphicDispatcher;
 
-@SuppressWarnings("restriction")
 public class JavaEditorSelectionStrategy extends AbstractElementSelectionStrategy {
 
 	private static Logger LOG = Logger.getLogger(JavaEditorSelectionStrategy.class);

@@ -41,7 +41,6 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import com.google.inject.Inject;
 
-@SuppressWarnings("restriction")
 public class SelectDiagramConfigurationDialog extends Dialog {
 
 	@Inject

@@ -29,7 +29,6 @@ import com.google.inject.AbstractModule;
 import com.google.inject.Provider;
 import com.google.inject.name.Names;
 
-@SuppressWarnings("restriction")
 public class GraphViewModule extends AbstractModule {
 
 	@Override

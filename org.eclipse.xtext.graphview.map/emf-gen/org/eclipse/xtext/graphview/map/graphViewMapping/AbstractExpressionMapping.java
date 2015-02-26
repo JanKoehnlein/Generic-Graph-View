@@ -11,11 +11,11 @@ import org.eclipse.xtext.xbase.XExpression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.AbstractExpressionMapping#isMulti <em>Multi</em>}</li>
  *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.AbstractExpressionMapping#getExpression <em>Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage#getAbstractExpressionMapping()
  * @model

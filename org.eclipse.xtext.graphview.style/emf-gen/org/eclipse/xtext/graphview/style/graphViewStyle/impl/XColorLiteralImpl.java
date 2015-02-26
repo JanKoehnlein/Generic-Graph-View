@@ -19,10 +19,10 @@ import org.eclipse.xtext.xbase.impl.XExpressionImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.xtext.graphview.style.graphViewStyle.impl.XColorLiteralImpl#getColor <em>Color</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

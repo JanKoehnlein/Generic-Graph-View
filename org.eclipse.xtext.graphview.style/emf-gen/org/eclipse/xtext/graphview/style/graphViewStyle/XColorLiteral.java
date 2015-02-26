@@ -11,10 +11,10 @@ import org.eclipse.xtext.xbase.XExpression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.xtext.graphview.style.graphViewStyle.XColorLiteral#getColor <em>Color</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.xtext.graphview.style.graphViewStyle.GraphViewStylePackage#getXColorLiteral()
  * @model

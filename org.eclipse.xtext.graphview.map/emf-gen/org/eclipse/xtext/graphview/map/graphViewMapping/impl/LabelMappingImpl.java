@@ -22,11 +22,11 @@ import org.eclipse.xtext.xbase.XExpression;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.LabelMappingImpl#isMulti <em>Multi</em>}</li>
  *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.LabelMappingImpl#getExpression <em>Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

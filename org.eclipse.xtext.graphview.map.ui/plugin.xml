@@ -411,7 +411,7 @@
    </extension>
    <extension point="org.eclipse.ui.editorActions">
       <editorContribution targetID="org.eclipse.xtext.graphview.map.GraphViewMapping" 
-                          id="org.eclipse.xtext.graphview.map.GraphViewMapping.ide.rulerActions">
+                          id="org.eclipse.xtext.graphview.map.GraphViewMapping.rulerActions">
 	     <action
 	             label="Not Used"
 	             class="org.eclipse.xtext.graphview.map.ui.GraphViewMappingExecutableExtensionFactory:org.eclipse.debug.ui.actions.RulerToggleBreakpointActionDelegate"
@@ -422,17 +422,29 @@
    </extension>
    <extension point="org.eclipse.ui.popupMenus">
       <viewerContribution
-         targetID="example.rulerContextMenuId"
-         id="org.eclipse.xtext.graphview.map.GraphViewMapping.ide.RulerPopupActions">
+         targetID="org.eclipse.xtext.graphview.map.GraphViewMapping.RulerContext"
+         id="org.eclipse.xtext.graphview.map.GraphViewMapping.RulerPopupActions">
          <action
             label="Toggle Breakpoint"
             class="org.eclipse.xtext.graphview.map.ui.GraphViewMappingExecutableExtensionFactory:org.eclipse.debug.ui.actions.RulerToggleBreakpointActionDelegate"
-            menubarPath="additions"
-            id="org.eclipse.xtext.graphview.map.GraphViewMapping.ide.rulerContextMenu.toggleBreakpointAction">
+            menubarPath="debug"
+            id="org.eclipse.xtext.graphview.map.GraphViewMapping.rulerContextMenu.toggleBreakpointAction">
+         </action>
+         <action
+            label="Not used"
+            class="org.eclipse.xtext.graphview.map.ui.GraphViewMappingExecutableExtensionFactory:org.eclipse.debug.ui.actions.RulerEnableDisableBreakpointActionDelegate"
+            menubarPath="debug"
+            id="org.eclipse.xtext.graphview.map.GraphViewMapping.rulerContextMenu.enableDisableBreakpointAction">
+         </action>
+         <action
+           label="Breakpoint Properties"
+           helpContextId="breakpoint_properties_action_context"
+           class="org.eclipse.xtext.graphview.map.ui.GraphViewMappingExecutableExtensionFactory:org.eclipse.jdt.debug.ui.actions.JavaBreakpointPropertiesRulerActionDelegate"
+           menubarPath="group.properties"
+           id="org.eclipse.xtext.graphview.map.GraphViewMapping.rulerContextMenu.openBreapointPropertiesAction">
          </action>
       </viewerContribution>
    </extension>
-   
     <!-- Introduce Local Variable Refactoring -->
 	<extension point="org.eclipse.ui.handlers">
 		<handler 
@@ -534,6 +546,12 @@
             class="org.eclipse.xtext.graphview.map.ui.GraphViewMappingExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
             extensions="gvmap">
     </provider>
+  </extension>
+  <extension point="org.eclipse.team.core.fileTypes">
+    <fileTypes
+            extension="gvmap"
+            type="text">
+    </fileTypes>
   </extension>
 
 </plugin>

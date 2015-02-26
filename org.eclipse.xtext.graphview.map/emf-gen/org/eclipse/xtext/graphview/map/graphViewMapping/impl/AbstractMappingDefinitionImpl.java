@@ -27,11 +27,11 @@ import org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.AbstractMappingDefinitionImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.AbstractMappingDefinitionImpl#getMappings <em>Mappings</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

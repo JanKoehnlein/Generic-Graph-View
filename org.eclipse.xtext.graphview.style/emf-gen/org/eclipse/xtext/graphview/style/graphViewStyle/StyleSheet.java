@@ -17,13 +17,13 @@ import org.eclipse.xtext.xtype.XImportSection;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.xtext.graphview.style.graphViewStyle.StyleSheet#getImportSection <em>Import Section</em>}</li>
  *   <li>{@link org.eclipse.xtext.graphview.style.graphViewStyle.StyleSheet#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.xtext.graphview.style.graphViewStyle.StyleSheet#getDiagramMapping <em>Diagram Mapping</em>}</li>
  *   <li>{@link org.eclipse.xtext.graphview.style.graphViewStyle.StyleSheet#getStyles <em>Styles</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.xtext.graphview.style.graphViewStyle.GraphViewStylePackage#getStyleSheet()
  * @model

@@ -2,7 +2,7 @@ package base.company;
 
 import base.Person;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
-import org.eclipse.xtext.xbase.lib.util.ToStringHelper;
+import org.eclipse.xtext.xbase.lib.util.ToStringBuilder;
 
 @SuppressWarnings("all")
 public class Boss extends Person {
@@ -15,7 +15,7 @@ public class Boss extends Person {
   
   @Override
   public String toString() {
-    String result = new ToStringHelper().toString(this);
+    String result = new ToStringBuilder(this).addAllFields().toString();
     return result;
   }
 }

@@ -11,8 +11,6 @@ import org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Edge End Mapping</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

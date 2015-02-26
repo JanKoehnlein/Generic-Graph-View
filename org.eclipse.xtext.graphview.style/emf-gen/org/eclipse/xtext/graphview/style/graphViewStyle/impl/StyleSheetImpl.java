@@ -32,13 +32,13 @@ import org.eclipse.xtext.xtype.XImportSection;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.xtext.graphview.style.graphViewStyle.impl.StyleSheetImpl#getImportSection <em>Import Section</em>}</li>
  *   <li>{@link org.eclipse.xtext.graphview.style.graphViewStyle.impl.StyleSheetImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.xtext.graphview.style.graphViewStyle.impl.StyleSheetImpl#getDiagramMapping <em>Diagram Mapping</em>}</li>
  *   <li>{@link org.eclipse.xtext.graphview.style.graphViewStyle.impl.StyleSheetImpl#getStyles <em>Styles</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

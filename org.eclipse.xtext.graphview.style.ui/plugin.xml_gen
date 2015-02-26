@@ -411,7 +411,7 @@
    </extension>
    <extension point="org.eclipse.ui.editorActions">
       <editorContribution targetID="org.eclipse.xtext.graphview.style.GraphViewStyle" 
-                          id="org.eclipse.xtext.graphview.style.GraphViewStyle.ide.rulerActions">
+                          id="org.eclipse.xtext.graphview.style.GraphViewStyle.rulerActions">
 	     <action
 	             label="Not Used"
 	             class="org.eclipse.xtext.graphview.style.ui.GraphViewStyleExecutableExtensionFactory:org.eclipse.debug.ui.actions.RulerToggleBreakpointActionDelegate"
@@ -422,17 +422,29 @@
    </extension>
    <extension point="org.eclipse.ui.popupMenus">
       <viewerContribution
-         targetID="example.rulerContextMenuId"
-         id="org.eclipse.xtext.graphview.style.GraphViewStyle.ide.RulerPopupActions">
+         targetID="org.eclipse.xtext.graphview.style.GraphViewStyle.RulerContext"
+         id="org.eclipse.xtext.graphview.style.GraphViewStyle.RulerPopupActions">
          <action
             label="Toggle Breakpoint"
             class="org.eclipse.xtext.graphview.style.ui.GraphViewStyleExecutableExtensionFactory:org.eclipse.debug.ui.actions.RulerToggleBreakpointActionDelegate"
-            menubarPath="additions"
-            id="org.eclipse.xtext.graphview.style.GraphViewStyle.ide.rulerContextMenu.toggleBreakpointAction">
+            menubarPath="debug"
+            id="org.eclipse.xtext.graphview.style.GraphViewStyle.rulerContextMenu.toggleBreakpointAction">
+         </action>
+         <action
+            label="Not used"
+            class="org.eclipse.xtext.graphview.style.ui.GraphViewStyleExecutableExtensionFactory:org.eclipse.debug.ui.actions.RulerEnableDisableBreakpointActionDelegate"
+            menubarPath="debug"
+            id="org.eclipse.xtext.graphview.style.GraphViewStyle.rulerContextMenu.enableDisableBreakpointAction">
+         </action>
+         <action
+           label="Breakpoint Properties"
+           helpContextId="breakpoint_properties_action_context"
+           class="org.eclipse.xtext.graphview.style.ui.GraphViewStyleExecutableExtensionFactory:org.eclipse.jdt.debug.ui.actions.JavaBreakpointPropertiesRulerActionDelegate"
+           menubarPath="group.properties"
+           id="org.eclipse.xtext.graphview.style.GraphViewStyle.rulerContextMenu.openBreapointPropertiesAction">
          </action>
       </viewerContribution>
    </extension>
-   
     <!-- Introduce Local Variable Refactoring -->
 	<extension point="org.eclipse.ui.handlers">
 		<handler 
@@ -534,6 +546,12 @@
             class="org.eclipse.xtext.graphview.style.ui.GraphViewStyleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
             extensions="gvstyle">
     </provider>
+  </extension>
+  <extension point="org.eclipse.team.core.fileTypes">
+    <fileTypes
+            extension="gvstyle"
+            type="text">
+    </fileTypes>
   </extension>
 
 </plugin>

@@ -19,6 +19,7 @@ import org.eclipse.xtext.common.types.JvmIdentifiableElement;
 import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
 import org.eclipse.xtext.common.types.JvmType;
 import org.eclipse.xtext.common.types.JvmTypeReference;
+import org.eclipse.xtext.common.types.access.TypeResource;
 import org.eclipse.xtext.common.types.util.AbstractTypeReferenceVisitor;
 import org.eclipse.xtext.common.types.util.Primitives;
 import org.eclipse.xtext.common.types.util.TypeReferences;
@@ -28,7 +29,6 @@ import org.eclipse.xtext.xbase.jvmmodel.IJvmModelAssociations;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Sets;
 
-@SuppressWarnings("restriction")
 public class JvmModelExtensions {
 
 	private static IResourceServiceProvider.Registry registry = IResourceServiceProvider.Registry.INSTANCE;
@@ -45,12 +45,15 @@ public class JvmModelExtensions {
 	}
 
 	public static <T extends EObject> T sourceElement(EObject jvmElement, Class<T> type) {
-		IJvmModelAssociations associations = getLanguageService(jvmElement, IJvmModelAssociations.class);
-		if (associations != null) {
-			Set<EObject> sourceElements = associations.getSourceElements(jvmElement);
-			Iterator<T> matchingElements = Iterables.filter(sourceElements, type).iterator();
-			if (matchingElements.hasNext())
-				return matchingElements.next();
+		// guard for https://bugs.eclipse.org/bugs/show_bug.cgi?id=460956
+		if(!(jvmElement.eResource() instanceof TypeResource)) {
+			IJvmModelAssociations associations = getLanguageService(jvmElement, IJvmModelAssociations.class);
+			if (associations != null) {
+				Set<EObject> sourceElements = associations.getSourceElements(jvmElement);
+				Iterator<T> matchingElements = Iterables.filter(sourceElements, type).iterator();
+				if (matchingElements.hasNext())
+					return matchingElements.next();
+			}
 		}
 		return null;
 	}

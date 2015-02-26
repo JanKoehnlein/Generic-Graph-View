@@ -10,11 +10,11 @@ package org.eclipse.xtext.graphview.map.graphViewMapping;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.EdgeMapping#getSourceMapping <em>Source Mapping</em>}</li>
  *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.EdgeMapping#getTargetMapping <em>Target Mapping</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage#getEdgeMapping()
  * @model

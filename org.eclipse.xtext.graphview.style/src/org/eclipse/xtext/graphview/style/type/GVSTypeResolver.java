@@ -35,7 +35,6 @@ import org.eclipse.xtext.xbase.typesystem.internal.DefaultReentrantTypeResolver;
 import org.eclipse.xtext.xbase.typesystem.internal.ResolvedTypes;
 import org.eclipse.xtext.xbase.typesystem.references.ITypeReferenceOwner;
 import org.eclipse.xtext.xbase.typesystem.references.LightweightTypeReference;
-import org.eclipse.xtext.xbase.typesystem.references.OwnedConverter;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
@@ -75,23 +74,22 @@ public class GVSTypeResolver extends DefaultReentrantTypeResolver {
 	}
 
 	public LightweightTypeReference getFigureType(Style style, ITypeReferenceOwner owner) {
-		OwnedConverter ownedConverter = new OwnedConverter(owner);
 		if (style.getJavaClass() != null)
-			return ownedConverter.apply(style.getJavaClass());
+			return owner.toLightweightTypeReference(style.getJavaClass());
 		List<LightweightTypeReference> types = Lists.newArrayList();
 		for (AbstractMapping mapping : style.getMappings()) {
 			if (mapping instanceof DiagramMapping) {
-				types.add(ownedConverter.apply(getServices().getTypeReferences().getTypeForName(DiagramShape.class, style)));
+				types.add(owner.toLightweightTypeReference(getServices().getTypeReferences().getTypeForName(DiagramShape.class, style)));
 			} else if (mapping instanceof NodeMapping) {
-				types.add(ownedConverter.apply(getServices().getTypeReferences().getTypeForName(RoundedRectangleShape.class, style)));
+				types.add(owner.toLightweightTypeReference(getServices().getTypeReferences().getTypeForName(RoundedRectangleShape.class, style)));
 			} else if (mapping instanceof LabelMapping) {
-				types.add(ownedConverter.apply(getServices().getTypeReferences().getTypeForName(LabelShape.class, style)));
+				types.add(owner.toLightweightTypeReference(getServices().getTypeReferences().getTypeForName(LabelShape.class, style)));
 			} else if (mapping instanceof EdgeMapping) {
-				types.add(ownedConverter.apply(getServices().getTypeReferences().getTypeForName(ConnectionShape.class, style)));
+				types.add(owner.toLightweightTypeReference(getServices().getTypeReferences().getTypeForName(ConnectionShape.class, style)));
 			}
 		}
 		if (types.isEmpty())
-			return ownedConverter.apply(getServices().getTypeReferences().getTypeForName(IFigure.class, style));
+			return owner.toLightweightTypeReference(getServices().getTypeReferences().getTypeForName(IFigure.class, style));
 		else
 			return getServices().getTypeConformanceComputer().getCommonSuperType(types, owner);
 	}

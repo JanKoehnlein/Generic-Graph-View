@@ -22,16 +22,19 @@ import org.eclipse.xtext.xbase.typesystem.internal.ExpressionBasedRootTypeComput
 import org.eclipse.xtext.xbase.typesystem.internal.ResolvedTypes;
 import org.eclipse.xtext.xbase.typesystem.references.ITypeReferenceOwner;
 import org.eclipse.xtext.xbase.typesystem.references.LightweightTypeReference;
-import org.eclipse.xtext.xbase.typesystem.references.OwnedConverter;
+import org.eclipse.xtext.xbase.typesystem.references.StandardTypeReferenceOwner;
 
 public class GVMTypeResolver extends DefaultReentrantTypeResolver {
 
 	@Override
 	protected void computeTypes(ResolvedTypes resolvedTypes, IFeatureScopeSession session, EObject element) {
+		if(element == null)
+			return;
+		StandardTypeReferenceOwner owner = new StandardTypeReferenceOwner(getServices(), element);
 		IFeatureScopeSession childSession = session;
 		if (element instanceof DiagramMapping) {
 			DiagramMapping diagramMapping = (DiagramMapping) element;
-			LightweightTypeReference type = new OwnedConverter(resolvedTypes.getReferenceOwner()).apply(diagramMapping.getTypeGuard());
+			LightweightTypeReference type = owner.toLightweightTypeReference(diagramMapping.getTypeGuard());
 			resolvedTypes.setType(diagramMapping, type);
 			childSession = addThis(session, diagramMapping, resolvedTypes.getReferenceOwner());
 		}
@@ -39,8 +42,7 @@ public class GVMTypeResolver extends DefaultReentrantTypeResolver {
 			AbstractMapping mapping = (AbstractMapping) element;
 			XExpression unlessCondition = mapping.getUnlessCondition();
 			if (unlessCondition != null) {
-				LightweightTypeReference booleanType = new OwnedConverter(resolvedTypes.getReferenceOwner()).apply(getServices()
-						.getTypeReferences().getTypeForName(Boolean.TYPE, mapping));
+				LightweightTypeReference booleanType = owner.toLightweightTypeReference(getServices().getTypeReferences().getTypeForName(Boolean.TYPE, mapping));
 				ExpressionBasedRootTypeComputationState state = new ExpressionBasedRootTypeComputationState(resolvedTypes, childSession,
 						unlessCondition, booleanType);
 				state.computeTypes();

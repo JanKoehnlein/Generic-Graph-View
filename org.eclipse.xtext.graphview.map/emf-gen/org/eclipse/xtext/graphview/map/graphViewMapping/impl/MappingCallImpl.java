@@ -11,8 +11,6 @@ import org.eclipse.xtext.graphview.map.graphViewMapping.MappingCall;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Mapping Call</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

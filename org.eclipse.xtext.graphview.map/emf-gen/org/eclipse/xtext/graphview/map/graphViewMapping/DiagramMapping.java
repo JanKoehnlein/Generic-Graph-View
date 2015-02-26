@@ -13,11 +13,11 @@ import org.eclipse.xtext.xtype.XImportSection;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping#getImportSection <em>Import Section</em>}</li>
  *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.DiagramMapping#getTypeGuard <em>Type Guard</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage#getDiagramMapping()
  * @model

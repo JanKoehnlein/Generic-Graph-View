@@ -11,11 +11,11 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMappingDefinition#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMappingDefinition#getMappings <em>Mappings</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage#getAbstractMappingDefinition()
  * @model

@@ -15,8 +15,7 @@ import org.eclipse.xtext.graphview.map.graphViewMapping.LabelMapping;
 import org.eclipse.xtext.graphview.map.graphViewMapping.NodeMapping;
 import org.eclipse.xtext.graphview.style.graphViewStyle.Style;
 import org.eclipse.xtext.validation.Check;
-import org.eclipse.xtext.xbase.typesystem.legacy.StandardTypeReferenceOwner;
-import org.eclipse.xtext.xbase.typesystem.references.OwnedConverter;
+import org.eclipse.xtext.xbase.typesystem.references.StandardTypeReferenceOwner;
 import org.eclipse.xtext.xbase.typesystem.util.CommonTypeComputationServices;
 
 import com.google.inject.Inject;
@@ -45,10 +44,10 @@ public class GraphViewStyleJavaValidator extends AbstractGraphViewStyleJavaValid
 	}
 	
 	protected void assertTypeConformance(String left, JvmTypeReference rightType, AbstractMapping mapping) {
-		OwnedConverter ownedConverter = new OwnedConverter(new StandardTypeReferenceOwner(services, mapping));
 		JvmTypeReference leftType = services.getTypeReferences().getTypeForName(left, rightType);
-		if(!services.getTypeConformanceComputer().isConformant(ownedConverter.apply(leftType), 
-				ownedConverter.apply(rightType))) {
+		StandardTypeReferenceOwner owner = new StandardTypeReferenceOwner(services, mapping);
+		if(!services.getTypeConformanceComputer().isConformant(owner.toLightweightTypeReference(leftType), 
+				owner.toLightweightTypeReference(rightType))) {
 			error("The figure of a " + mapping.eClass().getName() + " must be compatible with '" 
 					+ left + "'", rightType, null, 0);
 		}

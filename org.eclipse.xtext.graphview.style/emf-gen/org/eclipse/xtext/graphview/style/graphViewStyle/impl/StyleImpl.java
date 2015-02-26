@@ -33,12 +33,12 @@ import org.eclipse.xtext.xbase.XExpression;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.xtext.graphview.style.graphViewStyle.impl.StyleImpl#getMappings <em>Mappings</em>}</li>
  *   <li>{@link org.eclipse.xtext.graphview.style.graphViewStyle.impl.StyleImpl#getJavaClass <em>Java Class</em>}</li>
  *   <li>{@link org.eclipse.xtext.graphview.style.graphViewStyle.impl.StyleImpl#getExpression <em>Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

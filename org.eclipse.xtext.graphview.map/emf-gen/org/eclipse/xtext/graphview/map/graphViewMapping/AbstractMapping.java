@@ -13,11 +13,11 @@ import org.eclipse.xtext.xbase.XExpression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping#getUnlessCondition <em>Unless Condition</em>}</li>
  *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMapping#isHidden <em>Hidden</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage#getAbstractMapping()
  * @model abstract="true"

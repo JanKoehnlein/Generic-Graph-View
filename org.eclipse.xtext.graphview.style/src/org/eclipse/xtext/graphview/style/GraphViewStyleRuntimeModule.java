@@ -10,6 +10,7 @@ package org.eclipse.xtext.graphview.style;
 import org.eclipse.xtext.graphview.style.imports.GVSImportsConfiguration;
 import org.eclipse.xtext.graphview.style.interpreter.GraphViewStyleInterpreter;
 import org.eclipse.xtext.graphview.style.names.GVSIdentifiableSimpleNameProvider;
+import org.eclipse.xtext.graphview.style.type.GVSDefaultTypeResolver;
 import org.eclipse.xtext.graphview.style.type.GVSImplicitlyImportedFeatures;
 import org.eclipse.xtext.graphview.style.type.GVSTypeComputer;
 import org.eclipse.xtext.graphview.style.type.GVSTypeResolver;
@@ -18,6 +19,7 @@ import org.eclipse.xtext.xbase.imports.IImportsConfiguration;
 import org.eclipse.xtext.xbase.interpreter.impl.XbaseInterpreter;
 import org.eclipse.xtext.xbase.scoping.batch.ImplicitlyImportedFeatures;
 import org.eclipse.xtext.xbase.typesystem.computation.ITypeComputer;
+import org.eclipse.xtext.xbase.typesystem.internal.DefaultBatchTypeResolver;
 import org.eclipse.xtext.xbase.typesystem.internal.DefaultReentrantTypeResolver;
 
 /**
@@ -38,7 +40,6 @@ public class GraphViewStyleRuntimeModule extends org.eclipse.xtext.graphview.sty
 		return GVSTypeResolver.class;
 	}
 	
-	@Override
 	public Class<? extends ITypeComputer> bindITypeComputer() {
 		return GVSTypeComputer.class;
 	}
@@ -49,5 +50,9 @@ public class GraphViewStyleRuntimeModule extends org.eclipse.xtext.graphview.sty
 	
 	public Class<? extends IImportsConfiguration> bindIImportsConfiguration() {
 		return GVSImportsConfiguration.class;
+	}
+	
+	public Class<? extends DefaultBatchTypeResolver> bindDefaultBatchTypeResolver() {
+		return GVSDefaultTypeResolver.class;
 	}
 }

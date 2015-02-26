@@ -10,11 +10,11 @@ package org.eclipse.xtext.graphview.map.graphViewMapping;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMappingReference#getReferencedMapping <em>Referenced Mapping</em>}</li>
  *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.AbstractMappingReference#isCall <em>Call</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage#getAbstractMappingReference()
  * @model

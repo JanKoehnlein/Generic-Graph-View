@@ -19,11 +19,11 @@ import org.eclipse.xtext.graphview.map.graphViewMapping.GraphViewMappingPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.AbstractMappingReferenceImpl#getReferencedMapping <em>Referenced Mapping</em>}</li>
  *   <li>{@link org.eclipse.xtext.graphview.map.graphViewMapping.impl.AbstractMappingReferenceImpl#isCall <em>Call</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
